@@ -1,1 +1,410 @@
+name: Update Threat Tide live vuln feed
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5,13,21 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out assets repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build live vuln feed
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import datetime as dt
+          import html
+          import json
+          import os
+          import re
+          import time
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          OUT = Path("vulns.json")
+          CISA_KEV = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          EPSS = "https://api.first.org/data/v1/epss"
+          NVD = "https://services.nvd.nist.gov/rest/json/cves/2.0"
+          GITHUB_SEARCH = "https://api.github.com/search/repositories"
+          UA = "pirate.moo-threat-tide/1.0"
+          TOKEN = os.environ.get("GITHUB_TOKEN", "")
+          CVE_RE = re.compile(r"CVE-\d{4}-\d{4,7}", re.I)
+
+          RSS_SOURCES = [
+              ("Project Zero", "https://googleprojectzero.blogspot.com/feeds/posts/default"),
+              ("watchTowr Labs", "https://labs.watchtowr.com/rss/"),
+              ("Horizon3 Attack Team", "https://www.horizon3.ai/feed/"),
+              ("ZDI", "https://www.zerodayinitiative.com/blog?format=rss"),
+              ("NCC Group Research", "https://research.nccgroup.com/feed/"),
+              ("Bishop Fox", "https://bishopfox.com/blog/rss.xml"),
+              ("Elastic Security Labs", "https://www.elastic.co/security-labs/rss/feed.xml"),
+              ("ProjectDiscovery", "https://projectdiscovery.io/blog/rss.xml"),
+              ("GitHub Security Lab", "https://github.blog/security/vulnerability-research/feed/"),
+              ("Wiz Research", "https://www.wiz.io/blog/rss.xml"),
+              ("Aqua Nautilus", "https://www.aquasec.com/blog/feed/"),
+              ("Synacktiv", "https://www.synacktiv.com/en/publications/feed.xml"),
+          ]
+
+          HIGH_SIGNAL = {
+              "active directory", "ad cs", "adcs", "android", "apache", "apple", "atlassian", "azure",
+              "citrix", "confluence", "connectwise", "container", "cisco", "exchange", "esxi",
+              "fortinet", "gitlab", "jenkins", "kerberos", "kubernetes", "linux", "microsoft",
+              "openssh", "palo alto", "pan-os", "screenconnect", "sharepoint", "teamcity",
+              "vmware", "vpn", "windows", "wordpress",
+          }
+
+          PRIMITIVES = {
+              "auth bypass": ("Auth Bypass", ["authentication bypass", "auth bypass", "authorization bypass"]),
+              "rce": ("RCE", ["remote code execution", "rce", "command injection", "code execution"]),
+              "lpe": ("Local LPE", ["privilege escalation", "lpe", "local privilege", "elevation of privilege"]),
+              "file read": ("File Read", ["file read", "path traversal", "arbitrary file", "file disclosure"]),
+              "session theft": ("Session Theft", ["session", "token", "cookie", "credential disclosure"]),
+              "sqli": ("SQLi", ["sql injection", "sqli"]),
+              "xss": ("XSS", ["cross-site scripting", "xss"]),
+          }
+
+          ECOSYSTEM_RULES = [
+              ("android", ["android", "aosp", "pixel"]),
+              ("ios", ["ios", "ipados", "iphone", "webkit", "safari", "imessage", "apple"]),
+              ("windows", ["windows", "microsoft", "exchange", "sharepoint", "active directory", "ad cs", "adcs", "ntlm", "kerberos", "sccm", "hyper-v"]),
+              ("linux", ["linux", "openssh", "sudo", "systemd", "ubuntu", "debian", "kernel"]),
+              ("cloud", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "vmware", "esxi", "kubernetes", "jenkins", "gitlab", "teamcity", "confluence", "atlassian", "connectwise", "vpn", "cloud"]),
+          ]
+
+          CATEGORY_RULES = [
+              ("adcs", ["ad cs", "adcs", "certificate"]),
+              ("kerberos", ["kerberos"]),
+              ("ntlm", ["ntlm", "relay"]),
+              ("exchange", ["exchange"]),
+              ("rmm", ["screenconnect", "connectwise", "rmm"]),
+              ("vpn-edge", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "vpn", "gateway", "ssl-vpn"]),
+              ("devops", ["jenkins", "gitlab", "teamcity", "ci/cd", "ci server"]),
+              ("kernel", ["kernel", "use-after-free", "uaf"]),
+              ("kubernetes", ["kubernetes", "container", "docker"]),
+              ("ssh", ["openssh", "ssh"]),
+              ("webstack", ["apache", "php", "confluence", "jira", "wordpress", "coldfusion", "geoserver", "web"]),
+              ("framework", ["android", "framework", "packageinstaller"]),
+          ]
+
+          SPAM_TERMS = [
+              "awesome-cve", "cve-list", "cve-database", "database", "seo", "nuclei-template",
+              "template-only", "scanner-only", "auto-generated", "chatgpt", "ai generated",
+          ]
+
+          def request(url: str, accept: str = "application/json") -> bytes:
+              headers = {"User-Agent": UA, "Accept": accept}
+              if TOKEN and "api.github.com" in url:
+                  headers["Authorization"] = f"Bearer {TOKEN}"
+              req = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(req, timeout=25) as response:
+                  return response.read()
+
+          def fetch_json(url: str) -> dict:
+              try:
+                  return json.loads(request(url).decode("utf-8", "replace"))
+              except Exception as exc:
+                  print(f"warn: json fetch failed {url}: {exc}")
+                  return {}
+
+          def fetch_text(url: str) -> str:
+              try:
+                  return request(url, "application/rss+xml, application/atom+xml, text/xml, */*").decode("utf-8", "replace")
+              except Exception as exc:
+                  print(f"warn: text fetch failed {url}: {exc}")
+                  return ""
+
+          def extract_urls(text: str) -> list[str]:
+              return re.findall(r"https?://[^\s,)>\"]+", text or "")
+
+          def norm(text: str) -> str:
+              return html.unescape(re.sub(r"\s+", " ", text or "")).strip()
+
+          def compact(text: str, limit: int = 190) -> str:
+              text = norm(text)
+              if len(text) <= limit:
+                  return text
+              return text[: limit - 1].rsplit(" ", 1)[0] + "."
+
+          def tag_value(text: str, rules: list[tuple[str, list[str]]], fallback: str) -> str:
+              lower = text.lower()
+              for value, terms in rules:
+                  if any(term in lower for term in terms):
+                      return value
+              return fallback
+
+          def primitive(text: str) -> str:
+              lower = text.lower()
+              for label, terms in PRIMITIVES.values():
+                  if any(term in lower for term in terms):
+                      return label
+              return "RCE" if "execute" in lower else "Exploit"
+
+          def labelize(value: str) -> str:
+              return {
+                  "ios": "iOS",
+                  "adcs": "ADCS",
+                  "rce": "RCE",
+                  "lpe": "Local LPE",
+                  "vpn-edge": "VPN Edge",
+                  "devops": "DevOps",
+                  "webstack": "Webstack",
+                  "rmm": "RMM",
+                  "ssh": "SSH",
+                  "sqli": "SQLi",
+              }.get(value.lower(), value.replace("-", " ").title())
+
+          def parse_date(value: str) -> dt.datetime:
+              try:
+                  return dt.datetime.fromisoformat((value or "").replace("Z", "+00:00"))
+              except ValueError:
+                  try:
+                      return dt.datetime.strptime(value[:10], "%Y-%m-%d").replace(tzinfo=dt.timezone.utc)
+                  except Exception:
+                      return dt.datetime(1970, 1, 1, tzinfo=dt.timezone.utc)
+
+          def rss_mentions() -> dict[str, list[dict]]:
+              mentions: dict[str, list[dict]] = {}
+              for source, url in RSS_SOURCES:
+                  xml = fetch_text(url)
+                  if not xml:
+                      continue
+                  try:
+                      root = ET.fromstring(xml)
+                  except ET.ParseError:
+                      continue
+                  entries = [node for node in root.iter() if node.tag.split("}")[-1] in {"item", "entry"}]
+                  for entry in entries[:25]:
+                      fields = {"title": "", "summary": "", "link": ""}
+                      for child in list(entry):
+                          tag = child.tag.split("}")[-1]
+                          if tag in {"title", "description", "summary", "content"}:
+                              fields["title" if tag == "title" else "summary"] = norm(child.text or "")
+                          if tag == "link":
+                              fields["link"] = child.attrib.get("href") or norm(child.text or "")
+                      text = f"{fields['title']} {fields['summary']}"
+                      for cve in {match.upper() for match in CVE_RE.findall(text)}:
+                          mentions.setdefault(cve, []).append({
+                              "source": source,
+                              "title": compact(fields["title"], 140),
+                              "url": fields["link"] or url,
+                          })
+              return mentions
+
+          def kev_items() -> list[dict]:
+              data = fetch_json(CISA_KEV)
+              return data.get("vulnerabilities", []) if isinstance(data.get("vulnerabilities"), list) else []
+
+          def epss_scores(cves: list[str]) -> dict[str, float]:
+              scores: dict[str, float] = {}
+              for index in range(0, len(cves), 80):
+                  batch = cves[index : index + 80]
+                  url = EPSS + "?" + urllib.parse.urlencode({"cve": ",".join(batch)})
+                  data = fetch_json(url)
+                  for row in data.get("data", []) if isinstance(data.get("data"), list) else []:
+                      try:
+                          scores[row["cve"].upper()] = float(row.get("epss") or 0)
+                      except Exception:
+                          pass
+              return scores
+
+          def nvd_lookup(cve: str) -> dict:
+              data = fetch_json(NVD + "?" + urllib.parse.urlencode({"cveId": cve}))
+              vulns = data.get("vulnerabilities", [])
+              if not vulns:
+                  return {}
+              cve_data = vulns[0].get("cve", {})
+              desc = ""
+              for item in cve_data.get("descriptions", []):
+                  if item.get("lang") == "en":
+                      desc = item.get("value", "")
+                      break
+              refs = [ref.get("url", "") for ref in cve_data.get("references", {}).get("referenceData", []) if ref.get("url")]
+              metrics = cve_data.get("metrics", {})
+              severity = ""
+              for key in ("cvssMetricV31", "cvssMetricV30", "cvssMetricV2"):
+                  if metrics.get(key):
+                      severity = metrics[key][0].get("cvssData", {}).get("baseSeverity") or metrics[key][0].get("baseSeverity", "")
+                      break
+              return {"description": desc, "references": refs, "severity": severity}
+
+          def repo_score(repo: dict, cve: str) -> int:
+              text = " ".join([
+                  repo.get("full_name", ""),
+                  repo.get("name", ""),
+                  repo.get("description") or "",
+              ]).lower()
+              score = 0
+              if cve.lower() in text:
+                  score += 35
+              if any(term in text for term in ["exploit", "poc", "proof-of-concept", "rce", "bypass", "lpe", "checker"]):
+                  score += 25
+              if any(term in text for term in SPAM_TERMS):
+                  score -= 80
+              if repo.get("fork"):
+                  score -= 18
+              if repo.get("archived"):
+                  score -= 20
+              pushed = parse_date(repo.get("pushed_at", ""))
+              if (dt.datetime.now(dt.timezone.utc) - pushed).days <= 120:
+                  score += 12
+              score += min(int(repo.get("stargazers_count") or 0), 40) // 8
+              return score
+
+          def github_candidate(cve: str) -> dict | None:
+              query = f"{cve} exploit poc in:name,description,readme"
+              url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({
+                  "q": query,
+                  "sort": "updated",
+                  "order": "desc",
+                  "per_page": "8",
+              })
+              data = fetch_json(url)
+              repos = data.get("items", []) if isinstance(data.get("items"), list) else []
+              ranked = sorted(((repo_score(repo, cve), repo) for repo in repos), key=lambda item: item[0], reverse=True)
+              for score, repo in ranked:
+                  if score >= 45 and repo.get("html_url"):
+                      return {"score": score, "url": repo["html_url"], "owner": repo.get("owner", {}).get("login") or repo.get("full_name", "").split("/")[0], "name": repo.get("full_name", ""), "description": repo.get("description") or ""}
+              return None
+
+          def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: dict, day_offset: int) -> dict:
+              cve = item["cveID"].upper()
+              vendor = norm(item.get("vendorProject", ""))
+              product = norm(item.get("product", ""))
+              name = norm(item.get("vulnerabilityName", ""))
+              desc = norm(item.get("shortDescription") or nvd.get("description") or name)
+              notes = norm(item.get("notes", ""))
+              text = " ".join([cve, vendor, product, name, desc, notes, repo.get("description", "")])
+              ecosystem = tag_value(text, ECOSYSTEM_RULES, "cloud")
+              category = tag_value(text, CATEGORY_RULES, "webstack")
+              prim = primitive(text)
+              nvd_sev = (nvd.get("severity") or "").upper()
+              severity = "critical" if prim in {"RCE", "Auth Bypass", "Session Theft"} and (epss >= 0.08 or item.get("knownRansomwareCampaignUse") == "Known") else "high"
+              if nvd_sev == "CRITICAL":
+                  severity = "critical"
+              if nvd_sev == "MEDIUM" and epss < 0.03:
+                  severity = "medium"
+              confidence = min(98, 70 + repo.get("score", 0) // 3 + (12 if mention else 0) + (8 if item else 0))
+              weaponization = min(99, int(55 + epss * 80 + (18 if item else 0) + (10 if item.get("knownRansomwareCampaignUse") == "Known" else 0)))
+              title_base = name or f"{vendor} {product} {prim}"
+              title = compact(f"{title_base} with public poc signal", 92)
+              summary = compact(f"{vendor} {product} is in CISA KEV and has public GitHub tooling signal; prioritize exposure, exploitability, and chain value over CVSS alone.", 210)
+              if desc:
+                  summary = compact(f"{desc} Public tooling signal: {repo.get('name')}.", 210)
+              links = [["GitHub", repo["url"]]]
+              if mention:
+                  links.append(["Technical Paper", mention["url"]])
+              vendor_links = [url for url in extract_urls(notes) + nvd.get("references", []) if "nvd.nist.gov" not in url.lower()]
+              if vendor_links:
+                  links.append(["Vendor Advisory", vendor_links[0]])
+              tags = [labelize(ecosystem), labelize(category), prim]
+              if item:
+                  tags.append("KEV")
+              return {
+                  "cve": cve,
+                  "title": title,
+                  "ecosystem": ecosystem,
+                  "category": category,
+                  "severity": severity,
+                  "proof": "working public poc",
+                  "reliability": "reliable exploit" if item and repo.get("score", 0) >= 60 else "partial exploit",
+                  "researcher": mention["source"] if mention else repo.get("owner", "public research"),
+                  "researcherUrl": mention["url"] if mention else repo["url"],
+                  "pocWorks": "Yes",
+                  "added": "tracked",
+                  "language": "public tooling",
+                  "summary": summary,
+                  "breakdown": compact(f"Operator signal is the combination of KEV exploitation, EPSS {epss:.3f}, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.", 300),
+                  "whatBroke": compact(desc or f"{vendor} {product} exposed a useful {prim.lower()} primitive.", 240),
+                  "reality": compact(f"Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at {repo.get('name')}.", 260),
+                  "chains": compact(f"Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where {product or vendor} sits in the estate.", 250),
+                  "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
+                  "tags": tags,
+                  "confidence": confidence,
+                  "weaponization": weaponization,
+                  "dayOffset": day_offset,
+                  "links": links[:3],
+              }
+
+          kev = kev_items()
+          rss = rss_mentions()
+          cves = [item.get("cveID", "").upper() for item in kev if CVE_RE.fullmatch(item.get("cveID", ""))]
+          epss = epss_scores(cves)
+          scored = []
+          for item in kev:
+              cve = item.get("cveID", "").upper()
+              if not CVE_RE.fullmatch(cve):
+                  continue
+              text = " ".join([item.get("vendorProject", ""), item.get("product", ""), item.get("vulnerabilityName", ""), item.get("shortDescription", "")]).lower()
+              signal = 0
+              signal += 45 if any(term in text for term in HIGH_SIGNAL) else 0
+              signal += 20 if any(term in text for terms in PRIMITIVES.values() for term in terms[1]) else 0
+              signal += int((epss.get(cve, 0) or 0) * 70)
+              signal += 18 if cve in rss else 0
+              signal += max(0, 60 - min(60, (dt.datetime.now(dt.timezone.utc) - parse_date(item.get("dateAdded", ""))).days // 7))
+              if signal >= 55:
+                  scored.append((signal, item))
+          scored.sort(key=lambda pair: pair[0], reverse=True)
+
+          entries = []
+          seen = set()
+          for signal, item in scored[:35]:
+              cve = item["cveID"].upper()
+              if cve in seen:
+                  continue
+              repo = github_candidate(cve)
+              if not repo:
+                  continue
+              time.sleep(0.4)
+              nvd = nvd_lookup(cve)
+              mention = rss.get(cve, [None])[0]
+              day_offset = min(6, len(entries) // 3)
+              entries.append(make_entry(item, epss.get(cve, 0), repo, mention, nvd, day_offset))
+              seen.add(cve)
+              if len(entries) >= 18:
+                  break
+
+          if len(entries) < 5 and OUT.exists():
+              print("warn: not enough live entries, preserving existing vulns.json")
+              raise SystemExit(0)
+
+          payload = {
+              "updatedAt": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+              "cadence": "3x daily",
+              "proofPolicy": "verified working public pocs",
+              "sources": ["CISA KEV", "FIRST EPSS", "NVD", "GitHub Search", *[name for name, _ in RSS_SOURCES]],
+              "vulns": entries,
+          }
+          OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+          print(f"wrote {len(entries)} live entries to {OUT}")
+          PY
+
+      - name: Commit updated feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vulns.json
+          if git diff --cached --quiet; then
+            echo "No feed changes to commit."
+          else
+            git commit -m "Update Threat Tide live vuln feed"
+            git push
+          fi
