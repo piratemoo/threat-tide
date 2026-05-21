@@ -327,29 +327,33 @@ jobs:
 
           def github_candidate(cve: str) -> dict | None:
               pushed_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
-              query = f"{cve} exploit poc in:name,description,readme pushed:>={pushed_after}"
-              url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({
-                  "q": query,
-                  "sort": "updated",
-                  "order": "desc",
-                  "per_page": "8",
-              })
-              data = fetch_json(url)
-              repos = data.get("items", []) if isinstance(data.get("items"), list) else []
-              ranked = sorted(((repo_score(repo, cve), repo) for repo in repos), key=lambda item: item[0], reverse=True)
-              for score, repo in ranked:
-                  if score >= 45 and repo.get("html_url"):
-                      owner = repo.get("owner", {}) if isinstance(repo.get("owner"), dict) else {}
-                      return {
-                          "score": score,
-                          "url": repo["html_url"],
-                          "owner": owner.get("login") or repo.get("full_name", "").split("/")[0],
-                          "owner_url": owner.get("html_url") or "",
-                          "name": repo.get("full_name", ""),
-                          "description": repo.get("description") or "",
-                          "language": repo.get("language") or "",
-                          "pushed_at": repo.get("pushed_at") or "",
-                      }
+              queries = [
+                  f"{cve} exploit poc in:name,description,readme pushed:>={pushed_after}",
+                  f"{cve} exploit poc in:name,description,readme",
+              ]
+              for query in queries:
+                  url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({
+                      "q": query,
+                      "sort": "updated",
+                      "order": "desc",
+                      "per_page": "10",
+                  })
+                  data = fetch_json(url)
+                  repos = data.get("items", []) if isinstance(data.get("items"), list) else []
+                  ranked = sorted(((repo_score(repo, cve), repo) for repo in repos), key=lambda item: item[0], reverse=True)
+                  for score, repo in ranked:
+                      if score >= 45 and repo.get("html_url"):
+                          owner = repo.get("owner", {}) if isinstance(repo.get("owner"), dict) else {}
+                          return {
+                              "score": score,
+                              "url": repo["html_url"],
+                              "owner": owner.get("login") or repo.get("full_name", "").split("/")[0],
+                              "owner_url": owner.get("html_url") or "",
+                              "name": repo.get("full_name", ""),
+                              "description": repo.get("description") or "",
+                              "language": repo.get("language") or "",
+                              "pushed_at": repo.get("pushed_at") or "",
+                          }
               return None
 
           def format_added(first_seen_at: str) -> str:
@@ -585,9 +589,11 @@ jobs:
               if len(entries) >= 18:
                   break
 
-          if len(entries) < 5 and OUT.exists():
-              print("warn: not enough live entries, preserving existing vulns.json")
+          if not entries and OUT.exists():
+              print("warn: no live entries found, preserving existing vulns.json")
               raise SystemExit(0)
+          if len(entries) < 5:
+              print(f"warn: only {len(entries)} live entries found, writing the smaller fresh feed")
 
           payload = {
               "updatedAt": now_utc.isoformat().replace("+00:00", "Z"),
