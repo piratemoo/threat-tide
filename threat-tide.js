@@ -104,7 +104,7 @@
         <nav class="pm-panel pm-menu" aria-label="Vulnerability sections"></nav>
 
         <section class="pm-panel pm-filters" aria-label="Filter vulnerabilities">
-          <input data-filter="query" placeholder="Search CVE, product, primitive, researcher" aria-label="Search vulnerabilities">
+          <input data-filter="query" placeholder="Search CVE, vulnerability, paper, researcher" aria-label="Search vulnerabilities">
           <select data-filter="severity" aria-label="Severity">
             <option value="all">All severity</option>
             <option value="critical">critical</option>
