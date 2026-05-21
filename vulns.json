@@ -1,675 +1,437 @@
 {
-  "updatedAt": "2026-05-20T22:33:43.741Z",
+  "updatedAt": "2026-05-21T04:05:07Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
+  "sources": [
+    "CISA KEV",
+    "FIRST EPSS",
+    "NVD",
+    "GitHub Search",
+    "Project Zero",
+    "watchTowr Labs",
+    "Horizon3 Attack Team",
+    "ZDI",
+    "NCC Group Research",
+    "Bishop Fox",
+    "Elastic Security Labs",
+    "ProjectDiscovery",
+    "GitHub Security Lab",
+    "Wiz Research",
+    "Aqua Nautilus",
+    "Synacktiv"
+  ],
   "vulns": [
     {
-      "cve": "CVE-2024-4577",
-      "title": "PHP-CGI argument injection with public watchTowr exploit",
+      "cve": "CVE-2026-41940",
+      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical.",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
       "reliability": "reliable exploit",
       "researcher": "watchTowr Labs",
-      "researcherUrl": "https://x.com/watchtowrcyber",
+      "researcherUrl": "https://labs.watchtowr.com/the-internet-is-falling-down-falling-down-falling-down-cpanel-whm-authentication-bypass-cve-2026-41940/",
       "pocWorks": "Yes",
       "added": "tracked",
-      "language": "Python",
-      "summary": "PHP-CGI argument injection on affected Windows locale deployments gives a practical remote code execution path with a public researcher poc.",
-      "breakdown": "The useful signal is not the CVSS number; it is the narrow but very real deployment pattern. Hunt for PHP-CGI behind Apache/XAMPP-style stacks, especially externally reachable Windows hosts using affected locales or equivalent argument parsing exposure.",
-      "whatBroke": "PHP-CGI argument handling could be coerced through Windows character conversion behavior, turning request parameters into interpreter switches.",
-      "reality": "Realistic against the right PHP-CGI deployment shape. The public watchTowr poc is a useful validator, but broad scanning still needs environment checks.",
-      "chains": "Initial web RCE, webshell placement, credential collection, lateral movement from legacy Windows web hosts, and follow-on identity abuse.",
-      "weaponized": "Likely and already attractive because the bug sits on internet-facing web stacks and has a clean public exploit path.",
+      "language": "public tooling",
+      "summary": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.885, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where cPanel & WHM and WP2 (WordPress Squared) sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
       "tags": [
         "Cloud",
         "Webstack",
-        "RCE",
+        "Auth Bypass",
         "KEV"
       ],
-      "confidence": 94,
-      "weaponization": 96,
+      "confidence": 98,
+      "weaponization": 99,
       "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/watchtowrlabs/CVE-2024-4577"
+          "https://github.com/Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC"
         ],
         [
           "Technical Paper",
-          "https://labs.watchtowr.com/no-way-php-strikes-again-cve-2024-4577/"
+          "https://labs.watchtowr.com/the-internet-is-falling-down-falling-down-falling-down-cpanel-whm-authentication-bypass-cve-2026-41940/"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/php/php-src/security/advisories/GHSA-3qgc-jrrr-25jv"
+          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
         ]
       ]
     },
     {
-      "cve": "NO-CVE",
-      "title": "AD CS template abuse remains chainable identity infrastructure debt",
-      "ecosystem": "windows",
-      "category": "adcs",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "@SpecterOps",
-      "researcherUrl": "https://x.com/SpecterOps",
-      "pocWorks": "Yes",
-      "added": "watch",
-      "language": "Python / C#",
-      "summary": "Misconfigured certificate templates and enrollment paths continue to turn ordinary domain access into durable identity escalation opportunities.",
-      "breakdown": "Track template enrollment rights, manager approval bypasses, ESC-style paths, NTLM relay to certificate endpoints, and whether recent hardening changed exploit reliability in the target estate.",
-      "whatBroke": "Certificate trust and enrollment policy can permit authentication material issuance beyond intended privilege boundaries.",
-      "reality": "Highly realistic where templates, web enrollment, or relay conditions line up. This is configuration-driven, not patch-only.",
-      "chains": "NTLM relay, coercion, Kerberos abuse, low-priv domain footholds, and persistence through certificate lifetime.",
-      "weaponized": "Already operationalized in mature tooling. The variable is target configuration, not exploit state.",
-      "tags": [
-        "Windows",
-        "ADCS",
-        "Privilege Escalation"
-      ],
-      "confidence": 92,
-      "weaponization": 88,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/GhostPack/Certify"
-        ],
-        [
-          "Technical Paper",
-          "https://specterops.io/blog/2021/06/17/certified-pre-owned/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2024-1086",
-      "title": "Linux nf_tables UAF LPE with public repro chain",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "medium",
-      "proof": "working public poc",
-      "reliability": "partial exploit",
-      "researcher": "@Notselwyn",
-      "researcherUrl": "https://github.com/Notselwyn",
-      "pocWorks": "Yes",
-      "added": "tracked",
-      "language": "C",
-      "summary": "nf_tables use-after-free research remains useful for local privilege escalation triage on affected Linux kernels with public exploit code available.",
-      "breakdown": "The operational value is kernel exposure mapping, namespace/container preconditions, and whether the target fleet carries vulnerable kernel lines. Treat pocs as environment-sensitive but worth validating in lab images that mirror production.",
-      "whatBroke": "A kernel memory lifetime bug in nf_tables can permit local code to shape a privilege escalation primitive.",
-      "reality": "Realistic where affected kernels and required local execution conditions line up. The exploit path is public, but reliability depends on kernel build and mitigations.",
-      "chains": "Initial foothold, container escape research, local privilege escalation, and persistence setup after low-priv execution.",
-      "weaponized": "Likely in targeted post-exploitation workflows. Less useful as a drive-by issue, valuable once an operator already has code execution.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 88,
-      "weaponization": 72,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Notselwyn/CVE-2024-1086"
-        ],
-        [
-          "Technical Paper",
-          "https://pwning.tech/nftables/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2024-0044",
-      "title": "Android run-as package installer forgery with public bypass poc",
-      "ecosystem": "android",
-      "category": "framework",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Meta RTX / canyie",
-      "researcherUrl": "https://rtx.meta.security/exploitation/2024/03/04/Android-run-as-forgery.html",
-      "pocWorks": "Yes",
-      "added": "tracked",
-      "language": "Shell / Java",
-      "summary": "Android PackageInstaller input validation can be abused from an adb foothold to run code as another installed app, which makes it useful for app-data access and device-lab privilege testing.",
-      "breakdown": "This is not remote initial access, but it is useful mobile tradecraft once an operator has adb, local debugging access, or a chained device foothold. The real value is crossing app UID boundaries and validating whether fleet devices carry the vulnerable framework behavior.",
-      "whatBroke": "PackageInstaller session creation accepted crafted input that crossed into the downstream run-as path and confused which app identity should be used.",
-      "reality": "Realistic under local/adb preconditions. The public bypass poc is repeatable for validation on affected Android builds.",
-      "chains": "ADB access, malicious local app workflow, app data access, token theft from targeted apps, and follow-on mobile persistence testing.",
-      "weaponized": "Likely as a post-access mobile primitive. It is not broad remote exploitation, but it is practical in device labs and chained workflows.",
-      "tags": [
-        "Android",
-        "Framework",
-        "Local LPE"
-      ],
-      "confidence": 86,
-      "weaponization": 68,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/canyie/CVE-2024-0044"
-        ],
-        [
-          "Technical Paper",
-          "https://rtx.meta.security/exploitation/2024/03/04/Android-run-as-forgery.html"
-        ],
-        [
-          "Vendor Advisory",
-          "https://source.android.com/security/bulletin/2024-03-01"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2023-32434",
-      "title": "iOS kfd kernel r/w primitive with public exploit library",
-      "ecosystem": "ios",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "partial exploit",
-      "researcher": "Kaspersky GReAT / kfd",
-      "researcherUrl": "https://securelist.com/operation-triangulation-the-last-hardware-mystery/111669/",
-      "pocWorks": "Yes",
-      "added": "tracked",
-      "language": "C / Objective-C",
-      "summary": "Public kfd-style exploit code provides kernel memory access primitives on supported iOS versions, with value depending heavily on device model, build, and exploit method.",
-      "breakdown": "This belongs in mobile triage because iOS kernel primitives are chain material, not because they are universally push-button. Track supported device/version ranges, installation preconditions, and whether a public primitive can pair with CoreTrust, WebKit, or sandbox escape work.",
-      "whatBroke": "An Apple kernel integer overflow path could be shaped into kernel privilege code execution or kernel memory read/write under the right conditions.",
-      "reality": "Realistic in supported lab/device conditions. Reliability is version-specific and should be validated against exact hardware and iOS builds.",
-      "chains": "WebKit or app foothold, sandbox escape, kernel r/w primitive, CoreTrust-style signing bypass, jailbreak tooling, and mobile implant research.",
-      "weaponized": "Likely in high-end chains, but public tooling is mostly useful for research, validation, and jailbreak-adjacent workflows.",
-      "tags": [
-        "iOS",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 84,
-      "weaponization": 66,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/GeoSn0w/kfd-exploit"
-        ],
-        [
-          "Technical Paper",
-          "https://securelist.com/operation-triangulation-the-last-hardware-mystery/111669/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/HT213808"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2024-27198",
-      "title": "TeamCity auth bypass to CI server code execution",
+      "cve": "CVE-2024-27199",
+      "title": "JetBrains TeamCity Relative Path Traversal Vulnerability with public poc signal",
       "ecosystem": "cloud",
       "category": "devops",
       "severity": "critical",
       "proof": "working public poc",
       "reliability": "reliable exploit",
-      "researcher": "Rapid7",
-      "researcherUrl": "https://www.rapid7.com/blog/",
+      "researcher": "Stuub",
+      "researcherUrl": "https://github.com/Stuub/RCity-CVE-2024-27198",
       "pocWorks": "Yes",
-      "added": "1d ago",
-      "language": "Python",
-      "summary": "JetBrains TeamCity authentication bypass remains operator-relevant because CI servers often sit near secrets, deployment keys, and build trust.",
-      "breakdown": "The exploit path is valuable because the target is not just an app server; it is a software supply-chain control point. Prioritize exposed TeamCity, forgotten agents, and credential material available to build runners.",
-      "whatBroke": "A request path allowed authentication bypass against TeamCity administrative surfaces.",
-      "reality": "Realistic where exposed instances lag patching. Public exploit code and scanner checks make validation straightforward.",
-      "chains": "CI secrets theft, build pipeline compromise, package tampering, cloud credential reuse, and lateral movement through deployment automation.",
-      "weaponized": "Likely. CI products convert initial access into broad environment leverage quickly.",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "JetBrains TeamCity contains a relative path traversal vulnerability that could allow limited admin actions to be performed. Public tooling signal: Stuub/RCity-CVE-2024-27198.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.909, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "JetBrains TeamCity contains a relative path traversal vulnerability that could allow limited admin actions to be performed.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Stuub/RCity-CVE-2024-27198.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where TeamCity sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
       "tags": [
         "Cloud",
         "DevOps",
-        "RCE"
+        "RCE",
+        "KEV"
       ],
-      "confidence": 90,
-      "weaponization": 86,
-      "dayOffset": 1,
-      "links": [
-        [
-          "Tooling",
-          "https://github.com/rapid7/metasploit-framework"
-        ],
-        [
-          "Technical Paper",
-          "https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://blog.jetbrains.com/teamcity/2024/03/additional-critical-security-issues-affecting-teamcity-on-premises-cve-2024-27198-and-cve-2024-27199-update-to-2023-11-4-now/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2024-1709",
-      "title": "ScreenConnect authentication bypass with instant fleet value",
-      "ecosystem": "windows",
-      "category": "rmm",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "ConnectWise / Huntress",
-      "researcherUrl": "https://www.huntress.com/blog",
-      "pocWorks": "Yes",
-      "added": "1d ago",
-      "language": "Python / HTTP",
-      "summary": "ScreenConnect auth bypass is high-signal because RMM compromise often means privileged access across many downstream machines.",
-      "breakdown": "Operator value is in blast radius: remote management tools collapse many endpoints into one control plane. Prioritize internet exposure, unknown admin creation, and historical persistence left by opportunistic exploitation.",
-      "whatBroke": "A setup/authentication flow could be abused to gain administrative control without valid credentials.",
-      "reality": "Very realistic on exposed and unpatched appliances. public pocs made opportunistic validation trivial.",
-      "chains": "RMM control, endpoint command execution, credential theft, lateral movement, and MSP-style downstream compromise.",
-      "weaponized": "Already weaponized in broad scanning and intrusion workflows.",
-      "tags": [
-        "Windows",
-        "RMM",
-        "Auth Bypass"
-      ],
-      "confidence": 93,
-      "weaponization": 94,
-      "dayOffset": 1,
-      "links": [
-        [
-          "Tooling",
-          "https://github.com/rapid7/metasploit-framework"
-        ],
-        [
-          "Technical Paper",
-          "https://www.huntress.com/blog/a-catastrophe-for-control-understanding-the-screenconnect-authentication-bypass"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2024-23897",
-      "title": "Jenkins CLI file read that chains into controller compromise",
-      "ecosystem": "linux",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "partial exploit",
-      "researcher": "SonarSource",
-      "researcherUrl": "https://www.sonarsource.com/blog/",
-      "pocWorks": "Yes",
-      "added": "2d ago",
-      "language": "Java / Python",
-      "summary": "Jenkins arbitrary file read is useful when it exposes secrets, crumb issuers, credentials, or plugin state that can be chained into execution.",
-      "breakdown": "Treat this as a chain primitive rather than a one-shot RCE. The interesting question is what sensitive files are readable in the target controller context and whether those secrets unlock job execution or admin paths.",
-      "whatBroke": "Jenkins CLI argument expansion allowed unauthorized file content disclosure from the controller.",
-      "reality": "Realistic as an information disclosure and chain step. Exploit quality depends on target hardening and reachable secrets.",
-      "chains": "Credential recovery, Jenkins admin takeover, build job execution, SCM token theft, and cloud deployment key abuse.",
-      "weaponized": "Likely as a chaining primitive. It is especially valuable on CI systems with broad secrets.",
-      "tags": [
-        "Linux",
-        "DevOps",
-        "File Read"
-      ],
-      "confidence": 86,
-      "weaponization": 78,
-      "dayOffset": 2,
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/jenkinsci-cert/SECURITY-3314-3315"
-        ],
-        [
-          "Technical Paper",
-          "https://www.sonarsource.com/blog/excessive-expansion-uncovering-critical-security-vulnerabilities-in-jenkins/"
+          "https://github.com/Stuub/RCity-CVE-2024-27198"
         ],
         [
           "Vendor Advisory",
-          "https://www.jenkins.io/security/advisory/2024-01-24/"
+          "https://www.jetbrains.com/privacy-security/issues-fixed/"
         ]
       ]
     },
     {
-      "cve": "CVE-2023-4966",
-      "title": "Citrix Bleed session theft with durable edge-access value",
+      "cve": "CVE-2025-64446",
+      "title": "Fortinet FortiWeb Path Traversal Vulnerability with public poc signal",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://labs.watchtowr.com/when-the-impersonation-function-gets-used-to-impersonate-users-fortinet-fortiweb-auth-bypass/",
+      "pocWorks": "Yes",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "Fortinet FortiWeb contains a relative path traversal vulnerability that may allow an unauthenticated attacker to execute administrative commands on the system via crafted HTTP or HTTPS requests. Public.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.929, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "Fortinet FortiWeb contains a relative path traversal vulnerability that may allow an unauthenticated attacker to execute administrative commands on the system via crafted HTTP or HTTPS requests.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at eagle-nett/FORTIWEB_CVE-2025-64446-58034.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where FortiWeb sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "File Read",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/eagle-nett/FORTIWEB_CVE-2025-64446-58034"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/when-the-impersonation-function-gets-used-to-impersonate-users-fortinet-fortiweb-auth-bypass/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.fortiguard.com/psirt/FG-IR-25-910"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-3055",
+      "title": "Citrix NetScaler Out-of-Bounds Read Vulnerability with public poc signal",
       "ecosystem": "cloud",
       "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
       "reliability": "reliable exploit",
-      "researcher": "Assetnote",
-      "researcherUrl": "https://www.assetnote.io/resources/research",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://labs.watchtowr.com/please-we-beg-just-one-weekend-free-of-appliances-citrix-netscaler-cve-2026-3055-memory-overread-part-2/",
       "pocWorks": "Yes",
-      "added": "2d ago",
-      "language": "Python",
-      "summary": "Citrix ADC/Gateway session disclosure stays relevant because stolen sessions can bypass normal credential and MFA assumptions.",
-      "breakdown": "This is an access primitive. Look for historic compromise, active sessions created before patching, persistence after appliance remediation, and whether session theft fed downstream identity abuse.",
-      "whatBroke": "A memory disclosure issue exposed sensitive session material from Citrix ADC/Gateway.",
-      "reality": "Realistic against affected edge appliances. public pocs made validation and theft workflows accessible.",
-      "chains": "Session hijack, VPN access, internal discovery, credential collection, and identity pivoting.",
-      "weaponized": "Already observed and operationally valuable because it bypasses password-centric thinking.",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "Citrix NetScaler ADC (formerly Citrix ADC), NetScaler Gateway (formerly Citrix Gateway) and NetScaler ADC FIPS and NDcPP contain an out-of-bounds reads vulnerability when configured as a SAML IDP leading to.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.800, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "Citrix NetScaler ADC (formerly Citrix ADC), NetScaler Gateway (formerly Citrix Gateway) and NetScaler ADC FIPS and NDcPP contain an out-of-bounds reads vulnerability when configured as a SAML IDP leading to memory overread.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fevar54/CVE-2026-3055---Citrix-NetScaler-Memory-Overread-PoC.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where NetScaler sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
       "tags": [
         "Cloud",
         "VPN Edge",
         "Session Theft",
         "KEV"
       ],
-      "confidence": 94,
-      "weaponization": 95,
-      "dayOffset": 2,
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/assetnote/exploits"
+          "https://github.com/fevar54/CVE-2026-3055---Citrix-NetScaler-Memory-Overread-PoC"
         ],
         [
           "Technical Paper",
-          "https://www.assetnote.io/resources/research/citrix-bleed-leaking-session-tokens-with-cve-2023-4966"
+          "https://labs.watchtowr.com/please-we-beg-just-one-weekend-free-of-appliances-citrix-netscaler-cve-2026-3055-memory-overread-part-2/"
         ],
         [
           "Vendor Advisory",
-          "https://support.citrix.com/article/CTX579459"
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696300&articleURL=NetScaler_ADC_and_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_3055_and_CVE_2026_4368"
         ]
       ]
     },
     {
-      "cve": "CVE-2024-6387",
-      "title": "OpenSSH regreSSHion as high-friction but important RCE research",
-      "ecosystem": "linux",
-      "category": "ssh",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "partial exploit",
-      "researcher": "Qualys TRU",
-      "researcherUrl": "https://www.qualys.com/regresshion-cve-2024-6387/",
-      "pocWorks": "Yes",
-      "added": "3d ago",
-      "language": "C",
-      "summary": "OpenSSH signal-handler race research matters because SSH exposure is universal, even when exploitation is timing-sensitive and target-dependent.",
-      "breakdown": "This belongs in the archive because it is not easy-button exploitation, but the blast radius and service ubiquity are too important to ignore. Track exploit improvements, target architecture reliability, and distro-specific exposure.",
-      "whatBroke": "A regression reintroduced an unsafe signal-handler race condition in sshd.",
-      "reality": "Realistic in lab and select environments; difficult at scale without target-specific reliability work.",
-      "chains": "Internet SSH exposure, unauthenticated foothold attempts, post-exploit privilege context, and infrastructure-wide scanning.",
-      "weaponized": "Possible when reliability improves. Treat current public pocs as validation signals, not guaranteed commodity exploitation.",
-      "tags": [
-        "Linux",
-        "SSH",
-        "RCE"
-      ],
-      "confidence": 82,
-      "weaponization": 64,
-      "dayOffset": 3,
-      "links": [
-        [
-          "Technical Paper",
-          "https://www.qualys.com/regresshion-cve-2024-6387/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.openssh.com/txt/release-9.8"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2024-21762",
-      "title": "FortiOS SSL-VPN RCE on exposed perimeter appliances",
+      "cve": "CVE-2026-20127",
+      "title": "Cisco Catalyst SD-WAN Controller and Manager Authentication Bypass Vulnerability with.",
       "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "partial exploit",
-      "researcher": "Fortinet PSIRT",
-      "researcherUrl": "https://www.fortiguard.com/psirt",
-      "pocWorks": "Yes",
-      "added": "3d ago",
-      "language": "Python",
-      "summary": "FortiOS SSL-VPN bugs stay high priority because exposed VPN appliances create direct edge-to-internal pivot opportunities.",
-      "breakdown": "Focus on version exposure, SSL-VPN enablement, appliance logs, and whether public exploit variants are converging into reliable checks versus noisy crashers.",
-      "whatBroke": "A FortiOS SSL-VPN vulnerability could permit code execution under specific appliance conditions.",
-      "reality": "Realistic for vulnerable exposed appliances, but poc reliability varies by build and target condition.",
-      "chains": "Perimeter RCE, credential harvesting, VPN trust abuse, internal discovery, and persistence on network edge.",
-      "weaponized": "Likely when reliable exploit variants are available. Edge appliance bugs are routinely folded into operator workflows.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE"
-      ],
-      "confidence": 84,
-      "weaponization": 82,
-      "dayOffset": 3,
-      "links": [
-        [
-          "Vendor Advisory",
-          "https://www.fortiguard.com/psirt/FG-IR-24-015"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2023-3519",
-      "title": "Citrix ADC unauthenticated RCE with proven intrusion history",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
+      "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
       "reliability": "reliable exploit",
-      "researcher": "Citrix / Assetnote",
-      "researcherUrl": "https://www.assetnote.io/resources/research",
+      "researcher": "sfewer-r7",
+      "researcherUrl": "https://github.com/sfewer-r7/CVE-2026-20127",
       "pocWorks": "Yes",
-      "added": "4d ago",
-      "language": "Python",
-      "summary": "Unauthenticated Citrix ADC/Gateway RCE remains archetypal edge-device risk: exploitable perimeter code with immediate internal-access implications.",
-      "breakdown": "Archive value is in exploit archaeology and historical compromise review. Even patched estates need incident review for webshells, appliance persistence, and stolen credentials.",
-      "whatBroke": "Citrix ADC/Gateway exposed an unauthenticated path to code execution on vulnerable appliances.",
-      "reality": "Highly realistic on affected exposed systems. The vulnerability has public exploit paths and strong historical exploitation signal.",
-      "chains": "Perimeter foothold, webshell, credential theft, internal pivoting, and appliance persistence.",
-      "weaponized": "Already weaponized; the main question is lingering compromise, not exploit possibility.",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.590, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote attacker to bypass authentication.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sfewer-r7/CVE-2026-20127.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where Catalyst SD-WAN Controller and Manager sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/sfewer-r7/CVE-2026-20127"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-34197",
+      "title": "Apache ActiveMQ Improper Input Validation Vulnerability with public poc signal",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "keraattin",
+      "researcherUrl": "https://github.com/keraattin/CVE-2026-34197",
+      "pocWorks": "Yes",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "Apache ActiveMQ contains an improper input validation vulnerability that allows for code injection. Public tooling signal: keraattin/CVE-2026-34197.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.758, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "Apache ActiveMQ contains an improper input validation vulnerability that allows for code injection.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at keraattin/CVE-2026-34197.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where ActiveMQ sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/keraattin/CVE-2026-34197"
+        ],
+        [
+          "Vendor Advisory",
+          "https://activemq.apache.org/security-advisories.data/CVE-2026-34197-announcement.txt"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-35616",
+      "title": "Fortinet FortiClient EMS Improper Access Control Vulnerability with public poc signal",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "Bishop Fox",
+      "researcherUrl": "https://bishopfox.com/blog/api-authentication-bypass-in-forticlient-ems-7-4-5-7-4-6-cve-2026-35616",
+      "pocWorks": "Yes",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "Fortinet FortiClient EMS contains an improper access control vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests. Public tooling signal:.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.448, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "Fortinet FortiClient EMS contains an improper access control vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Alaatk/CVE-2026-35616.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where FortiClient EMS sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
       "tags": [
         "Cloud",
         "VPN Edge",
         "RCE",
         "KEV"
       ],
-      "confidence": 95,
-      "weaponization": 96,
-      "dayOffset": 4,
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 2,
       "links": [
         [
-          "Tooling",
-          "https://github.com/rapid7/metasploit-framework"
+          "GitHub",
+          "https://github.com/Alaatk/CVE-2026-35616"
         ],
         [
           "Technical Paper",
-          "https://www.assetnote.io/resources/research/analysis-of-cve-2023-3519-in-citrix-adc-and-gateway"
+          "https://bishopfox.com/blog/api-authentication-bypass-in-forticlient-ems-7-4-5-7-4-6-cve-2026-35616"
         ],
         [
           "Vendor Advisory",
-          "https://support.citrix.com/article/CTX561482"
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-099"
         ]
       ]
     },
     {
-      "cve": "CVE-2024-0204",
-      "title": "GoAnywhere auth bypass with file-transfer blast radius",
+      "cve": "CVE-2025-52691",
+      "title": "SmarterTools SmarterMail Unrestricted Upload of File with Dangerous Type Vulnerability.",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "reliability": "reliable exploit",
-      "researcher": "Fortra",
-      "researcherUrl": "https://www.fortra.com/security/advisories",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://labs.watchtowr.com/do-smart-people-ever-say-theyre-smart-smartertools-smartermail-pre-auth-rce-cve-2025-52691/",
       "pocWorks": "Yes",
-      "added": "4d ago",
-      "language": "Python / HTTP",
-      "summary": "Managed file transfer bugs deserve archive space because they often sit near sensitive data flows and partner trust boundaries.",
-      "breakdown": "Treat this as data-access and control-plane risk. Public exploitability matters less than what the application stores, transfers, and authenticates to downstream.",
-      "whatBroke": "An authentication bypass condition exposed administrative or sensitive application paths.",
-      "reality": "Realistic against vulnerable deployments. public pocs make validation straightforward.",
-      "chains": "Data theft, credential recovery, partner trust abuse, scheduled transfer tampering, and follow-on webshell or admin actions.",
-      "weaponized": "Likely in data theft operations due to the target class.",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "SmarterTools SmarterMail contains an unrestricted upload of file with dangerous type vulnerability that could allow an unauthenticated attacker to upload arbitrary files to any location on the mail server,.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.874, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "SmarterTools SmarterMail contains an unrestricted upload of file with dangerous type vulnerability that could allow an unauthenticated attacker to upload arbitrary files to any location on the mail server, potentially enabling remote code.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ninjazan420/CVE-2025-52691-PoC-SmarterMail-authentication-bypass-exploit-WT-2026-0001.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where SmarterMail sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
       "tags": [
         "Cloud",
-        "File Transfer",
-        "Auth Bypass"
-      ],
-      "confidence": 82,
-      "weaponization": 78,
-      "dayOffset": 4,
-      "links": [
-        [
-          "Vendor Advisory",
-          "https://www.fortra.com/security/advisories/product-security/fi-2024-001"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2023-22518",
-      "title": "Confluence data-center takeover path with public exploit flow",
-      "ecosystem": "linux",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Atlassian",
-      "researcherUrl": "https://confluence.atlassian.com/security/",
-      "pocWorks": "Yes",
-      "added": "5d ago",
-      "language": "Python / HTTP",
-      "summary": "Confluence remains a high-signal target when public exploit flows lead to administrative control or content-backed credential exposure.",
-      "breakdown": "Prioritize exposed Confluence, backup/restore behavior, app links, stored credentials, and marketplace plugin blast radius.",
-      "whatBroke": "A vulnerable Confluence path enabled improper control of instance state and administrative outcomes.",
-      "reality": "Realistic on exposed vulnerable instances. Public exploit automation exists and is easy to validate.",
-      "chains": "Admin takeover, user directory access, stored secrets, plugin deployment, and internal documentation mining.",
-      "weaponized": "Likely and historically common due to Confluence's enterprise footprint.",
-      "tags": [
-        "Linux",
         "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 88,
-      "weaponization": 86,
-      "dayOffset": 5,
-      "links": [
-        [
-          "Tooling",
-          "https://github.com/rapid7/metasploit-framework"
-        ],
-        [
-          "Vendor Advisory",
-          "https://confluence.atlassian.com/security/cve-2023-22518-improper-authorization-vulnerability-in-confluence-data-center-and-server-1311473907.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2023-34362",
-      "title": "MOVEit Transfer SQLi-to-RCE exploitation archeology",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Progress / Huntress",
-      "researcherUrl": "https://www.huntress.com/blog",
-      "pocWorks": "Yes",
-      "added": "5d ago",
-      "language": "Python / SQL",
-      "summary": "MOVEit remains a useful archive anchor for file-transfer exploitation, data theft workflows, and web app compromise at enterprise scale.",
-      "breakdown": "Track this as exploit archaeology: the target class, webshell deployment pattern, and data-theft motivation matter more than just the CVE mechanics.",
-      "whatBroke": "SQL injection in MOVEit Transfer enabled unauthorized access and paths toward code execution or data extraction.",
-      "reality": "Realistic against vulnerable exposed systems. Public exploit workflows are mature.",
-      "chains": "SQLi, webshell, file inventory, bulk exfiltration, credential reuse, and extortion operations.",
-      "weaponized": "Already weaponized and historically exploited at scale.",
-      "tags": [
-        "Windows",
-        "File Transfer",
-        "SQLi",
+        "Auth Bypass",
         "KEV"
       ],
-      "confidence": 94,
-      "weaponization": 95,
-      "dayOffset": 5,
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 2,
       "links": [
         [
-          "Tooling",
-          "https://github.com/rapid7/metasploit-framework"
+          "GitHub",
+          "https://github.com/ninjazan420/CVE-2025-52691-PoC-SmarterMail-authentication-bypass-exploit-WT-2026-0001"
         ],
         [
           "Technical Paper",
-          "https://www.huntress.com/blog/moveit-transfer-critical-vulnerability-rapid-response"
+          "https://labs.watchtowr.com/do-smart-people-ever-say-theyre-smart-smartertools-smartermail-pre-auth-rce-cve-2025-52691/"
         ],
         [
           "Vendor Advisory",
-          "https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023"
+          "https://www.smartertools.com/smartermail/release-notes/current"
         ]
       ]
     },
     {
-      "cve": "CVE-2024-36401",
-      "title": "GeoServer property expression RCE with public exploit pressure",
-      "ecosystem": "linux",
+      "cve": "CVE-2026-1340",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM) Code Injection Vulnerability with public poc signal",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://labs.watchtowr.com/someone-knows-bash-far-too-well-and-we-love-it-ivanti-epmm-pre-auth-rces-cve-2026-1281-cve-2026-1340/",
+      "pocWorks": "Yes",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "Ivanti Endpoint Manager Mobile (EPMM) contains a code injection vulnerability that could allow attackers to achieve unauthenticated remote code execution. Public tooling signal:.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.707, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "Ivanti Endpoint Manager Mobile (EPMM) contains a code injection vulnerability that could allow attackers to achieve unauthenticated remote code execution.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at YunfeiGE18/CVE-2026-1281-CVE-2026-1340-Ivanti-EPMM-RCE.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where Endpoint Manager Mobile (EPMM) sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/YunfeiGE18/CVE-2026-1281-CVE-2026-1340-Ivanti-EPMM-RCE"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/someone-knows-bash-far-too-well-and-we-love-it-ivanti-epmm-pre-auth-rces-cve-2026-1281-cve-2026-1340/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340?language=en_US"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20182",
+      "title": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability with public poc signal",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
       "reliability": "reliable exploit",
-      "researcher": "GeoServer",
-      "researcherUrl": "https://geoserver.org/",
+      "researcher": "fangbarristerbar",
+      "researcherUrl": "https://github.com/fangbarristerbar/CVE-2026-20182-POC",
       "pocWorks": "Yes",
-      "added": "6d ago",
-      "language": "Python / Java",
-      "summary": "GeoServer RCE deserves archive attention because internet-facing geospatial stacks are often neglected but hold privileged data access.",
-      "breakdown": "The operational question is exposure and data sensitivity. Public exploit pressure means even niche middleware belongs in daily triage when exposed.",
-      "whatBroke": "Unsafe property expression handling exposed remote code execution in vulnerable GeoServer deployments.",
-      "reality": "Realistic on exposed vulnerable servers. pocs are public and validation is straightforward.",
-      "chains": "Web RCE, data store credential theft, internal database reach, cloud credential discovery, and webshell persistence.",
-      "weaponized": "Likely where exposed. Niche software becomes high-value when internet-facing and scriptable.",
+      "added": "tracked",
+      "language": "public tooling",
+      "summary": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an.",
+      "breakdown": "Operator signal is the combination of KEV exploitation, EPSS 0.237, and a public repo that appears exploit-focused. Validate exact product version and exposure before promoting to active operations.",
+      "whatBroke": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fangbarristerbar/CVE-2026-20182-POC.",
+      "chains": "Use as a chain primitive for initial access, credential access, lateral movement, or control-plane compromise depending on where Catalyst SD-WAN sits in the estate.",
+      "weaponized": "Likely worth tracking because KEV confirms exploitation pressure and public tooling exists.",
       "tags": [
-        "Linux",
+        "Cloud",
         "Webstack",
-        "RCE"
+        "Auth Bypass",
+        "KEV"
       ],
-      "confidence": 88,
-      "weaponization": 84,
-      "dayOffset": 6,
+      "confidence": 98,
+      "weaponization": 91,
+      "dayOffset": 3,
       "links": [
         [
-          "Vendor Advisory",
-          "https://geoserver.org/vulnerability/2024/09/12/cve-2024-36401.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2024-20767",
-      "title": "Adobe ColdFusion arbitrary file read as credential-recovery chain step",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "partial exploit",
-      "researcher": "Adobe",
-      "researcherUrl": "https://helpx.adobe.com/security.html",
-      "pocWorks": "Yes",
-      "added": "6d ago",
-      "language": "Python / HTTP",
-      "summary": "ColdFusion file read issues are useful when they expose admin secrets, datasource credentials, or configuration that unlocks execution paths.",
-      "breakdown": "Treat as a chain primitive. The value comes from what the server stores: datasource passwords, admin hashes, templates, and integration secrets.",
-      "whatBroke": "A vulnerable ColdFusion path allowed unauthorized file disclosure under certain conditions.",
-      "reality": "Realistic as a file disclosure primitive. Execution depends on discovered secrets and reachable admin workflows.",
-      "chains": "File read, credential recovery, admin login, scheduled task abuse, template upload, and database pivot.",
-      "weaponized": "Moderately likely because ColdFusion has a long history of reliable exploitation chains.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "File Read"
-      ],
-      "confidence": 80,
-      "weaponization": 70,
-      "dayOffset": 6,
-      "links": [
+          "GitHub",
+          "https://github.com/fangbarristerbar/CVE-2026-20182-POC"
+        ],
         [
           "Vendor Advisory",
-          "https://helpx.adobe.com/security/products/coldfusion/apsb24-14.html"
+          "https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems"
         ]
       ]
     }
