@@ -243,13 +243,24 @@ jobs:
                   if item.get("lang") == "en":
                       desc = item.get("value", "")
                       break
-              refs = [ref.get("url", "") for ref in cve_data.get("references", {}).get("referenceData", []) if ref.get("url")]
+              raw_refs = cve_data.get("references", [])
+              if isinstance(raw_refs, dict):
+                  raw_refs = raw_refs.get("referenceData", [])
+              refs = [
+                  ref.get("url", "")
+                  for ref in raw_refs
+                  if isinstance(ref, dict) and ref.get("url")
+              ]
               metrics = cve_data.get("metrics", {})
               severity = ""
-              for key in ("cvssMetricV31", "cvssMetricV30", "cvssMetricV2"):
-                  if metrics.get(key):
-                      severity = metrics[key][0].get("cvssData", {}).get("baseSeverity") or metrics[key][0].get("baseSeverity", "")
-                      break
+              if isinstance(metrics, dict):
+                  for key in ("cvssMetricV31", "cvssMetricV30", "cvssMetricV2"):
+                      rows = metrics.get(key)
+                      if isinstance(rows, list) and rows:
+                          row = rows[0] if isinstance(rows[0], dict) else {}
+                          cvss = row.get("cvssData", {}) if isinstance(row.get("cvssData", {}), dict) else {}
+                          severity = cvss.get("baseSeverity") or row.get("baseSeverity", "")
+                          break
               return {"description": desc, "references": refs, "severity": severity}
 
           def repo_score(repo: dict, cve: str) -> int:
@@ -376,15 +387,19 @@ jobs:
               cve = item["cveID"].upper()
               if cve in seen:
                   continue
-              repo = github_candidate(cve)
-              if not repo:
+              try:
+                  repo = github_candidate(cve)
+                  if not repo:
+                      continue
+                  time.sleep(0.4)
+                  nvd = nvd_lookup(cve)
+                  mention = rss.get(cve, [None])[0]
+                  day_offset = min(6, len(entries) // 3)
+                  entries.append(make_entry(item, epss.get(cve, 0), repo, mention, nvd, day_offset))
+                  seen.add(cve)
+              except Exception as exc:
+                  print(f"warn: skipped {cve}: {exc}")
                   continue
-              time.sleep(0.4)
-              nvd = nvd_lookup(cve)
-              mention = rss.get(cve, [None])[0]
-              day_offset = min(6, len(entries) // 3)
-              entries.append(make_entry(item, epss.get(cve, 0), repo, mention, nvd, day_offset))
-              seen.add(cve)
               if len(entries) >= 18:
                   break
 
