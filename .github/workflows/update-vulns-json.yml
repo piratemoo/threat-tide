@@ -3,7 +3,8 @@ name: Update Threat Tide live vuln feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 5,13,21 * * *"
+    # GitHub cron is UTC. This lands around morning, afternoon, and evening in US Central time.
+    - cron: "17 2,14,20 * * *"
 
 permissions:
   contents: write
@@ -56,15 +57,14 @@ jobs:
               ("Project Zero", "https://googleprojectzero.blogspot.com/feeds/posts/default"),
               ("watchTowr Labs", "https://labs.watchtowr.com/rss/"),
               ("Horizon3 Attack Team", "https://www.horizon3.ai/feed/"),
+              ("Dirkjan Mollema", "https://dirkjanm.io/feed.xml"),
               ("ZDI", "https://www.zerodayinitiative.com/blog?format=rss"),
               ("NCC Group Research", "https://research.nccgroup.com/feed/"),
               ("Bishop Fox", "https://bishopfox.com/blog/rss.xml"),
               ("Elastic Security Labs", "https://www.elastic.co/security-labs/rss/feed.xml"),
-              ("ProjectDiscovery", "https://projectdiscovery.io/blog/rss.xml"),
               ("GitHub Security Lab", "https://github.blog/security/vulnerability-research/feed/"),
-              ("Wiz Research", "https://www.wiz.io/blog/rss.xml"),
-              ("Aqua Nautilus", "https://www.aquasec.com/blog/feed/"),
-              ("Synacktiv", "https://www.synacktiv.com/en/publications/feed.xml"),
+              ("Aqua Nautilus", "https://www.aquasec.com/feed/"),
+              ("Synacktiv", "https://www.synacktiv.com/en/feed/lastblog.xml"),
           ]
 
           HIGH_SIGNAL = {
