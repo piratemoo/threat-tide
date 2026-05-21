@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-21T22:23:39Z",
+  "updatedAt": "2026-05-21T22:54:32Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -7,6 +7,7 @@
     "FIRST EPSS",
     "NVD",
     "GitHub Search",
+    "GitHub Fresh PoC Discovery",
     "Google Security Blog",
     "Project Zero",
     "watchTowr Labs",
@@ -18,32 +19,663 @@
     "Elastic Security Labs",
     "GitHub Security Lab",
     "Aqua Nautilus",
-    "Synacktiv"
+    "Synacktiv",
+    "SSD Disclosure",
+    "Rapid7 Blog",
+    "Qualys Research",
+    "SonarSource",
+    "GitLab Releases",
+    "ProjectDiscovery",
+    "Kaspersky Securelist",
+    "Exodus Intelligence",
+    "The GitHub Blog Security"
   ],
   "vulns": [
     {
-      "cve": "CVE-2024-27199",
-      "title": "JetBrains TeamCity Relative Path Traversal Vulnerability with public poc signal",
-      "ecosystem": "cloud",
-      "category": "devops",
-      "severity": "high",
+      "cve": "CVE-2026-41940",
+      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical.",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
       "reliability": "reliable exploit",
-      "researcher": "Stuub",
-      "researcherUrl": "https://github.com/Stuub",
+      "researcher": "rfxn",
+      "researcherUrl": "https://github.com/rfxn",
       "pocWorks": "Yes",
       "difficulty": "moderate",
       "added": "11:33 PM CDT",
       "firstSeenAt": "2026-05-21T04:33:40Z",
-      "language": "Python",
-      "summary": "JetBrains TeamCity contains a relative path traversal vulnerability that could allow limited admin actions to be performed.",
-      "technicalSummary": "The exploit path abuses a trust boundary in TeamCity: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in TeamCity: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "JetBrains TeamCity contains a relative path traversal vulnerability that could allow limited admin actions to be performed.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Stuub/RCity-CVE-2024-27198.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Stuub/RCity-CVE-2024-27198\ncd RCity-CVE-2024-27198\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "language": "Shell",
+      "summary": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
+      "technicalSummary": "The exploit path abuses a trust boundary in cPanel & WHM and WP2 (WordPress Squared): attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in cPanel & WHM and WP2 (WordPress Squared): attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rfxn/cpanel-sessionscribe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rfxn/cpanel-sessionscribe\ncd cpanel-sessionscribe\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed TeamCity",
+        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/rfxn/cpanel-sessionscribe"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2021-22555",
+      "title": "Linux Kernel Heap Out-of-Bounds Write Vulnerability with public poc signal",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
+      "pocWorks": "Yes",
+      "difficulty": "situational",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "C",
+      "summary": "Linux Kernel contains a heap out-of-bounds write vulnerability that could allow an attacker to gain privileges or cause a DoS (via heap memory corruption) through user name space.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Linux Kernel contains a heap out-of-bounds write vulnerability that could allow an attacker to gain privileges or cause a DoS (via heap memory corruption) through user name space.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 95,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/netfilter/x_tables.c?id=9fa492cdc160cd27ce1046cb36f47d3b2b1efa21"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2024-4577",
+      "title": "PHP-CGI OS Command Injection Vulnerability with public poc signal",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "0xMarcio",
+      "researcherUrl": "https://github.com/0xMarcio",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "PHP, specifically Windows-based PHP used in CGI mode, contains an OS command injection vulnerability that allows for arbitrary code execution. This vulnerability is a patch bypass for CVE-2012-1823.",
+      "technicalSummary": "The exploit path abuses a trust boundary in PHP: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in PHP: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "PHP, specifically Windows-based PHP used in CGI mode, contains an OS command injection vulnerability that allows for arbitrary code execution. This vulnerability is a patch bypass for CVE-2012-1823.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xMarcio/cve.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xMarcio/cve\ncd cve\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed PHP",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 96,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xMarcio/cve"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.php.net/ChangeLog-8.php#;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-31431",
+      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability with public poc.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "4n4s4zi",
+      "researcherUrl": "https://github.com/4n4s4zi",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 4n4s4zi/copyfail-alpine.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/4n4s4zi/copyfail-alpine\ncd copyfail-alpine\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 75,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/4n4s4zi/copyfail-alpine"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2018-13379",
+      "title": "Fortinet FortiOS SSL VPN Path Traversal Vulnerability with public poc signal",
+      "ecosystem": "ios",
+      "category": "vpn-edge",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "exploitintel",
+      "researcherUrl": "https://github.com/exploitintel",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Fortinet FortiOS SSL VPN web portal contains a path traversal vulnerability that may allow an unauthenticated attacker to download FortiOS system files through specially crafted HTTP resource requests.",
+      "technicalSummary": "The exploit path abuses a trust boundary in FortiOS: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in FortiOS: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Fortinet FortiOS SSL VPN web portal contains a path traversal vulnerability that may allow an unauthenticated attacker to download FortiOS system files through specially crafted HTTP resource requests.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-search.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-search\ncd eip-search\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed FortiOS",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "iOS",
+        "VPN Edge",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 95,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/exploitintel/eip-search"
+        ],
+        [
+          "Vendor Advisory",
+          "https://fortiguard.com/advisory/FG-IR-18-384"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2020-1472",
+      "title": "Microsoft Netlogon Privilege Escalation Vulnerability with public poc signal",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "mods20hh",
+      "researcherUrl": "https://github.com/mods20hh",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Microsoft's Netlogon Remote Protocol (MS-NRPC) contains a privilege escalation vulnerability when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller. An attacker who successfully.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Netlogon: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Netlogon: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Microsoft's Netlogon Remote Protocol (MS-NRPC) contains a privilege escalation vulnerability when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller. An attacker who successfully exploits the.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mods20hh/ZeroLogon-PoC-DC-Pwn.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mods20hh/ZeroLogon-PoC-DC-Pwn\ncd ZeroLogon-PoC-DC-Pwn\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Netlogon",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/mods20hh/ZeroLogon-PoC-DC-Pwn"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.cisa.gov/news-events/directives/ed-20-04-mitigate-netlogon-elevation-privilege-vulnerability-august-2020-patch-tuesday"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2021-4034",
+      "title": "Red Hat Polkit Out-of-Bounds Read and Write Vulnerability with public poc signal",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "kaisen-bot",
+      "researcherUrl": "https://github.com/kaisen-bot",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "The Red Hat polkit pkexec utility contains an out-of-bounds read and write vulnerability that allows for privilege escalation with administrative rights.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Polkit: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Polkit: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "The Red Hat polkit pkexec utility contains an out-of-bounds read and write vulnerability that allows for privilege escalation with administrative rights.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at kaisen-bot/pwnkit-helper.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/kaisen-bot/pwnkit-helper\ncd pwnkit-helper\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Polkit",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/kaisen-bot/pwnkit-helper"
+        ],
+        [
+          "Vendor Advisory",
+          "http://packetstormsecurity.com/files/166196/Polkit-pkexec-Local-Privilege-Escalation.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2025-33073",
+      "title": "Microsoft Windows SMB Client Improper Access Control Vulnerability with public poc signal",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "0xMarcio",
+      "researcherUrl": "https://github.com/0xMarcio",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Microsoft Windows SMB Client contains an improper access control vulnerability that could allow for privilege escalation. An attacker could execute a specially crafted malicious script to coerce the victim machine to connect.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Windows: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Windows: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Microsoft Windows SMB Client contains an improper access control vulnerability that could allow for privilege escalation. An attacker could execute a specially crafted malicious script to coerce the victim machine to connect back to the.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xMarcio/cve.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xMarcio/cve\ncd cve\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Windows",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 96,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xMarcio/cve"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2025-33073"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2024-1086",
+      "title": "Linux Kernel Use-After-Free Vulnerability with public poc signal",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "0xMarcio",
+      "researcherUrl": "https://github.com/0xMarcio",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Linux kernel contains a use-after-free vulnerability in the netfilter: nf_tables component that allows an attacker to achieve local privilege escalation.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Linux kernel contains a use-after-free vulnerability in the netfilter: nf_tables component that allows an attacker to achieve local privilege escalation.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xMarcio/cve.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xMarcio/cve\ncd cve\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 96,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xMarcio/cve"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f342de4e2f33e0e39165d8639387aa6c19dff660;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2025-53770",
+      "title": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability with public poc signal",
+      "ecosystem": "windows",
+      "category": "sharepoint",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "0xMarcio",
+      "researcherUrl": "https://github.com/0xMarcio",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Microsoft SharePoint Server on-premises contains a deserialization of untrusted data vulnerability that could allow an unauthorized attacker to execute code over a network. This vulnerability could be chained with.",
+      "technicalSummary": "The exploit path abuses a trust boundary in SharePoint: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in SharePoint: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Microsoft SharePoint Server on-premises contains a deserialization of untrusted data vulnerability that could allow an unauthorized attacker to execute code over a network. This vulnerability could be chained with CVE-2025-53771..",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xMarcio/cve.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xMarcio/cve\ncd cve\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed SharePoint",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "SharePoint",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 96,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xMarcio/cve"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.cisa.gov/news-events/alerts/2025/07/20/microsoft-releases-guidance-exploitation-sharepoint-vulnerability-cve-2025-53770;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-35616",
+      "title": "Fortinet FortiClient EMS Improper Access Control Vulnerability with public poc signal",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "0xMarcio",
+      "researcherUrl": "https://github.com/0xMarcio",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Fortinet FortiClient EMS contains an improper access control vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests.",
+      "technicalSummary": "The exploit path abuses a trust boundary in FortiClient EMS: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in FortiClient EMS: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Fortinet FortiClient EMS contains an improper access control vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xMarcio/cve.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xMarcio/cve\ncd cve\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed FortiClient EMS",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 96,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xMarcio/cve"
+        ],
+        [
+          "Vendor Advisory",
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-099"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2022-0847",
+      "title": "Linux Kernel Privilege Escalation Vulnerability with public poc signal",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
+      "pocWorks": "Yes",
+      "difficulty": "situational",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "C",
+      "summary": "Linux kernel contains an improper initialization vulnerability where an unprivileged local user could escalate their privileges on the system. This vulnerability has the moniker of \"Dirty Pipe.\"",
+      "technicalSummary": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Linux kernel contains an improper initialization vulnerability where an unprivileged local user could escalate their privileges on the system. This vulnerability has the moniker of \"Dirty Pipe.\"",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 95,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2024-21338",
+      "title": "Microsoft Windows Kernel Exposed IOCTL with Insufficient Access Control Vulnerability with.",
+      "ecosystem": "windows",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "0xMarcio",
+      "researcherUrl": "https://github.com/0xMarcio",
+      "pocWorks": "Yes",
+      "difficulty": "situational",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Microsoft Windows Kernel contains an exposed IOCTL with insufficient access control vulnerability within the IOCTL (input and output control) dispatcher in appid.sys that allows a local attacker to achieve privilege escalation.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Windows: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Windows: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Microsoft Windows Kernel contains an exposed IOCTL with insufficient access control vulnerability within the IOCTL (input and output control) dispatcher in appid.sys that allows a local attacker to achieve privilege escalation.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xMarcio/cve.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xMarcio/cve\ncd cve\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Windows",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Kernel",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 96,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xMarcio/cve"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-21338;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2024-23897",
+      "title": "Jenkins Command Line Interface (CLI) Path Traversal Vulnerability with public poc signal",
+      "ecosystem": "cloud",
+      "category": "devops",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "0xMarcio",
+      "researcherUrl": "https://github.com/0xMarcio",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Jenkins Command Line Interface (CLI) contains a path traversal vulnerability that allows attackers limited read access to certain files, which can lead to code execution.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Jenkins Command Line Interface (CLI): attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Jenkins Command Line Interface (CLI): attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Jenkins Command Line Interface (CLI) contains a path traversal vulnerability that allows attackers limited read access to certain files, which can lead to code execution.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xMarcio/cve.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xMarcio/cve\ncd cve\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Jenkins Command Line Interface (CLI)",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -56,43 +688,43 @@
         "RCE",
         "KEV"
       ],
-      "confidence": 98,
+      "confidence": 96,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/Stuub/RCity-CVE-2024-27198"
+          "https://github.com/0xMarcio/cve"
         ],
         [
           "Vendor Advisory",
-          "https://www.jetbrains.com/privacy-security/issues-fixed/"
+          "https://www.jenkins.io/security/advisory/2024-01-24/#SECURITY-3314;"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-41940",
-      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical.",
-      "ecosystem": "cloud",
+      "cve": "CVE-2019-0708",
+      "title": "Microsoft Remote Desktop Services Remote Code Execution Vulnerability with public poc signal",
+      "ecosystem": "windows",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Defacto-ridgepole254",
-      "researcherUrl": "https://github.com/Defacto-ridgepole254",
+      "reliability": "partial exploit",
+      "researcher": "exploitintel",
+      "researcherUrl": "https://github.com/exploitintel",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "11:33 PM CDT",
-      "firstSeenAt": "2026-05-21T04:33:40Z",
-      "language": "Unknown",
-      "summary": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
-      "technicalSummary": "The exploit path abuses a trust boundary in cPanel & WHM and WP2 (WordPress Squared): attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in cPanel & WHM and WP2 (WordPress Squared): attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC\ncd CVE-2026-41940-Exploit-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Microsoft Remote Desktop Services, formerly known as Terminal Service, contains an unspecified vulnerability that allows an unauthenticated attacker to connect to the target system using RDP and send specially crafted requests..",
+      "technicalSummary": "The exploit path abuses a trust boundary in Remote Desktop Services: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Remote Desktop Services: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Microsoft Remote Desktop Services, formerly known as Terminal Service, contains an unspecified vulnerability that allows an unauthenticated attacker to connect to the target system using RDP and send specially crafted requests. Successful.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-search.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-search\ncd eip-search\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
+        "initial access through exposed Remote Desktop Services",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -100,46 +732,144 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Windows",
         "Webstack",
-        "Auth Bypass",
+        "RCE",
         "KEV"
       ],
-      "confidence": 98,
+      "confidence": 95,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC"
+          "https://github.com/exploitintel/eip-search"
         ],
         [
           "Vendor Advisory",
-          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
+          "http://packetstormsecurity.com/files/153133/Microsoft-Windows-Remote-Desktop-BlueKeep-Denial-Of-Service.html"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-0300",
-      "title": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability with public poc signal",
+      "cve": "CVE-2022-40684",
+      "title": "Fortinet Multiple Products Authentication Bypass Vulnerability with public poc signal",
+      "ecosystem": "ios",
+      "category": "vpn-edge",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "exploitintel",
+      "researcherUrl": "https://github.com/exploitintel",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Fortinet FortiOS, FortiProxy, and FortiSwitchManager contain an authentication bypass vulnerability that could allow an unauthenticated attacker to perform operations on the administrative interface via specially crafted HTTP or.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Multiple Products: attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Multiple Products: attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Fortinet FortiOS, FortiProxy, and FortiSwitchManager contain an authentication bypass vulnerability that could allow an unauthenticated attacker to perform operations on the administrative interface via specially crafted HTTP or HTTPS.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-search.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-search\ncd eip-search\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Multiple Products",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "iOS",
+        "VPN Edge",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 95,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/exploitintel/eip-search"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.fortiguard.com/psirt/FG-IR-22-377;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2024-21413",
+      "title": "Microsoft Outlook Improper Input Validation Vulnerability with public poc signal",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "partial exploit",
+      "researcher": "0xMarcio",
+      "researcherUrl": "https://github.com/0xMarcio",
+      "pocWorks": "Yes",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "Python",
+      "summary": "Microsoft Outlook contains an improper input validation vulnerability that allows for remote code execution. Successful exploitation of this vulnerability would allow an attacker to bypass the Office Protected View and open in.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Office Outlook: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Office Outlook: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Microsoft Outlook contains an improper input validation vulnerability that allows for remote code execution. Successful exploitation of this vulnerability would allow an attacker to bypass the Office Protected View and open in editing.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xMarcio/cve.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xMarcio/cve\ncd cve\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Office Outlook",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 96,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xMarcio/cve"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-21413"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2024-3400",
+      "title": "Palo Alto Networks PAN-OS Command Injection Vulnerability with public poc signal",
       "ecosystem": "cloud",
       "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
+      "reliability": "partial exploit",
+      "researcher": "exploitintel",
+      "researcherUrl": "https://github.com/exploitintel",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "2:38 PM CDT",
-      "firstSeenAt": "2026-05-21T19:38:48Z",
+      "difficulty": "needs validation",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
       "language": "Python",
-      "summary": "Palo Alto Networks PAN-OS contains an out-of-bounds write vulnerability in the User-ID Authentication Portal (aka Captive Portal) service that can allow an unauthenticated attacker to execute arbitrary code with root privileges.",
-      "technicalSummary": "A critical buffer overflow vulnerability has been identified in Palo Alto Networks PAN-OS in the User-ID captive portal functionality that could lead to remote code execution. Tracked as CVE-2026-0300 and rated CVSS 9.3, the flaw stems from improper.",
-      "breakdown": "A critical buffer overflow vulnerability has been identified in Palo Alto Networks PAN-OS in the User-ID captive portal functionality that could lead to remote code execution. Tracked as CVE-2026-0300 and rated CVSS 9.3, the flaw stems from improper.",
-      "whatBroke": "Palo Alto Networks PAN-OS contains an out-of-bounds write vulnerability in the User-ID Authentication Portal (aka Captive Portal) service that can allow an unauthenticated attacker to execute arbitrary code with root privileges on the.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at bannned-bit/CVE-2026-0300-PANOS.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/bannned-bit/CVE-2026-0300-PANOS\ncd CVE-2026-0300-PANOS\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Palo Alto Networks PAN-OS GlobalProtect feature contains a command injection vulnerability that allows an unauthenticated attacker to execute commands with root privileges on the firewall.",
+      "technicalSummary": "The exploit path abuses a trust boundary in PAN-OS: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in PAN-OS: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Palo Alto Networks PAN-OS GlobalProtect feature contains a command injection vulnerability that allows an unauthenticated attacker to execute commands with root privileges on the firewall.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-search.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-search\ncd eip-search\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PAN-OS",
         "credential access from service context",
@@ -154,119 +884,17 @@
         "RCE",
         "KEV"
       ],
-      "confidence": 98,
-      "weaponization": 84,
+      "confidence": 95,
+      "weaponization": 99,
       "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/bannned-bit/CVE-2026-0300-PANOS"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-0300/"
+          "https://github.com/exploitintel/eip-search"
         ],
         [
           "Vendor Advisory",
-          "https://security.paloaltonetworks.com/CVE-2026-0300"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-20182",
-      "title": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability with public poc signal",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "fangbarristerbar",
-      "researcherUrl": "https://github.com/fangbarristerbar",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "11:33 PM CDT",
-      "firstSeenAt": "2026-05-21T04:33:40Z",
-      "language": "Unknown",
-      "summary": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
-      "technicalSummary": "The exploit path abuses a trust boundary in Catalyst SD-WAN: attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in Catalyst SD-WAN: attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fangbarristerbar/CVE-2026-20182-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fangbarristerbar/CVE-2026-20182-POC\ncd CVE-2026-20182-POC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Catalyst SD-WAN",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/fangbarristerbar/CVE-2026-20182-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2025-64446",
-      "title": "Fortinet FortiWeb Path Traversal Vulnerability with public poc signal",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "AN5I",
-      "researcherUrl": "https://github.com/AN5I",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:33 PM CDT",
-      "firstSeenAt": "2026-05-21T04:33:40Z",
-      "language": "Python",
-      "summary": "Fortinet FortiWeb contains a relative path traversal vulnerability that may allow an unauthenticated attacker to execute administrative commands on the system via crafted HTTP or HTTPS requests.",
-      "technicalSummary": "The exploit path abuses a trust boundary in FortiWeb: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in FortiWeb: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Fortinet FortiWeb contains a relative path traversal vulnerability that may allow an unauthenticated attacker to execute administrative commands on the system via crafted HTTP or HTTPS requests.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at AN5I/cve-2025-64446-fortiweb-exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/AN5I/cve-2025-64446-fortiweb-exploit\ncd cve-2025-64446-fortiweb-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed FortiWeb",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/AN5I/cve-2025-64446-fortiweb-exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.fortiguard.com/psirt/FG-IR-25-910"
+          "https://security.paloaltonetworks.com/CVE-2024-3400"
         ]
       ]
     }
