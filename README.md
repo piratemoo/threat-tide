@@ -1,6 +1,6 @@
-# vuln-feed
+# threat-tide
 
-`vuln-feed` is a lightweight vulnerability feed for Threat Tide that links directly to `piratemoo.com/vuln`, acting as a personal vulnerability and security research aggregator.
+`threat-tide` is a lightweight vulnerability feed for Threat Tide that links directly to `piratemoo.com/vuln`, acting as a personal vulnerability and security research aggregator.
 
 It’s built to make it easier to quickly skim through newly disclosed CVEs, public PoCs, exploit writeups, and useful security research without digging through a bunch of noise.
 
