@@ -158,6 +158,7 @@ jobs:
               "auth bypass": ("Auth Bypass", ["authentication bypass", "auth bypass", "authorization bypass"]),
               "rce": ("RCE", ["remote code execution", "rce", "command injection", "code execution", "pre-auth rce", "preauth rce"]),
               "lpe": ("Local LPE", ["privilege escalation", "lpe", "local privilege", "elevation of privilege", "eop"]),
+              "memory corruption": ("Memory Corruption", ["double free", "use-after-free", "uaf", "heap overflow", "heap corruption", "out-of-bounds write", "buffer overflow"]),
               "file read": ("File Read", ["file read", "path traversal", "arbitrary file", "file disclosure"]),
               "session theft": ("Session Theft", ["session", "token", "cookie", "credential disclosure"]),
               "sqli": ("SQLi", ["sql injection", "sqli"]),
@@ -228,7 +229,7 @@ jobs:
               ("sharepoint", ["sharepoint"]),
               ("sccm", ["sccm", "configuration manager", "configmgr"]),
               ("rmm", ["screenconnect", "connectwise", "rmm"]),
-              ("vpn-edge", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "vpn", "gateway", "ssl-vpn"]),
+              ("vpn-edge", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "vpn", "gateway", "ssl-vpn", "ikev2", "ikeext", "ipsec"]),
               ("devops", ["jenkins", "gitlab", "teamcity", "ci/cd", "ci server"]),
               ("kernel", ["kernel", "use-after-free", "uaf"]),
               ("kubernetes", ["kubernetes", "container", "docker"]),
@@ -336,6 +337,36 @@ jobs:
                       return cleaned
               return ""
 
+          def exploit_phrase_title(text: str, cve: str, limit: int = 110) -> str:
+              text = norm(text)
+              if not text:
+                  return ""
+              lowered = text.lower()
+              terms = []
+              if term_in_text(lowered, "ikev2") or term_in_text(lowered, "ikeext.dll"):
+                  terms.append("Windows IKEv2")
+              if term_in_text(lowered, "double free"):
+                  terms.append("double-free")
+              if term_in_text(lowered, "heap grooming"):
+                  terms.append("heap-groomed")
+              if term_in_text(lowered, "rop"):
+                  terms.append("ROP")
+              if term_in_text(lowered, "reverse shell"):
+                  terms.append("reverse shell")
+              if term_in_text(lowered, "auth bypass") or term_in_text(lowered, "authentication bypass"):
+                  terms.append("authentication bypass")
+              if term_in_text(lowered, "command injection"):
+                  terms.append("command injection")
+              if term_in_text(lowered, "sql injection"):
+                  terms.append("SQL injection")
+              if term_in_text(lowered, "privilege escalation") or term_in_text(lowered, "lpe"):
+                  terms.append("privilege escalation")
+              if term_in_text(lowered, "rce") or term_in_text(lowered, "remote code execution"):
+                  terms.append("remote code execution")
+              if len(terms) >= 2:
+                  return compact(" ".join(dict.fromkeys(terms)) + " exploit", limit)
+              return ""
+
           def description_title(desc: str, cve: str, vendor: str, product: str) -> str:
               text = norm(desc)
               if not text:
@@ -349,12 +380,25 @@ jobs:
               first_sentence = re.split(r"(?<=[.!?])\s+", text)[0]
               return meaningful_title(first_sentence, cve)
 
+          def clean_summary(desc: str, repo: dict, cve: str, vendor: str, product: str, prim: str, limit: int = 230) -> str:
+              candidates = [desc, repo.get("description", "")]
+              for candidate in candidates:
+                  text = norm(candidate)
+                  text = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-â€“â€”]?\s*", "", text, flags=re.I)
+                  text = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-â€“â€”]?\s*", "", text, flags=re.I)
+                  if meaningful_title(text, cve, 60):
+                      return compact(text, limit)
+              subject = " ".join(part for part in [vendor, product] if part).strip() or "The affected component"
+              return compact(f"{subject} exposes a {prim.lower()} path with public exploit tooling signal.", limit)
+
           def derived_title(cve: str, vendor: str, product: str, name: str, desc: str, repo: dict, mention: dict | None, prim: str) -> str:
+              repo_desc_title = exploit_phrase_title(repo.get("description", ""), cve)
               candidates = [
+                  repo_desc_title,
                   name,
                   (mention or {}).get("title", ""),
-                  readme_title(repo, cve),
                   repo.get("description", ""),
+                  readme_title(repo, cve),
                   repo_name_title(repo, cve),
                   description_title(desc, cve, vendor, product),
               ]
@@ -396,6 +440,7 @@ jobs:
                   "adcs": "ADCS",
                   "rce": "RCE",
                   "lpe": "Local LPE",
+                  "memory corruption": "Memory Corruption",
                   "vpn-edge": "VPN Edge",
                   "devops": "DevOps",
                   "webstack": "Webstack",
@@ -748,7 +793,7 @@ jobs:
                   return "high" if is_kev or epss >= 0.04 or exposed else "medium"
               if prim == "Local LPE" or ecosystem in {"android", "ios"}:
                   return "high" if is_kev or score >= 65 or epss >= 0.05 else "medium"
-              if prim in {"RCE", "Auth Bypass", "Session Theft"}:
+              if prim in {"RCE", "Auth Bypass", "Session Theft", "Memory Corruption"}:
                   if exposed and (is_kev or epss >= 0.12 or score >= 70 or "ransomware" in lower):
                       return "critical"
                   return "high"
@@ -815,9 +860,7 @@ jobs:
               confidence = min(98, 70 + repo.get("score", 0) // 3 + (12 if mention else 0) + (8 if item else 0))
               weaponization = min(99, int(55 + epss * 80 + (18 if item else 0) + (10 if item.get("knownRansomwareCampaignUse") == "Known" else 0)))
               title = derived_title(cve, vendor, product, name, desc, repo, mention, prim)
-              summary = compact(f"{vendor} {product} has a {prim.lower()} issue that matters when the affected system is exposed or reachable from an operator foothold.", 210)
-              if desc:
-                  summary = compact(desc, 230)
+              summary = clean_summary(desc, repo, cve, vendor, product, prim)
               technical_summary = compact(f"The exploit path abuses a trust boundary in {product or vendor or 'the affected component'}: attacker-controlled input reaches {prim.lower()} handling that should require stricter validation, authentication, or state checks.", 280)
               if mention and mention.get("summary"):
                   technical_summary = compact(re.sub(r"<[^>]+>", " ", mention["summary"]), 300)
