@@ -60,6 +60,7 @@ jobs:
           LOCAL_TZ = ZoneInfo("America/Chicago")
           LOOKBACK_DAYS = 7
           CURRENT_CVE_YEAR = dt.datetime.now(dt.timezone.utc).year
+          STRICT_CURRENT_CVE_YEAR_ONLY = True
 
           RSS_SOURCES = [
               ("Google Security Blog", "https://security.googleblog.com/feeds/posts/default"),
@@ -109,6 +110,24 @@ jobs:
               "Kaspersky Securelist": ("Kaspersky GReAT", "https://securelist.com/"),
               "Exodus Intelligence": ("Exodus Intelligence", "https://blog.exodusintel.com/"),
               "The GitHub Blog Security": ("GitHub Security", "https://github.blog/security/"),
+          }
+
+          MOBILE_RESEARCHERS = [
+              ("@natashenka", "https://x.com/natashenka"),
+              ("@alisaesage", "https://x.com/alisaesage"),
+              ("@zerodayalpha", "https://x.com/zerodayalpha"),
+              ("@pkqzy888", "https://x.com/pkqzy888"),
+              ("@scwuaptx", "https://x.com/scwuaptx"),
+              ("@terrynini38514", "https://x.com/terrynini38514"),
+              ("@0xkol", "https://x.com/0xkol"),
+              ("@AndroidAuth", "https://x.com/AndroidAuth"),
+              ("@androidmalware2", "https://x.com/androidmalware2"),
+              ("@ProjectZero", "https://x.com/ProjectZero"),
+          ]
+
+          MOBILE_RESEARCHER_TERMS = {
+              handle.lstrip("@").lower()
+              for handle, _ in MOBILE_RESEARCHERS
           }
 
           for line in EXTRA_RSS_SOURCES.splitlines():
@@ -166,6 +185,16 @@ jobs:
               "CVE exploit PoC Safari",
               "CVE exploit PoC baseband",
               "CVE exploit PoC sandbox escape",
+              "CVE exploit PoC natashenka",
+              "CVE exploit PoC alisaesage",
+              "CVE exploit PoC zerodayalpha",
+              "CVE exploit PoC pkqzy888",
+              "CVE exploit PoC scwuaptx",
+              "CVE exploit PoC terrynini38514",
+              "CVE exploit PoC 0xkol",
+              "CVE exploit PoC AndroidAuth",
+              "CVE exploit PoC androidmalware2",
+              "CVE exploit PoC ProjectZero",
               "CVE auth bypass exploit",
               "CVE command injection exploit",
               "CVE privilege escalation exploit",
@@ -393,6 +422,9 @@ jobs:
               match = re.match(r"^CVE-(\d{4})-", cve or "", re.I)
               return int(match.group(1)) if match else 0
 
+          def allowed_cve_year(cve: str) -> bool:
+              return cve_year(cve) == CURRENT_CVE_YEAR if STRICT_CURRENT_CVE_YEAR_ONLY else cve_year(cve) >= CURRENT_CVE_YEAR
+
           def recent_date(value: str, now_utc: dt.datetime, days: int = LOOKBACK_DAYS) -> bool:
               parsed = parse_date(value)
               if parsed.year == 1970:
@@ -400,17 +432,20 @@ jobs:
               return parsed >= now_utc - dt.timedelta(days=days)
 
           def is_recent_release(cve: str, item: dict | None, mention: dict | None, repo: dict | None, nvd: dict, now_utc: dt.datetime) -> bool:
+              if not allowed_cve_year(cve):
+                  return False
               if item and recent_date(item.get("dateAdded", ""), now_utc):
                   return True
               if mention and recent_date(mention.get("publishedAt", ""), now_utc):
                   return True
               if recent_date(nvd.get("published", ""), now_utc):
                   return True
-              if cve_year(cve) >= CURRENT_CVE_YEAR and recent_date(nvd.get("lastModified", ""), now_utc) and recent_date((repo or {}).get("pushed_at", ""), now_utc):
-                  return True
-              if cve_year(cve) >= CURRENT_CVE_YEAR and repo and recent_date(repo.get("created_at", ""), now_utc):
+              if repo and recent_date(repo.get("created_at", ""), now_utc):
                   return True
               return False
+
+          def repo_is_new(repo: dict, now_utc: dt.datetime) -> bool:
+              return recent_date(repo.get("created_at", ""), now_utc)
 
           def repo_score(repo: dict, cve: str) -> int:
               text = " ".join([
@@ -429,9 +464,11 @@ jobs:
                   score -= 18
               if repo.get("archived"):
                   score -= 20
-              pushed = parse_date(repo.get("pushed_at", ""))
-              if (dt.datetime.now(dt.timezone.utc) - pushed).days <= 120:
-                  score += 12
+              created = parse_date(repo.get("created_at", ""))
+              if (dt.datetime.now(dt.timezone.utc) - created).days <= LOOKBACK_DAYS:
+                  score += 16
+              else:
+                  score -= 45
               score += min(int(repo.get("stargazers_count") or 0), 40) // 8
               return score
 
@@ -491,12 +528,14 @@ jobs:
               return ""
 
           def github_recent_cve_repos() -> dict[str, list[dict]]:
-              pushed_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
+              # "New PoC" means first public repo creation in the last week.
+              # Later pushes to old CVE repositories are intentionally ignored.
+              created_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
               discovered: dict[str, list[dict]] = {}
               seen_repos: set[str] = set()
               readme_budget = 24
               for base_query in X_STYLE_DISCOVERY_QUERIES:
-                  query = f"{base_query} in:name,description,readme pushed:>={pushed_after}"
+                  query = f"{base_query} in:name,description,readme created:>={created_after}"
                   url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({
                       "q": query,
                       "sort": "updated",
@@ -509,6 +548,8 @@ jobs:
                       repo_url = repo.get("html_url", "")
                       full_name = repo.get("full_name", "")
                       if not repo_url or repo_url in seen_repos:
+                          continue
+                      if not repo_is_new(repo, dt.datetime.now(dt.timezone.utc)):
                           continue
                       seen_repos.add(repo_url)
                       text = " ".join([
@@ -531,14 +572,13 @@ jobs:
           def github_candidate(cve: str, seeded: list[dict] | None = None) -> dict | None:
               seeded_ranked = sorted(seeded or [], key=lambda repo: repo.get("score", 0), reverse=True)
               for repo in seeded_ranked:
-                  if repo.get("score", 0) >= 42 and repo.get("url"):
+                  if repo.get("score", 0) >= 42 and repo.get("url") and recent_date(repo.get("created_at", ""), dt.datetime.now(dt.timezone.utc)):
                       return repo
-              pushed_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
+              created_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
               queries = [
-                  f"{cve} exploit poc rce lpe in:name,description,readme pushed:>={pushed_after}",
-                  f"{cve} exploit poc windows exchange in:name,description,readme pushed:>={pushed_after}",
-                  f"{cve} exploit poc in:name,description,readme pushed:>={pushed_after}",
-                  f"{cve} exploit poc in:name,description,readme",
+                  f"{cve} exploit poc rce lpe in:name,description,readme created:>={created_after}",
+                  f"{cve} exploit poc windows exchange in:name,description,readme created:>={created_after}",
+                  f"{cve} exploit poc in:name,description,readme created:>={created_after}",
               ]
               for query in queries:
                   url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({
@@ -551,7 +591,7 @@ jobs:
                   repos = data.get("items", []) if isinstance(data.get("items"), list) else []
                   ranked = sorted(((repo_score(repo, cve), repo) for repo in repos), key=lambda item: item[0], reverse=True)
                   for score, repo in ranked:
-                      if score >= 45 and repo.get("html_url"):
+                      if score >= 45 and repo.get("html_url") and repo_is_new(repo, dt.datetime.now(dt.timezone.utc)):
                           return repo_to_candidate(repo, cve)
               return None
 
@@ -577,6 +617,9 @@ jobs:
               if prim in {"Local LPE", "File Read"}:
                   return "situational"
               return "needs validation"
+
+          def mobile_researcher_sources() -> list[str]:
+              return [f"Mobile researcher watchlist: {handle}" for handle, _ in MOBILE_RESEARCHERS]
 
           def operator_severity(nvd_sev: str, prim: str, ecosystem: str, category: str, epss: float, repo: dict, is_kev: bool, text: str) -> str:
               lower = text.lower()
@@ -727,14 +770,19 @@ jobs:
           recent_kev = {
               cve
               for cve, item in kev_by_cve.items()
-              if recent_date(item.get("dateAdded", ""), now_utc)
+              if allowed_cve_year(cve) and recent_date(item.get("dateAdded", ""), now_utc)
           }
           current_year_github = {
               cve
               for cve in github_discovered
-              if cve_year(cve) >= CURRENT_CVE_YEAR
+              if allowed_cve_year(cve)
           }
-          candidate_cves = sorted(set(rss) | recent_kev | current_year_github)
+          current_year_rss = {
+              cve
+              for cve in rss
+              if allowed_cve_year(cve)
+          }
+          candidate_cves = sorted(current_year_rss | recent_kev | current_year_github)
           epss = epss_scores(candidate_cves)
 
           def synthetic_item(cve: str, nvd: dict, mention: dict | None) -> dict:
@@ -771,6 +819,7 @@ jobs:
               signal += 45 if contains_any(text, HIGH_SIGNAL) else 0
               signal += 20 if any(contains_any(text, terms[1]) for terms in PRIMITIVES.values()) else 0
               signal += 12 if contains_any(text, ["windows", "exchange", "sharepoint", "adcs", "kerberos", "ntlm", "rce", "lpe", "android", "ios", "pixel", "webkit", "zero-click", "zeroclick"]) else 0
+              signal += 10 if contains_any(text, MOBILE_RESEARCHER_TERMS) else 0
               signal += int((epss.get(cve, 0) or 0) * 70)
               if item:
                   signal += max(0, 60 - min(60, (now_utc - parse_date(item.get("dateAdded", ""))).days // 7))
@@ -810,9 +859,6 @@ jobs:
               if len(entries) >= 18:
                   break
 
-          if not entries and OUT.exists():
-              print("warn: no live entries found, preserving existing vulns.json")
-              raise SystemExit(0)
           if len(entries) < 5:
               print(f"warn: only {len(entries)} live entries found, writing the smaller fresh feed")
 
@@ -820,7 +866,7 @@ jobs:
               "updatedAt": now_utc.isoformat().replace("+00:00", "Z"),
               "cadence": "3x daily",
               "proofPolicy": "verified working public pocs",
-              "sources": ["CISA KEV", "FIRST EPSS", "NVD", "GitHub Search", "GitHub Fresh PoC Discovery", *[name for name, _ in RSS_SOURCES]],
+              "sources": ["CISA KEV", "FIRST EPSS", "NVD", "GitHub Search", "GitHub Fresh PoC Discovery", *mobile_researcher_sources(), *[name for name, _ in RSS_SOURCES]],
               "vulns": entries,
           }
           OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
