@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-22T01:02:56Z",
+  "updatedAt": "2026-05-22T01:18:17Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -18,6 +18,11 @@
     "Mobile researcher watchlist: @AndroidAuth",
     "Mobile researcher watchlist: @androidmalware2",
     "Mobile researcher watchlist: @ProjectZero",
+    "Mobile researcher watchlist: @tiraniddo",
+    "Mobile researcher watchlist: @33y0re",
+    "Mobile researcher watchlist: @0xfluxsec",
+    "Mobile researcher watchlist: @Dinosn",
+    "Mobile researcher watchlist: @binitamshah",
     "Google Security Blog",
     "Project Zero Current",
     "Project Zero",
@@ -44,25 +49,25 @@
   "vulns": [
     {
       "cve": "CVE-2026-41940",
-      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical.",
+      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "reliability": "partial exploit",
-      "researcher": "XZ1r0",
-      "researcherUrl": "https://github.com/XZ1r0",
+      "reliability": "reliable exploit",
+      "researcher": "exploitintel",
+      "researcherUrl": "https://github.com/exploitintel",
       "pocWorks": "Yes",
-      "difficulty": "needs validation",
+      "difficulty": "moderate",
       "added": "8:02 PM CDT",
       "firstSeenAt": "2026-05-22T01:02:56Z",
-      "language": "Python",
+      "language": "C",
       "summary": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
       "technicalSummary": "The exploit path abuses a trust boundary in cPanel & WHM and WP2 (WordPress Squared): attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
       "breakdown": "The exploit path abuses a trust boundary in cPanel & WHM and WP2 (WordPress Squared): attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at XZ1r0/cve-2026-poc-collection.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/XZ1r0/cve-2026-poc-collection\ncd cve-2026-poc-collection\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-pocs-and-cves.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-pocs-and-cves\ncd eip-pocs-and-cves\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
         "credential access from service context",
@@ -77,13 +82,13 @@
         "Auth Bypass",
         "KEV"
       ],
-      "confidence": 96,
+      "confidence": 98,
       "weaponization": 99,
       "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/XZ1r0/cve-2026-poc-collection"
+          "https://github.com/exploitintel/eip-pocs-and-cves"
         ],
         [
           "Vendor Advisory",
@@ -93,7 +98,7 @@
     },
     {
       "cve": "CVE-2026-31431",
-      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability with public poc.",
+      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "high",
@@ -139,8 +144,57 @@
       ]
     },
     {
+      "cve": "CVE-2026-34621",
+      "title": "Adobe Acrobat and Reader Prototype Pollution Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "sanchit-saini",
+      "researcherUrl": "https://github.com/sanchit-saini",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:18 PM CDT",
+      "firstSeenAt": "2026-05-22T01:18:17Z",
+      "language": "JavaScript",
+      "summary": "Adobe Acrobat and Reader contain a prototype pollution vulnerability that allows for arbitrary code execution.",
+      "technicalSummary": "The exploit path abuses a trust boundary in Acrobat and Reader: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in Acrobat and Reader: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Adobe Acrobat and Reader contain a prototype pollution vulnerability that allows for arbitrary code execution.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sanchit-saini/acrobat-reader-escape.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sanchit-saini/acrobat-reader-escape\ncd acrobat-reader-escape\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Acrobat and Reader",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 82,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/sanchit-saini/acrobat-reader-escape"
+        ],
+        [
+          "Vendor Advisory",
+          "https://helpx.adobe.com/security/products/acrobat/apsb26-43.html"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-0300",
-      "title": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability with public poc signal",
+      "title": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability",
       "ecosystem": "cloud",
       "category": "vpn-edge",
       "severity": "critical",
@@ -171,6 +225,7 @@
         "Cloud",
         "VPN Edge",
         "RCE",
+        "Research",
         "KEV"
       ],
       "confidence": 98,
@@ -192,64 +247,17 @@
       ]
     },
     {
-      "cve": "CVE-2026-41091",
-      "title": "Microsoft Defender Link Following Vulnerability with public poc signal",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "0xBlackash",
-      "researcherUrl": "https://github.com/0xBlackash",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:59 PM CDT",
-      "firstSeenAt": "2026-05-22T00:59:08Z",
-      "language": "C++",
-      "summary": "Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.",
-      "technicalSummary": "The exploit path abuses a trust boundary in Defender: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in Defender: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xBlackash/CVE-2026-41091.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xBlackash/CVE-2026-41091\ncd CVE-2026-41091\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Defender",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 82,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xBlackash/CVE-2026-41091"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-41091"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-46333",
-      "title": "CVE-2026-46333: Local Root Privilege Escalation and Credential Disclosure in the Linux.",
+      "title": "CVE-2026-46333: Local Root Privilege Escalation and Credential Disclosure in the Linux Kernel ptrace Path",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "medium",
       "proof": "working public poc",
-      "reliability": "partial exploit",
+      "reliability": "reliable exploit",
       "researcher": "Qualys Research",
       "researcherUrl": "https://blog.qualys.com/",
       "pocWorks": "Yes",
-      "difficulty": "situational",
+      "difficulty": "moderate",
       "added": "7:59 PM CDT",
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "C",
@@ -289,102 +297,8 @@
       ]
     },
     {
-      "cve": "CVE-2026-33825",
-      "title": "Microsoft Defender Insufficient Granularity of Access Control Vulnerability with public.",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "0xBlackash",
-      "researcherUrl": "https://github.com/0xBlackash",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:02 PM CDT",
-      "firstSeenAt": "2026-05-22T01:02:56Z",
-      "language": "C",
-      "summary": "Microsoft Defender contains an insufficient granularity of access control vulnerability that could allow an authorized attacker to escalate privileges locally.",
-      "technicalSummary": "The exploit path abuses a trust boundary in Defender: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in Defender: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Microsoft Defender contains an insufficient granularity of access control vulnerability that could allow an authorized attacker to escalate privileges locally.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xBlackash/CVE-2026-33825.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xBlackash/CVE-2026-33825\ncd CVE-2026-33825\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Defender",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 78,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xBlackash/CVE-2026-33825"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-21509",
-      "title": "Microsoft Office Security Feature Bypass Vulnerability with public poc signal",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "partial exploit",
-      "researcher": "XZ1r0",
-      "researcherUrl": "https://github.com/XZ1r0",
-      "pocWorks": "Yes",
-      "difficulty": "needs validation",
-      "added": "8:02 PM CDT",
-      "firstSeenAt": "2026-05-22T01:02:56Z",
-      "language": "Python",
-      "summary": "Microsoft Office contains a security feature bypass vulnerability in which reliance on untrusted inputs in a security decision in Microsoft Office could allow an unauthorized attacker to bypass a security feature locally. Some.",
-      "technicalSummary": "The exploit path abuses a trust boundary in Office: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in Office: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Microsoft Office contains a security feature bypass vulnerability in which reliance on untrusted inputs in a security decision in Microsoft Office could allow an unauthorized attacker to bypass a security feature locally. Some of the.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at XZ1r0/cve-2026-poc-collection.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/XZ1r0/cve-2026-poc-collection\ncd cve-2026-poc-collection\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Office",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit",
-        "KEV"
-      ],
-      "confidence": 96,
-      "weaponization": 84,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/XZ1r0/cve-2026-poc-collection"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21509"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-9082",
-      "title": "CVE-2026-9082 | Drupal SQL Injection Vulnerability with public poc signal",
+      "title": "CVE-2026-9082 | Drupal SQL Injection Vulnerability",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
@@ -434,7 +348,7 @@
     },
     {
       "cve": "CVE-2026-0908",
-      "title": "CVE-2026-0908 with public poc signal",
+      "title": "CVE-2026-0908",
       "ecosystem": "cloud",
       "category": "kernel",
       "severity": "high",
@@ -480,7 +394,7 @@
     },
     {
       "cve": "CVE-2026-43284",
-      "title": "CVE-2026-43284 with public poc signal",
+      "title": "CVE-2026-43284",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "high",
@@ -526,25 +440,25 @@
     },
     {
       "cve": "CVE-2026-31635",
-      "title": "CVE-2026-31635 with public poc signal",
+      "title": "CVE-2026-31635",
       "ecosystem": "linux",
       "category": "kernel",
-      "severity": "high",
+      "severity": "medium",
       "proof": "working public poc",
       "reliability": "reliable exploit",
-      "researcher": "0xFuffM3",
-      "researcherUrl": "https://github.com/0xFuffM3",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
       "pocWorks": "Yes",
       "difficulty": "moderate",
       "added": "7:59 PM CDT",
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "C",
       "summary": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the remaining.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xFuffM3/CVE-2026-31635-DirtyDecrypt.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xFuffM3/CVE-2026-31635-DirtyDecrypt\ncd CVE-2026-31635-DirtyDecrypt\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "local privilege escalation after a foothold",
@@ -554,7 +468,7 @@
       "tags": [
         "Linux",
         "Kernel",
-        "Exploit"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -562,7 +476,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/0xFuffM3/CVE-2026-31635-DirtyDecrypt"
+          "https://github.com/portbuster1337/lpe-toolkit"
         ],
         [
           "Vendor Advisory",
@@ -572,25 +486,115 @@
     },
     {
       "cve": "CVE-2026-46300",
-      "title": "CVE-2026-46300 with public poc signal",
+      "title": "CVE-2026-46300",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "medium",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:59 PM CDT",
+      "firstSeenAt": "2026-05-22T00:59:08Z",
+      "language": "C",
+      "summary": "CVE-2026-46300",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "CVE-2026-46300",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-34622",
+      "title": "CVE-2026-34622",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
       "reliability": "reliable exploit",
-      "researcher": "Maxime288",
-      "researcherUrl": "https://github.com/Maxime288",
+      "researcher": "sanchit-saini",
+      "researcherUrl": "https://github.com/sanchit-saini",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:59 PM CDT",
-      "firstSeenAt": "2026-05-22T00:59:08Z",
-      "language": "Unknown",
-      "summary": "CVE-2026-46300",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "CVE-2026-46300",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Maxime288/Fragnesia-CVE-2026-46300.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Maxime288/Fragnesia-CVE-2026-46300\ncd Fragnesia-CVE-2026-46300\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "8:18 PM CDT",
+      "firstSeenAt": "2026-05-22T01:18:17Z",
+      "language": "JavaScript",
+      "summary": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in.",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in arbitrary code.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sanchit-saini/acrobat-reader-escape.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sanchit-saini/acrobat-reader-escape\ncd acrobat-reader-escape\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/sanchit-saini/acrobat-reader-escape"
+        ],
+        [
+          "Vendor Advisory",
+          "https://helpx.adobe.com/security/products/acrobat/apsb26-44.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-34626",
+      "title": "CVE-2026-34626",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "medium",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "sanchit-saini",
+      "researcherUrl": "https://github.com/sanchit-saini",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:18 PM CDT",
+      "firstSeenAt": "2026-05-22T01:18:17Z",
+      "language": "JavaScript",
+      "summary": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in.",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in arbitrary file.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sanchit-saini/acrobat-reader-escape.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sanchit-saini/acrobat-reader-escape\ncd acrobat-reader-escape\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -600,7 +604,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -608,13 +612,17 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/Maxime288/Fragnesia-CVE-2026-46300"
+          "https://github.com/sanchit-saini/acrobat-reader-escape"
+        ],
+        [
+          "Vendor Advisory",
+          "https://helpx.adobe.com/security/products/acrobat/apsb26-44.html"
         ]
       ]
     },
     {
       "cve": "CVE-2026-33824",
-      "title": "CVE-2026-33824 with public poc signal",
+      "title": "CVE-2026-33824",
       "ecosystem": "windows",
       "category": "webstack",
       "severity": "critical",
@@ -661,56 +669,8 @@
       ]
     },
     {
-      "cve": "CVE-2026-2587",
-      "title": "CVE-2026-2587 with public poc signal",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Bhanunamikaze",
-      "researcherUrl": "https://github.com/Bhanunamikaze",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:02 PM CDT",
-      "firstSeenAt": "2026-05-22T01:02:56Z",
-      "language": "Python",
-      "summary": "A critical Remote Code Execution (RCE) vulnerability was identified in the server-side template rendering mechanism used by the Glassfish gadget handler. The application processes .xml files and evaluates user-supplied values.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "A critical Remote Code Execution (RCE) vulnerability was identified in the server-side template rendering mechanism used by the Glassfish gadget handler. The application processes .xml files and evaluates user-supplied values within a.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Bhanunamikaze/CVE-2026-2587-Exploit-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Bhanunamikaze/CVE-2026-2587-Exploit-POC\ncd CVE-2026-2587-Exploit-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Bhanunamikaze/CVE-2026-2587-Exploit-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://gitlab.eclipse.org/security/cve-assignment/-/issues/86"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-45250",
-      "title": "CVE-2026-45250 with public poc signal",
+      "title": "CVE-2026-45250",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "high",
@@ -756,7 +716,7 @@
     },
     {
       "cve": "CVE-2026-46529",
-      "title": "CVE-2026-46529 with public poc signal",
+      "title": "CVE-2026-46529",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
@@ -800,7 +760,7 @@
     },
     {
       "cve": "CVE-2026-4885",
-      "title": "CVE-2026-4885 with public poc signal",
+      "title": "CVE-2026-4885",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
@@ -848,7 +808,7 @@
     },
     {
       "cve": "CVE-2026-23734",
-      "title": "CVE-2026-23734 | XWiki Path Traversal Vulnerability with public poc signal",
+      "title": "CVE-2026-23734 | XWiki Path Traversal Vulnerability",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
@@ -861,10 +821,10 @@
       "added": "7:59 PM CDT",
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "Unknown",
-      "summary": "XWiki Platform is a generic wiki platform. Versions prior to 18.1.0-rc-1, 17.10.3, 17.4.9, and 16.10.17 allow access to read configuration files by using URLs such as.",
+      "summary": "<p>CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a.",
       "technicalSummary": "CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash can bypass path.",
       "breakdown": "CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash can bypass path.",
-      "whatBroke": "XWiki Platform is a generic wiki platform. Versions prior to 18.1.0-rc-1, 17.10.3, 17.4.9, and 16.10.17 allow access to read configuration files by using URLs such as.",
+      "whatBroke": "<p>CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Horizon3 Attack Team/CVE-2026-23734.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://horizon3.ai/attack-research/vulnerabilities/cve-2026-23734/\ncd CVE-2026-23734\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -876,7 +836,8 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "File Read"
+        "File Read",
+        "Research"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -889,10 +850,48 @@
         [
           "Technical Paper",
           "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-23734/"
-        ],
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-28289",
+      "title": "CVE-2026-28289",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "exploitintel",
+      "researcherUrl": "https://github.com/exploitintel",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:18 PM CDT",
+      "firstSeenAt": "2026-05-22T01:18:17Z",
+      "language": "C",
+      "summary": "CVE-2026-28289",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "CVE-2026-28289",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-pocs-and-cves.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-pocs-and-cves\ncd eip-pocs-and-cves\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 89,
+      "dayOffset": 0,
+      "links": [
         [
-          "Vendor Advisory",
-          "https://github.com/xwiki/xwiki-commons/commit/a979cafd89f6a9c9c0b9ab19744d672df64429bf"
+          "GitHub",
+          "https://github.com/exploitintel/eip-pocs-and-cves"
         ]
       ]
     }
