@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-22T01:34:02Z",
+  "updatedAt": "2026-05-22T01:45:28Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -348,10 +348,10 @@
     },
     {
       "cve": "CVE-2026-0908",
-      "title": "GlassBreak \u00b7 CVE-2026-0908",
+      "title": "Chrome ANGLE Use-After-Free \u2014 0-day disclosure & public CVE",
       "ecosystem": "cloud",
       "category": "kernel",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "reliability": "reliable exploit",
       "researcher": "lylzjnqe",
@@ -362,8 +362,8 @@
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "Python",
       "summary": "Use after free in ANGLE in Google Chrome prior to 144.0.7559.59 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: Low)",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches memory corruption handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches memory corruption handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "Use after free in ANGLE in Google Chrome prior to 144.0.7559.59 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: Low)",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at lylzjnqe/CVE-2026-0908-Chrome-0-day-RCE.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/lylzjnqe/CVE-2026-0908-Chrome-0-day-RCE\ncd CVE-2026-0908-Chrome-0-day-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
@@ -376,7 +376,7 @@
       "tags": [
         "Cloud",
         "Kernel",
-        "Exploit"
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -393,8 +393,54 @@
       ]
     },
     {
+      "cve": "CVE-2026-33824",
+      "title": "Windows IKEv2 double-free heap-groomed ROP reverse shell exploit",
+      "ecosystem": "windows",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "reliability": "reliable exploit",
+      "researcher": "EpSiLoNPoInTOrI",
+      "researcherUrl": "https://github.com/EpSiLoNPoInTOrI",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:02 PM CDT",
+      "firstSeenAt": "2026-05-22T01:02:56Z",
+      "language": "C++",
+      "summary": "Double free in Windows IKE Extension allows an unauthorized attacker to execute code over a network.",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches memory corruption handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches memory corruption handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "Double free in Windows IKE Extension allows an unauthorized attacker to execute code over a network.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at EpSiLoNPoInTOrI/IKEV2-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/EpSiLoNPoInTOrI/IKEV2-POC\ncd IKEV2-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "VPN Edge",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/EpSiLoNPoInTOrI/IKEV2-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33824"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-43284",
-      "title": "Dirty-Frag-CVE-2026-43284",
+      "title": "A report on Dirty Frag, which is a Linux Local Privilege Escalation (LPE) vulnerability chain that allows an.",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "high",
@@ -440,7 +486,7 @@
     },
     {
       "cve": "CVE-2026-31635",
-      "title": "Linux LPE Toolkit",
+      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits..",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "medium",
@@ -486,7 +532,7 @@
     },
     {
       "cve": "CVE-2026-46300",
-      "title": "Linux LPE Toolkit",
+      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits..",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "medium",
@@ -499,7 +545,7 @@
       "added": "7:59 PM CDT",
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "C",
-      "summary": "CVE-2026-46300",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
       "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "CVE-2026-46300",
@@ -528,7 +574,7 @@
     },
     {
       "cve": "CVE-2026-34622",
-      "title": "Adobe Reader JS Sandbox Escape \u2014 POC",
+      "title": "A proof-of-concept demonstrating a JavaScript sandbox escape in Adobe Acrobat Reader. Exploits a chain of.",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "medium",
@@ -541,7 +587,7 @@
       "added": "8:18 PM CDT",
       "firstSeenAt": "2026-05-22T01:18:17Z",
       "language": "JavaScript",
-      "summary": "CVE-2026-34622",
+      "summary": "A proof-of-concept demonstrating a JavaScript sandbox escape in Adobe Acrobat Reader. Exploits a chain of trusted function privilege escalation via ANShareFile, SilentDocCenterLogin, and SOAP.stringFromStream to gain elevated.",
       "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
       "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "CVE-2026-34622",
@@ -570,7 +616,7 @@
     },
     {
       "cve": "CVE-2026-34626",
-      "title": "Adobe Reader JS Sandbox Escape \u2014 POC",
+      "title": "A proof-of-concept demonstrating a JavaScript sandbox escape in Adobe Acrobat Reader. Exploits a chain of.",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "medium",
@@ -583,10 +629,10 @@
       "added": "8:18 PM CDT",
       "firstSeenAt": "2026-05-22T01:18:17Z",
       "language": "JavaScript",
-      "summary": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in.",
+      "summary": "A proof-of-concept demonstrating a JavaScript sandbox escape in Adobe Acrobat Reader. Exploits a chain of trusted function privilege escalation via ANShareFile, SilentDocCenterLogin, and SOAP.stringFromStream to gain elevated.",
       "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
       "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in arbitrary file.",
+      "whatBroke": "CVE-2026-34626",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sanchit-saini/acrobat-reader-escape.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sanchit-saini/acrobat-reader-escape\ncd acrobat-reader-escape\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -607,58 +653,12 @@
         [
           "GitHub",
           "https://github.com/sanchit-saini/acrobat-reader-escape"
-        ],
-        [
-          "Vendor Advisory",
-          "https://helpx.adobe.com/security/products/acrobat/apsb26-44.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-33824",
-      "title": "EpSiLoNPoInTIkEv2.cpp",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "EpSiLoNPoInTOrI",
-      "researcherUrl": "https://github.com/EpSiLoNPoInTOrI",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:02 PM CDT",
-      "firstSeenAt": "2026-05-22T01:02:56Z",
-      "language": "C++",
-      "summary": "CVE-2026-33824",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "CVE-2026-33824",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at EpSiLoNPoInTOrI/IKEV2-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/EpSiLoNPoInTOrI/IKEV2-POC\ncd IKEV2-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/EpSiLoNPoInTOrI/IKEV2-POC"
         ]
       ]
     },
     {
       "cve": "CVE-2026-45250",
-      "title": "FreeBSD setcred(2) \u2014 research artifacts",
+      "title": "FreeBSD 14.x LPE",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
@@ -671,7 +671,7 @@
       "added": "8:02 PM CDT",
       "firstSeenAt": "2026-05-22T01:02:56Z",
       "language": "C",
-      "summary": "CVE-2026-45250",
+      "summary": "FreeBSD 14.x LPE",
       "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
       "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "CVE-2026-45250",
@@ -700,7 +700,7 @@
     },
     {
       "cve": "CVE-2026-46529",
-      "title": "RCE via PDF argv injection (CVE-2026-46529) (atril/xreader/evince)",
+      "title": "Evince/xreader/Atril RCE exploit to CVE-2026-46529",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
@@ -713,7 +713,7 @@
       "added": "8:02 PM CDT",
       "firstSeenAt": "2026-05-22T01:02:56Z",
       "language": "Python",
-      "summary": "CVE-2026-46529",
+      "summary": "Evince/xreader/Atril RCE exploit to CVE-2026-46529",
       "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
       "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "CVE-2026-46529",
@@ -757,7 +757,7 @@
       "added": "8:02 PM CDT",
       "firstSeenAt": "2026-05-22T01:02:56Z",
       "language": "Python",
-      "summary": "CVE-2026-4885",
+      "summary": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
       "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
       "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "CVE-2026-4885",
@@ -801,10 +801,10 @@
       "added": "7:59 PM CDT",
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "Unknown",
-      "summary": "XWiki Platform is a generic wiki platform. Versions prior to 18.1.0-rc-1, 17.10.3, 17.4.9, and 16.10.17 allow access to read configuration files by using URLs such as.",
+      "summary": "<p>CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a.",
       "technicalSummary": "CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash can bypass path.",
       "breakdown": "CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash can bypass path.",
-      "whatBroke": "XWiki Platform is a generic wiki platform. Versions prior to 18.1.0-rc-1, 17.10.3, 17.4.9, and 16.10.17 allow access to read configuration files by using URLs such as.",
+      "whatBroke": "<p>CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Horizon3 Attack Team/CVE-2026-23734.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://horizon3.ai/attack-research/vulnerabilities/cve-2026-23734/\ncd CVE-2026-23734\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -830,16 +830,12 @@
         [
           "Technical Paper",
           "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-23734/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/xwiki/xwiki-commons/commit/a979cafd89f6a9c9c0b9ab19744d672df64429bf"
         ]
       ]
     },
     {
       "cve": "CVE-2026-28289",
-      "title": "EIP PoCs and CVEs",
+      "title": "Proof-of-concept exploits and reproduction labs for CVEs analyzed by the Exploit Intelligence Platform",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
@@ -852,7 +848,7 @@
       "added": "8:18 PM CDT",
       "firstSeenAt": "2026-05-22T01:18:17Z",
       "language": "C",
-      "summary": "CVE-2026-28289",
+      "summary": "Proof-of-concept exploits and reproduction labs for CVEs analyzed by the Exploit Intelligence Platform",
       "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
       "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
       "whatBroke": "CVE-2026-28289",
