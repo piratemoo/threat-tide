@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-22T05:54:23Z",
+  "updatedAt": "2026-05-22T23:26:30Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -39,6 +39,8 @@
     "SSD Disclosure",
     "Rapid7 Blog",
     "Qualys Research",
+    "PortSwigger Research",
+    "Assetnote Research",
     "SonarSource",
     "GitLab Releases",
     "ProjectDiscovery",
@@ -46,263 +48,59 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "vulns": [
+  "research": [
     {
-      "cve": "CVE-2026-41940",
-      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "exploitintel",
-      "researcherUrl": "https://github.com/exploitintel",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:02 PM CDT",
-      "firstSeenAt": "2026-05-22T01:02:56Z",
-      "language": "C",
-      "summary": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
-      "technicalSummary": "The exploit path abuses a trust boundary in cPanel & WHM and WP2 (WordPress Squared): attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in cPanel & WHM and WP2 (WordPress Squared): attacker-controlled input reaches auth bypass handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-pocs-and-cves.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-pocs-and-cves\ncd eip-pocs-and-cves\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
+      "title": "Detecting CVE-2026-0265 at Scale: PAN-OS CAS Authentication Bypass",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/detecting-cve-2026-0265-at-scale-pan-os-cas-authentication-bypass",
+      "summary": "CVE-2026-0265 lets unauthenticated attackers forge a JWT and log in as any trusted user on CAS-enabled PAN-OS deployments. Bishop Fox built a detection tool that returns a definitive verdict from a single anonymous request, and breaks down exactly how the.",
+      "publishedAt": "2026-05-22T13:00:00Z",
+      "cves": [
+        "CVE-2026-0265"
       ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/exploitintel/eip-pocs-and-cves"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-34621",
-      "title": "Adobe Acrobat and Reader Prototype Pollution Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "sanchit-saini",
-      "researcherUrl": "https://github.com/sanchit-saini",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:18 PM CDT",
-      "firstSeenAt": "2026-05-22T01:18:17Z",
-      "language": "JavaScript",
-      "summary": "Adobe Acrobat and Reader contain a prototype pollution vulnerability that allows for arbitrary code execution.",
-      "technicalSummary": "The exploit path abuses a trust boundary in Acrobat and Reader: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in Acrobat and Reader: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Adobe Acrobat and Reader contain a prototype pollution vulnerability that allows for arbitrary code execution.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sanchit-saini/acrobat-reader-escape.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sanchit-saini/acrobat-reader-escape\ncd acrobat-reader-escape\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Acrobat and Reader",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 82,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/sanchit-saini/acrobat-reader-escape"
-        ],
-        [
-          "Vendor Advisory",
-          "https://helpx.adobe.com/security/products/acrobat/apsb26-43.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-31431",
-      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "4n4s4zi",
-      "researcherUrl": "https://github.com/4n4s4zi",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:54 PM CDT",
-      "firstSeenAt": "2026-05-21T22:54:32Z",
-      "language": "Python",
-      "summary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "technicalSummary": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in Kernel: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 4n4s4zi/copyfail-alpine.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/4n4s4zi/copyfail-alpine\ncd copyfail-alpine\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Kernel",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/4n4s4zi/copyfail-alpine"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-0300",
-      "title": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "7:59 PM CDT",
-      "firstSeenAt": "2026-05-22T00:59:08Z",
-      "language": "Unknown",
-      "summary": "Palo Alto Networks PAN-OS contains an out-of-bounds write vulnerability in the User-ID Authentication Portal (aka Captive Portal) service that can allow an unauthenticated attacker to execute arbitrary code with root privileges.",
-      "technicalSummary": "A critical buffer overflow vulnerability has been identified in Palo Alto Networks PAN-OS in the User-ID captive portal functionality that could lead to remote code execution. Tracked as CVE-2026-0300 and rated CVSS 9.3, the flaw stems from improper.",
-      "breakdown": "A critical buffer overflow vulnerability has been identified in Palo Alto Networks PAN-OS in the User-ID captive portal functionality that could lead to remote code execution. Tracked as CVE-2026-0300 and rated CVSS 9.3, the flaw stems from improper.",
-      "whatBroke": "Palo Alto Networks PAN-OS contains an out-of-bounds write vulnerability in the User-ID Authentication Portal (aka Captive Portal) service that can allow an unauthenticated attacker to execute arbitrary code with root privileges on the.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Horizon3 Attack Team/CVE-2026-0300.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://horizon3.ai/attack-research/vulnerabilities/cve-2026-0300/\ncd CVE-2026-0300\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed PAN-OS",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
         "VPN Edge",
-        "RCE",
-        "Research",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 84,
-      "dayOffset": 1,
-      "links": [
-        [
-          "PoC",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-0300/"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-0300/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://security.paloaltonetworks.com/CVE-2026-0300"
-        ]
+        "Auth Bypass"
       ]
     },
     {
-      "cve": "CVE-2026-46333",
-      "title": "Local Root Privilege Escalation and Credential Disclosure in the Linux Kernel ptrace Path",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "medium",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:59 PM CDT",
-      "firstSeenAt": "2026-05-22T00:59:08Z",
-      "language": "Unknown",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: ptrace: slightly saner 'get_dumpable()' logic The 'dumpability' of a task is fundamentally about the memory image of the task - the concept comes from whether.",
-      "technicalSummary": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
-      "breakdown": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: ptrace: slightly saner 'get_dumpable()' logic The 'dumpability' of a task is fundamentally about the memory image of the task - the concept comes from whether it can core.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at krislamo/vulnlab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/krislamo/vulnlab\ncd vulnlab\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
+      "title": "CVE-2026-27886: Unauthenticated Boolean-Oracle Exfiltration of Administrator Secrets in Strapi",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/cve-2026-27886-unauthenticated-boolean-oracle-exfiltration-of-administrator-secrets-in-strapi",
+      "summary": "A sanitization bypass in Strapi 4.0.0 through 5.36.1 lets unauthenticated attackers extract an admin's password reset token character by character and take over the account. With over 20,000 internet-facing hosts exposed, Bishop Fox breaks down how the.",
+      "publishedAt": "2026-05-22T07:00:00Z",
+      "cves": [
+        "CVE-2026-27886"
       ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/krislamo/vulnlab"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/vulnerabilities-threat-research/2026/05/20/cve-2026-46333-local-root-privilege-escalation-and-credential-disclosure-in-the-linux-kernel-ptrace-path"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/01363cb3fbd0238ffdeb09f53e9039c9edf8a730"
-        ]
+        "Session Theft"
       ]
-    },
+    }
+  ],
+  "vulns": [
     {
       "cve": "CVE-2026-9082",
-      "title": "Drupal SQL Injection Vulnerability",
+      "title": "Drupal Core SQL Injection Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "CVE-2026-9082.py",
+          "test-lab/docker-compose.yml"
+        ],
+        "attackFiles": [
+          "CVE-2026-9082.py"
+        ],
+        "hasUsage": false,
+        "language": "Python"
+      },
       "reliability": "reliable exploit",
       "researcher": "Horizon3 Attack Team",
       "researcherUrl": "https://x.com/Horizon3Attack",
@@ -311,14 +109,16 @@
       "added": "7:59 PM CDT",
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "Python",
-      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Drupal Drupal core allows SQL Injection. This issue affects Drupal core: from 8.9.0 before 10.4.10, from 10.5.0 before.",
+      "summary": "Drupal Core PostgreSQL SQL Injection PoC -. Ethical PoC for the Drupal vulnerability allowing anonymous SQL injection through the JSON:API module on PostgreSQL-backed sites.",
       "technicalSummary": "CVE-2026-9082 is a highly critical SQL injection vulnerability affecting Drupal core sites configured to use PostgreSQL as the backend database. The vulnerability exists in Drupal\u2019s database abstraction API, where specially crafted requests can bypass.",
       "breakdown": "CVE-2026-9082 is a highly critical SQL injection vulnerability affecting Drupal core sites configured to use PostgreSQL as the backend database. The vulnerability exists in Drupal\u2019s database abstraction API, where specially crafted requests can bypass.",
-      "whatBroke": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Drupal Drupal core allows SQL Injection. This issue affects Drupal core: from 8.9.0 before 10.4.10, from 10.5.0 before 10.5.10, from.",
+      "whatBroke": "Drupal Core PostgreSQL SQL Injection PoC -. Ethical PoC for the Drupal vulnerability allowing anonymous SQL injection through the JSON:API module on PostgreSQL-backed sites.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 7h30th3r0n3/CVE-2026-9082-Drupal-PoC.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/7h30th3r0n3/CVE-2026-9082-Drupal-PoC\ncd CVE-2026-9082-Drupal-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed the affected product",
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -326,7 +126,8 @@
       "tags": [
         "Web",
         "Webstack",
-        "SQLi"
+        "RCE",
+        "KEV"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -347,26 +148,113 @@
       ]
     },
     {
-      "cve": "CVE-2026-0908",
-      "title": "Chrome ANGLE Use-After-Free \u2014 0-day disclosure & public CVE",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-31431",
+      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
+      "ecosystem": "linux",
       "category": "kernel",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "build-exploits.sh",
+          "embed_386.go",
+          "embed_amd64.go",
+          "embed_arm64.go",
+          "embed_mips.go",
+          "embed_mips64.go",
+          "embed_mips64le.go",
+          "embed_mipsle.go"
+        ],
+        "attackFiles": [
+          "exploits/cve_2023_0386_exp.c",
+          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
       "reliability": "reliable exploit",
-      "researcher": "lylzjnqe",
-      "researcherUrl": "https://github.com/lylzjnqe",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:54 PM CDT",
+      "firstSeenAt": "2026-05-21T22:54:32Z",
+      "language": "C",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-46333",
+      "title": "Local Root Privilege Escalation and Credential Disclosure in the Linux Kernel ptrace Path",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "build-exploits.sh",
+          "embed_386.go",
+          "embed_amd64.go",
+          "embed_arm64.go",
+          "embed_mips.go",
+          "embed_mips64.go",
+          "embed_mips64le.go",
+          "embed_mipsle.go"
+        ],
+        "attackFiles": [
+          "exploits/cve_2023_0386_exp.c",
+          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
       "pocWorks": "Yes",
       "difficulty": "moderate",
       "added": "7:59 PM CDT",
       "firstSeenAt": "2026-05-22T00:59:08Z",
-      "language": "Python",
-      "summary": "Use after free in ANGLE in Google Chrome prior to 144.0.7559.59 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: Low)",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches memory corruption handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches memory corruption handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Use after free in ANGLE in Google Chrome prior to 144.0.7559.59 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: Low)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at lylzjnqe/CVE-2026-0908-Chrome-0-day-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/lylzjnqe/CVE-2026-0908-Chrome-0-day-RCE\ncd CVE-2026-0908-Chrome-0-day-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "language": "C",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
+      "breakdown": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "local privilege escalation after a foothold",
@@ -374,9 +262,9 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Linux",
         "Kernel",
-        "Memory Corruption"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -384,57 +272,140 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/lylzjnqe/CVE-2026-0908-Chrome-0-day-RCE"
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/vulnerabilities-threat-research/2026/05/20/cve-2026-46333-local-root-privilege-escalation-and-credential-disclosure-in-the-linux-kernel-ptrace-path"
         ],
         [
           "Vendor Advisory",
-          "https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_13.html"
+          "https://git.kernel.org/stable/c/01363cb3fbd0238ffdeb09f53e9039c9edf8a730"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-33824",
-      "title": "Windows IKEv2 double-free heap-groomed ROP reverse shell exploit",
-      "ecosystem": "windows",
-      "category": "vpn-edge",
-      "severity": "critical",
+      "cve": "CVE-2026-33017",
+      "title": "Langflow Code Injection Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "CVE-2026-33017_POC.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-33017_POC.py"
+        ],
+        "hasUsage": true,
+        "language": "Python"
+      },
       "reliability": "reliable exploit",
-      "researcher": "EpSiLoNPoInTOrI",
-      "researcherUrl": "https://github.com/EpSiLoNPoInTOrI",
+      "researcher": "r3nsi15",
+      "researcherUrl": "https://github.com/r3nsi15",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:02 PM CDT",
-      "firstSeenAt": "2026-05-22T01:02:56Z",
-      "language": "C++",
-      "summary": "Double free in Windows IKE Extension allows an unauthorized attacker to execute code over a network.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches memory corruption handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches memory corruption handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Double free in Windows IKE Extension allows an unauthorized attacker to execute code over a network.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at EpSiLoNPoInTOrI/IKEV2-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/EpSiLoNPoInTOrI/IKEV2-POC\ncd IKEV2-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "6:26 PM CDT",
+      "firstSeenAt": "2026-05-22T23:26:30Z",
+      "language": "Python",
+      "summary": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
+      "technicalSummary": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
+      "breakdown": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
+      "whatBroke": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at r3nsi15/CVE-2026-33017-langflow-rce.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/r3nsi15/CVE-2026-33017-langflow-rce\ncd CVE-2026-33017-langflow-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed the affected product",
+        "initial access through exposed Langflow",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
-        "VPN Edge",
-        "Memory Corruption"
+        "Cloud",
+        "Webstack",
+        "Exploit",
+        "KEV"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
+      "weaponization": 91,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/EpSiLoNPoInTOrI/IKEV2-POC"
+          "https://github.com/r3nsi15/CVE-2026-33017-langflow-rce"
         ],
         [
           "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33824"
+          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43284",
+      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits..",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "build-exploits.sh",
+          "embed_386.go",
+          "embed_amd64.go",
+          "embed_arm64.go",
+          "embed_mips.go",
+          "embed_mips64.go",
+          "embed_mips64le.go",
+          "embed_mipsle.go"
+        ],
+        "attackFiles": [
+          "exploits/cve_2023_0386_exp.c",
+          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:26 PM CDT",
+      "firstSeenAt": "2026-05-22T23:26:30Z",
+      "language": "C",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
         ]
       ]
     },
@@ -443,8 +414,28 @@
       "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits..",
       "ecosystem": "linux",
       "category": "kernel",
-      "severity": "medium",
+      "severity": "high",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "build-exploits.sh",
+          "embed_386.go",
+          "embed_amd64.go",
+          "embed_arm64.go",
+          "embed_mips.go",
+          "embed_mips64.go",
+          "embed_mips64le.go",
+          "embed_mipsle.go"
+        ],
+        "attackFiles": [
+          "exploits/cve_2023_0386_exp.c",
+          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
       "reliability": "reliable exploit",
       "researcher": "portbuster1337",
       "researcherUrl": "https://github.com/portbuster1337",
@@ -453,10 +444,10 @@
       "added": "7:59 PM CDT",
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the remaining.",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -489,8 +480,28 @@
       "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits..",
       "ecosystem": "linux",
       "category": "kernel",
-      "severity": "medium",
+      "severity": "high",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "build-exploits.sh",
+          "embed_386.go",
+          "embed_amd64.go",
+          "embed_arm64.go",
+          "embed_mips.go",
+          "embed_mips64.go",
+          "embed_mips64le.go",
+          "embed_mipsle.go"
+        ],
+        "attackFiles": [
+          "exploits/cve_2023_0386_exp.c",
+          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
       "reliability": "reliable exploit",
       "researcher": "portbuster1337",
       "researcherUrl": "https://github.com/portbuster1337",
@@ -500,9 +511,9 @@
       "firstSeenAt": "2026-05-22T00:59:08Z",
       "language": "C",
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "CVE-2026-46300",
+      "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -527,26 +538,38 @@
       ]
     },
     {
-      "cve": "CVE-2026-34622",
-      "title": "A proof-of-concept demonstrating a JavaScript sandbox escape in Adobe Acrobat Reader. Exploits a chain of.",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-6433",
+      "title": "PoC for CVE-2026-6433: WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE..",
+      "ecosystem": "web",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "CVE-2026-6433.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-6433.py"
+        ],
+        "hasUsage": false,
+        "language": "Python"
+      },
       "reliability": "reliable exploit",
-      "researcher": "sanchit-saini",
-      "researcherUrl": "https://github.com/sanchit-saini",
+      "researcher": "murrez",
+      "researcherUrl": "https://github.com/murrez",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:18 PM CDT",
-      "firstSeenAt": "2026-05-22T01:18:17Z",
-      "language": "JavaScript",
-      "summary": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in arbitrary code.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sanchit-saini/acrobat-reader-escape.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sanchit-saini/acrobat-reader-escape\ncd acrobat-reader-escape\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "6:26 PM CDT",
+      "firstSeenAt": "2026-05-22T23:26:30Z",
+      "language": "Python",
+      "summary": "PoC for WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE. Python 3 stdlib; single target or bulk multi-threaded scanning. Authorized testing & research only.",
+      "technicalSummary": "PoC for WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE. Python 3 stdlib; single target or bulk multi-threaded scanning. Authorized testing & research only.",
+      "breakdown": "PoC for WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE. Python 3 stdlib; single target or bulk multi-threaded scanning. Authorized testing & research only.",
+      "whatBroke": "PoC for WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE. Python 3 stdlib; single target or bulk multi-threaded scanning. Authorized testing & research only.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-6433.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-6433\ncd CVE-2026-6433\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -556,63 +579,127 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/sanchit-saini/acrobat-reader-escape"
+          "https://github.com/murrez/CVE-2026-6433"
         ],
         [
           "Vendor Advisory",
-          "https://helpx.adobe.com/security/products/acrobat/apsb26-44.html"
+          "https://wpscan.com/vulnerability/a0b1c059-e156-4402-ac8d-67f8ad7386cc/"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-34626",
-      "title": "A proof-of-concept demonstrating a JavaScript sandbox escape in Adobe Acrobat Reader. Exploits a chain of.",
+      "cve": "CVE-2026-5817",
+      "title": "Docker Container Escape POC via mlx-metal importlib",
       "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "medium",
+      "category": "kubernetes",
+      "severity": "high",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "poc_cve_2026_5843.py"
+        ],
+        "attackFiles": [
+          "poc_cve_2026_5843.py"
+        ],
+        "hasUsage": true,
+        "language": "Python"
+      },
       "reliability": "reliable exploit",
-      "researcher": "sanchit-saini",
-      "researcherUrl": "https://github.com/sanchit-saini",
+      "researcher": "davidrxchester",
+      "researcherUrl": "https://github.com/davidrxchester",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:18 PM CDT",
-      "firstSeenAt": "2026-05-22T01:18:17Z",
-      "language": "JavaScript",
-      "summary": "A proof-of-concept demonstrating a JavaScript sandbox escape in Adobe Acrobat Reader. Exploits a chain of trusted function privilege escalation via ANShareFile, SilentDocCenterLogin, and SOAP.stringFromStream to gain elevated.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "CVE-2026-34626",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sanchit-saini/acrobat-reader-escape.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sanchit-saini/acrobat-reader-escape\ncd acrobat-reader-escape\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "6:26 PM CDT",
+      "firstSeenAt": "2026-05-22T23:26:30Z",
+      "language": "Python",
+      "summary": "Docker Container Escape POC via mlx-metal importlib",
+      "technicalSummary": "Docker Container Escape POC via mlx-metal importlib",
+      "breakdown": "Docker Container Escape POC via mlx-metal importlib",
+      "whatBroke": "Docker Container Escape POC via mlx-metal importlib",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at davidrxchester/CVE-2026-5843.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/davidrxchester/CVE-2026-5843\ncd CVE-2026-5843\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "Webstack",
-        "Local LPE"
+        "Kubernetes",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/sanchit-saini/acrobat-reader-escape"
+          "https://github.com/davidrxchester/CVE-2026-5843"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-5843",
+      "title": "Docker Container Escape POC via mlx-metal importlib",
+      "ecosystem": "cloud",
+      "category": "kubernetes",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "poc_cve_2026_5843.py"
+        ],
+        "attackFiles": [
+          "poc_cve_2026_5843.py"
+        ],
+        "hasUsage": true,
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "davidrxchester",
+      "researcherUrl": "https://github.com/davidrxchester",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:26 PM CDT",
+      "firstSeenAt": "2026-05-22T23:26:30Z",
+      "language": "Python",
+      "summary": "Docker Container Escape POC via mlx-metal importlib",
+      "technicalSummary": "Docker Container Escape POC via mlx-metal importlib",
+      "breakdown": "Docker Container Escape POC via mlx-metal importlib",
+      "whatBroke": "Docker Container Escape POC via mlx-metal importlib",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at davidrxchester/CVE-2026-5843.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/davidrxchester/CVE-2026-5843\ncd CVE-2026-5843\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Kubernetes",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/davidrxchester/CVE-2026-5843"
         ]
       ]
     },
@@ -623,6 +710,23 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exploits/exp2_lpe_no_smap.c",
+          "exploits/exp_setcred_smap_zfs.c",
+          "exploits/poc_dos.c",
+          "exploits/wrapper.c"
+        ],
+        "attackFiles": [
+          "exploits/exp2_lpe_no_smap.c",
+          "exploits/exp_setcred_smap_zfs.c",
+          "exploits/poc_dos.c"
+        ],
+        "hasUsage": false,
+        "language": "C"
+      },
       "reliability": "reliable exploit",
       "researcher": "venglin",
       "researcherUrl": "https://github.com/venglin",
@@ -631,10 +735,10 @@
       "added": "8:02 PM CDT",
       "firstSeenAt": "2026-05-22T01:02:56Z",
       "language": "C",
-      "summary": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer without first.",
+      "summary": "FreeBSD 14.x LPE",
+      "technicalSummary": "FreeBSD 14.x LPE",
+      "breakdown": "FreeBSD 14.x LPE",
+      "whatBroke": "FreeBSD 14.x LPE",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at venglin/setcred.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/venglin/setcred\ncd setcred\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -663,56 +767,22 @@
       ]
     },
     {
-      "cve": "CVE-2026-46529",
-      "title": "Evince/xreader/Atril RCE exploit to CVE-2026-46529",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "N1et",
-      "researcherUrl": "https://github.com/N1et",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:02 PM CDT",
-      "firstSeenAt": "2026-05-22T01:02:56Z",
-      "language": "Python",
-      "summary": "Evince/xreader/Atril RCE exploit to CVE-2026-46529",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "CVE-2026-46529",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at N1et/CVE-2026-46529.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/N1et/CVE-2026-46529\ncd CVE-2026-46529\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/N1et/CVE-2026-46529"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-4885",
       "title": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "shadow.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "language": "Python"
+      },
       "reliability": "reliable exploit",
       "researcher": "xShadow-Here",
       "researcherUrl": "https://github.com/xShadow-Here",
@@ -721,10 +791,10 @@
       "added": "8:02 PM CDT",
       "firstSeenAt": "2026-05-22T01:02:56Z",
       "language": "Python",
-      "summary": "The Piotnet Addons for Elementor Pro plugin for WordPress is vulnerable to arbitrary file upload due to missing file type validation in the 'pafe_ajax_form_builder' function in all versions up to, and including, 7.1.70. The.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "The Piotnet Addons for Elementor Pro plugin for WordPress is vulnerable to arbitrary file upload due to missing file type validation in the 'pafe_ajax_form_builder' function in all versions up to, and including, 7.1.70. The plugin uses an.",
+      "summary": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
+      "technicalSummary": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
+      "breakdown": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
+      "whatBroke": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at xShadow-Here/CVE-2026-4885.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/xShadow-Here/CVE-2026-4885\ncd CVE-2026-4885\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -751,147 +821,6 @@
         [
           "Vendor Advisory",
           "https://pafe.piotnet.com/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-23734",
-      "title": "XWiki Path Traversal Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:59 PM CDT",
-      "firstSeenAt": "2026-05-22T00:59:08Z",
-      "language": "Unknown",
-      "summary": "<p>CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a.",
-      "technicalSummary": "CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash can bypass path.",
-      "breakdown": "CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash can bypass path.",
-      "whatBroke": "<p>CVE-2026-23734 is a Critical path traversal vulnerability affecting XWiki\u2019s xwiki-commons-classloader-api component. The vulnerability affects the ssx and jsx endpoints, where a crafted resource parameter beginning with a leading slash.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Horizon3 Attack Team/CVE-2026-23734.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://horizon3.ai/attack-research/vulnerabilities/cve-2026-23734/\ncd CVE-2026-23734\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "File Read",
-        "Research"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "PoC",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-23734/"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-23734/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-28289",
-      "title": "Proof-of-concept exploits and reproduction labs for CVEs analyzed by the Exploit Intelligence Platform",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "exploitintel",
-      "researcherUrl": "https://github.com/exploitintel",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:18 PM CDT",
-      "firstSeenAt": "2026-05-22T01:18:17Z",
-      "language": "C",
-      "summary": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. A patch bypass vulnerability for CVE-2026-27636 in FreeScout 1.8.206 and earlier allows any authenticated user with file upload permissions to.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. A patch bypass vulnerability for CVE-2026-27636 in FreeScout 1.8.206 and earlier allows any authenticated user with file upload permissions to achieve.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-pocs-and-cves.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-pocs-and-cves\ncd eip-pocs-and-cves\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 89,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/exploitintel/eip-pocs-and-cves"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/freescout-help-desk/freescout/commit/f7bc16c56a6b13c06da52ad51fd666546b40818f"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-35030",
-      "title": "The code for personally reproducing the corresponding vulnerability",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "reliability": "reliable exploit",
-      "researcher": "learner202649",
-      "researcherUrl": "https://github.com/learner202649",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:54 AM CDT",
-      "firstSeenAt": "2026-05-22T05:54:23Z",
-      "language": "Python",
-      "summary": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. Prior to 1.83.0, when JWT authentication is enabled (enable_jwt_auth: true), the OIDC userinfo cache uses token[:20] as the cache key. JWT.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches session theft handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches session theft handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "LiteLLM is a proxy server (AI Gateway) to call LLM APIs in OpenAI (or native) format. Prior to 1.83.0, when JWT authentication is enabled (enable_jwt_auth: true), the OIDC userinfo cache uses token[:20] as the cache key. JWT headers.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at learner202649/CVE-2026-35030-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/learner202649/CVE-2026-35030-PoC\ncd CVE-2026-35030-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/learner202649/CVE-2026-35030-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/BerriAI/litellm/security/advisories/GHSA-jjhc-v7c2-5hh6"
         ]
       ]
     }
