@@ -324,8 +324,8 @@ def compact(text: str, limit: int = 190) -> str:
 
 def strip_cve_prefix(text: str, cve: str) -> str:
     text = norm(text)
-    text = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-Ã¢â‚¬â€œÃ¢â‚¬â€]?\s*", "", text, flags=re.I)
-    text = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-Ã¢â‚¬â€œÃ¢â‚¬â€]?\s*", "", text, flags=re.I)
+    text = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", text, flags=re.I)
+    text = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", text, flags=re.I)
     return text.strip()
 
 def remove_cve_refs(text: str, cve: str) -> str:
@@ -357,10 +357,10 @@ def looks_non_english(text: str) -> bool:
 
 def clean_title(text: str, cve: str, limit: int = 110) -> str:
     text = strip_cve_prefix(text, cve)
-    text = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-â€“â€”]?\s*", "", text, flags=re.I)
-    text = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-â€“â€”]?\s*", "", text, flags=re.I)
+    text = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", text, flags=re.I)
+    text = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", text, flags=re.I)
     text = re.sub(r"\s+with public poc signal\s*$", "", text, flags=re.I)
-    text = re.sub(r"^[\s|:;,\-â€“â€”]+", "", text)
+    text = re.sub(r"^[\s|:;,\-\u2013\u2014]+", "", text)
     return compact(text.strip() or "Untitled vulnerability signal", limit)
 
 def meaningful_title(text: str, cve: str, limit: int = 110) -> str:
@@ -478,8 +478,8 @@ def clean_summary(desc: str, repo: dict, cve: str, vendor: str, product: str, pr
         text = remove_cve_refs(candidate, cve)
         if looks_non_english(text) or keyword_soup(text):
             continue
-        text = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-â€“â€”]?\s*", "", text, flags=re.I)
-        text = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-â€“â€”]?\s*", "", text, flags=re.I)
+        text = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", text, flags=re.I)
+        text = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", text, flags=re.I)
         if meaningful_title(text, cve, 60):
             return compact(text, limit)
     return english_problem_summary(desc, repo, cve, vendor, product, prim, limit)
@@ -942,8 +942,6 @@ def github_readme_text(full_name: str) -> str:
     return ""
 
 def github_recent_cve_repos() -> dict[str, list[dict]]:
-    # "New PoC" means first public repo creation in the last week.
-    # Later pushes to old CVE repositories are intentionally ignored.
     created_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
     discovered: dict[str, list[dict]] = {}
     seen_repos: set[str] = set()
@@ -1304,4 +1302,3 @@ payload = {
 }
 OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 print(f"wrote {len(entries)} live entries to {OUT}")
-
