@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-22T01:25:01Z",
+  "updatedAt": "2026-05-22T01:34:02Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -298,7 +298,7 @@
     },
     {
       "cve": "CVE-2026-9082",
-      "title": "| Drupal SQL Injection Vulnerability",
+      "title": "Drupal SQL Injection Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
@@ -348,7 +348,7 @@
     },
     {
       "cve": "CVE-2026-0908",
-      "title": "Untitled vulnerability signal",
+      "title": "GlassBreak \u00b7 CVE-2026-0908",
       "ecosystem": "cloud",
       "category": "kernel",
       "severity": "high",
@@ -394,7 +394,7 @@
     },
     {
       "cve": "CVE-2026-43284",
-      "title": "Untitled vulnerability signal",
+      "title": "Dirty-Frag-CVE-2026-43284",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "high",
@@ -440,7 +440,7 @@
     },
     {
       "cve": "CVE-2026-31635",
-      "title": "Untitled vulnerability signal",
+      "title": "Linux LPE Toolkit",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "medium",
@@ -486,7 +486,7 @@
     },
     {
       "cve": "CVE-2026-46300",
-      "title": "Untitled vulnerability signal",
+      "title": "Linux LPE Toolkit",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "medium",
@@ -528,10 +528,10 @@
     },
     {
       "cve": "CVE-2026-34622",
-      "title": "Untitled vulnerability signal",
+      "title": "Adobe Reader JS Sandbox Escape \u2014 POC",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "medium",
       "proof": "working public poc",
       "reliability": "reliable exploit",
       "researcher": "sanchit-saini",
@@ -541,16 +541,14 @@
       "added": "8:18 PM CDT",
       "firstSeenAt": "2026-05-22T01:18:17Z",
       "language": "JavaScript",
-      "summary": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "Acrobat Reader versions 26.001.21411, 24.001.30360, 24.001.30362 and earlier are affected by an Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution') vulnerability that could result in arbitrary code.",
+      "summary": "CVE-2026-34622",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches local lpe handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "CVE-2026-34622",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sanchit-saini/acrobat-reader-escape.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sanchit-saini/acrobat-reader-escape\ncd acrobat-reader-escape\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -558,7 +556,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "RCE"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -567,16 +565,12 @@
         [
           "GitHub",
           "https://github.com/sanchit-saini/acrobat-reader-escape"
-        ],
-        [
-          "Vendor Advisory",
-          "https://helpx.adobe.com/security/products/acrobat/apsb26-44.html"
         ]
       ]
     },
     {
       "cve": "CVE-2026-34626",
-      "title": "Untitled vulnerability signal",
+      "title": "Adobe Reader JS Sandbox Escape \u2014 POC",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "medium",
@@ -622,7 +616,7 @@
     },
     {
       "cve": "CVE-2026-33824",
-      "title": "Untitled vulnerability signal",
+      "title": "EpSiLoNPoInTIkEv2.cpp",
       "ecosystem": "windows",
       "category": "webstack",
       "severity": "high",
@@ -664,7 +658,7 @@
     },
     {
       "cve": "CVE-2026-45250",
-      "title": "Untitled vulnerability signal",
+      "title": "FreeBSD setcred(2) \u2014 research artifacts",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
@@ -706,7 +700,7 @@
     },
     {
       "cve": "CVE-2026-46529",
-      "title": "Untitled vulnerability signal",
+      "title": "RCE via PDF argv injection (CVE-2026-46529) (atril/xreader/evince)",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
@@ -750,7 +744,7 @@
     },
     {
       "cve": "CVE-2026-4885",
-      "title": "Untitled vulnerability signal",
+      "title": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
@@ -794,7 +788,7 @@
     },
     {
       "cve": "CVE-2026-23734",
-      "title": "| XWiki Path Traversal Vulnerability",
+      "title": "XWiki Path Traversal Vulnerability",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
@@ -845,10 +839,10 @@
     },
     {
       "cve": "CVE-2026-28289",
-      "title": "Untitled vulnerability signal",
-      "ecosystem": "web",
+      "title": "EIP PoCs and CVEs",
+      "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "reliability": "reliable exploit",
       "researcher": "exploitintel",
@@ -858,24 +852,22 @@
       "added": "8:18 PM CDT",
       "firstSeenAt": "2026-05-22T01:18:17Z",
       "language": "C",
-      "summary": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. A patch bypass vulnerability for CVE-2026-27636 in FreeScout 1.8.206 and earlier allows any authenticated user with file upload permissions to.",
-      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches rce handling that should require stricter validation, authentication, or state checks.",
-      "whatBroke": "FreeScout is a free help desk and shared inbox built with PHP's Laravel framework. A patch bypass vulnerability for CVE-2026-27636 in FreeScout 1.8.206 and earlier allows any authenticated user with file upload permissions to achieve.",
+      "summary": "CVE-2026-28289",
+      "technicalSummary": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
+      "breakdown": "The exploit path abuses a trust boundary in the affected component: attacker-controlled input reaches exploit handling that should require stricter validation, authentication, or state checks.",
+      "whatBroke": "CVE-2026-28289",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at exploitintel/eip-pocs-and-cves.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/exploitintel/eip-pocs-and-cves\ncd eip-pocs-and-cves\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "RCE"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 89,
@@ -884,10 +876,6 @@
         [
           "GitHub",
           "https://github.com/exploitintel/eip-pocs-and-cves"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/freescout-help-desk/freescout/commit/f7bc16c56a6b13c06da52ad51fd666546b40818f"
         ]
       ]
     }
