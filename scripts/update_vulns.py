@@ -1320,6 +1320,7 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
         "summary": summary,
         "technicalSummary": technical_summary,
         "breakdown": technical_summary,
+        "reality": " ",
         "exploitSyntax": exploit_syntax(repo, language),
         "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
         "tags": tags,
