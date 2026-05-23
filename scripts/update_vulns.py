@@ -157,6 +157,7 @@ HIGH_SIGNAL = {
     "palo alto", "pan-os", "pixel", "rdp", "relay", "saml", "sccm", "screenconnect",
     "sharepoint", "teamcity", "webkit", "windows", "winrm", "wordpress", "vmware",
     "vpn", "zero-click", "zeroclick",
+    "phishing", "aitm", "evilginx", "gophish", "credential harvest", "html smuggling",
     "baseband", "binder", "dolby", "media framework", "pixel", "qualcomm", "sandbox",
 }
 
@@ -228,6 +229,17 @@ X_STYLE_DISCOVERY_QUERIES = [
     "CVE command injection exploit",
     "CVE privilege escalation exploit",
     "CVE weaponized exploit",
+    # Phishing / credential harvesting / AiTM
+    "CVE exploit phishing credential harvest",
+    "CVE exploit PoC AiTM adversary-in-the-middle",
+    "evilginx phishing framework exploit",
+    "CVE exploit PoC open redirect phishing",
+    "CVE exploit PoC OWA phishing O365",
+    "CVE exploit PoC DKIM DMARC email spoofing",
+    "CVE exploit PoC HTML smuggling",
+    "CVE exploit PoC Microsoft Teams phishing",
+    "CVE exploit PoC OAuth phishing token",
+    "CVE exploit PoC browser-in-the-middle",
     # Windows / AD / Exchange specific
     "CVE exploit PoC NTLM relay",
     "CVE exploit PoC DLL hijacking Windows",
@@ -245,6 +257,7 @@ ECOSYSTEM_RULES = [
     ("linux", ["linux", "openssh", "sudo", "systemd", "ubuntu", "debian", "kernel", "freebsd", "openbsd", "netbsd", "bsd", "glibc"]),
     ("web", ["apache", "nginx", "tomcat", "iis", "php", "java servlet", "spring", "struts", "rails", "django", "laravel", "nodejs", "express", "confluence", "jira", "wordpress", "wordpress plugin", "woocommerce", "drupal", "coldfusion", "geoserver", "cpanel", "whm", "webpros", "webstack", "web app", "webapp", "web application", "appsec", "api", "rest api", "graphql", "oauth", "saml", "openid", "session", "cookie", "xss", "csrf", "ssrf", "sqli", "sql injection", "deserialization", "path traversal", "file upload", "template injection", "ssti", "xxe"]),
     ("cloud", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "cisco", "vmware", "esxi", "kubernetes", "jenkins", "gitlab", "teamcity", "confluence", "atlassian", "connectwise", "vpn", "cloud", "sd-wan", "sdwan"]),
+    ("phishing", ["phishing", "aitm", "adversary-in-the-middle", "evilginx", "gophish", "credential harvest", "html smuggling", "browser-in-the-middle", "spearphish"]),
 ]
 
 CATEGORY_RULES = [
@@ -263,6 +276,13 @@ CATEGORY_RULES = [
     ("ssh", ["openssh", "ssh"]),
     ("webstack", ["apache", "nginx", "tomcat", "iis", "php", "spring", "struts", "rails", "django", "laravel", "nodejs", "express", "confluence", "jira", "wordpress", "wordpress plugin", "woocommerce", "drupal", "coldfusion", "geoserver", "cpanel", "whm", "webpros", "web", "web app", "webapp", "web application", "api", "rest api", "graphql", "oauth", "saml", "openid", "session", "cookie", "xss", "csrf", "ssrf", "sql injection", "deserialization", "path traversal", "file upload", "template injection", "ssti", "xxe"]),
     ("framework", ["android", "framework", "packageinstaller"]),
+    ("phishing", ["phishing", "aitm", "adversary-in-the-middle", "evilginx", "gophish",
+                  "html smuggling", "credential harvest", "spearphish", "spear phish",
+                  "pretexting", "oauth phishing", "qr phish", "browser-in-the-middle",
+                  "bitm", "reverse proxy phish", "owa phishing", "o365 phishing",
+                  "microsoft 365 phish", "email spoofing", "dkim bypass", "dmarc bypass",
+                  "open redirect phish", "lnk phish", "iso phish", "one drive phish",
+                  "sharepoint phish", "teams phish", "fake login"]),
 ]
 
 SPAM_TERMS = [
@@ -657,6 +677,7 @@ def labelize(value: str) -> str:
         "android": "Android",
         "cloud": "Cloud",
         "bsd": "BSD",
+        "phishing": "Phishing",
     }.get(value.lower(), value.replace("-", " ").title())
 
 def parse_date(value: str) -> dt.datetime:
