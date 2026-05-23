@@ -1,0 +1,17 @@
+name: cron-trigger
+on:
+  schedule:
+    - cron: "7 2,13,19 * * *"
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger feed update
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.WORKFLOW_PAT }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/piratemoo/threat-tide/actions/workflows/update-vulns-json.yml/dispatches \
+            -d '{"ref":"main"}'
