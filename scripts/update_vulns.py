@@ -55,6 +55,8 @@ RSS_SOURCES = [
     ("Kaspersky Securelist", "https://securelist.com/feed/"),
     ("Exodus Intelligence", "https://blog.exodusintel.com/feed/"),
     ("The GitHub Blog Security", "https://github.blog/security/feed/"),
+    # Mastodon RSS for researchers on infosec.exchange
+    ("Mastodon tiraniddo", "https://infosec.exchange/@tiraniddo.rss"),
 ]
 
 SOURCE_PROFILES = {
@@ -82,6 +84,7 @@ SOURCE_PROFILES = {
     "Kaspersky Securelist": ("Kaspersky GReAT", "https://securelist.com/"),
     "Exodus Intelligence": ("Exodus Intelligence", "https://blog.exodusintel.com/"),
     "The GitHub Blog Security": ("GitHub Security", "https://github.blog/security/"),
+    "Mastodon tiraniddo": ("James Forshaw (@tiraniddo)", "https://infosec.exchange/@tiraniddo"),
 }
 
 MOBILE_RESEARCHERS = [
@@ -107,14 +110,14 @@ MOBILE_RESEARCHER_TERMS = {
     for handle, _ in MOBILE_RESEARCHERS
 }
 
-for line in EXTRA_RSS_SOURCES.splitlines():
-    if "|" not in line:
-        continue
-    name, url = [part.strip() for part in line.split("|", 1)]
-    if name and url.startswith("https://"):
-        RSS_SOURCES.append((name, url))
-        SOURCE_PROFILES.setdefault(name, (name, url))
+# Researchers confirmed on Bluesky with active accounts
+BSKY_RESEARCHERS = [
+    ("tiraniddo.dev", "James Forshaw (@tiraniddo)"),
+    ("dinosn.bsky.social", "Dinosn"),
+    ("binitamshah.bsky.social", "Binni Shah"),
+]
 
+# Sources that publish offensive exploit research / attack technique writeups
 RESEARCH_SOURCE_NAMES = {
     "Project Zero Current",
     "Project Zero",
@@ -133,7 +136,17 @@ RESEARCH_SOURCE_NAMES = {
     "Rapid7 Blog",
     "GitHub Security Lab",
     "Elastic Security Labs",
+    "Mastodon tiraniddo",
 }
+
+for line in EXTRA_RSS_SOURCES.splitlines():
+    if "|" not in line:
+        continue
+    name, url = [part.strip() for part in line.split("|", 1)]
+    if name and url.startswith("https://"):
+        RSS_SOURCES.append((name, url))
+        SOURCE_PROFILES.setdefault(name, (name, url))
+        RESEARCH_SOURCE_NAMES.add(name)  # auto-include extra sources in research
 
 HIGH_SIGNAL = {
     "active directory", "ad cs", "adcs", "android", "apache", "apple", "atlassian", "azure",
@@ -535,15 +548,12 @@ def english_problem_summary(desc: str, repo: dict, cve: str, vendor: str, produc
     return compact(f"{subject} exposes a {primitive_copy(prim)} path with recent public exploit tooling signal.", limit)
 
 def clean_summary(desc: str, repo: dict, cve: str, vendor: str, product: str, prim: str, limit: int = 230) -> str:
-    # Priority 1: repo description if substantive and English
     repo_desc = remove_cve_refs(repo.get("description", ""), cve)
     if repo_desc and not looks_non_english(repo_desc) and not keyword_soup(repo_desc) and len(repo_desc.split()) >= 8:
         repo_desc = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", repo_desc, flags=re.I)
         repo_desc = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", repo_desc, flags=re.I)
         if meaningful_title(repo_desc, cve, 60):
             return compact(repo_desc, limit)
-
-    # Priority 2: NVD / item description — use directly if substantial
     if desc and len(desc.split()) >= 10 and not looks_non_english(desc):
         cleaned = remove_cve_refs(desc, cve)
         cleaned = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", cleaned, flags=re.I)
@@ -551,8 +561,6 @@ def clean_summary(desc: str, repo: dict, cve: str, vendor: str, product: str, pr
         cleaned = cleaned.strip()
         if cleaned and len(cleaned.split()) >= 6:
             return compact(cleaned, limit)
-
-    # Priority 3: synthesize from available signals
     return english_problem_summary(desc, repo, cve, vendor, product, prim, limit)
 
 def derived_title(cve: str, vendor: str, product: str, name: str, desc: str, repo: dict, mention: dict | None, prim: str) -> str:
@@ -653,6 +661,26 @@ def parse_date(value: str) -> dt.datetime:
         except Exception:
             return dt.datetime(1970, 1, 1, tzinfo=dt.timezone.utc)
 
+def make_research_item(title: str, source: str, source_url: str, url: str, summary: str,
+                       published_at: str, cves: list[str], text: str) -> dict:
+    category = tag_value(text, CATEGORY_RULES, "")
+    ecosystem = tag_value(text, ECOSYSTEM_RULES, "")
+    prim = primitive(text)
+    tags = []
+    for value in [ecosystem, category, prim]:
+        if value and value not in {"Exploit", "kubernetes-generic"}:
+            tags.append(labelize(value))
+    return {
+        "title": compact(title, 160),
+        "source": source,
+        "sourceUrl": source_url,
+        "url": url,
+        "summary": compact(summary, 300),
+        "publishedAt": published_at,
+        "cves": cves[:5],
+        "tags": list(dict.fromkeys(tags))[:6],
+    }
+
 def rss_mentions() -> dict[str, list[dict]]:
     mentions: dict[str, list[dict]] = {}
     cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)
@@ -693,12 +721,9 @@ def rss_mentions() -> dict[str, list[dict]]:
     return mentions
 
 def rss_research_items(now_utc: dt.datetime) -> list[dict]:
-    """Offensive security research feed — working exploits, attack technique breakdowns,
-    offensive tooling. Advisory posts, detection tools, and defensive content are rejected."""
     research: list[dict] = []
     cutoff = now_utc - dt.timedelta(hours=48)
     seen_urls: set[str] = set()
-
     for source, url in RSS_SOURCES:
         if source not in RESEARCH_SOURCE_NAMES:
             continue
@@ -726,60 +751,69 @@ def rss_research_items(now_utc: dt.datetime) -> list[dict]:
             link = fields["link"] or url
             if not link or link in seen_urls:
                 continue
-
             title = fields["title"]
             text = norm(re.sub(r"<[^>]+>", " ", f"{title} {fields['summary']}"))
-            title_lower = title.lower()
-
             if OFFENSIVE_REJECT_TITLE_RE.search(title):
                 continue
-            if contains_any(title_lower, [
-                "security update", "patch tuesday", "now available",
-                "fixed in", "we have patched", "release notes",
-                "detection tool", "detecting ", "threat hunt",
-            ]):
+            if contains_any(title.lower(), ["security update", "patch tuesday", "now available",
+                "fixed in", "we have patched", "release notes", "detection tool", "detecting ", "threat hunt"]):
                 continue
-
             has_offensive = contains_any(text, OFFENSIVE_RESEARCH_SIGNAL)
             has_deep = contains_any(text, DEEP_RESEARCH_SIGNAL)
             cves = sorted({match.upper() for match in CVE_RE.findall(text)})
             has_cve_with_primitive = bool(cves) and any(
                 contains_any(text, terms[1]) for terms in PRIMITIVES.values()
             )
-
             if not has_offensive:
                 continue
             if not has_deep and not has_cve_with_primitive:
                 continue
-
             if contains_any(text, DEFENSE_ONLY_TERMS) and not contains_any(text, [
-                "exploit", "poc", "attack", "offensive", "bypass", "rce", "lpe",
-            ]):
+                "exploit", "poc", "attack", "offensive", "bypass", "rce", "lpe"]):
                 continue
-
             profile_name, profile_url = SOURCE_PROFILES.get(source, (source, url))
-            category = tag_value(text, CATEGORY_RULES, "")
-            ecosystem = tag_value(text, ECOSYSTEM_RULES, "")
-            prim = primitive(text)
-            tags = []
-            for value in [ecosystem, category, prim]:
-                if value and value not in {"Exploit", "kubernetes-generic"}:
-                    tags.append(labelize(value))
-
             seen_urls.add(link)
-            research.append({
-                "title": compact(title, 160),
-                "source": profile_name,
-                "sourceUrl": profile_url,
-                "url": link,
-                "summary": compact(re.sub(r"<[^>]+>", " ", fields["summary"]), 300),
-                "publishedAt": published.isoformat().replace("+00:00", "Z"),
-                "cves": cves[:5],
-                "tags": list(dict.fromkeys(tags))[:6],
-            })
+            research.append(make_research_item(
+                title, profile_name, profile_url, link,
+                re.sub(r"<[^>]+>", " ", fields["summary"]),
+                published.isoformat().replace("+00:00", "Z"), cves, text
+            ))
+    return research
 
-    research.sort(key=lambda item: parse_date(item.get("publishedAt", "")), reverse=True)
-    return research[:12]
+def bsky_researcher_items(now_utc: dt.datetime) -> list[dict]:
+    """Fetch recent security posts from researchers on Bluesky."""
+    results: list[dict] = []
+    cutoff = now_utc - dt.timedelta(hours=48)
+    seen_urls: set[str] = set()
+    for handle, display_name in BSKY_RESEARCHERS:
+        url = (f"https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+               f"?actor={urllib.parse.quote(handle)}&limit=25&filter=posts_no_replies")
+        data = fetch_json(url)
+        for item in data.get("feed", []):
+            post = item.get("post", {})
+            record = post.get("record", {})
+            text = norm(record.get("text", ""))
+            indexed_at = post.get("indexedAt", "")
+            if not text or not indexed_at:
+                continue
+            if parse_date(indexed_at) < cutoff:
+                continue
+            uri = post.get("uri", "")
+            rkey = uri.split("/")[-1] if uri else ""
+            post_url = f"https://bsky.app/profile/{handle}/post/{rkey}" if rkey else ""
+            if not post_url or post_url in seen_urls:
+                continue
+            cves = sorted({match.upper() for match in CVE_RE.findall(text)})
+            if not cves and not contains_any(text.lower(), OFFENSIVE_RESEARCH_SIGNAL + RESEARCH_SIGNAL_TERMS):
+                continue
+            seen_urls.add(post_url)
+            results.append(make_research_item(
+                text, display_name, f"https://bsky.app/profile/{handle}",
+                post_url, text, indexed_at, cves, text
+            ))
+        time.sleep(0.2)
+    return results
+
 
 def kev_items() -> list[dict]:
     data = fetch_json(CISA_KEV)
@@ -812,11 +846,7 @@ def nvd_lookup(cve: str) -> dict:
     raw_refs = cve_data.get("references", [])
     if isinstance(raw_refs, dict):
         raw_refs = raw_refs.get("referenceData", [])
-    refs = [
-        ref.get("url", "")
-        for ref in raw_refs
-        if isinstance(ref, dict) and ref.get("url")
-    ]
+    refs = [ref.get("url", "") for ref in raw_refs if isinstance(ref, dict) and ref.get("url")]
     metrics = cve_data.get("metrics", {})
     severity = ""
     if isinstance(metrics, dict):
@@ -843,7 +873,6 @@ def allowed_cve_year(cve: str) -> bool:
     year = cve_year(cve)
     if not STRICT_CURRENT_CVE_YEAR_ONLY:
         return year >= CURRENT_CVE_YEAR
-    # Jan 1-7 buffer: no CVE-YYYY repos exist yet for new year
     now = dt.datetime.now(dt.timezone.utc)
     if now.month == 1 and now.day <= 7:
         return year in (CURRENT_CVE_YEAR, CURRENT_CVE_YEAR - 1)
@@ -872,11 +901,7 @@ def repo_is_new(repo: dict, now_utc: dt.datetime) -> bool:
     return recent_date(repo.get("created_at", ""), now_utc)
 
 def repo_score(repo: dict, cve: str) -> int:
-    text = " ".join([
-        repo.get("full_name", ""),
-        repo.get("name", ""),
-        repo.get("description") or "",
-    ]).lower()
+    text = " ".join([repo.get("full_name", ""), repo.get("name", ""), repo.get("description") or ""]).lower()
     score = 0
     if cve.lower() in text:
         score += 35
@@ -901,11 +926,7 @@ def repo_score(repo: dict, cve: str) -> int:
     return score
 
 def attack_ready_repo(repo: dict, cve: str) -> bool:
-    text = " ".join([
-        repo.get("full_name", ""),
-        repo.get("name", ""),
-        repo.get("description") or "",
-    ])
+    text = " ".join([repo.get("full_name", ""), repo.get("name", ""), repo.get("description") or ""])
     if contains_any(text, DEFENSE_ONLY_TERMS) or contains_any(text, SPAM_TERMS):
         return False
     return contains_any(text, ATTACK_READY_TERMS) and term_in_text(text, cve)
@@ -955,10 +976,7 @@ def poc_evidence(repo: dict, cve: str, readme: str = "") -> dict:
         if file_extension(path) in POC_CODE_EXTENSIONS
         and not re.search(r"(^|/)(test|tests|docs?|examples?|screenshots?)/", path.lower())
     ]
-    attack_paths = [
-        path for path in code_paths
-        if contains_any(path, POC_FILE_TERMS) or cve.lower() in path.lower()
-    ]
+    attack_paths = [path for path in code_paths if contains_any(path, POC_FILE_TERMS) or cve.lower() in path.lower()]
     text = " ".join([full_name, repo.get("name", ""), desc, readme])
     has_cve = term_in_text(text, cve) or any(cve.lower() in path.lower() for path in paths)
     attack_text = contains_any(text, ATTACK_READY_TERMS)
@@ -1025,8 +1043,7 @@ def mention_candidate(cve: str, mention: dict | None) -> dict | None:
     urls = list(dict.fromkeys((mention.get("urls") or []) + [mention.get("url", "")]))
     chosen = ""
     for url in urls:
-        lower = str(url).lower()
-        if "github.com/" in lower:
+        if "github.com/" in str(url).lower():
             chosen = url
             break
     if not chosen:
@@ -1065,12 +1082,7 @@ def github_recent_cve_repos() -> dict[str, list[dict]]:
     readme_budget = 36
     for base_query in X_STYLE_DISCOVERY_QUERIES:
         query = f"{base_query} in:name,description,readme created:>={created_after}"
-        url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({
-            "q": query,
-            "sort": "updated",
-            "order": "desc",
-            "per_page": "20",
-        })
+        url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({"q": query, "sort": "updated", "order": "desc", "per_page": "20"})
         data = fetch_json(url)
         repos = data.get("items", []) if isinstance(data.get("items"), list) else []
         for repo in repos:
@@ -1087,12 +1099,7 @@ def github_recent_cve_repos() -> dict[str, list[dict]]:
             if readme_budget > 0:
                 readme_budget -= 1
                 readme = github_readme_text(full_name)
-            text = " ".join([
-                full_name,
-                repo.get("name", ""),
-                repo.get("description") or "",
-                readme,
-            ])
+            text = " ".join([full_name, repo.get("name", ""), repo.get("description") or "", readme])
             cves = {match.upper() for match in CVE_RE.findall(text)}
             for cve in cves:
                 if not allowed_cve_year(cve):
@@ -1118,12 +1125,7 @@ def github_candidate(cve: str, seeded: list[dict] | None = None) -> dict | None:
         f"{cve} exploit poc in:name,description,readme created:>={created_after}",
     ]
     for query in queries:
-        url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({
-            "q": query,
-            "sort": "updated",
-            "order": "desc",
-            "per_page": "10",
-        })
+        url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({"q": query, "sort": "updated", "order": "desc", "per_page": "10"})
         data = fetch_json(url)
         repos = data.get("items", []) if isinstance(data.get("items"), list) else []
         ranked = sorted(((repo_score(repo, cve), repo) for repo in repos), key=lambda item: item[0], reverse=True)
@@ -1145,8 +1147,7 @@ def archive_day_offset(first_seen_at: str, now_utc: dt.datetime) -> int:
     return max(0, (now_local - first_local).days)
 
 def language_label(repo: dict) -> str:
-    language = norm(repo.get("language", ""))
-    return language or "Unknown"
+    return norm(repo.get("language", "")) or "Unknown"
 
 def difficulty_label(repo: dict, prim: str, epss: float) -> str:
     score = repo.get("score", 0)
@@ -1183,11 +1184,7 @@ def exploit_syntax(repo: dict, language: str) -> str:
     repo_url = repo.get("url", "")
     repo_name = (repo.get("name", "").split("/")[-1] or "poc").strip()
     lower = language.lower()
-    lines = [
-        "# authorized lab / owned targets only",
-        f"git clone {repo_url}",
-        f"cd {repo_name}",
-    ]
+    lines = ["# authorized lab / owned targets only", f"git clone {repo_url}", f"cd {repo_name}"]
     if "python" in lower:
         lines.append("python3 <script>.py --target https://<authorized-target>")
     elif lower in {"go", "golang"}:
@@ -1231,31 +1228,22 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
     ecosystem = tag_value(text, ECOSYSTEM_RULES, "cloud")
     category = tag_value(text, CATEGORY_RULES, "webstack")
     prim = primitive(text)
-
-    # Web privilege escalation is auth bypass, not OS LPE
     if prim == "Local LPE" and ecosystem in {"web"} and category in {"webstack"}:
         if contains_any(text, ["role injection", "unauthorized", "unauthenticated", "authentication", "privilege", "escalat"]):
             prim = "Auth Bypass"
-
-    # BSD tag override
     is_bsd = contains_any(text, ["freebsd", "openbsd", "netbsd", " bsd "])
     ecosystem_label = "bsd" if is_bsd and ecosystem == "linux" else ecosystem
-
     nvd_sev = (nvd.get("severity") or "").upper()
     severity = operator_severity(nvd_sev, prim, ecosystem, category, epss, repo, is_kev, text)
     confidence = min(98, 70 + repo.get("score", 0) // 3 + (12 if mention else 0) + (8 if item else 0))
     weaponization = min(99, int(55 + epss * 80 + (18 if item else 0) + (10 if item.get("knownRansomwareCampaignUse") == "Known" else 0)))
     title = derived_title(cve, vendor, product, name, desc, repo, mention, prim)
     summary = clean_summary(desc, repo, cve, vendor, product, prim)
-
-    # Technical summary — prefer NVD description as authoritative plain-English source
     nvd_desc = norm(nvd.get("description", ""))
     if nvd_desc and len(nvd_desc.split()) >= 10 and not looks_non_english(nvd_desc):
         technical_summary = compact(remove_cve_refs(nvd_desc, cve), 300)
     else:
         technical_summary = compact(summary, 280)
-
-    # Override with researcher writeup if available and richer
     if mention and mention.get("summary"):
         mention_summary = norm(re.sub(r"<[^>]+>", " ", mention["summary"]))
         if mention_summary and not looks_non_english(mention_summary) and len(mention_summary.split()) >= 8:
@@ -1264,7 +1252,6 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
         mention_title = norm(mention["title"])
         if mention_title and not looks_non_english(mention_title):
             technical_summary = compact(f"{mention_title}. The useful takeaway is the vulnerable input path and how the public code validates the bug.", 300)
-
     primary_label = "GitHub" if "github.com/" in repo.get("url", "").lower() else "PoC"
     links = [[primary_label, repo["url"]]]
     if mention:
@@ -1272,8 +1259,6 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
     vendor_links = [url for url in extract_urls(notes) + nvd.get("references", []) if "nvd.nist.gov" not in url.lower()]
     if vendor_links:
         links.append(["Vendor Advisory", vendor_links[0]])
-
-    # Deduplicated tags
     raw_tags = [labelize(ecosystem_label), labelize(category), prim]
     if is_kev:
         raw_tags.append("KEV")
@@ -1292,7 +1277,6 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
         if t not in seen_tags:
             seen_tags.add(t)
             tags.append(t)
-
     language = language_label(repo)
     difficulty = difficulty_label(repo, prim, epss)
     return {
@@ -1340,7 +1324,27 @@ if OUT.exists():
 
 kev = kev_items()
 rss = rss_mentions()
-research_items = rss_research_items(now_utc)
+
+# Collect all research items from all sources and deduplicate
+print("fetching RSS research...")
+_research_raw = rss_research_items(now_utc)
+print(f"  rss: {len(_research_raw)} items")
+
+print("fetching Bluesky research...")
+_bsky_raw = bsky_researcher_items(now_utc)
+print(f"  bluesky: {len(_bsky_raw)} items")
+
+_all_research = _research_raw + _bsky_raw
+_all_research.sort(key=lambda x: parse_date(x.get("publishedAt", "")), reverse=True)
+_seen_research_urls: set[str] = set()
+research_items: list[dict] = []
+for _item in _all_research:
+    if _item.get("url") and _item["url"] not in _seen_research_urls:
+        _seen_research_urls.add(_item["url"])
+        research_items.append(_item)
+research_items = research_items[:12]
+print(f"  total research items: {len(research_items)}")
+
 github_discovered = github_recent_cve_repos()
 kev_by_cve = {
     item.get("cveID", "").upper(): item
@@ -1348,20 +1352,11 @@ kev_by_cve = {
     if CVE_RE.fullmatch(item.get("cveID", ""))
 }
 recent_kev = {
-    cve
-    for cve, item in kev_by_cve.items()
+    cve for cve, item in kev_by_cve.items()
     if allowed_cve_year(cve) and recent_date(item.get("dateAdded", ""), now_utc)
 }
-current_year_github = {
-    cve
-    for cve in github_discovered
-    if allowed_cve_year(cve)
-}
-current_year_rss = {
-    cve
-    for cve in rss
-    if allowed_cve_year(cve)
-}
+current_year_github = {cve for cve in github_discovered if allowed_cve_year(cve)}
+current_year_rss = {cve for cve in rss if allowed_cve_year(cve)}
 candidate_cves = sorted(current_year_rss | recent_kev | current_year_github)
 epss = epss_scores(candidate_cves)
 
@@ -1442,14 +1437,16 @@ for signal, cve in scored[:45]:
         break
 
 if len(entries) < 5:
-    print(f"warn: only {len(entries)} live entries found, writing the smaller fresh feed")
+    print(f"warn: only {len(entries)} live entries found, writing smaller fresh feed")
 
 payload = {
     "updatedAt": now_utc.isoformat().replace("+00:00", "Z"),
     "lastRunAt": now_utc.isoformat().replace("+00:00", "Z"),
     "cadence": "3x daily",
     "proofPolicy": "verified working public pocs",
-    "sources": ["CISA KEV", "FIRST EPSS", "NVD", "GitHub Search", "GitHub Fresh PoC Discovery", *mobile_researcher_sources(), *[name for name, _ in RSS_SOURCES]],
+    "sources": ["CISA KEV", "FIRST EPSS", "NVD", "GitHub Search", "GitHub Fresh PoC Discovery",
+                "Bluesky Researcher Feeds",
+                *mobile_researcher_sources(), *[name for name, _ in RSS_SOURCES]],
     "research": research_items,
     "vulns": entries,
 }
