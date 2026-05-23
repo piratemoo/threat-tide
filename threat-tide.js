@@ -105,7 +105,7 @@
           <div class="pm-tide-stats" aria-label="Feed status">
             <span><strong data-pm-date>Today</strong></span>
             <span class="pm-check-cell"><span class="pm-last-check-label">Last Check:</span> <span data-pm-last-check>--</span></span>
-            <span><strong>verified</strong> public pocs <b class="pm-count-inline" data-pm-count>0</b> posted today</span>
+            <span data-pm-stat-line><strong>verified</strong> public pocs <b class="pm-count-inline" data-pm-count>0</b> posted today</span>
           </div>
         </section>
 
@@ -193,7 +193,7 @@
       reality: "Highly realistic where templates, web enrollment, or relay conditions line up. This is configuration-driven, not patch-only.",
       chains: "NTLM relay, coercion, Kerberos abuse, low-priv domain footholds, and persistence through certificate lifetime.",
       weaponized: "Already operationalized in mature tooling. The variable is target configuration, not exploit state.",
-      tags: ["Windows", "ADCS", "Privilege Escalation"],
+      tags: ["Windows", "ADCS", "Auth Bypass"],
       confidence: 92,
       weaponization: 88,
       dayOffset: 0,
@@ -216,11 +216,11 @@
       added: "tracked",
       language: "C",
       summary: "nf_tables use-after-free research remains useful for local privilege escalation triage on affected Linux kernels with public exploit code available.",
-      breakdown: "The operational value is kernel exposure mapping, namespace/container preconditions, and whether the target fleet carries vulnerable kernel lines. Treat pocs as environment-sensitive but worth validating in lab images that mirror production.",
+      breakdown: "The operational value is kernel exposure mapping, namespace/container preconditions, and whether the target fleet carries vulnerable kernel lines.",
       whatBroke: "A kernel memory lifetime bug in nf_tables can permit local code to shape a privilege escalation primitive.",
-      reality: "Realistic where affected kernels and required local execution conditions line up. The exploit path is public, but reliability depends on kernel build and mitigations.",
+      reality: "Realistic where affected kernels and required local execution conditions line up.",
       chains: "Initial foothold, container escape research, local privilege escalation, and persistence setup after low-priv execution.",
-      weaponized: "Likely in targeted post-exploitation workflows. Less useful as a drive-by issue, valuable once an operator already has code execution.",
+      weaponized: "Likely in targeted post-exploitation workflows.",
       tags: ["Linux", "Kernel", "Local LPE"],
       confidence: 88,
       weaponization: 72,
@@ -243,12 +243,12 @@
       pocWorks: "Yes",
       added: "tracked",
       language: "Shell / Java",
-      summary: "Android PackageInstaller input validation can be abused from an adb foothold to run code as another installed app, which makes it useful for app-data access and device-lab privilege testing.",
-      breakdown: "This is not remote initial access, but it is useful mobile tradecraft once an operator has adb, local debugging access, or a chained device foothold. The real value is crossing app UID boundaries and validating whether fleet devices carry the vulnerable framework behavior.",
-      whatBroke: "PackageInstaller session creation accepted crafted input that crossed into the downstream run-as path and confused which app identity should be used.",
-      reality: "Realistic under local/adb preconditions. The public bypass poc is repeatable for validation on affected Android builds.",
-      chains: "ADB access, malicious local app workflow, app data access, token theft from targeted apps, and follow-on mobile persistence testing.",
-      weaponized: "Likely as a post-access mobile primitive. It is not broad remote exploitation, but it is practical in device labs and chained workflows.",
+      summary: "Android PackageInstaller input validation can be abused from an adb foothold to run code as another installed app.",
+      breakdown: "This is not remote initial access, but it is useful mobile tradecraft once an operator has adb, local debugging access, or a chained device foothold.",
+      whatBroke: "PackageInstaller session creation accepted crafted input that crossed into the downstream run-as path.",
+      reality: "Realistic under local/adb preconditions.",
+      chains: "ADB access, malicious local app workflow, app data access, token theft from targeted apps.",
+      weaponized: "Likely as a post-access mobile primitive.",
       tags: ["Android", "Framework", "Local LPE"],
       confidence: 86,
       weaponization: 68,
@@ -272,12 +272,12 @@
       pocWorks: "Yes",
       added: "tracked",
       language: "C / Objective-C",
-      summary: "Public kfd-style exploit code provides kernel memory access primitives on supported iOS versions, with value depending heavily on device model, build, and exploit method.",
-      breakdown: "This belongs in mobile triage because iOS kernel primitives are chain material, not because they are universally push-button. Track supported device/version ranges, installation preconditions, and whether a public primitive can pair with CoreTrust, WebKit, or sandbox escape work.",
-      whatBroke: "An Apple kernel integer overflow path could be shaped into kernel privilege code execution or kernel memory read/write under the right conditions.",
-      reality: "Realistic in supported lab/device conditions. Reliability is version-specific and should be validated against exact hardware and iOS builds.",
-      chains: "WebKit or app foothold, sandbox escape, kernel r/w primitive, CoreTrust-style signing bypass, jailbreak tooling, and mobile implant research.",
-      weaponized: "Likely in high-end chains, but public tooling is mostly useful for research, validation, and jailbreak-adjacent workflows.",
+      summary: "Public kfd-style exploit code provides kernel memory access primitives on supported iOS versions.",
+      breakdown: "Track supported device/version ranges, installation preconditions, and whether a public primitive can pair with CoreTrust, WebKit, or sandbox escape work.",
+      whatBroke: "An Apple kernel integer overflow path could be shaped into kernel privilege code execution or kernel memory read/write.",
+      reality: "Realistic in supported lab/device conditions. Reliability is version-specific.",
+      chains: "WebKit or app foothold, sandbox escape, kernel r/w primitive, CoreTrust-style signing bypass.",
+      weaponized: "Likely in high-end chains.",
       tags: ["iOS", "Kernel", "Local LPE"],
       confidence: 84,
       weaponization: 66,
@@ -302,12 +302,12 @@
       added: "1d ago",
       language: "Python",
       summary: "JetBrains TeamCity authentication bypass remains operator-relevant because CI servers often sit near secrets, deployment keys, and build trust.",
-      breakdown: "The exploit path is valuable because the target is not just an app server; it is a software supply-chain control point. Prioritize exposed TeamCity, forgotten agents, and credential material available to build runners.",
+      breakdown: "The exploit path is valuable because the target is not just an app server; it is a software supply-chain control point.",
       whatBroke: "A request path allowed authentication bypass against TeamCity administrative surfaces.",
-      reality: "Realistic where exposed instances lag patching. Public exploit code and scanner checks make validation straightforward.",
-      chains: "CI secrets theft, build pipeline compromise, package tampering, cloud credential reuse, and lateral movement through deployment automation.",
+      reality: "Realistic where exposed instances lag patching.",
+      chains: "CI secrets theft, build pipeline compromise, package tampering, cloud credential reuse.",
       weaponized: "Likely. CI products convert initial access into broad environment leverage quickly.",
-      tags: ["Cloud", "DevOps", "RCE"],
+      tags: ["Cloud", "DevOps", "Auth Bypass"],
       confidence: 90,
       weaponization: 86,
       dayOffset: 1,
@@ -331,10 +331,10 @@
       added: "1d ago",
       language: "Python / HTTP",
       summary: "ScreenConnect auth bypass is high-signal because RMM compromise often means privileged access across many downstream machines.",
-      breakdown: "Operator value is in blast radius: remote management tools collapse many endpoints into one control plane. Prioritize internet exposure, unknown admin creation, and historical persistence left by opportunistic exploitation.",
+      breakdown: "Operator value is in blast radius: remote management tools collapse many endpoints into one control plane.",
       whatBroke: "A setup/authentication flow could be abused to gain administrative control without valid credentials.",
-      reality: "Very realistic on exposed and unpatched appliances. public pocs made opportunistic validation trivial.",
-      chains: "RMM control, endpoint command execution, credential theft, lateral movement, and MSP-style downstream compromise.",
+      reality: "Very realistic on exposed and unpatched appliances.",
+      chains: "RMM control, endpoint command execution, credential theft, lateral movement.",
       weaponized: "Already weaponized in broad scanning and intrusion workflows.",
       tags: ["Windows", "RMM", "Auth Bypass"],
       confidence: 93,
@@ -350,7 +350,7 @@
       cve: "CVE-2024-23897",
       title: "Jenkins CLI file read that chains into controller compromise",
       ecosystem: "linux",
-      category: "webstack",
+      category: "devops",
       severity: "high",
       proof: "working public poc",
       reliability: "partial exploit",
@@ -360,11 +360,11 @@
       added: "2d ago",
       language: "Java / Python",
       summary: "Jenkins arbitrary file read is useful when it exposes secrets, crumb issuers, credentials, or plugin state that can be chained into execution.",
-      breakdown: "Treat this as a chain primitive rather than a one-shot RCE. The interesting question is what sensitive files are readable in the target controller context and whether those secrets unlock job execution or admin paths.",
+      breakdown: "Treat this as a chain primitive. The interesting question is what sensitive files are readable in the target controller context.",
       whatBroke: "Jenkins CLI argument expansion allowed unauthorized file content disclosure from the controller.",
-      reality: "Realistic as an information disclosure and chain step. Exploit quality depends on target hardening and reachable secrets.",
-      chains: "Credential recovery, Jenkins admin takeover, build job execution, SCM token theft, and cloud deployment key abuse.",
-      weaponized: "Likely as a chaining primitive. It is especially valuable on CI systems with broad secrets.",
+      reality: "Realistic as an information disclosure and chain step.",
+      chains: "Credential recovery, Jenkins admin takeover, build job execution, SCM token theft.",
+      weaponized: "Likely as a chaining primitive.",
       tags: ["Linux", "DevOps", "File Read"],
       confidence: 86,
       weaponization: 78,
@@ -389,11 +389,11 @@
       added: "2d ago",
       language: "Python",
       summary: "Citrix ADC/Gateway session disclosure stays relevant because stolen sessions can bypass normal credential and MFA assumptions.",
-      breakdown: "This is an access primitive. Look for historic compromise, active sessions created before patching, persistence after appliance remediation, and whether session theft fed downstream identity abuse.",
+      breakdown: "This is an access primitive. Look for historic compromise, active sessions created before patching, and downstream identity abuse.",
       whatBroke: "A memory disclosure issue exposed sensitive session material from Citrix ADC/Gateway.",
-      reality: "Realistic against affected edge appliances. public pocs made validation and theft workflows accessible.",
-      chains: "Session hijack, VPN access, internal discovery, credential collection, and identity pivoting.",
-      weaponized: "Already observed and operationally valuable because it bypasses password-centric thinking.",
+      reality: "Realistic against affected edge appliances.",
+      chains: "Session hijack, VPN access, internal discovery, credential collection, identity pivoting.",
+      weaponized: "Already observed and operationally valuable.",
       tags: ["Cloud", "VPN Edge", "Session Theft", "KEV"],
       confidence: 94,
       weaponization: 95,
@@ -417,12 +417,12 @@
       pocWorks: "Yes",
       added: "3d ago",
       language: "C",
-      summary: "OpenSSH signal-handler race research matters because SSH exposure is universal, even when exploitation is timing-sensitive and target-dependent.",
-      breakdown: "This belongs in the archive because it is not easy-button exploitation, but the blast radius and service ubiquity are too important to ignore. Track exploit improvements, target architecture reliability, and distro-specific exposure.",
+      summary: "OpenSSH signal-handler race research matters because SSH exposure is universal, even when exploitation is timing-sensitive.",
+      breakdown: "Track exploit improvements, target architecture reliability, and distro-specific exposure.",
       whatBroke: "A regression reintroduced an unsafe signal-handler race condition in sshd.",
-      reality: "Realistic in lab and select environments; difficult at scale without target-specific reliability work.",
-      chains: "Internet SSH exposure, unauthenticated foothold attempts, post-exploit privilege context, and infrastructure-wide scanning.",
-      weaponized: "Possible when reliability improves. Treat current public pocs as validation signals, not guaranteed commodity exploitation.",
+      reality: "Realistic in lab and select environments; difficult at scale.",
+      chains: "Internet SSH exposure, unauthenticated foothold attempts, post-exploit privilege context.",
+      weaponized: "Possible when reliability improves.",
       tags: ["Linux", "SSH", "RCE"],
       confidence: 82,
       weaponization: 64,
@@ -446,18 +446,16 @@
       added: "3d ago",
       language: "Python",
       summary: "FortiOS SSL-VPN bugs stay high priority because exposed VPN appliances create direct edge-to-internal pivot opportunities.",
-      breakdown: "Focus on version exposure, SSL-VPN enablement, appliance logs, and whether public exploit variants are converging into reliable checks versus noisy crashers.",
+      breakdown: "Focus on version exposure, SSL-VPN enablement, appliance logs, and exploit reliability.",
       whatBroke: "A FortiOS SSL-VPN vulnerability could permit code execution under specific appliance conditions.",
-      reality: "Realistic for vulnerable exposed appliances, but poc reliability varies by build and target condition.",
-      chains: "Perimeter RCE, credential harvesting, VPN trust abuse, internal discovery, and persistence on network edge.",
-      weaponized: "Likely when reliable exploit variants are available. Edge appliance bugs are routinely folded into operator workflows.",
+      reality: "Realistic for vulnerable exposed appliances.",
+      chains: "Perimeter RCE, credential harvesting, VPN trust abuse, internal discovery.",
+      weaponized: "Likely when reliable exploit variants are available.",
       tags: ["Cloud", "VPN Edge", "RCE"],
       confidence: 84,
       weaponization: 82,
       dayOffset: 3,
-      links: [
-        ["Vendor Advisory", "https://www.fortiguard.com/psirt/FG-IR-24-015"]
-      ]
+      links: [["Vendor Advisory", "https://www.fortiguard.com/psirt/FG-IR-24-015"]]
     },
     {
       cve: "CVE-2023-3519",
@@ -473,11 +471,11 @@
       added: "4d ago",
       language: "Python",
       summary: "Unauthenticated Citrix ADC/Gateway RCE remains archetypal edge-device risk: exploitable perimeter code with immediate internal-access implications.",
-      breakdown: "Archive value is in exploit archaeology and historical compromise review. Even patched estates need incident review for webshells, appliance persistence, and stolen credentials.",
+      breakdown: "Archive value is in exploit archaeology and historical compromise review.",
       whatBroke: "Citrix ADC/Gateway exposed an unauthenticated path to code execution on vulnerable appliances.",
-      reality: "Highly realistic on affected exposed systems. The vulnerability has public exploit paths and strong historical exploitation signal.",
-      chains: "Perimeter foothold, webshell, credential theft, internal pivoting, and appliance persistence.",
-      weaponized: "Already weaponized; the main question is lingering compromise, not exploit possibility.",
+      reality: "Highly realistic on affected exposed systems.",
+      chains: "Perimeter foothold, webshell, credential theft, internal pivoting.",
+      weaponized: "Already weaponized.",
       tags: ["Cloud", "VPN Edge", "RCE", "KEV"],
       confidence: 95,
       weaponization: 96,
@@ -486,33 +484,6 @@
         ["Tooling", "https://github.com/rapid7/metasploit-framework"],
         ["Technical Paper", "https://www.assetnote.io/resources/research/analysis-of-cve-2023-3519-in-citrix-adc-and-gateway"],
         ["Vendor Advisory", "https://support.citrix.com/article/CTX561482"]
-      ]
-    },
-    {
-      cve: "CVE-2024-0204",
-      title: "GoAnywhere auth bypass with file-transfer blast radius",
-      ecosystem: "cloud",
-      category: "webstack",
-      severity: "high",
-      proof: "working public poc",
-      reliability: "reliable exploit",
-      researcher: "Fortra",
-      researcherUrl: "https://www.fortra.com/security/advisories",
-      pocWorks: "Yes",
-      added: "4d ago",
-      language: "Python / HTTP",
-      summary: "Managed file transfer bugs deserve archive space because they often sit near sensitive data flows and partner trust boundaries.",
-      breakdown: "Treat this as data-access and control-plane risk. Public exploitability matters less than what the application stores, transfers, and authenticates to downstream.",
-      whatBroke: "An authentication bypass condition exposed administrative or sensitive application paths.",
-      reality: "Realistic against vulnerable deployments. public pocs make validation straightforward.",
-      chains: "Data theft, credential recovery, partner trust abuse, scheduled transfer tampering, and follow-on webshell or admin actions.",
-      weaponized: "Likely in data theft operations due to the target class.",
-      tags: ["Cloud", "File Transfer", "Auth Bypass"],
-      confidence: 82,
-      weaponization: 78,
-      dayOffset: 4,
-      links: [
-        ["Vendor Advisory", "https://www.fortra.com/security/advisories/product-security/fi-2024-001"]
       ]
     },
     {
@@ -528,12 +499,12 @@
       pocWorks: "Yes",
       added: "5d ago",
       language: "Python / HTTP",
-      summary: "Confluence remains a high-signal target when public exploit flows lead to administrative control or content-backed credential exposure.",
-      breakdown: "Prioritize exposed Confluence, backup/restore behavior, app links, stored credentials, and marketplace plugin blast radius.",
-      whatBroke: "A vulnerable Confluence path enabled improper control of instance state and administrative outcomes.",
-      reality: "Realistic on exposed vulnerable instances. Public exploit automation exists and is easy to validate.",
-      chains: "Admin takeover, user directory access, stored secrets, plugin deployment, and internal documentation mining.",
-      weaponized: "Likely and historically common due to Confluence's enterprise footprint.",
+      summary: "Confluence remains a high-signal target when public exploit flows lead to administrative control or credential exposure.",
+      breakdown: "Prioritize exposed Confluence, backup/restore behavior, app links, stored credentials.",
+      whatBroke: "A vulnerable Confluence path enabled improper control of instance state.",
+      reality: "Realistic on exposed vulnerable instances.",
+      chains: "Admin takeover, user directory access, stored secrets, plugin deployment.",
+      weaponized: "Likely and historically common.",
       tags: ["Linux", "Webstack", "Auth Bypass"],
       confidence: 88,
       weaponization: 86,
@@ -557,12 +528,12 @@
       added: "5d ago",
       language: "Python / SQL",
       summary: "MOVEit remains a useful archive anchor for file-transfer exploitation, data theft workflows, and web app compromise at enterprise scale.",
-      breakdown: "Track this as exploit archaeology: the target class, webshell deployment pattern, and data-theft motivation matter more than just the CVE mechanics.",
-      whatBroke: "SQL injection in MOVEit Transfer enabled unauthorized access and paths toward code execution or data extraction.",
-      reality: "Realistic against vulnerable exposed systems. Public exploit workflows are mature.",
-      chains: "SQLi, webshell, file inventory, bulk exfiltration, credential reuse, and extortion operations.",
+      breakdown: "Track this as exploit archaeology: the target class, webshell deployment pattern, and data-theft motivation.",
+      whatBroke: "SQL injection in MOVEit Transfer enabled unauthorized access and paths toward code execution.",
+      reality: "Realistic against vulnerable exposed systems.",
+      chains: "SQLi, webshell, file inventory, bulk exfiltration, credential reuse.",
       weaponized: "Already weaponized and historically exploited at scale.",
-      tags: ["Windows", "File Transfer", "SQLi", "KEV"],
+      tags: ["Windows", "Webstack", "SQLi", "KEV"],
       confidence: 94,
       weaponization: 95,
       dayOffset: 5,
@@ -587,6 +558,21 @@
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return "";
     return new Intl.DateTimeFormat("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: "America/Chicago",
+      timeZoneName: "short"
+    }).format(date);
+  }
+
+  // FIX 8: research items show date, not just time
+  function formatResearchDate(value) {
+    if (!value) return "";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "";
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
       hour: "numeric",
       minute: "2-digit",
       timeZone: "America/Chicago",
@@ -661,7 +647,7 @@
   function normalizeVuln(item) {
     const rawTags = Array.isArray(item.tags) ? item.tags : [];
     const tags = rawTags.map((tag) => cleanInlineText(tag, 32)).filter(Boolean).slice(0, MAX_TAGS_PER_CARD);
-    // FIXED: added "bsd" to ecosystem tag lookup
+    // FIX 2: added "bsd" to ecosystem tag lookup
     const tagEcosystem = tags.map((tag) => tag.toLowerCase()).find((tag) => ["windows", "linux", "bsd", "web", "android", "ios", "cloud"].includes(tag));
     const ecosystem = cleanSlug(item.ecosystem || tagEcosystem || "research", "research");
     const severity = cleanSlug(item.severity || "high", "high");
@@ -718,6 +704,8 @@
     }
   }
 
+  // FIX 5: added bsd, container escape, ssrf, kubernetes, file upload icons
+  // FIX 6: removed dead "high" and "medium" severity entries
   const tagIcons = {
     adcs: '<svg viewBox="0 0 24 24"><path d="M7 3h10v4h3v14H4V7h3V3Zm2 4h6V5H9v2Zm-3 2v10h12V9H6Zm3 3h6v2H9v-2Zm0 4h4v2H9v-2Z"/></svg>',
     android: '<svg viewBox="0 0 24 24"><path d="M8.2 6.2 6.4 3.4 7.9 2.5 9.8 5.4a8.2 8.2 0 0 1 4.4 0l1.9-2.9 1.5.9-1.8 2.8A7 7 0 0 1 19 12v7H5v-7a7 7 0 0 1 3.2-5.8ZM7 17h10v-5a5 5 0 0 0-10 0v5Zm3-6h2v2h-2v-2Zm4 0h2v2h-2v-2Z"/></svg>',
@@ -730,15 +718,13 @@
     "file transfer": '<svg viewBox="0 0 24 24"><path d="M4 5h10l2 2h4v12H4V5Zm2 4v8h12V9H6Zm5 1h2v3h3l-4 4-4-4h3v-3Z"/></svg>',
     "file upload": '<svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2Zm8 2H8v16h10V8h-4V4Zm-4 5 4 4h-3v4h-2v-4H6l4-4Z"/></svg>',
     framework: '<svg viewBox="0 0 24 24"><path d="M5 4h14v4H5V4Zm2 2v0h10V6H7Zm-2 5h6v9H5v-9Zm2 2v5h2v-5H7Zm6-2h6v9h-6v-9Zm2 2v5h2v-5h-2Z"/></svg>',
-    high: '<svg viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Zm0 5.1L5.4 19h13.2L12 8.1Zm-1 3.9h2v4h-2v-4Zm0 5h2v2h-2v-2Z"/></svg>',
     ios: '<svg viewBox="0 0 24 24"><path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 3v14h8V5H8Zm3 15h2v1h-2v-1Z"/></svg>',
     kev: '<svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm0 2.2 6 2.25V11c0 3.9-2.4 7.55-6 8.85C8.4 18.55 6 14.9 6 11V6.45l6-2.25Zm3.7 5.1 1.4 1.4-6.1 6.1-3.6-3.6 1.4-1.4 2.2 2.2 4.7-4.7Z"/></svg>',
     kernel: '<svg viewBox="0 0 24 24"><path d="M8 3h2v3h4V3h2v3h2v2h3v2h-3v4h3v2h-3v2h-2v3h-2v-3h-4v3H8v-3H6v-2H3v-2h3v-4H3V8h3V6h2V3Zm0 5v8h8V8H8Zm2 2h4v4h-4v-4Z"/></svg>',
     kubernetes: '<svg viewBox="0 0 24 24"><path d="M12 2l9 4.9V17L12 22 3 17V6.9L12 2Zm0 2.3L5 8.1V16l7 3.8 7-3.8V8.1L12 4.3Zm0 3 4 2.2v4.4L12 16l-4-2.1V9.5L12 7.3Zm0 2.2-2 1.1v2.1l2 1.1 2-1.1v-2.1L12 9.5Z"/></svg>',
     linux: '<svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm2 2v10h12V7H6Zm2.2 2 3 3-3 3-1.4-1.4L8.4 12 6.8 10.4 8.2 9Zm4.3 5H17v2h-4.5v-2Z"/></svg>',
     "local lpe": '<svg viewBox="0 0 24 24"><path d="M11 19V8.8l-4.6 4.6L5 12l7-7 7 7-1.4 1.4L13 8.8V19h-2Z"/></svg>',
-    medium: '<svg viewBox="0 0 24 24"><path d="M4 11h16v2H4v-2Z"/></svg>',
-    "privilege escalation": '<svg viewBox="0 0 24 24"><path d="M14 3a7 7 0 0 0-6.32 10.02L3 17.7V21h3.3l1-1H10v-2.7l1.02-1.02A7 7 0 1 0 14 3Zm0 2a5 5 0 1 1-2.55 9.3l-.66-.4L8 16.7V18H6.5l-1 1H5v-.5l5.1-5.08-.4-.66A5 5 0 0 1 14 5Zm2 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/></svg>',
+    memory: '<svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm2 2v10h12V7H6Zm2 2h2v6H8V9Zm3 0h2v6h-2V9Zm3 0h2v6h-2V9Z"/></svg>',
     rce: '<svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm2 2v10h12V7H6Zm2 2 3 3-3 3-1.4-1.4L8.2 12l-1.6-1.6L8 9Zm4 5h4v2h-4v-2Z"/></svg>',
     rmm: '<svg viewBox="0 0 24 24"><path d="M3 4h18v12H3V4Zm2 2v8h14V6H5Zm4 12h6l1 2H8l1-2Zm1-10h4v2h-4V8Zm5 0h2v2h-2V8Z"/></svg>',
     "session theft": '<svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v2h2v13H5V9h2V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v2h6V7a3 3 0 0 0-3-3Zm-5 7v9h10v-9H7Zm4 2h2v4h-2v-4Z"/></svg>',
@@ -761,6 +747,7 @@
       .slice(0, maxLength);
   }
 
+  // FIX 1: replaced garbled â€"â€" with proper unicode escapes \u2013\u2014
   function cleanTitle(value, cve) {
     const escapedCve = String(cve || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const cvePattern = escapedCve
@@ -772,6 +759,7 @@
       .trim() || "Untitled vulnerability signal";
   }
 
+  // FIX 1: same garbled regex fix in cleanSummary
   function cleanSummary(value, cve, title) {
     const text = cleanBlockText(value || "", 520)
       .replace(new RegExp(`^\\s*${String(cve || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*[:\\-\u2013\u2014]?\\s*`, "i"), "")
@@ -842,7 +830,7 @@
     return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" }).format(archiveDate(dayOffset));
   }
 
-  // FIXED: BSD ecosystem routes to linux section
+  // FIX 3: BSD → Linux section routing added
   function sectionMatches(item) {
     const tags = item.tags.map((tag) => tag.toLowerCase());
     return state.section === "all"
@@ -990,26 +978,18 @@
       url ? `git clone ${url}` : "# open the linked GitHub/tooling reference",
       `cd ${name}`
     ];
-    if (language.includes("python")) {
-      lines.push("python3 <script>.py --target https://<authorized-target>");
-    } else if (language === "go" || language.includes("golang")) {
-      lines.push("go run . --target https://<authorized-target>");
-    } else if (["c", "c++", "cpp"].includes(language)) {
-      lines.push("make", "./<compiled-poc> <authorized-target>");
-    } else if (language.includes("ruby")) {
-      lines.push("ruby <script>.rb --target https://<authorized-target>");
-    } else if (language.includes("java")) {
-      lines.push("java -jar <poc>.jar https://<authorized-target>");
-    } else if (language.includes("shell") || language.includes("bash")) {
-      lines.push("bash <script>.sh https://<authorized-target>");
-    } else {
-      lines.push("# use the repo README invocation against https://<authorized-target>");
-    }
+    if (language.includes("python")) lines.push("python3 <script>.py --target https://<authorized-target>");
+    else if (language === "go" || language.includes("golang")) lines.push("go run . --target https://<authorized-target>");
+    else if (["c", "c++", "cpp"].includes(language)) lines.push("make", "./<compiled-poc> <authorized-target>");
+    else if (language.includes("ruby")) lines.push("ruby <script>.rb --target https://<authorized-target>");
+    else if (language.includes("java")) lines.push("java -jar <poc>.jar https://<authorized-target>");
+    else if (language.includes("shell") || language.includes("bash")) lines.push("bash <script>.sh https://<authorized-target>");
+    else lines.push("# use the repo README invocation against https://<authorized-target>");
     lines.push("# confirm exact flags in the linked GitHub README before validation");
     return lines.join("\n");
   }
 
-  // FIXED: added container escape, ssrf, bsd/freebsd cases
+  // FIX 4: added container escape, SSRF, BSD, SQLi cases
   function technicalSummary(item) {
     const category = String(item.category || "").toLowerCase();
     const tags = item.tags.map((tag) => String(tag).toLowerCase());
@@ -1024,17 +1004,14 @@
     if (ecosystem === "bsd" || tags.includes("bsd")) {
       return "A kernel or system-level vulnerability on a BSD-derived operating system. Exploitation depends on a local foothold and the ability to trigger the vulnerable syscall or kernel path to escalate privileges.";
     }
+    if (tags.includes("sqli")) {
+      return "Attacker-controlled input reaches a database query without proper parameterization. Depending on the backend and permissions, this enables data extraction, authentication bypass, or chained code execution.";
+    }
     if (category === "webstack" && tags.includes("auth bypass")) {
       return "Authentication checks happen too late or are skipped on a privileged path. A crafted request can reach control-plane behavior without a valid session.";
     }
     if (category === "webstack" && tags.includes("rce")) {
       return "A web-exposed parser or handler accepts attacker-shaped input and passes it into execution logic. The bug turns request data into server-side code or command behavior.";
-    }
-    if (category === "webstack" && tags.includes("sqli")) {
-      return "Attacker-controlled input reaches a database query without proper parameterization. Depending on the backend and permissions, this can enable data extraction, authentication bypass, or chained code execution.";
-    }
-    if (tags.includes("ssrf") || category === "webstack" && tags.includes("file read")) {
-      return "A server-side path handles attacker-supplied input that reaches internal or filesystem resources. This can expose sensitive files, credentials, or internal service endpoints.";
     }
     if (category === "vpn-edge" || tags.includes("vpn edge")) {
       return "A perimeter appliance exposes logic that should only run after stronger validation. The root issue is unauthenticated or weakly authenticated input reaching trusted edge-device internals.";
@@ -1067,6 +1044,7 @@
     return `${text.slice(0, 207).replace(/\s+\S*$/, "")}.`;
   }
 
+  // FIX 7: added BSD and container/kubernetes resource links
   function relatedResources(item) {
     const resources = [];
     const add = (label, url) => {
@@ -1096,21 +1074,20 @@
       add("TeamCity CVE-2024-27198", "https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities/");
       add("GitLab CVE-2023-7028", "https://about.gitlab.com/releases/2024/01/11/critical-security-release-gitlab-16-7-2-released/");
     }
-    // FIXED: added BSD-specific resources alongside linux/kernel
-    if (category === "kernel" || ecosystem === "linux" || ecosystem === "bsd" || tags.includes("bsd")) {
-      add("nf_tables CVE-2024-1086", "https://pwning.tech/nftables/");
-      add("regreSSHion CVE-2024-6387", "https://www.qualys.com/regresshion-cve-2024-6387/");
-      if (ecosystem === "bsd" || tags.includes("bsd")) {
-        add("FreeBSD Security Advisories", "https://www.freebsd.org/security/advisories/");
-        add("OpenBSD errata", "https://www.openbsd.org/errata.html");
-      } else {
-        add("Dirty Pipe CVE-2022-0847", "https://dirtypipe.cm4all.com/");
-      }
-    }
     if (category === "kubernetes" || tags.includes("container escape")) {
       add("Container escape techniques", "https://bishopfox.com/blog/bad-pods-kubernetes-pod-privilege-escalation");
       add("Kubernetes CVE tracker", "https://www.cvedetails.com/vendor/13534/Kubernetes.html");
-      add("Aqua Trivy scanner", "https://github.com/aquasecurity/trivy");
+      add("Trivy container scanner", "https://github.com/aquasecurity/trivy");
+    }
+    if (ecosystem === "bsd" || tags.includes("bsd")) {
+      add("FreeBSD Security Advisories", "https://www.freebsd.org/security/advisories/");
+      add("OpenBSD errata", "https://www.openbsd.org/errata.html");
+      add("nf_tables CVE-2024-1086", "https://pwning.tech/nftables/");
+    }
+    if ((category === "kernel" || ecosystem === "linux") && !tags.includes("bsd")) {
+      add("nf_tables CVE-2024-1086", "https://pwning.tech/nftables/");
+      add("regreSSHion CVE-2024-6387", "https://www.qualys.com/regresshion-cve-2024-6387/");
+      add("Dirty Pipe CVE-2022-0847", "https://dirtypipe.cm4all.com/");
     }
     if (ecosystem === "android") {
       add("Android run-as CVE-2024-0044", "https://rtx.meta.security/exploitation/2024/03/04/Android-run-as-forgery.html");
@@ -1146,7 +1123,7 @@
     return `
       <article class="pm-panel pm-card">
         <div class="severity-column">
-          <img src="${severityIcons[severity] || severityIcons.medium}" alt="${escapeHtml(item.severity)} severity cow icon">
+          <img src="${severityIcons[severity] || severityIcons.medium}" alt="${escapeHtml(item.severity)} severity">
           <p class="severity-label pm-${severity}-text">${escapeHtml(item.severity)}</p>
         </div>
         <div class="pm-card-main">
@@ -1178,6 +1155,7 @@
     const source = item.sourceUrl
       ? `<a href="${safeHref(item.sourceUrl)}" ${safeExternalAttrs()}>${escapeHtml(item.source)}</a>`
       : `<span>${escapeHtml(item.source)}</span>`;
+    // FIX 8: use date+time for research items, not just time
     return `
       <article class="pm-panel pm-research-card">
         <div class="pm-research-head">
@@ -1185,7 +1163,7 @@
             <span class="pm-research-source">${source}</span>
             <h2><a href="${safeHref(item.url)}" ${safeExternalAttrs()}>${escapeHtml(item.title)}</a></h2>
           </div>
-          <time>${escapeHtml(formatLastCheck(item.publishedAt))}</time>
+          <time>${escapeHtml(formatResearchDate(item.publishedAt))}</time>
         </div>
         ${item.summary ? `<p class="pm-summary">${escapeHtml(item.summary)}</p>` : ""}
         <div class="pm-cve-row">${tags}</div>
@@ -1193,15 +1171,28 @@
       </article>`;
   }
 
+  // FIX 9: severity filter hidden on research tab
+  function updateFilterVisibility() {
+    const severityEl = root.querySelector('[data-filter="severity"]');
+    if (severityEl) severityEl.style.visibility = state.section === "research" ? "hidden" : "";
+  }
+
+  // FIX 8: stat line shows correct text for research tab
   function updateStats(count) {
     const dateNode = root.querySelector("[data-pm-date]");
     const countNode = root.querySelector("[data-pm-count]");
     const lastCheckNode = root.querySelector("[data-pm-last-check]");
+    const statLine = root.querySelector("[data-pm-stat-line]");
     if (dateNode) {
       dateNode.textContent = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(archiveDate(state.day));
     }
     if (countNode) countNode.textContent = String(count);
     if (lastCheckNode) lastCheckNode.textContent = formatLastCheck(liveFeedUpdatedAt);
+    if (statLine) {
+      statLine.innerHTML = state.section === "research"
+        ? `<strong>${count}</strong> offensive research item${count === 1 ? "" : "s"} today`
+        : `<strong>verified</strong> public pocs <b class="pm-count-inline" data-pm-count>${count}</b> posted today`;
+    }
   }
 
   function formatLastCheck(value) {
@@ -1220,6 +1211,7 @@
     const showingResearch = state.section === "research";
     const items = showingResearch ? filteredResearchItems() : filteredItems();
     updateStats(items.length);
+    updateFilterVisibility();
     renderArchive();
     renderMenu();
     root.querySelector(".pm-feed").innerHTML = items.length
