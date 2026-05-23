@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-23T05:45:03Z",
+  "updatedAt": "2026-05-23T14:08:10Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -74,7 +74,7 @@
       "researcher": "Horizon3 Attack Team",
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
+      "difficulty": "easy",
       "added": "12:45 AM CDT",
       "firstSeenAt": "2026-05-23T05:45:03Z",
       "language": "Python",
@@ -99,7 +99,7 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 83,
       "dayOffset": 0,
       "links": [
         [
@@ -311,172 +311,6 @@
         [
           "Vendor Advisory",
           "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-6433",
-      "title": "PoC for CVE-2026-6433: WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE..",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "CVE-2026-6433.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-6433.py"
-        ],
-        "hasUsage": false,
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:45 AM CDT",
-      "firstSeenAt": "2026-05-23T05:45:03Z",
-      "language": "Python",
-      "summary": "PoC for WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE. Python 3 stdlib; single target or bulk multi-threaded scanning. Authorized testing & research only.",
-      "technicalSummary": "PoC for WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE. Python 3 stdlib; single target or bulk multi-threaded scanning. Authorized testing & research only.",
-      "breakdown": "PoC for WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE. Python 3 stdlib; single target or bulk multi-threaded scanning. Authorized testing & research only.",
-      "whatBroke": "PoC for WordPress FlipperCode Custom CSS, JS & PHP (\u22642.0.7) \u2014 unauthenticated SQLi to RCE. Python 3 stdlib; single target or bulk multi-threaded scanning. Authorized testing & research only.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-6433.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-6433\ncd CVE-2026-6433\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-6433"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wpscan.com/vulnerability/a0b1c059-e156-4402-ac8d-67f8ad7386cc/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-5817",
-      "title": "Docker Container Escape POC via mlx-metal importlib",
-      "ecosystem": "cloud",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "poc_cve_2026_5843.py"
-        ],
-        "attackFiles": [
-          "poc_cve_2026_5843.py"
-        ],
-        "hasUsage": true,
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "davidrxchester",
-      "researcherUrl": "https://github.com/davidrxchester",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:45 AM CDT",
-      "firstSeenAt": "2026-05-23T05:45:03Z",
-      "language": "Python",
-      "summary": "Docker Container Escape POC via mlx-metal importlib",
-      "technicalSummary": "Docker Container Escape POC via mlx-metal importlib",
-      "breakdown": "Docker Container Escape POC via mlx-metal importlib",
-      "whatBroke": "Docker Container Escape POC via mlx-metal importlib",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at davidrxchester/CVE-2026-5843.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/davidrxchester/CVE-2026-5843\ncd CVE-2026-5843\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Kubernetes",
-        "Container Escape"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/davidrxchester/CVE-2026-5843"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-5843",
-      "title": "Docker Container Escape POC via mlx-metal importlib",
-      "ecosystem": "cloud",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "poc_cve_2026_5843.py"
-        ],
-        "attackFiles": [
-          "poc_cve_2026_5843.py"
-        ],
-        "hasUsage": true,
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "davidrxchester",
-      "researcherUrl": "https://github.com/davidrxchester",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:45 AM CDT",
-      "firstSeenAt": "2026-05-23T05:45:03Z",
-      "language": "Python",
-      "summary": "Docker Container Escape POC via mlx-metal importlib",
-      "technicalSummary": "Docker Container Escape POC via mlx-metal importlib",
-      "breakdown": "Docker Container Escape POC via mlx-metal importlib",
-      "whatBroke": "Docker Container Escape POC via mlx-metal importlib",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at davidrxchester/CVE-2026-5843.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/davidrxchester/CVE-2026-5843\ncd CVE-2026-5843\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Kubernetes",
-        "Container Escape"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/davidrxchester/CVE-2026-5843"
         ]
       ]
     },
