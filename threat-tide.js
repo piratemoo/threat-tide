@@ -3,7 +3,7 @@
   if (!root || root.dataset.ready === "true") return;
   root.dataset.ready = "true";
 
-  const LIVE_FEED_URL = "https://raw.githubusercontent.com/piratemoo/threat-tide/refs/heads/main/vulns.json";
+  const LIVE_FEED_URL = "https://cdn.jsdelivr.net/gh/piratemoo/threat-tide@main/vulns.json";
   const HERO_IMAGE_URL = "https://raw.githubusercontent.com/piratemoo/threat-tide/refs/heads/main/images/yespls.png";
   let liveFeedUpdatedAt = "";
 
