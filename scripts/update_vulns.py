@@ -900,6 +900,9 @@ def is_recent_release(cve: str, item: dict | None, mention: dict | None, repo: d
 def repo_is_new(repo: dict, now_utc: dt.datetime) -> bool:
     return recent_date(repo.get("created_at", ""), now_utc)
 
+def repo_was_pushed_recently(repo: dict, now_utc: dt.datetime, days: int = 3) -> bool:
+    return recent_date(repo.get("pushed_at", ""), now_utc, days=days)
+
 def repo_score(repo: dict, cve: str) -> int:
     text = " ".join([repo.get("full_name", ""), repo.get("name", ""), repo.get("description") or ""]).lower()
     score = 0
@@ -1076,47 +1079,66 @@ def github_readme_text(full_name: str) -> str:
     return ""
 
 def github_recent_cve_repos() -> dict[str, list[dict]]:
-    created_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
+    now = dt.datetime.now(dt.timezone.utc)
+    created_after = (now - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
+    pushed_after = (now - dt.timedelta(days=3)).date().isoformat()
     discovered: dict[str, list[dict]] = {}
     seen_repos: set[str] = set()
-    readme_budget = 36
+    readme_budget = 48
+
+    def _process_repo(repo: dict, bonus: int, require_new: bool) -> None:
+        repo_url = repo.get("html_url", "")
+        full_name = repo.get("full_name", "")
+        if not repo_url or repo_url in seen_repos:
+            return
+        if require_new and not repo_is_new(repo, now):
+            return
+        if not require_new and not repo_was_pushed_recently(repo, now):
+            return
+        if not contains_any(" ".join([full_name, repo.get("name", ""), repo.get("description") or ""]), ATTACK_READY_TERMS):
+            return
+        seen_repos.add(repo_url)
+        nonlocal readme_budget
+        readme = ""
+        if readme_budget > 0:
+            readme_budget -= 1
+            readme = github_readme_text(full_name)
+        text = " ".join([full_name, repo.get("name", ""), repo.get("description") or "", readme])
+        cves = {match.upper() for match in CVE_RE.findall(text)}
+        for cve in cves:
+            if not allowed_cve_year(cve):
+                continue
+            evidence = poc_evidence(repo, cve, readme)
+            if not evidence.get("valid"):
+                continue
+            candidate = repo_to_candidate(repo, cve, bonus=bonus, evidence=evidence)
+            if candidate["score"] >= 45:
+                discovered.setdefault(cve, []).append(candidate)
+
+    # Pass 1: repos CREATED in last 7 days (new PoCs)
     for base_query in X_STYLE_DISCOVERY_QUERIES:
         query = f"{base_query} in:name,description,readme created:>={created_after}"
         url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({"q": query, "sort": "updated", "order": "desc", "per_page": "20"})
         data = fetch_json(url)
-        repos = data.get("items", []) if isinstance(data.get("items"), list) else []
-        for repo in repos:
-            repo_url = repo.get("html_url", "")
-            full_name = repo.get("full_name", "")
-            if not repo_url or repo_url in seen_repos:
-                continue
-            if not repo_is_new(repo, dt.datetime.now(dt.timezone.utc)):
-                continue
-            if not contains_any(" ".join([full_name, repo.get("name", ""), repo.get("description") or ""]), ATTACK_READY_TERMS):
-                continue
-            seen_repos.add(repo_url)
-            readme = ""
-            if readme_budget > 0:
-                readme_budget -= 1
-                readme = github_readme_text(full_name)
-            text = " ".join([full_name, repo.get("name", ""), repo.get("description") or "", readme])
-            cves = {match.upper() for match in CVE_RE.findall(text)}
-            for cve in cves:
-                if not allowed_cve_year(cve):
-                    continue
-                evidence = poc_evidence(repo, cve, readme)
-                if not evidence.get("valid"):
-                    continue
-                candidate = repo_to_candidate(repo, cve, bonus=14, evidence=evidence)
-                if candidate["score"] >= 55:
-                    discovered.setdefault(cve, []).append(candidate)
+        for repo in data.get("items", []) if isinstance(data.get("items"), list) else []:
+            _process_repo(repo, bonus=14, require_new=True)
         time.sleep(0.25)
+
+    # Pass 2: repos PUSHED TO in last 3 days (updated PoCs)
+    for base_query in X_STYLE_DISCOVERY_QUERIES[::3]:  # every 3rd query to stay within rate limits
+        query = f"{base_query} in:name,description,readme pushed:>={pushed_after}"
+        url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({"q": query, "sort": "updated", "order": "desc", "per_page": "20"})
+        data = fetch_json(url)
+        for repo in data.get("items", []) if isinstance(data.get("items"), list) else []:
+            _process_repo(repo, bonus=8, require_new=False)
+        time.sleep(0.25)
+
     return discovered
 
 def github_candidate(cve: str, seeded: list[dict] | None = None) -> dict | None:
     seeded_ranked = sorted(seeded or [], key=lambda repo: repo.get("score", 0), reverse=True)
     for repo in seeded_ranked:
-        if repo.get("validatedPoc") and repo.get("score", 0) >= 55 and repo.get("url") and recent_date(repo.get("created_at", ""), dt.datetime.now(dt.timezone.utc)):
+        if repo.get("validatedPoc") and repo.get("score", 0) >= 40 and repo.get("url") and (recent_date(repo.get("created_at", ""), dt.datetime.now(dt.timezone.utc)) or repo_was_pushed_recently(repo, dt.datetime.now(dt.timezone.utc))):
             return repo
     created_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).date().isoformat()
     queries = [
@@ -1130,7 +1152,7 @@ def github_candidate(cve: str, seeded: list[dict] | None = None) -> dict | None:
         repos = data.get("items", []) if isinstance(data.get("items"), list) else []
         ranked = sorted(((repo_score(repo, cve), repo) for repo in repos), key=lambda item: item[0], reverse=True)
         for score, repo in ranked:
-            if score >= 45 and repo.get("html_url") and repo_is_new(repo, dt.datetime.now(dt.timezone.utc)) and attack_ready_repo(repo, cve):
+            if score >= 35 and repo.get("html_url") and (repo_is_new(repo, dt.datetime.now(dt.timezone.utc)) or repo_was_pushed_recently(repo, dt.datetime.now(dt.timezone.utc))) and attack_ready_repo(repo, cve):
                 readme = github_readme_text(repo.get("full_name", ""))
                 evidence = poc_evidence(repo, cve, readme)
                 if evidence.get("valid"):
