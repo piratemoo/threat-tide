@@ -739,6 +739,14 @@
     return String(value).replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"})[char]);
   }
 
+  // Renders text with backtick-wrapped spans as <code> elements
+  function renderWithCode(text) {
+    return String(text || "")
+      .split(/`([^`]+)`/)
+      .map((part, i) => i % 2 === 0 ? escapeHtml(part) : `<code>${escapeHtml(part)}</code>`)
+      .join("");
+  }
+
   function cleanInlineText(value, maxLength = 240) {
     return String(value || "")
       .replace(/[\u0000-\u001F\u007F]/g, " ")
@@ -1047,61 +1055,61 @@
   // FIX 7: added BSD and container/kubernetes resource links
   function relatedResources(item) {
     const resources = [];
-    const add = (label, url) => {
+    const add = (label, url, connection = "") => {
       if (!url || resources.some((resource) => resource.url === url)) return;
-      resources.push({ label, url });
+      resources.push({ label, url, connection });
     };
     const category = String(item.category || "").toLowerCase();
     const ecosystem = String(item.ecosystem || "").toLowerCase();
     const tags = item.tags.map((tag) => String(tag).toLowerCase());
     if (category === "adcs" || tags.includes("adcs")) {
-      add("AD CS ESC abuse", "https://specterops.io/blog/2021/06/17/certified-pre-owned/");
-      add("Certifried CVE-2022-26923", "https://research.ifcr.dk/certifried-active-directory-domain-privilege-escalation-cve-2022-26923-9e098fe298f4");
-      add("PetitPotam relay chain", "https://github.com/topotam/PetitPotam");
+      add("AD CS ESC abuse", "https://specterops.io/blog/2021/06/17/certified-pre-owned/", "same certificate enrollment abuse path");
+      add("Certifried CVE-2022-26923", "https://research.ifcr.dk/certifried-active-directory-domain-privilege-escalation-cve-2022-26923-9e098fe298f4", "same domain privilege escalation via certificate");
+      add("PetitPotam relay chain", "https://github.com/topotam/PetitPotam", "NTLM relay to ADCS for domain takeover");
     }
     if (category === "vpn-edge") {
-      add("Citrix Bleed CVE-2023-4966", "https://www.assetnote.io/resources/research/citrix-bleed-leaking-session-tokens-with-cve-2023-4966");
-      add("Citrix ADC CVE-2023-3519", "https://www.assetnote.io/resources/research/analysis-of-cve-2023-3519-in-citrix-adc-and-gateway");
-      add("FortiOS CVE-2024-21762", "https://www.fortiguard.com/psirt/FG-IR-24-015");
+      add("Citrix Bleed CVE-2023-4966", "https://www.assetnote.io/resources/research/citrix-bleed-leaking-session-tokens-with-cve-2023-4966", "same session token disclosure on edge appliance");
+      add("Citrix ADC CVE-2023-3519", "https://www.assetnote.io/resources/research/analysis-of-cve-2023-3519-in-citrix-adc-and-gateway", "unauthenticated RCE on same appliance family");
+      add("FortiOS CVE-2024-21762", "https://www.fortiguard.com/psirt/FG-IR-24-015", "same SSL-VPN pre-auth code execution class");
     }
     if (category === "webstack") {
-      add("PHP-CGI CVE-2024-4577", "https://labs.watchtowr.com/no-way-php-strikes-again-cve-2024-4577/");
-      add("Confluence CVE-2023-22518", "https://confluence.atlassian.com/security/cve-2023-22518-improper-authorization-vulnerability-in-confluence-data-center-and-server-1311473907.html");
-      add("GeoServer CVE-2024-36401", "https://geoserver.org/vulnerability/2024/09/12/cve-2024-36401.html");
+      add("PHP-CGI CVE-2024-4577", "https://labs.watchtowr.com/no-way-php-strikes-again-cve-2024-4577/", "same PHP argument injection to RCE pattern");
+      add("Confluence CVE-2023-22518", "https://confluence.atlassian.com/security/cve-2023-22518-improper-authorization-vulnerability-in-confluence-data-center-and-server-1311473907.html", "same auth bypass to admin takeover chain");
+      add("GeoServer CVE-2024-36401", "https://geoserver.org/vulnerability/2024/09/12/cve-2024-36401.html", "same unauthenticated RCE via eval injection");
     }
     if (category === "devops") {
-      add("Jenkins CVE-2024-23897", "https://www.sonarsource.com/blog/excessive-expansion-uncovering-critical-security-vulnerabilities-in-jenkins/");
-      add("TeamCity CVE-2024-27198", "https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities/");
-      add("GitLab CVE-2023-7028", "https://about.gitlab.com/releases/2024/01/11/critical-security-release-gitlab-16-7-2-released/");
+      add("Jenkins CVE-2024-23897", "https://www.sonarsource.com/blog/excessive-expansion-uncovering-critical-security-vulnerabilities-in-jenkins/", "same CI file read chaining to secrets");
+      add("TeamCity CVE-2024-27198", "https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities/", "same CI auth bypass to pipeline compromise");
+      add("GitLab CVE-2023-7028", "https://about.gitlab.com/releases/2024/01/11/critical-security-release-gitlab-16-7-2-released/", "account takeover via password reset bypass");
     }
     if (category === "kubernetes" || tags.includes("container escape")) {
-      add("Container escape techniques", "https://bishopfox.com/blog/bad-pods-kubernetes-pod-privilege-escalation");
-      add("Kubernetes CVE tracker", "https://www.cvedetails.com/vendor/13534/Kubernetes.html");
-      add("Trivy container scanner", "https://github.com/aquasecurity/trivy");
+      add("Container escape techniques", "https://bishopfox.com/blog/bad-pods-kubernetes-pod-privilege-escalation", "same privileged pod to host escape primitives");
+      add("Kubernetes CVE tracker", "https://www.cvedetails.com/vendor/13534/Kubernetes.html", "related container orchestration exposure history");
+      add("Trivy container scanner", "https://github.com/aquasecurity/trivy", "validates same container image vuln class");
     }
     if (ecosystem === "bsd" || tags.includes("bsd")) {
-      add("FreeBSD Security Advisories", "https://www.freebsd.org/security/advisories/");
-      add("OpenBSD errata", "https://www.openbsd.org/errata.html");
-      add("nf_tables CVE-2024-1086", "https://pwning.tech/nftables/");
+      add("FreeBSD Security Advisories", "https://www.freebsd.org/security/advisories/", "same kernel/syscall vulnerability family");
+      add("OpenBSD errata", "https://www.openbsd.org/errata.html", "related BSD kernel privilege path");
+      add("nf_tables CVE-2024-1086", "https://pwning.tech/nftables/", "same kernel UAF to LPE exploit class");
     }
     if ((category === "kernel" || ecosystem === "linux") && !tags.includes("bsd")) {
-      add("nf_tables CVE-2024-1086", "https://pwning.tech/nftables/");
-      add("regreSSHion CVE-2024-6387", "https://www.qualys.com/regresshion-cve-2024-6387/");
-      add("Dirty Pipe CVE-2022-0847", "https://dirtypipe.cm4all.com/");
+      add("nf_tables CVE-2024-1086", "https://pwning.tech/nftables/", "same kernel UAF to LPE exploit class");
+      add("regreSSHion CVE-2024-6387", "https://www.qualys.com/regresshion-cve-2024-6387/", "same race condition in internet-exposed service");
+      add("Dirty Pipe CVE-2022-0847", "https://dirtypipe.cm4all.com/", "same kernel write primitive to LPE pattern");
     }
     if (ecosystem === "android") {
-      add("Android run-as CVE-2024-0044", "https://rtx.meta.security/exploitation/2024/03/04/Android-run-as-forgery.html");
-      add("Android StrandHogg CVE-2020-0096", "https://source.android.com/docs/security/bulletin/2020-05-01");
-      add("Android Framework bulletins", "https://source.android.com/docs/security/bulletin");
+      add("Android run-as CVE-2024-0044", "https://rtx.meta.security/exploitation/2024/03/04/Android-run-as-forgery.html", "same process identity crossing in Android");
+      add("Android StrandHogg CVE-2020-0096", "https://source.android.com/docs/security/bulletin/2020-05-01", "same task affinity abuse for privilege");
+      add("Android Framework bulletins", "https://source.android.com/docs/security/bulletin", "related Android framework vulnerability history");
     }
     if (ecosystem === "ios") {
-      add("iOS kernel CVE-2023-32434", "https://support.apple.com/en-us/HT213808");
-      add("Operation Triangulation", "https://securelist.com/operation-triangulation-the-last-hardware-mystery/111669/");
-      add("Project Zero ITW iOS bugs", "https://googleprojectzero.github.io/0days-in-the-wild/");
+      add("iOS kernel CVE-2023-32434", "https://support.apple.com/en-us/HT213808", "same integer overflow to kernel r/w primitive");
+      add("Operation Triangulation", "https://securelist.com/operation-triangulation-the-last-hardware-mystery/111669/", "same iOS kernel exploit chain used ITW");
+      add("Project Zero ITW iOS bugs", "https://googleprojectzero.github.io/0days-in-the-wild/", "related in-the-wild iOS exploit research");
     }
     if (!resources.length) {
-      add("Recent exploited CVEs", "https://www.cisa.gov/known-exploited-vulnerabilities-catalog");
-      add("Exploitability discussion", "https://attackerkb.com/");
+      add("Recent exploited CVEs", "https://www.cisa.gov/known-exploited-vulnerabilities-catalog", "confirmed exploitation in the wild");
+      add("Exploitability discussion", "https://attackerkb.com/", "community reliability and weaponization context");
     }
     return resources.slice(0, 5);
   }
@@ -1142,9 +1150,14 @@
         </aside>
         <div class="pm-detail" id="${detailId}" aria-hidden="true">
           <div class="pm-questions">
-            <div class="pm-question pm-syntax"><h3>Summary</h3><p>${escapeHtml(technicalSummary(item))}</p></div>
-            <div class="pm-question pm-syntax"><h3>Syntax</h3><pre><code>${escapeHtml(exploitSyntax(item))}</code></pre></div>
-            <div class="pm-question pm-syntax"><h3>Similar vulnerabilities</h3><div class="pm-resource-list">${relatedResources(item).map((resource) => `<a href="${safeHref(resource.url)}" ${safeExternalAttrs()}>${escapeHtml(resource.label)}</a>`).join("")}</div></div>
+            <div class="pm-question pm-syntax">
+              <h3>Summary</h3>
+              <p>${renderWithCode(technicalSummary(item))}</p>
+              ${item.whatBroke && item.whatBroke !== item.summary ? `<p class="pm-detail-sub"><strong>What broke:</strong> ${renderWithCode(item.whatBroke)}</p>` : ""}
+              ${item.reality ? `<p class="pm-detail-sub"><strong>Reality check:</strong> ${renderWithCode(item.reality)}</p>` : ""}
+              ${Array.isArray(item.chains) && item.chains.length ? `<p class="pm-detail-sub"><strong>Attack chain:</strong></p><ol class="pm-chains">${item.chains.map((c) => `<li>${escapeHtml(c)}</li>`).join("")}</ol>` : ""}
+            </div>
+            <div class="pm-question pm-syntax"><h3>Similar vulnerabilities</h3><div class="pm-resource-list">${relatedResources(item).map((resource) => `<a href="${safeHref(resource.url)}" ${safeExternalAttrs()}>${escapeHtml(resource.label)}</a>${resource.connection ? ` <span class="pm-resource-connection">(${escapeHtml(resource.connection)})</span>` : ""}`).join("")}</div></div>
           </div>
         </div>
       </article>`;
