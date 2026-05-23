@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "7 2,13,19 * * *"
-
+ 
 permissions:
   contents: write
-
+ 
 jobs:
   update-feed:
     runs-on: ubuntu-latest
@@ -14,18 +14,18 @@ jobs:
     steps:
       - name: Check out feed repository
         uses: actions/checkout@v4
-
+ 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
+ 
       - name: Build live vuln feed
         env:
           GITHUB_TOKEN: "${{ github.token }}"
           EXTRA_RSS_SOURCES: "${{ secrets.EXTRA_RSS_SOURCES }}"
         run: python scripts/update_vulns.py
-
+ 
       - name: Commit updated feed
         run: |
           git config user.name "github-actions[bot]"
