@@ -1447,5 +1447,6 @@ payload = {
     "research": research_items,
     "vulns": entries,
 }
+payload["lastRunAt"] = now_utc.isoformat().replace("+00:00", "Z")
 OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 print(f"wrote {len(entries)} live entries to {OUT}")
