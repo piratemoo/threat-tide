@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-23T22:23:00Z",
-  "lastRunAt": "2026-05-23T22:23:00Z",
+  "updatedAt": "2026-05-23T22:36:44Z",
+  "lastRunAt": "2026-05-23T22:36:44Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -91,6 +91,7 @@
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: crypto: algif_aead - Revert to operating out-of-place This mostly reverts commit 72548b093ee3 except for the copying of the associated data. There is no benefit in operating in-place in algif_aead since the source and destination.",
       "breakdown": "In the Linux kernel, the following vulnerability has been resolved: crypto: algif_aead - Revert to operating out-of-place This mostly reverts commit 72548b093ee3 except for the copying of the associated data. There is no benefit in operating in-place in algif_aead since the source and destination.",
+      "reality": " ",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
@@ -151,6 +152,7 @@
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
       "breakdown": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
+      "reality": " ",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
@@ -206,6 +208,7 @@
       "summary": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
       "technicalSummary": "Langflow is a tool for building and deploying AI-powered agents and workflows. In versions prior to 1.9.0, the POST /api/v1/build_public_tmp/{flow_id}/flow endpoint allows building public flows without requiring authentication. When the optional data parameter is supplied, the endpoint uses.",
       "breakdown": "Langflow is a tool for building and deploying AI-powered agents and workflows. In versions prior to 1.9.0, the POST /api/v1/build_public_tmp/{flow_id}/flow endpoint allows building public flows without requiring authentication. When the optional data parameter is supplied, the endpoint uses.",
+      "reality": " ",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/r3nsi15/CVE-2026-33017-langflow-rce\ncd CVE-2026-33017-langflow-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
@@ -266,6 +269,7 @@
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb. TCP marks such skbs with SKBFL_SHARED_FRAG after skb_splice_from_iter(), so later paths that may modify packet.",
       "breakdown": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb. TCP marks such skbs with SKBFL_SHARED_FRAG after skb_splice_from_iter(), so later paths that may modify packet.",
+      "reality": " ",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
@@ -325,6 +329,7 @@
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the remaining bytes. The existing check is inverted, so oversized RESPONSE.",
       "breakdown": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the remaining bytes. The existing check is inverted, so oversized RESPONSE.",
+      "reality": " ",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
@@ -384,6 +389,7 @@
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": " ",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
@@ -436,6 +442,7 @@
       "summary": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer.",
       "technicalSummary": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer without first validating its length. If the supplied list exceeds the.",
       "breakdown": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer without first validating its length. If the supplied list exceeds the.",
+      "reality": " ",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/venglin/setcred\ncd setcred\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
@@ -487,6 +494,7 @@
       "summary": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function. This is due to the.",
       "technicalSummary": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function. This is due to the `wp_ajax_nopriv_eel_register` AJAX handler iterating the.",
       "breakdown": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function. This is due to the `wp_ajax_nopriv_eel_register` AJAX handler iterating the.",
+      "reality": " ",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/xxconi/CVE-2026-9018\ncd CVE-2026-9018\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
