@@ -661,7 +661,8 @@
   function normalizeVuln(item) {
     const rawTags = Array.isArray(item.tags) ? item.tags : [];
     const tags = rawTags.map((tag) => cleanInlineText(tag, 32)).filter(Boolean).slice(0, MAX_TAGS_PER_CARD);
-    const tagEcosystem = tags.map((tag) => tag.toLowerCase()).find((tag) => ["windows", "linux", "web", "android", "ios", "cloud"].includes(tag));
+    // FIXED: added "bsd" to ecosystem tag lookup
+    const tagEcosystem = tags.map((tag) => tag.toLowerCase()).find((tag) => ["windows", "linux", "bsd", "web", "android", "ios", "cloud"].includes(tag));
     const ecosystem = cleanSlug(item.ecosystem || tagEcosystem || "research", "research");
     const severity = cleanSlug(item.severity || "high", "high");
     const chainValue = Array.isArray(item.chains)
@@ -720,16 +721,20 @@
   const tagIcons = {
     adcs: '<svg viewBox="0 0 24 24"><path d="M7 3h10v4h3v14H4V7h3V3Zm2 4h6V5H9v2Zm-3 2v10h12V9H6Zm3 3h6v2H9v-2Zm0 4h4v2H9v-2Z"/></svg>',
     android: '<svg viewBox="0 0 24 24"><path d="M8.2 6.2 6.4 3.4 7.9 2.5 9.8 5.4a8.2 8.2 0 0 1 4.4 0l1.9-2.9 1.5.9-1.8 2.8A7 7 0 0 1 19 12v7H5v-7a7 7 0 0 1 3.2-5.8ZM7 17h10v-5a5 5 0 0 0-10 0v5Zm3-6h2v2h-2v-2Zm4 0h2v2h-2v-2Z"/></svg>',
-    cloud: '<svg viewBox="0 0 24 24"><path d="M8 19a5 5 0 0 1-.8-9.94A6.5 6.5 0 0 1 19.63 11H20a4 4 0 0 1 0 8H8Zm0-2h12a2 2 0 0 0 0-4h-1.92l-.24-.92A4.5 4.5 0 0 0 9.1 10.9l-.22.96-.98.06A3 3 0 0 0 8 17Z"/></svg>',
     "auth bypass": '<svg viewBox="0 0 24 24"><path d="M17 8V7a5 5 0 0 0-9.58-2H10a3 3 0 0 1 5 2v1h2Zm-9 3h12v9H8v-9Zm2 2v5h8v-5h-8ZM3 11h3v2H3v-2Zm0 4h3v2H3v-2Zm0-8h3v2H3V7Z"/></svg>',
+    bsd: '<svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm2 2v10h12V7H6Zm2 2h4a2 2 0 0 1 0 4H8V9Zm2 2v2h2a1 1 0 0 0 0-2h-2Zm4 0h2v4h-2v-4Z"/></svg>',
+    cloud: '<svg viewBox="0 0 24 24"><path d="M8 19a5 5 0 0 1-.8-9.94A6.5 6.5 0 0 1 19.63 11H20a4 4 0 0 1 0 8H8Zm0-2h12a2 2 0 0 0 0-4h-1.92l-.24-.92A4.5 4.5 0 0 0 9.1 10.9l-.22.96-.98.06A3 3 0 0 0 8 17Z"/></svg>',
+    "container escape": '<svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3Zm2 2v4h4V5H5Zm8-2h8v8h-8V3Zm2 2v4h4V5h-4ZM3 13h8v8H3v-8Zm2 2v4h4v-4H5Zm11-2 3 3-3 3-1.4-1.4L16.2 16l-1.6-1.6L16 13Zm-4 3h3v2h-3v-2Z"/></svg>',
     devops: '<svg viewBox="0 0 24 24"><path d="M7 7a5 5 0 0 1 8.7-3.35L18 5.95V3h2v7h-7V8h3.6l-2.32-2.32A3 3 0 1 0 12 10h1v2h-1a5 5 0 0 1-5-5Zm5 5h1a5 5 0 1 1-3.7 8.35L7 18.05V21H5v-7h7v2H8.4l2.32 2.32A3 3 0 1 0 13 14h-1v-2Z"/></svg>',
     "file read": '<svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2Zm8 2H8v16h10V8h-4V4Zm-3 7h4v2h-4v-2Zm0 4h4v2h-4v-2Z"/></svg>',
     "file transfer": '<svg viewBox="0 0 24 24"><path d="M4 5h10l2 2h4v12H4V5Zm2 4v8h12V9H6Zm5 1h2v3h3l-4 4-4-4h3v-3Z"/></svg>',
+    "file upload": '<svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2Zm8 2H8v16h10V8h-4V4Zm-4 5 4 4h-3v4h-2v-4H6l4-4Z"/></svg>',
     framework: '<svg viewBox="0 0 24 24"><path d="M5 4h14v4H5V4Zm2 2v0h10V6H7Zm-2 5h6v9H5v-9Zm2 2v5h2v-5H7Zm6-2h6v9h-6v-9Zm2 2v5h2v-5h-2Z"/></svg>',
     high: '<svg viewBox="0 0 24 24"><path d="m12 3 10 18H2L12 3Zm0 5.1L5.4 19h13.2L12 8.1Zm-1 3.9h2v4h-2v-4Zm0 5h2v2h-2v-2Z"/></svg>',
     ios: '<svg viewBox="0 0 24 24"><path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 3v14h8V5H8Zm3 15h2v1h-2v-1Z"/></svg>',
     kev: '<svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm0 2.2 6 2.25V11c0 3.9-2.4 7.55-6 8.85C8.4 18.55 6 14.9 6 11V6.45l6-2.25Zm3.7 5.1 1.4 1.4-6.1 6.1-3.6-3.6 1.4-1.4 2.2 2.2 4.7-4.7Z"/></svg>',
     kernel: '<svg viewBox="0 0 24 24"><path d="M8 3h2v3h4V3h2v3h2v2h3v2h-3v4h3v2h-3v2h-2v3h-2v-3h-4v3H8v-3H6v-2H3v-2h3v-4H3V8h3V6h2V3Zm0 5v8h8V8H8Zm2 2h4v4h-4v-4Z"/></svg>',
+    kubernetes: '<svg viewBox="0 0 24 24"><path d="M12 2l9 4.9V17L12 22 3 17V6.9L12 2Zm0 2.3L5 8.1V16l7 3.8 7-3.8V8.1L12 4.3Zm0 3 4 2.2v4.4L12 16l-4-2.1V9.5L12 7.3Zm0 2.2-2 1.1v2.1l2 1.1 2-1.1v-2.1L12 9.5Z"/></svg>',
     linux: '<svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm2 2v10h12V7H6Zm2.2 2 3 3-3 3-1.4-1.4L8.4 12 6.8 10.4 8.2 9Zm4.3 5H17v2h-4.5v-2Z"/></svg>',
     "local lpe": '<svg viewBox="0 0 24 24"><path d="M11 19V8.8l-4.6 4.6L5 12l7-7 7 7-1.4 1.4L13 8.8V19h-2Z"/></svg>',
     medium: '<svg viewBox="0 0 24 24"><path d="M4 11h16v2H4v-2Z"/></svg>',
@@ -739,6 +744,7 @@
     "session theft": '<svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v2h2v13H5V9h2V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v2h6V7a3 3 0 0 0-3-3Zm-5 7v9h10v-9H7Zm4 2h2v4h-2v-4Z"/></svg>',
     sqli: '<svg viewBox="0 0 24 24"><path d="M12 3c4.4 0 8 1.34 8 3v12c0 1.66-3.6 3-8 3s-8-1.34-8-3V6c0-1.66 3.6-3 8-3Zm0 2c-3.54 0-5.7.88-6 1 .3.12 2.46 1 6 1s5.7-.88 6-1c-.3-.12-2.46-1-6-1ZM6 9v2c.94.58 3.08 1 6 1s5.06-.42 6-1V9c-1.48.62-3.58 1-6 1S7.48 9.62 6 9Zm0 5v2c.94.58 3.08 1 6 1s5.06-.42 6-1v-2c-1.48.62-3.58 1-6 1s-4.52-.38-6-1Z"/></svg>',
     ssh: '<svg viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3h2v11H5V10h2Zm2 0h6V7a3 3 0 0 0-6 0v3Zm-2 2v7h10v-7H7Z"/></svg>',
+    ssrf: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"/></svg>',
     webstack: '<svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm2 4h12V7H6v2Zm0 2v6h12v-6H6Zm2 1.5h3V14H8v-1.5Zm0 2.5h8v1.5H8V15Z"/></svg>',
     windows: '<svg viewBox="0 0 24 24"><path d="M3 5.5 11 4v7H3V5.5Zm10-1.88 8-1.5V11h-8V3.62ZM3 13h8v7l-8-1.5V13Zm10 0h8v8.88l-8-1.5V13Z"/></svg>'
   };
@@ -758,18 +764,18 @@
   function cleanTitle(value, cve) {
     const escapedCve = String(cve || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const cvePattern = escapedCve
-      ? new RegExp(`^\\s*${escapedCve}\\s*[:\\-â€“â€”]?\\s*`, "i")
-      : /^\s*CVE-\d{4}-\d{4,7}\s*[:\-â€“â€”]?\s*/i;
+      ? new RegExp(`^\\s*${escapedCve}\\s*[:\\-\u2013\u2014]?\\s*`, "i")
+      : /^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*/i;
     return cleanInlineText(value || "Untitled vulnerability signal", 180)
       .replace(cvePattern, "")
-      .replace(/^\s*CVE-\d{4}-\d{4,7}\s*[:\-â€“â€”]?\s*/i, "")
+      .replace(/^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*/i, "")
       .trim() || "Untitled vulnerability signal";
   }
 
   function cleanSummary(value, cve, title) {
     const text = cleanBlockText(value || "", 520)
-      .replace(new RegExp(`^\\s*${String(cve || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*[:\\-â€“â€”]?\\s*`, "i"), "")
-      .replace(/^\s*CVE-\d{4}-\d{4,7}\s*[:\-â€“â€”]?\s*/i, "")
+      .replace(new RegExp(`^\\s*${String(cve || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*[:\\-\u2013\u2014]?\\s*`, "i"), "")
+      .replace(/^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*/i, "")
       .trim();
     if (!text || text.toLowerCase() === String(cve || "").toLowerCase()) {
       const cleanedTitle = cleanTitle(title || "", cve);
@@ -836,10 +842,12 @@
     return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" }).format(archiveDate(dayOffset));
   }
 
+  // FIXED: BSD ecosystem routes to linux section
   function sectionMatches(item) {
     const tags = item.tags.map((tag) => tag.toLowerCase());
     return state.section === "all"
       || item.ecosystem === state.section
+      || (state.section === "linux" && (item.ecosystem === "linux" || item.ecosystem === "bsd" || tags.includes("bsd")))
       || (state.section === "web" && (item.ecosystem === "web" || item.category === "webstack" || tags.includes("webstack") || tags.includes("web")))
       || (state.section === "mobile" && (item.ecosystem === "android" || item.ecosystem === "ios"));
   }
@@ -1001,14 +1009,32 @@
     return lines.join("\n");
   }
 
+  // FIXED: added container escape, ssrf, bsd/freebsd cases
   function technicalSummary(item) {
     const category = String(item.category || "").toLowerCase();
     const tags = item.tags.map((tag) => String(tag).toLowerCase());
+    const ecosystem = String(item.ecosystem || "").toLowerCase();
+
+    if (tags.includes("container escape") || category === "kubernetes") {
+      return "A container boundary or namespace control can be escaped from a process inside the container. Successful exploitation gives attacker code execution on the host or access to co-located workloads.";
+    }
+    if (tags.includes("ssrf")) {
+      return "Attacker-controlled input is used to forge server-side requests. Depending on internal network topology, this can reach metadata services, internal APIs, or credential endpoints not accessible from the internet.";
+    }
+    if (ecosystem === "bsd" || tags.includes("bsd")) {
+      return "A kernel or system-level vulnerability on a BSD-derived operating system. Exploitation depends on a local foothold and the ability to trigger the vulnerable syscall or kernel path to escalate privileges.";
+    }
     if (category === "webstack" && tags.includes("auth bypass")) {
       return "Authentication checks happen too late or are skipped on a privileged path. A crafted request can reach control-plane behavior without a valid session.";
     }
     if (category === "webstack" && tags.includes("rce")) {
       return "A web-exposed parser or handler accepts attacker-shaped input and passes it into execution logic. The bug turns request data into server-side code or command behavior.";
+    }
+    if (category === "webstack" && tags.includes("sqli")) {
+      return "Attacker-controlled input reaches a database query without proper parameterization. Depending on the backend and permissions, this can enable data extraction, authentication bypass, or chained code execution.";
+    }
+    if (tags.includes("ssrf") || category === "webstack" && tags.includes("file read")) {
+      return "A server-side path handles attacker-supplied input that reaches internal or filesystem resources. This can expose sensitive files, credentials, or internal service endpoints.";
     }
     if (category === "vpn-edge" || tags.includes("vpn edge")) {
       return "A perimeter appliance exposes logic that should only run after stronger validation. The root issue is unauthenticated or weakly authenticated input reaching trusted edge-device internals.";
@@ -1070,10 +1096,21 @@
       add("TeamCity CVE-2024-27198", "https://www.rapid7.com/blog/post/2024/03/04/etr-cve-2024-27198-and-cve-2024-27199-jetbrains-teamcity-multiple-authentication-bypass-vulnerabilities/");
       add("GitLab CVE-2023-7028", "https://about.gitlab.com/releases/2024/01/11/critical-security-release-gitlab-16-7-2-released/");
     }
-    if (category === "kernel" || ecosystem === "linux") {
+    // FIXED: added BSD-specific resources alongside linux/kernel
+    if (category === "kernel" || ecosystem === "linux" || ecosystem === "bsd" || tags.includes("bsd")) {
       add("nf_tables CVE-2024-1086", "https://pwning.tech/nftables/");
       add("regreSSHion CVE-2024-6387", "https://www.qualys.com/regresshion-cve-2024-6387/");
-      add("Dirty Pipe CVE-2022-0847", "https://dirtypipe.cm4all.com/");
+      if (ecosystem === "bsd" || tags.includes("bsd")) {
+        add("FreeBSD Security Advisories", "https://www.freebsd.org/security/advisories/");
+        add("OpenBSD errata", "https://www.openbsd.org/errata.html");
+      } else {
+        add("Dirty Pipe CVE-2022-0847", "https://dirtypipe.cm4all.com/");
+      }
+    }
+    if (category === "kubernetes" || tags.includes("container escape")) {
+      add("Container escape techniques", "https://bishopfox.com/blog/bad-pods-kubernetes-pod-privilege-escalation");
+      add("Kubernetes CVE tracker", "https://www.cvedetails.com/vendor/13534/Kubernetes.html");
+      add("Aqua Trivy scanner", "https://github.com/aquasecurity/trivy");
     }
     if (ecosystem === "android") {
       add("Android run-as CVE-2024-0044", "https://rtx.meta.security/exploitation/2024/03/04/Android-run-as-forgery.html");
