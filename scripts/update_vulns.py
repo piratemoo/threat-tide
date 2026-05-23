@@ -843,7 +843,15 @@ def cve_year(cve: str) -> int:
     return int(match.group(1)) if match else 0
 
 def allowed_cve_year(cve: str) -> bool:
-    return cve_year(cve) == CURRENT_CVE_YEAR if STRICT_CURRENT_CVE_YEAR_ONLY else cve_year(cve) >= CURRENT_CVE_YEAR
+    year = cve_year(cve)
+    if not STRICT_CURRENT_CVE_YEAR_ONLY:
+        return year >= CURRENT_CVE_YEAR
+    # FIX 11: Jan 1-7 buffer — no CVE-YYYY repos exist yet for new year,
+    # so also accept previous year CVEs during first week to avoid empty feed
+    now = dt.datetime.now(dt.timezone.utc)
+    if now.month == 1 and now.day <= 7:
+        return year in (CURRENT_CVE_YEAR, CURRENT_CVE_YEAR - 1)
+    return year == CURRENT_CVE_YEAR
 
 def recent_date(value: str, now_utc: dt.datetime, days: int = LOOKBACK_DAYS) -> bool:
     parsed = parse_date(value)
