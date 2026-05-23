@@ -115,13 +115,25 @@ for line in EXTRA_RSS_SOURCES.splitlines():
         RSS_SOURCES.append((name, url))
         SOURCE_PROFILES.setdefault(name, (name, url))
 
+# Sources that publish offensive exploit research / attack technique writeups / working PoC breakdowns
 RESEARCH_SOURCE_NAMES = {
-    "Google Security Blog", "Project Zero Current", "Project Zero", "watchTowr Labs",
-    "Horizon3 Attack Team", "Dirkjan Mollema", "ZDI", "NCC Group Research",
-    "Bishop Fox", "Elastic Security Labs", "GitHub Security Lab", "Aqua Nautilus",
-    "Synacktiv", "SSD Disclosure", "Rapid7 Blog", "Qualys Research",
-    "PortSwigger Research", "Assetnote Research", "SonarSource",
-    "Kaspersky Securelist", "Exodus Intelligence", "The GitHub Blog Security",
+    "Project Zero Current",
+    "Project Zero",
+    "watchTowr Labs",
+    "Horizon3 Attack Team",
+    "Dirkjan Mollema",
+    "ZDI",
+    "NCC Group Research",
+    "SSD Disclosure",
+    "Synacktiv",
+    "PortSwigger Research",
+    "Assetnote Research",
+    "Exodus Intelligence",
+    "Bishop Fox",
+    "Qualys Research",
+    "Rapid7 Blog",
+    "GitHub Security Lab",
+    "Elastic Security Labs",
 }
 
 HIGH_SIGNAL = {
@@ -137,12 +149,14 @@ HIGH_SIGNAL = {
 }
 
 PRIMITIVES = {
-    "auth bypass": ("Auth Bypass", ["authentication bypass", "auth bypass", "authorization bypass"]),
-    "rce": ("RCE", ["remote code execution", "rce", "command injection", "code execution", "pre-auth rce", "preauth rce"]),
-    "lpe": ("Local LPE", ["privilege escalation", "lpe", "local privilege", "elevation of privilege", "eop"]),
+    "auth bypass": ("Auth Bypass", ["authentication bypass", "auth bypass", "authorization bypass", "role injection", "account takeover"]),
+    "rce": ("RCE", ["remote code execution", "rce", "command injection", "code execution", "code injection", "arbitrary code", "pre-auth rce", "preauth rce"]),
+    "lpe": ("Local LPE", ["local privilege escalation", "local lpe", "local privilege", "elevation of privilege", "eop", "ring 0", "ring0"]),
+    "container escape": ("Container Escape", ["container escape", "docker escape", "container breakout", "breakout from container", "namespace escape"]),
     "memory corruption": ("Memory Corruption", ["double free", "use-after-free", "uaf", "heap overflow", "heap corruption", "out-of-bounds write", "buffer overflow"]),
-    "file read": ("File Read", ["file read", "path traversal", "arbitrary file", "file disclosure"]),
-    "session theft": ("Session Theft", ["session", "token", "cookie", "credential disclosure"]),
+    "file read": ("File Read", ["file read", "path traversal", "arbitrary file", "file disclosure", "directory traversal"]),
+    "ssrf": ("SSRF", ["server-side request forgery", "ssrf"]),
+    "session theft": ("Session Theft", ["session hijack", "token theft", "cookie theft", "credential disclosure"]),
     "sqli": ("SQLi", ["sql injection", "sqli"]),
     "xss": ("XSS", ["cross-site scripting", "xss"]),
 }
@@ -208,9 +222,9 @@ ECOSYSTEM_RULES = [
     ("android", ["android", "aosp", "pixel"]),
     ("ios", ["ios", "ipados", "iphone", "webkit", "safari", "imessage", "apple"]),
     ("windows", ["windows", "microsoft", "exchange", "sharepoint", "active directory", "ad cs", "adcs", "ntlm", "kerberos", "sccm", "hyper-v", "winrm", "rdp"]),
-    ("linux", ["linux", "openssh", "sudo", "systemd", "ubuntu", "debian", "kernel"]),
+    ("linux", ["linux", "openssh", "sudo", "systemd", "ubuntu", "debian", "kernel", "freebsd", "openbsd", "netbsd", "bsd", "glibc"]),
     ("web", ["apache", "nginx", "tomcat", "iis", "php", "java servlet", "spring", "struts", "rails", "django", "laravel", "nodejs", "express", "confluence", "jira", "wordpress", "wordpress plugin", "woocommerce", "drupal", "coldfusion", "geoserver", "cpanel", "whm", "webpros", "webstack", "web app", "webapp", "web application", "appsec", "api", "rest api", "graphql", "oauth", "saml", "openid", "session", "cookie", "xss", "csrf", "ssrf", "sqli", "sql injection", "deserialization", "path traversal", "file upload", "template injection", "ssti", "xxe"]),
-    ("cloud", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "vmware", "esxi", "kubernetes", "jenkins", "gitlab", "teamcity", "confluence", "atlassian", "connectwise", "vpn", "cloud"]),
+    ("cloud", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "cisco", "vmware", "esxi", "kubernetes", "jenkins", "gitlab", "teamcity", "confluence", "atlassian", "connectwise", "vpn", "cloud", "sd-wan", "sdwan"]),
 ]
 
 CATEGORY_RULES = [
@@ -221,12 +235,13 @@ CATEGORY_RULES = [
     ("sharepoint", ["sharepoint"]),
     ("sccm", ["sccm", "configuration manager", "configmgr"]),
     ("rmm", ["screenconnect", "connectwise", "rmm"]),
-    ("vpn-edge", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "vpn", "gateway", "ssl-vpn", "ikev2", "ikeext", "ipsec"]),
+    ("vpn-edge", ["citrix", "fortinet", "palo alto", "pan-os", "ivanti", "ssl-vpn", "ikev2", "ikeext", "ipsec", "global protect", "globalprotect", "cisco", "sd-wan", "sdwan", "catalyst sd-wan", "asa", "anyconnect", "firepower"]),
     ("devops", ["jenkins", "gitlab", "teamcity", "ci/cd", "ci server"]),
+    ("kubernetes", ["kubernetes", "container escape", "docker escape", "container breakout"]),
     ("kernel", ["kernel", "use-after-free", "uaf"]),
-    ("kubernetes", ["kubernetes", "container", "docker"]),
+    ("kubernetes-generic", ["container", "docker"]),
     ("ssh", ["openssh", "ssh"]),
-    ("webstack", ["apache", "nginx", "tomcat", "iis", "php", "spring", "struts", "rails", "django", "laravel", "nodejs", "express", "confluence", "jira", "wordpress", "wordpress plugin", "woocommerce", "drupal", "coldfusion", "geoserver", "cpanel", "whm", "webpros", "web", "web app", "webapp", "web application", "api", "rest api", "graphql", "oauth", "saml", "openid", "session", "cookie", "xss", "csrf", "ssrf", "sqli", "sql injection", "deserialization", "path traversal", "file upload", "template injection", "ssti", "xxe"]),
+    ("webstack", ["apache", "nginx", "tomcat", "iis", "php", "spring", "struts", "rails", "django", "laravel", "nodejs", "express", "confluence", "jira", "wordpress", "wordpress plugin", "woocommerce", "drupal", "coldfusion", "geoserver", "cpanel", "whm", "webpros", "web", "web app", "webapp", "web application", "api", "rest api", "graphql", "oauth", "saml", "openid", "session", "cookie", "xss", "csrf", "ssrf", "sql injection", "deserialization", "path traversal", "file upload", "template injection", "ssti", "xxe"]),
     ("framework", ["android", "framework", "packageinstaller"]),
 ]
 
@@ -261,6 +276,61 @@ RESEARCH_SIGNAL_TERMS = [
     "zeroclick", "kernel bug", "memory corruption", "use-after-free", "uaf",
     "double free", "heap overflow", "remote code execution",
 ]
+
+DEEP_RESEARCH_SIGNAL = [
+    "root cause", "attack chain", "exploitation technique", "exploit development",
+    "exploit analysis", "technical analysis", "deep dive", "reverse engineering",
+    "heap spray", "rop chain", "type confusion", "integer overflow",
+    "race condition", "out-of-bounds", "memory layout", "bypass technique",
+    "zero-day", "0-day", "0day", "we found", "we discovered", "we identified",
+    "our research", "our analysis", "vulnerability research", "security research",
+    "boolean oracle", "bit-by-bit", "oracle attack", "sanitization bypass",
+    "authentication logic", "exploit chain", "weaponized", "proof of concept",
+    "we developed", "arbitrary write", "arbitrary read",
+]
+
+# Offensive security research signal — working exploits, attack techniques, offensive tooling
+OFFENSIVE_RESEARCH_SIGNAL = [
+    # Exploit confirmation
+    "working exploit", "working poc", "proof of concept", "poc",
+    "exploit chain", "exploit development", "exploit code",
+    "we exploited", "we were able to", "full chain", "full exploit",
+    "arbitrary code execution", "arbitrary command execution",
+    "pre-auth rce", "unauthenticated rce", "unauthenticated exploit",
+    # Attack technique language
+    "attack chain", "attack technique", "attack primitive",
+    "exploitation technique", "exploitation path", "exploitation chain",
+    "bypass technique", "bypass method", "bypass authentication",
+    "privilege escalation technique", "lateral movement technique",
+    "initial access", "post-exploitation", "persistence technique",
+    # Offensive tooling
+    "offensive tool", "red team tool", "offensive capability",
+    "c2", "command and control", "implant", "beacon", "payload",
+    "shellcode", "reverse shell", "bind shell", "stager",
+    "metasploit module", "exploit module", "bof", "buffer overflow",
+    # Root cause / technical depth with offensive framing
+    "root cause", "type confusion", "use-after-free", "heap spray",
+    "rop chain", "heap grooming", "race condition exploit",
+    "integer overflow exploit", "memory corruption exploit",
+    "out-of-bounds write", "arbitrary write primitive",
+    # Active exploitation framing
+    "actively exploited", "exploited in the wild", "itw exploit",
+    "weaponized", "in-the-wild", "threat actor exploit",
+]
+
+# Title patterns that immediately disqualify a post from the offensive research feed
+OFFENSIVE_REJECT_TITLE_RE = re.compile(
+    r"^(detecting|hunting|scanning|monitoring|building|defending|mitigating|patching|hardening)\b"
+    r"|(\bat scale\b)"
+    r"|(detection (tool|rule|script|capability))"
+    r"|(threat hunt)"
+    r"|(how (to|we) detect)"
+    r"|(security (update|release|bulletin|advisory))"
+    r"|(monthly (update|patch|security))"
+    r"|(patch tuesday)"
+    r"|(release notes|changelog|version \d)",
+    re.I,
+)
 
 POC_CODE_EXTENSIONS = {
     ".py", ".go", ".rb", ".js", ".ts", ".java", ".c", ".cc", ".cpp", ".cs",
@@ -550,6 +620,15 @@ def labelize(value: str) -> str:
         "sqli": "SQLi",
         "sharepoint": "SharePoint",
         "sccm": "SCCM",
+        "ssrf": "SSRF",
+        "container escape": "Container Escape",
+        "kubernetes": "Kubernetes",
+        "kubernetes-generic": "Container",
+        "linux": "Linux",
+        "windows": "Windows",
+        "android": "Android",
+        "cloud": "Cloud",
+        "bsd": "BSD",
     }.get(value.lower(), value.replace("-", " ").title())
 
 def parse_date(value: str) -> dt.datetime:
@@ -613,9 +692,12 @@ def rss_mentions() -> dict[str, list[dict]]:
     return mentions
 
 def rss_research_items(now_utc: dt.datetime) -> list[dict]:
+    """Offensive security research feed — working exploits, attack technique breakdowns,
+    offensive tooling. Advisory posts, detection tools, and defensive content are rejected."""
     research: list[dict] = []
-    cutoff = now_utc - dt.timedelta(hours=24)
+    cutoff = now_utc - dt.timedelta(hours=48)
     seen_urls: set[str] = set()
+
     for source, url in RSS_SOURCES:
         if source not in RESEARCH_SOURCE_NAMES:
             continue
@@ -627,7 +709,7 @@ def rss_research_items(now_utc: dt.datetime) -> list[dict]:
         except ET.ParseError:
             continue
         entries = [node for node in root.iter() if node.tag.split("}")[-1] in {"item", "entry"}]
-        for entry in entries[:15]:
+        for entry in entries[:20]:
             fields = {"title": "", "summary": "", "link": "", "published": ""}
             for child in list(entry):
                 tag = child.tag.split("}")[-1]
@@ -643,31 +725,62 @@ def rss_research_items(now_utc: dt.datetime) -> list[dict]:
             link = fields["link"] or url
             if not link or link in seen_urls:
                 continue
-            text = norm(re.sub(r"<[^>]+>", " ", f"{fields['title']} {fields['summary']}"))
+
+            title = fields["title"]
+            text = norm(re.sub(r"<[^>]+>", " ", f"{title} {fields['summary']}"))
+            title_lower = title.lower()
+
+            # Hard reject: advisory/detection/defensive/release posts
+            if OFFENSIVE_REJECT_TITLE_RE.search(title):
+                continue
+            if contains_any(title_lower, [
+                "security update", "patch tuesday", "now available",
+                "fixed in", "we have patched", "release notes",
+                "detection tool", "detecting ", "threat hunt",
+            ]):
+                continue
+
+            # Must have offensive signal in body
+            has_offensive = contains_any(text, OFFENSIVE_RESEARCH_SIGNAL)
+            has_deep = contains_any(text, DEEP_RESEARCH_SIGNAL)
             cves = sorted({match.upper() for match in CVE_RE.findall(text)})
-            if not cves and not contains_any(text, RESEARCH_SIGNAL_TERMS):
+            has_cve_with_primitive = bool(cves) and any(
+                contains_any(text, terms[1]) for terms in PRIMITIVES.values()
+            )
+
+            # Require offensive signal AND at least one of: deep research or CVE+primitive
+            if not has_offensive:
                 continue
-            if contains_any(text, DEFENSE_ONLY_TERMS) and not contains_any(text, ["exploit", "vulnerability", "cve", "poc"]):
+            if not has_deep and not has_cve_with_primitive:
                 continue
+
+            # Skip if purely defensive with no offensive framing
+            if contains_any(text, DEFENSE_ONLY_TERMS) and not contains_any(text, [
+                "exploit", "poc", "attack", "offensive", "bypass", "rce", "lpe",
+            ]):
+                continue
+
             profile_name, profile_url = SOURCE_PROFILES.get(source, (source, url))
             category = tag_value(text, CATEGORY_RULES, "")
             ecosystem = tag_value(text, ECOSYSTEM_RULES, "")
             prim = primitive(text)
             tags = []
             for value in [ecosystem, category, prim]:
-                if value and value != "Exploit":
+                if value and value not in {"Exploit", "kubernetes-generic"}:
                     tags.append(labelize(value))
+
             seen_urls.add(link)
             research.append({
-                "title": compact(fields["title"], 160),
+                "title": compact(title, 160),
                 "source": profile_name,
                 "sourceUrl": profile_url,
                 "url": link,
-                "summary": compact(re.sub(r"<[^>]+>", " ", fields["summary"]), 260),
+                "summary": compact(re.sub(r"<[^>]+>", " ", fields["summary"]), 300),
                 "publishedAt": published.isoformat().replace("+00:00", "Z"),
                 "cves": cves[:5],
                 "tags": list(dict.fromkeys(tags))[:6],
             })
+
     research.sort(key=lambda item: parse_date(item.get("publishedAt", "")), reverse=True)
     return research[:12]
 
@@ -1114,6 +1227,16 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
     ecosystem = tag_value(text, ECOSYSTEM_RULES, "cloud")
     category = tag_value(text, CATEGORY_RULES, "webstack")
     prim = primitive(text)
+
+    # Web privilege escalation is auth bypass, not OS LPE
+    if prim == "Local LPE" and ecosystem in {"web"} and category in {"webstack"}:
+        if contains_any(text, ["role injection", "unauthorized", "unauthenticated", "authentication", "privilege", "escalat"]):
+            prim = "Auth Bypass"
+
+    # BSD tag override
+    is_bsd = contains_any(text, ["freebsd", "openbsd", "netbsd", " bsd "])
+    ecosystem_label = "bsd" if is_bsd and ecosystem == "linux" else ecosystem
+
     nvd_sev = (nvd.get("severity") or "").upper()
     severity = operator_severity(nvd_sev, prim, ecosystem, category, epss, repo, is_kev, text)
     confidence = min(98, 70 + repo.get("score", 0) // 3 + (12 if mention else 0) + (8 if item else 0))
@@ -1136,11 +1259,27 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
     vendor_links = [url for url in extract_urls(notes) + nvd.get("references", []) if "nvd.nist.gov" not in url.lower()]
     if vendor_links:
         links.append(["Vendor Advisory", vendor_links[0]])
-    tags = [labelize(ecosystem), labelize(category), prim]
-    if repo.get("artifact_type") == "research artifact":
-        tags.append("Research")
+
+    # Deduplicated tags — no Web+Webstack, no Cloud+Kubernetes duplicates
+    raw_tags = [labelize(ecosystem_label), labelize(category), prim]
     if is_kev:
-        tags.append("KEV")
+        raw_tags.append("KEV")
+    if repo.get("artifact_type") == "research artifact":
+        raw_tags.append("Research")
+    seen_tags: set[str] = set()
+    tags = []
+    for t in raw_tags:
+        tl = t.lower()
+        if tl == "web" and "webstack" in [x.lower() for x in tags]:
+            continue
+        if tl == "cloud" and any(x.lower() in {"kubernetes", "vpn edge", "container"} for x in tags):
+            continue
+        if tl == "linux" and "bsd" in [x.lower() for x in tags]:
+            continue
+        if t not in seen_tags:
+            seen_tags.add(t)
+            tags.append(t)
+
     language = language_label(repo)
     difficulty = difficulty_label(repo, prim, epss)
     return {
