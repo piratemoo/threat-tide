@@ -115,7 +115,6 @@ for line in EXTRA_RSS_SOURCES.splitlines():
         RSS_SOURCES.append((name, url))
         SOURCE_PROFILES.setdefault(name, (name, url))
 
-# Sources that publish offensive exploit research / attack technique writeups / working PoC breakdowns
 RESEARCH_SOURCE_NAMES = {
     "Project Zero Current",
     "Project Zero",
@@ -289,36 +288,29 @@ DEEP_RESEARCH_SIGNAL = [
     "we developed", "arbitrary write", "arbitrary read",
 ]
 
-# Offensive security research signal — working exploits, attack techniques, offensive tooling
 OFFENSIVE_RESEARCH_SIGNAL = [
-    # Exploit confirmation
     "working exploit", "working poc", "proof of concept", "poc",
     "exploit chain", "exploit development", "exploit code",
     "we exploited", "we were able to", "full chain", "full exploit",
     "arbitrary code execution", "arbitrary command execution",
     "pre-auth rce", "unauthenticated rce", "unauthenticated exploit",
-    # Attack technique language
     "attack chain", "attack technique", "attack primitive",
     "exploitation technique", "exploitation path", "exploitation chain",
     "bypass technique", "bypass method", "bypass authentication",
     "privilege escalation technique", "lateral movement technique",
     "initial access", "post-exploitation", "persistence technique",
-    # Offensive tooling
     "offensive tool", "red team tool", "offensive capability",
     "c2", "command and control", "implant", "beacon", "payload",
     "shellcode", "reverse shell", "bind shell", "stager",
     "metasploit module", "exploit module", "bof", "buffer overflow",
-    # Root cause / technical depth with offensive framing
     "root cause", "type confusion", "use-after-free", "heap spray",
     "rop chain", "heap grooming", "race condition exploit",
     "integer overflow exploit", "memory corruption exploit",
     "out-of-bounds write", "arbitrary write primitive",
-    # Active exploitation framing
     "actively exploited", "exploited in the wild", "itw exploit",
     "weaponized", "in-the-wild", "threat actor exploit",
 ]
 
-# Title patterns that immediately disqualify a post from the offensive research feed
 OFFENSIVE_REJECT_TITLE_RE = re.compile(
     r"^(detecting|hunting|scanning|monitoring|building|defending|mitigating|patching|hardening)\b"
     r"|(\bat scale\b)"
@@ -543,15 +535,24 @@ def english_problem_summary(desc: str, repo: dict, cve: str, vendor: str, produc
     return compact(f"{subject} exposes a {primitive_copy(prim)} path with recent public exploit tooling signal.", limit)
 
 def clean_summary(desc: str, repo: dict, cve: str, vendor: str, product: str, prim: str, limit: int = 230) -> str:
-    candidates = [repo.get("description", ""), desc]
-    for candidate in candidates:
-        text = remove_cve_refs(candidate, cve)
-        if looks_non_english(text) or keyword_soup(text):
-            continue
-        text = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", text, flags=re.I)
-        text = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", text, flags=re.I)
-        if meaningful_title(text, cve, 60):
-            return compact(text, limit)
+    # Priority 1: repo description if substantive and English
+    repo_desc = remove_cve_refs(repo.get("description", ""), cve)
+    if repo_desc and not looks_non_english(repo_desc) and not keyword_soup(repo_desc) and len(repo_desc.split()) >= 8:
+        repo_desc = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", repo_desc, flags=re.I)
+        repo_desc = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", repo_desc, flags=re.I)
+        if meaningful_title(repo_desc, cve, 60):
+            return compact(repo_desc, limit)
+
+    # Priority 2: NVD / item description — use directly if substantial
+    if desc and len(desc.split()) >= 10 and not looks_non_english(desc):
+        cleaned = remove_cve_refs(desc, cve)
+        cleaned = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", cleaned, flags=re.I)
+        cleaned = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", cleaned, flags=re.I)
+        cleaned = cleaned.strip()
+        if cleaned and len(cleaned.split()) >= 6:
+            return compact(cleaned, limit)
+
+    # Priority 3: synthesize from available signals
     return english_problem_summary(desc, repo, cve, vendor, product, prim, limit)
 
 def derived_title(cve: str, vendor: str, product: str, name: str, desc: str, repo: dict, mention: dict | None, prim: str) -> str:
@@ -730,7 +731,6 @@ def rss_research_items(now_utc: dt.datetime) -> list[dict]:
             text = norm(re.sub(r"<[^>]+>", " ", f"{title} {fields['summary']}"))
             title_lower = title.lower()
 
-            # Hard reject: advisory/detection/defensive/release posts
             if OFFENSIVE_REJECT_TITLE_RE.search(title):
                 continue
             if contains_any(title_lower, [
@@ -740,7 +740,6 @@ def rss_research_items(now_utc: dt.datetime) -> list[dict]:
             ]):
                 continue
 
-            # Must have offensive signal in body
             has_offensive = contains_any(text, OFFENSIVE_RESEARCH_SIGNAL)
             has_deep = contains_any(text, DEEP_RESEARCH_SIGNAL)
             cves = sorted({match.upper() for match in CVE_RE.findall(text)})
@@ -748,13 +747,11 @@ def rss_research_items(now_utc: dt.datetime) -> list[dict]:
                 contains_any(text, terms[1]) for terms in PRIMITIVES.values()
             )
 
-            # Require offensive signal AND at least one of: deep research or CVE+primitive
             if not has_offensive:
                 continue
             if not has_deep and not has_cve_with_primitive:
                 continue
 
-            # Skip if purely defensive with no offensive framing
             if contains_any(text, DEFENSE_ONLY_TERMS) and not contains_any(text, [
                 "exploit", "poc", "attack", "offensive", "bypass", "rce", "lpe",
             ]):
@@ -846,8 +843,7 @@ def allowed_cve_year(cve: str) -> bool:
     year = cve_year(cve)
     if not STRICT_CURRENT_CVE_YEAR_ONLY:
         return year >= CURRENT_CVE_YEAR
-    # FIX 11: Jan 1-7 buffer — no CVE-YYYY repos exist yet for new year,
-    # so also accept previous year CVEs during first week to avoid empty feed
+    # Jan 1-7 buffer: no CVE-YYYY repos exist yet for new year
     now = dt.datetime.now(dt.timezone.utc)
     if now.month == 1 and now.day <= 7:
         return year in (CURRENT_CVE_YEAR, CURRENT_CVE_YEAR - 1)
@@ -1251,15 +1247,24 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
     weaponization = min(99, int(55 + epss * 80 + (18 if item else 0) + (10 if item.get("knownRansomwareCampaignUse") == "Known" else 0)))
     title = derived_title(cve, vendor, product, name, desc, repo, mention, prim)
     summary = clean_summary(desc, repo, cve, vendor, product, prim)
-    technical_summary = compact(summary, 280)
+
+    # Technical summary — prefer NVD description as authoritative plain-English source
+    nvd_desc = norm(nvd.get("description", ""))
+    if nvd_desc and len(nvd_desc.split()) >= 10 and not looks_non_english(nvd_desc):
+        technical_summary = compact(remove_cve_refs(nvd_desc, cve), 300)
+    else:
+        technical_summary = compact(summary, 280)
+
+    # Override with researcher writeup if available and richer
     if mention and mention.get("summary"):
         mention_summary = norm(re.sub(r"<[^>]+>", " ", mention["summary"]))
-        if mention_summary and not looks_non_english(mention_summary):
+        if mention_summary and not looks_non_english(mention_summary) and len(mention_summary.split()) >= 8:
             technical_summary = compact(mention_summary, 300)
     elif mention and mention.get("title"):
         mention_title = norm(mention["title"])
         if mention_title and not looks_non_english(mention_title):
             technical_summary = compact(f"{mention_title}. The useful takeaway is the vulnerable input path and how the public code validates the bug.", 300)
+
     primary_label = "GitHub" if "github.com/" in repo.get("url", "").lower() else "PoC"
     links = [[primary_label, repo["url"]]]
     if mention:
@@ -1268,7 +1273,7 @@ def make_entry(item: dict, epss: float, repo: dict, mention: dict | None, nvd: d
     if vendor_links:
         links.append(["Vendor Advisory", vendor_links[0]])
 
-    # Deduplicated tags — no Web+Webstack, no Cloud+Kubernetes duplicates
+    # Deduplicated tags
     raw_tags = [labelize(ecosystem_label), labelize(category), prim]
     if is_kev:
         raw_tags.append("KEV")
@@ -1441,12 +1446,12 @@ if len(entries) < 5:
 
 payload = {
     "updatedAt": now_utc.isoformat().replace("+00:00", "Z"),
+    "lastRunAt": now_utc.isoformat().replace("+00:00", "Z"),
     "cadence": "3x daily",
     "proofPolicy": "verified working public pocs",
     "sources": ["CISA KEV", "FIRST EPSS", "NVD", "GitHub Search", "GitHub Fresh PoC Discovery", *mobile_researcher_sources(), *[name for name, _ in RSS_SOURCES]],
     "research": research_items,
     "vulns": entries,
 }
-payload["lastRunAt"] = now_utc.isoformat().replace("+00:00", "Z")
 OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 print(f"wrote {len(entries)} live entries to {OUT}")
