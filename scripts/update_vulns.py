@@ -548,12 +548,7 @@ def english_problem_summary(desc: str, repo: dict, cve: str, vendor: str, produc
     return compact(f"{subject} exposes a {primitive_copy(prim)} path with recent public exploit tooling signal.", limit)
 
 def clean_summary(desc: str, repo: dict, cve: str, vendor: str, product: str, prim: str, limit: int = 230) -> str:
-    repo_desc = remove_cve_refs(repo.get("description", ""), cve)
-    if repo_desc and not looks_non_english(repo_desc) and not keyword_soup(repo_desc) and len(repo_desc.split()) >= 8:
-        repo_desc = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", repo_desc, flags=re.I)
-        repo_desc = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", repo_desc, flags=re.I)
-        if meaningful_title(repo_desc, cve, 60):
-            return compact(repo_desc, limit)
+    # Priority 1: NVD description — authoritative, doesn't mirror the repo title
     if desc and len(desc.split()) >= 10 and not looks_non_english(desc):
         cleaned = remove_cve_refs(desc, cve)
         cleaned = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", cleaned, flags=re.I)
@@ -561,6 +556,15 @@ def clean_summary(desc: str, repo: dict, cve: str, vendor: str, product: str, pr
         cleaned = cleaned.strip()
         if cleaned and len(cleaned.split()) >= 6:
             return compact(cleaned, limit)
+    # Priority 2: repo description — only if NVD has nothing, and it doesn't read like a PoC title
+    repo_desc = remove_cve_refs(repo.get("description", ""), cve)
+    if repo_desc and not looks_non_english(repo_desc) and not keyword_soup(repo_desc) and len(repo_desc.split()) >= 8:
+        repo_desc = re.sub(rf"^\s*{re.escape(cve)}\s*[:\-\u2013\u2014]?\s*", "", repo_desc, flags=re.I)
+        repo_desc = re.sub(r"^\s*CVE-\d{4}-\d{4,7}\s*[:\-\u2013\u2014]?\s*", "", repo_desc, flags=re.I)
+        lower = repo_desc.lower().strip()
+        if not any(lower.startswith(skip) for skip in ["poc", "exploit", "proof", "ethical poc", "working poc"]):
+            if meaningful_title(repo_desc, cve, 60):
+                return compact(repo_desc, limit)
     return english_problem_summary(desc, repo, cve, vendor, product, prim, limit)
 
 def derived_title(cve: str, vendor: str, product: str, name: str, desc: str, repo: dict, mention: dict | None, prim: str) -> str:
