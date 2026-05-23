@@ -26,6 +26,7 @@
       { label: "Android", section: "android" },
       { label: "iOS", section: "ios" }
     ] },
+    { label: "Phishing", section: "phishing" },
     { label: "Research", section: "research" }
   ];
 
@@ -731,6 +732,7 @@
     sqli: '<svg viewBox="0 0 24 24"><path d="M12 3c4.4 0 8 1.34 8 3v12c0 1.66-3.6 3-8 3s-8-1.34-8-3V6c0-1.66 3.6-3 8-3Zm0 2c-3.54 0-5.7.88-6 1 .3.12 2.46 1 6 1s5.7-.88 6-1c-.3-.12-2.46-1-6-1ZM6 9v2c.94.58 3.08 1 6 1s5.06-.42 6-1V9c-1.48.62-3.58 1-6 1S7.48 9.62 6 9Zm0 5v2c.94.58 3.08 1 6 1s5.06-.42 6-1v-2c-1.48.62-3.58 1-6 1s-4.52-.38-6-1Z"/></svg>',
     ssh: '<svg viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3h2v11H5V10h2Zm2 0h6V7a3 3 0 0 0-6 0v3Zm-2 2v7h10v-7H7Z"/></svg>',
     ssrf: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Zm1 15h-2v-6h2v6Zm0-8h-2V7h2v2Z"/></svg>',
+    phishing: '<svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>',
     webstack: '<svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5Zm2 4h12V7H6v2Zm0 2v6h12v-6H6Zm2 1.5h3V14H8v-1.5Zm0 2.5h8v1.5H8V15Z"/></svg>',
     windows: '<svg viewBox="0 0 24 24"><path d="M3 5.5 11 4v7H3V5.5Zm10-1.88 8-1.5V11h-8V3.62ZM3 13h8v7l-8-1.5V13Zm10 0h8v8.88l-8-1.5V13Z"/></svg>'
   };
@@ -845,7 +847,8 @@
       || item.ecosystem === state.section
       || (state.section === "linux" && (item.ecosystem === "linux" || item.ecosystem === "bsd" || tags.includes("bsd")))
       || (state.section === "web" && (item.ecosystem === "web" || item.category === "webstack" || tags.includes("webstack") || tags.includes("web")))
-      || (state.section === "mobile" && (item.ecosystem === "android" || item.ecosystem === "ios"));
+      || (state.section === "mobile" && (item.ecosystem === "android" || item.ecosystem === "ios"))
+      || (state.section === "phishing" && (item.ecosystem === "phishing" || item.category === "phishing" || item.tags.map(t => t.toLowerCase()).includes("phishing")));
   }
 
   function filteredItems() {
@@ -1003,6 +1006,9 @@
     const tags = item.tags.map((tag) => String(tag).toLowerCase());
     const ecosystem = String(item.ecosystem || "").toLowerCase();
 
+    if (category === "phishing" || tags.includes("phishing")) {
+      return "A phishing vector, credential harvesting tool, or AiTM framework with active exploit or delivery capability. Useful for initial access simulation, credential theft, and bypassing MFA in red team operations.";
+    }
     if (tags.includes("container escape") || category === "kubernetes") {
       return "A container boundary or namespace control can be escaped from a process inside the container. Successful exploitation gives attacker code execution on the host or access to co-located workloads.";
     }
@@ -1106,6 +1112,12 @@
       add("iOS kernel CVE-2023-32434", "https://support.apple.com/en-us/HT213808", "same integer overflow to kernel r/w primitive");
       add("Operation Triangulation", "https://securelist.com/operation-triangulation-the-last-hardware-mystery/111669/", "same iOS kernel exploit chain used ITW");
       add("Project Zero ITW iOS bugs", "https://googleprojectzero.github.io/0days-in-the-wild/", "related in-the-wild iOS exploit research");
+    }
+    if (category === "phishing" || tags.includes("phishing")) {
+      add("Evilginx AiTM framework", "https://github.com/kgretzky/evilginx2", "same AiTM credential interception approach");
+      add("Modlishka reverse proxy", "https://github.com/drk1wi/Modlishka", "same reverse proxy phishing pattern");
+      add("AITM phishing techniques", "https://attack.mitre.org/techniques/T1557/", "adversary-in-the-middle MITRE mapping");
+      add("HTML smuggling ITW", "https://www.mdsec.co.uk/2021/06/bypassing-mark-of-the-web-with-html-smuggling/", "same payload delivery bypass");
     }
     if (!resources.length) {
       add("Recent exploited CVEs", "https://www.cisa.gov/known-exploited-vulnerabilities-catalog", "confirmed exploitation in the wild");
