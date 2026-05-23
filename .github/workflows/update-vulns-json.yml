@@ -36,4 +36,9 @@ jobs:
           else
             git commit -m "Update Threat Tide live vuln feed"
             git push
+          
+      - name: Purge CDN cache
+        if: always()
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/piratemoo/threat-tide@main/vulns.json" || true
           fi
