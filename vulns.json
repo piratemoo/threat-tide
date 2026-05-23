@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-23T21:02:02Z",
-  "lastRunAt": "2026-05-23T21:02:02Z",
+  "updatedAt": "2026-05-23T21:12:47Z",
+  "lastRunAt": "2026-05-23T21:12:47Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -85,8 +85,8 @@
       "researcherUrl": "https://github.com/portbuster1337",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:37 PM CDT",
-      "firstSeenAt": "2026-05-23T19:37:06Z",
+      "added": "2:33 PM CDT",
+      "firstSeenAt": "2026-05-21T19:33:28Z",
       "language": "C",
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: crypto: algif_aead - Revert to operating out-of-place This mostly reverts commit 72548b093ee3 except for the copying of the associated data. There is no benefit in operating in-place in algif_aead since the source and destination.",
@@ -108,7 +108,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -152,8 +152,8 @@
       "researcherUrl": "https://blog.qualys.com/",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:37 PM CDT",
-      "firstSeenAt": "2026-05-23T19:37:06Z",
+      "added": "2:33 PM CDT",
+      "firstSeenAt": "2026-05-21T19:33:28Z",
       "language": "C",
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
@@ -174,7 +174,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -214,8 +214,8 @@
       "researcherUrl": "https://github.com/r3nsi15",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "2:37 PM CDT",
-      "firstSeenAt": "2026-05-23T19:37:06Z",
+      "added": "5:01 PM CDT",
+      "firstSeenAt": "2026-05-22T22:01:05Z",
       "language": "Python",
       "summary": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
       "technicalSummary": "Langflow is a tool for building and deploying AI-powered agents and workflows. In versions prior to 1.9.0, the POST /api/v1/build_public_tmp/{flow_id}/flow endpoint allows building public flows without requiring authentication. When the optional data parameter is supplied, the endpoint uses.",
@@ -239,7 +239,7 @@
       ],
       "confidence": 98,
       "weaponization": 91,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -283,8 +283,8 @@
       "researcherUrl": "https://github.com/portbuster1337",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:37 PM CDT",
-      "firstSeenAt": "2026-05-23T19:37:06Z",
+      "added": "2:33 PM CDT",
+      "firstSeenAt": "2026-05-21T19:33:28Z",
       "language": "C",
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb. TCP marks such skbs with SKBFL_SHARED_FRAG after skb_splice_from_iter(), so later paths that may modify packet.",
@@ -305,7 +305,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -349,8 +349,8 @@
       "researcherUrl": "https://github.com/portbuster1337",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:37 PM CDT",
-      "firstSeenAt": "2026-05-23T19:37:06Z",
+      "added": "2:33 PM CDT",
+      "firstSeenAt": "2026-05-21T19:33:28Z",
       "language": "C",
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the remaining bytes. The existing check is inverted, so oversized RESPONSE.",
@@ -371,7 +371,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -415,8 +415,8 @@
       "researcherUrl": "https://github.com/portbuster1337",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:37 PM CDT",
-      "firstSeenAt": "2026-05-23T19:37:06Z",
+      "added": "2:33 PM CDT",
+      "firstSeenAt": "2026-05-21T19:33:28Z",
       "language": "C",
       "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
       "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
@@ -437,7 +437,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -474,8 +474,8 @@
       "researcherUrl": "https://github.com/venglin",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:37 PM CDT",
-      "firstSeenAt": "2026-05-23T19:37:06Z",
+      "added": "11:40 PM CDT",
+      "firstSeenAt": "2026-05-21T04:40:37Z",
       "language": "C",
       "summary": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer.",
       "technicalSummary": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer without first validating its length. If the supplied list exceeds the.",
@@ -498,7 +498,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -534,8 +534,8 @@
       "researcherUrl": "https://github.com/xxconi",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:37 PM CDT",
-      "firstSeenAt": "2026-05-23T19:37:06Z",
+      "added": "11:34 PM CDT",
+      "firstSeenAt": "2026-05-23T04:34:31Z",
       "language": "Python",
       "summary": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function. This is due to the.",
       "technicalSummary": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function. This is due to the `wp_ajax_nopriv_eel_register` AJAX handler iterating the.",
@@ -556,7 +556,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
