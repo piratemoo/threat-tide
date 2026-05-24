@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-24T06:47:00Z",
-  "lastRunAt": "2026-05-24T06:47:00Z",
+  "updatedAt": "2026-05-24T14:41:37Z",
+  "lastRunAt": "2026-05-24T14:41:37Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -101,7 +101,7 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 74,
+      "weaponization": 75,
       "dayOffset": 3,
       "links": [
         [
@@ -232,66 +232,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-43284",
-      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "build-exploits.sh",
-          "embed_386.go",
-          "embed_amd64.go",
-          "embed_arm64.go",
-          "embed_mips.go",
-          "embed_mips64.go",
-          "embed_mips64le.go",
-          "embed_mipsle.go"
-        ],
-        "attackFiles": [
-          "exploits/cve_2023_0386_exp.c",
-          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
-        ],
-        "hasUsage": true,
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "portbuster1337",
-      "researcherUrl": "https://github.com/portbuster1337",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:33 PM CDT",
-      "firstSeenAt": "2026-05-21T19:33:28Z",
-      "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
-      "reality": " ",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/portbuster1337/lpe-toolkit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-31635",
       "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits.",
       "ecosystem": "linux",
@@ -401,6 +341,66 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41096"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43284",
+      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "build-exploits.sh",
+          "embed_386.go",
+          "embed_amd64.go",
+          "embed_arm64.go",
+          "embed_mips.go",
+          "embed_mips64.go",
+          "embed_mips64le.go",
+          "embed_mipsle.go"
+        ],
+        "attackFiles": [
+          "exploits/cve_2023_0386_exp.c",
+          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:33 PM CDT",
+      "firstSeenAt": "2026-05-21T19:33:28Z",
+      "language": "C",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
+      "reality": " ",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
         ]
       ]
     },
