@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-23T23:33:45Z",
-  "lastRunAt": "2026-05-23T23:33:45Z",
+  "updatedAt": "2026-05-24T03:50:20Z",
+  "lastRunAt": "2026-05-24T03:50:20Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -352,6 +352,59 @@
       ]
     },
     {
+      "cve": "CVE-2026-41096",
+      "title": "windows api bug",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "client.c",
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "satchfunky",
+      "researcherUrl": "https://github.com/satchfunky",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:46 PM CDT",
+      "firstSeenAt": "2026-05-24T00:46:09Z",
+      "language": "C",
+      "summary": "Heap-based buffer overflow in Microsoft Windows DNS allows an unauthorized attacker to execute code over a network.",
+      "technicalSummary": "Heap-based buffer overflow in Microsoft Windows DNS allows an unauthorized attacker to execute code over a network.",
+      "breakdown": "Heap-based buffer overflow in Microsoft Windows DNS allows an unauthorized attacker to execute code over a network.",
+      "reality": " ",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/satchfunky/CVE-2026-41096-POC\ncd CVE-2026-41096-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/satchfunky/CVE-2026-41096-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41096"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-46300",
       "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits.",
       "ecosystem": "linux",
@@ -404,58 +457,6 @@
         [
           "GitHub",
           "https://github.com/portbuster1337/lpe-toolkit"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-5118",
-      "title": "Divi Form Builder <= 5.1.2 \u2014 Unauthenticated Privilege Escalation via Role Injection",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Yucaerin",
-      "researcherUrl": "https://github.com/Yucaerin",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:53 AM CDT",
-      "firstSeenAt": "2026-05-22T07:53:21Z",
-      "language": "Python",
-      "summary": "The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2.",
-      "technicalSummary": "The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2. This is due to the plugin accepting a user-controlled 'role' parameter from POST data during user registration without validating it against the form's configured...",
-      "breakdown": "The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2. This is due to the plugin accepting a user-controlled 'role' parameter from POST data during user registration without validating it against the form's configured...",
-      "reality": " ",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Yucaerin/CVE-2026-5118\ncd CVE-2026-5118\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Yucaerin/CVE-2026-5118"
-        ],
-        [
-          "Vendor Advisory",
-          "https://diviengine.com/divi-form-builder-changelog/"
         ]
       ]
     },
