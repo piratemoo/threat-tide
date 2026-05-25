@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-25T01:28:12Z",
-  "lastRunAt": "2026-05-25T01:28:12Z",
+  "updatedAt": "2026-05-25T06:44:07Z",
+  "lastRunAt": "2026-05-25T06:44:07Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -94,7 +94,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -155,7 +155,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -215,7 +215,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -279,7 +279,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -332,7 +332,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -392,7 +392,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -452,11 +452,111 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/portbuster1337/lpe-toolkit"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-36239",
+      "title": "Authenticated RCE in PbootCMS v3.2.12 backend (sitecopyright)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "TazmiDev",
+      "researcherUrl": "https://github.com/TazmiDev",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:17 PM CDT",
+      "firstSeenAt": "2026-05-25T01:17:45Z",
+      "language": "Python",
+      "summary": "Authenticated RCE in PbootCMS v3.2.12 backend (sitecopyright)",
+      "technicalSummary": "Authenticated RCE in PbootCMS v3.2.12 backend (sitecopyright)",
+      "breakdown": "Authenticated RCE in PbootCMS v3.2.12 backend (sitecopyright)",
+      "reality": " ",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/TazmiDev/CVE-2026-36239\ncd CVE-2026-36239\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/TazmiDev/CVE-2026-36239"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-5118",
+      "title": "Divi Form Builder <= 5.1.2 \u2014 Unauthenticated Privilege Escalation via Role Injection",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Yucaerin",
+      "researcherUrl": "https://github.com/Yucaerin",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:53 AM CDT",
+      "firstSeenAt": "2026-05-22T07:53:21Z",
+      "language": "Python",
+      "summary": "The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2.",
+      "technicalSummary": "The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2. This is due to the plugin accepting a user-controlled 'role' parameter from POST data during user registration without validating it against the form's configured...",
+      "breakdown": "The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2. This is due to the plugin accepting a user-controlled 'role' parameter from POST data during user registration without validating it against the form's configured...",
+      "reality": " ",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Yucaerin/CVE-2026-5118\ncd CVE-2026-5118\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Yucaerin/CVE-2026-5118"
+        ],
+        [
+          "Vendor Advisory",
+          "https://diviengine.com/divi-form-builder-changelog/"
         ]
       ]
     },
@@ -505,7 +605,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -557,7 +657,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
