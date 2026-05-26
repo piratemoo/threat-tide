@@ -211,6 +211,30 @@ X_STYLE_DISCOVERY_QUERIES = [
     "CVE weaponized exploit",
 ]
 
+def github_discovery_queries() -> list[str]:
+    priority = [
+        f"CVE-{CURRENT_CVE_YEAR} PoC",
+        f"CVE-{CURRENT_CVE_YEAR} public PoC",
+        f"CVE-{CURRENT_CVE_YEAR} proof of concept",
+        f"CVE-{CURRENT_CVE_YEAR} proof-of-concept",
+        f"CVE-{CURRENT_CVE_YEAR} exploit",
+        f"CVE-{CURRENT_CVE_YEAR} RCE",
+        f"CVE-{CURRENT_CVE_YEAR} LPE",
+        f"CVE-{CURRENT_CVE_YEAR} Windows exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Exchange exploit",
+        f"CVE-{CURRENT_CVE_YEAR} SharePoint exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Active Directory exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Android PoC",
+        f"CVE-{CURRENT_CVE_YEAR} iOS PoC",
+        f"CVE-{CURRENT_CVE_YEAR} WebKit PoC",
+        f"CVE-{CURRENT_CVE_YEAR} command injection",
+        f"CVE-{CURRENT_CVE_YEAR} auth bypass",
+        f"CVE-{CURRENT_CVE_YEAR} wordpress exploit",
+    ]
+    # Keep search volume below GitHub's search API limits. These broad queries
+    # are the X/Twitter-adjacent "PoC dropped" signal without paid X API access.
+    return list(dict.fromkeys(priority + X_STYLE_DISCOVERY_QUERIES[:12]))
+
 ECOSYSTEM_RULES = [
     ("android", ["android", "aosp", "pixel"]),
     ("ios", ["ios", "ipados", "iphone", "webkit", "safari", "imessage", "apple"]),
@@ -835,6 +859,11 @@ def repo_score(repo: dict, cve: str) -> int:
         score += 16
     else:
         score -= 45
+    cve_refs = {match.upper() for match in CVE_RE.findall(text)}
+    if len(cve_refs) >= 3 and cve.upper() in cve_refs:
+        score -= 24
+    if cve.lower() in (repo.get("full_name", "") + " " + repo.get("name", "")).lower():
+        score += 18
     score += min(int(repo.get("stargazers_count") or 0), 40) // 8
     return score
 
@@ -898,6 +927,7 @@ def poc_evidence(repo: dict, cve: str, readme: str = "") -> dict:
         if contains_any(path, POC_FILE_TERMS) or cve.lower() in path.lower()
     ]
     text = " ".join([full_name, repo.get("name", ""), desc, readme])
+    cve_refs = sorted({match.upper() for match in CVE_RE.findall(text)})
     has_cve = term_in_text(text, cve) or any(cve.lower() in path.lower() for path in paths)
     attack_text = contains_any(text, ATTACK_READY_TERMS)
     usage_text = contains_any(readme, POC_USAGE_TERMS)
@@ -909,6 +939,8 @@ def poc_evidence(repo: dict, cve: str, readme: str = "") -> dict:
     score += 2 if attack_paths else 0
     score += 1 if usage_text else 0
     score += 1 if repo.get("language") or language_from_paths(code_paths) else 0
+    score += 2 if cve.lower() in full_name.lower() else 0
+    score -= 3 if len(cve_refs) >= 3 else 0
     score -= 6 if noisy else 0
     valid = score >= 3 and has_cve and attack_text and bool(code_paths) and not noisy
     return {
@@ -917,6 +949,7 @@ def poc_evidence(repo: dict, cve: str, readme: str = "") -> dict:
         "codeFiles": code_paths[:8],
         "attackFiles": attack_paths[:8],
         "hasUsage": usage_text,
+        "cveRefs": cve_refs[:12],
         "language": repo.get("language") or language_from_paths(code_paths) or "",
     }
 
@@ -934,6 +967,7 @@ def repo_to_candidate(repo: dict, cve: str, bonus: int = 0, evidence: dict | Non
         "language": evidence.get("language") or repo.get("language") or "",
         "created_at": repo.get("created_at") or "",
         "pushed_at": repo.get("pushed_at") or "",
+        "cveRefs": evidence.get("cveRefs", []),
         "validatedPoc": bool(evidence.get("valid")),
         "pocEvidence": evidence,
     }
@@ -1003,13 +1037,13 @@ def github_recent_cve_repos() -> dict[str, list[dict]]:
     discovered: dict[str, list[dict]] = {}
     seen_repos: set[str] = set()
     readme_budget = 36
-    for base_query in X_STYLE_DISCOVERY_QUERIES:
+    for base_query in github_discovery_queries():
         query = f"{base_query} in:name,description,readme created:>={created_after}"
         url = GITHUB_SEARCH + "?" + urllib.parse.urlencode({
             "q": query,
             "sort": "updated",
             "order": "desc",
-            "per_page": "20",
+            "per_page": "50",
         })
         data = fetch_json(url)
         repos = data.get("items", []) if isinstance(data.get("items"), list) else []
@@ -1047,7 +1081,22 @@ def github_recent_cve_repos() -> dict[str, list[dict]]:
     return discovered
 
 def github_candidate(cve: str, seeded: list[dict] | None = None) -> dict | None:
-    seeded_ranked = sorted(seeded or [], key=lambda repo: repo.get("score", 0), reverse=True)
+    def candidate_rank(repo: dict) -> tuple:
+        created = parse_date(repo.get("created_at", ""))
+        age_hours = max(0, (dt.datetime.now(dt.timezone.utc) - created).total_seconds() / 3600)
+        name_text = " ".join([repo.get("name", ""), repo.get("url", ""), repo.get("description", "")]).lower()
+        exact_cve_named = 1 if cve.lower() in name_text else 0
+        multi_cve_penalty = 1 if len(repo.get("cveRefs") or repo.get("pocEvidence", {}).get("cveRefs", [])) >= 3 else 0
+        same_day = 1 if created.astimezone(LOCAL_TZ).date() == dt.datetime.now(dt.timezone.utc).astimezone(LOCAL_TZ).date() else 0
+        return (
+            same_day,
+            exact_cve_named,
+            -multi_cve_penalty,
+            repo.get("score", 0),
+            -age_hours,
+        )
+
+    seeded_ranked = sorted(seeded or [], key=candidate_rank, reverse=True)
     for repo in seeded_ranked:
         if repo.get("validatedPoc") and repo.get("score", 0) >= 55 and repo.get("url") and recent_date(repo.get("created_at", ""), dt.datetime.now(dt.timezone.utc)):
             return repo
@@ -1282,17 +1331,12 @@ current_year_github = {
     for cve in github_discovered
     if allowed_cve_year(cve)
 }
-current_year_nvd = {
-    cve
-    for cve in recent_nvd
-    if allowed_cve_year(cve)
-}
 current_year_rss = {
     cve
     for cve in rss
     if allowed_cve_year(cve)
 }
-candidate_cves = sorted(current_year_rss | recent_kev | current_year_github | current_year_nvd)
+candidate_cves = sorted(current_year_rss | recent_kev | current_year_github)
 epss = epss_scores(candidate_cves)
 
 def synthetic_item(cve: str, nvd: dict, mention: dict | None) -> dict:
