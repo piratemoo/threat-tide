@@ -1,6 +1,5 @@
 {
-  "updatedAt": "2026-05-26T20:55:43Z",
-  "lastRunAt": "2026-05-26T20:55:43Z",
+  "updatedAt": "2026-05-26T21:21:22Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -9,7 +8,6 @@
     "NVD",
     "GitHub Search",
     "GitHub Fresh PoC Discovery",
-    "Bluesky Researcher Feeds",
     "Mobile researcher watchlist: @natashenka",
     "Mobile researcher watchlist: @alisaesage",
     "Mobile researcher watchlist: @zerodayalpha",
@@ -32,6 +30,7 @@
     "Horizon3 Attack Team",
     "Dirkjan Mollema",
     "ZDI",
+    "ZDI Published Advisories",
     "NCC Group Research",
     "Bishop Fox",
     "Elastic Security Labs",
@@ -48,10 +47,24 @@
     "ProjectDiscovery",
     "Kaspersky Securelist",
     "Exodus Intelligence",
-    "The GitHub Blog Security",
-    "Mastodon tiraniddo"
+    "The GitHub Blog Security"
   ],
-  "research": [],
+  "research": [
+    {
+      "title": "Detecting Tycoon 2FA AiTM attacks across Entra ID and Google Workspace",
+      "source": "Elastic Security Labs",
+      "sourceUrl": "https://www.elastic.co/security-labs",
+      "url": "https://www.elastic.co/security-labs/tycoon-2fa-aitm-detection-engineering",
+      "summary": "Tycoon 2FA is currently the most prolific Phishing-as-a-Service (PhaaS) platform among AiTM phishing kits. First observed in August 2023 and attributed to Storm-1747 (per Microsoft Threat Intelligence), the kit provides turnkey adversary-in-the-middle (AiTM).",
+      "publishedAt": "2026-05-26T00:00:00Z",
+      "cves": [],
+      "tags": [
+        "Android",
+        "ADCS",
+        "Session Theft"
+      ]
+    }
+  ],
   "vulns": [
     {
       "cve": "CVE-2026-31431",
@@ -60,6 +73,7 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
+      "pocUrl": "https://github.com/portbuster1337/lpe-toolkit",
       "pocValidation": {
         "valid": true,
         "score": 10,
@@ -88,16 +102,22 @@
       "added": "2:33 PM CDT",
       "firstSeenAt": "2026-05-21T19:33:28Z",
       "language": "C",
-      "summary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: crypto: algif_aead - Revert to operating out-of-place This mostly reverts commit 72548b093ee3 except for the copying of the associated data.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: crypto: algif_aead - Revert to operating out-of-place This mostly reverts commit 72548b093ee3 except for the copying of the associated data.",
-      "reality": " ",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Linux",
         "Kernel",
-        "Exploit",
+        "Local LPE",
         "KEV"
       ],
       "confidence": 98,
@@ -121,6 +141,7 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
+      "pocUrl": "https://github.com/portbuster1337/lpe-toolkit",
       "pocValidation": {
         "valid": true,
         "score": 10,
@@ -149,16 +170,22 @@
       "added": "2:33 PM CDT",
       "firstSeenAt": "2026-05-21T19:33:28Z",
       "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: ptrace: slightly saner 'get_dumpable()' logic The 'dumpability' of a task is fundamentally about the memory image of the task - the concept comes from whether...",
-      "technicalSummary": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to...",
-      "breakdown": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to...",
-      "reality": " ",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
+      "breakdown": "The Qualys Threat Research Unit (TRU) has discovered and published the full advisory for CVE-2026-46333, a logic flaw in the Linux kernel\u2019s __ptrace_may_access() function that permits an unprivileged local user to.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Linux",
         "Kernel",
-        "Session Theft"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -179,132 +206,13 @@
       ]
     },
     {
-      "cve": "CVE-2026-31635",
-      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "build-exploits.sh",
-          "embed_386.go",
-          "embed_amd64.go",
-          "embed_arm64.go",
-          "embed_mips.go",
-          "embed_mips64.go",
-          "embed_mips64le.go",
-          "embed_mipsle.go"
-        ],
-        "attackFiles": [
-          "exploits/cve_2023_0386_exp.c",
-          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
-        ],
-        "hasUsage": true,
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "portbuster1337",
-      "researcherUrl": "https://github.com/portbuster1337",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:33 PM CDT",
-      "firstSeenAt": "2026-05-21T19:33:28Z",
-      "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the...",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the remaining bytes.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: fix oversized RESPONSE authenticator length check rxgk_verify_response() decodes auth_len from the packet and is supposed to verify that it fits in the remaining bytes.",
-      "reality": " ",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/portbuster1337/lpe-toolkit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/a2567217ade970ecc458144b6be469bc015b23e5"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-43284",
-      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "build-exploits.sh",
-          "embed_386.go",
-          "embed_amd64.go",
-          "embed_arm64.go",
-          "embed_mips.go",
-          "embed_mips64.go",
-          "embed_mips64le.go",
-          "embed_mipsle.go"
-        ],
-        "attackFiles": [
-          "exploits/cve_2023_0386_exp.c",
-          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
-        ],
-        "hasUsage": true,
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "portbuster1337",
-      "researcherUrl": "https://github.com/portbuster1337",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:33 PM CDT",
-      "firstSeenAt": "2026-05-21T19:33:28Z",
-      "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb.",
-      "reality": " ",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/portbuster1337/lpe-toolkit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-46300",
-      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits.",
+      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits..",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
+      "pocUrl": "https://github.com/portbuster1337/lpe-toolkit",
       "pocValidation": {
         "valid": true,
         "score": 10,
@@ -333,16 +241,22 @@
       "added": "2:33 PM CDT",
       "firstSeenAt": "2026-05-21T19:33:28Z",
       "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: net: skbuff: preserve shared-frag marker during coalescing skb_try_coalesce() can attach paged frags from @from to @to.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: net: skbuff: preserve shared-frag marker during coalescing skb_try_coalesce() can attach paged frags from @from to @to.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: net: skbuff: preserve shared-frag marker during coalescing skb_try_coalesce() can attach paged frags from @from to @to.",
-      "reality": " ",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Linux",
         "Kernel",
-        "Exploit"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -365,16 +279,17 @@
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
+      "pocUrl": "https://github.com/xxconi/CVE-2026-9018",
       "pocValidation": {
         "valid": true,
-        "score": 10,
+        "score": 9,
         "codeFiles": [
           "CVE-2026-9018.py"
         ],
         "attackFiles": [
           "CVE-2026-9018.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "language": "Python"
       },
       "reliability": "reliable exploit",
@@ -385,16 +300,22 @@
       "added": "11:34 PM CDT",
       "firstSeenAt": "2026-05-23T04:34:31Z",
       "language": "Python",
-      "summary": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function.",
-      "technicalSummary": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function.",
-      "breakdown": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function.",
-      "reality": " ",
+      "summary": "Unauthenticated Privilege Escalation Easy Elements for Elementor",
+      "technicalSummary": "Unauthenticated Privilege Escalation Easy Elements for Elementor",
+      "breakdown": "Unauthenticated Privilege Escalation Easy Elements for Elementor",
+      "whatBroke": "Unauthenticated Privilege Escalation Easy Elements for Elementor",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at xxconi/CVE-2026-9018.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/xxconi/CVE-2026-9018\ncd CVE-2026-9018\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Web",
         "Webstack",
-        "Exploit"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -407,6 +328,199 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/easy-elements/tags/1.4.5/includes/Utils/Enqueue.php#L200"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-31635",
+      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits..",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/portbuster1337/lpe-toolkit",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "build-exploits.sh",
+          "embed_386.go",
+          "embed_amd64.go",
+          "embed_arm64.go",
+          "embed_mips.go",
+          "embed_mips64.go",
+          "embed_mips64le.go",
+          "embed_mipsle.go"
+        ],
+        "attackFiles": [
+          "exploits/cve_2023_0386_exp.c",
+          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:33 PM CDT",
+      "firstSeenAt": "2026-05-21T19:33:28Z",
+      "language": "C",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/a2567217ade970ecc458144b6be469bc015b23e5"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43284",
+      "title": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits..",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/portbuster1337/lpe-toolkit",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "build-exploits.sh",
+          "embed_386.go",
+          "embed_amd64.go",
+          "embed_arm64.go",
+          "embed_mips.go",
+          "embed_mips64.go",
+          "embed_mips64le.go",
+          "embed_mipsle.go"
+        ],
+        "attackFiles": [
+          "exploits/cve_2023_0386_exp.c",
+          "exploits/cve_2024_1086/include/linux-lts-6.1.72/headers_check.pl"
+        ],
+        "hasUsage": true,
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "portbuster1337",
+      "researcherUrl": "https://github.com/portbuster1337",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:33 PM CDT",
+      "firstSeenAt": "2026-05-21T19:33:28Z",
+      "language": "C",
+      "summary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "technicalSummary": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "breakdown": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "whatBroke": "Multi-architecture Linux privilege escalation toolkit with 18 pre-built and runtime-compilable exploits. Auto-detects kernel version, filters patched exploits, tries each until root.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at portbuster1337/lpe-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/portbuster1337/lpe-toolkit\ncd lpe-toolkit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/portbuster1337/lpe-toolkit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-4885",
+      "title": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/xShadow-Here/CVE-2026-4885",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "shadow.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "xShadow-Here",
+      "researcherUrl": "https://github.com/xShadow-Here",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:16 AM CDT",
+      "firstSeenAt": "2026-05-21T11:16:49Z",
+      "language": "Python",
+      "summary": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
+      "technicalSummary": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
+      "breakdown": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
+      "whatBroke": "Piotnet Addons for Elementor Pro <= 7.1.70 - Unauthenticated Arbitrary File Upload \u2192 RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at xShadow-Here/CVE-2026-4885.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/xShadow-Here/CVE-2026-4885\ncd CVE-2026-4885\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/xShadow-Here/CVE-2026-4885"
+        ],
+        [
+          "Vendor Advisory",
+          "https://pafe.piotnet.com/"
         ]
       ]
     }
