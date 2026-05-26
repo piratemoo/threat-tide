@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-26T03:36:48Z",
-  "lastRunAt": "2026-05-26T03:36:48Z",
+  "updatedAt": "2026-05-26T06:15:12Z",
+  "lastRunAt": "2026-05-26T06:15:12Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -94,7 +94,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -155,7 +155,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -215,7 +215,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -279,7 +279,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -339,7 +339,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -399,11 +399,68 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/portbuster1337/lpe-toolkit"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-45250",
+      "title": "FreeBSD 14.x LPE",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exploits/exp2_lpe_no_smap.c",
+          "exploits/exp_setcred_smap_zfs.c",
+          "exploits/poc_dos.c",
+          "exploits/wrapper.c"
+        ],
+        "attackFiles": [
+          "exploits/exp2_lpe_no_smap.c",
+          "exploits/exp_setcred_smap_zfs.c",
+          "exploits/poc_dos.c"
+        ],
+        "hasUsage": false,
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "venglin",
+      "researcherUrl": "https://github.com/venglin",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:40 PM CDT",
+      "firstSeenAt": "2026-05-21T04:40:37Z",
+      "language": "C",
+      "summary": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer...",
+      "technicalSummary": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer without first validating its length.",
+      "breakdown": "The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer without first validating its length.",
+      "reality": " ",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/venglin/setcred\ncd setcred\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "BSD",
+        "Kernel",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/venglin/setcred"
+        ],
+        [
+          "Vendor Advisory",
+          "https://security.freebsd.org/advisories/FreeBSD-SA-26:18.setcred.asc"
         ]
       ]
     },
@@ -447,7 +504,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
