@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-27T06:37:45Z",
+  "updatedAt": "2026-05-27T13:22:06Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -58,18 +58,17 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/7h30th3r0n3/CVE-2026-9082-Drupal-PoC",
+      "pocUrl": "https://github.com/thinhap/CVE-2026-9082-PoC",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 12,
         "codeFiles": [
-          "CVE-2026-9082.py",
-          "test-lab/docker-compose.yml"
+          "poc.py"
         ],
         "attackFiles": [
-          "CVE-2026-9082.py"
+          "poc.py"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
           "CVE-2026-9082"
         ],
@@ -80,15 +79,15 @@
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "5:42 AM CDT",
-      "firstSeenAt": "2026-05-21T10:42:30Z",
+      "added": "5:26 AM CDT",
+      "firstSeenAt": "2026-05-27T10:26:02Z",
       "language": "Python",
-      "summary": "Drupal Core PostgreSQL SQL Injection PoC -. Ethical PoC for the Drupal vulnerability allowing anonymous SQL injection through the JSON:API module on PostgreSQL-backed sites.",
+      "summary": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
       "technicalSummary": "CVE-2026-9082 is a highly critical SQL injection vulnerability affecting Drupal core sites configured to use PostgreSQL as the backend database. The vulnerability exists in Drupal\u2019s database abstraction API, where specially crafted requests can bypass.",
       "breakdown": "CVE-2026-9082 is a highly critical SQL injection vulnerability affecting Drupal core sites configured to use PostgreSQL as the backend database. The vulnerability exists in Drupal\u2019s database abstraction API, where specially crafted requests can bypass.",
-      "whatBroke": "Drupal Core PostgreSQL SQL Injection PoC -. Ethical PoC for the Drupal vulnerability allowing anonymous SQL injection through the JSON:API module on PostgreSQL-backed sites.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 7h30th3r0n3/CVE-2026-9082-Drupal-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/7h30th3r0n3/CVE-2026-9082-Drupal-PoC\ncd CVE-2026-9082-Drupal-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at thinhap/CVE-2026-9082-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/thinhap/CVE-2026-9082-PoC\ncd CVE-2026-9082-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Core",
         "credential access from service context",
@@ -105,11 +104,11 @@
       ],
       "confidence": 98,
       "weaponization": 86,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/7h30th3r0n3/CVE-2026-9082-Drupal-PoC"
+          "https://github.com/thinhap/CVE-2026-9082-PoC"
         ],
         [
           "Technical Paper",
