@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-28T17:00:15Z",
+  "updatedAt": "2026-05-28T21:17:02Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -62,6 +62,104 @@
         "Cloud",
         "DevOps"
       ]
+    },
+    {
+      "title": "ZDI-26-326: TrendAI Vision One Security Agent Time-Of-Check Time-Of-Use Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-326/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of TrendAI Vision One Security Agent. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this.",
+      "publishedAt": "2026-05-28T05:00:00Z",
+      "cves": [
+        "CVE-2026-45208"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-325: TrendAI Vision One Security Agent Origin Validation Error Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-325/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of TrendAI Vision One Security Agent. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this.",
+      "publishedAt": "2026-05-28T05:00:00Z",
+      "cves": [
+        "CVE-2026-45207"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-324: TrendAI Vision One Security Agent Origin Validation Error Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-324/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of TrendAI Vision One Security Agent. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this.",
+      "publishedAt": "2026-05-28T05:00:00Z",
+      "cves": [
+        "CVE-2026-45206"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-323: TrendAI Vision One Security Agent Origin Validation Error Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-323/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of TrendAI Vision One Security Agent. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this.",
+      "publishedAt": "2026-05-28T05:00:00Z",
+      "cves": [
+        "CVE-2026-34930"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-322: TrendAI Vision One Security Agent Origin Validation Error Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-322/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of TrendAI Vision One Security Agent. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this.",
+      "publishedAt": "2026-05-28T05:00:00Z",
+      "cves": [
+        "CVE-2026-34929"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-321: TrendAI Vision One Security Agent Origin Validation Error Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-321/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of TrendAI Vision One Security Agent. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this.",
+      "publishedAt": "2026-05-28T05:00:00Z",
+      "cves": [
+        "CVE-2026-34928"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-320: TrendAI Vision One Security Agent Origin Validation Error Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-320/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of TrendAI Vision One Security Agent. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this.",
+      "publishedAt": "2026-05-28T05:00:00Z",
+      "cves": [
+        "CVE-2026-34927"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
     }
   ],
   "vulns": [
@@ -89,16 +187,16 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
+      "researcher": "thinhap",
+      "researcherUrl": "https://github.com/thinhap",
       "pocWorks": "Yes",
       "difficulty": "easy",
       "added": "5:26 AM CDT",
       "firstSeenAt": "2026-05-27T10:26:02Z",
       "language": "Python",
       "summary": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
-      "technicalSummary": "CVE-2026-9082 is a highly critical SQL injection vulnerability affecting Drupal core sites configured to use PostgreSQL as the backend database. The vulnerability exists in Drupal\u2019s database abstraction API, where specially crafted requests can bypass.",
-      "breakdown": "CVE-2026-9082 is a highly critical SQL injection vulnerability affecting Drupal core sites configured to use PostgreSQL as the backend database. The vulnerability exists in Drupal\u2019s database abstraction API, where specially crafted requests can bypass.",
+      "technicalSummary": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
+      "breakdown": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
       "whatBroke": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at thinhap/CVE-2026-9082-PoC.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/thinhap/CVE-2026-9082-PoC\ncd CVE-2026-9082-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
@@ -123,10 +221,6 @@
         [
           "GitHub",
           "https://github.com/thinhap/CVE-2026-9082-PoC"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-9082/"
         ],
         [
           "Vendor Advisory",
@@ -996,9 +1090,73 @@
       ]
     },
     {
+      "cve": "CVE-2026-6279",
+      "title": "\u2014 Avada Builder <= 3.15.2 Unauthenticated RCE via call_user_func()",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/zycoder0day/CVE-2026-6279",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-6279.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-6279.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-6279"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "zycoder0day",
+      "researcherUrl": "https://github.com/zycoder0day",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:33 AM CDT",
+      "firstSeenAt": "2026-05-23T09:33:32Z",
+      "language": "Python",
+      "summary": "\u2014 Avada Builder <= 3.15.2 Unauthenticated RCE via call_user_func()",
+      "technicalSummary": "\u2014 Avada Builder <= 3.15.2 Unauthenticated RCE via call_user_func()",
+      "breakdown": "\u2014 Avada Builder <= 3.15.2 Unauthenticated RCE via call_user_func()",
+      "whatBroke": "\u2014 Avada Builder <= 3.15.2 Unauthenticated RCE via call_user_func()",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at zycoder0day/CVE-2026-6279.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/zycoder0day/CVE-2026-6279\ncd CVE-2026-6279\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/zycoder0day/CVE-2026-6279"
+        ],
+        [
+          "Vendor Advisory",
+          "https://avada.com/documentation/avada-changelog/"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-5118",
       "title": "Divi Form Builder <= 5.1.2 \u2014 Unauthenticated Privilege Escalation via Role Injection",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
@@ -1039,7 +1197,7 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "Local LPE"
       ],
@@ -1050,6 +1208,10 @@
         [
           "GitHub",
           "https://github.com/Yucaerin/CVE-2026-5118"
+        ],
+        [
+          "Vendor Advisory",
+          "https://diviengine.com/divi-form-builder-changelog/"
         ]
       ]
     },
@@ -1165,64 +1327,6 @@
         [
           "GitHub",
           "https://github.com/dwgth4i/CVE-2026-20817"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-4893",
-      "title": "Generate the poc for CVE-2026-4893: broken EDNS Client Subnet validation.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/lottiedeyan/CVE20264893poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "exp.py"
-        ],
-        "attackFiles": [
-          "exp.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-4893"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "lottiedeyan",
-      "researcherUrl": "https://github.com/lottiedeyan",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:27 AM CDT",
-      "firstSeenAt": "2026-05-27T05:27:28Z",
-      "language": "Python",
-      "summary": "Generate the poc for broken EDNS Client Subnet validation.",
-      "technicalSummary": "Generate the poc for broken EDNS Client Subnet validation.",
-      "breakdown": "Generate the poc for broken EDNS Client Subnet validation.",
-      "whatBroke": "Generate the poc for broken EDNS Client Subnet validation.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at lottiedeyan/CVE20264893poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/lottiedeyan/CVE20264893poc\ncd CVE20264893poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/lottiedeyan/CVE20264893poc"
         ]
       ]
     }
