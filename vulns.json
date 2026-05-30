@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-29T21:11:42Z",
+  "updatedAt": "2026-05-30T02:23:41Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -73,6 +73,22 @@
       "tags": [
         "Kubernetes",
         "Auth Bypass"
+      ]
+    },
+    {
+      "title": "Looting UniFi Controllers: Detecting and Weaponizing CVE-2026-22557",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/looting-unifi-controllers-detecting-and-weaponizing-cve-2026-22557",
+      "summary": "A CVSS 10.0 path traversal in UniFi Network Application lets unauthenticated attackers read controller backups, extract credentials, and take over every managed device on the network. Bishop Fox breaks down the attack paths, the preconditions, and a safe.",
+      "publishedAt": "2026-05-29T13:00:00Z",
+      "cves": [
+        "CVE-2026-22557"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read"
       ]
     },
     {
@@ -406,69 +422,6 @@
         [
           "Vendor Advisory",
           "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-33017",
-      "title": "Langflow Code Injection Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/r3nsi15/CVE-2026-33017-langflow-rce",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-33017_POC.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-33017_POC.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-33017"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "r3nsi15",
-      "researcherUrl": "https://github.com/r3nsi15",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:22 AM CDT",
-      "firstSeenAt": "2026-05-29T06:22:20Z",
-      "language": "Python",
-      "summary": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
-      "technicalSummary": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
-      "breakdown": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
-      "whatBroke": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at r3nsi15/CVE-2026-33017-langflow-rce.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/r3nsi15/CVE-2026-33017-langflow-rce\ncd CVE-2026-33017-langflow-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Langflow",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 92,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/r3nsi15/CVE-2026-33017-langflow-rce"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
         ]
       ]
     },
