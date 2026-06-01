@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-01T07:12:42Z",
+  "updatedAt": "2026-06-01T18:45:34Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,7 +49,48 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [],
+  "research": [
+    {
+      "title": "Adobe Acrobat Reader Escript.api Use-After-Free Remote Code Execution",
+      "source": "Exodus Intelligence",
+      "sourceUrl": "https://blog.exodusintel.com/",
+      "url": "https://blog.exodusintel.com/2026/06/01/adobe-acrobat-reader-escript-api-use-after-free-remote-code-execution/",
+      "summary": "Adobe Acrobat Reader Escript.api Use-After-Free Remote Code Execution By Michele Campa Overview In this blog post we take a look at a use-after-free vulnerability found in Adobe Acrobat Reader\u2019s Escript.api module in February 2025. This issue was patched on.",
+      "publishedAt": "2026-06-01T13:42:27Z",
+      "cves": [
+        "CVE-2026-34621",
+        "CVE-2026-34622",
+        "CVE-2026-34626"
+      ],
+      "tags": [
+        "iOS",
+        "Kernel",
+        "RCE"
+      ]
+    },
+    {
+      "title": "Horizon3.ai Launches Rapid Response to Secure the Era of AI-Powered Attacks",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/news/press-release/horizon3-ai-launches-rapid-response-ai-powered-attacks/",
+      "summary": "SAN FRANCISCO \u2014 June 1, 2026 \u2014 Horizon3.ai, the AI-native proactive security leader, today announced Rapid Response, a new capability that helps organizations identify, prioritize, and respond to emerging threats in an era of AI-driven vulnerability.",
+      "publishedAt": "2026-06-01T12:10:00Z",
+      "cves": [],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "title": "The Exploit Window Is Shrinking. Most Security Workflows Are Not.",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/intelligence/blogs/exploit-window-shrinking-rapid-response/",
+      "summary": "AI is accelerating vulnerability discovery, exploit development, and attacker weaponization faster than most organizations can adapt. Security teams are inundated with vulnerability disclosures, threat intelligence feeds, exploit chatter, and vendor.",
+      "publishedAt": "2026-06-01T11:45:00Z",
+      "cves": [],
+      "tags": []
+    }
+  ],
   "vulns": [
     {
       "cve": "CVE-2026-9082",
@@ -247,42 +288,182 @@
       ]
     },
     {
-      "cve": "CVE-2026-8732",
-      "title": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to.",
-      "ecosystem": "web",
+      "cve": "CVE-2026-20980",
+      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
+      "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Jenderal92/CVE-2026-8732",
+      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 6,
         "codeFiles": [
-          "CVE-2026-8732.py"
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
         ],
         "attackFiles": [
-          "CVE-2026-8732.py"
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-8732"
+          "CVE-2026-20980",
+          "CVE-2026-20981",
+          "CVE-2026-20982"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Jenderal92",
-      "researcherUrl": "https://github.com/Jenderal92",
+      "researcher": "Vikramaditya015",
+      "researcherUrl": "https://github.com/Vikramaditya015",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:16 AM CDT",
-      "firstSeenAt": "2026-05-30T11:16:07Z",
+      "added": "8:14 AM CDT",
+      "firstSeenAt": "2026-06-01T13:14:47Z",
       "language": "Python",
-      "summary": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "technicalSummary": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "breakdown": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "whatBroke": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-8732.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-8732\ncd CVE-2026-8732\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Poc for CVE-2026-20981, CVE-2026-20982",
+      "technicalSummary": "Poc for CVE-2026-20981, CVE-2026-20982",
+      "breakdown": "Poc for CVE-2026-20981, CVE-2026-20982",
+      "whatBroke": "Poc for CVE-2026-20981, CVE-2026-20982",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Vikramaditya015/samsung-android-lpe"
+        ],
+        [
+          "Vendor Advisory",
+          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20981",
+      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "attackFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20980",
+          "CVE-2026-20981",
+          "CVE-2026-20982"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Vikramaditya015",
+      "researcherUrl": "https://github.com/Vikramaditya015",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:14 AM CDT",
+      "firstSeenAt": "2026-06-01T13:14:47Z",
+      "language": "Python",
+      "summary": "Poc for CVE-2026-20980, CVE-2026-20982",
+      "technicalSummary": "Poc for CVE-2026-20980, CVE-2026-20982",
+      "breakdown": "Poc for CVE-2026-20980, CVE-2026-20982",
+      "whatBroke": "Poc for CVE-2026-20980, CVE-2026-20982",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Vikramaditya015/samsung-android-lpe"
+        ],
+        [
+          "Vendor Advisory",
+          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20982",
+      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "attackFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20980",
+          "CVE-2026-20981",
+          "CVE-2026-20982"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Vikramaditya015",
+      "researcherUrl": "https://github.com/Vikramaditya015",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:14 AM CDT",
+      "firstSeenAt": "2026-06-01T13:14:47Z",
+      "language": "Python",
+      "summary": "Poc for CVE-2026-20980, CVE-2026-20981,",
+      "technicalSummary": "Poc for CVE-2026-20980, CVE-2026-20981,",
+      "breakdown": "Poc for CVE-2026-20980, CVE-2026-20981,",
+      "whatBroke": "Poc for CVE-2026-20980, CVE-2026-20981,",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -292,19 +473,19 @@
       "tags": [
         "Web",
         "Webstack",
-        "Local LPE"
+        "File Read"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/Jenderal92/CVE-2026-8732"
+          "https://github.com/Vikramaditya015/samsung-android-lpe"
         ],
         [
           "Vendor Advisory",
-          "https://codecanyon.net/item/advanced-google-maps-plugin-for-wordpress/5211638"
+          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
         ]
       ]
     },
@@ -313,7 +494,7 @@
       "title": "SSRF via FlinkSessionJob jarURI in apache/flink-kubernetes-operator. Self-contained reproducer that runs on.",
       "ecosystem": "web",
       "category": "kubernetes",
-      "severity": "high",
+      "severity": "medium",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oscerd/CVE-2026-40564",
       "pocValidation": {
@@ -429,6 +610,70 @@
         [
           "Vendor Advisory",
           "https://www.oracle.com/security-alerts/cspumay2026.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-45585",
+      "title": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media.",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/UnknownHF/YKWriter",
+      "pocValidation": {
+        "valid": true,
+        "score": 8,
+        "codeFiles": [
+          "YKWriter/MainForm.Designer.cs",
+          "YKWriter/MainForm.cs",
+          "YKWriter/Program.cs",
+          "YKWriter/Properties/Resources.Designer.cs",
+          "YKWriter/Properties/Settings.Designer.cs"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-45585"
+        ],
+        "language": "C#"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "UnknownHF",
+      "researcherUrl": "https://github.com/UnknownHF",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:45 PM CDT",
+      "firstSeenAt": "2026-06-01T18:45:34Z",
+      "language": "C#",
+      "summary": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media to access previously inaccessible files on Windows 11 systems.",
+      "technicalSummary": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media to access previously inaccessible files on Windows 11 systems.",
+      "breakdown": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media to access previously inaccessible files on Windows 11 systems.",
+      "whatBroke": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media to access previously inaccessible files on Windows 11 systems.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at UnknownHF/YKWriter.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/UnknownHF/YKWriter\ncd YKWriter\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/UnknownHF/YKWriter"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45585"
         ]
       ]
     },
@@ -805,68 +1050,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-20817",
-      "title": "PoC for CVE-2026-20817",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/dwgth4i/CVE-2026-20817",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.cpp"
-        ],
-        "attackFiles": [
-          "poc.cpp"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-20817"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "dwgth4i",
-      "researcherUrl": "https://github.com/dwgth4i",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:22 PM CDT",
-      "firstSeenAt": "2026-05-28T03:22:49Z",
-      "language": "C",
-      "summary": "Improper handling of insufficient permissions or privileges in Windows Error Reporting allows an authorized attacker to elevate privileges locally.",
-      "technicalSummary": "Improper handling of insufficient permissions or privileges in Windows Error Reporting allows an authorized attacker to elevate privileges locally.",
-      "breakdown": "Improper handling of insufficient permissions or privileges in Windows Error Reporting allows an authorized attacker to elevate privileges locally.",
-      "whatBroke": "Improper handling of insufficient permissions or privileges in Windows Error Reporting allows an authorized attacker to elevate privileges locally.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dwgth4i/CVE-2026-20817.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dwgth4i/CVE-2026-20817\ncd CVE-2026-20817\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/dwgth4i/CVE-2026-20817"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-20817"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-40369",
       "title": "poc & exp for CVE_2026_40369",
       "ecosystem": "windows",
@@ -934,73 +1117,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-40369"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-47101",
-      "title": "The code for personally reproducing the corresponding vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/learner202649/CVE-2026-47101-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "config.yaml",
-          "demo.sh",
-          "docker-compose.yml",
-          "exploit/exploit.py",
-          "exploit/payload.py"
-        ],
-        "attackFiles": [
-          "exploit/exploit.py",
-          "exploit/payload.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-47101"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "learner202649",
-      "researcherUrl": "https://github.com/learner202649",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:12 AM CDT",
-      "firstSeenAt": "2026-06-01T07:12:42Z",
-      "language": "Shell",
-      "summary": "The code for personally reproducing the corresponding vulnerability",
-      "technicalSummary": "The code for personally reproducing the corresponding vulnerability",
-      "breakdown": "The code for personally reproducing the corresponding vulnerability",
-      "whatBroke": "The code for personally reproducing the corresponding vulnerability",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at learner202649/CVE-2026-47101-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/learner202649/CVE-2026-47101-PoC\ncd CVE-2026-47101-PoC\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/learner202649/CVE-2026-47101-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://gist.github.com/13ph03nix/9ec616e1fdc77b3673509c60206e827f"
         ]
       ]
     },
