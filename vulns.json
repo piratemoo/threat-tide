@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-02T17:47:49Z",
+  "updatedAt": "2026-06-02T21:55:58Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,21 @@
   ],
   "research": [
     {
+      "title": "CVE-2026-44825 | Apache Solr AuthTool Hardcoded Credentials Vulnerability",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-44825/",
+      "summary": "CVE-2026-44825 is a hardcoded credentials vulnerability in Apache Solr\u2019s Basic Authentication setup tool, bin/solr auth enable, affecting SolrCloud deployments. The vulnerability was discovered by the Horizon3.ai Attack Team and responsibly disclosed to the.",
+      "publishedAt": "2026-06-02T20:15:53Z",
+      "cves": [
+        "CVE-2026-44825"
+      ],
+      "tags": [
+        "Web",
+        "Webstack"
+      ]
+    },
+    {
       "title": "The HazyBeacon Protocol \u2013 How Malware Weaponizes Amazon Web Services (AWS) Lambda Function URLs",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
@@ -75,21 +90,6 @@
       "tags": [
         "Linux",
         "Webstack"
-      ]
-    },
-    {
-      "title": "CVE-2026-42271 Chained with CVE-2026-48710 | LiteLLM Unauthenticated Remote Code Execution via Starlette Host Header Validation Bypass",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-42271-chained-with-cve-2026-48710/",
-      "summary": "CVE-2026-42271 is a command injection vulnerability in LiteLLM\u2019s MCP server test endpoints that was originally disclosed as requiring authentication. Horizon3.ai researchers confirmed that when chained with CVE-2026-48710, a Starlette \u201cBadHost\u201d Host Header.",
-      "publishedAt": "2026-06-01T21:21:01Z",
-      "cves": [
-        "CVE-2026-42271",
-        "CVE-2026-48710"
-      ],
-      "tags": [
-        "RCE"
       ]
     }
   ],
@@ -800,8 +800,8 @@
     {
       "cve": "CVE-2026-40369",
       "title": "poc & exp for CVE_2026_40369",
-      "ecosystem": "cloud",
-      "category": "webstack",
+      "ecosystem": "windows",
+      "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/Joe1sn/CVE_2026_40369",
@@ -845,14 +845,14 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Joe1sn/CVE_2026_40369\ncd CVE_2026_40369\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
+        "Windows",
+        "Kernel",
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -861,13 +861,17 @@
         [
           "GitHub",
           "https://github.com/Joe1sn/CVE_2026_40369"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-40369"
         ]
       ]
     },
     {
       "cve": "CVE-2026-8206",
       "title": "2026 8206",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
@@ -895,10 +899,10 @@
       "added": "2:32 PM CDT",
       "firstSeenAt": "2026-06-01T19:32:28Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "The Kirki \u2013 Freeform Page Builder, Website Builder & Customizer plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions 6.0.0 to 6.0.6. This is due to the plugin accepting an arbitrary.",
+      "technicalSummary": "The Kirki \u2013 Freeform Page Builder, Website Builder & Customizer plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions 6.0.0 to 6.0.6. This is due to the plugin accepting an arbitrary.",
+      "breakdown": "The Kirki \u2013 Freeform Page Builder, Website Builder & Customizer plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions 6.0.0 to 6.0.6. This is due to the plugin accepting an arbitrary.",
+      "whatBroke": "The Kirki \u2013 Freeform Page Builder, Website Builder & Customizer plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions 6.0.0 to 6.0.6. This is due to the plugin accepting an arbitrary.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at O99099O/CVE-2026-8206-Poc-.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/O99099O/CVE-2026-8206-Poc-\ncd CVE-2026-8206-Poc-\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -908,9 +912,9 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "Exploit"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -919,6 +923,10 @@
         [
           "GitHub",
           "https://github.com/O99099O/CVE-2026-8206-Poc-"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/kirki/tags/6.0.4/ComponentLibrary/controller/CompLibFormHandler.php#L330"
         ]
       ]
     },
