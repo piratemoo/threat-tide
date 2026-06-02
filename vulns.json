@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-01T22:14:56Z",
+  "updatedAt": "2026-06-02T06:51:16Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -50,6 +50,19 @@
     "The GitHub Blog Security"
   ],
   "research": [
+    {
+      "title": "From API key to live threat detections in minutes: how Elastic Security ingests Google Threat Intelligence",
+      "source": "Elastic Security Labs",
+      "sourceUrl": "https://www.elastic.co/security-labs",
+      "url": "https://www.elastic.co/security-labs/elastic-security-google-threat-intelligence",
+      "summary": "Elastic Security natively ingests Google Threat Intelligence: known-malicious IPs, domains, URLs, and file hashes matched against your telemetry the moment they appear, each carrying a verdict and a 0\u2013100 threat score. The setup consists of an API key and.",
+      "publishedAt": "2026-06-02T00:00:00Z",
+      "cves": [],
+      "tags": [
+        "Linux",
+        "Webstack"
+      ]
+    },
     {
       "title": "CVE-2026-42271 Chained with CVE-2026-48710 | LiteLLM Unauthenticated Remote Code Execution via Starlette Host Header Validation Bypass",
       "source": "Horizon3 Attack Team",
@@ -138,8 +151,8 @@
       "researcherUrl": "https://github.com/ambionics",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "12:09 PM CDT",
-      "firstSeenAt": "2026-05-26T17:09:20Z",
+      "added": "1:51 AM CDT",
+      "firstSeenAt": "2026-06-02T06:51:16Z",
       "language": "Python",
       "summary": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
       "technicalSummary": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
@@ -163,7 +176,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -226,7 +239,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -290,7 +303,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -299,68 +312,6 @@
         [
           "Vendor Advisory",
           "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-8732",
-      "title": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Jenderal92/CVE-2026-8732",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-8732.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-8732.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-8732"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Jenderal92",
-      "researcherUrl": "https://github.com/Jenderal92",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:16 AM CDT",
-      "firstSeenAt": "2026-05-30T11:16:07Z",
-      "language": "Python",
-      "summary": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "technicalSummary": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "breakdown": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "whatBroke": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-8732.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-8732\ncd CVE-2026-8732\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Jenderal92/CVE-2026-8732"
-        ],
-        [
-          "Vendor Advisory",
-          "https://codecanyon.net/item/advanced-google-maps-plugin-for-wordpress/5211638"
         ]
       ]
     },
@@ -420,7 +371,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -488,7 +439,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -554,7 +505,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -614,7 +565,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -678,7 +629,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -691,85 +642,21 @@
       ]
     },
     {
-      "cve": "CVE-2026-45585",
-      "title": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media.",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "medium",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/UnknownHF/YKWriter",
-      "pocValidation": {
-        "valid": true,
-        "score": 8,
-        "codeFiles": [
-          "YKWriter/MainForm.Designer.cs",
-          "YKWriter/MainForm.cs",
-          "YKWriter/Program.cs",
-          "YKWriter/Properties/Resources.Designer.cs",
-          "YKWriter/Properties/Settings.Designer.cs"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-45585"
-        ],
-        "language": "C#"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "UnknownHF",
-      "researcherUrl": "https://github.com/UnknownHF",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:45 PM CDT",
-      "firstSeenAt": "2026-06-01T18:45:34Z",
-      "language": "C#",
-      "summary": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media to access previously inaccessible files on Windows 11 systems.",
-      "technicalSummary": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media to access previously inaccessible files on Windows 11 systems.",
-      "breakdown": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media to access previously inaccessible files on Windows 11 systems.",
-      "whatBroke": "A WinForms wrapper for Nightmare Eclipse's YellowKey exploit, automating the creation of USB recovery media to access previously inaccessible files on Windows 11 systems.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at UnknownHF/YKWriter.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/UnknownHF/YKWriter\ncd YKWriter\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/UnknownHF/YKWriter"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45585"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-23744",
-      "title": "\u2014 Proof of concept exploit for an unauthenticated Remote Code Execution vulnerability in MCPJam Inspector <=.",
+      "title": "Proof-of-concept.",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/sbouabid-sec/CVE-2026-23744-POC",
+      "pocUrl": "https://github.com/m2sousa/CVE-2026-23744",
       "pocValidation": {
         "valid": true,
         "score": 12,
         "codeFiles": [
-          "POC.py"
+          "exploit.py"
         ],
         "attackFiles": [
-          "POC.py"
+          "exploit.py"
         ],
         "hasUsage": true,
         "cveRefs": [
@@ -778,19 +665,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "sbouabid-sec",
-      "researcherUrl": "https://github.com/sbouabid-sec",
+      "researcher": "m2sousa",
+      "researcherUrl": "https://github.com/m2sousa",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "12:27 PM CDT",
-      "firstSeenAt": "2026-05-31T17:27:37Z",
+      "added": "11:34 PM CDT",
+      "firstSeenAt": "2026-06-02T04:34:01Z",
       "language": "Python",
-      "summary": "\u2014 Proof of concept exploit for an unauthenticated Remote Code Execution vulnerability in MCPJam Inspector <= 1.4.2.",
-      "technicalSummary": "\u2014 Proof of concept exploit for an unauthenticated Remote Code Execution vulnerability in MCPJam Inspector <= 1.4.2.",
-      "breakdown": "\u2014 Proof of concept exploit for an unauthenticated Remote Code Execution vulnerability in MCPJam Inspector <= 1.4.2.",
-      "whatBroke": "\u2014 Proof of concept exploit for an unauthenticated Remote Code Execution vulnerability in MCPJam Inspector <= 1.4.2.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sbouabid-sec/CVE-2026-23744-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sbouabid-sec/CVE-2026-23744-POC\ncd CVE-2026-23744-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Proof-of-concept.",
+      "technicalSummary": "Proof-of-concept.",
+      "breakdown": "Proof-of-concept.",
+      "whatBroke": "Proof-of-concept.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at m2sousa/CVE-2026-23744.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/m2sousa/CVE-2026-23744\ncd CVE-2026-23744\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -810,7 +697,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/sbouabid-sec/CVE-2026-23744-POC"
+          "https://github.com/m2sousa/CVE-2026-23744"
         ],
         [
           "Vendor Advisory",
@@ -870,7 +757,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -928,7 +815,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -943,8 +830,8 @@
     {
       "cve": "CVE-2026-43500",
       "title": "2026 43284 2026 43500",
-      "ecosystem": "cloud",
-      "category": "webstack",
+      "ecosystem": "linux",
+      "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-43284-CVE-2026-43500-EXPLOIT",
@@ -972,38 +859,42 @@
       "added": "3:11 PM CDT",
       "firstSeenAt": "2026-05-30T20:11:27Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present The DATA-packet handler in rxrpc_input_call_event() and the RESPONSE handler in.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present The DATA-packet handler in rxrpc_input_call_event() and the RESPONSE handler in.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present The DATA-packet handler in rxrpc_input_call_event() and the RESPONSE handler in.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: rxrpc: Also unshare DATA/RESPONSE packets when paged frags are present The DATA-packet handler in rxrpc_input_call_event() and the RESPONSE handler in.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-43284-CVE-2026-43500-EXPLOIT.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-43284-CVE-2026-43500-EXPLOIT\ncd CVE-2026-43284-CVE-2026-43500-EXPLOIT\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
+        "Linux",
+        "Kernel",
         "Exploit"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/K3ysTr0K3R/CVE-2026-43284-CVE-2026-43500-EXPLOIT"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/3711382a77342a9a1c3d2e7330dcfc7ea927f568"
         ]
       ]
     },
     {
       "cve": "CVE-2026-43284",
       "title": "2026 43284 2026 43500",
-      "ecosystem": "cloud",
-      "category": "webstack",
+      "ecosystem": "linux",
+      "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-43284-CVE-2026-43500-EXPLOIT",
@@ -1031,30 +922,34 @@
       "added": "3:11 PM CDT",
       "firstSeenAt": "2026-05-30T20:11:27Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb. TCP marks such skbs with.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb. TCP marks such skbs with.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb. TCP marks such skbs with.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: xfrm: esp: avoid in-place decrypt on shared skb frags MSG_SPLICE_PAGES can attach pages from a pipe directly to an skb. TCP marks such skbs with.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-43284-CVE-2026-43500-EXPLOIT.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-43284-CVE-2026-43500-EXPLOIT\ncd CVE-2026-43284-CVE-2026-43500-EXPLOIT\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
+        "Linux",
+        "Kernel",
         "Exploit"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/K3ysTr0K3R/CVE-2026-43284-CVE-2026-43500-EXPLOIT"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
         ]
       ]
     },
@@ -1106,7 +1001,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1177,7 +1072,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1192,7 +1087,7 @@
     {
       "cve": "CVE-2026-8206",
       "title": "2026 8206",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
@@ -1220,10 +1115,10 @@
       "added": "2:32 PM CDT",
       "firstSeenAt": "2026-06-01T19:32:28Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "The Kirki \u2013 Freeform Page Builder, Website Builder & Customizer plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions 6.0.0 to 6.0.6. This is due to the plugin accepting an arbitrary.",
+      "technicalSummary": "The Kirki \u2013 Freeform Page Builder, Website Builder & Customizer plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions 6.0.0 to 6.0.6. This is due to the plugin accepting an arbitrary.",
+      "breakdown": "The Kirki \u2013 Freeform Page Builder, Website Builder & Customizer plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions 6.0.0 to 6.0.6. This is due to the plugin accepting an arbitrary.",
+      "whatBroke": "The Kirki \u2013 Freeform Page Builder, Website Builder & Customizer plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions 6.0.0 to 6.0.6. This is due to the plugin accepting an arbitrary.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at O99099O/CVE-2026-8206-Poc-.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/O99099O/CVE-2026-8206-Poc-\ncd CVE-2026-8206-Poc-\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -1233,17 +1128,88 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "Exploit"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
           "https://github.com/O99099O/CVE-2026-8206-Poc-"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/kirki/tags/6.0.4/ComponentLibrary/controller/CompLibFormHandler.php#L330"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-9256",
+      "title": "nginx ngx_http_rewrite_module Heap Buffer Overflow",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/3nou9h/CVE-2026-9256-Poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "crash_verify.py",
+          "env/docker-compose.yml",
+          "env/entrypoint.sh",
+          "env/entrypoint_aslr_off.sh",
+          "heap_leak.py",
+          "libc_leak.py"
+        ],
+        "attackFiles": [
+          "crash_verify.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-9256"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "3nou9h",
+      "researcherUrl": "https://github.com/3nou9h",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:12 AM CDT",
+      "firstSeenAt": "2026-05-28T15:12:42Z",
+      "language": "Python",
+      "summary": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when a rewrite directive uses a regex pattern with distinct, overlapping Perl-Compatible Regular Expression.",
+      "technicalSummary": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when a rewrite directive uses a regex pattern with distinct, overlapping Perl-Compatible Regular Expression.",
+      "breakdown": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when a rewrite directive uses a regex pattern with distinct, overlapping Perl-Compatible Regular Expression.",
+      "whatBroke": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when a rewrite directive uses a regex pattern with distinct, overlapping Perl-Compatible Regular Expression.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 3nou9h/CVE-2026-9256-Poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/3nou9h/CVE-2026-9256-Poc\ncd CVE-2026-9256-Poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/3nou9h/CVE-2026-9256-Poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://my.f5.com/manage/s/article/K000161377"
         ]
       ]
     }
