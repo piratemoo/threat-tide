@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T07:02:24Z",
+  "updatedAt": "2026-06-03T15:52:25Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,29 @@
   ],
   "research": [
     {
+      "title": "Stop Patching at Human Speed: Peer-to-Peer (P2P) Distribution Closes the Remediation Gap Before Attackers Strike",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/06/03/stop-patching-at-human-speed-peer-to-peer-p2p-distribution-closes-the-remediation-gap-before-attackers-strike",
+      "summary": "Executive Summary Knowing what\u2019s exploitable is only half the battle. P2P patch distribution turns your endpoints into a delivery network, cutting patch propagation by up to 92%, reducing WAN bandwidth by 99%+, and helping close critical vulnerabilities.",
+      "publishedAt": "2026-06-03T15:00:00Z",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "VPN Edge"
+      ]
+    },
+    {
+      "title": "Horizon3.ai and Brinqa Partner to Help Enterprises Prioritize Real-World Cyber Exposure",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/news/press-release/horizon3-ai-brinqa-partnership/",
+      "summary": "SAN FRANCISCO and AUSTIN, Texas \u2014 June 3, 2026 \u2014 Horizon3.ai, the AI-native proactive security leader, and Brinqa, a leader in AI-powered exposure management, today announced a strategic technology partnership designed to help enterprises operationalize.",
+      "publishedAt": "2026-06-03T13:10:00Z",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "CVE-2026-44825 | Apache Solr AuthTool Hardcoded Credentials Vulnerability",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
@@ -88,15 +111,15 @@
       "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/akashsingh0454/CVE-2026-0257-PoC",
+      "pocUrl": "https://github.com/tushargurav28/CVE-2026-0257",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "cve_2026_0257_check.py"
+          "CVE-2026-0257.py"
         ],
         "attackFiles": [
-          "cve_2026_0257_check.py"
+          "CVE-2026-0257.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -105,19 +128,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "akashsingh0454",
-      "researcherUrl": "https://github.com/akashsingh0454",
+      "researcher": "tushargurav28",
+      "researcherUrl": "https://github.com/tushargurav28",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:27 PM CDT",
-      "firstSeenAt": "2026-05-29T20:27:44Z",
+      "added": "2:54 AM CDT",
+      "firstSeenAt": "2026-06-03T07:54:36Z",
       "language": "Python",
-      "summary": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
-      "technicalSummary": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
-      "breakdown": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
-      "whatBroke": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at akashsingh0454/CVE-2026-0257-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/akashsingh0454/CVE-2026-0257-PoC\ncd CVE-2026-0257-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
+      "technicalSummary": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
+      "breakdown": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
+      "whatBroke": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tushargurav28/CVE-2026-0257.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tushargurav28/CVE-2026-0257\ncd CVE-2026-0257\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PAN-OS",
         "credential access from service context",
@@ -134,11 +157,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/akashsingh0454/CVE-2026-0257-PoC"
+          "https://github.com/tushargurav28/CVE-2026-0257"
         ],
         [
           "Vendor Advisory",
@@ -153,37 +176,36 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/songzzzz/CVE-2026-31431",
+      "pocUrl": "https://github.com/1neptune/CopyFail",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "CVE-2026-31431-x64.py",
-          "ubuntu24.04-aarch64.py"
+          "CVE-2026-31431.go"
         ],
         "attackFiles": [
-          "CVE-2026-31431-x64.py"
+          "CVE-2026-31431.go"
         ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-31431"
         ],
-        "language": "Python"
+        "language": "Go"
       },
       "reliability": "reliable exploit",
-      "researcher": "songzzzz",
-      "researcherUrl": "https://github.com/songzzzz",
+      "researcher": "1neptune",
+      "researcherUrl": "https://github.com/1neptune",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:52 AM CDT",
-      "firstSeenAt": "2026-05-28T13:52:15Z",
-      "language": "Python",
-      "summary": "aarch64 and x64 python POC",
-      "technicalSummary": "aarch64 and x64 python POC",
-      "breakdown": "aarch64 and x64 python POC",
-      "whatBroke": "aarch64 and x64 python POC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at songzzzz/CVE-2026-31431.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/songzzzz/CVE-2026-31431\ncd CVE-2026-31431\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "4:11 AM CDT",
+      "firstSeenAt": "2026-06-03T09:11:12Z",
+      "language": "Go",
+      "summary": "go (CopyFail) local privilege escalation exploit",
+      "technicalSummary": "go (CopyFail) local privilege escalation exploit",
+      "breakdown": "go (CopyFail) local privilege escalation exploit",
+      "whatBroke": "go (CopyFail) local privilege escalation exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 1neptune/CopyFail.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/1neptune/CopyFail\ncd CopyFail\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Kernel",
         "local privilege escalation after a foothold",
@@ -198,11 +220,11 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/songzzzz/CVE-2026-31431"
+          "https://github.com/1neptune/CopyFail"
         ],
         [
           "Vendor Advisory",
@@ -729,6 +751,138 @@
       ]
     },
     {
+      "cve": "CVE-2026-43500",
+      "title": "Add go CVE-2026-43284 / CVE-2026-43500 (dirtyfrag) local privilege escalation exploit",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/1neptune/DirtyFrag",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "alg.go",
+          "esp.go",
+          "fcrypt.go",
+          "main.go",
+          "pty.go",
+          "rxrpc.go"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43284",
+          "CVE-2026-43500"
+        ],
+        "language": "Go"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "1neptune",
+      "researcherUrl": "https://github.com/1neptune",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:16 AM CDT",
+      "firstSeenAt": "2026-06-03T09:16:10Z",
+      "language": "Go",
+      "summary": "Add go CVE-2026-43284 / (dirtyfrag) local privilege escalation exploit",
+      "technicalSummary": "Add go CVE-2026-43284 / (dirtyfrag) local privilege escalation exploit",
+      "breakdown": "Add go CVE-2026-43284 / (dirtyfrag) local privilege escalation exploit",
+      "whatBroke": "Add go CVE-2026-43284 / (dirtyfrag) local privilege escalation exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 1neptune/DirtyFrag.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/1neptune/DirtyFrag\ncd DirtyFrag\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/1neptune/DirtyFrag"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/3711382a77342a9a1c3d2e7330dcfc7ea927f568"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43284",
+      "title": "Add go CVE-2026-43284 / CVE-2026-43500 (dirtyfrag) local privilege escalation exploit",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/1neptune/DirtyFrag",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "alg.go",
+          "esp.go",
+          "fcrypt.go",
+          "main.go",
+          "pty.go",
+          "rxrpc.go"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43284",
+          "CVE-2026-43500"
+        ],
+        "language": "Go"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "1neptune",
+      "researcherUrl": "https://github.com/1neptune",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:16 AM CDT",
+      "firstSeenAt": "2026-06-03T09:16:10Z",
+      "language": "Go",
+      "summary": "Add go / CVE-2026-43500 (dirtyfrag) local privilege escalation exploit",
+      "technicalSummary": "Add go / CVE-2026-43500 (dirtyfrag) local privilege escalation exploit",
+      "breakdown": "Add go / CVE-2026-43500 (dirtyfrag) local privilege escalation exploit",
+      "whatBroke": "Add go / CVE-2026-43500 (dirtyfrag) local privilege escalation exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 1neptune/DirtyFrag.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/1neptune/DirtyFrag\ncd DirtyFrag\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/1neptune/DirtyFrag"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-40564",
       "title": "SSRF via FlinkSessionJob jarURI in apache/flink-kubernetes-operator. Self-contained reproducer that runs on.",
       "ecosystem": "web",
@@ -785,6 +939,68 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/jvxs2kh2o60sl7qkl5nss4r5phzfl4cz"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49943",
+      "title": "PoC of CVE-2026-49943",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/9Bakabaka/CVE-2026-49943-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49943"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "9Bakabaka",
+      "researcherUrl": "https://github.com/9Bakabaka",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:39 AM CDT",
+      "firstSeenAt": "2026-06-03T05:39:35Z",
+      "language": "Python",
+      "summary": "CZ.NIC BIRD Internet Routing Daemon through 2.19.0 contains a stack-based buffer overflow in the BGP AS_PATH mask matching implementation in nest/a-path.c. The as_path_match() function uses a fixed-size stack array of 2048 + 1.",
+      "technicalSummary": "CZ.NIC BIRD Internet Routing Daemon through 2.19.0 contains a stack-based buffer overflow in the BGP AS_PATH mask matching implementation in nest/a-path.c. The as_path_match() function uses a fixed-size stack array of 2048 + 1.",
+      "breakdown": "CZ.NIC BIRD Internet Routing Daemon through 2.19.0 contains a stack-based buffer overflow in the BGP AS_PATH mask matching implementation in nest/a-path.c. The as_path_match() function uses a fixed-size stack array of 2048 + 1.",
+      "whatBroke": "CZ.NIC BIRD Internet Routing Daemon through 2.19.0 contains a stack-based buffer overflow in the BGP AS_PATH mask matching implementation in nest/a-path.c. The as_path_match() function uses a fixed-size stack array of 2048 + 1.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 9Bakabaka/CVE-2026-49943-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/9Bakabaka/CVE-2026-49943-PoC\ncd CVE-2026-49943-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/9Bakabaka/CVE-2026-49943-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://bird.nic.cz"
         ]
       ]
     },
@@ -973,249 +1189,55 @@
       ]
     },
     {
-      "cve": "CVE-2026-9256",
-      "title": "nginx ngx_http_rewrite_module Heap Buffer Overflow",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/3nou9h/CVE-2026-9256-Poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "crash_verify.py",
-          "env/docker-compose.yml",
-          "env/entrypoint.sh",
-          "env/entrypoint_aslr_off.sh",
-          "heap_leak.py",
-          "libc_leak.py"
-        ],
-        "attackFiles": [
-          "crash_verify.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-9256"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "3nou9h",
-      "researcherUrl": "https://github.com/3nou9h",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:12 AM CDT",
-      "firstSeenAt": "2026-05-28T15:12:42Z",
-      "language": "Python",
-      "summary": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when a rewrite directive uses a regex pattern with distinct, overlapping Perl-Compatible Regular Expression.",
-      "technicalSummary": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when a rewrite directive uses a regex pattern with distinct, overlapping Perl-Compatible Regular Expression.",
-      "breakdown": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when a rewrite directive uses a regex pattern with distinct, overlapping Perl-Compatible Regular Expression.",
-      "whatBroke": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when a rewrite directive uses a regex pattern with distinct, overlapping Perl-Compatible Regular Expression.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 3nou9h/CVE-2026-9256-Poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/3nou9h/CVE-2026-9256-Poc\ncd CVE-2026-9256-Poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/3nou9h/CVE-2026-9256-Poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000161377"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-40369",
-      "title": "poc & exp for CVE_2026_40369",
-      "ecosystem": "cloud",
-      "category": "webstack",
+      "cve": "CVE-2026-46300",
+      "title": "Add go CVE-2026-46300 (Fragnesia) local privilege escalation exploit",
+      "ecosystem": "linux",
+      "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Joe1sn/CVE_2026_40369",
+      "pocUrl": "https://github.com/1neptune/Fragnesia",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "src/common/gadget.cpp",
-          "src/common/memtools.cpp",
-          "src/common/shellcode.cpp",
-          "src/core/exp.cpp",
-          "src/core/poc.cpp",
-          "src/describe/vuln_description.cpp",
-          "src/exp.cpp",
-          "src/main.cpp"
+          "esp.go",
+          "main.go",
+          "pty.go",
+          "trigger.go"
         ],
         "attackFiles": [
-          "src/core/exp.cpp",
-          "src/core/poc.cpp",
-          "src/exp.cpp"
+          "trigger.go"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-40369"
+          "CVE-2026-46300"
         ],
-        "language": "C++"
+        "language": "Go"
       },
       "reliability": "reliable exploit",
-      "researcher": "Joe1sn",
-      "researcherUrl": "https://github.com/Joe1sn",
+      "researcher": "1neptune",
+      "researcherUrl": "https://github.com/1neptune",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "10:03 AM CDT",
-      "firstSeenAt": "2026-05-29T15:03:46Z",
-      "language": "C++",
-      "summary": "poc & exp for CVE_2026_40369",
-      "technicalSummary": "poc & exp for CVE_2026_40369",
-      "breakdown": "poc & exp for CVE_2026_40369",
-      "whatBroke": "poc & exp for CVE_2026_40369",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Joe1sn/CVE_2026_40369.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Joe1sn/CVE_2026_40369\ncd CVE_2026_40369\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "4:19 AM CDT",
+      "firstSeenAt": "2026-06-03T09:19:26Z",
+      "language": "Go",
+      "summary": "Add go (Fragnesia) local privilege escalation exploit",
+      "technicalSummary": "Add go (Fragnesia) local privilege escalation exploit",
+      "breakdown": "Add go (Fragnesia) local privilege escalation exploit",
+      "whatBroke": "Add go (Fragnesia) local privilege escalation exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 1neptune/Fragnesia.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/1neptune/Fragnesia\ncd Fragnesia\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Joe1sn/CVE_2026_40369"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-46716",
-      "title": "\u2014 Nezha Monitoring Cross-Tenant RCE via Cron API Authorization Bypass",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HAERIN-L/POC_CVE-2026-46716",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "docker-compose.yaml",
-          "nuclei/CVE-2026-46716.yaml",
-          "scripts/01-setup.sh",
-          "scripts/03-trigger-cve.sh",
-          "scripts/99-teardown.sh"
-        ],
-        "attackFiles": [
-          "nuclei/CVE-2026-46716.yaml",
-          "scripts/03-trigger-cve.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-46716"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HAERIN-L",
-      "researcherUrl": "https://github.com/HAERIN-L",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:44 PM CDT",
-      "firstSeenAt": "2026-05-30T02:44:29Z",
-      "language": "Shell",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HAERIN-L/POC_CVE-2026-46716.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HAERIN-L/POC_CVE-2026-46716\ncd POC_CVE-2026-46716\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HAERIN-L/POC_CVE-2026-46716"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49943",
-      "title": "PoC of CVE-2026-49943",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/9Bakabaka/CVE-2026-49943-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49943"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "9Bakabaka",
-      "researcherUrl": "https://github.com/9Bakabaka",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:39 AM CDT",
-      "firstSeenAt": "2026-06-03T05:39:35Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 9Bakabaka/CVE-2026-49943-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/9Bakabaka/CVE-2026-49943-PoC\ncd CVE-2026-49943-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
+        "Linux",
+        "Kernel",
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1223,7 +1245,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/9Bakabaka/CVE-2026-49943-PoC"
+          "https://github.com/1neptune/Fragnesia"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/2f2b16022a2e10ca7bccfb98db5ed2ec0f72641c"
         ]
       ]
     }
