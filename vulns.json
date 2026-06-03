@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T18:02:54Z",
+  "updatedAt": "2026-06-03T21:58:09Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -74,19 +74,14 @@
       "tags": []
     },
     {
-      "title": "CVE-2026-44825 | Apache Solr AuthTool Hardcoded Credentials Vulnerability",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-44825/",
-      "summary": "CVE-2026-44825 is a hardcoded credentials vulnerability in Apache Solr\u2019s Basic Authentication setup tool, bin/solr auth enable, affecting SolrCloud deployments. The vulnerability was discovered by the Horizon3.ai Attack Team and responsibly disclosed to the.",
-      "publishedAt": "2026-06-02T20:15:53Z",
-      "cves": [
-        "CVE-2026-44825"
-      ],
-      "tags": [
-        "Web",
-        "Webstack"
-      ]
+      "title": "Otto Support - Testing MCP Servers",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/otto-support-testing-mcp-servers",
+      "summary": "MCP servers introduce a new attack surface, but the security fundamentals are familiar. In this final otto-support post, we use nmap, a Nuclei template, and MCP Inspector to discover, enumerate, and exploit an authorization gap without ever touching an LLM.",
+      "publishedAt": "2026-06-03T13:00:00Z",
+      "cves": [],
+      "tags": []
     }
   ],
   "vulns": [
@@ -1105,10 +1100,6 @@
         [
           "GitHub",
           "https://github.com/Hunt-Benito/lwip-snmpv3-stack-overflow-cve-2026-8836-critical-embedded-rce"
-        ],
-        [
-          "Vendor Advisory",
-          "https://cgit.git.savannah.gnu.org/cgit/lwip.git/commit/?id=0c957ec03054eb6c8205e9c9d1d05d90ada3898c"
         ]
       ]
     },
@@ -1117,7 +1108,7 @@
       "title": "Rocket.Chat OAuth2 NoSQL Injection",
       "ecosystem": "web",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/hieuminhnv/CVE-2026-29198-POC",
       "pocValidation": {
@@ -1158,7 +1149,7 @@
       "tags": [
         "Web",
         "Webstack",
-        "Session Theft"
+        "SQLi"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1167,10 +1158,6 @@
         [
           "GitHub",
           "https://github.com/hieuminhnv/CVE-2026-29198-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/RocketChat/Rocket.Chat/pull/39492"
         ]
       ]
     },
