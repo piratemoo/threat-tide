@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-04T16:27:36Z",
+  "updatedAt": "2026-06-04T21:00:48Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,7 +49,66 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [],
+  "research": [
+    {
+      "title": "ZDI-26-331: (Pwn2Own) Microsoft Edge Feedback Log File Handling Directory Traversal Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-331/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Microsoft Edge. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-06-04T05:00:00Z",
+      "cves": [
+        "CVE-2026-45495"
+      ],
+      "tags": [
+        "Windows",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-330: (Pwn2Own) Microsoft Edge Navigation Handling Universal Cross-Site Scripting Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-330/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary cross-origin script on affected installations of Microsoft Edge. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious.",
+      "publishedAt": "2026-06-04T05:00:00Z",
+      "cves": [
+        "CVE-2026-45494"
+      ],
+      "tags": [
+        "Windows",
+        "Xss"
+      ]
+    },
+    {
+      "title": "ZDI-26-329: (Pwn2Own) Microsoft Edge Origin Validation Error Security Bypass Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-329/",
+      "summary": "This vulnerability allows remote attackers to access restricted functionality on affected installations of Microsoft Edge. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-06-04T05:00:00Z",
+      "cves": [
+        "CVE-2026-45492"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "title": "ZDI-26-328: ASUS Business Manager Service Client-Side Authentication Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-328/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of ASUS Business Manager. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI.",
+      "publishedAt": "2026-06-04T05:00:00Z",
+      "cves": [
+        "CVE-2026-7480"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    }
+  ],
   "vulns": [
     {
       "cve": "CVE-2026-0257",
@@ -307,41 +366,41 @@
     },
     {
       "cve": "CVE-2026-8732",
-      "title": "PoC CVE-2026-8732 (WP Maps Pro <= 6.1.0)",
+      "title": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to.",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Diznev/CVE-2026-8732-EXPLOIT",
+      "pocUrl": "https://github.com/Jenderal92/CVE-2026-8732",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "CVE-2026-8732.py"
         ],
         "attackFiles": [
           "CVE-2026-8732.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-8732"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Diznev",
-      "researcherUrl": "https://github.com/Diznev",
+      "researcher": "Jenderal92",
+      "researcherUrl": "https://github.com/Jenderal92",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "11:22 AM CDT",
-      "firstSeenAt": "2026-06-04T16:22:33Z",
+      "added": "6:16 AM CDT",
+      "firstSeenAt": "2026-05-30T11:16:07Z",
       "language": "Python",
-      "summary": "PoC (WP Maps Pro <= 6.1.0)",
-      "technicalSummary": "PoC (WP Maps Pro <= 6.1.0)",
-      "breakdown": "PoC (WP Maps Pro <= 6.1.0)",
-      "whatBroke": "PoC (WP Maps Pro <= 6.1.0)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Diznev/CVE-2026-8732-EXPLOIT.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Diznev/CVE-2026-8732-EXPLOIT\ncd CVE-2026-8732-EXPLOIT\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
+      "technicalSummary": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
+      "breakdown": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
+      "whatBroke": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-8732.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-8732\ncd CVE-2026-8732\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -355,11 +414,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/Diznev/CVE-2026-8732-EXPLOIT"
+          "https://github.com/Jenderal92/CVE-2026-8732"
         ],
         [
           "Vendor Advisory",
@@ -828,8 +887,8 @@
     {
       "cve": "CVE-2026-43284",
       "title": "Add go CVE-2026-43284 / CVE-2026-43500 (dirtyfrag) local privilege escalation exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
+      "ecosystem": "linux",
+      "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/1neptune/DirtyFrag",
@@ -868,13 +927,13 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/1neptune/DirtyFrag\ncd DirtyFrag\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
+        "Linux",
+        "Kernel",
         "Local LPE"
       ],
       "confidence": 98,
@@ -884,6 +943,10 @@
         [
           "GitHub",
           "https://github.com/1neptune/DirtyFrag"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
         ]
       ]
     },
@@ -892,7 +955,7 @@
       "title": "SSRF via FlinkSessionJob jarURI in apache/flink-kubernetes-operator. Self-contained reproducer that runs on.",
       "ecosystem": "web",
       "category": "kubernetes",
-      "severity": "high",
+      "severity": "medium",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oscerd/CVE-2026-40564",
       "pocValidation": {
@@ -940,6 +1003,10 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-40564"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread/jvxs2kh2o60sl7qkl5nss4r5phzfl4cz"
         ]
       ]
     },
