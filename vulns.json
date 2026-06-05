@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-04T23:50:19Z",
+  "updatedAt": "2026-06-05T06:40:21Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -62,64 +62,6 @@
         "Cloud",
         "RCE"
       ]
-    },
-    {
-      "title": "ZDI-26-331: (Pwn2Own) Microsoft Edge Feedback Log File Handling Directory Traversal Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-331/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Microsoft Edge. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-06-04T05:00:00Z",
-      "cves": [
-        "CVE-2026-45495"
-      ],
-      "tags": [
-        "Windows",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-330: (Pwn2Own) Microsoft Edge Navigation Handling Universal Cross-Site Scripting Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-330/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary cross-origin script on affected installations of Microsoft Edge. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious.",
-      "publishedAt": "2026-06-04T05:00:00Z",
-      "cves": [
-        "CVE-2026-45494"
-      ],
-      "tags": [
-        "Windows",
-        "Xss"
-      ]
-    },
-    {
-      "title": "ZDI-26-329: (Pwn2Own) Microsoft Edge Origin Validation Error Security Bypass Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-329/",
-      "summary": "This vulnerability allows remote attackers to access restricted functionality on affected installations of Microsoft Edge. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
-      "publishedAt": "2026-06-04T05:00:00Z",
-      "cves": [
-        "CVE-2026-45492"
-      ],
-      "tags": [
-        "Windows"
-      ]
-    },
-    {
-      "title": "ZDI-26-328: ASUS Business Manager Service Client-Side Authentication Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-328/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of ASUS Business Manager. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI.",
-      "publishedAt": "2026-06-04T05:00:00Z",
-      "cves": [
-        "CVE-2026-7480"
-      ],
-      "tags": [
-        "Local Lpe"
-      ]
     }
   ],
   "vulns": [
@@ -130,15 +72,15 @@
       "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/akashsingh0454/CVE-2026-0257-PoC",
+      "pocUrl": "https://github.com/tushargurav28/CVE-2026-0257",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "cve_2026_0257_check.py"
+          "CVE-2026-0257.py"
         ],
         "attackFiles": [
-          "cve_2026_0257_check.py"
+          "CVE-2026-0257.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -147,19 +89,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "akashsingh0454",
-      "researcherUrl": "https://github.com/akashsingh0454",
+      "researcher": "tushargurav28",
+      "researcherUrl": "https://github.com/tushargurav28",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:27 PM CDT",
-      "firstSeenAt": "2026-05-29T20:27:44Z",
+      "added": "2:54 AM CDT",
+      "firstSeenAt": "2026-06-03T07:54:36Z",
       "language": "Python",
-      "summary": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
-      "technicalSummary": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
-      "breakdown": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
-      "whatBroke": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at akashsingh0454/CVE-2026-0257-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/akashsingh0454/CVE-2026-0257-PoC\ncd CVE-2026-0257-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
+      "technicalSummary": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
+      "breakdown": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
+      "whatBroke": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tushargurav28/CVE-2026-0257.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tushargurav28/CVE-2026-0257\ncd CVE-2026-0257\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PAN-OS",
         "credential access from service context",
@@ -176,11 +118,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/akashsingh0454/CVE-2026-0257-PoC"
+          "https://github.com/tushargurav28/CVE-2026-0257"
         ],
         [
           "Vendor Advisory",
@@ -195,36 +137,36 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/1neptune/CopyFail",
+      "pocUrl": "https://github.com/zs1n/copy-fail-CVE-2026-31431",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "CVE-2026-31431.go"
+          "exploit.py"
         ],
         "attackFiles": [
-          "CVE-2026-31431.go"
+          "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-31431"
         ],
-        "language": "Go"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "1neptune",
-      "researcherUrl": "https://github.com/1neptune",
+      "researcher": "zs1n",
+      "researcherUrl": "https://github.com/zs1n",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:11 AM CDT",
-      "firstSeenAt": "2026-06-03T09:11:12Z",
-      "language": "Go",
-      "summary": "go (CopyFail) local privilege escalation exploit",
-      "technicalSummary": "go (CopyFail) local privilege escalation exploit",
-      "breakdown": "go (CopyFail) local privilege escalation exploit",
-      "whatBroke": "go (CopyFail) local privilege escalation exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 1neptune/CopyFail.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/1neptune/CopyFail\ncd CopyFail\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "8:05 PM CDT",
+      "firstSeenAt": "2026-06-05T01:05:38Z",
+      "language": "Python",
+      "summary": "Exploit for Copy-Fail Vulnerability - Python3 Version",
+      "technicalSummary": "Exploit for Copy-Fail Vulnerability - Python3 Version",
+      "breakdown": "Exploit for Copy-Fail Vulnerability - Python3 Version",
+      "whatBroke": "Exploit for Copy-Fail Vulnerability - Python3 Version",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at zs1n/copy-fail-CVE-2026-31431.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/zs1n/copy-fail-CVE-2026-31431\ncd copy-fail-CVE-2026-31431\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Kernel",
         "local privilege escalation after a foothold",
@@ -243,7 +185,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/1neptune/CopyFail"
+          "https://github.com/zs1n/copy-fail-CVE-2026-31431"
         ],
         [
           "Vendor Advisory",
@@ -253,41 +195,41 @@
     },
     {
       "cve": "CVE-2026-23744",
-      "title": "path vulnerable:",
-      "ecosystem": "cloud",
+      "title": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target.",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/MrR0b0t19/CVE-2026-23744-PoC",
+      "pocUrl": "https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit",
       "pocValidation": {
         "valid": true,
         "score": 12,
         "codeFiles": [
-          "exploit.sh"
+          "exploit.py"
         ],
         "attackFiles": [
-          "exploit.sh"
+          "exploit.py"
         ],
         "hasUsage": true,
         "cveRefs": [
           "CVE-2026-23744"
         ],
-        "language": "Shell"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "MrR0b0t19",
-      "researcherUrl": "https://github.com/MrR0b0t19",
+      "researcher": "Dahalsamir",
+      "researcherUrl": "https://github.com/Dahalsamir",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "6:19 PM CDT",
-      "firstSeenAt": "2026-06-02T23:19:04Z",
-      "language": "Shell",
-      "summary": "MCPJam inspector is the local-first development platform for MCP servers. Versions 1.4.2 and earlier are vulnerable to remote code execution (RCE) vulnerability, which allows an attacker to send a crafted HTTP request that.",
-      "technicalSummary": "MCPJam inspector is the local-first development platform for MCP servers. Versions 1.4.2 and earlier are vulnerable to remote code execution (RCE) vulnerability, which allows an attacker to send a crafted HTTP request that.",
-      "breakdown": "MCPJam inspector is the local-first development platform for MCP servers. Versions 1.4.2 and earlier are vulnerable to remote code execution (RCE) vulnerability, which allows an attacker to send a crafted HTTP request that.",
-      "whatBroke": "MCPJam inspector is the local-first development platform for MCP servers. Versions 1.4.2 and earlier are vulnerable to remote code execution (RCE) vulnerability, which allows an attacker to send a crafted HTTP request that.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MrR0b0t19/CVE-2026-23744-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MrR0b0t19/CVE-2026-23744-PoC\ncd CVE-2026-23744-PoC\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "12:19 AM CDT",
+      "firstSeenAt": "2026-06-05T05:19:26Z",
+      "language": "Python",
+      "summary": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
+      "technicalSummary": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
+      "breakdown": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
+      "whatBroke": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit\ncd CVE-2026-23744-MCPJAM-RCE-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -297,17 +239,17 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "RCE"
       ],
       "confidence": 98,
       "weaponization": 97,
-      "dayOffset": 2,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/MrR0b0t19/CVE-2026-23744-PoC"
+          "https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit"
         ],
         [
           "Vendor Advisory",
@@ -365,7 +307,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -379,12 +321,12 @@
     },
     {
       "cve": "CVE-2026-8732",
-      "title": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to.",
+      "title": "WordPress WP Google Map Pro Mass Scanner & Auto Admin Creator",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Jenderal92/CVE-2026-8732",
+      "pocUrl": "https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -401,19 +343,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Jenderal92",
-      "researcherUrl": "https://github.com/Jenderal92",
+      "researcher": "p3Nt3st3r-sTAr",
+      "researcherUrl": "https://github.com/p3Nt3st3r-sTAr",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:16 AM CDT",
-      "firstSeenAt": "2026-05-30T11:16:07Z",
+      "added": "4:06 AM CDT",
+      "firstSeenAt": "2026-06-01T09:06:17Z",
       "language": "Python",
-      "summary": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "technicalSummary": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "breakdown": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "whatBroke": "WP Maps Pro <= 6.1.0 - Unauthenticated Privilege Escalation via Administrator Account Creation to wpgmp_temp_access_ajax AJAX Action",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-8732.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-8732\ncd CVE-2026-8732\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "The WP Maps Pro plugin for WordPress is vulnerable to Privilege Escalation via Administrator Account Creation in all versions up to, and including, 6.1.0. This is due to the wpgmp_temp_access_ajax AJAX action being registered.",
+      "technicalSummary": "The WP Maps Pro plugin for WordPress is vulnerable to Privilege Escalation via Administrator Account Creation in all versions up to, and including, 6.1.0. This is due to the wpgmp_temp_access_ajax AJAX action being registered.",
+      "breakdown": "The WP Maps Pro plugin for WordPress is vulnerable to Privilege Escalation via Administrator Account Creation in all versions up to, and including, 6.1.0. This is due to the wpgmp_temp_access_ajax AJAX action being registered.",
+      "whatBroke": "The WP Maps Pro plugin for WordPress is vulnerable to Privilege Escalation via Administrator Account Creation in all versions up to, and including, 6.1.0. This is due to the wpgmp_temp_access_ajax AJAX action being registered.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at p3Nt3st3r-sTAr/CVE-2026-8732-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC\ncd CVE-2026-8732-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -427,11 +369,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/Jenderal92/CVE-2026-8732"
+          "https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC"
         ],
         [
           "Vendor Advisory",
@@ -489,7 +431,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -557,7 +499,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -625,7 +567,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -691,7 +633,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -755,7 +697,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -821,7 +763,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -887,7 +829,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -926,8 +868,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:32 AM CDT",
-      "firstSeenAt": "2026-05-29T09:32:14Z",
+      "added": "1:40 AM CDT",
+      "firstSeenAt": "2026-06-05T06:40:21Z",
       "language": "Makefile",
       "summary": "SSRF via FlinkSessionJob jarURI in apache/flink-kubernetes-operator. Self-contained reproducer that runs on a local kind cluster with one make command.",
       "technicalSummary": "SSRF via FlinkSessionJob jarURI in apache/flink-kubernetes-operator. Self-contained reproducer that runs on a local kind cluster with one make command.",
@@ -947,7 +889,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -1009,7 +951,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1049,8 +991,8 @@
       "researcherUrl": "https://github.com/fangbarristerbar",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "11:15 AM CDT",
-      "firstSeenAt": "2026-05-29T16:15:49Z",
+      "added": "1:40 AM CDT",
+      "firstSeenAt": "2026-06-05T06:40:21Z",
       "language": "Python",
       "summary": "Oracle REST Data Services (ORDS) Unauthenticated RCE ()",
       "technicalSummary": "Oracle REST Data Services (ORDS) Unauthenticated RCE ()",
@@ -1073,15 +1015,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
           "https://github.com/fangbarristerbar/CVE-2026-46840-ORDS-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.oracle.com/security-alerts/cspumay2026.html"
         ]
       ]
     },
@@ -1137,7 +1075,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1195,15 +1133,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/Hunt-Benito/lwip-snmpv3-stack-overflow-cve-2026-8836-critical-embedded-rce"
-        ],
-        [
-          "Vendor Advisory",
-          "https://cgit.git.savannah.gnu.org/cgit/lwip.git/commit/?id=0c957ec03054eb6c8205e9c9d1d05d90ada3898c"
         ]
       ]
     },
@@ -1212,7 +1146,7 @@
       "title": "Rocket.Chat OAuth2 NoSQL Injection",
       "ecosystem": "web",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/hieuminhnv/CVE-2026-29198-POC",
       "pocValidation": {
@@ -1253,15 +1187,19 @@
       "tags": [
         "Web",
         "Webstack",
-        "SQLi"
+        "Session Theft"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/hieuminhnv/CVE-2026-29198-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/RocketChat/Rocket.Chat/pull/39492"
         ]
       ]
     }
