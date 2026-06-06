@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-06T20:17:39Z",
+  "updatedAt": "2026-06-06T21:57:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -827,10 +827,6 @@
         [
           "GitHub",
           "https://github.com/y198nt/Nginx-chain-Rift-Poolslip"
-        ],
-        [
-          "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000161377"
         ]
       ]
     },
@@ -839,7 +835,7 @@
       "title": "Reverse shell",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oryk0/CVE-2026-23744",
       "pocValidation": {
@@ -861,7 +857,7 @@
       "researcher": "oryk0",
       "researcherUrl": "https://github.com/oryk0",
       "pocWorks": "Yes",
-      "difficulty": "easy",
+      "difficulty": "moderate",
       "added": "11:57 PM CDT",
       "firstSeenAt": "2026-06-06T04:57:39Z",
       "language": "Python",
@@ -873,8 +869,6 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oryk0/CVE-2026-23744\ncd CVE-2026-23744\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -882,7 +876,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "RCE"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 97,
@@ -891,17 +885,13 @@
         [
           "GitHub",
           "https://github.com/oryk0/CVE-2026-23744"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
     {
       "cve": "CVE-2026-30849",
       "title": "Proof-of-Concept checker/exploit for MantisBT SOAP auth bypass (CVE-2026-30849 / GHSA-phrq-pc6r-f6gh)",
-      "ecosystem": "web",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
@@ -944,7 +934,7 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
         "Auth Bypass"
       ],
@@ -955,17 +945,13 @@
         [
           "GitHub",
           "https://github.com/Gumbraise/CVE-2026-30849-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/mantisbt/mantisbt/commit/b349e5c890eeda9bd82e7c7e14479853f8a30d9f"
         ]
       ]
     },
     {
       "cve": "CVE-2026-41089",
       "title": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
-      "ecosystem": "windows",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
@@ -1008,7 +994,7 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
+        "Cloud",
         "Webstack",
         "Memory Corruption"
       ],
@@ -1019,10 +1005,6 @@
         [
           "GitHub",
           "https://github.com/GalleryJoiner/CVE-2026-41089-686"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41089"
         ]
       ]
     },
@@ -1031,7 +1013,7 @@
       "title": "Samba print-command (`%J`) injection PoC",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/TheCyberGeek/CVE-2026-4480-PoC",
       "pocValidation": {
@@ -1057,16 +1039,14 @@
       "added": "6:05 AM CDT",
       "firstSeenAt": "2026-06-05T11:05:55Z",
       "language": "Python",
-      "summary": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
-      "technicalSummary": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
-      "breakdown": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
-      "whatBroke": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at TheCyberGeek/CVE-2026-4480-PoC.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/TheCyberGeek/CVE-2026-4480-PoC\ncd CVE-2026-4480-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -1074,7 +1054,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "RCE"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1083,10 +1063,6 @@
         [
           "GitHub",
           "https://github.com/TheCyberGeek/CVE-2026-4480-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://access.redhat.com/errata/RHSA-2026:22644"
         ]
       ]
     },
