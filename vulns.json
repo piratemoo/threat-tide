@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-06T06:00:16Z",
+  "updatedAt": "2026-06-06T14:50:10Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -64,31 +64,6 @@
         "Cloud",
         "VPN Edge",
         "Auth Bypass"
-      ]
-    },
-    {
-      "title": "Popping Root on UniFi OS Server: Unauthenticated RCE Chain Detection & Analysis",
-      "source": "Bishop Fox",
-      "sourceUrl": "https://x.com/BishopFox",
-      "url": "https://bishopfox.com/blog/popping-root-on-unifi-os-server-unauthenticated-rce-chain-detection-analysis",
-      "summary": "A three-part vulnerability chain in UniFi OS Server lets an unauthenticated attacker bypass the auth gateway, hit a command injection sink, and escalate to root in a single request. Bishop Fox confirmed the chain end to end and breaks down the attack, the.",
-      "publishedAt": "2026-06-05T13:00:00Z",
-      "cves": [],
-      "tags": [
-        "VPN Edge",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Advancing Cybersecurity in the Age of Frontier AI: Qualys Steps into Project Glasswing",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/06/05/advancing-cybersecurity-in-the-age-of-frontier-ai-qualys-steps-into-project-glasswing",
-      "summary": "The cybersecurity industry has spent much of the last two years debating how attackers might use AI. That debate matters, but it misses a larger point: defenders now have an opportunity to change the economics of cyber risk. For me, the question is not.",
-      "publishedAt": "2026-06-05T12:30:00Z",
-      "cves": [],
-      "tags": [
-        "Cloud"
       ]
     }
   ],
@@ -163,69 +138,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-31431",
-      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/zs1n/copy-fail-CVE-2026-31431",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-31431"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "zs1n",
-      "researcherUrl": "https://github.com/zs1n",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:05 PM CDT",
-      "firstSeenAt": "2026-06-05T01:05:38Z",
-      "language": "Python",
-      "summary": "Exploit for Copy-Fail Vulnerability - Python3 Version",
-      "technicalSummary": "Exploit for Copy-Fail Vulnerability - Python3 Version",
-      "breakdown": "Exploit for Copy-Fail Vulnerability - Python3 Version",
-      "whatBroke": "Exploit for Copy-Fail Vulnerability - Python3 Version",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at zs1n/copy-fail-CVE-2026-31431.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/zs1n/copy-fail-CVE-2026-31431\ncd copy-fail-CVE-2026-31431\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Kernel",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/zs1n/copy-fail-CVE-2026-31431"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-42588",
       "title": "2026 42588",
       "ecosystem": "web",
@@ -235,14 +147,15 @@
       "pocUrl": "https://github.com/hnytgl/CVE-2026-42588",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
+          ".github/workflows/ci.yml",
           "CVE-2026-42588_EXP.py"
         ],
         "attackFiles": [
           "CVE-2026-42588_EXP.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-42588"
         ],
@@ -616,42 +529,42 @@
       ]
     },
     {
-      "cve": "CVE-2026-41089",
-      "title": "Windows Netlogon CLDAP Remote Code Execution Exploit (CVSS 9.8)",
-      "ecosystem": "windows",
+      "cve": "CVE-2026-6815",
+      "title": "Proof of Concept (PoC) exploit for CVE-2026-6815: Authenticated Path Traversal & Arbitrary File Write in.",
+      "ecosystem": "web",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/hnytgl/CVE-2026-41089",
+      "pocUrl": "https://github.com/danilo-dellorco/CVE-2026-6815",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "CVE-2026-41089-exp.py"
+          "CVE-2026-6815.py"
         ],
         "attackFiles": [
-          "CVE-2026-41089-exp.py"
+          "CVE-2026-6815.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-41089"
+          "CVE-2026-6815"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "hnytgl",
-      "researcherUrl": "https://github.com/hnytgl",
+      "researcher": "danilo-dellorco",
+      "researcherUrl": "https://github.com/danilo-dellorco",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "9:29 PM CDT",
-      "firstSeenAt": "2026-06-03T02:29:06Z",
+      "added": "10:06 AM CDT",
+      "firstSeenAt": "2026-06-04T15:06:44Z",
       "language": "Python",
-      "summary": "Windows Netlogon CLDAP Remote Code Execution Exploit (CVSS 9.8)",
-      "technicalSummary": "Windows Netlogon CLDAP Remote Code Execution Exploit (CVSS 9.8)",
-      "breakdown": "Windows Netlogon CLDAP Remote Code Execution Exploit (CVSS 9.8)",
-      "whatBroke": "Windows Netlogon CLDAP Remote Code Execution Exploit (CVSS 9.8)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hnytgl/CVE-2026-41089.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hnytgl/CVE-2026-41089\ncd CVE-2026-41089\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Proof of Concept (PoC) exploit for Authenticated Path Traversal & Arbitrary File Write in Casdoor (< 3.54.1) leading to RCE/DoS.",
+      "technicalSummary": "Proof of Concept (PoC) exploit for Authenticated Path Traversal & Arbitrary File Write in Casdoor (< 3.54.1) leading to RCE/DoS.",
+      "breakdown": "Proof of Concept (PoC) exploit for Authenticated Path Traversal & Arbitrary File Write in Casdoor (< 3.54.1) leading to RCE/DoS.",
+      "whatBroke": "Proof of Concept (PoC) exploit for Authenticated Path Traversal & Arbitrary File Write in Casdoor (< 3.54.1) leading to RCE/DoS.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at danilo-dellorco/CVE-2026-6815.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/danilo-dellorco/CVE-2026-6815\ncd CVE-2026-6815\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -661,21 +574,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
+        "Web",
         "Webstack",
         "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/hnytgl/CVE-2026-41089"
+          "https://github.com/danilo-dellorco/CVE-2026-6815"
         ],
         [
           "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41089"
+          "https://kb.cert.org/vuls/id/937808"
         ]
       ]
     },
@@ -689,14 +602,14 @@
       "pocUrl": "https://github.com/Hunt-Benito/lwip-snmpv3-stack-overflow-cve-2026-8836-critical-embedded-rce",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "exploit.py"
         ],
         "attackFiles": [
           "exploit.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-8836"
         ],
@@ -743,41 +656,105 @@
     },
     {
       "cve": "CVE-2026-23744",
-      "title": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target.",
-      "ecosystem": "web",
+      "title": "Reverse shell",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit",
+      "pocUrl": "https://github.com/oryk0/CVE-2026-23744",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
-          "exploit.py"
+          "CVE-2026-23744-ReverShell.py"
         ],
         "attackFiles": [
-          "exploit.py"
+          "CVE-2026-23744-ReverShell.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-23744"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Dahalsamir",
-      "researcherUrl": "https://github.com/Dahalsamir",
+      "researcher": "oryk0",
+      "researcherUrl": "https://github.com/oryk0",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "12:19 AM CDT",
-      "firstSeenAt": "2026-06-05T05:19:26Z",
+      "added": "11:57 PM CDT",
+      "firstSeenAt": "2026-06-06T04:57:39Z",
       "language": "Python",
-      "summary": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
-      "technicalSummary": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
-      "breakdown": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
-      "whatBroke": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit\ncd CVE-2026-23744-MCPJAM-RCE-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Reverse shell",
+      "technicalSummary": "Reverse shell",
+      "breakdown": "Reverse shell",
+      "whatBroke": "Reverse shell",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oryk0/CVE-2026-23744.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oryk0/CVE-2026-23744\ncd CVE-2026-23744\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 97,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oryk0/CVE-2026-23744"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-30849",
+      "title": "Proof-of-Concept checker/exploit for MantisBT SOAP auth bypass (CVE-2026-30849 / GHSA-phrq-pc6r-f6gh)",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Gumbraise/CVE-2026-30849-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-30849.ts"
+        ],
+        "attackFiles": [
+          "CVE-2026-30849.ts"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-30849"
+        ],
+        "language": "TypeScript"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Gumbraise",
+      "researcherUrl": "https://github.com/Gumbraise",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:06 AM CDT",
+      "firstSeenAt": "2026-06-06T14:06:01Z",
+      "language": "TypeScript",
+      "summary": "Proof-of-Concept checker/exploit for MantisBT SOAP auth bypass (/ GHSA-phrq-pc6r-f6gh)",
+      "technicalSummary": "Proof-of-Concept checker/exploit for MantisBT SOAP auth bypass (/ GHSA-phrq-pc6r-f6gh)",
+      "breakdown": "Proof-of-Concept checker/exploit for MantisBT SOAP auth bypass (/ GHSA-phrq-pc6r-f6gh)",
+      "whatBroke": "Proof-of-Concept checker/exploit for MantisBT SOAP auth bypass (/ GHSA-phrq-pc6r-f6gh)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Gumbraise/CVE-2026-30849-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Gumbraise/CVE-2026-30849-PoC\ncd CVE-2026-30849-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -789,66 +766,70 @@
       "tags": [
         "Web",
         "Webstack",
-        "RCE"
+        "Auth Bypass"
       ],
       "confidence": 98,
-      "weaponization": 97,
-      "dayOffset": 1,
+      "weaponization": 73,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit"
+          "https://github.com/Gumbraise/CVE-2026-30849-PoC"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
+          "https://github.com/mantisbt/mantisbt/commit/b349e5c890eeda9bd82e7c7e14479853f8a30d9f"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-26179",
-      "title": "PoC for CVE-2026-26179 / ZDI-26-276, my very own Secure Kernel bug",
+      "cve": "CVE-2026-41089",
+      "title": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
       "ecosystem": "windows",
-      "category": "kernel",
-      "severity": "high",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/nikosecurity/CVE-2026-26179",
+      "pocUrl": "https://github.com/GalleryJoiner/CVE-2026-41089-686",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "Solution/Driver.c"
+          ".github/workflows/ci.yml",
+          "poc.py",
+          "setup.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "poc.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-26179"
+          "CVE-2026-41089"
         ],
-        "language": "C"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "nikosecurity",
-      "researcherUrl": "https://github.com/nikosecurity",
+      "researcher": "GalleryJoiner",
+      "researcherUrl": "https://github.com/GalleryJoiner",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:53 AM CDT",
-      "firstSeenAt": "2026-06-05T05:53:01Z",
-      "language": "C",
-      "summary": "PoC for / ZDI-26-276, my very own Secure Kernel bug",
-      "technicalSummary": "PoC for / ZDI-26-276, my very own Secure Kernel bug",
-      "breakdown": "PoC for / ZDI-26-276, my very own Secure Kernel bug",
-      "whatBroke": "PoC for / ZDI-26-276, my very own Secure Kernel bug",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at nikosecurity/CVE-2026-26179.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/nikosecurity/CVE-2026-26179\ncd CVE-2026-26179\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "6:05 AM CDT",
+      "firstSeenAt": "2026-06-05T11:05:43Z",
+      "language": "Python",
+      "summary": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
+      "technicalSummary": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
+      "breakdown": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
+      "whatBroke": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at GalleryJoiner/CVE-2026-41089-686.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/GalleryJoiner/CVE-2026-41089-686\ncd CVE-2026-41089-686\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Windows",
-        "Kernel",
+        "Webstack",
         "Memory Corruption"
       ],
       "confidence": 98,
@@ -857,11 +838,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/nikosecurity/CVE-2026-26179"
+          "https://github.com/GalleryJoiner/CVE-2026-41089-686"
         ],
         [
           "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-26179"
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41089"
         ]
       ]
     },
@@ -920,6 +901,64 @@
         [
           "GitHub",
           "https://github.com/kavin-jindal/CVE-2026-48800-PoC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49975",
+      "title": "HTTP/2 Bomb PoC \u2014 CVE-2026-49975 (HPACK indexed reference bomb + flow-control stall)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/mrx-arafat/CVE-2026-49975-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit-test.py"
+        ],
+        "attackFiles": [
+          "exploit-test.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49975"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "mrx-arafat",
+      "researcherUrl": "https://github.com/mrx-arafat",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:22 AM CDT",
+      "firstSeenAt": "2026-06-04T06:22:54Z",
+      "language": "Python",
+      "summary": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
+      "technicalSummary": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
+      "breakdown": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
+      "whatBroke": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mrx-arafat/CVE-2026-49975-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mrx-arafat/CVE-2026-49975-POC\ncd CVE-2026-49975-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/mrx-arafat/CVE-2026-49975-POC"
         ]
       ]
     },
