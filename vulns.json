@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-06T14:50:10Z",
+  "updatedAt": "2026-06-06T20:17:39Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,24 +49,7 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [
-    {
-      "title": "CVE-2026-0257 | Palo Alto Networks PAN-OS GlobalProtect Authentication Bypass Vulnerability | Active Exploitation",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-0257/",
-      "summary": "A critical authentication bypass vulnerability affecting the GlobalProtect portal and gateway in Palo Alto Networks PAN-OS allows attackers to bypass security restrictions and establish unauthorized VPN connections. The vulnerability stems from insufficient.",
-      "publishedAt": "2026-06-05T19:41:23Z",
-      "cves": [
-        "CVE-2026-0257"
-      ],
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Auth Bypass"
-      ]
-    }
-  ],
+  "research": [],
   "vulns": [
     {
       "cve": "CVE-2026-0257",
@@ -134,6 +117,71 @@
         [
           "Vendor Advisory",
           "https://security.paloaltonetworks.com/CVE-2026-0257"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-41940",
+      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/olofsatte/CVE-2026-41940-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exp.py"
+        ],
+        "attackFiles": [
+          "exp.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-41940"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "olofsatte",
+      "researcherUrl": "https://github.com/olofsatte",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "12:17 PM CDT",
+      "firstSeenAt": "2026-06-04T17:17:49Z",
+      "language": "Python",
+      "summary": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
+      "technicalSummary": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
+      "breakdown": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
+      "whatBroke": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at olofsatte/CVE-2026-41940-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/olofsatte/CVE-2026-41940-PoC\ncd CVE-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/olofsatte/CVE-2026-41940-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
         ]
       ]
     },
@@ -529,6 +577,72 @@
       ]
     },
     {
+      "cve": "CVE-2026-42945",
+      "title": "Nginx RCE chain PoC with CVE-2026-9256 and CVE-2026-42945",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/y198nt/Nginx-chain-Rift-Poolslip",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exp_official.py",
+          "run.sh"
+        ],
+        "attackFiles": [
+          "exp_official.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-42945",
+          "CVE-2026-9256"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "y198nt",
+      "researcherUrl": "https://github.com/y198nt",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:21 AM CDT",
+      "firstSeenAt": "2026-06-05T15:21:38Z",
+      "language": "Python",
+      "summary": "Nginx RCE chain PoC with CVE-2026-9256 and",
+      "technicalSummary": "Nginx RCE chain PoC with CVE-2026-9256 and",
+      "breakdown": "Nginx RCE chain PoC with CVE-2026-9256 and",
+      "whatBroke": "Nginx RCE chain PoC with CVE-2026-9256 and",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at y198nt/Nginx-chain-Rift-Poolslip.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/y198nt/Nginx-chain-Rift-Poolslip\ncd Nginx-chain-Rift-Poolslip\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/y198nt/Nginx-chain-Rift-Poolslip"
+        ],
+        [
+          "Vendor Advisory",
+          "https://my.f5.com/manage/s/article/K000161019"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-6815",
       "title": "Proof of Concept (PoC) exploit for CVE-2026-6815: Authenticated Path Traversal & Arbitrary File Write in.",
       "ecosystem": "web",
@@ -651,6 +765,72 @@
         [
           "Vendor Advisory",
           "https://cgit.git.savannah.gnu.org/cgit/lwip.git/commit/?id=0c957ec03054eb6c8205e9c9d1d05d90ada3898c"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-9256",
+      "title": "Nginx RCE chain PoC with CVE-2026-9256 and CVE-2026-42945",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/y198nt/Nginx-chain-Rift-Poolslip",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exp_official.py",
+          "run.sh"
+        ],
+        "attackFiles": [
+          "exp_official.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-42945",
+          "CVE-2026-9256"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "y198nt",
+      "researcherUrl": "https://github.com/y198nt",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:21 AM CDT",
+      "firstSeenAt": "2026-06-05T15:21:38Z",
+      "language": "Python",
+      "summary": "Nginx RCE chain PoC with and CVE-2026-42945",
+      "technicalSummary": "Nginx RCE chain PoC with and CVE-2026-42945",
+      "breakdown": "Nginx RCE chain PoC with and CVE-2026-42945",
+      "whatBroke": "Nginx RCE chain PoC with and CVE-2026-42945",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at y198nt/Nginx-chain-Rift-Poolslip.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/y198nt/Nginx-chain-Rift-Poolslip\ncd Nginx-chain-Rift-Poolslip\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/y198nt/Nginx-chain-Rift-Poolslip"
+        ],
+        [
+          "Vendor Advisory",
+          "https://my.f5.com/manage/s/article/K000161377"
         ]
       ]
     },
@@ -847,6 +1027,70 @@
       ]
     },
     {
+      "cve": "CVE-2026-4480",
+      "title": "Samba print-command (`%J`) injection PoC",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/TheCyberGeek/CVE-2026-4480-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-4480"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "TheCyberGeek",
+      "researcherUrl": "https://github.com/TheCyberGeek",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:05 AM CDT",
+      "firstSeenAt": "2026-06-05T11:05:55Z",
+      "language": "Python",
+      "summary": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "technicalSummary": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "breakdown": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "whatBroke": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at TheCyberGeek/CVE-2026-4480-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/TheCyberGeek/CVE-2026-4480-PoC\ncd CVE-2026-4480-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/TheCyberGeek/CVE-2026-4480-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://access.redhat.com/errata/RHSA-2026:22644"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-48800",
       "title": "\u2014 Notepad++ Arbitrary Code Execution PoC",
       "ecosystem": "cloud",
@@ -959,64 +1203,6 @@
         [
           "GitHub",
           "https://github.com/mrx-arafat/CVE-2026-49975-POC"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-8732",
-      "title": "WordPress WP Google Map Pro Mass Scanner & Auto Admin Creator",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-8732.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-8732.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-8732"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "p3Nt3st3r-sTAr",
-      "researcherUrl": "https://github.com/p3Nt3st3r-sTAr",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:06 AM CDT",
-      "firstSeenAt": "2026-06-01T09:06:17Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at p3Nt3st3r-sTAr/CVE-2026-8732-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC\ncd CVE-2026-8732-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC"
         ]
       ]
     }
