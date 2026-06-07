@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-06T21:57:45Z",
+  "updatedAt": "2026-06-07T06:39:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -104,7 +104,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -173,7 +173,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -238,7 +238,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -300,7 +300,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -362,7 +362,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -430,7 +430,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -498,7 +498,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -564,7 +564,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -573,72 +573,6 @@
         [
           "Vendor Advisory",
           "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-42945",
-      "title": "Nginx RCE chain PoC with CVE-2026-9256 and CVE-2026-42945",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/y198nt/Nginx-chain-Rift-Poolslip",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "exp_official.py",
-          "run.sh"
-        ],
-        "attackFiles": [
-          "exp_official.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-42945",
-          "CVE-2026-9256"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "y198nt",
-      "researcherUrl": "https://github.com/y198nt",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:21 AM CDT",
-      "firstSeenAt": "2026-06-05T15:21:38Z",
-      "language": "Python",
-      "summary": "Nginx RCE chain PoC with CVE-2026-9256 and",
-      "technicalSummary": "Nginx RCE chain PoC with CVE-2026-9256 and",
-      "breakdown": "Nginx RCE chain PoC with CVE-2026-9256 and",
-      "whatBroke": "Nginx RCE chain PoC with CVE-2026-9256 and",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at y198nt/Nginx-chain-Rift-Poolslip.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/y198nt/Nginx-chain-Rift-Poolslip\ncd Nginx-chain-Rift-Poolslip\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/y198nt/Nginx-chain-Rift-Poolslip"
-        ],
-        [
-          "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000161019"
         ]
       ]
     },
@@ -694,7 +628,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -734,8 +668,8 @@
       "researcherUrl": "https://github.com/Hunt-Benito",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:11 AM CDT",
-      "firstSeenAt": "2026-05-31T09:11:25Z",
+      "added": "1:39 AM CDT",
+      "firstSeenAt": "2026-06-07T06:39:45Z",
       "language": "Python",
       "summary": "\u2014 lwIP SNMPv3 stack-based buffer overflow PoC (CVSS 9.8)",
       "technicalSummary": "\u2014 lwIP SNMPv3 stack-based buffer overflow PoC (CVSS 9.8)",
@@ -756,7 +690,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -769,73 +703,11 @@
       ]
     },
     {
-      "cve": "CVE-2026-9256",
-      "title": "Nginx RCE chain PoC with CVE-2026-9256 and CVE-2026-42945",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/y198nt/Nginx-chain-Rift-Poolslip",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "exp_official.py",
-          "run.sh"
-        ],
-        "attackFiles": [
-          "exp_official.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-42945",
-          "CVE-2026-9256"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "y198nt",
-      "researcherUrl": "https://github.com/y198nt",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:21 AM CDT",
-      "firstSeenAt": "2026-06-05T15:21:38Z",
-      "language": "Python",
-      "summary": "Nginx RCE chain PoC with and CVE-2026-42945",
-      "technicalSummary": "Nginx RCE chain PoC with and CVE-2026-42945",
-      "breakdown": "Nginx RCE chain PoC with and CVE-2026-42945",
-      "whatBroke": "Nginx RCE chain PoC with and CVE-2026-42945",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at y198nt/Nginx-chain-Rift-Poolslip.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/y198nt/Nginx-chain-Rift-Poolslip\ncd Nginx-chain-Rift-Poolslip\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/y198nt/Nginx-chain-Rift-Poolslip"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-23744",
       "title": "Reverse shell",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oryk0/CVE-2026-23744",
       "pocValidation": {
@@ -857,7 +729,7 @@
       "researcher": "oryk0",
       "researcherUrl": "https://github.com/oryk0",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
+      "difficulty": "easy",
       "added": "11:57 PM CDT",
       "firstSeenAt": "2026-06-06T04:57:39Z",
       "language": "Python",
@@ -869,6 +741,8 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oryk0/CVE-2026-23744\ncd CVE-2026-23744\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -876,15 +750,19 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 97,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/oryk0/CVE-2026-23744"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
@@ -940,7 +818,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1000,7 +878,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1058,69 +936,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/TheCyberGeek/CVE-2026-4480-PoC"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48800",
-      "title": "\u2014 Notepad++ Arbitrary Code Execution PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/kavin-jindal/CVE-2026-48800-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cve-2026-48800.py"
-        ],
-        "attackFiles": [
-          "cve-2026-48800.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48800"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "kavin-jindal",
-      "researcherUrl": "https://github.com/kavin-jindal",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:02 AM CDT",
-      "firstSeenAt": "2026-05-31T05:02:45Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at kavin-jindal/CVE-2026-48800-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/kavin-jindal/CVE-2026-48800-PoC\ncd CVE-2026-48800-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/kavin-jindal/CVE-2026-48800-PoC"
         ]
       ]
     },
@@ -1174,11 +994,69 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/mrx-arafat/CVE-2026-49975-POC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-8732",
+      "title": "WordPress WP Google Map Pro Mass Scanner & Auto Admin Creator",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-8732.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-8732.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-8732"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "p3Nt3st3r-sTAr",
+      "researcherUrl": "https://github.com/p3Nt3st3r-sTAr",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:06 AM CDT",
+      "firstSeenAt": "2026-06-01T09:06:17Z",
+      "language": "Python",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at p3Nt3st3r-sTAr/CVE-2026-8732-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC\ncd CVE-2026-8732-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC"
         ]
       ]
     }
