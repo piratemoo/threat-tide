@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-07T20:21:19Z",
+  "updatedAt": "2026-06-08T06:56:28Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -104,7 +104,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -127,36 +127,43 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/olofsatte/CVE-2026-41940-PoC",
+      "pocUrl": "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "exp.py"
+          "basic_exploit.sh",
+          "exploit.py",
+          "exploit.sh"
         ],
         "attackFiles": [
-          "exp.py"
+          "basic_exploit.sh",
+          "exploit.py",
+          "exploit.sh"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
+          "CVE-2026-0073",
+          "CVE-2026-24061",
+          "CVE-2026-29000",
           "CVE-2026-41940"
         ],
-        "language": "Python"
+        "language": "Shell"
       },
       "reliability": "reliable exploit",
-      "researcher": "olofsatte",
-      "researcherUrl": "https://github.com/olofsatte",
+      "researcher": "tc4dy",
+      "researcherUrl": "https://github.com/tc4dy",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "12:17 PM CDT",
-      "firstSeenAt": "2026-06-04T17:17:49Z",
-      "language": "Python",
-      "summary": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
-      "technicalSummary": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
-      "breakdown": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
-      "whatBroke": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at olofsatte/CVE-2026-41940-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/olofsatte/CVE-2026-41940-PoC\ncd CVE-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "7:38 AM CDT",
+      "firstSeenAt": "2026-06-06T12:38:43Z",
+      "language": "Shell",
+      "summary": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
+      "technicalSummary": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
+      "breakdown": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
+      "whatBroke": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tc4dy/CVE-2026-24061-PoC-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit\ncd CVE-2026-24061-PoC-Exploit\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
         "credential access from service context",
@@ -173,11 +180,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/olofsatte/CVE-2026-41940-PoC"
+          "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit"
         ],
         [
           "Vendor Advisory",
@@ -240,7 +247,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -312,7 +319,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -377,7 +384,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -386,466 +393,6 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/ns0zktfo16s9ql2mmtqtlb6p6xcs45xm"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-8206",
-      "title": "Mass exploitation tool for CVE-2026-8206 \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password'.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Jenderal92/CVE-2026-8206",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-8206.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-8206.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-8206"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Jenderal92",
-      "researcherUrl": "https://github.com/Jenderal92",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:53 AM CDT",
-      "firstSeenAt": "2026-06-02T10:53:31Z",
-      "language": "Python",
-      "summary": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
-      "technicalSummary": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
-      "breakdown": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
-      "whatBroke": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-8206.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-8206\ncd CVE-2026-8206\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Jenderal92/CVE-2026-8206"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/kirki/tags/6.0.4/ComponentLibrary/controller/CompLibFormHandler.php#L330"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-20980",
-      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
-      "pocValidation": {
-        "valid": true,
-        "score": 6,
-        "codeFiles": [
-          "PoC/CVE-2026-20982/Exploit.java",
-          "PoC/at.py"
-        ],
-        "attackFiles": [
-          "PoC/CVE-2026-20982/Exploit.java",
-          "PoC/at.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-20980",
-          "CVE-2026-20981",
-          "CVE-2026-20982"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Vikramaditya015",
-      "researcherUrl": "https://github.com/Vikramaditya015",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:14 AM CDT",
-      "firstSeenAt": "2026-06-01T13:14:47Z",
-      "language": "Python",
-      "summary": "Poc for CVE-2026-20981, CVE-2026-20982",
-      "technicalSummary": "Poc for CVE-2026-20981, CVE-2026-20982",
-      "breakdown": "Poc for CVE-2026-20981, CVE-2026-20982",
-      "whatBroke": "Poc for CVE-2026-20981, CVE-2026-20982",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Vikramaditya015/samsung-android-lpe"
-        ],
-        [
-          "Vendor Advisory",
-          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-20981",
-      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
-      "pocValidation": {
-        "valid": true,
-        "score": 6,
-        "codeFiles": [
-          "PoC/CVE-2026-20982/Exploit.java",
-          "PoC/at.py"
-        ],
-        "attackFiles": [
-          "PoC/CVE-2026-20982/Exploit.java",
-          "PoC/at.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-20980",
-          "CVE-2026-20981",
-          "CVE-2026-20982"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Vikramaditya015",
-      "researcherUrl": "https://github.com/Vikramaditya015",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:14 AM CDT",
-      "firstSeenAt": "2026-06-01T13:14:47Z",
-      "language": "Python",
-      "summary": "Poc for CVE-2026-20980, CVE-2026-20982",
-      "technicalSummary": "Poc for CVE-2026-20980, CVE-2026-20982",
-      "breakdown": "Poc for CVE-2026-20980, CVE-2026-20982",
-      "whatBroke": "Poc for CVE-2026-20980, CVE-2026-20982",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Vikramaditya015/samsung-android-lpe"
-        ],
-        [
-          "Vendor Advisory",
-          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-20982",
-      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
-      "pocValidation": {
-        "valid": true,
-        "score": 6,
-        "codeFiles": [
-          "PoC/CVE-2026-20982/Exploit.java",
-          "PoC/at.py"
-        ],
-        "attackFiles": [
-          "PoC/CVE-2026-20982/Exploit.java",
-          "PoC/at.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-20980",
-          "CVE-2026-20981",
-          "CVE-2026-20982"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Vikramaditya015",
-      "researcherUrl": "https://github.com/Vikramaditya015",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:14 AM CDT",
-      "firstSeenAt": "2026-06-01T13:14:47Z",
-      "language": "Python",
-      "summary": "Poc for CVE-2026-20980, CVE-2026-20981,",
-      "technicalSummary": "Poc for CVE-2026-20980, CVE-2026-20981,",
-      "breakdown": "Poc for CVE-2026-20980, CVE-2026-20981,",
-      "whatBroke": "Poc for CVE-2026-20980, CVE-2026-20981,",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Vikramaditya015/samsung-android-lpe"
-        ],
-        [
-          "Vendor Advisory",
-          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-42945",
-      "title": "Nginx RCE chain PoC with CVE-2026-9256 and CVE-2026-42945",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/y198nt/Nginx-chain-Rift-Poolslip",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "exp_official.py",
-          "run.sh"
-        ],
-        "attackFiles": [
-          "exp_official.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-42945",
-          "CVE-2026-9256"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "y198nt",
-      "researcherUrl": "https://github.com/y198nt",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:21 AM CDT",
-      "firstSeenAt": "2026-06-05T15:21:38Z",
-      "language": "Python",
-      "summary": "Nginx RCE chain PoC with CVE-2026-9256 and",
-      "technicalSummary": "Nginx RCE chain PoC with CVE-2026-9256 and",
-      "breakdown": "Nginx RCE chain PoC with CVE-2026-9256 and",
-      "whatBroke": "Nginx RCE chain PoC with CVE-2026-9256 and",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at y198nt/Nginx-chain-Rift-Poolslip.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/y198nt/Nginx-chain-Rift-Poolslip\ncd Nginx-chain-Rift-Poolslip\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/y198nt/Nginx-chain-Rift-Poolslip"
-        ],
-        [
-          "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000161019"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-6815",
-      "title": "Proof of Concept (PoC) exploit for CVE-2026-6815: Authenticated Path Traversal & Arbitrary File Write in.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/danilo-dellorco/CVE-2026-6815",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-6815.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-6815.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-6815"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "danilo-dellorco",
-      "researcherUrl": "https://github.com/danilo-dellorco",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:06 AM CDT",
-      "firstSeenAt": "2026-06-04T15:06:44Z",
-      "language": "Python",
-      "summary": "Proof of Concept (PoC) exploit for Authenticated Path Traversal & Arbitrary File Write in Casdoor (< 3.54.1) leading to RCE/DoS.",
-      "technicalSummary": "Proof of Concept (PoC) exploit for Authenticated Path Traversal & Arbitrary File Write in Casdoor (< 3.54.1) leading to RCE/DoS.",
-      "breakdown": "Proof of Concept (PoC) exploit for Authenticated Path Traversal & Arbitrary File Write in Casdoor (< 3.54.1) leading to RCE/DoS.",
-      "whatBroke": "Proof of Concept (PoC) exploit for Authenticated Path Traversal & Arbitrary File Write in Casdoor (< 3.54.1) leading to RCE/DoS.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at danilo-dellorco/CVE-2026-6815.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/danilo-dellorco/CVE-2026-6815\ncd CVE-2026-6815\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/danilo-dellorco/CVE-2026-6815"
-        ],
-        [
-          "Vendor Advisory",
-          "https://kb.cert.org/vuls/id/937808"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-9256",
-      "title": "Nginx RCE chain PoC with CVE-2026-9256 and CVE-2026-42945",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/y198nt/Nginx-chain-Rift-Poolslip",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "exp_official.py",
-          "run.sh"
-        ],
-        "attackFiles": [
-          "exp_official.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-42945",
-          "CVE-2026-9256"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "y198nt",
-      "researcherUrl": "https://github.com/y198nt",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:21 AM CDT",
-      "firstSeenAt": "2026-06-05T15:21:38Z",
-      "language": "Python",
-      "summary": "Nginx RCE chain PoC with and CVE-2026-42945",
-      "technicalSummary": "Nginx RCE chain PoC with and CVE-2026-42945",
-      "breakdown": "Nginx RCE chain PoC with and CVE-2026-42945",
-      "whatBroke": "Nginx RCE chain PoC with and CVE-2026-42945",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at y198nt/Nginx-chain-Rift-Poolslip.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/y198nt/Nginx-chain-Rift-Poolslip\ncd Nginx-chain-Rift-Poolslip\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/y198nt/Nginx-chain-Rift-Poolslip"
-        ],
-        [
-          "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000161377"
         ]
       ]
     },
@@ -901,7 +448,7 @@
       ],
       "confidence": 98,
       "weaponization": 97,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -914,60 +461,333 @@
       ]
     },
     {
-      "cve": "CVE-2026-0073",
-      "title": "0-Click RCE Android Adb TLS Wireless Debugging",
-      "ecosystem": "android",
-      "category": "framework",
+      "cve": "CVE-2026-8206",
+      "title": "Mass exploitation tool for CVE-2026-8206 \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password'.",
+      "ecosystem": "web",
+      "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/fredevsec/CVE-2026-0073",
+      "pocUrl": "https://github.com/Jenderal92/CVE-2026-8206",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "bypass-adb.js"
+          "CVE-2026-8206.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "CVE-2026-8206.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-0073"
+          "CVE-2026-8206"
         ],
-        "language": "JavaScript"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "fredevsec",
-      "researcherUrl": "https://github.com/fredevsec",
+      "researcher": "Jenderal92",
+      "researcherUrl": "https://github.com/Jenderal92",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "10:06 PM CDT",
-      "firstSeenAt": "2026-06-04T03:06:59Z",
-      "language": "JavaScript",
-      "summary": "0-Click RCE Android Adb TLS Wireless Debugging",
-      "technicalSummary": "0-Click RCE Android Adb TLS Wireless Debugging",
-      "breakdown": "0-Click RCE Android Adb TLS Wireless Debugging",
-      "whatBroke": "0-Click RCE Android Adb TLS Wireless Debugging",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fredevsec/CVE-2026-0073.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fredevsec/CVE-2026-0073\ncd CVE-2026-0073\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "5:53 AM CDT",
+      "firstSeenAt": "2026-06-02T10:53:31Z",
+      "language": "Python",
+      "summary": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
+      "technicalSummary": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
+      "breakdown": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
+      "whatBroke": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-8206.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-8206\ncd CVE-2026-8206\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "local privilege escalation after a foothold",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Android",
-        "Framework",
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Jenderal92/CVE-2026-8206"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/kirki/tags/6.0.4/ComponentLibrary/controller/CompLibFormHandler.php#L330"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20980",
+      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "attackFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20980",
+          "CVE-2026-20981",
+          "CVE-2026-20982"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Vikramaditya015",
+      "researcherUrl": "https://github.com/Vikramaditya015",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:56 AM CDT",
+      "firstSeenAt": "2026-06-08T06:56:28Z",
+      "language": "Python",
+      "summary": "Poc for CVE-2026-20981, CVE-2026-20982",
+      "technicalSummary": "Poc for CVE-2026-20981, CVE-2026-20982",
+      "breakdown": "Poc for CVE-2026-20981, CVE-2026-20982",
+      "whatBroke": "Poc for CVE-2026-20981, CVE-2026-20982",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
         "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/fredevsec/CVE-2026-0073"
+          "https://github.com/Vikramaditya015/samsung-android-lpe"
+        ],
+        [
+          "Vendor Advisory",
+          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20981",
+      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "attackFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20980",
+          "CVE-2026-20981",
+          "CVE-2026-20982"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Vikramaditya015",
+      "researcherUrl": "https://github.com/Vikramaditya015",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:56 AM CDT",
+      "firstSeenAt": "2026-06-08T06:56:28Z",
+      "language": "Python",
+      "summary": "Poc for CVE-2026-20980, CVE-2026-20982",
+      "technicalSummary": "Poc for CVE-2026-20980, CVE-2026-20982",
+      "breakdown": "Poc for CVE-2026-20980, CVE-2026-20982",
+      "whatBroke": "Poc for CVE-2026-20980, CVE-2026-20982",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Vikramaditya015/samsung-android-lpe"
+        ],
+        [
+          "Vendor Advisory",
+          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20982",
+      "title": "Poc for CVE-2026-20980, CVE-2026-20981, CVE-2026-20982",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Vikramaditya015/samsung-android-lpe",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "attackFiles": [
+          "PoC/CVE-2026-20982/Exploit.java",
+          "PoC/at.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20980",
+          "CVE-2026-20981",
+          "CVE-2026-20982"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Vikramaditya015",
+      "researcherUrl": "https://github.com/Vikramaditya015",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:56 AM CDT",
+      "firstSeenAt": "2026-06-08T06:56:28Z",
+      "language": "Python",
+      "summary": "Poc for CVE-2026-20980, CVE-2026-20981,",
+      "technicalSummary": "Poc for CVE-2026-20980, CVE-2026-20981,",
+      "breakdown": "Poc for CVE-2026-20980, CVE-2026-20981,",
+      "whatBroke": "Poc for CVE-2026-20980, CVE-2026-20981,",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vikramaditya015/samsung-android-lpe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vikramaditya015/samsung-android-lpe\ncd samsung-android-lpe\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Vikramaditya015/samsung-android-lpe"
+        ],
+        [
+          "Vendor Advisory",
+          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=02"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-0073",
+      "title": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "basic_exploit.sh",
+          "exploit.py",
+          "exploit.sh"
+        ],
+        "attackFiles": [
+          "basic_exploit.sh",
+          "exploit.py",
+          "exploit.sh"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-0073",
+          "CVE-2026-24061",
+          "CVE-2026-29000",
+          "CVE-2026-41940"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "tc4dy",
+      "researcherUrl": "https://github.com/tc4dy",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:38 AM CDT",
+      "firstSeenAt": "2026-06-06T12:38:43Z",
+      "language": "Shell",
+      "summary": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
+      "technicalSummary": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
+      "breakdown": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
+      "whatBroke": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tc4dy/CVE-2026-24061-PoC-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit\ncd CVE-2026-24061-PoC-Exploit\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit"
         ],
         [
           "Vendor Advisory",
@@ -1034,18 +854,22 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.codeant.ai/security-research/pac4j-jwt-authentication-bypass-public-key"
         ]
       ]
     },
     {
       "cve": "CVE-2026-30849",
       "title": "Proof-of-Concept checker/exploit for MantisBT SOAP auth bypass (CVE-2026-30849 / GHSA-phrq-pc6r-f6gh)",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
@@ -1088,24 +912,28 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "Auth Bypass"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/Gumbraise/CVE-2026-30849-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/mantisbt/mantisbt/commit/b349e5c890eeda9bd82e7c7e14479853f8a30d9f"
         ]
       ]
     },
     {
       "cve": "CVE-2026-41089",
       "title": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
-      "ecosystem": "cloud",
+      "ecosystem": "windows",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
@@ -1148,17 +976,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Windows",
         "Webstack",
         "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/GalleryJoiner/CVE-2026-41089-686"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41089"
         ]
       ]
     },
@@ -1167,7 +999,7 @@
       "title": "Exploit CVE-2026-4480",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/robinxiang/CVE-2026-4480",
       "pocValidation": {
@@ -1193,12 +1025,134 @@
       "added": "5:53 AM CDT",
       "firstSeenAt": "2026-06-07T10:53:18Z",
       "language": "Python",
+      "summary": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "technicalSummary": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "breakdown": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "whatBroke": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\" substitution character without escaping shell.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at robinxiang/CVE-2026-4480.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/robinxiang/CVE-2026-4480\ncd CVE-2026-4480\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/robinxiang/CVE-2026-4480"
+        ],
+        [
+          "Vendor Advisory",
+          "https://access.redhat.com/errata/RHSA-2026:22644"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49975",
+      "title": "HTTP/2 Bomb PoC \u2014 CVE-2026-49975 (HPACK indexed reference bomb + flow-control stall)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/mrx-arafat/CVE-2026-49975-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit-test.py"
+        ],
+        "attackFiles": [
+          "exploit-test.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49975"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "mrx-arafat",
+      "researcherUrl": "https://github.com/mrx-arafat",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:22 AM CDT",
+      "firstSeenAt": "2026-06-04T06:22:54Z",
+      "language": "Python",
+      "summary": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
+      "technicalSummary": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
+      "breakdown": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
+      "whatBroke": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mrx-arafat/CVE-2026-49975-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mrx-arafat/CVE-2026-49975-POC\ncd CVE-2026-49975-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/mrx-arafat/CVE-2026-49975-POC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-8732",
+      "title": "WordPress WP Google Map Pro Mass Scanner & Auto Admin Creator",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-8732.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-8732.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-8732"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "p3Nt3st3r-sTAr",
+      "researcherUrl": "https://github.com/p3Nt3st3r-sTAr",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:56 AM CDT",
+      "firstSeenAt": "2026-06-08T06:56:28Z",
+      "language": "Python",
       "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at robinxiang/CVE-2026-4480.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/robinxiang/CVE-2026-4480\ncd CVE-2026-4480\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at p3Nt3st3r-sTAr/CVE-2026-8732-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC\ncd CVE-2026-8732-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -1216,7 +1170,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/robinxiang/CVE-2026-4480"
+          "https://github.com/p3Nt3st3r-sTAr/CVE-2026-8732-POC"
         ]
       ]
     }
