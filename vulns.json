@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-08T16:52:09Z",
+  "updatedAt": "2026-06-08T21:13:34Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -815,7 +815,7 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Planetpliexpose/CVE-2026-41089-277",
+      "pocUrl": "https://github.com/GalleryJoiner/CVE-2026-41089-686",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -834,19 +834,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Planetpliexpose",
-      "researcherUrl": "https://github.com/Planetpliexpose",
+      "researcher": "GalleryJoiner",
+      "researcherUrl": "https://github.com/GalleryJoiner",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:02 AM CDT",
-      "firstSeenAt": "2026-06-05T11:02:12Z",
+      "added": "6:05 AM CDT",
+      "firstSeenAt": "2026-06-05T11:05:43Z",
       "language": "Python",
       "summary": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
       "technicalSummary": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
       "breakdown": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
       "whatBroke": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Planetpliexpose/CVE-2026-41089-277.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Planetpliexpose/CVE-2026-41089-277\ncd CVE-2026-41089-277\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at GalleryJoiner/CVE-2026-41089-686.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/GalleryJoiner/CVE-2026-41089-686\ncd CVE-2026-41089-686\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -864,7 +864,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/Planetpliexpose/CVE-2026-41089-277"
+          "https://github.com/GalleryJoiner/CVE-2026-41089-686"
         ],
         [
           "Vendor Advisory",
@@ -1193,7 +1193,7 @@
       "title": "Security research on Keycloak: CVEs I reported, each with a reproducible before/after PoC, evidence, and a.",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/muff1nmigi/keycloak-security-research",
       "pocValidation": {
@@ -1256,7 +1256,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Session Theft"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1265,17 +1265,13 @@
         [
           "GitHub",
           "https://github.com/muff1nmigi/keycloak-security-research"
-        ],
-        [
-          "Vendor Advisory",
-          "https://access.redhat.com/errata/RHSA-2026:6475"
         ]
       ]
     },
     {
       "cve": "CVE-2026-4874",
       "title": "Security research on Keycloak: CVEs I reported, each with a reproducible before/after PoC, evidence, and a.",
-      "ecosystem": "web",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
@@ -1338,9 +1334,9 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "Session Theft"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1349,10 +1345,6 @@
         [
           "GitHub",
           "https://github.com/muff1nmigi/keycloak-security-research"
-        ],
-        [
-          "Vendor Advisory",
-          "https://access.redhat.com/security/cve/CVE-2026-4874"
         ]
       ]
     }
