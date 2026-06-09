@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-09T06:16:53Z",
+  "updatedAt": "2026-06-09T16:10:53Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,21 +51,14 @@
   ],
   "research": [
     {
-      "title": "Off By !: Exploiting a Use-after-Free in the Linux Kernel",
-      "source": "Exodus Intelligence",
-      "sourceUrl": "https://blog.exodusintel.com/",
-      "url": "https://blog.exodusintel.com/2026/06/08/off-by-exploiting-a-use-after-free-in-the-linux-kernel/",
-      "summary": "By Oliver Sieber Overview In this blog post, we discuss a use-after-free vulnerability that we found in the nftables subsystem of the Linux kernel in early 2025. This vulnerability was patched upstream on 5 February 2026 and assigned CVE-2026-23111 . This.",
-      "publishedAt": "2026-06-08T13:21:04Z",
-      "cves": [
-        "CVE-2026-23111",
-        "CVE-2026-23278"
-      ],
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local Lpe"
-      ]
+      "title": "How Do You Measure FAIR Risk in the Mythos Era?",
+      "source": "Aqua Nautilus",
+      "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "url": "https://www.aquasec.com/blog/how-do-you-measure-fair-risk-in-the-mythos-era/",
+      "summary": "TLDR: Frontier AI models are discovering zero day vulnerabilities and weaponizing them in hours. Boards, regulators and underwriters have noticed, and they are asking a question most CISOs cannot answer: \u201cWhat does our exposure cost in dollars?\u201d Reporting in.",
+      "publishedAt": "2026-06-09T13:13:53Z",
+      "cves": [],
+      "tags": []
     }
   ],
   "vulns": [
@@ -479,68 +472,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-8206",
-      "title": "Mass exploitation tool for CVE-2026-8206 \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password'.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Jenderal92/CVE-2026-8206",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-8206.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-8206.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-8206"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Jenderal92",
-      "researcherUrl": "https://github.com/Jenderal92",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:16 AM CDT",
-      "firstSeenAt": "2026-06-09T06:16:53Z",
-      "language": "Python",
-      "summary": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
-      "technicalSummary": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
-      "breakdown": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
-      "whatBroke": "Mass exploitation tool for \u2013 Unauthenticated Privilege Escalation via 'handle_forgot_password' in Kirki WordPress plugin (\u22646.0.6).",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-8206.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-8206\ncd CVE-2026-8206\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Jenderal92/CVE-2026-8206"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/kirki/tags/6.0.4/ComponentLibrary/controller/CompLibFormHandler.php#L330"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-49975",
       "title": "HTTP/2 Bomb PoC \u2014 CVE-2026-49975 (HPACK indexed reference bomb + flow-control stall)",
       "ecosystem": "web",
@@ -599,6 +530,66 @@
         [
           "Vendor Advisory",
           "https://httpd.apache.org/security/vulnerabilities_24.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-39023",
+      "title": "RCE RESPONSIVE filemanager v.9.14.0",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/PierreAdams/CVE-2026-39023",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "POC_CVE-2026-39023.py"
+        ],
+        "attackFiles": [
+          "POC_CVE-2026-39023.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-39023"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "PierreAdams",
+      "researcherUrl": "https://github.com/PierreAdams",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:34 AM CDT",
+      "firstSeenAt": "2026-06-09T08:34:21Z",
+      "language": "Python",
+      "summary": "RCE RESPONSIVE filemanager v.9.14.0",
+      "technicalSummary": "RCE RESPONSIVE filemanager v.9.14.0",
+      "breakdown": "RCE RESPONSIVE filemanager v.9.14.0",
+      "whatBroke": "RCE RESPONSIVE filemanager v.9.14.0",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at PierreAdams/CVE-2026-39023.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/PierreAdams/CVE-2026-39023\ncd CVE-2026-39023\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/PierreAdams/CVE-2026-39023"
         ]
       ]
     },
@@ -815,7 +806,7 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/GalleryJoiner/CVE-2026-41089-686",
+      "pocUrl": "https://github.com/sectiondukestring25/CVE-2026-41089-971",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -834,19 +825,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "GalleryJoiner",
-      "researcherUrl": "https://github.com/GalleryJoiner",
+      "researcher": "sectiondukestring25",
+      "researcherUrl": "https://github.com/sectiondukestring25",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:05 AM CDT",
-      "firstSeenAt": "2026-06-05T11:05:43Z",
+      "added": "7:11 AM CDT",
+      "firstSeenAt": "2026-06-06T12:11:11Z",
       "language": "Python",
       "summary": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
       "technicalSummary": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
       "breakdown": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
       "whatBroke": "PoC \u2014 Netlogon CLDAP stack buffer overflow (CVSS 9.8 CRITICAL)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at GalleryJoiner/CVE-2026-41089-686.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/GalleryJoiner/CVE-2026-41089-686\ncd CVE-2026-41089-686\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sectiondukestring25/CVE-2026-41089-971.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sectiondukestring25/CVE-2026-41089-971\ncd CVE-2026-41089-971\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -860,11 +851,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/GalleryJoiner/CVE-2026-41089-686"
+          "https://github.com/sectiondukestring25/CVE-2026-41089-971"
         ]
       ]
     },
@@ -943,7 +934,7 @@
     {
       "cve": "CVE-2026-3190",
       "title": "Security research on Keycloak: CVEs I reported, each with a reproducible before/after PoC, evidence, and a.",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
@@ -1006,9 +997,9 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "Exploit"
+        "Session Theft"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1017,6 +1008,10 @@
         [
           "GitHub",
           "https://github.com/muff1nmigi/keycloak-security-research"
+        ],
+        [
+          "Vendor Advisory",
+          "https://access.redhat.com/errata/RHSA-2026:6477"
         ]
       ]
     },
@@ -1083,7 +1078,7 @@
       "title": "Security research on Keycloak: CVEs I reported, each with a reproducible before/after PoC, evidence, and a.",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "medium",
       "proof": "working public poc",
       "pocUrl": "https://github.com/muff1nmigi/keycloak-security-research",
       "pocValidation": {
@@ -1155,6 +1150,10 @@
         [
           "GitHub",
           "https://github.com/muff1nmigi/keycloak-security-research"
+        ],
+        [
+          "Vendor Advisory",
+          "https://access.redhat.com/security/cve/CVE-2026-4628"
         ]
       ]
     },
@@ -1243,7 +1242,7 @@
       "title": "Security research on Keycloak: CVEs I reported, each with a reproducible before/after PoC, evidence, and a.",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/muff1nmigi/keycloak-security-research",
       "pocValidation": {
@@ -1306,7 +1305,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Session Theft"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1315,10 +1314,6 @@
         [
           "GitHub",
           "https://github.com/muff1nmigi/keycloak-security-research"
-        ],
-        [
-          "Vendor Advisory",
-          "https://access.redhat.com/errata/RHSA-2026:6475"
         ]
       ]
     }
