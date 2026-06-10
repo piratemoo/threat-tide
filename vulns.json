@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-09T21:04:39Z",
+  "updatedAt": "2026-06-10T06:39:07Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,23 @@
   ],
   "research": [
     {
+      "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection CVE-2026-10520)",
+      "source": "watchTowr Labs",
+      "sourceUrl": "https://x.com/watchtowrcyber",
+      "url": "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/",
+      "summary": "Today, Ivanti published an advisory. \u201cNo way?\u201d we hear you say. \"Yes way!\" a random dog screams back at you, across the street. Today\u2019s rare advisory outlines two vulnerabilities in Ivanti\u2019s Sentry product, appealing directly to our inner desire for.",
+      "publishedAt": "2026-06-10T00:52:20Z",
+      "cves": [
+        "CVE-2026-10520",
+        "CVE-2026-10523"
+      ],
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Auth Bypass"
+      ]
+    },
+    {
       "title": "Microsoft and Adobe Patch Tuesday, June 2026 Security Update Review",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
@@ -79,20 +96,6 @@
       "publishedAt": "2026-06-09T13:13:53Z",
       "cves": [],
       "tags": []
-    },
-    {
-      "title": "ZDI-26-332: QEMU calc_image_hostmem Integer Overflow Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-332/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of QEMU. An attacker must first obtain the ability to execute low-privileged code on the target guest system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-06-09T05:00:00Z",
-      "cves": [
-        "CVE-2026-3886"
-      ],
-      "tags": [
-        "Local Lpe"
-      ]
     }
   ],
   "vulns": [
@@ -124,8 +127,8 @@
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "2:54 AM CDT",
-      "firstSeenAt": "2026-06-03T07:54:36Z",
+      "added": "1:39 AM CDT",
+      "firstSeenAt": "2026-06-10T06:39:07Z",
       "language": "Python",
       "summary": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
       "technicalSummary": "A critical authentication bypass vulnerability affecting the GlobalProtect portal and gateway in Palo Alto Networks PAN-OS allows attackers to bypass security restrictions and establish unauthorized VPN connections. The vulnerability stems from.",
@@ -149,7 +152,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -225,7 +228,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -293,7 +296,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -365,7 +368,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -378,42 +381,43 @@
       ]
     },
     {
-      "cve": "CVE-2026-23744",
-      "title": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target.",
-      "ecosystem": "web",
-      "category": "webstack",
+      "cve": "CVE-2026-10520",
+      "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
-          "exploit.py"
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
         ],
         "attackFiles": [
-          "exploit.py"
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-23744"
+          "CVE-2026-10520",
+          "CVE-2026-10523"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Dahalsamir",
-      "researcherUrl": "https://github.com/Dahalsamir",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "12:19 AM CDT",
-      "firstSeenAt": "2026-06-05T05:19:26Z",
+      "difficulty": "moderate",
+      "added": "4:55 PM CDT",
+      "firstSeenAt": "2026-06-09T21:55:07Z",
       "language": "Python",
-      "summary": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
-      "technicalSummary": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
-      "breakdown": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
-      "whatBroke": "This Python proof-of-concept targets a vulnerable MCP (Model Context Protocol) service exposed by the target application. The vulnerability allows an attacker to supply arbitrary server configuration parameters through the.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit\ncd CVE-2026-23744-MCPJAM-RCE-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "An OS Command Injection vulnerability in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated user to achieve root-level remote code execution",
+      "technicalSummary": "<a.",
+      "breakdown": "<a.",
+      "whatBroke": "An OS Command Injection vulnerability in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated user to achieve root-level remote code execution",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\ncd watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -423,62 +427,66 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Webstack",
+        "Cloud",
+        "VPN Edge",
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 97,
-      "dayOffset": 4,
+      "weaponization": 73,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/Dahalsamir/CVE-2026-23744-MCPJAM-RCE-exploit"
+          "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-42588",
-      "title": "2026 42588",
-      "ecosystem": "web",
-      "category": "webstack",
+      "cve": "CVE-2026-10523",
+      "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/hnytgl/CVE-2026-42588",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          ".github/workflows/ci.yml",
-          "CVE-2026-42588_EXP.py"
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
         ],
         "attackFiles": [
-          "CVE-2026-42588_EXP.py"
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-42588"
+          "CVE-2026-10520",
+          "CVE-2026-10523"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "hnytgl",
-      "researcherUrl": "https://github.com/hnytgl",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:47 AM CDT",
-      "firstSeenAt": "2026-06-06T05:47:28Z",
+      "added": "4:55 PM CDT",
+      "firstSeenAt": "2026-06-09T21:55:07Z",
       "language": "Python",
-      "summary": "Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ. Apache ActiveMQ Classic exposes the Jolokia JMX-HTTP bridge at.",
-      "technicalSummary": "Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ. Apache ActiveMQ Classic exposes the Jolokia JMX-HTTP bridge at.",
-      "breakdown": "Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ. Apache ActiveMQ Classic exposes the Jolokia JMX-HTTP bridge at.",
-      "whatBroke": "Improper Input Validation, Improper Control of Generation of Code ('Code Injection') vulnerability in Apache ActiveMQ Broker, Apache ActiveMQ All, Apache ActiveMQ. Apache ActiveMQ Classic exposes the Jolokia JMX-HTTP bridge at.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hnytgl/CVE-2026-42588.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hnytgl/CVE-2026-42588\ncd CVE-2026-42588\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "An Authentication Bypass vulnerability (CWE-288) in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full.",
+      "technicalSummary": "<a.",
+      "breakdown": "<a.",
+      "whatBroke": "An Authentication Bypass vulnerability (CWE-288) in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\ncd watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -488,83 +496,25 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
+        "Cloud",
+        "VPN Edge",
+        "Auth Bypass"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/hnytgl/CVE-2026-42588"
+          "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/"
         ],
         [
           "Vendor Advisory",
-          "https://lists.apache.org/thread/ns0zktfo16s9ql2mmtqtlb6p6xcs45xm"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49975",
-      "title": "HTTP/2 Bomb PoC \u2014 CVE-2026-49975 (HPACK indexed reference bomb + flow-control stall)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/mrx-arafat/CVE-2026-49975-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit-test.py"
-        ],
-        "attackFiles": [
-          "exploit-test.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49975"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "mrx-arafat",
-      "researcherUrl": "https://github.com/mrx-arafat",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:22 AM CDT",
-      "firstSeenAt": "2026-06-04T06:22:54Z",
-      "language": "Python",
-      "summary": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
-      "technicalSummary": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
-      "breakdown": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
-      "whatBroke": "HTTP/2 Bomb PoC \u2014 (HPACK indexed reference bomb + flow-control stall)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mrx-arafat/CVE-2026-49975-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mrx-arafat/CVE-2026-49975-POC\ncd CVE-2026-49975-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/mrx-arafat/CVE-2026-49975-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://httpd.apache.org/security/vulnerabilities_24.html"
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
         ]
       ]
     }
