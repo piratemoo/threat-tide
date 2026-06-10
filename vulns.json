@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-10T06:39:07Z",
+  "updatedAt": "2026-06-10T16:41:47Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,30 @@
   ],
   "research": [
     {
+      "title": "Turning Millions of Risks Into One Actionable List",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/06/10/turning-millions-of-risks-into-one-actionable-list",
+      "summary": "Every security leader walks into Monday morning with the same question. The findings are there. The dashboards are running. But out of the thousands of critical vulnerabilities on that list, which ones can an attacker actually use against this organization.",
+      "publishedAt": "2026-06-10T15:00:00Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "Claude Mythos & Enterprise Security: Your Questions Answered",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/intelligence/blogs/claude-mythos-enterprise-security/",
+      "summary": "Claude Mythos is Anthropic\u2019s AI system built for autonomous security research. Unlike general-purpose language models or traditional vulnerability scanners, Mythos was designed to reason over source code, reading codebases, forming hypotheses about.",
+      "publishedAt": "2026-06-10T08:11:00Z",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection CVE-2026-10520)",
       "source": "watchTowr Labs",
       "sourceUrl": "https://x.com/watchtowrcyber",
@@ -75,171 +99,20 @@
       "summary": "Every Patch Tuesday presents a race between defenders applying fixes and attackers seeking opportunities. Microsoft\u2019s June 2026 release is no exception, delivering security updates for vulnerabilities that could significantly impact enterprise environments.",
       "publishedAt": "2026-06-09T20:52:07Z",
       "cves": [
+        "CVE-2020-17103",
         "CVE-2025-10263",
         "CVE-2026-26142",
         "CVE-2026-32193",
-        "CVE-2026-33828",
-        "CVE-2026-42905"
+        "CVE-2026-33113"
       ],
       "tags": [
         "Android",
         "Kerberos",
         "RCE"
       ]
-    },
-    {
-      "title": "How Do You Measure FAIR Risk in the Mythos Era?",
-      "source": "Aqua Nautilus",
-      "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
-      "url": "https://www.aquasec.com/blog/how-do-you-measure-fair-risk-in-the-mythos-era/",
-      "summary": "TLDR: Frontier AI models are discovering zero day vulnerabilities and weaponizing them in hours. Boards, regulators and underwriters have noticed, and they are asking a question most CISOs cannot answer: \u201cWhat does our exposure cost in dollars?\u201d Reporting in.",
-      "publishedAt": "2026-06-09T13:13:53Z",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
-    {
-      "cve": "CVE-2026-0257",
-      "title": "Palo Alto Networks PAN-OS Authentication Bypass Vulnerability",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/tushargurav28/CVE-2026-0257",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-0257.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-0257.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-0257"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "1:39 AM CDT",
-      "firstSeenAt": "2026-06-10T06:39:07Z",
-      "language": "Python",
-      "summary": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
-      "technicalSummary": "A critical authentication bypass vulnerability affecting the GlobalProtect portal and gateway in Palo Alto Networks PAN-OS allows attackers to bypass security restrictions and establish unauthorized VPN connections. The vulnerability stems from.",
-      "breakdown": "A critical authentication bypass vulnerability affecting the GlobalProtect portal and gateway in Palo Alto Networks PAN-OS allows attackers to bypass security restrictions and establish unauthorized VPN connections. The vulnerability stems from.",
-      "whatBroke": "Palo Alto Networks PAN-OS contains an authentication bypass caused by flaws in the GlobalProtect portal and gateway, letting attackers establish unauthorized VPN connections, exploit requires network access to the portal or.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tushargurav28/CVE-2026-0257.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tushargurav28/CVE-2026-0257\ncd CVE-2026-0257\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed PAN-OS",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/tushargurav28/CVE-2026-0257"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-0257/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://security.paloaltonetworks.com/CVE-2026-0257"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-41940",
-      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "basic_exploit.sh",
-          "exploit.py",
-          "exploit.sh"
-        ],
-        "attackFiles": [
-          "basic_exploit.sh",
-          "exploit.py",
-          "exploit.sh"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-0073",
-          "CVE-2026-24061",
-          "CVE-2026-29000",
-          "CVE-2026-41940"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "tc4dy",
-      "researcherUrl": "https://github.com/tc4dy",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "7:38 AM CDT",
-      "firstSeenAt": "2026-06-06T12:38:43Z",
-      "language": "Shell",
-      "summary": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
-      "technicalSummary": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
-      "breakdown": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
-      "whatBroke": "\ud83d\ude80 CVE-2026-24061 - GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode,.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tc4dy/CVE-2026-24061-PoC-Exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit\ncd CVE-2026-24061-PoC-Exploit\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-9082",
       "title": "Drupal Core SQL Injection Vulnerability",
@@ -318,7 +191,7 @@
       "pocUrl": "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
           "basic_exploit.sh",
           "exploit.py",
@@ -329,12 +202,9 @@
           "exploit.py",
           "exploit.sh"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-0073",
-          "CVE-2026-24061",
-          "CVE-2026-29000",
-          "CVE-2026-41940"
+          "CVE-2026-24061"
         ],
         "language": "Shell"
       },
