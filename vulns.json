@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T06:59:24Z",
+  "updatedAt": "2026-06-11T16:59:46Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,22 @@
   ],
   "research": [
     {
+      "title": "CVE-2026-10520 | Ivanti Sentry Pre-Authenticated OS Command Injection Vulnerability |",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-10520/",
+      "summary": "Ivanti Sentry contains a critical pre-authenticated OS command injection vulnerability, tracked as CVE-2026-10520, that allows unauthenticated remote attackers to execute arbitrary operating system commands as root on vulnerable appliances. The flaw exists.",
+      "publishedAt": "2026-06-11T15:35:02Z",
+      "cves": [
+        "CVE-2026-10520"
+      ],
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE"
+      ]
+    },
+    {
       "title": "How Federal Agencies Can Activate a Risk Operations Center (ROC) to Meet CISA BOD 26-04",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
@@ -70,30 +86,6 @@
       "url": "https://horizon3.ai/intelligence/blogs/patch-tuesday-to-pentest-wednesday-reducing-security-surprises/",
       "summary": "Most security teams don\u2019t suffer from a lack of data. They suffer from a lack of certainty. Vulnerability scanners, annual penetration tests, and compliance assessments can generate thousands of findings. Yet they often fail to answer a simple question:.",
       "publishedAt": "2026-06-10T18:55:51Z",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "Turning Millions of Risks Into One Actionable List",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/06/10/turning-millions-of-risks-into-one-actionable-list",
-      "summary": "Every security leader walks into Monday morning with the same question. The findings are there. The dashboards are running. But out of the thousands of critical vulnerabilities on that list, which ones can an attacker actually use against this organization.",
-      "publishedAt": "2026-06-10T15:00:00Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Claude Mythos & Enterprise Security: Your Questions Answered",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/intelligence/blogs/claude-mythos-enterprise-security/",
-      "summary": "Claude Mythos is Anthropic\u2019s AI system built for autonomous security research. Unlike general-purpose language models or traditional vulnerability scanners, Mythos was designed to reason over source code, reading codebases, forming hypotheses about.",
-      "publishedAt": "2026-06-10T08:11:00Z",
       "cves": [],
       "tags": []
     }
@@ -302,6 +294,75 @@
       ]
     },
     {
+      "cve": "CVE-2026-10523",
+      "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
+        ],
+        "attackFiles": [
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-10520",
+          "CVE-2026-10523"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "4:55 PM CDT",
+      "firstSeenAt": "2026-06-09T21:55:07Z",
+      "language": "Python",
+      "summary": "An Authentication Bypass vulnerability (CWE-288) in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full.",
+      "technicalSummary": "<a.",
+      "breakdown": "<a.",
+      "whatBroke": "An Authentication Bypass vulnerability (CWE-288) in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\ncd watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 80,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-10520",
       "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection.",
       "ecosystem": "cloud",
@@ -353,76 +414,7 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523"
-        ],
-        [
-          "Technical Paper",
-          "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-10523",
-      "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection.",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
-        ],
-        "attackFiles": [
-          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-10520",
-          "CVE-2026-10523"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "watchTowr Labs",
-      "researcherUrl": "https://x.com/watchtowrcyber",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:55 PM CDT",
-      "firstSeenAt": "2026-06-09T21:55:07Z",
-      "language": "Python",
-      "summary": "An Authentication Bypass vulnerability (CWE-288) in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full.",
-      "technicalSummary": "<a.",
-      "breakdown": "<a.",
-      "whatBroke": "An Authentication Bypass vulnerability (CWE-288) in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\ncd watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 75,
       "dayOffset": 2,
       "links": [
         [
