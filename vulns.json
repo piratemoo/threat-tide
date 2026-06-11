@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T16:59:46Z",
+  "updatedAt": "2026-06-11T21:28:03Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,34 @@
   ],
   "research": [
     {
+      "title": "Why Fable 5 Still Needs a Second Loop",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/why-fable-5-still-needs-a-second-loop/",
+      "summary": "TL;DR overview Self-verification allows Fable 5 to autonomously validate its own code using self-written tests and vision, but it operates as a probabilistic inner loop with inherent blind spots. Running autonomous agents without an independent,.",
+      "publishedAt": "2026-06-11T16:00:00Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
+      ]
+    },
+    {
+      "title": "Claude Fable 5 built a Java module in 13 minutes",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/claude-fable-5-built-a-java-module-in-13-minutes/",
+      "summary": "TL;DR overview Claude Fable 5 built a capable Java module in 13 minutes with concurrency handling and its own test suite, but SonarQube Cloud's quality gate caught a HIGH-severity security vulnerability and insufficient coverage. The model defended against.",
+      "publishedAt": "2026-06-11T16:00:00Z",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "DevOps",
+        "File Read"
+      ]
+    },
+    {
       "title": "CVE-2026-10520 | Ivanti Sentry Pre-Authenticated OS Command Injection Vulnerability |",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
@@ -65,71 +93,49 @@
         "VPN Edge",
         "RCE"
       ]
-    },
-    {
-      "title": "How Federal Agencies Can Activate a Risk Operations Center (ROC) to Meet CISA BOD 26-04",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/qualys-insights/2026/06/10/how-federal-agencies-can-activate-a-risk-operations-center-roc-to-meet-cisa-bod-26-04",
-      "summary": "Executive Summary Recognizing the ability of Frontier AI models to discover and exploit vulnerabilities at unprecedented speed and scale, CISA\u2019s Binding Operational Directive (BOD) 26-04 marks a significant shift in federal vulnerability management. Rather.",
-      "publishedAt": "2026-06-10T19:40:17Z",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "Framework"
-      ]
-    },
-    {
-      "title": "Patch Tuesday to Pentest Wednesday: How a Global Investment Firm Reduced Security Surprises",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/intelligence/blogs/patch-tuesday-to-pentest-wednesday-reducing-security-surprises/",
-      "summary": "Most security teams don\u2019t suffer from a lack of data. They suffer from a lack of certainty. Vulnerability scanners, annual penetration tests, and compliance assessments can generate thousands of findings. Yet they often fail to answer a simple question:.",
-      "publishedAt": "2026-06-10T18:55:51Z",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
     {
-      "cve": "CVE-2026-41940",
-      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
+      "cve": "CVE-2026-10520",
+      "title": "Ivanti Sentry OS Command Injection Vulnerability",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/olofsatte/CVE-2026-41940-PoC",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exp.py"
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
         ],
         "attackFiles": [
-          "exp.py"
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-41940"
+          "CVE-2026-10520",
+          "CVE-2026-10523"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "olofsatte",
-      "researcherUrl": "https://github.com/olofsatte",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "1:59 AM CDT",
-      "firstSeenAt": "2026-06-11T06:59:24Z",
+      "difficulty": "moderate",
+      "added": "4:55 PM CDT",
+      "firstSeenAt": "2026-06-09T21:55:07Z",
       "language": "Python",
-      "summary": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
-      "technicalSummary": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
-      "breakdown": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
-      "whatBroke": "is a critical authentication bypass vulnerability affecting cPanel and WHM. This repository is designed to demonstrate its Proof-Of-Concept",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at olofsatte/CVE-2026-41940-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/olofsatte/CVE-2026-41940-PoC\ncd CVE-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Ivanti Sentry (formerly known as MobileIron Sentry) contains an OS command injection vulnerability which could allow a remote unauthenticated user to achieve root-level remote code execution. This vulnerability can be.",
+      "technicalSummary": "<a.",
+      "breakdown": "<a.",
+      "whatBroke": "Ivanti Sentry (formerly known as MobileIron Sentry) contains an OS command injection vulnerability which could allow a remote unauthenticated user to achieve root-level remote code execution. This vulnerability can be.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\ncd watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
+        "initial access through exposed Sentry",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -137,22 +143,26 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass",
+        "Cloud",
+        "VPN Edge",
+        "RCE",
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
+      "weaponization": 75,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/olofsatte/CVE-2026-41940-PoC"
+          "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/"
         ],
         [
           "Vendor Advisory",
-          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
         ]
       ]
     },
@@ -346,75 +356,6 @@
       ],
       "confidence": 98,
       "weaponization": 80,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523"
-        ],
-        [
-          "Technical Paper",
-          "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-10520",
-      "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection.",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
-        ],
-        "attackFiles": [
-          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-10520",
-          "CVE-2026-10523"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "watchTowr Labs",
-      "researcherUrl": "https://x.com/watchtowrcyber",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:55 PM CDT",
-      "firstSeenAt": "2026-06-09T21:55:07Z",
-      "language": "Python",
-      "summary": "An OS Command Injection vulnerability in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated user to achieve root-level remote code execution",
-      "technicalSummary": "<a.",
-      "breakdown": "<a.",
-      "whatBroke": "An OS Command Injection vulnerability in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated user to achieve root-level remote code execution",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\ncd watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
       "dayOffset": 2,
       "links": [
         [
