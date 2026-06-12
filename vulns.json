@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T16:25:38Z",
+  "updatedAt": "2026-06-12T21:03:49Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -50,6 +50,39 @@
     "The GitHub Blog Security"
   ],
   "research": [
+    {
+      "title": "Why Use App-Level Auth When Every Database Has Auth? (Splunk Enterprise CVE-2026-20253 Pre-Auth RCE)",
+      "source": "watchTowr Labs",
+      "sourceUrl": "https://x.com/watchtowrcyber",
+      "url": "https://labs.watchtowr.com/why-use-app-level-auth-when-every-database-has-auth-splunk-enterprise-cve-2026-20253-pre-auth-rce/",
+      "summary": "Three posts? In three days? Are we insane? We're home alone, there's no one to stop us, and we're up past bedtime. So, we need to talk about Splunk. On June 10th, Splunk published this CVE-2026-20253 advisory : It has everything that we love: No.",
+      "publishedAt": "2026-06-12T20:35:13Z",
+      "cves": [
+        "CVE-2026-20253"
+      ],
+      "tags": [
+        "Windows",
+        "VPN Edge",
+        "RCE"
+      ]
+    },
+    {
+      "title": "CVE-2026-35273 | Oracle PeopleSoft PeopleTools Unauthenticated Remote Code Execution Vulnerability | Active Exploitation",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-35273/",
+      "summary": "SimpleHelp has released patches for CVE-2026-48558, an authentication bypass vulnerability affecting deployments configured to use OpenID Connect (OIDC) authentication. The issue stems from how SimpleHelp validates identity provider assertions, Oracle has.",
+      "publishedAt": "2026-06-12T20:04:24Z",
+      "cves": [
+        "CVE-2026-35273",
+        "CVE-2026-48558"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ]
+    },
     {
       "title": "CVE-2026-48558: SimpleHelp Authentication Bypass Indicators of Compromise",
       "source": "Horizon3 Attack Team",
