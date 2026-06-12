@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T00:11:19Z",
+  "updatedAt": "2026-06-12T06:52:08Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,22 @@
   ],
   "research": [
     {
+      "title": "Marking Your Own Homework (Check Point Remote Access VPN IKEv1 Authentication Bypass CVE-2026-50751)",
+      "source": "watchTowr Labs",
+      "sourceUrl": "https://x.com/watchtowrcyber",
+      "url": "https://labs.watchtowr.com/marking-your-own-homework-check-point-remote-access-vpn-ikev1-authentication-bypass-cve-2026-50751/",
+      "summary": "It is yet another day in this parallel universe of security, where the devices we bolt onto the edge of our networks to keep the bad people out are, with remarkable consistency, the exact thing that let the bad people in. While we\u2019ve seemingly had a breather.",
+      "publishedAt": "2026-06-12T05:17:20Z",
+      "cves": [
+        "CVE-2026-50751"
+      ],
+      "tags": [
+        "Windows",
+        "ADCS",
+        "Auth Bypass"
+      ]
+    },
+    {
       "title": "Why Fable 5 Still Needs a Second Loop",
       "source": "SonarSource",
       "sourceUrl": "https://x.com/SonarSource",
@@ -92,75 +108,6 @@
         "Cloud",
         "VPN Edge",
         "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-360: MATE Desktop Atril Document Viewer EPUB File Parsing Heap-based Buffer Overflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-360/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of MATE Desktop Atril Document Viewer. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a.",
-      "publishedAt": "2026-06-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-52849"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-359: Samsung rlottie Numeric Truncation Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-359/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Samsung rlottie. Interaction with the rlottie library is required to exploit this vulnerability but attack vectors may vary depending on the implementation. The.",
-      "publishedAt": "2026-06-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-8916"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-358: Allegra downloadAttachment Cross-Site Scripting Authentication Bypass Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-358/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary script on affected installations of Allegra. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-06-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-11443"
-      ],
-      "tags": [
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "ZDI-26-357: Allegra exportReport Directory Traversal Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-357/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Allegra. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 6.5. The following CVEs are assigned:.",
-      "publishedAt": "2026-06-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-11442"
-      ],
-      "tags": []
-    },
-    {
-      "title": "ZDI-26-356: Apache HTTP Server mod_proxy_ajp Out-Of-Bounds Read Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-356/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Apache HTTP Server. An attacker must first obtain the ability to compromise an AJP backend associated with the target system in order to exploit this.",
-      "publishedAt": "2026-06-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-34032"
-      ],
-      "tags": [
-        "Web",
-        "Webstack"
       ]
     }
   ],
@@ -219,7 +166,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -291,7 +238,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -360,7 +307,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -425,7 +372,7 @@
       ],
       "confidence": 98,
       "weaponization": 80,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
