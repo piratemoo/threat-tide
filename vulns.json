@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T06:52:08Z",
+  "updatedAt": "2026-06-12T16:25:38Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,30 @@
   ],
   "research": [
     {
+      "title": "CVE-2026-48558: SimpleHelp Authentication Bypass Indicators of Compromise",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/disclosures/cve-2026-48558-simplehelp-authentication-bypass-iocs/",
+      "summary": "At Horizon3.ai, we have been experimenting with generative AI heavily across all areas of work. One area I commonly work in is vulnerability research. Early in 2026, and inspired by DARPA\u2019s AIxCC, I ventured into creating an autonomous vulnerability research.",
+      "publishedAt": "2026-06-12T15:38:26Z",
+      "cves": [
+        "CVE-2026-48558"
+      ],
+      "tags": [
+        "Auth Bypass"
+      ]
+    },
+    {
+      "title": "AI-Powered Exploit Generation: Speed, Scale & Cyber Risk",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/intelligence/blogs/ai-exploit-speed-scale/",
+      "summary": "AI-powered exploit generation changes cyberattacks in two fundamental ways. Speed: Turning a known vulnerability into a working exploit used to take skilled researchers days or weeks. Now, it can be done in hours, thanks to AI systems that iterate at machine.",
+      "publishedAt": "2026-06-12T08:39:51Z",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "Marking Your Own Homework (Check Point Remote Access VPN IKEv1 Authentication Bypass CVE-2026-50751)",
       "source": "watchTowr Labs",
       "sourceUrl": "https://x.com/watchtowrcyber",
@@ -64,50 +88,6 @@
         "Windows",
         "ADCS",
         "Auth Bypass"
-      ]
-    },
-    {
-      "title": "Why Fable 5 Still Needs a Second Loop",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/why-fable-5-still-needs-a-second-loop/",
-      "summary": "TL;DR overview Self-verification allows Fable 5 to autonomously validate its own code using self-written tests and vision, but it operates as a probabilistic inner loop with inherent blind spots. Running autonomous agents without an independent,.",
-      "publishedAt": "2026-06-11T16:00:00Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "Session Theft"
-      ]
-    },
-    {
-      "title": "Claude Fable 5 built a Java module in 13 minutes",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/claude-fable-5-built-a-java-module-in-13-minutes/",
-      "summary": "TL;DR overview Claude Fable 5 built a capable Java module in 13 minutes with concurrency handling and its own test suite, but SonarQube Cloud's quality gate caught a HIGH-severity security vulnerability and insufficient coverage. The model defended against.",
-      "publishedAt": "2026-06-11T16:00:00Z",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "DevOps",
-        "File Read"
-      ]
-    },
-    {
-      "title": "CVE-2026-10520 | Ivanti Sentry Pre-Authenticated OS Command Injection Vulnerability |",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-10520/",
-      "summary": "Ivanti Sentry contains a critical pre-authenticated OS command injection vulnerability, tracked as CVE-2026-10520, that allows unauthenticated remote attackers to execute arbitrary operating system commands as root on vulnerable appliances. The flaw exists.",
-      "publishedAt": "2026-06-11T15:35:02Z",
-      "cves": [
-        "CVE-2026-10520"
-      ],
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE"
       ]
     }
   ],
@@ -140,7 +120,7 @@
       "researcher": "watchTowr Labs",
       "researcherUrl": "https://x.com/watchtowrcyber",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
+      "difficulty": "easy",
       "added": "4:55 PM CDT",
       "firstSeenAt": "2026-06-09T21:55:07Z",
       "language": "Python",
@@ -165,7 +145,7 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 75,
+      "weaponization": 99,
       "dayOffset": 3,
       "links": [
         [
