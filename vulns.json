@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-13T06:24:23Z",
+  "updatedAt": "2026-06-13T15:05:00Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,16 @@
   ],
   "research": [
     {
+      "title": "AI-Accelerated Exploitation: The Mythos-Era Threat Model",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/intelligence/blogs/ai-accelerated-exploitation-mythos-era-threat-model/",
+      "summary": "The gap between vulnerability discovery and real-world exploitation is collapsing. Mythos is an AI model that demonstrates the ability to identify vulnerabilities and generate working exploits much faster than traditional approaches. While security analysts.",
+      "publishedAt": "2026-06-13T08:00:03Z",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "Why Use App-Level Auth When Every Database Has Auth? (Splunk Enterprise CVE-2026-20253 Pre-Auth RCE)",
       "source": "watchTowr Labs",
       "sourceUrl": "https://x.com/watchtowrcyber",
@@ -96,19 +106,75 @@
       "tags": [
         "Auth Bypass"
       ]
-    },
-    {
-      "title": "AI-Powered Exploit Generation: Speed, Scale & Cyber Risk",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/intelligence/blogs/ai-exploit-speed-scale/",
-      "summary": "AI-powered exploit generation changes cyberattacks in two fundamental ways. Speed: Turning a known vulnerability into a working exploit used to take skilled researchers days or weeks. Now, it can be done in hours, thanks to AI systems that iterate at machine.",
-      "publishedAt": "2026-06-12T08:39:51Z",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-50751",
+      "title": "Check Point Security Gateway Improper Authentication Vulnerability",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/fevar54/CVE-2026-50751---Check-Point-IKEv1-Authentication-Bypass-Exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-50751.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-50751.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-50751"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:16 AM CDT",
+      "firstSeenAt": "2026-06-10T14:16:22Z",
+      "language": "Python",
+      "summary": "Vulnerability: Logic flow weakness in Remote Access and Mobile Access",
+      "technicalSummary": "It is yet another day.",
+      "breakdown": "It is yet another day.",
+      "whatBroke": "Vulnerability: Logic flow weakness in Remote Access and Mobile Access",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fevar54/CVE-2026-50751---Check-Point-IKEv1-Authentication-Bypass-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fevar54/CVE-2026-50751---Check-Point-IKEv1-Authentication-Bypass-Exploit\ncd CVE-2026-50751---Check-Point-IKEv1-Authentication-Bypass-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Security Gateway",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Exploit",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 92,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/fevar54/CVE-2026-50751---Check-Point-IKEv1-Authentication-Bypass-Exploit"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/marking-your-own-homework-check-point-remote-access-vpn-ikev1-authentication-bypass-cve-2026-50751/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://blog.checkpoint.com/security/check-point-releases-important-hotfix-for-vulnerabilities-in-deprecated-ikev1-vpn-protocol/"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-10520",
       "title": "Ivanti Sentry OS Command Injection Vulnerability",
@@ -248,75 +314,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-24061",
-      "title": "GNU InetUtils Argument Injection Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "basic_exploit.sh",
-          "exploit.py",
-          "exploit.sh"
-        ],
-        "attackFiles": [
-          "basic_exploit.sh",
-          "exploit.py",
-          "exploit.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-24061"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "tc4dy",
-      "researcherUrl": "https://github.com/tc4dy",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "1:24 AM CDT",
-      "firstSeenAt": "2026-06-13T06:24:23Z",
-      "language": "Shell",
-      "summary": "\ud83d\ude80 GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode, session keep-alive,.",
-      "technicalSummary": "\ud83d\ude80 GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode, session keep-alive,.",
-      "breakdown": "\ud83d\ude80 GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode, session keep-alive,.",
-      "whatBroke": "\ud83d\ude80 GNU inetutils-telnetd Auth Bypass Exploit - Full Control \ud83d\udca5 CRLF injection via NEW_ENVIRON leads to auth bypass & instant root shell. \u2705 Single/Mass exploitation, multi-threading, custom port/user, pipe mode, session keep-alive,.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tc4dy/CVE-2026-24061-PoC-Exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit\ncd CVE-2026-24061-PoC-Exploit\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed InetUtils",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/tc4dy/CVE-2026-24061-PoC-Exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://cgit.git.savannah.gnu.org/cgit/inetutils.git"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-10523",
       "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection.",
       "ecosystem": "cloud",
@@ -382,6 +379,72 @@
         [
           "Vendor Advisory",
           "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-11451",
+      "title": "GL.iNet Beryl AX Triple RCE PoC",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Hunt-Benito/glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-11450",
+          "CVE-2026-11451",
+          "CVE-2026-11452"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Hunt-Benito",
+      "researcherUrl": "https://github.com/Hunt-Benito",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:11 AM CDT",
+      "firstSeenAt": "2026-06-13T09:11:02Z",
+      "language": "Python",
+      "summary": "A flaw has been found in GL.iNet GL-MT3000 4.4.5. This impacts the function snprintf of the file /cgi-bin/glc of the component FTP Protocol Handler. Executing a manipulation of the argument media_dir can lead to command.",
+      "technicalSummary": "A flaw has been found in GL.iNet GL-MT3000 4.4.5. This impacts the function snprintf of the file /cgi-bin/glc of the component FTP Protocol Handler. Executing a manipulation of the argument media_dir can lead to command.",
+      "breakdown": "A flaw has been found in GL.iNet GL-MT3000 4.4.5. This impacts the function snprintf of the file /cgi-bin/glc of the component FTP Protocol Handler. Executing a manipulation of the argument media_dir can lead to command.",
+      "whatBroke": "A flaw has been found in GL.iNet GL-MT3000 4.4.5. This impacts the function snprintf of the file /cgi-bin/glc of the component FTP Protocol Handler. Executing a manipulation of the argument media_dir can lead to command.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router\ncd glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Hunt-Benito/glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/StrTzz123/iot_vul/blob/main/GL-iNet/MT3000/4.4.5/nas_proto_media_dir_glc_rce/Readme.md"
         ]
       ]
     }
