@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T06:51:35Z",
+  "updatedAt": "2026-06-14T15:12:31Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,18 +49,7 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [
-    {
-      "title": "AI-Accelerated Exploitation: The Mythos-Era Threat Model",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/intelligence/blogs/ai-accelerated-exploitation-mythos-era-threat-model/",
-      "summary": "The gap between vulnerability discovery and real-world exploitation is collapsing. Mythos is an AI model that demonstrates the ability to identify vulnerabilities and generate working exploits much faster than traditional approaches. While security analysts.",
-      "publishedAt": "2026-06-13T08:00:03Z",
-      "cves": [],
-      "tags": []
-    }
-  ],
+  "research": [],
   "vulns": [
     {
       "cve": "CVE-2026-50751",
@@ -111,7 +100,7 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 92,
+      "weaponization": 93,
       "dayOffset": 4,
       "links": [
         [
@@ -129,47 +118,45 @@
       ]
     },
     {
-      "cve": "CVE-2026-9082",
-      "title": "Drupal Core SQL Injection Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
+      "cve": "CVE-2026-10520",
+      "title": "Ivanti Sentry OS Command Injection Vulnerability",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/11romain/CVE-2026-9082",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "cve_2026_9082_check.py",
-          "cve_2026_9082_rce.py",
-          "cve_2026_9082_sqli.py"
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
         ],
         "attackFiles": [
-          "cve_2026_9082_check.py",
-          "cve_2026_9082_rce.py"
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-9082"
+          "CVE-2026-10520",
+          "CVE-2026-10523"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "11romain",
-      "researcherUrl": "https://github.com/11romain",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "1:51 AM CDT",
-      "firstSeenAt": "2026-06-14T06:51:35Z",
+      "added": "4:55 PM CDT",
+      "firstSeenAt": "2026-06-09T21:55:07Z",
       "language": "Python",
-      "summary": "Drupal Core PostgreSQL SQLi to RCE via /user/login (/ SA-CORE-2026-004)",
-      "technicalSummary": "Drupal Core PostgreSQL SQLi to RCE via /user/login (/ SA-CORE-2026-004)",
-      "breakdown": "Drupal Core PostgreSQL SQLi to RCE via /user/login (/ SA-CORE-2026-004)",
-      "whatBroke": "Drupal Core PostgreSQL SQLi to RCE via /user/login (/ SA-CORE-2026-004)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 11romain/CVE-2026-9082.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/11romain/CVE-2026-9082\ncd CVE-2026-9082\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Ivanti Sentry (formerly known as MobileIron Sentry) contains an OS command injection vulnerability which could allow a remote unauthenticated user to achieve root-level remote code execution. This vulnerability can be.",
+      "technicalSummary": "<a.",
+      "breakdown": "<a.",
+      "whatBroke": "Ivanti Sentry (formerly known as MobileIron Sentry) contains an OS command injection vulnerability which could allow a remote unauthenticated user to achieve root-level remote code execution. This vulnerability can be.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\ncd watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Core",
+        "initial access through exposed Sentry",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -177,22 +164,26 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Webstack",
+        "Cloud",
+        "VPN Edge",
         "RCE",
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 81,
-      "dayOffset": 0,
+      "weaponization": 99,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/11romain/CVE-2026-9082"
+          "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/"
         ],
         [
           "Vendor Advisory",
-          "https://www.drupal.org/sa-core-2026-004"
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
         ]
       ]
     },
@@ -258,6 +249,75 @@
         [
           "Vendor Advisory",
           "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-10523",
+      "title": "More Evidence That Words Don't Mean What We Thought They Meant (Ivanti Sentry Pre-Auth OS Command Injection.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
+        ],
+        "attackFiles": [
+          "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-10520",
+          "CVE-2026-10523"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "4:55 PM CDT",
+      "firstSeenAt": "2026-06-09T21:55:07Z",
+      "language": "Python",
+      "summary": "An Authentication Bypass vulnerability (CWE-288) in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full.",
+      "technicalSummary": "<a.",
+      "breakdown": "<a.",
+      "whatBroke": "An Authentication Bypass vulnerability (CWE-288) in Ivanti Sentry before the R10.5.2, R10.6.2 and R10.7.1 versions allows a remote unauthenticated attacker to create arbitrary administrative accounts and obtain full.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\ncd watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 80,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/more-evidence-that-words-dont-mean-what-we-thought-they-meant-ivanti-sentry-pre-auth-os-command-injection-cve-2026-10520/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
         ]
       ]
     },
