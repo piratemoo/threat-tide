@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T07:31:26Z",
+  "updatedAt": "2026-06-15T18:00:16Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,7 +49,66 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [],
+  "research": [
+    {
+      "title": "CVE-2026-48558 | SimpleHelp OIDC Authentication Bypass Vulnerability",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-48558/",
+      "summary": "SimpleHelp has released patches for CVE-2026-48558, an authentication bypass vulnerability affecting deployments configured to use OpenID Connect (OIDC) authentication. The issue stems from how SimpleHelp validates identity provider assertions, allowing an.",
+      "publishedAt": "2026-06-15T16:05:47Z",
+      "cves": [
+        "CVE-2026-48558"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ]
+    },
+    {
+      "title": "What Changed in OWASP Top 10 2025 and Recommendations for Each Category",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/qualys-insights/2026/06/15/what-changed-in-owasp-top-10-2025-and-recommendations-for-each-category",
+      "summary": "Key Takeaways The 2025 list introduces two new categories \u2013 Software Supply Chain Failures (A03) and Mishandling of Exceptional Conditions (A10) \u2013 reflecting attacks already happening in production. Security Misconfiguration jumping from #5 to #2 signals.",
+      "publishedAt": "2026-06-15T16:00:00Z",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "DevOps",
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "Claude Fable 5's pricing makes Sonar Context Augmentation a potent cost lever",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/claude-fable-5-pricing-makes-sonar-context-augmentation-a-potent-cost-lever/",
+      "summary": "TL;DR overview Sonar Context Augmentation equips AI coding agents with architectural awareness, intelligent guidelines, semantic navigation, and third-party dependency guidance, ensuring that they possess the relevant context to make the right decisions..",
+      "publishedAt": "2026-06-15T16:00:00Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read"
+      ]
+    },
+    {
+      "title": "Zombie COTables: Resurrecting Freed Memory to Escape VirtualBox",
+      "source": "Exodus Intelligence",
+      "sourceUrl": "https://blog.exodusintel.com/",
+      "url": "https://blog.exodusintel.com/2026/06/15/zombie-cotables-resurrecting-freed-memory-to-escape-virtualbox/",
+      "summary": "By Luca Ginex Overview This blog post discusses a use-after-free vulnerability that we found in VirtualBox in 2025. This vulnerability was patched on Oracle Critical Patch Update \u2013 January 2026 . The vulnerability was also presented, along with others, at.",
+      "publishedAt": "2026-06-15T15:44:54Z",
+      "cves": [],
+      "tags": [
+        "Android",
+        "Kernel",
+        "RCE"
+      ]
+    }
+  ],
   "vulns": [
     {
       "cve": "CVE-2026-50751",
@@ -100,7 +159,7 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 93,
+      "weaponization": 87,
       "dayOffset": 5,
       "links": [
         [
