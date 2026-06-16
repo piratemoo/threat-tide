@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T18:07:44Z",
+  "updatedAt": "2026-06-16T21:44:08Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,22 @@
   ],
   "research": [
     {
+      "title": "CVE-2026-50751 | Check Point Security Gateway Improper Authentication Vulnerability",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-50751/",
+      "summary": "CVE-2026-50751 is an authentication bypass vulnerability affecting Check Point Security Gateway Remote Access VPN and Mobile Access services. The flaw exists in deprecated IKEv1 Remote Access and Mobile Access certificate validation logic and can allow a.",
+      "publishedAt": "2026-06-16T20:34:54Z",
+      "cves": [
+        "CVE-2026-50751"
+      ],
+      "tags": [
+        "Web",
+        "ADCS",
+        "Auth Bypass"
+      ]
+    },
+    {
       "title": "Develop with AI: Balancing speed and confidence without becoming a bottleneck",
       "source": "SonarSource",
       "sourceUrl": "https://x.com/SonarSource",
@@ -93,6 +109,20 @@
       ],
       "tags": [
         "File Read"
+      ]
+    },
+    {
+      "title": "A Crash, Not a Shell: SolarWinds Serve-U CVE-2026-28318",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/a-crash-not-a-shell-solarwinds-serev-u-cve-2026-28318",
+      "summary": "A single unauthenticated request can kill SolarWinds Serv-U, and the heap corruption underneath it looked like it could be more. Bishop Fox chased three separate roads to remote code execution and hit a wall on every one. Here is what we found, why it.",
+      "publishedAt": "2026-06-16T13:00:00Z",
+      "cves": [
+        "CVE-2026-28318"
+      ],
+      "tags": [
+        "RCE"
       ]
     }
   ],
@@ -791,6 +821,184 @@
         [
           "GitHub",
           "https://github.com/Yayoi-cs/CVE-2026-49417_1day_LPE_exploit"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-8809",
+      "title": "Advanced Custom Fields: Extended <= 0.9.2.5 - Unauthenticated Privilege Escalation via Validation Bypass to.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/izxci/CVE-2026-8809",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-8809.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-8809.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-8809"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "izxci",
+      "researcherUrl": "https://github.com/izxci",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:09 AM CDT",
+      "firstSeenAt": "2026-06-12T08:09:39Z",
+      "language": "Python",
+      "summary": "Advanced Custom Fields: Extended <= 0.9.2.5 - Unauthenticated Privilege Escalation via Validation Bypass to '_acf_post_id' Parameter",
+      "technicalSummary": "Advanced Custom Fields: Extended <= 0.9.2.5 - Unauthenticated Privilege Escalation via Validation Bypass to '_acf_post_id' Parameter",
+      "breakdown": "Advanced Custom Fields: Extended <= 0.9.2.5 - Unauthenticated Privilege Escalation via Validation Bypass to '_acf_post_id' Parameter",
+      "whatBroke": "Advanced Custom Fields: Extended <= 0.9.2.5 - Unauthenticated Privilege Escalation via Validation Bypass to '_acf_post_id' Parameter",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-8809.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-8809\ncd CVE-2026-8809\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/izxci/CVE-2026-8809"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/acf-extended/tags/0.9.2.4/includes/hooks.php#L636"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-4480",
+      "title": "This is an exploit poc for CVE-2026-4480",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Vusal777/CVE-2026-4480-exploit-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-4480"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Vusal777",
+      "researcherUrl": "https://github.com/Vusal777",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:49 AM CDT",
+      "firstSeenAt": "2026-06-16T09:49:25Z",
+      "language": "Python",
+      "summary": "This is an exploit poc for",
+      "technicalSummary": "This is an exploit poc for",
+      "breakdown": "This is an exploit poc for",
+      "whatBroke": "This is an exploit poc for",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vusal777/CVE-2026-4480-exploit-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vusal777/CVE-2026-4480-exploit-poc\ncd CVE-2026-4480-exploit-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Vusal777/CVE-2026-4480-exploit-poc"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-54686",
+      "title": "Warp Remote SSH Command Injection PoC",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Saku0512/CVE-2026-54686-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-54686"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Saku0512",
+      "researcherUrl": "https://github.com/Saku0512",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:41 PM CDT",
+      "firstSeenAt": "2026-06-16T04:41:10Z",
+      "language": "Python",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Saku0512/CVE-2026-54686-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Saku0512/CVE-2026-54686-poc\ncd CVE-2026-54686-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Saku0512/CVE-2026-54686-poc"
         ]
       ]
     }
