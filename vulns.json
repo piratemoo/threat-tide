@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T16:48:55Z",
+  "updatedAt": "2026-06-17T21:18:38Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,277 +49,8 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [
-    {
-      "title": "CVE-2026-50751 | Check Point Security Gateway Improper Authentication Vulnerability",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-50751/",
-      "summary": "CVE-2026-50751 is an authentication bypass vulnerability affecting Check Point Security Gateway Remote Access VPN and Mobile Access services. The flaw exists in deprecated IKEv1 Remote Access and Mobile Access certificate validation logic and can allow a.",
-      "publishedAt": "2026-06-16T20:34:54Z",
-      "cves": [
-        "CVE-2026-50751"
-      ],
-      "tags": [
-        "Web",
-        "ADCS",
-        "Auth Bypass"
-      ]
-    }
-  ],
+  "research": [],
   "vulns": [
-    {
-      "cve": "CVE-2026-10795",
-      "title": "The UpdraftPlus POC",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/webshellseo8/CVE-2026-10795-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-10795-mass.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-10795-mass.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-10795"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "webshellseo8",
-      "researcherUrl": "https://github.com/webshellseo8",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:19 AM CDT",
-      "firstSeenAt": "2026-06-11T14:19:28Z",
-      "language": "Python",
-      "summary": "The UpdraftPlus POC",
-      "technicalSummary": "The UpdraftPlus POC",
-      "breakdown": "The UpdraftPlus POC",
-      "whatBroke": "The UpdraftPlus POC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at webshellseo8/CVE-2026-10795-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/webshellseo8/CVE-2026-10795-POC\ncd CVE-2026-10795-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/webshellseo8/CVE-2026-10795-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.svn.wordpress.org/updraftplus/tags/1.26.4/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc.php"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48611",
-      "title": "(phpBB authentication bypass)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/citruscitruscitruscitruscitrusci/CVE-2026-48611-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.js"
-        ],
-        "attackFiles": [
-          "poc.js"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48611"
-        ],
-        "language": "JavaScript"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "citruscitruscitruscitruscitrusci",
-      "researcherUrl": "https://github.com/citruscitruscitruscitruscitrusci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:21 AM CDT",
-      "firstSeenAt": "2026-06-13T10:21:15Z",
-      "language": "JavaScript",
-      "summary": "(phpBB authentication bypass)",
-      "technicalSummary": "(phpBB authentication bypass)",
-      "breakdown": "(phpBB authentication bypass)",
-      "whatBroke": "(phpBB authentication bypass)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at citruscitruscitruscitruscitrusci/CVE-2026-48611-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/citruscitruscitruscitruscitrusci/CVE-2026-48611-poc\ncd CVE-2026-48611-poc\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/citruscitruscitruscitruscitrusci/CVE-2026-48611-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.phpbb.com/community/viewtopic.php?t=2672170"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49079",
-      "title": "JetSearch SQL Injection Exploit",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49079",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-49079.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-49079.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49079"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:08 AM CDT",
-      "firstSeenAt": "2026-06-17T10:08:08Z",
-      "language": "Python",
-      "summary": "JetSearch SQL Injection Exploit",
-      "technicalSummary": "JetSearch SQL Injection Exploit",
-      "breakdown": "JetSearch SQL Injection Exploit",
-      "whatBroke": "JetSearch SQL Injection Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49079.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49079\ncd CVE-2026-49079\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "SQLi"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE-2026-49079"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/jet-search/vulnerability/wordpress-jetsearch-plugin-3-5-17-sql-injection-vulnerability?_s_id=cve"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49083",
-      "title": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49083",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-49083.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-49083.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49083"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:09 AM CDT",
-      "firstSeenAt": "2026-06-17T10:09:52Z",
-      "language": "Python",
-      "summary": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "technicalSummary": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "breakdown": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "whatBroke": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49083.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49083\ncd CVE-2026-49083\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE-2026-49083"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/latepoint/vulnerability/wordpress-latepoint-plugin-5-5-1-privilege-escalation-vulnerability?_s_id=cve"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-24136",
       "title": "Lab khai th\u00e1c l\u1ed7 h\u1ed5ng IDOR tr\u00ean Saleor GraphQL - query order() kh\u00f4ng ki\u1ec3m tra x\u00e1c th\u1ef1c, l\u1ed9 to\u00e0n b\u1ed9 PII.",
@@ -563,64 +294,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-49413",
-      "title": "FreeBSD LPE",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ii4gsp/CVE-2026-49413",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.c"
-        ],
-        "attackFiles": [
-          "exploit.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49413"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ii4gsp",
-      "researcherUrl": "https://github.com/ii4gsp",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:23 AM CDT",
-      "firstSeenAt": "2026-06-17T07:23:09Z",
-      "language": "C",
-      "summary": "FreeBSD LPE",
-      "technicalSummary": "FreeBSD LPE",
-      "breakdown": "FreeBSD LPE",
-      "whatBroke": "FreeBSD LPE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ii4gsp/CVE-2026-49413.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ii4gsp/CVE-2026-49413\ncd CVE-2026-49413\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ii4gsp/CVE-2026-49413"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-7465",
       "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
       "ecosystem": "cloud",
@@ -681,87 +354,85 @@
       ]
     },
     {
-      "cve": "CVE-2026-49085",
-      "title": "WP Insightly PHP Object Injection Exploit",
-      "ecosystem": "web",
+      "cve": "CVE-2026-48611",
+      "title": "(phpBB authentication bypass)",
+      "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49085",
+      "pocUrl": "https://github.com/citruscitruscitruscitruscitrusci/CVE-2026-48611-poc",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "CVE-2026-49085.py"
+          "poc.js"
         ],
         "attackFiles": [
-          "CVE-2026-49085.py"
+          "poc.js"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-49085"
+          "CVE-2026-48611"
         ],
-        "language": "Python"
+        "language": "JavaScript"
       },
       "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
+      "researcher": "citruscitruscitruscitruscitrusci",
+      "researcherUrl": "https://github.com/citruscitruscitruscitruscitrusci",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:57 AM CDT",
-      "firstSeenAt": "2026-06-17T09:57:42Z",
-      "language": "Python",
-      "summary": "WP Insightly PHP Object Injection Exploit",
-      "technicalSummary": "WP Insightly PHP Object Injection Exploit",
-      "breakdown": "WP Insightly PHP Object Injection Exploit",
-      "whatBroke": "WP Insightly PHP Object Injection Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49085.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49085\ncd CVE-2026-49085\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "5:21 AM CDT",
+      "firstSeenAt": "2026-06-13T10:21:15Z",
+      "language": "JavaScript",
+      "summary": "(phpBB authentication bypass)",
+      "technicalSummary": "(phpBB authentication bypass)",
+      "breakdown": "(phpBB authentication bypass)",
+      "whatBroke": "(phpBB authentication bypass)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at citruscitruscitruscitruscitrusci/CVE-2026-48611-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/citruscitruscitruscitruscitrusci/CVE-2026-48611-poc\ncd CVE-2026-48611-poc\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "Exploit"
+        "Auth Bypass"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/izxci/CVE-2026-49085"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/cf7-insightly/vulnerability/wordpress-wp-insightly-for-contact-form-7-wpforms-elementor-formidable-and-ninja-forms-plugin-1-1-4-php-object-injection-vulnerability?_s_id=cve"
+          "https://github.com/citruscitruscitruscitruscitrusci/CVE-2026-48611-poc"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-49104",
-      "title": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
+      "cve": "CVE-2026-49079",
+      "title": "JetSearch SQL Injection Exploit",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49104-",
+      "pocUrl": "https://github.com/izxci/CVE-2026-49079",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "CVE-2026-49104.py"
+          "CVE-2026-49079.py"
         ],
         "attackFiles": [
-          "CVE-2026-49104.py"
+          "CVE-2026-49079.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-49104"
+          "CVE-2026-49079"
         ],
         "language": "Python"
       },
@@ -770,15 +441,15 @@
       "researcherUrl": "https://github.com/izxci",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:05 AM CDT",
-      "firstSeenAt": "2026-06-17T10:05:10Z",
+      "added": "5:08 AM CDT",
+      "firstSeenAt": "2026-06-17T10:08:08Z",
       "language": "Python",
-      "summary": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "technicalSummary": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "breakdown": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "whatBroke": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49104-.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49104-\ncd CVE-2026-49104-\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "JetSearch SQL Injection Exploit",
+      "technicalSummary": "JetSearch SQL Injection Exploit",
+      "breakdown": "JetSearch SQL Injection Exploit",
+      "whatBroke": "JetSearch SQL Injection Exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49079.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49079\ncd CVE-2026-49079\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -788,7 +459,7 @@
       "tags": [
         "Web",
         "Webstack",
-        "Exploit"
+        "SQLi"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -796,34 +467,30 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/izxci/CVE-2026-49104-"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/cf7-infusionsoft/vulnerability/wordpress-integration-for-keap-infusionsoft-and-contact-form-7-wpforms-elementor-formidable-ninja-forms-plugin-1-2-1-php-object-injection-vulnerability?_s_id=cve"
+          "https://github.com/izxci/CVE-2026-49079"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-49105",
-      "title": "WP Zendesk PHP Object Injection Exploit",
-      "ecosystem": "web",
+      "cve": "CVE-2026-49083",
+      "title": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49105",
+      "pocUrl": "https://github.com/izxci/CVE-2026-49083",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "CVE-2026-49105.py"
+          "CVE-2026-49083.py"
         ],
         "attackFiles": [
-          "CVE-2026-49105.py"
+          "CVE-2026-49083.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-49105"
+          "CVE-2026-49083"
         ],
         "language": "Python"
       },
@@ -832,15 +499,15 @@
       "researcherUrl": "https://github.com/izxci",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:06 AM CDT",
-      "firstSeenAt": "2026-06-17T10:06:40Z",
+      "added": "5:09 AM CDT",
+      "firstSeenAt": "2026-06-17T10:09:52Z",
       "language": "Python",
-      "summary": "WP Zendesk PHP Object Injection Exploit",
-      "technicalSummary": "WP Zendesk PHP Object Injection Exploit",
-      "breakdown": "WP Zendesk PHP Object Injection Exploit",
-      "whatBroke": "WP Zendesk PHP Object Injection Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49105.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49105\ncd CVE-2026-49105\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
+      "technicalSummary": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
+      "breakdown": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
+      "whatBroke": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49083.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49083\ncd CVE-2026-49083\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -848,9 +515,9 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "Exploit"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -858,11 +525,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/izxci/CVE-2026-49105"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/cf7-zendesk/vulnerability/wordpress-wp-zendesk-for-contact-form-7-wpforms-elementor-formidable-and-ninja-forms-plugin-1-1-4-php-object-injection-vulnerability?_s_id=cve"
+          "https://github.com/izxci/CVE-2026-49083"
         ]
       ]
     },
@@ -994,18 +657,22 @@
       "pocUrl": "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC",
       "pocValidation": {
         "valid": true,
-        "score": 10,
+        "score": 12,
         "codeFiles": [
+          "backend.py",
           "docker-compose.yml",
+          "exp.py",
           "git_push.sh",
           "www/public_html/index.php"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "exp.py"
+        ],
         "hasUsage": true,
         "cveRefs": [
           "CVE-2026-42945"
         ],
-        "language": "Dockerfile"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
       "researcher": "hulina9900-boop",
@@ -1014,13 +681,13 @@
       "difficulty": "moderate",
       "added": "10:15 AM CDT",
       "firstSeenAt": "2026-06-17T15:15:16Z",
-      "language": "Dockerfile",
+      "language": "Python",
       "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hulina9900-boop/DIY-CVE-2026-42945-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC\ncd DIY-CVE-2026-42945-POC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC\ncd DIY-CVE-2026-42945-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -1039,6 +706,64 @@
         [
           "GitHub",
           "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-10795",
+      "title": "The UpdraftPlus POC",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/webshellseo8/CVE-2026-10795-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-10795-mass.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-10795-mass.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-10795"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "webshellseo8",
+      "researcherUrl": "https://github.com/webshellseo8",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:19 AM CDT",
+      "firstSeenAt": "2026-06-11T14:19:28Z",
+      "language": "Python",
+      "summary": "The UpdraftPlus POC",
+      "technicalSummary": "The UpdraftPlus POC",
+      "breakdown": "The UpdraftPlus POC",
+      "whatBroke": "The UpdraftPlus POC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at webshellseo8/CVE-2026-10795-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/webshellseo8/CVE-2026-10795-POC\ncd CVE-2026-10795-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/webshellseo8/CVE-2026-10795-POC"
         ]
       ]
     },
@@ -1155,6 +880,238 @@
         [
           "GitHub",
           "https://github.com/0xdak/CVE-2026-44881_exploit"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-45777",
+      "title": "2026 45777",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/morepoints/CVE-2026-45777",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-45777.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-45777.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-45777"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "morepoints",
+      "researcherUrl": "https://github.com/morepoints",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:37 PM CDT",
+      "firstSeenAt": "2026-06-17T18:37:56Z",
+      "language": "Python",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at morepoints/CVE-2026-45777.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/morepoints/CVE-2026-45777\ncd CVE-2026-45777\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/morepoints/CVE-2026-45777"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49085",
+      "title": "WP Insightly PHP Object Injection Exploit",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/izxci/CVE-2026-49085",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-49085.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-49085.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49085"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "izxci",
+      "researcherUrl": "https://github.com/izxci",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:57 AM CDT",
+      "firstSeenAt": "2026-06-17T09:57:42Z",
+      "language": "Python",
+      "summary": "WP Insightly PHP Object Injection Exploit",
+      "technicalSummary": "WP Insightly PHP Object Injection Exploit",
+      "breakdown": "WP Insightly PHP Object Injection Exploit",
+      "whatBroke": "WP Insightly PHP Object Injection Exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49085.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49085\ncd CVE-2026-49085\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/izxci/CVE-2026-49085"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49104",
+      "title": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/izxci/CVE-2026-49104-",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-49104.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-49104.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49104"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "izxci",
+      "researcherUrl": "https://github.com/izxci",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:05 AM CDT",
+      "firstSeenAt": "2026-06-17T10:05:10Z",
+      "language": "Python",
+      "summary": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
+      "technicalSummary": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
+      "breakdown": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
+      "whatBroke": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49104-.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49104-\ncd CVE-2026-49104-\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/izxci/CVE-2026-49104-"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49105",
+      "title": "WP Zendesk PHP Object Injection Exploit",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/izxci/CVE-2026-49105",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-49105.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-49105.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49105"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "izxci",
+      "researcherUrl": "https://github.com/izxci",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:06 AM CDT",
+      "firstSeenAt": "2026-06-17T10:06:40Z",
+      "language": "Python",
+      "summary": "WP Zendesk PHP Object Injection Exploit",
+      "technicalSummary": "WP Zendesk PHP Object Injection Exploit",
+      "breakdown": "WP Zendesk PHP Object Injection Exploit",
+      "whatBroke": "WP Zendesk PHP Object Injection Exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49105.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49105\ncd CVE-2026-49105\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/izxci/CVE-2026-49105"
         ]
       ]
     }
