@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T15:07:21Z",
+  "updatedAt": "2026-06-20T20:22:17Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,68 @@
   ],
   "research": [],
   "vulns": [
+    {
+      "cve": "CVE-2026-7515",
+      "title": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/izxci/CVE_2026_7515",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "cve_2026_7515_betterdocs_lfi.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-7515"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "izxci",
+      "researcherUrl": "https://github.com/izxci",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:10 AM CDT",
+      "firstSeenAt": "2026-06-19T08:10:28Z",
+      "language": "Python",
+      "summary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "technicalSummary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "breakdown": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "whatBroke": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE_2026_7515.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE_2026_7515\ncd CVE_2026_7515\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/izxci/CVE_2026_7515"
+        ],
+        [
+          "Vendor Advisory",
+          "https://betterdocs.co/"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-7465",
       "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
@@ -112,64 +174,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-7515",
-      "title": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE_2026_7515",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "cve_2026_7515_betterdocs_lfi.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-7515"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:10 AM CDT",
-      "firstSeenAt": "2026-06-19T08:10:28Z",
-      "language": "Python",
-      "summary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "technicalSummary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "breakdown": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "whatBroke": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE_2026_7515.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE_2026_7515\ncd CVE_2026_7515\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE_2026_7515"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-3359",
       "title": "A PoC/exploit written in python for the unauthenticated SQL injection vulnerability CVE-2026-3359 situated.",
       "ecosystem": "web",
@@ -224,15 +228,19 @@
         [
           "GitHub",
           "https://github.com/itsthalisman/cve-2026-3359-exp"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/changeset/3518461/form-maker"
         ]
       ]
     },
     {
       "cve": "CVE-2026-42945",
       "title": "Ubuntu 22.04 + nginx 1.30.0 Docker Runtime",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC",
       "pocValidation": {
@@ -262,10 +270,10 @@
       "added": "10:15 AM CDT",
       "firstSeenAt": "2026-06-17T15:15:16Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when the rewrite directive is followed by a rewrite, if, or set directive and an unnamed Perl-Compatible.",
+      "technicalSummary": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when the rewrite directive is followed by a rewrite, if, or set directive and an unnamed Perl-Compatible.",
+      "breakdown": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when the rewrite directive is followed by a rewrite, if, or set directive and an unnamed Perl-Compatible.",
+      "whatBroke": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when the rewrite directive is followed by a rewrite, if, or set directive and an unnamed Perl-Compatible.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hulina9900-boop/DIY-CVE-2026-42945-POC.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC\ncd DIY-CVE-2026-42945-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -275,9 +283,9 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "Exploit"
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 91,
@@ -286,6 +294,10 @@
         [
           "GitHub",
           "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://my.f5.com/manage/s/article/K000161019"
         ]
       ]
     },
@@ -294,7 +306,7 @@
       "title": "POC for CVE-2026-25212",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/5170Temp/CVE-2026-25212",
       "pocValidation": {
@@ -320,14 +332,16 @@
       "added": "3:50 PM CDT",
       "firstSeenAt": "2026-06-19T20:50:00Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "technicalSummary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "breakdown": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "whatBroke": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 5170Temp/CVE-2026-25212.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/5170Temp/CVE-2026-25212\ncd CVE-2026-25212\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -335,7 +349,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -344,73 +358,19 @@
         [
           "GitHub",
           "https://github.com/5170Temp/CVE-2026-25212"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-4480",
-      "title": "This is an exploit poc for CVE-2026-4480",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Vusal777/CVE-2026-4480-exploit-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "exploit.py"
         ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-4480"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Vusal777",
-      "researcherUrl": "https://github.com/Vusal777",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:49 AM CDT",
-      "firstSeenAt": "2026-06-16T09:49:25Z",
-      "language": "Python",
-      "summary": "This is an exploit poc for",
-      "technicalSummary": "This is an exploit poc for",
-      "breakdown": "This is an exploit poc for",
-      "whatBroke": "This is an exploit poc for",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Vusal777/CVE-2026-4480-exploit-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Vusal777/CVE-2026-4480-exploit-poc\ncd CVE-2026-4480-exploit-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
         [
-          "GitHub",
-          "https://github.com/Vusal777/CVE-2026-4480-exploit-poc"
+          "Vendor Advisory",
+          "https://docs.percona.com/percona-monitoring-and-management/3/release-notes/3.7.0.html#authenticated-remote-code-execution-via-internal-data-source-cve-2026-25212"
         ]
       ]
     },
     {
       "cve": "CVE-2026-44881",
       "title": "\u2014 Portainer Git Symlink \u2192 Arbitrary Host File Read",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
+      "ecosystem": "web",
+      "category": "kubernetes",
+      "severity": "medium",
       "proof": "working public poc",
       "pocUrl": "https://github.com/0xdak/CVE-2026-44881_exploit",
       "pocValidation": {
@@ -436,22 +396,21 @@
       "added": "4:32 AM CDT",
       "firstSeenAt": "2026-06-16T09:32:26Z",
       "language": "Shell",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
+      "technicalSummary": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
+      "breakdown": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
+      "whatBroke": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xdak/CVE-2026-44881_exploit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xdak/CVE-2026-44881_exploit\ncd CVE-2026-44881_exploit\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
+        "Web",
+        "Kubernetes",
+        "File Read"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -460,6 +419,10 @@
         [
           "GitHub",
           "https://github.com/0xdak/CVE-2026-44881_exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/portainer/portainer/security/advisories/GHSA-rpgq-m5fp-32wr"
         ]
       ]
     },
