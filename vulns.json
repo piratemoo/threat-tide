@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T20:41:47Z",
+  "updatedAt": "2026-06-20T06:38:31Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -79,8 +79,8 @@
       "researcherUrl": "https://github.com/Hunt-Benito",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:11 AM CDT",
-      "firstSeenAt": "2026-06-13T09:11:02Z",
+      "added": "1:38 AM CDT",
+      "firstSeenAt": "2026-06-20T06:38:31Z",
       "language": "Python",
       "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
@@ -101,7 +101,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -161,7 +161,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -219,7 +219,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -277,11 +277,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/itsthalisman/cve-2026-3359-exp"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/changeset/3518461/form-maker"
         ]
       ]
     },
@@ -335,7 +339,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -393,7 +397,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -455,11 +459,69 @@
       ],
       "confidence": 98,
       "weaponization": 91,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-25212",
+      "title": "POC for CVE-2026-25212",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/5170Temp/CVE-2026-25212",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-25212"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "5170Temp",
+      "researcherUrl": "https://github.com/5170Temp",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:50 PM CDT",
+      "firstSeenAt": "2026-06-19T20:50:00Z",
+      "language": "Python",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 5170Temp/CVE-2026-25212.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/5170Temp/CVE-2026-25212\ncd CVE-2026-25212\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/5170Temp/CVE-2026-25212"
         ]
       ]
     },
@@ -513,7 +575,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -571,7 +633,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -629,127 +691,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/morepoints/CVE-2026-45777"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49085",
-      "title": "WP Insightly PHP Object Injection Exploit",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49085",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-49085.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-49085.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49085"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:57 AM CDT",
-      "firstSeenAt": "2026-06-17T09:57:42Z",
-      "language": "Python",
-      "summary": "WP Insightly PHP Object Injection Exploit",
-      "technicalSummary": "WP Insightly PHP Object Injection Exploit",
-      "breakdown": "WP Insightly PHP Object Injection Exploit",
-      "whatBroke": "WP Insightly PHP Object Injection Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49085.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49085\ncd CVE-2026-49085\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE-2026-49085"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49104",
-      "title": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49104-",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-49104.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-49104.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49104"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:05 AM CDT",
-      "firstSeenAt": "2026-06-17T10:05:10Z",
-      "language": "Python",
-      "summary": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "technicalSummary": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "breakdown": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "whatBroke": "Integration for Keap/Infusionsoft PHP Object Injection Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49104-.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49104-\ncd CVE-2026-49104-\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE-2026-49104-"
         ]
       ]
     },
@@ -803,7 +749,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -861,7 +807,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -922,7 +868,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
