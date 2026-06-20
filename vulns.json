@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T06:38:31Z",
+  "updatedAt": "2026-06-20T15:07:21Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,64 +51,6 @@
   ],
   "research": [],
   "vulns": [
-    {
-      "cve": "CVE-2026-11450",
-      "title": "GL.iNet Beryl AX Triple RCE PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Hunt-Benito/glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-11450"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Hunt-Benito",
-      "researcherUrl": "https://github.com/Hunt-Benito",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:38 AM CDT",
-      "firstSeenAt": "2026-06-20T06:38:31Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router\ncd glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Hunt-Benito/glinet-beryl-ax-triple-rce-cve-2026-11450-11451-11452-unauthenticated-root-on-travel-router"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-7465",
       "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
@@ -282,126 +224,6 @@
         [
           "GitHub",
           "https://github.com/itsthalisman/cve-2026-3359-exp"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/changeset/3518461/form-maker"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49079",
-      "title": "JetSearch SQL Injection Exploit",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49079",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-49079.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-49079.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49079"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:08 AM CDT",
-      "firstSeenAt": "2026-06-17T10:08:08Z",
-      "language": "Python",
-      "summary": "JetSearch SQL Injection Exploit",
-      "technicalSummary": "JetSearch SQL Injection Exploit",
-      "breakdown": "JetSearch SQL Injection Exploit",
-      "whatBroke": "JetSearch SQL Injection Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49079.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49079\ncd CVE-2026-49079\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "SQLi"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE-2026-49079"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49083",
-      "title": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49083",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-49083.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-49083.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49083"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:09 AM CDT",
-      "firstSeenAt": "2026-06-17T10:09:52Z",
-      "language": "Python",
-      "summary": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "technicalSummary": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "breakdown": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "whatBroke": "LatePoint Calendar Booking Plugin Privilege Escalation Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49083.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49083\ncd CVE-2026-49083\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE-2026-49083"
         ]
       ]
     },
@@ -696,64 +518,6 @@
         [
           "GitHub",
           "https://github.com/morepoints/CVE-2026-45777"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49105",
-      "title": "WP Zendesk PHP Object Injection Exploit",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE-2026-49105",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-49105.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-49105.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49105"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:06 AM CDT",
-      "firstSeenAt": "2026-06-17T10:06:40Z",
-      "language": "Python",
-      "summary": "WP Zendesk PHP Object Injection Exploit",
-      "technicalSummary": "WP Zendesk PHP Object Injection Exploit",
-      "breakdown": "WP Zendesk PHP Object Injection Exploit",
-      "whatBroke": "WP Zendesk PHP Object Injection Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE-2026-49105.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE-2026-49105\ncd CVE-2026-49105\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE-2026-49105"
         ]
       ]
     },
