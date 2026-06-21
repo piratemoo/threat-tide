@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T06:59:55Z",
+  "updatedAt": "2026-06-21T15:14:22Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -54,7 +54,7 @@
     {
       "cve": "CVE-2026-7465",
       "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "ecosystem": "web",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
@@ -97,7 +97,7 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
         "RCE"
       ],
@@ -108,17 +108,13 @@
         [
           "GitHub",
           "https://github.com/izxci/-CVE-2026-7465"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/ultimate-addons-for-gutenberg/tags/2.19.25/classes/class-uagb-init-blocks.php#L330"
         ]
       ]
     },
     {
       "cve": "CVE-2026-7515",
       "title": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "ecosystem": "web",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
@@ -159,7 +155,7 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
         "RCE"
       ],
@@ -170,10 +166,6 @@
         [
           "GitHub",
           "https://github.com/izxci/CVE_2026_7515"
-        ],
-        [
-          "Vendor Advisory",
-          "https://betterdocs.co/"
         ]
       ]
     },
@@ -360,7 +352,7 @@
       "title": "POC for CVE-2026-25212",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/5170Temp/CVE-2026-25212",
       "pocValidation": {
@@ -386,16 +378,14 @@
       "added": "3:50 PM CDT",
       "firstSeenAt": "2026-06-19T20:50:00Z",
       "language": "Python",
-      "summary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
-      "technicalSummary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
-      "breakdown": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
-      "whatBroke": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 5170Temp/CVE-2026-25212.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/5170Temp/CVE-2026-25212\ncd CVE-2026-25212\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -403,7 +393,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "RCE"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -412,10 +402,6 @@
         [
           "GitHub",
           "https://github.com/5170Temp/CVE-2026-25212"
-        ],
-        [
-          "Vendor Advisory",
-          "https://docs.percona.com/percona-monitoring-and-management/3/release-notes/3.7.0.html#authenticated-remote-code-execution-via-internal-data-source-cve-2026-25212"
         ]
       ]
     },
@@ -482,7 +468,7 @@
       "title": "2026 45777",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/morepoints/CVE-2026-45777",
       "pocValidation": {
@@ -508,16 +494,14 @@
       "added": "1:37 PM CDT",
       "firstSeenAt": "2026-06-17T18:37:56Z",
       "language": "Python",
-      "summary": "OpenXDMoD is an open framework for collecting and analyzing HPC metrics. Starting in version 9.5.0 and prior to version 11.0.3, an attacker can remotely execute arbitrary system commands on the web server hosting Open XDMoD with.",
-      "technicalSummary": "OpenXDMoD is an open framework for collecting and analyzing HPC metrics. Starting in version 9.5.0 and prior to version 11.0.3, an attacker can remotely execute arbitrary system commands on the web server hosting Open XDMoD with.",
-      "breakdown": "OpenXDMoD is an open framework for collecting and analyzing HPC metrics. Starting in version 9.5.0 and prior to version 11.0.3, an attacker can remotely execute arbitrary system commands on the web server hosting Open XDMoD with.",
-      "whatBroke": "OpenXDMoD is an open framework for collecting and analyzing HPC metrics. Starting in version 9.5.0 and prior to version 11.0.3, an attacker can remotely execute arbitrary system commands on the web server hosting Open XDMoD with.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at morepoints/CVE-2026-45777.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/morepoints/CVE-2026-45777\ncd CVE-2026-45777\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -525,7 +509,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "RCE"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -534,10 +518,6 @@
         [
           "GitHub",
           "https://github.com/morepoints/CVE-2026-45777"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/ubccr/xdmod/releases/tag/v11.0.3-2"
         ]
       ]
     },
