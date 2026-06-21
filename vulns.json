@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T20:22:17Z",
+  "updatedAt": "2026-06-21T06:59:55Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -52,6 +52,70 @@
   "research": [],
   "vulns": [
     {
+      "cve": "CVE-2026-7465",
+      "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/izxci/-CVE-2026-7465",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-7465.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-7465.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-7465"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "izxci",
+      "researcherUrl": "https://github.com/izxci",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:52 AM CDT",
+      "firstSeenAt": "2026-06-17T09:52:23Z",
+      "language": "Python",
+      "summary": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
+      "technicalSummary": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
+      "breakdown": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
+      "whatBroke": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/-CVE-2026-7465.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/-CVE-2026-7465\ncd -CVE-2026-7465\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/izxci/-CVE-2026-7465"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/ultimate-addons-for-gutenberg/tags/2.19.25/classes/class-uagb-init-blocks.php#L330"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-7515",
       "title": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
       "ecosystem": "web",
@@ -101,7 +165,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -110,66 +174,6 @@
         [
           "Vendor Advisory",
           "https://betterdocs.co/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-7465",
-      "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/-CVE-2026-7465",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-7465.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-7465.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-7465"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:52 AM CDT",
-      "firstSeenAt": "2026-06-17T09:52:23Z",
-      "language": "Python",
-      "summary": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "technicalSummary": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "breakdown": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "whatBroke": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/-CVE-2026-7465.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/-CVE-2026-7465\ncd -CVE-2026-7465\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/-CVE-2026-7465"
         ]
       ]
     },
@@ -223,24 +227,20 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/itsthalisman/cve-2026-3359-exp"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/changeset/3518461/form-maker"
         ]
       ]
     },
     {
       "cve": "CVE-2026-42945",
       "title": "Ubuntu 22.04 + nginx 1.30.0 Docker Runtime",
-      "ecosystem": "web",
+      "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC",
       "pocValidation": {
@@ -270,10 +270,10 @@
       "added": "10:15 AM CDT",
       "firstSeenAt": "2026-06-17T15:15:16Z",
       "language": "Python",
-      "summary": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when the rewrite directive is followed by a rewrite, if, or set directive and an unnamed Perl-Compatible.",
-      "technicalSummary": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when the rewrite directive is followed by a rewrite, if, or set directive and an unnamed Perl-Compatible.",
-      "breakdown": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when the rewrite directive is followed by a rewrite, if, or set directive and an unnamed Perl-Compatible.",
-      "whatBroke": "NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module. This vulnerability exists when the rewrite directive is followed by a rewrite, if, or set directive and an unnamed Perl-Compatible.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hulina9900-boop/DIY-CVE-2026-42945-POC.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC\ncd DIY-CVE-2026-42945-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -283,21 +283,75 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "Memory Corruption"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 91,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-11551",
+      "title": "Unauthenticated Privilege in White Label & Branding, Free Login Page Customizer",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/ubaydev/CVE-2026-11551-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-11551.php"
         ],
+        "attackFiles": [
+          "CVE-2026-11551.php"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-11551"
+        ],
+        "language": "PHP"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "ubaydev",
+      "researcherUrl": "https://github.com/ubaydev",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:21 PM CDT",
+      "firstSeenAt": "2026-06-21T04:21:11Z",
+      "language": "PHP",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ubaydev/CVE-2026-11551-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ubaydev/CVE-2026-11551-PoC\ncd CVE-2026-11551-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
         [
-          "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000161019"
+          "GitHub",
+          "https://github.com/ubaydev/CVE-2026-11551-PoC"
         ]
       ]
     },
@@ -353,7 +407,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -368,9 +422,9 @@
     {
       "cve": "CVE-2026-44881",
       "title": "\u2014 Portainer Git Symlink \u2192 Arbitrary Host File Read",
-      "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "medium",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/0xdak/CVE-2026-44881_exploit",
       "pocValidation": {
@@ -396,33 +450,30 @@
       "added": "4:32 AM CDT",
       "firstSeenAt": "2026-06-16T09:32:26Z",
       "language": "Shell",
-      "summary": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
-      "technicalSummary": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
-      "breakdown": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
-      "whatBroke": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xdak/CVE-2026-44881_exploit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xdak/CVE-2026-44881_exploit\ncd CVE-2026-44881_exploit\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Kubernetes",
-        "File Read"
+        "Cloud",
+        "Webstack",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/0xdak/CVE-2026-44881_exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/portainer/portainer/security/advisories/GHSA-rpgq-m5fp-32wr"
         ]
       ]
     },
@@ -431,7 +482,7 @@
       "title": "2026 45777",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/morepoints/CVE-2026-45777",
       "pocValidation": {
@@ -457,14 +508,16 @@
       "added": "1:37 PM CDT",
       "firstSeenAt": "2026-06-17T18:37:56Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "OpenXDMoD is an open framework for collecting and analyzing HPC metrics. Starting in version 9.5.0 and prior to version 11.0.3, an attacker can remotely execute arbitrary system commands on the web server hosting Open XDMoD with.",
+      "technicalSummary": "OpenXDMoD is an open framework for collecting and analyzing HPC metrics. Starting in version 9.5.0 and prior to version 11.0.3, an attacker can remotely execute arbitrary system commands on the web server hosting Open XDMoD with.",
+      "breakdown": "OpenXDMoD is an open framework for collecting and analyzing HPC metrics. Starting in version 9.5.0 and prior to version 11.0.3, an attacker can remotely execute arbitrary system commands on the web server hosting Open XDMoD with.",
+      "whatBroke": "OpenXDMoD is an open framework for collecting and analyzing HPC metrics. Starting in version 9.5.0 and prior to version 11.0.3, an attacker can remotely execute arbitrary system commands on the web server hosting Open XDMoD with.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at morepoints/CVE-2026-45777.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/morepoints/CVE-2026-45777\ncd CVE-2026-45777\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -472,15 +525,19 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/morepoints/CVE-2026-45777"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/ubccr/xdmod/releases/tag/v11.0.3-2"
         ]
       ]
     },
@@ -534,7 +591,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -595,7 +652,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
