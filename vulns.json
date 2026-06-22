@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T07:35:12Z",
+  "updatedAt": "2026-06-22T17:45:38Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,8 +49,147 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [],
+  "research": [
+    {
+      "title": "Out of Shift: How a Shared State Bug in V8\u2019s AsmJS Parser Broke the Ubercage",
+      "source": "Exodus Intelligence",
+      "sourceUrl": "https://blog.exodusintel.com/",
+      "url": "https://blog.exodusintel.com/2026/06/22/out-of-shift-how-a-shared-state-bug-in-v8s-asmjs-parser-broke-the-ubercage/",
+      "summary": "By Chanh Pham Overview In this blog post we take a look at a vulnerability patched in a Chrome release on 3rd March 2026 and assigned CVE-2026-3542. The vulnerability arose from a flaw in state management when processing an AsmJS module, which results in a.",
+      "publishedAt": "2026-06-22T15:59:57Z",
+      "cves": [
+        "CVE-2026-3542"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    }
+  ],
   "vulns": [
+    {
+      "cve": "CVE-2026-7515",
+      "title": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/izxci/CVE_2026_7515",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "cve_2026_7515_betterdocs_lfi.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-7515"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "izxci",
+      "researcherUrl": "https://github.com/izxci",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:10 AM CDT",
+      "firstSeenAt": "2026-06-19T08:10:28Z",
+      "language": "Python",
+      "summary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "technicalSummary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "breakdown": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "whatBroke": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE_2026_7515.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE_2026_7515\ncd CVE_2026_7515\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/izxci/CVE_2026_7515"
+        ],
+        [
+          "Vendor Advisory",
+          "https://betterdocs.co/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-11551",
+      "title": "Unauthenticated Privilege in White Label & Branding, Free Login Page Customizer",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/ubaydev/CVE-2026-11551-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-11551.php"
+        ],
+        "attackFiles": [
+          "CVE-2026-11551.php"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-11551"
+        ],
+        "language": "PHP"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "ubaydev",
+      "researcherUrl": "https://github.com/ubaydev",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:21 PM CDT",
+      "firstSeenAt": "2026-06-21T04:21:11Z",
+      "language": "PHP",
+      "summary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "technicalSummary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "breakdown": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "whatBroke": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ubaydev/CVE-2026-11551-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ubaydev/CVE-2026-11551-PoC\ncd CVE-2026-11551-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/ubaydev/CVE-2026-11551-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/branda-white-labeling/tags/3.4.29/inc/modules/login-screen/signup-password.php#L232"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-7465",
       "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
@@ -112,64 +251,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-7515",
-      "title": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE_2026_7515",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "cve_2026_7515_betterdocs_lfi.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-7515"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:10 AM CDT",
-      "firstSeenAt": "2026-06-19T08:10:28Z",
-      "language": "Python",
-      "summary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "technicalSummary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "breakdown": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "whatBroke": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE_2026_7515.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE_2026_7515\ncd CVE_2026_7515\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/izxci/CVE_2026_7515"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-3359",
       "title": "A PoC/exploit written in python for the unauthenticated SQL injection vulnerability CVE-2026-3359 situated.",
       "ecosystem": "web",
@@ -224,126 +305,6 @@
         [
           "GitHub",
           "https://github.com/itsthalisman/cve-2026-3359-exp"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-42945",
-      "title": "Ubuntu 22.04 + nginx 1.30.0 Docker Runtime",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "backend.py",
-          "docker-compose.yml",
-          "exp.py",
-          "git_push.sh",
-          "www/public_html/index.php"
-        ],
-        "attackFiles": [
-          "exp.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-42945"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "hulina9900-boop",
-      "researcherUrl": "https://github.com/hulina9900-boop",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:15 AM CDT",
-      "firstSeenAt": "2026-06-17T15:15:16Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hulina9900-boop/DIY-CVE-2026-42945-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC\ncd DIY-CVE-2026-42945-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 91,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/hulina9900-boop/DIY-CVE-2026-42945-POC"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-11551",
-      "title": "Unauthenticated Privilege in White Label & Branding, Free Login Page Customizer",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ubaydev/CVE-2026-11551-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-11551.php"
-        ],
-        "attackFiles": [
-          "CVE-2026-11551.php"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-11551"
-        ],
-        "language": "PHP"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ubaydev",
-      "researcherUrl": "https://github.com/ubaydev",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:21 PM CDT",
-      "firstSeenAt": "2026-06-21T04:21:11Z",
-      "language": "PHP",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ubaydev/CVE-2026-11551-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ubaydev/CVE-2026-11551-PoC\ncd CVE-2026-11551-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ubaydev/CVE-2026-11551-PoC"
         ]
       ]
     },
@@ -516,64 +477,6 @@
         [
           "GitHub",
           "https://github.com/0xdak/CVE-2026-44881_exploit"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-45777",
-      "title": "2026 45777",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/morepoints/CVE-2026-45777",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-45777.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-45777.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-45777"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "morepoints",
-      "researcherUrl": "https://github.com/morepoints",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:37 PM CDT",
-      "firstSeenAt": "2026-06-17T18:37:56Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at morepoints/CVE-2026-45777.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/morepoints/CVE-2026-45777\ncd CVE-2026-45777\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/morepoints/CVE-2026-45777"
         ]
       ]
     },
