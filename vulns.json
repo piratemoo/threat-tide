@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T20:43:46Z",
+  "updatedAt": "2026-06-22T07:35:12Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -52,66 +52,6 @@
   "research": [],
   "vulns": [
     {
-      "cve": "CVE-2026-39949",
-      "title": "Cacti \u2264 1.2.30 Auth RCE - Host variable injection",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/lukehebe/CVE-2026-39949",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cacti_rce_poc.py"
-        ],
-        "attackFiles": [
-          "cacti_rce_poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-39949"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "lukehebe",
-      "researcherUrl": "https://github.com/lukehebe",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:48 PM CDT",
-      "firstSeenAt": "2026-06-16T20:48:48Z",
-      "language": "Python",
-      "summary": "Cacti \u2264 1.2.30 Auth RCE - Host variable injection",
-      "technicalSummary": "Cacti \u2264 1.2.30 Auth RCE - Host variable injection",
-      "breakdown": "Cacti \u2264 1.2.30 Auth RCE - Host variable injection",
-      "whatBroke": "Cacti \u2264 1.2.30 Auth RCE - Host variable injection",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at lukehebe/CVE-2026-39949.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/lukehebe/CVE-2026-39949\ncd CVE-2026-39949\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/lukehebe/CVE-2026-39949"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-7465",
       "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
       "ecosystem": "cloud",
@@ -163,7 +103,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -221,7 +161,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -279,7 +219,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -341,7 +281,7 @@
       ],
       "confidence": 98,
       "weaponization": 91,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -399,7 +339,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -457,11 +397,67 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/5170Temp/CVE-2026-25212"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-39676",
+      "title": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/OkamiSpade/Cve-2026-39676",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "Cve.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-39676"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "OkamiSpade",
+      "researcherUrl": "https://github.com/OkamiSpade",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:28 PM CDT",
+      "firstSeenAt": "2026-06-21T21:28:37Z",
+      "language": "Python",
+      "summary": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
+      "technicalSummary": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
+      "breakdown": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
+      "whatBroke": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at OkamiSpade/Cve-2026-39676.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/OkamiSpade/Cve-2026-39676\ncd Cve-2026-39676\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/OkamiSpade/Cve-2026-39676"
         ]
       ]
     },
@@ -515,7 +511,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -573,7 +569,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -609,8 +605,8 @@
       "researcherUrl": "https://github.com/Saku0512",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "11:41 PM CDT",
-      "firstSeenAt": "2026-06-16T04:41:10Z",
+      "added": "2:35 AM CDT",
+      "firstSeenAt": "2026-06-22T07:35:12Z",
       "language": "Python",
       "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
@@ -631,7 +627,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -692,7 +688,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
