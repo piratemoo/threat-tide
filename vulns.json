@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T17:45:38Z",
+  "updatedAt": "2026-06-22T21:34:06Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -50,6 +50,19 @@
     "The GitHub Blog Security"
   ],
   "research": [
+    {
+      "title": "CNAPP\u2019s New Normal: Hyper-Prioritization and Autonomous Remediation at Cloud Scale",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/06/22/cnapps-new-normal-hyper-prioritization-and-autonomous-remediation-at-cloud-scale",
+      "summary": "AI-powered detection has crossed a threshold. Security teams can now surface vulnerabilities, misconfigurations, and active attack paths at a speed and scale that was unimaginable a few years ago. The problem is no longer finding or knowing risk; it\u2019s.",
+      "publishedAt": "2026-06-22T18:13:23Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Kubernetes"
+      ]
+    },
     {
       "title": "Out of Shift: How a Shared State Bug in V8\u2019s AsmJS Parser Broke the Ubercage",
       "source": "Exodus Intelligence",
@@ -193,7 +206,7 @@
     {
       "cve": "CVE-2026-7465",
       "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
@@ -236,7 +249,7 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "RCE"
       ],
@@ -247,6 +260,72 @@
         [
           "GitHub",
           "https://github.com/izxci/-CVE-2026-7465"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/ultimate-addons-for-gutenberg/tags/2.19.25/classes/class-uagb-init-blocks.php#L330"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-23744",
+      "title": "POC for CVE-2026-23744 for a python revshell",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/daemoncibsec/mcpExec",
+      "pocValidation": {
+        "valid": true,
+        "score": 8,
+        "codeFiles": [
+          "mcpExec.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-23744"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "daemoncibsec",
+      "researcherUrl": "https://github.com/daemoncibsec",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "12:55 PM CDT",
+      "firstSeenAt": "2026-06-22T17:55:35Z",
+      "language": "Python",
+      "summary": "POC for for a python revshell",
+      "technicalSummary": "POC for for a python revshell",
+      "breakdown": "POC for for a python revshell",
+      "whatBroke": "POC for for a python revshell",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at daemoncibsec/mcpExec.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/daemoncibsec/mcpExec\ncd mcpExec\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/daemoncibsec/mcpExec"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
@@ -305,6 +384,10 @@
         [
           "GitHub",
           "https://github.com/itsthalisman/cve-2026-3359-exp"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/changeset/3518461/form-maker"
         ]
       ]
     },
@@ -313,7 +396,7 @@
       "title": "POC for CVE-2026-25212",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/5170Temp/CVE-2026-25212",
       "pocValidation": {
@@ -339,14 +422,16 @@
       "added": "3:50 PM CDT",
       "firstSeenAt": "2026-06-19T20:50:00Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "technicalSummary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "breakdown": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "whatBroke": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 5170Temp/CVE-2026-25212.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/5170Temp/CVE-2026-25212\ncd CVE-2026-25212\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -354,7 +439,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -363,6 +448,10 @@
         [
           "GitHub",
           "https://github.com/5170Temp/CVE-2026-25212"
+        ],
+        [
+          "Vendor Advisory",
+          "https://docs.percona.com/percona-monitoring-and-management/3/release-notes/3.7.0.html#authenticated-remote-code-execution-via-internal-data-source-cve-2026-25212"
         ]
       ]
     },
@@ -477,6 +566,70 @@
         [
           "GitHub",
           "https://github.com/0xdak/CVE-2026-44881_exploit"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-46215",
+      "title": "DRM GEM `change_handle` Use-After-Free (unprivileged LPE)",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xCyberstan/CVE-2026-46215-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.c",
+          "run_exploit.sh"
+        ],
+        "attackFiles": [
+          "poc.c",
+          "run_exploit.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-46215"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xCyberstan",
+      "researcherUrl": "https://github.com/0xCyberstan",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:39 AM CDT",
+      "firstSeenAt": "2026-06-18T14:39:11Z",
+      "language": "C",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-46215-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-46215-POC\ncd CVE-2026-46215-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xCyberstan/CVE-2026-46215-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/5e28b7b94408897e41c63477aabc9e1db439bc8c"
         ]
       ]
     },
