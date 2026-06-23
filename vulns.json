@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T21:34:06Z",
+  "updatedAt": "2026-06-23T06:16:46Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -129,7 +129,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -191,7 +191,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -255,7 +255,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -317,7 +317,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -379,15 +379,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/itsthalisman/cve-2026-3359-exp"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/changeset/3518461/form-maker"
         ]
       ]
     },
@@ -396,7 +392,7 @@
       "title": "POC for CVE-2026-25212",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/5170Temp/CVE-2026-25212",
       "pocValidation": {
@@ -422,16 +418,14 @@
       "added": "3:50 PM CDT",
       "firstSeenAt": "2026-06-19T20:50:00Z",
       "language": "Python",
-      "summary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
-      "technicalSummary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
-      "breakdown": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
-      "whatBroke": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 5170Temp/CVE-2026-25212.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/5170Temp/CVE-2026-25212\ncd CVE-2026-25212\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -439,19 +433,15 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "RCE"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/5170Temp/CVE-2026-25212"
-        ],
-        [
-          "Vendor Advisory",
-          "https://docs.percona.com/percona-monitoring-and-management/3/release-notes/3.7.0.html#authenticated-remote-code-execution-via-internal-data-source-cve-2026-25212"
         ]
       ]
     },
@@ -460,7 +450,7 @@
       "title": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "medium",
       "proof": "working public poc",
       "pocUrl": "https://github.com/OkamiSpade/Cve-2026-39676",
       "pocValidation": {
@@ -503,20 +493,24 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/OkamiSpade/Cve-2026-39676"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/Wordpress/Plugin/download-manager/vulnerability/wordpress-download-manager-plugin-3-3-51-broken-access-control-vulnerability?_s_id=cve"
         ]
       ]
     },
     {
       "cve": "CVE-2026-44881",
       "title": "\u2014 Portainer Git Symlink \u2192 Arbitrary Host File Read",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
+      "ecosystem": "web",
+      "category": "kubernetes",
+      "severity": "medium",
       "proof": "working public poc",
       "pocUrl": "https://github.com/0xdak/CVE-2026-44881_exploit",
       "pocValidation": {
@@ -539,41 +533,44 @@
       "researcherUrl": "https://github.com/0xdak",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:32 AM CDT",
-      "firstSeenAt": "2026-06-16T09:32:26Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-06-23T06:16:46Z",
       "language": "Shell",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
+      "technicalSummary": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
+      "breakdown": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
+      "whatBroke": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0,.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xdak/CVE-2026-44881_exploit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xdak/CVE-2026-44881_exploit\ncd CVE-2026-44881_exploit\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
+        "Web",
+        "Kubernetes",
+        "File Read"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
           "https://github.com/0xdak/CVE-2026-44881_exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/portainer/portainer/security/advisories/GHSA-rpgq-m5fp-32wr"
         ]
       ]
     },
     {
       "cve": "CVE-2026-46215",
       "title": "DRM GEM `change_handle` Use-After-Free (unprivileged LPE)",
-      "ecosystem": "linux",
-      "category": "kernel",
+      "ecosystem": "cloud",
+      "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/0xCyberstan/CVE-2026-46215-POC",
@@ -602,74 +599,12 @@
       "added": "9:39 AM CDT",
       "firstSeenAt": "2026-06-18T14:39:11Z",
       "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-46215-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-46215-POC\ncd CVE-2026-46215-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xCyberstan/CVE-2026-46215-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/5e28b7b94408897e41c63477aabc9e1db439bc8c"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-54686",
-      "title": "Warp Remote SSH Command Injection PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Saku0512/CVE-2026-54686-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-54686"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Saku0512",
-      "researcherUrl": "https://github.com/Saku0512",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:35 AM CDT",
-      "firstSeenAt": "2026-06-22T07:35:12Z",
-      "language": "Python",
       "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Saku0512/CVE-2026-54686-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Saku0512/CVE-2026-54686-poc\ncd CVE-2026-54686-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-46215-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-46215-POC\ncd CVE-2026-46215-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -683,11 +618,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/Saku0512/CVE-2026-54686-poc"
+          "https://github.com/0xCyberstan/CVE-2026-46215-POC"
         ]
       ]
     },
@@ -744,7 +679,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
