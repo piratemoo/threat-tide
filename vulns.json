@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T16:04:25Z",
+  "updatedAt": "2026-06-23T21:04:18Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -62,19 +62,6 @@
         "Web",
         "Kubernetes",
         "Xss"
-      ]
-    },
-    {
-      "title": "CNAPP\u2019s New Normal: Hyper-Prioritization and Autonomous Remediation at Cloud Scale",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/06/22/cnapps-new-normal-hyper-prioritization-and-autonomous-remediation-at-cloud-scale",
-      "summary": "AI-powered detection has crossed a threshold. Security teams can now surface vulnerabilities, misconfigurations, and active attack paths at a speed and scale that was unimaginable a few years ago. The problem is no longer finding or knowing risk; it\u2019s.",
-      "publishedAt": "2026-06-22T18:13:23Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Kubernetes"
       ]
     }
   ],
@@ -145,6 +132,68 @@
       ]
     },
     {
+      "cve": "CVE-2026-7515",
+      "title": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/izxci/CVE_2026_7515",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "cve_2026_7515_betterdocs_lfi.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-7515"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "izxci",
+      "researcherUrl": "https://github.com/izxci",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:10 AM CDT",
+      "firstSeenAt": "2026-06-19T08:10:28Z",
+      "language": "Python",
+      "summary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "technicalSummary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "breakdown": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "whatBroke": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE_2026_7515.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE_2026_7515\ncd CVE_2026_7515\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/izxci/CVE_2026_7515"
+        ],
+        [
+          "Vendor Advisory",
+          "https://betterdocs.co/"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-39808",
       "title": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
       "ecosystem": "cloud",
@@ -201,116 +250,125 @@
         [
           "GitHub",
           "https://github.com/error-inside/CVE-2026-39808"
+        ],
+        [
+          "Vendor Advisory",
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-7465",
-      "title": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-11551",
+      "title": "Unauthenticated Privilege in White Label & Branding, Free Login Page Customizer",
+      "ecosystem": "web",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/-CVE-2026-7465",
+      "pocUrl": "https://github.com/ubaydev/CVE-2026-11551-PoC",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 12,
         "codeFiles": [
-          "CVE-2026-7465.py"
+          "CVE-2026-11551.php"
         ],
         "attackFiles": [
-          "CVE-2026-7465.py"
+          "CVE-2026-11551.php"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
-          "CVE-2026-7465"
+          "CVE-2026-11551"
         ],
-        "language": "Python"
+        "language": "PHP"
       },
       "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
+      "researcher": "ubaydev",
+      "researcherUrl": "https://github.com/ubaydev",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:52 AM CDT",
-      "firstSeenAt": "2026-06-17T09:52:23Z",
-      "language": "Python",
-      "summary": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "technicalSummary": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "breakdown": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "whatBroke": "Spectra Gutenberg Blocks Authenticated RCE Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/-CVE-2026-7465.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/-CVE-2026-7465\ncd -CVE-2026-7465\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "11:21 PM CDT",
+      "firstSeenAt": "2026-06-21T04:21:11Z",
+      "language": "PHP",
+      "summary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "technicalSummary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "breakdown": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "whatBroke": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ubaydev/CVE-2026-11551-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ubaydev/CVE-2026-11551-PoC\ncd CVE-2026-11551-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "RCE"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/izxci/-CVE-2026-7465"
+          "https://github.com/ubaydev/CVE-2026-11551-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/branda-white-labeling/tags/3.4.29/inc/modules/login-screen/signup-password.php#L232"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-7515",
-      "title": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
+      "cve": "CVE-2026-54761",
+      "title": "Traefik Kubernetes Gateway crossProviderNamespaces Bypass PoC",
+      "ecosystem": "web",
+      "category": "vpn-edge",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/izxci/CVE_2026_7515",
+      "pocUrl": "https://github.com/Saku0512/CVE-2026-54761-poc",
       "pocValidation": {
         "valid": true,
-        "score": 7,
+        "score": 12,
         "codeFiles": [
-          "cve_2026_7515_betterdocs_lfi.py"
+          "external-repro-kind/gateway-exploit.yaml",
+          "external-repro-kind/kind-config.yaml",
+          "external-repro-kind/run-kind-repro.sh",
+          "external-repro-kind/traefik-v371.yaml"
         ],
-        "attackFiles": [],
-        "hasUsage": false,
+        "attackFiles": [
+          "external-repro-kind/gateway-exploit.yaml"
+        ],
+        "hasUsage": true,
         "cveRefs": [
-          "CVE-2026-7515"
+          "CVE-2026-54761"
         ],
-        "language": "Python"
+        "language": "Shell"
       },
       "reliability": "reliable exploit",
-      "researcher": "izxci",
-      "researcherUrl": "https://github.com/izxci",
+      "researcher": "Saku0512",
+      "researcherUrl": "https://github.com/Saku0512",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:10 AM CDT",
-      "firstSeenAt": "2026-06-19T08:10:28Z",
-      "language": "Python",
-      "summary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "technicalSummary": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "breakdown": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "whatBroke": "BetterDocs Pro <= 3.8.0 - Unauthenticated Local File Inclusion TO RCE EXPLO\u0130T",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at izxci/CVE_2026_7515.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/izxci/CVE_2026_7515\ncd CVE_2026_7515\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "8:29 AM CDT",
+      "firstSeenAt": "2026-06-19T13:29:44Z",
+      "language": "Shell",
+      "summary": "Traefik is an HTTP reverse proxy and load balancer. Prior to 3.6.21 and 3.7.5, there is a high severity vulnerability in Traefik's Kubernetes Gateway provider affecting the crossProviderNamespaces allowlist. For HTTPRoute rules.",
+      "technicalSummary": "Traefik is an HTTP reverse proxy and load balancer. Prior to 3.6.21 and 3.7.5, there is a high severity vulnerability in Traefik's Kubernetes Gateway provider affecting the crossProviderNamespaces allowlist. For HTTPRoute rules.",
+      "breakdown": "Traefik is an HTTP reverse proxy and load balancer. Prior to 3.6.21 and 3.7.5, there is a high severity vulnerability in Traefik's Kubernetes Gateway provider affecting the crossProviderNamespaces allowlist. For HTTPRoute rules.",
+      "whatBroke": "Traefik is an HTTP reverse proxy and load balancer. Prior to 3.6.21 and 3.7.5, there is a high severity vulnerability in Traefik's Kubernetes Gateway provider affecting the crossProviderNamespaces allowlist. For HTTPRoute rules.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Saku0512/CVE-2026-54761-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Saku0512/CVE-2026-54761-poc\ncd CVE-2026-54761-poc\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
+        "Web",
+        "VPN Edge",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -318,7 +376,152 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/izxci/CVE_2026_7515"
+          "https://github.com/Saku0512/CVE-2026-54761-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/traefik/traefik/releases/tag/v3.6.21"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-55200",
+      "title": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none.",
+      "ecosystem": "cloud",
+      "category": "ssh",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/bikini/exploitarium",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "7zip-rar5-motw-chain-poc/poc.py",
+          "anydesk-printer-com-impersonation-poc/poc.py",
+          "docker-cp-copyout-destination-escape/poc.sh",
+          "floci-apigateway-vtl-rce-poc/poc.py",
+          "flowise-mcp-env-case-bypass-poc/poc.py",
+          "ghidra-12.1.2-rce-ace-calc-poc/pocs/SevenZipReachabilityProbe.java",
+          "ghidra-12.1.2-rce-ace-calc-poc/pocs/ace_swift_demangler_calc_poc.py",
+          "ghidra-12.1.2-rce-ace-calc-poc/pocs/calc_helper.py"
+        ],
+        "attackFiles": [
+          "7zip-rar5-motw-chain-poc/poc.py",
+          "anydesk-printer-com-impersonation-poc/poc.py",
+          "docker-cp-copyout-destination-escape/poc.sh",
+          "floci-apigateway-vtl-rce-poc/poc.py",
+          "flowise-mcp-env-case-bypass-poc/poc.py",
+          "ghidra-12.1.2-rce-ace-calc-poc/pocs/SevenZipReachabilityProbe.java",
+          "ghidra-12.1.2-rce-ace-calc-poc/pocs/ace_swift_demangler_calc_poc.py",
+          "ghidra-12.1.2-rce-ace-calc-poc/pocs/calc_helper.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-55200"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "bikini",
+      "researcherUrl": "https://github.com/bikini",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:14 AM CDT",
+      "firstSeenAt": "2026-06-23T05:14:11Z",
+      "language": "Python",
+      "summary": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
+      "technicalSummary": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
+      "breakdown": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
+      "whatBroke": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at bikini/exploitarium.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/bikini/exploitarium\ncd exploitarium\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "SSH",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/bikini/exploitarium"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/libssh2/libssh2/commit/97acf3dfda80c91c3a8c9f2372546301d4a1a7a8"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-8461",
+      "title": "2026 8461",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/anyanything/CVE-2026-8461-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "exploit_cve_2026_8461.py"
+        ],
+        "attackFiles": [
+          "exploit_cve_2026_8461.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-8461"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "anyanything",
+      "researcherUrl": "https://github.com/anyanything",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:08 PM CDT",
+      "firstSeenAt": "2026-06-23T18:08:15Z",
+      "language": "Python",
+      "summary": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
+      "technicalSummary": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
+      "breakdown": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
+      "whatBroke": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at anyanything/CVE-2026-8461-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/anyanything/CVE-2026-8461-PoC\ncd CVE-2026-8461-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/anyanything/CVE-2026-8461-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23159"
         ]
       ]
     },
@@ -327,7 +530,7 @@
       "title": "POC for CVE-2026-23744 for a python revshell",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/daemoncibsec/mcpExec",
       "pocValidation": {
@@ -347,7 +550,7 @@
       "researcher": "daemoncibsec",
       "researcherUrl": "https://github.com/daemoncibsec",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
+      "difficulty": "easy",
       "added": "12:55 PM CDT",
       "firstSeenAt": "2026-06-22T17:55:35Z",
       "language": "Python",
@@ -359,6 +562,8 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/daemoncibsec/mcpExec\ncd mcpExec\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -366,7 +571,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 99,
@@ -375,6 +580,10 @@
         [
           "GitHub",
           "https://github.com/daemoncibsec/mcpExec"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
@@ -433,64 +642,10 @@
         [
           "GitHub",
           "https://github.com/itsthalisman/cve-2026-3359-exp"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-11551",
-      "title": "Unauthenticated Privilege in White Label & Branding, Free Login Page Customizer",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ubaydev/CVE-2026-11551-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-11551.php"
         ],
-        "attackFiles": [
-          "CVE-2026-11551.php"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-11551"
-        ],
-        "language": "PHP"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ubaydev",
-      "researcherUrl": "https://github.com/ubaydev",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:21 PM CDT",
-      "firstSeenAt": "2026-06-21T04:21:11Z",
-      "language": "PHP",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ubaydev/CVE-2026-11551-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ubaydev/CVE-2026-11551-PoC\ncd CVE-2026-11551-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
         [
-          "GitHub",
-          "https://github.com/ubaydev/CVE-2026-11551-PoC"
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/changeset/3518461/form-maker"
         ]
       ]
     },
@@ -499,7 +654,7 @@
       "title": "POC for CVE-2026-25212",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/5170Temp/CVE-2026-25212",
       "pocValidation": {
@@ -525,14 +680,16 @@
       "added": "3:50 PM CDT",
       "firstSeenAt": "2026-06-19T20:50:00Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "technicalSummary": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "breakdown": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
+      "whatBroke": "An issue was discovered in Percona PMM before 3.7. Because an internal database user retains specific superuser privileges, an attacker with pmm-admin rights can abuse the \"Add data source\" feature to break out of the database.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 5170Temp/CVE-2026-25212.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/5170Temp/CVE-2026-25212\ncd CVE-2026-25212\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -540,7 +697,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -549,6 +706,10 @@
         [
           "GitHub",
           "https://github.com/5170Temp/CVE-2026-25212"
+        ],
+        [
+          "Vendor Advisory",
+          "https://docs.percona.com/percona-monitoring-and-management/3/release-notes/3.7.0.html#authenticated-remote-code-execution-via-internal-data-source-cve-2026-25212"
         ]
       ]
     },
@@ -557,7 +718,7 @@
       "title": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "medium",
       "proof": "working public poc",
       "pocUrl": "https://github.com/OkamiSpade/Cve-2026-39676",
       "pocValidation": {
@@ -605,14 +766,18 @@
         [
           "GitHub",
           "https://github.com/OkamiSpade/Cve-2026-39676"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/Wordpress/Plugin/download-manager/vulnerability/wordpress-download-manager-plugin-3-3-51-broken-access-control-vulnerability?_s_id=cve"
         ]
       ]
     },
     {
       "cve": "CVE-2026-46215",
       "title": "DRM GEM `change_handle` Use-After-Free (unprivileged LPE)",
-      "ecosystem": "cloud",
-      "category": "webstack",
+      "ecosystem": "linux",
+      "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/0xCyberstan/CVE-2026-46215-POC",
@@ -641,22 +806,22 @@
       "added": "9:39 AM CDT",
       "firstSeenAt": "2026-06-18T14:39:11Z",
       "language": "C",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-46215-POC.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-46215-POC\ncd CVE-2026-46215-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -665,139 +830,10 @@
         [
           "GitHub",
           "https://github.com/0xCyberstan/CVE-2026-46215-POC"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-54761",
-      "title": "Traefik Kubernetes Gateway crossProviderNamespaces Bypass PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Saku0512/CVE-2026-54761-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "external-repro-kind/gateway-exploit.yaml",
-          "external-repro-kind/kind-config.yaml",
-          "external-repro-kind/run-kind-repro.sh",
-          "external-repro-kind/traefik-v371.yaml"
         ],
-        "attackFiles": [
-          "external-repro-kind/gateway-exploit.yaml"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-54761"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Saku0512",
-      "researcherUrl": "https://github.com/Saku0512",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:29 AM CDT",
-      "firstSeenAt": "2026-06-19T13:29:44Z",
-      "language": "Shell",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Saku0512/CVE-2026-54761-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Saku0512/CVE-2026-54761-poc\ncd CVE-2026-54761-poc\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
         [
-          "GitHub",
-          "https://github.com/Saku0512/CVE-2026-54761-poc"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-55200",
-      "title": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/bikini/exploitarium",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "7zip-rar5-motw-chain-poc/poc.py",
-          "anydesk-printer-com-impersonation-poc/poc.py",
-          "docker-cp-copyout-destination-escape/poc.sh",
-          "floci-apigateway-vtl-rce-poc/poc.py",
-          "flowise-mcp-env-case-bypass-poc/poc.py",
-          "ghidra-12.1.2-rce-ace-calc-poc/pocs/SevenZipReachabilityProbe.java",
-          "ghidra-12.1.2-rce-ace-calc-poc/pocs/ace_swift_demangler_calc_poc.py",
-          "ghidra-12.1.2-rce-ace-calc-poc/pocs/calc_helper.py"
-        ],
-        "attackFiles": [
-          "7zip-rar5-motw-chain-poc/poc.py",
-          "anydesk-printer-com-impersonation-poc/poc.py",
-          "docker-cp-copyout-destination-escape/poc.sh",
-          "floci-apigateway-vtl-rce-poc/poc.py",
-          "flowise-mcp-env-case-bypass-poc/poc.py",
-          "ghidra-12.1.2-rce-ace-calc-poc/pocs/SevenZipReachabilityProbe.java",
-          "ghidra-12.1.2-rce-ace-calc-poc/pocs/ace_swift_demangler_calc_poc.py",
-          "ghidra-12.1.2-rce-ace-calc-poc/pocs/calc_helper.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-55200"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "bikini",
-      "researcherUrl": "https://github.com/bikini",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:14 AM CDT",
-      "firstSeenAt": "2026-06-23T05:14:11Z",
-      "language": "Python",
-      "summary": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
-      "technicalSummary": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
-      "breakdown": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
-      "whatBroke": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at bikini/exploitarium.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/bikini/exploitarium\ncd exploitarium\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/bikini/exploitarium"
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/5e28b7b94408897e41c63477aabc9e1db439bc8c"
         ]
       ]
     }
