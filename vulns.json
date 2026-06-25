@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T20:52:52Z",
+  "updatedAt": "2026-06-25T06:16:25Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,22 @@
   ],
   "research": [
     {
+      "title": "CVE-2026-20230 | Cisco Unified Communications Manager Server-Side Request Forgery Vulnerability",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-20230/",
+      "summary": "Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) contain a critical server-side request forgery (SSRF) vulnerability that could allow an unauthenticated remote attacker to.",
+      "publishedAt": "2026-06-24T22:00:00Z",
+      "cves": [
+        "CVE-2026-20230"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
+      ]
+    },
+    {
       "title": "Announcing Advanced Security for SonarQube Cloud Team plan",
       "source": "SonarSource",
       "sourceUrl": "https://x.com/SonarSource",
@@ -80,6 +96,19 @@
       ]
     },
     {
+      "title": "AI Finds Vulnerabilities. Security Experts Find Impact.",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/ai-finds-vulnerabilities-security-experts-find-impact",
+      "summary": "AI got a security consultant 80% of the way through a real web application assessment. The other 20% was where the actual security work happened. This walkthrough shows where AI delivered, where it produced confident but impossible explanations, and why.",
+      "publishedAt": "2026-06-24T13:00:00Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack"
+      ]
+    },
+    {
       "title": "CERT-In\u2019s AI Vulnerability Blueprint: Why Indian CISOs Need Machine-Speed Risk Operations in the Post-Mythos Era",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
@@ -90,136 +119,6 @@
       "tags": [
         "Web",
         "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-397: X.Org Server CreateSaverWindow Use-After-Free Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-397/",
-      "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-50263"
-      ],
-      "tags": [
-        "Kernel",
-        "Memory Corruption"
-      ]
-    },
-    {
-      "title": "ZDI-26-396: X.Org Server ChangeDrawableAttributes Out-Of-Bounds Read Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-396/",
-      "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-50262"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-395: X.Org Server SyncChangeCounter Use-After-Free Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-395/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-50261"
-      ],
-      "tags": [
-        "Kernel",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-394: X.Org Server FreeCounter Use-After-Free Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-394/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-50260"
-      ],
-      "tags": [
-        "Kernel",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-393: X.Org Server SetMap Request Stack-based Buffer Overflow Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-393/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-50259"
-      ],
-      "tags": [
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-392: X.Org Server Xkb Key Types Stack-based Buffer Overflow Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-392/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-50258"
-      ],
-      "tags": [
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-391: X.Org Server miSyncDestroyFence Use-After-Free Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-391/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-50257"
-      ],
-      "tags": [
-        "Kernel",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-390: X.Org Server Font Alias Stack-based Buffer Overflow Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-390/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-50256"
-      ],
-      "tags": [
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-389: Oracle PeopleSoft ExecuteProcessActivityCommand External Control of File Path Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-389/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Oracle PeopleSoft. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed. The ZDI has.",
-      "publishedAt": "2026-06-24T05:00:00Z",
-      "cves": [
-        "CVE-2026-35273"
-      ],
-      "tags": [
         "RCE"
       ]
     }
@@ -253,8 +152,8 @@
       "researcherUrl": "https://github.com/error-inside",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:20 PM CDT",
-      "firstSeenAt": "2026-06-18T20:20:55Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-06-25T06:16:25Z",
       "language": "Python",
       "summary": "Root-Level RCE via OS Command Injection in Ivanti Sentry",
       "technicalSummary": "Root-Level RCE via OS Command Injection in Ivanti Sentry",
@@ -278,7 +177,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -287,6 +186,132 @@
         [
           "Vendor Advisory",
           "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-39808",
+      "title": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/error-inside/CVE-2026-39808",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-39808-X7.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-39808-X7.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-39808"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "error-inside",
+      "researcherUrl": "https://github.com/error-inside",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-06-25T06:16:25Z",
+      "language": "Python",
+      "summary": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
+      "technicalSummary": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
+      "breakdown": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
+      "whatBroke": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at error-inside/CVE-2026-39808.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/error-inside/CVE-2026-39808\ncd CVE-2026-39808\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/error-inside/CVE-2026-39808"
+        ],
+        [
+          "Vendor Advisory",
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43515",
+      "title": "Exploitability PoC for CVE-2026-43515 (Apache Tomcat constraint bypass).",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/covepseng/cve-2026-43515-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit/exploit.go"
+        ],
+        "attackFiles": [
+          "exploit/exploit.go"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43515"
+        ],
+        "language": "Go"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "covepseng",
+      "researcherUrl": "https://github.com/covepseng",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:08 AM CDT",
+      "firstSeenAt": "2026-06-19T11:08:22Z",
+      "language": "Go",
+      "summary": "Exploitability PoC for (Apache Tomcat constraint bypass).",
+      "technicalSummary": "Exploitability PoC for (Apache Tomcat constraint bypass).",
+      "breakdown": "Exploitability PoC for (Apache Tomcat constraint bypass).",
+      "whatBroke": "Exploitability PoC for (Apache Tomcat constraint bypass).",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at covepseng/cve-2026-43515-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/covepseng/cve-2026-43515-poc\ncd cve-2026-43515-poc\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/covepseng/cve-2026-43515-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread/746nxfxod0wsocxtmv8pb8nkgmwpc6bb"
         ]
       ]
     },
@@ -340,7 +365,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -353,42 +378,40 @@
       ]
     },
     {
-      "cve": "CVE-2026-39808",
-      "title": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
+      "cve": "CVE-2026-23744",
+      "title": "POC for CVE-2026-23744 for a python revshell",
       "ecosystem": "cloud",
-      "category": "vpn-edge",
+      "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/error-inside/CVE-2026-39808",
+      "pocUrl": "https://github.com/daemoncibsec/mcpExec",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 8,
         "codeFiles": [
-          "CVE-2026-39808-X7.py"
+          "mcpExec.py"
         ],
-        "attackFiles": [
-          "CVE-2026-39808-X7.py"
-        ],
-        "hasUsage": false,
+        "attackFiles": [],
+        "hasUsage": true,
         "cveRefs": [
-          "CVE-2026-39808"
+          "CVE-2026-23744"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "error-inside",
-      "researcherUrl": "https://github.com/error-inside",
+      "researcher": "daemoncibsec",
+      "researcherUrl": "https://github.com/daemoncibsec",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:32 PM CDT",
-      "firstSeenAt": "2026-06-18T20:32:26Z",
+      "added": "12:55 PM CDT",
+      "firstSeenAt": "2026-06-22T17:55:35Z",
       "language": "Python",
-      "summary": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
-      "technicalSummary": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
-      "breakdown": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
-      "whatBroke": "Fortinet FortiSandbox 4.4.0-4.4.8 - OS Command Injection via tracer-behavior Endpoint",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at error-inside/CVE-2026-39808.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/error-inside/CVE-2026-39808\ncd CVE-2026-39808\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "POC for for a python revshell",
+      "technicalSummary": "POC for for a python revshell",
+      "breakdown": "POC for for a python revshell",
+      "whatBroke": "POC for for a python revshell",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at daemoncibsec/mcpExec.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/daemoncibsec/mcpExec\ncd mcpExec\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -399,82 +422,20 @@
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "VPN Edge",
+        "Webstack",
         "RCE"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/error-inside/CVE-2026-39808"
+          "https://github.com/daemoncibsec/mcpExec"
         ],
         [
           "Vendor Advisory",
-          "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-11551",
-      "title": "Unauthenticated Privilege in White Label & Branding, Free Login Page Customizer",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ubaydev/CVE-2026-11551-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-11551.php"
-        ],
-        "attackFiles": [
-          "CVE-2026-11551.php"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-11551"
-        ],
-        "language": "PHP"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ubaydev",
-      "researcherUrl": "https://github.com/ubaydev",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:21 PM CDT",
-      "firstSeenAt": "2026-06-21T04:21:11Z",
-      "language": "PHP",
-      "summary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
-      "technicalSummary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
-      "breakdown": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
-      "whatBroke": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ubaydev/CVE-2026-11551-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ubaydev/CVE-2026-11551-PoC\ncd CVE-2026-11551-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ubaydev/CVE-2026-11551-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/branda-white-labeling/tags/3.4.29/inc/modules/login-screen/signup-password.php#L232"
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
@@ -529,7 +490,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -594,7 +555,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -603,259 +564,6 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/signup-signin/tags/1.0.0/lib/function.php#L222"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-54761",
-      "title": "Traefik Kubernetes Gateway crossProviderNamespaces Bypass PoC",
-      "ecosystem": "web",
-      "category": "vpn-edge",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Saku0512/CVE-2026-54761-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "external-repro-kind/gateway-exploit.yaml",
-          "external-repro-kind/kind-config.yaml",
-          "external-repro-kind/run-kind-repro.sh",
-          "external-repro-kind/traefik-v371.yaml"
-        ],
-        "attackFiles": [
-          "external-repro-kind/gateway-exploit.yaml"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-54761"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Saku0512",
-      "researcherUrl": "https://github.com/Saku0512",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:29 AM CDT",
-      "firstSeenAt": "2026-06-19T13:29:44Z",
-      "language": "Shell",
-      "summary": "Traefik is an HTTP reverse proxy and load balancer. Prior to 3.6.21 and 3.7.5, there is a high severity vulnerability in Traefik's Kubernetes Gateway provider affecting the crossProviderNamespaces allowlist. For HTTPRoute rules.",
-      "technicalSummary": "Traefik is an HTTP reverse proxy and load balancer. Prior to 3.6.21 and 3.7.5, there is a high severity vulnerability in Traefik's Kubernetes Gateway provider affecting the crossProviderNamespaces allowlist. For HTTPRoute rules.",
-      "breakdown": "Traefik is an HTTP reverse proxy and load balancer. Prior to 3.6.21 and 3.7.5, there is a high severity vulnerability in Traefik's Kubernetes Gateway provider affecting the crossProviderNamespaces allowlist. For HTTPRoute rules.",
-      "whatBroke": "Traefik is an HTTP reverse proxy and load balancer. Prior to 3.6.21 and 3.7.5, there is a high severity vulnerability in Traefik's Kubernetes Gateway provider affecting the crossProviderNamespaces allowlist. For HTTPRoute rules.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Saku0512/CVE-2026-54761-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Saku0512/CVE-2026-54761-poc\ncd CVE-2026-54761-poc\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "VPN Edge",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Saku0512/CVE-2026-54761-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/traefik/traefik/releases/tag/v3.6.21"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-8461",
-      "title": "2026 8461",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/anyanything/CVE-2026-8461-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "exploit_cve_2026_8461.py"
-        ],
-        "attackFiles": [
-          "exploit_cve_2026_8461.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-8461"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "anyanything",
-      "researcherUrl": "https://github.com/anyanything",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:08 PM CDT",
-      "firstSeenAt": "2026-06-23T18:08:15Z",
-      "language": "Python",
-      "summary": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
-      "technicalSummary": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
-      "breakdown": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
-      "whatBroke": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at anyanything/CVE-2026-8461-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/anyanything/CVE-2026-8461-PoC\ncd CVE-2026-8461-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/anyanything/CVE-2026-8461-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23159"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-43515",
-      "title": "Exploitability PoC for CVE-2026-43515 (Apache Tomcat constraint bypass).",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/covepseng/cve-2026-43515-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit/exploit.go"
-        ],
-        "attackFiles": [
-          "exploit/exploit.go"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43515"
-        ],
-        "language": "Go"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "covepseng",
-      "researcherUrl": "https://github.com/covepseng",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:08 AM CDT",
-      "firstSeenAt": "2026-06-19T11:08:22Z",
-      "language": "Go",
-      "summary": "Exploitability PoC for (Apache Tomcat constraint bypass).",
-      "technicalSummary": "Exploitability PoC for (Apache Tomcat constraint bypass).",
-      "breakdown": "Exploitability PoC for (Apache Tomcat constraint bypass).",
-      "whatBroke": "Exploitability PoC for (Apache Tomcat constraint bypass).",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at covepseng/cve-2026-43515-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/covepseng/cve-2026-43515-poc\ncd cve-2026-43515-poc\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/covepseng/cve-2026-43515-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lists.apache.org/thread/746nxfxod0wsocxtmv8pb8nkgmwpc6bb"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-23744",
-      "title": "POC for CVE-2026-23744 for a python revshell",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/daemoncibsec/mcpExec",
-      "pocValidation": {
-        "valid": true,
-        "score": 8,
-        "codeFiles": [
-          "mcpExec.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-23744"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "daemoncibsec",
-      "researcherUrl": "https://github.com/daemoncibsec",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "12:55 PM CDT",
-      "firstSeenAt": "2026-06-22T17:55:35Z",
-      "language": "Python",
-      "summary": "POC for for a python revshell",
-      "technicalSummary": "POC for for a python revshell",
-      "breakdown": "POC for for a python revshell",
-      "whatBroke": "POC for for a python revshell",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at daemoncibsec/mcpExec.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/daemoncibsec/mcpExec\ncd mcpExec\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/daemoncibsec/mcpExec"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
@@ -887,8 +595,8 @@
       "researcherUrl": "https://github.com/itsthalisman",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:51 PM CDT",
-      "firstSeenAt": "2026-06-18T17:51:58Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-06-25T06:16:25Z",
       "language": "Python",
       "summary": "A PoC/exploit written in python for the unauthenticated SQL injection vulnerability situated within Form Maker (version <= 1.15.42) by 10Web.",
       "technicalSummary": "A PoC/exploit written in python for the unauthenticated SQL injection vulnerability situated within Form Maker (version <= 1.15.42) by 10Web.",
@@ -909,7 +617,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -918,6 +626,258 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/changeset/3518461/form-maker"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-38526",
+      "title": "Proof of Concept of CVE-2026-38526 in Krayin CRM <= v2.2.x. Arbitrary File Upload leading to Remote Code.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/pawpic/CVE-2026-38526-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-38526"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "pawpic",
+      "researcherUrl": "https://github.com/pawpic",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:16 PM CDT",
+      "firstSeenAt": "2026-06-24T22:16:59Z",
+      "language": "Python",
+      "summary": "Proof of Concept of in Krayin CRM <= v2.2.x. Arbitrary File Upload leading to Remote Code Execution",
+      "technicalSummary": "Proof of Concept of in Krayin CRM <= v2.2.x. Arbitrary File Upload leading to Remote Code Execution",
+      "breakdown": "Proof of Concept of in Krayin CRM <= v2.2.x. Arbitrary File Upload leading to Remote Code Execution",
+      "whatBroke": "Proof of Concept of in Krayin CRM <= v2.2.x. Arbitrary File Upload leading to Remote Code Execution",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pawpic/CVE-2026-38526-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pawpic/CVE-2026-38526-POC\ncd CVE-2026-38526-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/pawpic/CVE-2026-38526-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/TREXNEGRO/Security-Advisories/tree/main/CVE-2026-38526"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-56111",
+      "title": "Proof of concept for CVE-2026-56111, an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Christbowel/CVE-2026-56111",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.c"
+        ],
+        "attackFiles": [
+          "exploit.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56111"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Christbowel",
+      "researcherUrl": "https://github.com/Christbowel",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:00 PM CDT",
+      "firstSeenAt": "2026-06-24T21:00:03Z",
+      "language": "C",
+      "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "breakdown": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "whatBroke": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Christbowel/CVE-2026-56111.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Christbowel/CVE-2026-56111\ncd CVE-2026-56111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Christbowel/CVE-2026-56111"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MarlinFirmware/Marlin/commit/1f255d16ec2d456454fd444494cfb338d62b0fa1"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-6992",
+      "title": "Vulnerability proof of concept reworked from https://github.com/utmost3/cve/issues/2 I take no credit for.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/nicholas-howland/CVE-2026-6992-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-6992-PoC.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-6992-PoC.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-6992"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "nicholas-howland",
+      "researcherUrl": "https://github.com/nicholas-howland",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:04 PM CDT",
+      "firstSeenAt": "2026-06-22T21:04:58Z",
+      "language": "Python",
+      "summary": "Vulnerability proof of concept reworked from https://github.com/utmost3/cve/issues/2 I take no credit for discovering the vulnerability. This is for educational and portfolio purposes only.",
+      "technicalSummary": "Vulnerability proof of concept reworked from https://github.com/utmost3/cve/issues/2 I take no credit for discovering the vulnerability. This is for educational and portfolio purposes only.",
+      "breakdown": "Vulnerability proof of concept reworked from https://github.com/utmost3/cve/issues/2 I take no credit for discovering the vulnerability. This is for educational and portfolio purposes only.",
+      "whatBroke": "Vulnerability proof of concept reworked from https://github.com/utmost3/cve/issues/2 I take no credit for discovering the vulnerability. This is for educational and portfolio purposes only.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at nicholas-howland/CVE-2026-6992-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/nicholas-howland/CVE-2026-6992-PoC\ncd CVE-2026-6992-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 77,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/nicholas-howland/CVE-2026-6992-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/utmost3/cve/issues/2"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-11551",
+      "title": "Unauthenticated Privilege in White Label & Branding, Free Login Page Customizer",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/ubaydev/CVE-2026-11551-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-11551.php"
+        ],
+        "attackFiles": [
+          "CVE-2026-11551.php"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-11551"
+        ],
+        "language": "PHP"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "ubaydev",
+      "researcherUrl": "https://github.com/ubaydev",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:21 PM CDT",
+      "firstSeenAt": "2026-06-21T04:21:11Z",
+      "language": "PHP",
+      "summary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "technicalSummary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "breakdown": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "whatBroke": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ubaydev/CVE-2026-11551-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ubaydev/CVE-2026-11551-PoC\ncd CVE-2026-11551-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/ubaydev/CVE-2026-11551-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/branda-white-labeling/tags/3.4.29/inc/modules/login-screen/signup-password.php#L232"
         ]
       ]
     },
@@ -931,14 +891,14 @@
       "pocUrl": "https://github.com/5170Temp/CVE-2026-25212",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "poc.py"
         ],
         "attackFiles": [
           "poc.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-25212"
         ],
@@ -973,7 +933,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1033,7 +993,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1048,8 +1008,8 @@
     {
       "cve": "CVE-2026-46215",
       "title": "DRM GEM `change_handle` Use-After-Free (unprivileged LPE)",
-      "ecosystem": "linux",
-      "category": "kernel",
+      "ecosystem": "cloud",
+      "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/0xCyberstan/CVE-2026-46215-POC",
@@ -1075,25 +1035,86 @@
       "researcherUrl": "https://github.com/0xCyberstan",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "9:39 AM CDT",
-      "firstSeenAt": "2026-06-18T14:39:11Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-06-25T06:16:25Z",
       "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-46215-POC.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-46215-POC\ncd CVE-2026-46215-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kernel",
-        "Memory Corruption"
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xCyberstan/CVE-2026-46215-POC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-54761",
+      "title": "Traefik Kubernetes Gateway crossProviderNamespaces Bypass PoC",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Saku0512/CVE-2026-54761-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "external-repro-kind/gateway-exploit.yaml",
+          "external-repro-kind/kind-config.yaml",
+          "external-repro-kind/run-kind-repro.sh",
+          "external-repro-kind/traefik-v371.yaml"
+        ],
+        "attackFiles": [
+          "external-repro-kind/gateway-exploit.yaml"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-54761"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Saku0512",
+      "researcherUrl": "https://github.com/Saku0512",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:29 AM CDT",
+      "firstSeenAt": "2026-06-19T13:29:44Z",
+      "language": "Shell",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Saku0512/CVE-2026-54761-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Saku0512/CVE-2026-54761-poc\ncd CVE-2026-54761-poc\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1101,11 +1122,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/0xCyberstan/CVE-2026-46215-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/5e28b7b94408897e41c63477aabc9e1db439bc8c"
+          "https://github.com/Saku0512/CVE-2026-54761-poc"
         ]
       ]
     },
@@ -1113,8 +1130,8 @@
       "cve": "CVE-2026-55200",
       "title": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none.",
       "ecosystem": "cloud",
-      "category": "ssh",
-      "severity": "critical",
+      "category": "webstack",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/bikini/exploitarium",
       "pocValidation": {
@@ -1162,27 +1179,86 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/bikini/exploitarium\ncd exploitarium\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "SSH",
-        "RCE"
+        "Webstack",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/bikini/exploitarium"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-8461",
+      "title": "2026 8461",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/anyanything/CVE-2026-8461-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "exploit_cve_2026_8461.py"
+        ],
+        "attackFiles": [
+          "exploit_cve_2026_8461.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-8461"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "anyanything",
+      "researcherUrl": "https://github.com/anyanything",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:08 PM CDT",
+      "firstSeenAt": "2026-06-23T18:08:15Z",
+      "language": "Python",
+      "summary": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
+      "technicalSummary": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
+      "breakdown": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
+      "whatBroke": "An out-of-bounds write vulnerability in FFmpeg's libavcodec library, specifically in the MagicYUV decoder, allows denial-of-service and, in some cases, can be exploited for remote code execution. This vulnerability is associated.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at anyanything/CVE-2026-8461-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/anyanything/CVE-2026-8461-PoC\ncd CVE-2026-8461-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/anyanything/CVE-2026-8461-PoC"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/libssh2/libssh2/commit/97acf3dfda80c91c3a8c9f2372546301d4a1a7a8"
+          "https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/23159"
         ]
       ]
     }
