@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T05:59:34Z",
+  "updatedAt": "2026-06-27T14:50:53Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -130,77 +130,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-26030",
-      "title": "Ethical, network-isolated Docker lab reproducing CVE-2026-26030 \u2014 Semantic Kernel in-memory vector store.",
-      "ecosystem": "windows",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/InertFluid/sk-cve-2026-26030-lab",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "demo-ui/app.py",
-          "demo-ui/run.sh",
-          "demo-ui/run_filter.py",
-          "exploit.py",
-          "find_sink.py",
-          "probe.py",
-          "run.sh",
-          "setup.sh"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-26030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "InertFluid",
-      "researcherUrl": "https://github.com/InertFluid",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:28 AM CDT",
-      "firstSeenAt": "2026-06-22T11:28:10Z",
-      "language": "Python",
-      "summary": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
-      "technicalSummary": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
-      "breakdown": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
-      "whatBroke": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at InertFluid/sk-cve-2026-26030-lab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/InertFluid/sk-cve-2026-26030-lab\ncd sk-cve-2026-26030-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Kernel",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/InertFluid/sk-cve-2026-26030-lab"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/microsoft/semantic-kernel/pull/13505"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-12416",
       "title": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter |.",
       "ecosystem": "web",
@@ -325,6 +254,77 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/signup-signin/tags/1.0.0/lib/function.php#L222"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-26030",
+      "title": "Ethical, network-isolated Docker lab reproducing CVE-2026-26030 \u2014 Semantic Kernel in-memory vector store.",
+      "ecosystem": "windows",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/InertFluid/sk-cve-2026-26030-lab",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "demo-ui/app.py",
+          "demo-ui/run.sh",
+          "demo-ui/run_filter.py",
+          "exploit.py",
+          "find_sink.py",
+          "probe.py",
+          "run.sh",
+          "setup.sh"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-26030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "InertFluid",
+      "researcherUrl": "https://github.com/InertFluid",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:28 AM CDT",
+      "firstSeenAt": "2026-06-22T11:28:10Z",
+      "language": "Python",
+      "summary": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
+      "technicalSummary": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
+      "breakdown": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
+      "whatBroke": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at InertFluid/sk-cve-2026-26030-lab.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/InertFluid/sk-cve-2026-26030-lab\ncd sk-cve-2026-26030-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Kernel",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 75,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/InertFluid/sk-cve-2026-26030-lab"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/microsoft/semantic-kernel/pull/13505"
         ]
       ]
     },
@@ -645,6 +645,134 @@
       ]
     },
     {
+      "cve": "CVE-2026-21018",
+      "title": "A minimal PoC for CVE-2026-21018, demonstrating how it works",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Filipemendonca1978/CVE-2026-21018",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "SveServiceExploit.java",
+          "build_and_run.sh",
+          "poc/SveServiceExploit.java",
+          "poc/build_and_run.sh"
+        ],
+        "attackFiles": [
+          "poc/SveServiceExploit.java",
+          "poc/build_and_run.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-21018"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Filipemendonca1978",
+      "researcherUrl": "https://github.com/Filipemendonca1978",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:53 PM CDT",
+      "firstSeenAt": "2026-06-23T00:53:19Z",
+      "language": "Java",
+      "summary": "A minimal PoC for demonstrating how it works",
+      "technicalSummary": "A minimal PoC for demonstrating how it works",
+      "breakdown": "A minimal PoC for demonstrating how it works",
+      "whatBroke": "A minimal PoC for demonstrating how it works",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Filipemendonca1978/CVE-2026-21018.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Filipemendonca1978/CVE-2026-21018\ncd CVE-2026-21018\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Filipemendonca1978/CVE-2026-21018"
+        ],
+        [
+          "Vendor Advisory",
+          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=05"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-24688",
+      "title": "POC for CVE-2026-24688",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Fomovet/cve-2026-24688",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "create_malicious_pdf.py",
+          "simple_read_pdf.py",
+          "test_pypdf.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-24688"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Fomovet",
+      "researcherUrl": "https://github.com/Fomovet",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:31 AM CDT",
+      "firstSeenAt": "2026-06-21T14:31:41Z",
+      "language": "Python",
+      "summary": "pypdf is a free and open-source pure-python PDF library. An attacker who uses an infinite loop vulnerability that is present in versions prior to 6.6.2 can craft a PDF which leads to an infinite loop. This requires accessing the.",
+      "technicalSummary": "pypdf is a free and open-source pure-python PDF library. An attacker who uses an infinite loop vulnerability that is present in versions prior to 6.6.2 can craft a PDF which leads to an infinite loop. This requires accessing the.",
+      "breakdown": "pypdf is a free and open-source pure-python PDF library. An attacker who uses an infinite loop vulnerability that is present in versions prior to 6.6.2 can craft a PDF which leads to an infinite loop. This requires accessing the.",
+      "whatBroke": "pypdf is a free and open-source pure-python PDF library. An attacker who uses an infinite loop vulnerability that is present in versions prior to 6.6.2 can craft a PDF which leads to an infinite loop. This requires accessing the.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Fomovet/cve-2026-24688.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Fomovet/cve-2026-24688\ncd cve-2026-24688\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Fomovet/cve-2026-24688"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/py-pdf/pypdf/commit/b1282f8dcdc1a7b41ceab6740ffddfdf31b1fec1"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-39676",
       "title": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
       "ecosystem": "cloud",
@@ -811,10 +939,10 @@
       "added": "12:14 AM CDT",
       "firstSeenAt": "2026-06-23T05:14:11Z",
       "language": "Python",
-      "summary": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
-      "technicalSummary": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
-      "breakdown": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
-      "whatBroke": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz",
+      "summary": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz. Please do not.",
+      "technicalSummary": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz. Please do not.",
+      "breakdown": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz. Please do not.",
+      "whatBroke": "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz. Please do not.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at bikini/exploitarium.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/bikini/exploitarium\ncd exploitarium\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
