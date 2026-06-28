@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T14:52:53Z",
+  "updatedAt": "2026-06-28T20:19:52Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -445,43 +445,43 @@
     },
     {
       "cve": "CVE-2026-38751",
-      "title": "OpenSTAManager-RCE-Exploit-CVE-2026-38751",
+      "title": "\u2014 OpenSTAManager Module Upload RCE",
       "ecosystem": "web",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/b0ySie7e/OpenSTAManager-RCE-Exploit-CVE-2026-38751",
+      "pocUrl": "https://github.com/Why-Shell/CVE-2026-38751",
       "pocValidation": {
         "valid": true,
-        "score": 10,
+        "score": 11,
         "codeFiles": [
-          "src/main.rs"
+          "exploit.py"
         ],
-        "attackFiles": [],
-        "hasUsage": true,
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-38751"
         ],
-        "language": "Rust"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "b0ySie7e",
-      "researcherUrl": "https://github.com/b0ySie7e",
+      "researcher": "Why-Shell",
+      "researcherUrl": "https://github.com/Why-Shell",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:33 PM CDT",
-      "firstSeenAt": "2026-06-27T23:33:43Z",
-      "language": "Rust",
-      "summary": "OpenSTAManager-RCE-Exploit-",
-      "technicalSummary": "OpenSTAManager-RCE-Exploit-",
-      "breakdown": "OpenSTAManager-RCE-Exploit-",
-      "whatBroke": "OpenSTAManager-RCE-Exploit-",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at b0ySie7e/OpenSTAManager-RCE-Exploit-CVE-2026-38751.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/b0ySie7e/OpenSTAManager-RCE-Exploit-CVE-2026-38751\ncd OpenSTAManager-RCE-Exploit-CVE-2026-38751\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "10:27 AM CDT",
+      "firstSeenAt": "2026-06-28T15:27:25Z",
+      "language": "Python",
+      "summary": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
+      "technicalSummary": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
+      "breakdown": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
+      "whatBroke": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Why-Shell/CVE-2026-38751.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Why-Shell/CVE-2026-38751\ncd CVE-2026-38751\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -489,15 +489,15 @@
       "tags": [
         "Web",
         "Webstack",
-        "RCE"
+        "File Read"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/b0ySie7e/OpenSTAManager-RCE-Exploit-CVE-2026-38751"
+          "https://github.com/Why-Shell/CVE-2026-38751"
         ],
         [
           "Vendor Advisory",
@@ -688,6 +688,10 @@
         [
           "GitHub",
           "https://github.com/izxci/CVE-2026-54807"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/registration-form-for-woocommerce/vulnerability/wordpress-registration-form-for-woocommerce-plugin-1-0-9-privilege-escalation-vulnerability?_s_id=cve"
         ]
       ]
     },
