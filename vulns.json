@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T20:16:07Z",
+  "updatedAt": "2026-06-28T06:34:48Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -102,7 +102,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -115,77 +115,6 @@
         [
           "Vendor Advisory",
           "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-26030",
-      "title": "Ethical, network-isolated Docker lab reproducing CVE-2026-26030 \u2014 Semantic Kernel in-memory vector store.",
-      "ecosystem": "windows",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/InertFluid/sk-cve-2026-26030-lab",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "demo-ui/app.py",
-          "demo-ui/run.sh",
-          "demo-ui/run_filter.py",
-          "exploit.py",
-          "find_sink.py",
-          "probe.py",
-          "run.sh",
-          "setup.sh"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-26030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "InertFluid",
-      "researcherUrl": "https://github.com/InertFluid",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:28 AM CDT",
-      "firstSeenAt": "2026-06-22T11:28:10Z",
-      "language": "Python",
-      "summary": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
-      "technicalSummary": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
-      "breakdown": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
-      "whatBroke": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at InertFluid/sk-cve-2026-26030-lab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/InertFluid/sk-cve-2026-26030-lab\ncd sk-cve-2026-26030-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Kernel",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/InertFluid/sk-cve-2026-26030-lab"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/microsoft/semantic-kernel/pull/13505"
         ]
       ]
     },
@@ -240,7 +169,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -305,7 +234,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -314,6 +243,199 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/signup-signin/tags/1.0.0/lib/function.php#L222"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-26030",
+      "title": "Ethical, network-isolated Docker lab reproducing CVE-2026-26030 \u2014 Semantic Kernel in-memory vector store.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/InertFluid/sk-cve-2026-26030-lab",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "demo-ui/app.py",
+          "demo-ui/run.sh",
+          "demo-ui/run_filter.py",
+          "exploit.py",
+          "find_sink.py",
+          "probe.py",
+          "run.sh",
+          "setup.sh"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-26030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "InertFluid",
+      "researcherUrl": "https://github.com/InertFluid",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:28 AM CDT",
+      "firstSeenAt": "2026-06-22T11:28:10Z",
+      "language": "Python",
+      "summary": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
+      "technicalSummary": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
+      "breakdown": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
+      "whatBroke": "Ethical, network-isolated Docker lab reproducing \u2014 Semantic Kernel in-memory vector store filter eval() RCE (patched in 1.39.4)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at InertFluid/sk-cve-2026-26030-lab.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/InertFluid/sk-cve-2026-26030-lab\ncd sk-cve-2026-26030-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 75,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/InertFluid/sk-cve-2026-26030-lab"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-38751",
+      "title": "OpenSTAManager-RCE-Exploit-CVE-2026-38751",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/b0ySie7e/OpenSTAManager-RCE-Exploit-CVE-2026-38751",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "src/main.rs"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-38751"
+        ],
+        "language": "Rust"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "b0ySie7e",
+      "researcherUrl": "https://github.com/b0ySie7e",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:33 PM CDT",
+      "firstSeenAt": "2026-06-27T23:33:43Z",
+      "language": "Rust",
+      "summary": "OpenSTAManager-RCE-Exploit-",
+      "technicalSummary": "OpenSTAManager-RCE-Exploit-",
+      "breakdown": "OpenSTAManager-RCE-Exploit-",
+      "whatBroke": "OpenSTAManager-RCE-Exploit-",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at b0ySie7e/OpenSTAManager-RCE-Exploit-CVE-2026-38751.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/b0ySie7e/OpenSTAManager-RCE-Exploit-CVE-2026-38751\ncd OpenSTAManager-RCE-Exploit-CVE-2026-38751\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/b0ySie7e/OpenSTAManager-RCE-Exploit-CVE-2026-38751"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/devcode-it/openstamanager"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-48908",
+      "title": "SP Page Builder Joomla Unauthenticated RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/gagaltotal/CVE-2026-48908-SP-Page-Builder-Joomla",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc_tot.go"
+        ],
+        "attackFiles": [
+          "poc_tot.go"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48908"
+        ],
+        "language": "Go"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "gagaltotal",
+      "researcherUrl": "https://github.com/gagaltotal",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:31 AM CDT",
+      "firstSeenAt": "2026-06-24T08:31:40Z",
+      "language": "Go",
+      "summary": "SP Page Builder Joomla Unauthenticated RCE",
+      "technicalSummary": "SP Page Builder Joomla Unauthenticated RCE",
+      "breakdown": "SP Page Builder Joomla Unauthenticated RCE",
+      "whatBroke": "SP Page Builder Joomla Unauthenticated RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at gagaltotal/CVE-2026-48908-SP-Page-Builder-Joomla.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/gagaltotal/CVE-2026-48908-SP-Page-Builder-Joomla\ncd CVE-2026-48908-SP-Page-Builder-Joomla\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/gagaltotal/CVE-2026-48908-SP-Page-Builder-Joomla"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.joomshaper.com/page-builder"
         ]
       ]
     },
@@ -369,7 +491,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -431,7 +553,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -495,7 +617,7 @@
       ],
       "confidence": 98,
       "weaponization": 77,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -504,68 +626,6 @@
         [
           "Vendor Advisory",
           "https://github.com/utmost3/cve/issues/2"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-11551",
-      "title": "Unauthenticated Privilege in White Label & Branding, Free Login Page Customizer",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ubaydev/CVE-2026-11551-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-11551.php"
-        ],
-        "attackFiles": [
-          "CVE-2026-11551.php"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-11551"
-        ],
-        "language": "PHP"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ubaydev",
-      "researcherUrl": "https://github.com/ubaydev",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:59 AM CDT",
-      "firstSeenAt": "2026-06-27T05:59:34Z",
-      "language": "PHP",
-      "summary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
-      "technicalSummary": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
-      "breakdown": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
-      "whatBroke": "The Branda plugin for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 3.4.29. This is due to the plugin not properly validating a user's identity prior to updating their.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ubaydev/CVE-2026-11551-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ubaydev/CVE-2026-11551-PoC\ncd CVE-2026-11551-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ubaydev/CVE-2026-11551-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/branda-white-labeling/tags/3.4.29/inc/modules/login-screen/signup-password.php#L232"
         ]
       ]
     },
@@ -623,7 +683,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -632,68 +692,6 @@
         [
           "Vendor Advisory",
           "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=05"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-24688",
-      "title": "POC for CVE-2026-24688",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "medium",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Fomovet/cve-2026-24688",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "create_malicious_pdf.py",
-          "simple_read_pdf.py",
-          "test_pypdf.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-24688"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Fomovet",
-      "researcherUrl": "https://github.com/Fomovet",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:31 AM CDT",
-      "firstSeenAt": "2026-06-21T14:31:41Z",
-      "language": "Python",
-      "summary": "pypdf is a free and open-source pure-python PDF library. An attacker who uses an infinite loop vulnerability that is present in versions prior to 6.6.2 can craft a PDF which leads to an infinite loop. This requires accessing the.",
-      "technicalSummary": "pypdf is a free and open-source pure-python PDF library. An attacker who uses an infinite loop vulnerability that is present in versions prior to 6.6.2 can craft a PDF which leads to an infinite loop. This requires accessing the.",
-      "breakdown": "pypdf is a free and open-source pure-python PDF library. An attacker who uses an infinite loop vulnerability that is present in versions prior to 6.6.2 can craft a PDF which leads to an infinite loop. This requires accessing the.",
-      "whatBroke": "pypdf is a free and open-source pure-python PDF library. An attacker who uses an infinite loop vulnerability that is present in versions prior to 6.6.2 can craft a PDF which leads to an infinite loop. This requires accessing the.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Fomovet/cve-2026-24688.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Fomovet/cve-2026-24688\ncd cve-2026-24688\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Fomovet/cve-2026-24688"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/py-pdf/pypdf/commit/b1282f8dcdc1a7b41ceab6740ffddfdf31b1fec1"
         ]
       ]
     },
@@ -723,8 +721,8 @@
       "researcherUrl": "https://github.com/OkamiSpade",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:28 PM CDT",
-      "firstSeenAt": "2026-06-21T21:28:37Z",
+      "added": "1:34 AM CDT",
+      "firstSeenAt": "2026-06-28T06:34:48Z",
       "language": "Python",
       "summary": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
       "technicalSummary": "Version: Download Manager 3.3.5.2 Title: Missing Authorization - Unauthenticated IDOR Exploit",
@@ -745,7 +743,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -807,7 +805,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -816,6 +814,68 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-45156",
+      "title": "This repository contains the Proof of Concept (PoC) exploit script for CVE-2026-45156",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/cybertechajju/CVE-2026-45156-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "nextcloud_id4me_poc.py"
+        ],
+        "attackFiles": [
+          "nextcloud_id4me_poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-45156"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "cybertechajju",
+      "researcherUrl": "https://github.com/cybertechajju",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:02 PM CDT",
+      "firstSeenAt": "2026-06-23T19:02:19Z",
+      "language": "Python",
+      "summary": "This repository contains the Proof of Concept (PoC) exploit script for",
+      "technicalSummary": "This repository contains the Proof of Concept (PoC) exploit script for",
+      "breakdown": "This repository contains the Proof of Concept (PoC) exploit script for",
+      "whatBroke": "This repository contains the Proof of Concept (PoC) exploit script for",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cybertechajju/CVE-2026-45156-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cybertechajju/CVE-2026-45156-POC\ncd CVE-2026-45156-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/cybertechajju/CVE-2026-45156-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/nextcloud/security-advisories/security/advisories/GHSA-qqgv-fqwp-mjpp"
         ]
       ]
     },
@@ -829,7 +889,7 @@
       "pocUrl": "https://github.com/bikini/exploitarium",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 10,
         "codeFiles": [
           "7zip-rar5-motw-chain-poc/poc.py",
           "anydesk-printer-com-impersonation-poc/poc.py",
@@ -838,7 +898,7 @@
           "c-ares-tcp-uaf-calc-poc/scripts/run_until_hit.sh",
           "docker-cp-copyout-destination-escape/poc.sh",
           "ffmpeg-rasc-dlta-calc-poc/poc/ffmpeg_rasc_dlta_calc_poc.c",
-          "ffmpeg-rasc-dlta-calc-poc/scripts/build_from_checkout.sh"
+          "ffmpeg-rasc-dlta-calc-poc/poc/ffmpeg_rasc_dlta_calc_poc_portable.c"
         ],
         "attackFiles": [
           "7zip-rar5-motw-chain-poc/poc.py",
@@ -848,9 +908,9 @@
           "c-ares-tcp-uaf-calc-poc/scripts/run_until_hit.sh",
           "docker-cp-copyout-destination-escape/poc.sh",
           "ffmpeg-rasc-dlta-calc-poc/poc/ffmpeg_rasc_dlta_calc_poc.c",
-          "ffmpeg-rasc-dlta-calc-poc/scripts/build_from_checkout.sh"
+          "ffmpeg-rasc-dlta-calc-poc/poc/ffmpeg_rasc_dlta_calc_poc_portable.c"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
           "CVE-2026-55200"
         ],
@@ -884,7 +944,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
