@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T16:40:07Z",
+  "updatedAt": "2026-06-29T20:53:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,22 @@
   ],
   "research": [
     {
+      "title": "Enterprise Tech In, Shell Out (Progress Kemp LoadMaster Uninitialized Heap to Pre-Auth RCE CVE-2026-8037)",
+      "source": "watchTowr Labs",
+      "sourceUrl": "https://x.com/watchtowrcyber",
+      "url": "https://labs.watchtowr.com/enterprise-tech-in-shell-out-progress-kemp-loadmaster-uninitialized-heap-to-pre-auth-rce-cve-2026-8037/",
+      "summary": "Welcome back to another watchTowr Labs blog post. This time, we're looking at Progress Kemp LoadMaster, a load balancer that sits at the edge of a lot of enterprise networks. Edge appliances have a habit of becoming the way in rather than the thing keeping.",
+      "publishedAt": "2026-06-29T19:24:54Z",
+      "cves": [
+        "CVE-2026-8037"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
       "title": "Inside the Advisory Database and what happens when vulnerability volume breaks records",
       "source": "GitHub Security",
       "sourceUrl": "https://github.blog/security/",
@@ -66,74 +82,6 @@
     }
   ],
   "vulns": [
-    {
-      "cve": "CVE-2026-9082",
-      "title": "Drupal Core SQL Injection Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/evidencebasedvulnerability/cve-2026-9082-drupal",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "docker-compose.yml",
-          "drupal-postgres-preload-rce.py",
-          "drupal/entrypoint.sh",
-          "drupal/seed-content.php"
-        ],
-        "attackFiles": [
-          "drupal-postgres-preload-rce.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-9082"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "evidencebasedvulnerability",
-      "researcherUrl": "https://github.com/evidencebasedvulnerability",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "10:11 AM CDT",
-      "firstSeenAt": "2026-06-29T15:11:47Z",
-      "language": "Python",
-      "summary": "drupal-postgresql-rce",
-      "technicalSummary": "drupal-postgresql-rce",
-      "breakdown": "drupal-postgresql-rce",
-      "whatBroke": "drupal-postgresql-rce",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at evidencebasedvulnerability/cve-2026-9082-drupal.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/evidencebasedvulnerability/cve-2026-9082-drupal\ncd cve-2026-9082-drupal\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Core",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/evidencebasedvulnerability/cve-2026-9082-drupal"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.drupal.org/sa-core-2026-004"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-35273",
       "title": "Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability",
@@ -198,6 +146,196 @@
         [
           "Vendor Advisory",
           "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-12416",
+      "title": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter |.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-12416--CVE-2026-12417.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-12416--CVE-2026-12417.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-12416",
+          "CVE-2026-12417"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Nxploited",
+      "researcherUrl": "https://github.com/Nxploited",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:49 AM CDT",
+      "firstSeenAt": "2026-06-24T13:49:45Z",
+      "language": "Python",
+      "summary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
+      "technicalSummary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
+      "breakdown": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
+      "whatBroke": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nxploited/CVE-2026-12416-CVE-2026-12417.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417\ncd CVE-2026-12416-CVE-2026-12417\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/invoice-creator/tags/1.0.0/lib/user-manage-function.php#L296"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-12417",
+      "title": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter |.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-12416--CVE-2026-12417.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-12416--CVE-2026-12417.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-12416",
+          "CVE-2026-12417"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Nxploited",
+      "researcherUrl": "https://github.com/Nxploited",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:49 AM CDT",
+      "firstSeenAt": "2026-06-24T13:49:45Z",
+      "language": "Python",
+      "summary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
+      "technicalSummary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
+      "breakdown": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
+      "whatBroke": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nxploited/CVE-2026-12416-CVE-2026-12417.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417\ncd CVE-2026-12416-CVE-2026-12417\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/signup-signin/tags/1.0.0/lib/function.php#L222"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-56111",
+      "title": "Proof of concept for CVE-2026-56111, an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Christbowel/CVE-2026-56111",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.c"
+        ],
+        "attackFiles": [
+          "exploit.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56111"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Christbowel",
+      "researcherUrl": "https://github.com/Christbowel",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:00 PM CDT",
+      "firstSeenAt": "2026-06-24T21:00:03Z",
+      "language": "C",
+      "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "breakdown": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "whatBroke": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Christbowel/CVE-2026-56111.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Christbowel/CVE-2026-56111\ncd CVE-2026-56111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Christbowel/CVE-2026-56111"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MarlinFirmware/Marlin/commit/1f255d16ec2d456454fd444494cfb338d62b0fa1"
         ]
       ]
     },
@@ -388,134 +526,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-12416",
-      "title": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter |.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-12416--CVE-2026-12417.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-12416--CVE-2026-12417.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-12416",
-          "CVE-2026-12417"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Nxploited",
-      "researcherUrl": "https://github.com/Nxploited",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:49 AM CDT",
-      "firstSeenAt": "2026-06-24T13:49:45Z",
-      "language": "Python",
-      "summary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "technicalSummary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "breakdown": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "whatBroke": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nxploited/CVE-2026-12416-CVE-2026-12417.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417\ncd CVE-2026-12416-CVE-2026-12417\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/invoice-creator/tags/1.0.0/lib/user-manage-function.php#L296"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-12417",
-      "title": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter |.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-12416--CVE-2026-12417.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-12416--CVE-2026-12417.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-12416",
-          "CVE-2026-12417"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Nxploited",
-      "researcherUrl": "https://github.com/Nxploited",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:49 AM CDT",
-      "firstSeenAt": "2026-06-24T13:49:45Z",
-      "language": "Python",
-      "summary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "technicalSummary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "breakdown": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "whatBroke": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nxploited/CVE-2026-12416-CVE-2026-12417.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417\ncd CVE-2026-12416-CVE-2026-12417\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/signup-signin/tags/1.0.0/lib/function.php#L222"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-38526",
       "title": "Proof of Concept of CVE-2026-38526 in Krayin CRM <= v2.2.x. Arbitrary File Upload leading to Remote Code.",
       "ecosystem": "web",
@@ -525,14 +535,14 @@
       "pocUrl": "https://github.com/pawpic/CVE-2026-38526-POC",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "exploit.py"
         ],
         "attackFiles": [
           "exploit.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-38526"
         ],
@@ -576,68 +586,6 @@
         [
           "Vendor Advisory",
           "https://github.com/TREXNEGRO/Security-Advisories/tree/main/CVE-2026-38526"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56111",
-      "title": "Proof of concept for CVE-2026-56111, an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Christbowel/CVE-2026-56111",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.c"
-        ],
-        "attackFiles": [
-          "exploit.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56111"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Christbowel",
-      "researcherUrl": "https://github.com/Christbowel",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:00 PM CDT",
-      "firstSeenAt": "2026-06-24T21:00:03Z",
-      "language": "C",
-      "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "breakdown": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "whatBroke": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Christbowel/CVE-2026-56111.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Christbowel/CVE-2026-56111\ncd CVE-2026-56111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Christbowel/CVE-2026-56111"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/MarlinFirmware/Marlin/commit/1f255d16ec2d456454fd444494cfb338d62b0fa1"
         ]
       ]
     },
@@ -892,6 +840,83 @@
         [
           "Vendor Advisory",
           "https://github.com/nextcloud/security-advisories/security/advisories/GHSA-qqgv-fqwp-mjpp"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-55200",
+      "title": "Get safe, and straight",
+      "ecosystem": "cloud",
+      "category": "ssh",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xnhsec/0-day-PoC-Repo",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "7zip-rar5-motw-chain-poc/poc.py",
+          "anydesk-printer-com-impersonation-poc/poc.py",
+          "c-ares-tcp-uaf-calc-poc/poc/cares_tcp_uaf_calc_poc.c",
+          "c-ares-tcp-uaf-calc-poc/scripts/build_from_checkout.sh",
+          "c-ares-tcp-uaf-calc-poc/scripts/run_until_hit.sh",
+          "docker-cp-copyout-destination-escape/poc.sh",
+          "ffmpeg-rasc-dlta-calc-poc/poc/ffmpeg_rasc_dlta_calc_poc.c",
+          "ffmpeg-rasc-dlta-calc-poc/scripts/build_from_checkout.sh"
+        ],
+        "attackFiles": [
+          "7zip-rar5-motw-chain-poc/poc.py",
+          "anydesk-printer-com-impersonation-poc/poc.py",
+          "c-ares-tcp-uaf-calc-poc/poc/cares_tcp_uaf_calc_poc.c",
+          "c-ares-tcp-uaf-calc-poc/scripts/build_from_checkout.sh",
+          "c-ares-tcp-uaf-calc-poc/scripts/run_until_hit.sh",
+          "docker-cp-copyout-destination-escape/poc.sh",
+          "ffmpeg-rasc-dlta-calc-poc/poc/ffmpeg_rasc_dlta_calc_poc.c",
+          "ffmpeg-rasc-dlta-calc-poc/scripts/build_from_checkout.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-55200"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xnhsec",
+      "researcherUrl": "https://github.com/0xnhsec",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:01 PM CDT",
+      "firstSeenAt": "2026-06-29T20:01:33Z",
+      "language": "Python",
+      "summary": "Get safe, and straight",
+      "technicalSummary": "Get safe, and straight",
+      "breakdown": "Get safe, and straight",
+      "whatBroke": "Get safe, and straight",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xnhsec/0-day-PoC-Repo.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xnhsec/0-day-PoC-Repo\ncd 0-day-PoC-Repo\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "SSH",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xnhsec/0-day-PoC-Repo"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/libssh2/libssh2/commit/97acf3dfda80c91c3a8c9f2372546301d4a1a7a8"
         ]
       ]
     },
