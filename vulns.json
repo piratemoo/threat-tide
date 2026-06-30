@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T20:53:45Z",
+  "updatedAt": "2026-06-30T06:21:22Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -83,6 +83,139 @@
   ],
   "vulns": [
     {
+      "cve": "CVE-2026-9082",
+      "title": "Drupal Core SQL Injection Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/evidencebasedvulnerability/cve-2026-9082-drupal",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "docker-compose.yml",
+          "drupal-postgres-preload-rce.py",
+          "drupal/entrypoint.sh",
+          "drupal/seed-content.php"
+        ],
+        "attackFiles": [
+          "drupal-postgres-preload-rce.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-9082"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "evidencebasedvulnerability",
+      "researcherUrl": "https://github.com/evidencebasedvulnerability",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "10:11 AM CDT",
+      "firstSeenAt": "2026-06-29T15:11:47Z",
+      "language": "Python",
+      "summary": "drupal-postgresql-rce",
+      "technicalSummary": "drupal-postgresql-rce",
+      "breakdown": "drupal-postgresql-rce",
+      "whatBroke": "drupal-postgresql-rce",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at evidencebasedvulnerability/cve-2026-9082-drupal.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/evidencebasedvulnerability/cve-2026-9082-drupal\ncd cve-2026-9082-drupal\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/evidencebasedvulnerability/cve-2026-9082-drupal"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.drupal.org/sa-core-2026-004"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-48907",
+      "title": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-48907",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48907"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "K3ysTr0K3R",
+      "researcherUrl": "https://github.com/K3ysTr0K3R",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "4:14 PM CDT",
+      "firstSeenAt": "2026-06-29T21:14:02Z",
+      "language": "Python",
+      "summary": "\u2013 Joomla JCE Unauthenticated Remote Code Execution (RCE)",
+      "technicalSummary": "\u2013 Joomla JCE Unauthenticated Remote Code Execution (RCE)",
+      "breakdown": "\u2013 Joomla JCE Unauthenticated Remote Code Execution (RCE)",
+      "whatBroke": "\u2013 Joomla JCE Unauthenticated Remote Code Execution (RCE)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-48907.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-48907\ncd CVE-2026-48907\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Joomla Content Editor",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/K3ysTr0K3R/CVE-2026-48907"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-35273",
       "title": "Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability",
       "ecosystem": "cloud",
@@ -133,7 +266,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -146,6 +279,192 @@
         [
           "Vendor Advisory",
           "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-11834",
+      "title": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE (CVE-2026-11834)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/mattgsys/CVE-2026-11834",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "cve-2026-11834.py"
+        ],
+        "attackFiles": [
+          "cve-2026-11834.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-11834"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "mattgsys",
+      "researcherUrl": "https://github.com/mattgsys",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:21 AM CDT",
+      "firstSeenAt": "2026-06-30T06:21:22Z",
+      "language": "Python",
+      "summary": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE ()",
+      "technicalSummary": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE ()",
+      "breakdown": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE ()",
+      "whatBroke": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE ()",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mattgsys/CVE-2026-11834.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mattgsys/CVE-2026-11834\ncd CVE-2026-11834\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/mattgsys/CVE-2026-11834"
+        ],
+        [
+          "Vendor Advisory",
+          "https://mattg.systems/posts/cve-2026-11834/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-38751",
+      "title": "\u2014 OpenSTAManager Module Upload RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Why-Shell/CVE-2026-38751",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-38751"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Why-Shell",
+      "researcherUrl": "https://github.com/Why-Shell",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:27 AM CDT",
+      "firstSeenAt": "2026-06-28T15:27:25Z",
+      "language": "Python",
+      "summary": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
+      "technicalSummary": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
+      "breakdown": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
+      "whatBroke": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Why-Shell/CVE-2026-38751.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Why-Shell/CVE-2026-38751\ncd CVE-2026-38751\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Why-Shell/CVE-2026-38751"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/devcode-it/openstamanager"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43503",
+      "title": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/SecureWithUmer/CVE-2026-43503",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "dirtyclone.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-43503"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "SecureWithUmer",
+      "researcherUrl": "https://github.com/SecureWithUmer",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:34 AM CDT",
+      "firstSeenAt": "2026-06-29T15:34:38Z",
+      "language": "Python",
+      "summary": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability described in the source as",
+      "technicalSummary": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability described in the source as",
+      "breakdown": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability described in the source as",
+      "whatBroke": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability described in the source as",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SecureWithUmer/CVE-2026-43503.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SecureWithUmer/CVE-2026-43503\ncd CVE-2026-43503\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/SecureWithUmer/CVE-2026-43503"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/12401fcfb01f53ccc63ab0a3246570fe8f3105ee"
         ]
       ]
     },
@@ -200,7 +519,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -265,7 +584,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -274,254 +593,6 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/signup-signin/tags/1.0.0/lib/function.php#L222"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56111",
-      "title": "Proof of concept for CVE-2026-56111, an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Christbowel/CVE-2026-56111",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.c"
-        ],
-        "attackFiles": [
-          "exploit.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56111"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Christbowel",
-      "researcherUrl": "https://github.com/Christbowel",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:00 PM CDT",
-      "firstSeenAt": "2026-06-24T21:00:03Z",
-      "language": "C",
-      "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "breakdown": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "whatBroke": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Christbowel/CVE-2026-56111.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Christbowel/CVE-2026-56111\ncd CVE-2026-56111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Christbowel/CVE-2026-56111"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/MarlinFirmware/Marlin/commit/1f255d16ec2d456454fd444494cfb338d62b0fa1"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-11834",
-      "title": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE (CVE-2026-11834)",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/mattgsys/CVE-2026-11834",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cve-2026-11834.py"
-        ],
-        "attackFiles": [
-          "cve-2026-11834.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-11834"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "mattgsys",
-      "researcherUrl": "https://github.com/mattgsys",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:41 PM CDT",
-      "firstSeenAt": "2026-06-23T19:41:07Z",
-      "language": "Python",
-      "summary": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE ()",
-      "technicalSummary": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE ()",
-      "breakdown": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE ()",
-      "whatBroke": "Proof of Concept (PoC) for the TP-Link DHCP Option 66 Unauthenticated RCE ()",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mattgsys/CVE-2026-11834.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mattgsys/CVE-2026-11834\ncd CVE-2026-11834\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/mattgsys/CVE-2026-11834"
-        ],
-        [
-          "Vendor Advisory",
-          "https://mattg.systems/posts/cve-2026-11834/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-38751",
-      "title": "\u2014 OpenSTAManager Module Upload RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Why-Shell/CVE-2026-38751",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-38751"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Why-Shell",
-      "researcherUrl": "https://github.com/Why-Shell",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:27 AM CDT",
-      "firstSeenAt": "2026-06-28T15:27:25Z",
-      "language": "Python",
-      "summary": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
-      "technicalSummary": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
-      "breakdown": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
-      "whatBroke": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Why-Shell/CVE-2026-38751.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Why-Shell/CVE-2026-38751\ncd CVE-2026-38751\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Why-Shell/CVE-2026-38751"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/devcode-it/openstamanager"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-43503",
-      "title": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/SecureWithUmer/CVE-2026-43503",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "dirtyclone.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-43503"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "SecureWithUmer",
-      "researcherUrl": "https://github.com/SecureWithUmer",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:34 AM CDT",
-      "firstSeenAt": "2026-06-29T15:34:38Z",
-      "language": "Python",
-      "summary": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability described in the source as",
-      "technicalSummary": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability described in the source as",
-      "breakdown": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability described in the source as",
-      "whatBroke": "DirtyClone - local privilege escalation (LPE) proof-of-concept targeting a kernel/XFRM-related vulnerability described in the source as",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SecureWithUmer/CVE-2026-43503.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SecureWithUmer/CVE-2026-43503\ncd CVE-2026-43503\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/SecureWithUmer/CVE-2026-43503"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/12401fcfb01f53ccc63ab0a3246570fe8f3105ee"
         ]
       ]
     },
@@ -577,7 +648,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -586,6 +657,68 @@
         [
           "Vendor Advisory",
           "https://github.com/TREXNEGRO/Security-Advisories/tree/main/CVE-2026-38526"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-56111",
+      "title": "Proof of concept for CVE-2026-56111, an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Christbowel/CVE-2026-56111",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.c"
+        ],
+        "attackFiles": [
+          "exploit.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56111"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Christbowel",
+      "researcherUrl": "https://github.com/Christbowel",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:00 PM CDT",
+      "firstSeenAt": "2026-06-24T21:00:03Z",
+      "language": "C",
+      "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "breakdown": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "whatBroke": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Christbowel/CVE-2026-56111.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Christbowel/CVE-2026-56111\ncd CVE-2026-56111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Christbowel/CVE-2026-56111"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MarlinFirmware/Marlin/commit/1f255d16ec2d456454fd444494cfb338d62b0fa1"
         ]
       ]
     },
@@ -641,7 +774,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -650,72 +783,6 @@
         [
           "Vendor Advisory",
           "https://www.tp-link.com/en/support/download/archer-ax73/v2/#Firmware"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-21018",
-      "title": "A minimal PoC for CVE-2026-21018, demonstrating how it works",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Filipemendonca1978/CVE-2026-21018",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "SveServiceExploit.java",
-          "build_and_run.sh",
-          "poc/SveServiceExploit.java",
-          "poc/build_and_run.sh"
-        ],
-        "attackFiles": [
-          "poc/SveServiceExploit.java",
-          "poc/build_and_run.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-21018"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Filipemendonca1978",
-      "researcherUrl": "https://github.com/Filipemendonca1978",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:01 AM CDT",
-      "firstSeenAt": "2026-06-29T07:01:02Z",
-      "language": "Java",
-      "summary": "A minimal PoC for demonstrating how it works",
-      "technicalSummary": "A minimal PoC for demonstrating how it works",
-      "breakdown": "A minimal PoC for demonstrating how it works",
-      "whatBroke": "A minimal PoC for demonstrating how it works",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Filipemendonca1978/CVE-2026-21018.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Filipemendonca1978/CVE-2026-21018\ncd CVE-2026-21018\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Filipemendonca1978/CVE-2026-21018"
-        ],
-        [
-          "Vendor Advisory",
-          "https://security.samsungmobile.com/securityUpdate.smsb?year=2026&month=05"
         ]
       ]
     },
@@ -769,7 +836,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -809,8 +876,8 @@
       "researcherUrl": "https://github.com/cybertechajju",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:02 PM CDT",
-      "firstSeenAt": "2026-06-23T19:02:19Z",
+      "added": "1:21 AM CDT",
+      "firstSeenAt": "2026-06-30T06:21:22Z",
       "language": "Python",
       "summary": "This repository contains the Proof of Concept (PoC) exploit script for",
       "technicalSummary": "This repository contains the Proof of Concept (PoC) exploit script for",
@@ -831,7 +898,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -908,7 +975,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -970,7 +1037,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
