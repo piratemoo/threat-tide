@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T15:47:51Z",
+  "updatedAt": "2026-07-01T20:51:15Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,22 +51,17 @@
   ],
   "research": [
     {
-      "title": "CitrixBleed To Infinity And Beyond (Citrix NetScaler Pre-Auth Memory Overread CVE-2026-8451)",
-      "source": "watchTowr Labs",
-      "sourceUrl": "https://x.com/watchtowrcyber",
-      "url": "https://labs.watchtowr.com/citrixbleed-to-infinity-and-beyond-citrix-netscaler-pre-auth-memory-overread-cve-2026-8451/",
-      "summary": "Well, well, well - once again, the cat has dragged us in and spat us out. Today, we find ourselves questioning the reality we sit within. Must it be so predictable, and why us? \u201cBut watchTowr, what do you mean?\u201d Well, if you\u2019re here, you likely fit into one.",
-      "publishedAt": "2026-06-30T19:35:58Z",
-      "cves": [
-        "CVE-2025-12101",
-        "CVE-2025-5777",
-        "CVE-2026-3055",
-        "CVE-2026-8451"
-      ],
+      "title": "6 security settings every GitHub maintainer should enable this week",
+      "source": "GitHub Security",
+      "sourceUrl": "https://github.blog/security/",
+      "url": "https://github.blog/security/6-security-settings-every-github-maintainer-should-enable-this-week/",
+      "summary": "At GitHub Security Lab, we spend a lot of our week talking to maintainers. Some find the settings page dense and the docs sprawl. Most maintainers we talk to weren\u2019t hired to be security engineers. While this is true, ignoring a project\u2019s security settings.",
+      "publishedAt": "2026-07-01T15:59:29Z",
+      "cves": [],
       "tags": [
-        "Web",
-        "VPN Edge",
-        "Session Theft"
+        "Linux",
+        "Webstack",
+        "RCE"
       ]
     }
   ],
@@ -201,6 +196,68 @@
         [
           "Vendor Advisory",
           "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20253",
+      "title": "Splunk Enterprise Missing Authentication for Critical Function Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/pssec-io/CVE-2026-20253",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker-compose.yml",
+          "patched-docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20253"
+        ],
+        "language": "Dockerfile"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "pssec-io",
+      "researcherUrl": "https://github.com/pssec-io",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:53 AM CDT",
+      "firstSeenAt": "2026-06-29T07:53:55Z",
+      "language": "Dockerfile",
+      "summary": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
+      "technicalSummary": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
+      "breakdown": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
+      "whatBroke": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pssec-io/CVE-2026-20253.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pssec-io/CVE-2026-20253\ncd CVE-2026-20253\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Enterprise",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "File Read",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/pssec-io/CVE-2026-20253"
+        ],
+        [
+          "Vendor Advisory",
+          "https://advisory.splunk.com/advisories/SVD-2026-0603"
         ]
       ]
     },
@@ -603,12 +660,12 @@
     },
     {
       "cve": "CVE-2026-38751",
-      "title": "\u2014 OpenSTAManager Module Upload RCE",
+      "title": "OpenSTAManager RCE Exploit (CVE-2026-38751)",
       "ecosystem": "web",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Why-Shell/CVE-2026-38751",
+      "pocUrl": "https://github.com/hackthem/OpenSTAManager_RCE_Exploit-CVE-2026-38751-",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -625,21 +682,23 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Why-Shell",
-      "researcherUrl": "https://github.com/Why-Shell",
+      "researcher": "hackthem",
+      "researcherUrl": "https://github.com/hackthem",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "10:27 AM CDT",
-      "firstSeenAt": "2026-06-28T15:27:25Z",
+      "added": "3:09 PM CDT",
+      "firstSeenAt": "2026-07-01T20:09:26Z",
       "language": "Python",
-      "summary": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
-      "technicalSummary": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
-      "breakdown": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
-      "whatBroke": "OpenSTAManager version 2.10 and earlier contains an arbitrary file upload vulnerability in the module update functionality (modules/aggiornamenti/upload_modules.php)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Why-Shell/CVE-2026-38751.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Why-Shell/CVE-2026-38751\ncd CVE-2026-38751\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "OpenSTAManager RCE Exploit ()",
+      "technicalSummary": "OpenSTAManager RCE Exploit ()",
+      "breakdown": "OpenSTAManager RCE Exploit ()",
+      "whatBroke": "OpenSTAManager RCE Exploit ()",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hackthem/OpenSTAManager_RCE_Exploit-CVE-2026-38751-.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hackthem/OpenSTAManager_RCE_Exploit-CVE-2026-38751-\ncd OpenSTAManager_RCE_Exploit-CVE-2026-38751-\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -647,15 +706,15 @@
       "tags": [
         "Web",
         "Webstack",
-        "File Read"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/Why-Shell/CVE-2026-38751"
+          "https://github.com/hackthem/OpenSTAManager_RCE_Exploit-CVE-2026-38751-"
         ],
         [
           "Vendor Advisory",
