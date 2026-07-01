@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T21:01:52Z",
+  "updatedAt": "2026-07-01T06:41:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -152,7 +152,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -217,7 +217,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -226,73 +226,6 @@
         [
           "Vendor Advisory",
           "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-35273",
-      "title": "Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/12hrformat/CVE-2026-35273-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "main-poc.py"
-        ],
-        "attackFiles": [
-          "main-poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-35273"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ZDI",
-      "researcherUrl": "https://x.com/thezdi",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:21 AM CDT",
-      "firstSeenAt": "2026-06-26T05:21:08Z",
-      "language": "Python",
-      "summary": "Oracle PeopleSoft Enterprise PeopleTools contains a missing authentication for critical function vulnerability which could allow an unauthenticated attacker to obtain takeover of PeopleSoft Enterprise PeopleTools.",
-      "technicalSummary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Oracle PeopleSoft. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed. The ZDI has.",
-      "breakdown": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Oracle PeopleSoft. Although authentication is required to exploit this vulnerability, the existing authentication mechanism can be bypassed. The ZDI has.",
-      "whatBroke": "Oracle PeopleSoft Enterprise PeopleTools contains a missing authentication for critical function vulnerability which could allow an unauthenticated attacker to obtain takeover of PeopleSoft Enterprise PeopleTools.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 12hrformat/CVE-2026-35273-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/12hrformat/CVE-2026-35273-POC\ncd CVE-2026-35273-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed PeopleSoft Enterprise PeopleTools",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/12hrformat/CVE-2026-35273-POC"
-        ],
-        [
-          "Technical Paper",
-          "http://www.zerodayinitiative.com/advisories/ZDI-26-389/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
         ]
       ]
     },
@@ -325,8 +258,8 @@
       "researcherUrl": "https://github.com/Nxploited",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:49 AM CDT",
-      "firstSeenAt": "2026-06-24T13:49:45Z",
+      "added": "1:41 AM CDT",
+      "firstSeenAt": "2026-07-01T06:41:45Z",
       "language": "Python",
       "summary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
       "technicalSummary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
@@ -347,7 +280,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -388,8 +321,8 @@
       "researcherUrl": "https://github.com/Nxploited",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:49 AM CDT",
-      "firstSeenAt": "2026-06-24T13:49:45Z",
+      "added": "1:41 AM CDT",
+      "firstSeenAt": "2026-07-01T06:41:45Z",
       "language": "Python",
       "summary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
       "technicalSummary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
@@ -412,7 +345,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -480,7 +413,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -548,7 +481,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -610,7 +543,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -650,8 +583,8 @@
       "researcherUrl": "https://github.com/Christbowel",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:00 PM CDT",
-      "firstSeenAt": "2026-06-24T21:00:03Z",
+      "added": "1:41 AM CDT",
+      "firstSeenAt": "2026-07-01T06:41:45Z",
       "language": "C",
       "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
       "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
@@ -672,7 +605,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -734,7 +667,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -794,7 +727,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -859,7 +792,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -921,7 +854,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -937,8 +870,8 @@
       "cve": "CVE-2026-55200",
       "title": "Get safe, and straight",
       "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
+      "category": "ssh",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/0xnhsec/0-day-PoC-Repo",
       "pocValidation": {
@@ -986,22 +919,27 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xnhsec/0-day-PoC-Repo\ncd 0-day-PoC-Repo\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "Webstack",
-        "Exploit"
+        "SSH",
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/0xnhsec/0-day-PoC-Repo"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/libssh2/libssh2/commit/97acf3dfda80c91c3a8c9f2372546301d4a1a7a8"
         ]
       ]
     },
@@ -1055,7 +993,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
