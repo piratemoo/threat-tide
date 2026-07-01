@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T06:41:45Z",
+  "updatedAt": "2026-07-01T15:47:51Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -60,37 +60,12 @@
       "cves": [
         "CVE-2025-12101",
         "CVE-2025-5777",
-        "CVE-2026-0050",
         "CVE-2026-3055",
         "CVE-2026-8451"
       ],
       "tags": [
         "Web",
         "VPN Edge",
-        "Session Theft"
-      ]
-    },
-    {
-      "title": "How Do You Protect a Workload You Cannot Afford to Patch Right Now?",
-      "source": "Aqua Nautilus",
-      "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
-      "url": "https://www.aquasec.com/blog/how-do-you-protect-a-workload-you-cannot-afford-to-patch-right-now/",
-      "summary": "TL;DR Vulnerability management is collapsing under scale and the remediation timeline for production workloads is not going to shorten fast enough to keep pace with attacks that adapt at machine speed. Aqua vShield is a patented runtime capability that.",
-      "publishedAt": "2026-06-30T13:51:55Z",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "Introducing Sonar Vortex and the SonarQube Remediation Agent",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/introducing-sonar-vortex/",
-      "summary": "Two new products built to make AI agents more effective AI coding agents are writing code faster than any review process was designed to handle. That is not a complaint about the tools. It is a structural gap. The way we write code changed in the last twelve.",
-      "publishedAt": "2026-06-30T13:00:00Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
         "Session Theft"
       ]
     }
@@ -165,46 +140,109 @@
       ]
     },
     {
-      "cve": "CVE-2026-48907",
-      "title": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
+      "cve": "CVE-2026-41940",
+      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-48907",
+      "pocUrl": "https://github.com/aquace/CVE-2026-41940-PoC",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exploit.py"
+          "exp.py"
         ],
         "attackFiles": [
-          "exploit.py"
+          "exp.py"
         ],
         "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-41940"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "aquace",
+      "researcherUrl": "https://github.com/aquace",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "2:13 AM CDT",
+      "firstSeenAt": "2026-06-28T07:13:52Z",
+      "language": "Python",
+      "summary": "authentication bypass vulnerability proof-of-concept",
+      "technicalSummary": "authentication bypass vulnerability proof-of-concept",
+      "breakdown": "authentication bypass vulnerability proof-of-concept",
+      "whatBroke": "authentication bypass vulnerability proof-of-concept",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at aquace/CVE-2026-41940-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/aquace/CVE-2026-41940-PoC\ncd CVE-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/aquace/CVE-2026-41940-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-48907",
+      "title": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/NoXiVaR/CVE-2026-48907",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-48907.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-48907.py"
+        ],
+        "hasUsage": true,
         "cveRefs": [
           "CVE-2026-48907"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "K3ysTr0K3R",
-      "researcherUrl": "https://github.com/K3ysTr0K3R",
+      "researcher": "NoXiVaR",
+      "researcherUrl": "https://github.com/NoXiVaR",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "4:14 PM CDT",
-      "firstSeenAt": "2026-06-29T21:14:02Z",
+      "difficulty": "moderate",
+      "added": "9:05 AM CDT",
+      "firstSeenAt": "2026-07-01T14:05:26Z",
       "language": "Python",
-      "summary": "\u2013 Joomla JCE Unauthenticated Remote Code Execution (RCE)",
-      "technicalSummary": "\u2013 Joomla JCE Unauthenticated Remote Code Execution (RCE)",
-      "breakdown": "\u2013 Joomla JCE Unauthenticated Remote Code Execution (RCE)",
-      "whatBroke": "\u2013 Joomla JCE Unauthenticated Remote Code Execution (RCE)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-48907.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-48907\ncd CVE-2026-48907\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
+      "technicalSummary": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
+      "breakdown": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
+      "whatBroke": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at NoXiVaR/CVE-2026-48907.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/NoXiVaR/CVE-2026-48907\ncd CVE-2026-48907\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Joomla Content Editor",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -212,148 +250,20 @@
       "tags": [
         "Web",
         "Webstack",
-        "RCE",
+        "Exploit",
         "KEV"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/K3ysTr0K3R/CVE-2026-48907"
+          "https://github.com/NoXiVaR/CVE-2026-48907"
         ],
         [
           "Vendor Advisory",
           "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-12416",
-      "title": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter |.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-12416--CVE-2026-12417.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-12416--CVE-2026-12417.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-12416",
-          "CVE-2026-12417"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Nxploited",
-      "researcherUrl": "https://github.com/Nxploited",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:41 AM CDT",
-      "firstSeenAt": "2026-07-01T06:41:45Z",
-      "language": "Python",
-      "summary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "technicalSummary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "breakdown": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "whatBroke": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nxploited/CVE-2026-12416-CVE-2026-12417.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417\ncd CVE-2026-12416-CVE-2026-12417\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/invoice-creator/tags/1.0.0/lib/user-manage-function.php#L296"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-12417",
-      "title": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter |.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-12416--CVE-2026-12417.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-12416--CVE-2026-12417.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-12416",
-          "CVE-2026-12417"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Nxploited",
-      "researcherUrl": "https://github.com/Nxploited",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:41 AM CDT",
-      "firstSeenAt": "2026-07-01T06:41:45Z",
-      "language": "Python",
-      "summary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "technicalSummary": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "breakdown": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "whatBroke": "Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter | Unauthenticated Privilege Escalation via Weak Password Reset Validation via 'reset_activation_code' Leading to Account Takeover",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nxploited/CVE-2026-12416-CVE-2026-12417.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417\ncd CVE-2026-12416-CVE-2026-12417\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Nxploited/CVE-2026-12416-CVE-2026-12417"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/signup-signin/tags/1.0.0/lib/function.php#L222"
         ]
       ]
     },
@@ -494,6 +404,68 @@
       ]
     },
     {
+      "cve": "CVE-2026-42945",
+      "title": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/aratane/CVE-2026-42945",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "rift.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-42945"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "aratane",
+      "researcherUrl": "https://github.com/aratane",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "3:30 AM CDT",
+      "firstSeenAt": "2026-07-01T08:30:57Z",
+      "language": "Python",
+      "summary": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
+      "technicalSummary": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
+      "breakdown": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
+      "whatBroke": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at aratane/CVE-2026-42945.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/aratane/CVE-2026-42945\ncd CVE-2026-42945\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/aratane/CVE-2026-42945"
+        ],
+        [
+          "Vendor Advisory",
+          "https://my.f5.com/manage/s/article/K000161019"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-0073",
       "title": "2026 0073 Android ADBD bypass zh CN",
       "ecosystem": "android",
@@ -556,44 +528,56 @@
       ]
     },
     {
-      "cve": "CVE-2026-56111",
-      "title": "Proof of concept for CVE-2026-56111, an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "cve": "CVE-2026-3227",
+      "title": "TP-Link Router OS Command Injection",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Christbowel/CVE-2026-56111",
+      "pocUrl": "https://github.com/do4choo/CVE-2026-3227-TP-Link-authenticated-RCE",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exploit.c"
+          "POC/c_hook/compile_hook.sh",
+          "POC/c_hook/create_config.c",
+          "POC/generate_payload.py",
+          "POC/python_utils/decrypt_config.py",
+          "POC/python_utils/encrypt_config.py",
+          "POC/python_utils/xml_editor.py"
         ],
         "attackFiles": [
-          "exploit.c"
+          "POC/c_hook/compile_hook.sh",
+          "POC/c_hook/create_config.c",
+          "POC/generate_payload.py",
+          "POC/python_utils/decrypt_config.py",
+          "POC/python_utils/encrypt_config.py",
+          "POC/python_utils/xml_editor.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-56111"
+          "CVE-2026-3227"
         ],
-        "language": "C"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Christbowel",
-      "researcherUrl": "https://github.com/Christbowel",
+      "researcher": "do4choo",
+      "researcherUrl": "https://github.com/do4choo",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:41 AM CDT",
-      "firstSeenAt": "2026-07-01T06:41:45Z",
-      "language": "C",
-      "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "breakdown": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "whatBroke": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Christbowel/CVE-2026-56111.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Christbowel/CVE-2026-56111\ncd CVE-2026-56111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "11:31 AM CDT",
+      "firstSeenAt": "2026-06-25T16:31:07Z",
+      "language": "Python",
+      "summary": "A command injection vulnerability was identified in TP-Link TL-WR802N v4, TL-WR841N v14, and TL-WR840N v6 due to improper neutralization of special elements used in an OS command. In the router configuration import function.",
+      "technicalSummary": "A command injection vulnerability was identified in TP-Link TL-WR802N v4, TL-WR841N v14, and TL-WR840N v6 due to improper neutralization of special elements used in an OS command. In the router configuration import function.",
+      "breakdown": "A command injection vulnerability was identified in TP-Link TL-WR802N v4, TL-WR841N v14, and TL-WR840N v6 due to improper neutralization of special elements used in an OS command. In the router configuration import function.",
+      "whatBroke": "A command injection vulnerability was identified in TP-Link TL-WR802N v4, TL-WR841N v14, and TL-WR840N v6 due to improper neutralization of special elements used in an OS command. In the router configuration import function.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at do4choo/CVE-2026-3227-TP-Link-authenticated-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/do4choo/CVE-2026-3227-TP-Link-authenticated-RCE\ncd CVE-2026-3227-TP-Link-authenticated-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -601,19 +585,19 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Memory Corruption"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
-          "https://github.com/Christbowel/CVE-2026-56111"
+          "https://github.com/do4choo/CVE-2026-3227-TP-Link-authenticated-RCE"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/MarlinFirmware/Marlin/commit/1f255d16ec2d456454fd444494cfb338d62b0fa1"
+          "https://www.tp-link.com/en/support/download/tl-wr802n/v4/#Firmware"
         ]
       ]
     },
@@ -805,6 +789,192 @@
       ]
     },
     {
+      "cve": "CVE-2026-53694",
+      "title": "NoMachine Local Privilege Escalation via Argument Injection",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-53694"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "do4choo",
+      "researcherUrl": "https://github.com/do4choo",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:22 AM CDT",
+      "firstSeenAt": "2026-07-01T15:22:38Z",
+      "language": "Python",
+      "summary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "technicalSummary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "breakdown": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "whatBroke": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at do4choo/CVE-2026-53694-NoMachine-LPE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE\ncd CVE-2026-53694-NoMachine-LPE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://kb.nomachine.com/SU05X00274"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-56111",
+      "title": "Proof of concept for CVE-2026-56111, an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Christbowel/CVE-2026-56111",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.c"
+        ],
+        "attackFiles": [
+          "exploit.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56111"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Christbowel",
+      "researcherUrl": "https://github.com/Christbowel",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:41 AM CDT",
+      "firstSeenAt": "2026-07-01T06:41:45Z",
+      "language": "C",
+      "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "breakdown": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "whatBroke": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Christbowel/CVE-2026-56111.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Christbowel/CVE-2026-56111\ncd CVE-2026-56111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Christbowel/CVE-2026-56111"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MarlinFirmware/Marlin/commit/1f255d16ec2d456454fd444494cfb338d62b0fa1"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-41179",
+      "title": "POC for CVE-2026-41179",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/pssec-io/CVE-2026-41179",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.sh"
+        ],
+        "attackFiles": [
+          "poc.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-41179"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "pssec-io",
+      "researcherUrl": "https://github.com/pssec-io",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:58 AM CDT",
+      "firstSeenAt": "2026-06-28T11:58:59Z",
+      "language": "Shell",
+      "summary": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
+      "technicalSummary": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
+      "breakdown": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
+      "whatBroke": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pssec-io/CVE-2026-41179.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pssec-io/CVE-2026-41179\ncd CVE-2026-41179\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Session Theft"
+      ],
+      "confidence": 98,
+      "weaponization": 80,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/pssec-io/CVE-2026-41179"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-43499",
       "title": "\u2014 Linux Kernel Futex PI Use-After-Free",
       "ecosystem": "linux",
@@ -946,21 +1116,21 @@
     {
       "cve": "CVE-2026-5562",
       "title": "Install requirements",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/HutTwoThreeFour/CVE-2026-5562-Exploit",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "exploit.py"
         ],
         "attackFiles": [
           "exploit.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-5562"
         ],
@@ -974,10 +1144,10 @@
       "added": "10:47 PM CDT",
       "firstSeenAt": "2026-06-29T03:47:58Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "A vulnerability was identified in provectus kafka-ui up to 0.7.2. This impacts the function validateAccess of the file /api/smartfilters/testexecutions of the component Endpoint. The manipulation leads to code injection. The.",
+      "technicalSummary": "A vulnerability was identified in provectus kafka-ui up to 0.7.2. This impacts the function validateAccess of the file /api/smartfilters/testexecutions of the component Endpoint. The manipulation leads to code injection. The.",
+      "breakdown": "A vulnerability was identified in provectus kafka-ui up to 0.7.2. This impacts the function validateAccess of the file /api/smartfilters/testexecutions of the component Endpoint. The manipulation leads to code injection. The.",
+      "whatBroke": "A vulnerability was identified in provectus kafka-ui up to 0.7.2. This impacts the function validateAccess of the file /api/smartfilters/testexecutions of the component Endpoint. The manipulation leads to code injection. The.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HutTwoThreeFour/CVE-2026-5562-Exploit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HutTwoThreeFour/CVE-2026-5562-Exploit\ncd CVE-2026-5562-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -987,7 +1157,7 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "Exploit"
       ],
@@ -998,6 +1168,10 @@
         [
           "GitHub",
           "https://github.com/HutTwoThreeFour/CVE-2026-5562-Exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://drive.google.com/file/d/18-Q4tb19y_7dwchnTCgcwfbox0Uj6oQd/view"
         ]
       ]
     }
