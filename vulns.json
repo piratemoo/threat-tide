@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T20:51:15Z",
+  "updatedAt": "2026-07-02T06:07:22Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -63,6 +63,19 @@
         "Webstack",
         "RCE"
       ]
+    },
+    {
+      "title": "SonarQube plugins bring trusted verification to Claude Code, Copilot, Codex, Cursor, and beyond",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/secure-ai-coding-agent-workflows-plugin/",
+      "summary": "Why code verification matters now Your agents generate code faster than anyone can read it, let alone trust it. Developers run Claude Code in the terminal, prompt GitHub Copilot in VS Code, spin up Codex CLI, and build inside Cursor, often switching between.",
+      "publishedAt": "2026-07-01T13:00:00Z",
+      "cves": [],
+      "tags": [
+        "Cloud",
+        "Kubernetes"
+      ]
     }
   ],
   "vulns": [
@@ -122,7 +135,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -187,7 +200,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -196,68 +209,6 @@
         [
           "Vendor Advisory",
           "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-20253",
-      "title": "Splunk Enterprise Missing Authentication for Critical Function Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/pssec-io/CVE-2026-20253",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml",
-          "patched-docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-20253"
-        ],
-        "language": "Dockerfile"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "pssec-io",
-      "researcherUrl": "https://github.com/pssec-io",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:53 AM CDT",
-      "firstSeenAt": "2026-06-29T07:53:55Z",
-      "language": "Dockerfile",
-      "summary": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
-      "technicalSummary": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
-      "breakdown": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
-      "whatBroke": "Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pssec-io/CVE-2026-20253.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pssec-io/CVE-2026-20253\ncd CVE-2026-20253\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Enterprise",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "File Read",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/pssec-io/CVE-2026-20253"
-        ],
-        [
-          "Vendor Advisory",
-          "https://advisory.splunk.com/advisories/SVD-2026-0603"
         ]
       ]
     },
@@ -312,7 +263,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -358,8 +309,8 @@
       "researcherUrl": "https://github.com/Baba01hacker666",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:15 AM CDT",
-      "firstSeenAt": "2026-06-25T11:15:38Z",
+      "added": "1:07 AM CDT",
+      "firstSeenAt": "2026-07-02T06:07:22Z",
       "language": "C",
       "summary": "Linux Kernel nf_tables Use-After-Free () \u2014 LPE PoC",
       "technicalSummary": "Linux Kernel nf_tables Use-After-Free () \u2014 LPE PoC",
@@ -380,7 +331,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -389,6 +340,70 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/1444ff890b4653add12f734ffeffc173d42862dd"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-53753",
+      "title": "Crawl4AI <= 0.8.6 pre-auth RCE via AST sandbox escape (gi_frame.f_back.f_builtins chain) \u2014 CVSS 10.0",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xEnc0der/CVE-2026-53753",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-53753"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xEnc0der",
+      "researcherUrl": "https://github.com/0xEnc0der",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:32 PM CDT",
+      "firstSeenAt": "2026-07-02T00:32:24Z",
+      "language": "Python",
+      "summary": "Crawl4AI <= 0.8.6 pre-auth RCE via AST sandbox escape (gi_frame.f_back.f_builtins chain) \u2014 CVSS 10.0",
+      "technicalSummary": "Crawl4AI <= 0.8.6 pre-auth RCE via AST sandbox escape (gi_frame.f_back.f_builtins chain) \u2014 CVSS 10.0",
+      "breakdown": "Crawl4AI <= 0.8.6 pre-auth RCE via AST sandbox escape (gi_frame.f_back.f_builtins chain) \u2014 CVSS 10.0",
+      "whatBroke": "Crawl4AI <= 0.8.6 pre-auth RCE via AST sandbox escape (gi_frame.f_back.f_builtins chain) \u2014 CVSS 10.0",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xEnc0der/CVE-2026-53753.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xEnc0der/CVE-2026-53753\ncd CVE-2026-53753\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xEnc0der/CVE-2026-53753"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/unclecode/crawl4ai/security/advisories/GHSA-qxjp-w3pj-48m7"
         ]
       ]
     },
@@ -448,7 +463,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -510,7 +525,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -572,7 +587,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -622,8 +637,8 @@
       "researcherUrl": "https://github.com/do4choo",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "11:31 AM CDT",
-      "firstSeenAt": "2026-06-25T16:31:07Z",
+      "added": "1:07 AM CDT",
+      "firstSeenAt": "2026-07-02T06:07:22Z",
       "language": "Python",
       "summary": "A command injection vulnerability was identified in TP-Link TL-WR802N v4, TL-WR841N v14, and TL-WR840N v6 due to improper neutralization of special elements used in an OS command. In the router configuration import function.",
       "technicalSummary": "A command injection vulnerability was identified in TP-Link TL-WR802N v4, TL-WR841N v14, and TL-WR840N v6 due to improper neutralization of special elements used in an OS command. In the router configuration import function.",
@@ -646,7 +661,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -710,7 +725,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -770,7 +785,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -835,7 +850,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -897,7 +912,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -910,73 +925,11 @@
       ]
     },
     {
-      "cve": "CVE-2026-56111",
-      "title": "Proof of concept for CVE-2026-56111, an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Christbowel/CVE-2026-56111",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.c"
-        ],
-        "attackFiles": [
-          "exploit.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56111"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Christbowel",
-      "researcherUrl": "https://github.com/Christbowel",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:41 AM CDT",
-      "firstSeenAt": "2026-07-01T06:41:45Z",
-      "language": "C",
-      "summary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "technicalSummary": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "breakdown": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "whatBroke": "Proof of concept for an out-of-bounds write in the M421 G-code handler of Marlin Firmware",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Christbowel/CVE-2026-56111.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Christbowel/CVE-2026-56111\ncd CVE-2026-56111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Christbowel/CVE-2026-56111"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/MarlinFirmware/Marlin/commit/1f255d16ec2d456454fd444494cfb338d62b0fa1"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-41179",
       "title": "POC for CVE-2026-41179",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/pssec-io/CVE-2026-41179",
       "pocValidation": {
@@ -1002,10 +955,10 @@
       "added": "6:58 AM CDT",
       "firstSeenAt": "2026-06-28T11:58:59Z",
       "language": "Shell",
-      "summary": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
-      "technicalSummary": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
-      "breakdown": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
-      "whatBroke": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pssec-io/CVE-2026-41179.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pssec-io/CVE-2026-41179\ncd CVE-2026-41179\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -1017,27 +970,23 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Session Theft"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 80,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/pssec-io/CVE-2026-41179"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
         ]
       ]
     },
     {
       "cve": "CVE-2026-43499",
       "title": "\u2014 Linux Kernel Futex PI Use-After-Free",
-      "ecosystem": "linux",
-      "category": "kernel",
+      "ecosystem": "cloud",
+      "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/MobiusM/CVE-2026-43499",
@@ -1064,34 +1013,30 @@
       "added": "11:09 PM CDT",
       "firstSeenAt": "2026-06-27T04:09:11Z",
       "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MobiusM/CVE-2026-43499.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MobiusM/CVE-2026-43499\ncd CVE-2026-43499\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kernel",
-        "Memory Corruption"
+        "Cloud",
+        "Webstack",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
           "https://github.com/MobiusM/CVE-2026-43499"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
         ]
       ]
     },
@@ -1160,7 +1105,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -1175,7 +1120,7 @@
     {
       "cve": "CVE-2026-5562",
       "title": "Install requirements",
-      "ecosystem": "web",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
@@ -1203,10 +1148,10 @@
       "added": "10:47 PM CDT",
       "firstSeenAt": "2026-06-29T03:47:58Z",
       "language": "Python",
-      "summary": "A vulnerability was identified in provectus kafka-ui up to 0.7.2. This impacts the function validateAccess of the file /api/smartfilters/testexecutions of the component Endpoint. The manipulation leads to code injection. The.",
-      "technicalSummary": "A vulnerability was identified in provectus kafka-ui up to 0.7.2. This impacts the function validateAccess of the file /api/smartfilters/testexecutions of the component Endpoint. The manipulation leads to code injection. The.",
-      "breakdown": "A vulnerability was identified in provectus kafka-ui up to 0.7.2. This impacts the function validateAccess of the file /api/smartfilters/testexecutions of the component Endpoint. The manipulation leads to code injection. The.",
-      "whatBroke": "A vulnerability was identified in provectus kafka-ui up to 0.7.2. This impacts the function validateAccess of the file /api/smartfilters/testexecutions of the component Endpoint. The manipulation leads to code injection. The.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HutTwoThreeFour/CVE-2026-5562-Exploit.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HutTwoThreeFour/CVE-2026-5562-Exploit\ncd CVE-2026-5562-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -1216,21 +1161,17 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
         "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/HutTwoThreeFour/CVE-2026-5562-Exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://drive.google.com/file/d/18-Q4tb19y_7dwchnTCgcwfbox0Uj6oQd/view"
         ]
       ]
     }
