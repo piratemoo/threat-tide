@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T05:53:20Z",
+  "updatedAt": "2026-07-04T14:42:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -113,6 +113,67 @@
         [
           "Vendor Advisory",
           "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-33017",
+      "title": "Langflow Code Injection Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/yayip/CVE-2026-33017",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "bashcmd.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-33017"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "yayip",
+      "researcherUrl": "https://github.com/yayip",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:27 AM CDT",
+      "firstSeenAt": "2026-07-04T11:27:58Z",
+      "language": "Shell",
+      "summary": "PoC of Langflow",
+      "technicalSummary": "PoC of Langflow",
+      "breakdown": "PoC of Langflow",
+      "whatBroke": "PoC of Langflow",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at yayip/CVE-2026-33017.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/yayip/CVE-2026-33017\ncd CVE-2026-33017\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Langflow",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/yayip/CVE-2026-33017"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
         ]
       ]
     },
@@ -305,6 +366,68 @@
         [
           "Vendor Advisory",
           "https://github.com/gorse-io/gorse/commit/19fdcbb309fb5b609e9cc3eb10c74885b5b27da9"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-53360",
+      "title": "PoC for CVE-2026-53360: guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC).",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xCyberstan/CVE-2026-53360-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "trigger.c"
+        ],
+        "attackFiles": [
+          "trigger.c"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-53360"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xCyberstan",
+      "researcherUrl": "https://github.com/0xCyberstan",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:27 AM CDT",
+      "firstSeenAt": "2026-07-04T12:27:13Z",
+      "language": "C",
+      "summary": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
+      "technicalSummary": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
+      "breakdown": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
+      "whatBroke": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-53360-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-53360-POC\ncd CVE-2026-53360-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xCyberstan/CVE-2026-53360-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/b328ede59ac34e7998e1eee5e5f0cc26c2a91846"
         ]
       ]
     },
@@ -506,6 +629,136 @@
       ]
     },
     {
+      "cve": "CVE-2026-43284",
+      "title": "Variant of dirtyfrag exploit",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/MadExploits/CVE-2026-46300",
+      "pocValidation": {
+        "valid": true,
+        "score": 4,
+        "codeFiles": [
+          "CVE-2026-46300.pl",
+          "CVE-2026-46300.py",
+          "CVE-2026-46300.sh",
+          "dirtyfrag.c"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43284",
+          "CVE-2026-43500",
+          "CVE-2026-46300"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "MadExploits",
+      "researcherUrl": "https://github.com/MadExploits",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:15 PM CDT",
+      "firstSeenAt": "2026-06-30T18:15:27Z",
+      "language": "Python",
+      "summary": "Variant of dirtyfrag exploit",
+      "technicalSummary": "Variant of dirtyfrag exploit",
+      "breakdown": "Variant of dirtyfrag exploit",
+      "whatBroke": "Variant of dirtyfrag exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MadExploits/CVE-2026-46300.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MadExploits/CVE-2026-46300\ncd CVE-2026-46300\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/MadExploits/CVE-2026-46300"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43500",
+      "title": "Variant of dirtyfrag exploit",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/MadExploits/CVE-2026-46300",
+      "pocValidation": {
+        "valid": true,
+        "score": 4,
+        "codeFiles": [
+          "CVE-2026-46300.pl",
+          "CVE-2026-46300.py",
+          "CVE-2026-46300.sh",
+          "dirtyfrag.c"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43284",
+          "CVE-2026-43500",
+          "CVE-2026-46300"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "MadExploits",
+      "researcherUrl": "https://github.com/MadExploits",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:15 PM CDT",
+      "firstSeenAt": "2026-06-30T18:15:27Z",
+      "language": "Python",
+      "summary": "Variant of dirtyfrag exploit",
+      "technicalSummary": "Variant of dirtyfrag exploit",
+      "breakdown": "Variant of dirtyfrag exploit",
+      "whatBroke": "Variant of dirtyfrag exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MadExploits/CVE-2026-46300.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MadExploits/CVE-2026-46300\ncd CVE-2026-46300\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/MadExploits/CVE-2026-46300"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/3711382a77342a9a1c3d2e7330dcfc7ea927f568"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-42945",
       "title": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can.",
       "ecosystem": "web",
@@ -564,68 +817,6 @@
         [
           "Vendor Advisory",
           "https://my.f5.com/manage/s/article/K000161019"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-0073",
-      "title": "2026 0073 Android ADBD bypass zh CN",
-      "ecosystem": "android",
-      "category": "framework",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ctnBobong32/CVE-2026-0073-Android-ADBD-bypass-POC_zh_CN",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "adb_tls_auth_bypass.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-0073"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ctnBobong32",
-      "researcherUrl": "https://github.com/ctnBobong32",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:53 AM CDT",
-      "firstSeenAt": "2026-07-04T05:53:20Z",
-      "language": "Python",
-      "summary": "In adbd_tls_verify_cert of auth.cpp, there is a possible bypass of wireless ADB mutual authentication due to a logic error in the code. This could lead to remote (proximal/adjacent) code execution as the shell user with no.",
-      "technicalSummary": "In adbd_tls_verify_cert of auth.cpp, there is a possible bypass of wireless ADB mutual authentication due to a logic error in the code. This could lead to remote (proximal/adjacent) code execution as the shell user with no.",
-      "breakdown": "In adbd_tls_verify_cert of auth.cpp, there is a possible bypass of wireless ADB mutual authentication due to a logic error in the code. This could lead to remote (proximal/adjacent) code execution as the shell user with no.",
-      "whatBroke": "In adbd_tls_verify_cert of auth.cpp, there is a possible bypass of wireless ADB mutual authentication due to a logic error in the code. This could lead to remote (proximal/adjacent) code execution as the shell user with no.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ctnBobong32/CVE-2026-0073-Android-ADBD-bypass-POC_zh_CN.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ctnBobong32/CVE-2026-0073-Android-ADBD-bypass-POC_zh_CN\ncd CVE-2026-0073-Android-ADBD-bypass-POC_zh_CN\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Android",
-        "Framework",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ctnBobong32/CVE-2026-0073-Android-ADBD-bypass-POC_zh_CN"
-        ],
-        [
-          "Vendor Advisory",
-          "https://source.android.com/docs/security/bulletin/2026/2026-05-01"
         ]
       ]
     },
@@ -754,71 +945,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-5366",
-      "title": "PoC for CVE-2026-5366: git argument injection in Prefect's GitRepository leading to RCE on the worker.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/renat0z3r0/prefect-cve-2026-5366",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py",
-          "run_offline.sh"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-5366"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "renat0z3r0",
-      "researcherUrl": "https://github.com/renat0z3r0",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:53 AM CDT",
-      "firstSeenAt": "2026-07-04T05:53:20Z",
-      "language": "Python",
-      "summary": "PoC for git argument injection in Prefect's GitRepository leading to RCE on the worker.",
-      "technicalSummary": "PoC for git argument injection in Prefect's GitRepository leading to RCE on the worker.",
-      "breakdown": "PoC for git argument injection in Prefect's GitRepository leading to RCE on the worker.",
-      "whatBroke": "PoC for git argument injection in Prefect's GitRepository leading to RCE on the worker.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at renat0z3r0/prefect-cve-2026-5366.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/renat0z3r0/prefect-cve-2026-5366\ncd prefect-cve-2026-5366\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/renat0z3r0/prefect-cve-2026-5366"
-        ],
-        [
-          "Vendor Advisory",
-          "https://huntr.com/bounties/e2e88a0f-a8f6-49c9-94c5-e98dc385f07a"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-53694",
       "title": "NoMachine Local Privilege Escalation via Argument Injection",
       "ecosystem": "cloud",
@@ -877,71 +1003,6 @@
         [
           "Vendor Advisory",
           "https://kb.nomachine.com/SU05X00274"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56121",
-      "title": "\u2014 Feast <0.63.0 unauthenticated RCE via gRPC registry dill.loads of OnDemandFeatureView UDF (pre-auth). Lab.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/BiiTts/CVE-2026-56121-Feast-Unauth-RCE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "lab/docker-compose.yml"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56121"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "BiiTts",
-      "researcherUrl": "https://github.com/BiiTts",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:27 AM CDT",
-      "firstSeenAt": "2026-06-30T08:27:06Z",
-      "language": "Python",
-      "summary": "\u2014 Feast <0.63.0 unauthenticated RCE via gRPC registry dill.loads of OnDemandFeatureView UDF (pre-auth). Lab + PoC, verified e2e.",
-      "technicalSummary": "\u2014 Feast <0.63.0 unauthenticated RCE via gRPC registry dill.loads of OnDemandFeatureView UDF (pre-auth). Lab + PoC, verified e2e.",
-      "breakdown": "\u2014 Feast <0.63.0 unauthenticated RCE via gRPC registry dill.loads of OnDemandFeatureView UDF (pre-auth). Lab + PoC, verified e2e.",
-      "whatBroke": "\u2014 Feast <0.63.0 unauthenticated RCE via gRPC registry dill.loads of OnDemandFeatureView UDF (pre-auth). Lab + PoC, verified e2e.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-56121-Feast-Unauth-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-56121-Feast-Unauth-RCE\ncd CVE-2026-56121-Feast-Unauth-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/BiiTts/CVE-2026-56121-Feast-Unauth-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/feast-dev/feast/commit/835cda8e2c1359f1f496ad72701dbd6a73bdb25a"
         ]
       ]
     },
@@ -1072,123 +1133,71 @@
       ]
     },
     {
-      "cve": "CVE-2026-41179",
-      "title": "POC for CVE-2026-41179",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
+      "cve": "CVE-2026-46300",
+      "title": "CVE-2026-46300 Variant of dirtyfrag exploit",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/pssec-io/CVE-2026-41179",
+      "pocUrl": "https://github.com/MadExploits/CVE-2026-46300",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 8,
         "codeFiles": [
-          "poc.sh"
+          "CVE-2026-46300.pl",
+          "CVE-2026-46300.py",
+          "CVE-2026-46300.sh",
+          "dirtyfrag.c"
         ],
         "attackFiles": [
-          "poc.sh"
+          "CVE-2026-46300.pl",
+          "CVE-2026-46300.py",
+          "CVE-2026-46300.sh"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-41179"
+          "CVE-2026-43284",
+          "CVE-2026-43500",
+          "CVE-2026-46300"
         ],
-        "language": "Shell"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "pssec-io",
-      "researcherUrl": "https://github.com/pssec-io",
+      "researcher": "MadExploits",
+      "researcherUrl": "https://github.com/MadExploits",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:58 AM CDT",
-      "firstSeenAt": "2026-06-28T11:58:59Z",
-      "language": "Shell",
-      "summary": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
-      "technicalSummary": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
-      "breakdown": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
-      "whatBroke": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pssec-io/CVE-2026-41179.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pssec-io/CVE-2026-41179\ncd CVE-2026-41179\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "1:15 PM CDT",
+      "firstSeenAt": "2026-06-30T18:15:27Z",
+      "language": "Python",
+      "summary": "Variant of dirtyfrag exploit",
+      "technicalSummary": "Variant of dirtyfrag exploit",
+      "breakdown": "Variant of dirtyfrag exploit",
+      "whatBroke": "Variant of dirtyfrag exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MadExploits/CVE-2026-46300.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MadExploits/CVE-2026-46300\ncd CVE-2026-46300\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 80,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/pssec-io/CVE-2026-41179"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-26114",
-      "title": "Python PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/huynambka/cve-2026-26114-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "cve_2026_26114_rce.py",
-          "modules/exploits/windows/http/sharepoint_cve_2026_2614.rb"
-        ],
-        "attackFiles": [
-          "cve_2026_26114_rce.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-26114"
-        ],
-        "language": "Ruby"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "huynambka",
-      "researcherUrl": "https://github.com/huynambka",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:46 AM CDT",
-      "firstSeenAt": "2026-07-03T14:46:50Z",
-      "language": "Ruby",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at huynambka/cve-2026-26114-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/huynambka/cve-2026-26114-poc\ncd cve-2026-26114-poc\nruby <script>.rb --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
+        "Linux",
+        "Kernel",
         "Exploit"
       ],
       "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 1,
+      "weaponization": 75,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/huynambka/cve-2026-26114-poc"
+          "https://github.com/MadExploits/CVE-2026-46300"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/2f2b16022a2e10ca7bccfb98db5ed2ec0f72641c"
         ]
       ]
     }
