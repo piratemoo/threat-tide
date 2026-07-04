@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T20:19:46Z",
+  "updatedAt": "2026-07-04T05:53:20Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -104,7 +104,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -167,7 +167,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -231,7 +231,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -296,7 +296,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -305,6 +305,70 @@
         [
           "Vendor Advisory",
           "https://github.com/gorse-io/gorse/commit/19fdcbb309fb5b609e9cc3eb10c74885b5b27da9"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-44825",
+      "title": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr CVE-2026-44825 \u2014 Velocity template injection.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/solrradar",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "solr_scanner.py"
+        ],
+        "attackFiles": [
+          "solr_scanner.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-44825"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:24 PM CDT",
+      "firstSeenAt": "2026-07-03T23:24:25Z",
+      "language": "Python",
+      "summary": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
+      "technicalSummary": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
+      "breakdown": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
+      "whatBroke": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/solrradar.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/solrradar\ncd solrradar\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/solrradar"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread/5xg6xr99glocp3zsg9ht2zlbwlrst7ch"
         ]
       ]
     },
@@ -361,7 +425,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -429,7 +493,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -491,7 +555,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -529,8 +593,8 @@
       "researcherUrl": "https://github.com/ctnBobong32",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:49 AM CDT",
-      "firstSeenAt": "2026-06-27T12:49:55Z",
+      "added": "12:53 AM CDT",
+      "firstSeenAt": "2026-07-04T05:53:20Z",
       "language": "Python",
       "summary": "In adbd_tls_verify_cert of auth.cpp, there is a possible bypass of wireless ADB mutual authentication due to a logic error in the code. This could lead to remote (proximal/adjacent) code execution as the shell user with no.",
       "technicalSummary": "In adbd_tls_verify_cert of auth.cpp, there is a possible bypass of wireless ADB mutual authentication due to a logic error in the code. This could lead to remote (proximal/adjacent) code execution as the shell user with no.",
@@ -553,7 +617,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -617,7 +681,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -677,7 +741,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -686,66 +750,6 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/12401fcfb01f53ccc63ab0a3246570fe8f3105ee"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48908",
-      "title": "Unauthenticated RCE PoC for CVE-2026-48908 SP Page Builder (Joomla) arbitrary file upload and remote code.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ayiezola/CVE-2026-48908",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit_poc.py"
-        ],
-        "attackFiles": [
-          "exploit_poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48908"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ayiezola",
-      "researcherUrl": "https://github.com/ayiezola",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:54 PM CDT",
-      "firstSeenAt": "2026-06-28T23:54:05Z",
-      "language": "Python",
-      "summary": "Unauthenticated RCE PoC for SP Page Builder (Joomla) arbitrary file upload and remote code execution exploit with mass scaning support.",
-      "technicalSummary": "Unauthenticated RCE PoC for SP Page Builder (Joomla) arbitrary file upload and remote code execution exploit with mass scaning support.",
-      "breakdown": "Unauthenticated RCE PoC for SP Page Builder (Joomla) arbitrary file upload and remote code execution exploit with mass scaning support.",
-      "whatBroke": "Unauthenticated RCE PoC for SP Page Builder (Joomla) arbitrary file upload and remote code execution exploit with mass scaning support.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ayiezola/CVE-2026-48908.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ayiezola/CVE-2026-48908\ncd CVE-2026-48908\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ayiezola/CVE-2026-48908"
         ]
       ]
     },
@@ -778,8 +782,8 @@
       "researcherUrl": "https://github.com/renat0z3r0",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:41 AM CDT",
-      "firstSeenAt": "2026-06-27T13:41:44Z",
+      "added": "12:53 AM CDT",
+      "firstSeenAt": "2026-07-04T05:53:20Z",
       "language": "Python",
       "summary": "PoC for git argument injection in Prefect's GitRepository leading to RCE on the worker.",
       "technicalSummary": "PoC for git argument injection in Prefect's GitRepository leading to RCE on the worker.",
@@ -802,11 +806,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
           "https://github.com/renat0z3r0/prefect-cve-2026-5366"
+        ],
+        [
+          "Vendor Advisory",
+          "https://huntr.com/bounties/e2e88a0f-a8f6-49c9-94c5-e98dc385f07a"
         ]
       ]
     },
@@ -841,10 +849,10 @@
       "added": "10:22 AM CDT",
       "firstSeenAt": "2026-07-01T15:22:38Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "technicalSummary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "breakdown": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "whatBroke": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at do4choo/CVE-2026-53694-NoMachine-LPE.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE\ncd CVE-2026-53694-NoMachine-LPE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -860,18 +868,22 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://kb.nomachine.com/SU05X00274"
         ]
       ]
     },
     {
       "cve": "CVE-2026-56121",
       "title": "\u2014 Feast <0.63.0 unauthenticated RCE via gRPC registry dill.loads of OnDemandFeatureView UDF (pre-auth). Lab.",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
@@ -915,17 +927,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/BiiTts/CVE-2026-56121-Feast-Unauth-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/feast-dev/feast/commit/835cda8e2c1359f1f496ad72701dbd6a73bdb25a"
         ]
       ]
     },
@@ -983,11 +999,75 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/0xgh057r3c0n/CVE-2026-10580"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/hippoo/tags/1.8.5/app/permissions.php#L180"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-34038",
+      "title": "Authenticated Remote Command Injection in Coolify",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/ThemeHackers/CVE-2026-34038",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-34038"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "ThemeHackers",
+      "researcherUrl": "https://github.com/ThemeHackers",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:05 PM CDT",
+      "firstSeenAt": "2026-07-04T04:05:12Z",
+      "language": "Python",
+      "summary": "Authenticated Remote Command Injection in Coolify",
+      "technicalSummary": "Authenticated Remote Command Injection in Coolify",
+      "breakdown": "Authenticated Remote Command Injection in Coolify",
+      "whatBroke": "Authenticated Remote Command Injection in Coolify",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ThemeHackers/CVE-2026-34038.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ThemeHackers/CVE-2026-34038\ncd CVE-2026-34038\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/ThemeHackers/CVE-2026-34038"
         ]
       ]
     },
@@ -996,7 +1076,7 @@
       "title": "POC for CVE-2026-41179",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/pssec-io/CVE-2026-41179",
       "pocValidation": {
@@ -1022,10 +1102,10 @@
       "added": "6:58 AM CDT",
       "firstSeenAt": "2026-06-28T11:58:59Z",
       "language": "Shell",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
+      "technicalSummary": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
+      "breakdown": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
+      "whatBroke": "Rclone is a command-line program to sync files and directories to and from different cloud storage providers. Starting in version 1.48.0 and prior to version 1.73.5, the RC endpoint `operations/fsinfo` is exposed without.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pssec-io/CVE-2026-41179.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pssec-io/CVE-2026-41179\ncd CVE-2026-41179\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -1037,15 +1117,19 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "Session Theft"
       ],
       "confidence": 98,
       "weaponization": 80,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
           "https://github.com/pssec-io/CVE-2026-41179"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
         ]
       ]
     },
@@ -1100,69 +1184,11 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
           "https://github.com/huynambka/cve-2026-26114-poc"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-43499",
-      "title": "\u2014 Linux Kernel Futex PI Use-After-Free",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/MobiusM/CVE-2026-43499",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "trigger.c"
-        ],
-        "attackFiles": [
-          "trigger.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43499"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "MobiusM",
-      "researcherUrl": "https://github.com/MobiusM",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:01 AM CDT",
-      "firstSeenAt": "2026-07-03T06:01:08Z",
-      "language": "C",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MobiusM/CVE-2026-43499.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MobiusM/CVE-2026-43499\ncd CVE-2026-43499\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/MobiusM/CVE-2026-43499"
         ]
       ]
     }
