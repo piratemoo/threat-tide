@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T14:42:45Z",
+  "updatedAt": "2026-07-04T20:13:29Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -305,6 +305,71 @@
       ]
     },
     {
+      "cve": "CVE-2026-58138",
+      "title": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC,.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/BiiTts/CVE-2026-58138-Conductor-Unauth-RCE",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py",
+          "lab/docker-compose.yml"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-58138"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "BiiTts",
+      "researcherUrl": "https://github.com/BiiTts",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:48 PM CDT",
+      "firstSeenAt": "2026-06-30T19:48:56Z",
+      "language": "Python",
+      "summary": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
+      "technicalSummary": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
+      "breakdown": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
+      "whatBroke": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-58138-Conductor-Unauth-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-58138-Conductor-Unauth-RCE\ncd CVE-2026-58138-Conductor-Unauth-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/BiiTts/CVE-2026-58138-Conductor-Unauth-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/conductor-oss/conductor/commit/87a7d96aabbb706d6e84f812b93da5165028d18f"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-56782",
       "title": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
       "ecosystem": "web",
@@ -428,70 +493,6 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/b328ede59ac34e7998e1eee5e5f0cc26c2a91846"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-44825",
-      "title": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr CVE-2026-44825 \u2014 Velocity template injection.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/solrradar",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "solr_scanner.py"
-        ],
-        "attackFiles": [
-          "solr_scanner.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-44825"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:24 PM CDT",
-      "firstSeenAt": "2026-07-03T23:24:25Z",
-      "language": "Python",
-      "summary": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
-      "technicalSummary": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
-      "breakdown": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
-      "whatBroke": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/solrradar.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/solrradar\ncd solrradar\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/solrradar"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lists.apache.org/thread/5xg6xr99glocp3zsg9ht2zlbwlrst7ch"
         ]
       ]
     },
