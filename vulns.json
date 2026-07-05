@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T20:13:29Z",
+  "updatedAt": "2026-07-05T06:12:59Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -79,8 +79,8 @@
       "researcherUrl": "https://github.com/aquace",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "2:13 AM CDT",
-      "firstSeenAt": "2026-06-28T07:13:52Z",
+      "added": "1:12 AM CDT",
+      "firstSeenAt": "2026-07-05T06:12:59Z",
       "language": "Python",
       "summary": "authentication bypass vulnerability proof-of-concept",
       "technicalSummary": "authentication bypass vulnerability proof-of-concept",
@@ -104,7 +104,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -121,38 +121,42 @@
       "title": "Langflow Code Injection Vulnerability",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/yayip/CVE-2026-33017",
+      "pocUrl": "https://github.com/diamorphine666/CVE-2026-33017-Exploit",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "bashcmd.sh"
+          "CVE-2026-33017.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "CVE-2026-33017.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-33017"
         ],
-        "language": "Shell"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "yayip",
-      "researcherUrl": "https://github.com/yayip",
+      "researcher": "diamorphine666",
+      "researcherUrl": "https://github.com/diamorphine666",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:27 AM CDT",
-      "firstSeenAt": "2026-07-04T11:27:58Z",
-      "language": "Shell",
-      "summary": "PoC of Langflow",
-      "technicalSummary": "PoC of Langflow",
-      "breakdown": "PoC of Langflow",
-      "whatBroke": "PoC of Langflow",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at yayip/CVE-2026-33017.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/yayip/CVE-2026-33017\ncd CVE-2026-33017\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "difficulty": "easy",
+      "added": "4:54 PM CDT",
+      "firstSeenAt": "2026-07-04T21:54:56Z",
+      "language": "Python",
+      "summary": "Unauthenticated RCE in Langflow <1.9.0 () Exploit",
+      "technicalSummary": "Unauthenticated RCE in Langflow <1.9.0 () Exploit",
+      "breakdown": "Unauthenticated RCE in Langflow <1.9.0 () Exploit",
+      "whatBroke": "Unauthenticated RCE in Langflow <1.9.0 () Exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at diamorphine666/CVE-2026-33017-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/diamorphine666/CVE-2026-33017-Exploit\ncd CVE-2026-33017-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Langflow",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -160,16 +164,16 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit",
+        "RCE",
         "KEV"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/yayip/CVE-2026-33017"
+          "https://github.com/diamorphine666/CVE-2026-33017-Exploit"
         ],
         [
           "Vendor Advisory",
@@ -228,7 +232,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -268,8 +272,8 @@
       "researcherUrl": "https://github.com/gagaltotal",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:50 PM CDT",
-      "firstSeenAt": "2026-06-28T20:50:15Z",
+      "added": "1:12 AM CDT",
+      "firstSeenAt": "2026-07-05T06:12:59Z",
       "language": "Go",
       "summary": "Double-free in Apache httpd mod_http2 stream cleanup leading to pre-auth RCE",
       "technicalSummary": "Double-free in Apache httpd mod_http2 stream cleanup leading to pre-auth RCE",
@@ -292,7 +296,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -357,7 +361,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -422,7 +426,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -484,7 +488,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -549,7 +553,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -617,7 +621,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -682,7 +686,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -747,7 +751,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -809,7 +813,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -818,6 +822,70 @@
         [
           "Vendor Advisory",
           "https://my.f5.com/manage/s/article/K000161019"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-23744",
+      "title": "Exploit for MCPJam Inspector - Remote Code Execution (CVE-2026-23744)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/diamorphine666/CVE-2026-23744-exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-23744.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-23744.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-23744"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "diamorphine666",
+      "researcherUrl": "https://github.com/diamorphine666",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "3:53 PM CDT",
+      "firstSeenAt": "2026-07-04T20:53:38Z",
+      "language": "Python",
+      "summary": "Exploit for MCPJam Inspector - Remote Code Execution ()",
+      "technicalSummary": "Exploit for MCPJam Inspector - Remote Code Execution ()",
+      "breakdown": "Exploit for MCPJam Inspector - Remote Code Execution ()",
+      "whatBroke": "Exploit for MCPJam Inspector - Remote Code Execution ()",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at diamorphine666/CVE-2026-23744-exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/diamorphine666/CVE-2026-23744-exploit\ncd CVE-2026-23744-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/diamorphine666/CVE-2026-23744-exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
@@ -873,7 +941,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -933,7 +1001,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -995,7 +1063,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1061,7 +1129,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -1125,80 +1193,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/ThemeHackers/CVE-2026-34038"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-46300",
-      "title": "CVE-2026-46300 Variant of dirtyfrag exploit",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/MadExploits/CVE-2026-46300",
-      "pocValidation": {
-        "valid": true,
-        "score": 8,
-        "codeFiles": [
-          "CVE-2026-46300.pl",
-          "CVE-2026-46300.py",
-          "CVE-2026-46300.sh",
-          "dirtyfrag.c"
-        ],
-        "attackFiles": [
-          "CVE-2026-46300.pl",
-          "CVE-2026-46300.py",
-          "CVE-2026-46300.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43284",
-          "CVE-2026-43500",
-          "CVE-2026-46300"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "MadExploits",
-      "researcherUrl": "https://github.com/MadExploits",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:15 PM CDT",
-      "firstSeenAt": "2026-06-30T18:15:27Z",
-      "language": "Python",
-      "summary": "Variant of dirtyfrag exploit",
-      "technicalSummary": "Variant of dirtyfrag exploit",
-      "breakdown": "Variant of dirtyfrag exploit",
-      "whatBroke": "Variant of dirtyfrag exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MadExploits/CVE-2026-46300.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MadExploits/CVE-2026-46300\ncd CVE-2026-46300\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/MadExploits/CVE-2026-46300"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/2f2b16022a2e10ca7bccfb98db5ed2ec0f72641c"
         ]
       ]
     }
