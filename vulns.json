@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T16:26:12Z",
+  "updatedAt": "2026-07-06T20:56:20Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -88,6 +88,23 @@
       "publishedAt": "2026-07-06T13:00:00Z",
       "cves": [],
       "tags": []
+    },
+    {
+      "title": "More than just data: The hidden security risks in Jupyter notebooks",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/hidden-security-risks-in-jupyter-notebooks/",
+      "summary": "Jupyter notebooks are a powerful tool for data scientists, researchers and developers, and their use has been boosted by the increasing popularity of AI and data science. They provide a flexible and interactive environment for combining live code, narrative.",
+      "publishedAt": "2026-07-06T13:00:00Z",
+      "cves": [
+        "CVE-2025-59842",
+        "CVE-2026-25847"
+      ],
+      "tags": [
+        "Windows",
+        "Kernel",
+        "RCE"
+      ]
     }
   ],
   "vulns": [
@@ -281,71 +298,6 @@
         [
           "Vendor Advisory",
           "https://github.com/conductor-oss/conductor/commit/87a7d96aabbb706d6e84f812b93da5165028d18f"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56782",
-      "title": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "lab/docker-compose.yml"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56782"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "BiiTts",
-      "researcherUrl": "https://github.com/BiiTts",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:44 AM CDT",
-      "firstSeenAt": "2026-07-06T06:44:50Z",
-      "language": "Python",
-      "summary": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "technicalSummary": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "breakdown": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "whatBroke": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-56782-Gorse-Auth-Bypass.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass\ncd CVE-2026-56782-Gorse-Auth-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/gorse-io/gorse/commit/19fdcbb309fb5b609e9cc3eb10c74885b5b27da9"
         ]
       ]
     },
@@ -930,6 +882,71 @@
       ]
     },
     {
+      "cve": "CVE-2026-56782",
+      "title": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py",
+          "lab/docker-compose.yml"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56782"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "BiiTts",
+      "researcherUrl": "https://github.com/BiiTts",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:44 AM CDT",
+      "firstSeenAt": "2026-07-06T06:44:50Z",
+      "language": "Python",
+      "summary": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
+      "technicalSummary": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
+      "breakdown": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
+      "whatBroke": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-56782-Gorse-Auth-Bypass.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass\ncd CVE-2026-56782-Gorse-Auth-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 75,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/gorse-io/gorse/commit/19fdcbb309fb5b609e9cc3eb10c74885b5b27da9"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-23744",
       "title": "Exploit for MCPJam Inspector - Remote Code Execution (CVE-2026-23744)",
       "ecosystem": "cloud",
@@ -1048,6 +1065,64 @@
       ]
     },
     {
+      "cve": "CVE-2026-56290",
+      "title": "\ud83d\udce4 Mass exploitation framework for CVE-2026-56290 \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/pbck-exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "cve_2026_56290.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56290"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:01 PM CDT",
+      "firstSeenAt": "2026-07-04T00:01:31Z",
+      "language": "Python",
+      "summary": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "technicalSummary": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "breakdown": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "whatBroke": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/pbck-exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/pbck-exploit\ncd pbck-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/pbck-exploit"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-10580",
       "title": "PoC exploit for CVE-2026-10580 - Authentication Bypass in Hippoo Mobile App for WooCommerce <= 1.9.4 leading.",
       "ecosystem": "web",
@@ -1106,10 +1181,6 @@
         [
           "GitHub",
           "https://github.com/0xgh057r3c0n/CVE-2026-10580"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/hippoo/tags/1.8.5/app/permissions.php#L180"
         ]
       ]
     },
@@ -1170,64 +1241,6 @@
         [
           "GitHub",
           "https://github.com/ThemeHackers/CVE-2026-34038"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-28867",
-      "title": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "ecosystem": "ios",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/speedyfriend433/CVE-2026-28867-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.c"
-        ],
-        "attackFiles": [
-          "poc.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-28867"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "speedyfriend433",
-      "researcherUrl": "https://github.com/speedyfriend433",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:46 PM CDT",
-      "firstSeenAt": "2026-07-05T02:46:00Z",
-      "language": "C",
-      "summary": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "technicalSummary": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "breakdown": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "whatBroke": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at speedyfriend433/CVE-2026-28867-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/speedyfriend433/CVE-2026-28867-PoC\ncd CVE-2026-28867-PoC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "iOS",
-        "Kernel",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/speedyfriend433/CVE-2026-28867-PoC"
         ]
       ]
     }
