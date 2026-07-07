@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T15:47:21Z",
+  "updatedAt": "2026-07-07T20:55:03Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -50,6 +50,23 @@
     "The GitHub Blog Security"
   ],
   "research": [
+    {
+      "title": "CVE-2026-48283 / CVE-2026-48313 | Adobe ColdFusion Pre-Authentication Unrestricted File Upload and Path Traversal Vulnerabilities",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-48283-cve-2026-48313/",
+      "summary": "Adobe has released security updates for multiple vulnerabilities affecting Adobe ColdFusion, including two Critical vulnerabilities tracked as CVE-2026-48283 and CVE-2026-48313. CVE-2026-48283 is an unauthenticated unrestricted file upload vulnerability that.",
+      "publishedAt": "2026-07-07T17:25:19Z",
+      "cves": [
+        "CVE-2026-48283",
+        "CVE-2026-48313"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
     {
       "title": "Qualys Joins Cisco Cloud Control Studio as a Launch Partner to Bring Risk Intelligence to Agentic Operations",
       "source": "Qualys Research",
@@ -195,43 +212,105 @@
       ]
     },
     {
-      "cve": "CVE-2026-58138",
-      "title": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC,.",
+      "cve": "CVE-2026-56290",
+      "title": "Joomlack Page Builder Improper Access Control Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/BiiTts/CVE-2026-58138-Conductor-Unauth-RCE",
+      "pocUrl": "https://github.com/shinthink/pbck-exploit",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "exploit.py",
-          "lab/docker-compose.yml"
+          "cve_2026_56290.py"
         ],
-        "attackFiles": [
-          "exploit.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-58138"
+          "CVE-2026-56290"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "BiiTts",
-      "researcherUrl": "https://github.com/BiiTts",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:16 AM CDT",
-      "firstSeenAt": "2026-07-07T06:16:35Z",
+      "added": "7:01 PM CDT",
+      "firstSeenAt": "2026-07-04T00:01:31Z",
       "language": "Python",
-      "summary": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
-      "technicalSummary": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
-      "breakdown": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
-      "whatBroke": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-58138-Conductor-Unauth-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-58138-Conductor-Unauth-RCE\ncd CVE-2026-58138-Conductor-Unauth-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "technicalSummary": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "breakdown": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "whatBroke": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/pbck-exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/pbck-exploit\ncd pbck-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Page Builder",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/pbck-exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-23697",
+      "title": "Vtiger CRM 8.3.0 Authenticated RCE via .phar Upload",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/JivaSecurity/VTIGER-CRM-RCE-CVE-2026-23697",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "Vtiger-8.3.0-RCE-PoC.py"
+        ],
+        "attackFiles": [
+          "Vtiger-8.3.0-RCE-PoC.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-23697"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "JivaSecurity",
+      "researcherUrl": "https://github.com/JivaSecurity",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:26 AM CDT",
+      "firstSeenAt": "2026-07-07T16:26:04Z",
+      "language": "Python",
+      "summary": "Vtiger CRM 8.3.0 Authenticated RCE via.phar Upload",
+      "technicalSummary": "Vtiger CRM 8.3.0 Authenticated RCE via.phar Upload",
+      "breakdown": "Vtiger CRM 8.3.0 Authenticated RCE via.phar Upload",
+      "whatBroke": "Vtiger CRM 8.3.0 Authenticated RCE via.phar Upload",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at JivaSecurity/VTIGER-CRM-RCE-CVE-2026-23697.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/JivaSecurity/VTIGER-CRM-RCE-CVE-2026-23697\ncd VTIGER-CRM-RCE-CVE-2026-23697\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -251,11 +330,75 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/BiiTts/CVE-2026-58138-Conductor-Unauth-RCE"
+          "https://github.com/JivaSecurity/VTIGER-CRM-RCE-CVE-2026-23697"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/conductor-oss/conductor/commit/87a7d96aabbb706d6e84f812b93da5165028d18f"
+          "https://jivasecurity.com/writeups/vtiger-rce-phar-upload-cve-2026-23697"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-23698",
+      "title": "Vtiger CRM 8.3.0, 8.4.0 Module Import Authenticated RCE PoC",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/JivaSecurity/VTIGER-CRM-RCE-CVE-2026-23698",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "Vtiger-8.4.0-RCE-PoC.py"
+        ],
+        "attackFiles": [
+          "Vtiger-8.4.0-RCE-PoC.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-23698"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "JivaSecurity",
+      "researcherUrl": "https://github.com/JivaSecurity",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:27 AM CDT",
+      "firstSeenAt": "2026-07-07T16:27:55Z",
+      "language": "Python",
+      "summary": "Vtiger CRM 8.3.0, 8.4.0 Module Import Authenticated RCE PoC",
+      "technicalSummary": "Vtiger CRM 8.3.0, 8.4.0 Module Import Authenticated RCE PoC",
+      "breakdown": "Vtiger CRM 8.3.0, 8.4.0 Module Import Authenticated RCE PoC",
+      "whatBroke": "Vtiger CRM 8.3.0, 8.4.0 Module Import Authenticated RCE PoC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at JivaSecurity/VTIGER-CRM-RCE-CVE-2026-23698.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/JivaSecurity/VTIGER-CRM-RCE-CVE-2026-23698\ncd VTIGER-CRM-RCE-CVE-2026-23698\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/JivaSecurity/VTIGER-CRM-RCE-CVE-2026-23698"
+        ],
+        [
+          "Vendor Advisory",
+          "https://jivasecurity.com/writeups/vtiger-rce-module-import-cve-2026-23698"
         ]
       ]
     },
@@ -512,136 +655,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-43284",
-      "title": "Variant of dirtyfrag exploit",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/MadExploits/CVE-2026-46300",
-      "pocValidation": {
-        "valid": true,
-        "score": 4,
-        "codeFiles": [
-          "CVE-2026-46300.pl",
-          "CVE-2026-46300.py",
-          "CVE-2026-46300.sh",
-          "dirtyfrag.c"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43284",
-          "CVE-2026-43500",
-          "CVE-2026-46300"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "MadExploits",
-      "researcherUrl": "https://github.com/MadExploits",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:16 AM CDT",
-      "firstSeenAt": "2026-07-07T06:16:35Z",
-      "language": "Python",
-      "summary": "Variant of dirtyfrag exploit",
-      "technicalSummary": "Variant of dirtyfrag exploit",
-      "breakdown": "Variant of dirtyfrag exploit",
-      "whatBroke": "Variant of dirtyfrag exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MadExploits/CVE-2026-46300.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MadExploits/CVE-2026-46300\ncd CVE-2026-46300\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/MadExploits/CVE-2026-46300"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/50ed1e7873100f77abad20fd31c51029bc49cd03"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-43500",
-      "title": "Variant of dirtyfrag exploit",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/MadExploits/CVE-2026-46300",
-      "pocValidation": {
-        "valid": true,
-        "score": 4,
-        "codeFiles": [
-          "CVE-2026-46300.pl",
-          "CVE-2026-46300.py",
-          "CVE-2026-46300.sh",
-          "dirtyfrag.c"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43284",
-          "CVE-2026-43500",
-          "CVE-2026-46300"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "MadExploits",
-      "researcherUrl": "https://github.com/MadExploits",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:16 AM CDT",
-      "firstSeenAt": "2026-07-07T06:16:35Z",
-      "language": "Python",
-      "summary": "Variant of dirtyfrag exploit",
-      "technicalSummary": "Variant of dirtyfrag exploit",
-      "breakdown": "Variant of dirtyfrag exploit",
-      "whatBroke": "Variant of dirtyfrag exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MadExploits/CVE-2026-46300.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MadExploits/CVE-2026-46300\ncd CVE-2026-46300\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/MadExploits/CVE-2026-46300"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/3711382a77342a9a1c3d2e7330dcfc7ea927f568"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-42945",
       "title": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can.",
       "ecosystem": "web",
@@ -832,6 +845,68 @@
       ]
     },
     {
+      "cve": "CVE-2026-48939",
+      "title": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-48939",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_48939.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48939"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:56 PM CDT",
+      "firstSeenAt": "2026-07-05T20:56:48Z",
+      "language": "Python",
+      "summary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "technicalSummary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "breakdown": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "whatBroke": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-48939.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-48939\ncd CVE-2026-48939\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-48939"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.icagenda.com/"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-53694",
       "title": "NoMachine Local Privilege Escalation via Argument Injection",
       "ecosystem": "cloud",
@@ -862,10 +937,10 @@
       "added": "10:22 AM CDT",
       "firstSeenAt": "2026-07-01T15:22:38Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "technicalSummary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "breakdown": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
+      "whatBroke": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at do4choo/CVE-2026-53694-NoMachine-LPE.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE\ncd CVE-2026-53694-NoMachine-LPE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -886,64 +961,10 @@
         [
           "GitHub",
           "https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56290",
-      "title": "\ud83d\udce4 Mass exploitation framework for CVE-2026-56290 \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/pbck-exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "cve_2026_56290.py"
         ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56290"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:01 PM CDT",
-      "firstSeenAt": "2026-07-04T00:01:31Z",
-      "language": "Python",
-      "summary": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "technicalSummary": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "breakdown": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "whatBroke": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/pbck-exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/pbck-exploit\ncd pbck-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
         [
-          "GitHub",
-          "https://github.com/shinthink/pbck-exploit"
+          "Vendor Advisory",
+          "https://kb.nomachine.com/SU05X00274"
         ]
       ]
     },
@@ -952,7 +973,7 @@
       "title": "\u2014 LLaMA-Factory WebUI RCE via `trust_remote_code`",
       "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection",
       "pocValidation": {
@@ -982,14 +1003,16 @@
       "added": "2:06 AM CDT",
       "firstSeenAt": "2026-07-02T07:06:16Z",
       "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "LLaMA-Factory through 0.9.5 contains a remote code execution vulnerability that allows attackers with WebUI access to execute arbitrary Python code by supplying a malicious model path in the Chat or Training interfaces. The.",
+      "technicalSummary": "LLaMA-Factory through 0.9.5 contains a remote code execution vulnerability that allows attackers with WebUI access to execute arbitrary Python code by supplying a malicious model path in the Chat or Training interfaces. The.",
+      "breakdown": "LLaMA-Factory through 0.9.5 contains a remote code execution vulnerability that allows attackers with WebUI access to execute arbitrary Python code by supplying a malicious model path in the Chat or Training interfaces. The.",
+      "whatBroke": "LLaMA-Factory through 0.9.5 contains a remote code execution vulnerability that allows attackers with WebUI access to execute arbitrary Python code by supplying a malicious model path in the Chat or Training interfaces. The.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection\ncd llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -997,7 +1020,7 @@
       "tags": [
         "Cloud",
         "Webstack",
-        "Exploit"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1006,6 +1029,72 @@
         [
           "GitHub",
           "https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection"
+        ],
+        [
+          "Vendor Advisory",
+          "https://gist.github.com/henrrrychau/08d76ec672f42136bbc1449c4f2973f8"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-8713",
+      "title": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-8713",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_8713.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-8713"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:26 PM CDT",
+      "firstSeenAt": "2026-07-05T22:26:28Z",
+      "language": "Python",
+      "summary": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
+      "technicalSummary": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
+      "breakdown": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
+      "whatBroke": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-8713.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-8713\ncd CVE-2026-8713\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-8713"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/fusion-builder/trunk/inc/class-fusion-form-db-entries.php#L79"
         ]
       ]
     },
@@ -1064,79 +1153,18 @@
         [
           "GitHub",
           "https://github.com/speedyfriend433/CVE-2026-28867-PoC"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-46300",
-      "title": "CVE-2026-46300 Variant of dirtyfrag exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/MadExploits/CVE-2026-46300",
-      "pocValidation": {
-        "valid": true,
-        "score": 8,
-        "codeFiles": [
-          "CVE-2026-46300.pl",
-          "CVE-2026-46300.py",
-          "CVE-2026-46300.sh",
-          "dirtyfrag.c"
         ],
-        "attackFiles": [
-          "CVE-2026-46300.pl",
-          "CVE-2026-46300.py",
-          "CVE-2026-46300.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43284",
-          "CVE-2026-43500",
-          "CVE-2026-46300"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "MadExploits",
-      "researcherUrl": "https://github.com/MadExploits",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:47 AM CDT",
-      "firstSeenAt": "2026-07-07T15:47:21Z",
-      "language": "Python",
-      "summary": "Variant of dirtyfrag exploit",
-      "technicalSummary": "Variant of dirtyfrag exploit",
-      "breakdown": "Variant of dirtyfrag exploit",
-      "whatBroke": "Variant of dirtyfrag exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MadExploits/CVE-2026-46300.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MadExploits/CVE-2026-46300\ncd CVE-2026-46300\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 0,
-      "links": [
         [
-          "GitHub",
-          "https://github.com/MadExploits/CVE-2026-46300"
+          "Vendor Advisory",
+          "https://support.apple.com/en-us/126792"
         ]
       ]
     },
     {
       "cve": "CVE-2026-26114",
       "title": "Python PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
+      "ecosystem": "windows",
+      "category": "sharepoint",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/huynambka/cve-2026-26114-poc",
@@ -1164,22 +1192,23 @@
       "added": "9:46 AM CDT",
       "firstSeenAt": "2026-07-03T14:46:50Z",
       "language": "Ruby",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "summary": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
+      "technicalSummary": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
+      "breakdown": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
+      "whatBroke": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at huynambka/cve-2026-26114-poc.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/huynambka/cve-2026-26114-poc\ncd cve-2026-26114-poc\nruby <script>.rb --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
+        "Windows",
+        "SharePoint",
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 74,
@@ -1188,6 +1217,10 @@
         [
           "GitHub",
           "https://github.com/huynambka/cve-2026-26114-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-26114"
         ]
       ]
     }
