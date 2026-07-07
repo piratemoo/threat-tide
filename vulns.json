@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T20:56:20Z",
+  "updatedAt": "2026-07-07T06:16:35Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -161,7 +161,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -224,7 +224,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -265,8 +265,8 @@
       "researcherUrl": "https://github.com/BiiTts",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:48 PM CDT",
-      "firstSeenAt": "2026-06-30T19:48:56Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-07-07T06:16:35Z",
       "language": "Python",
       "summary": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
       "technicalSummary": "\u2014 Conductor (3.21.21..<3.30.2) unauthenticated RCE via INLINE GraalVM evaluator (HostAccess.ALL). Lab + PoC, verified e2e (root).",
@@ -289,7 +289,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -298,6 +298,71 @@
         [
           "Vendor Advisory",
           "https://github.com/conductor-oss/conductor/commit/87a7d96aabbb706d6e84f812b93da5165028d18f"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-48558",
+      "title": "SimpleHelp Authentication Bypass Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/J4ck3LSyN-Gen2/CVE-2026-48558",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48558"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "J4ck3LSyN-Gen2",
+      "researcherUrl": "https://github.com/J4ck3LSyN-Gen2",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:11 AM CDT",
+      "firstSeenAt": "2026-07-02T16:11:50Z",
+      "language": "Python",
+      "summary": "SimpleHelp OIDC Authentication Bypass PoC",
+      "technicalSummary": "SimpleHelp OIDC Authentication Bypass PoC",
+      "breakdown": "SimpleHelp OIDC Authentication Bypass PoC",
+      "whatBroke": "SimpleHelp OIDC Authentication Bypass PoC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at J4ck3LSyN-Gen2/CVE-2026-48558.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/J4ck3LSyN-Gen2/CVE-2026-48558\ncd CVE-2026-48558\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed SimpleHelp",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/J4ck3LSyN-Gen2/CVE-2026-48558"
+        ],
+        [
+          "Vendor Advisory",
+          "https://simple-help.com/security/simplehelp-security-update-2026-05"
         ]
       ]
     },
@@ -351,7 +416,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -412,7 +477,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -476,7 +541,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -485,71 +550,6 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/5xg6xr99glocp3zsg9ht2zlbwlrst7ch"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-53753",
-      "title": "\u2014 Crawl4AI <0.8.7 unauthenticated RCE (AST sandbox escape via gi_frame.f_back). Lab + PoC, verified e2e.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/BiiTts/CVE-2026-53753-Crawl4AI-RCE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "lab/docker-compose.yml"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-53753"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "BiiTts",
-      "researcherUrl": "https://github.com/BiiTts",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:44 AM CDT",
-      "firstSeenAt": "2026-07-06T06:44:50Z",
-      "language": "Python",
-      "summary": "\u2014 Crawl4AI <0.8.7 unauthenticated RCE (AST sandbox escape via gi_frame.f_back). Lab + PoC, verified e2e.",
-      "technicalSummary": "\u2014 Crawl4AI <0.8.7 unauthenticated RCE (AST sandbox escape via gi_frame.f_back). Lab + PoC, verified e2e.",
-      "breakdown": "\u2014 Crawl4AI <0.8.7 unauthenticated RCE (AST sandbox escape via gi_frame.f_back). Lab + PoC, verified e2e.",
-      "whatBroke": "\u2014 Crawl4AI <0.8.7 unauthenticated RCE (AST sandbox escape via gi_frame.f_back). Lab + PoC, verified e2e.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-53753-Crawl4AI-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-53753-Crawl4AI-RCE\ncd CVE-2026-53753-Crawl4AI-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/BiiTts/CVE-2026-53753-Crawl4AI-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/unclecode/crawl4ai/security/advisories/GHSA-qxjp-w3pj-48m7"
         ]
       ]
     },
@@ -587,8 +587,8 @@
       "researcherUrl": "https://github.com/0xCyberstan",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:49 AM CDT",
-      "firstSeenAt": "2026-06-30T11:49:36Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-07-07T06:16:35Z",
       "language": "C",
       "summary": "Linux kernel FUSE readdir cache out-of-bounds write (): a malicious FUSE server overflows a page-cache page by 24 bytes. PoC plus an unprivileged local-root exploit via /etc/passwd page-cache corruption. Run only inside a VM.",
       "technicalSummary": "Linux kernel FUSE readdir cache out-of-bounds write (): a malicious FUSE server overflows a page-cache page by 24 bytes. PoC plus an unprivileged local-root exploit via /etc/passwd page-cache corruption. Run only inside a VM.",
@@ -609,7 +609,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -652,8 +652,8 @@
       "researcherUrl": "https://github.com/MadExploits",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:15 PM CDT",
-      "firstSeenAt": "2026-06-30T18:15:27Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-07-07T06:16:35Z",
       "language": "Python",
       "summary": "Variant of dirtyfrag exploit",
       "technicalSummary": "Variant of dirtyfrag exploit",
@@ -674,7 +674,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -717,8 +717,8 @@
       "researcherUrl": "https://github.com/MadExploits",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:15 PM CDT",
-      "firstSeenAt": "2026-06-30T18:15:27Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-07-07T06:16:35Z",
       "language": "Python",
       "summary": "Variant of dirtyfrag exploit",
       "technicalSummary": "Variant of dirtyfrag exploit",
@@ -739,7 +739,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -801,7 +801,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -869,7 +869,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -882,43 +882,42 @@
       ]
     },
     {
-      "cve": "CVE-2026-56782",
-      "title": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "ecosystem": "web",
+      "cve": "CVE-2026-34038",
+      "title": "Authenticated Remote Command Injection in Coolify",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass",
+      "pocUrl": "https://github.com/ThemeHackers/CVE-2026-34038",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exploit.py",
-          "lab/docker-compose.yml"
+          "exploit.py"
         ],
         "attackFiles": [
           "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-56782"
+          "CVE-2026-34038"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "BiiTts",
-      "researcherUrl": "https://github.com/BiiTts",
+      "researcher": "ThemeHackers",
+      "researcherUrl": "https://github.com/ThemeHackers",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:44 AM CDT",
-      "firstSeenAt": "2026-07-06T06:44:50Z",
+      "added": "11:05 PM CDT",
+      "firstSeenAt": "2026-07-04T04:05:12Z",
       "language": "Python",
-      "summary": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "technicalSummary": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "breakdown": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "whatBroke": "\u2014 Gorse <0.5.10 unauthenticated DB dump/restore (admin_api_key fail-open). Lab + PoC, verified e2e.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-56782-Gorse-Auth-Bypass.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass\ncd CVE-2026-56782-Gorse-Auth-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Authenticated Remote Command Injection in Coolify",
+      "technicalSummary": "Authenticated Remote Command Injection in Coolify",
+      "breakdown": "Authenticated Remote Command Injection in Coolify",
+      "whatBroke": "Authenticated Remote Command Injection in Coolify",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ThemeHackers/CVE-2026-34038.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ThemeHackers/CVE-2026-34038\ncd CVE-2026-34038\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -928,21 +927,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "Auth Bypass"
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 0,
+      "weaponization": 73,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/BiiTts/CVE-2026-56782-Gorse-Auth-Bypass"
+          "https://github.com/ThemeHackers/CVE-2026-34038"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/gorse-io/gorse/commit/19fdcbb309fb5b609e9cc3eb10c74885b5b27da9"
+          "https://github.com/coollabsio/coolify/commit/23f9156c7306b221101f1ebbe4d3c6b5e2522acd"
         ]
       ]
     },
@@ -998,11 +997,79 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/diamorphine666/CVE-2026-23744-exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-38526",
+      "title": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x (CVE-2026-38526)",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/diamorphine666/CVE-2026-38526-Exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-38526.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-38526.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-38526"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "diamorphine666",
+      "researcherUrl": "https://github.com/diamorphine666",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:30 PM CDT",
+      "firstSeenAt": "2026-07-06T21:30:47Z",
+      "language": "Python",
+      "summary": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x ()",
+      "technicalSummary": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x ()",
+      "breakdown": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x ()",
+      "whatBroke": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x ()",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at diamorphine666/CVE-2026-38526-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/diamorphine666/CVE-2026-38526-Exploit\ncd CVE-2026-38526-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/diamorphine666/CVE-2026-38526-Exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/TREXNEGRO/Security-Advisories/tree/main/CVE-2026-38526"
         ]
       ]
     },
@@ -1056,7 +1123,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1114,11 +1181,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/pbck-exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.joomlack.fr/"
         ]
       ]
     },
@@ -1152,8 +1223,8 @@
       "researcherUrl": "https://github.com/0xgh057r3c0n",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:08 AM CDT",
-      "firstSeenAt": "2026-06-30T09:08:23Z",
+      "added": "1:16 AM CDT",
+      "firstSeenAt": "2026-07-07T06:16:35Z",
       "language": "Python",
       "summary": "PoC exploit for Authentication Bypass in Hippoo Mobile App for WooCommerce <= 1.9.4 leading to Admin Account Takeover",
       "technicalSummary": "PoC exploit for Authentication Bypass in Hippoo Mobile App for WooCommerce <= 1.9.4 leading to Admin Account Takeover",
@@ -1176,71 +1247,11 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
           "https://github.com/0xgh057r3c0n/CVE-2026-10580"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-34038",
-      "title": "Authenticated Remote Command Injection in Coolify",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ThemeHackers/CVE-2026-34038",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-34038"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ThemeHackers",
-      "researcherUrl": "https://github.com/ThemeHackers",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:05 PM CDT",
-      "firstSeenAt": "2026-07-04T04:05:12Z",
-      "language": "Python",
-      "summary": "Authenticated Remote Command Injection in Coolify",
-      "technicalSummary": "Authenticated Remote Command Injection in Coolify",
-      "breakdown": "Authenticated Remote Command Injection in Coolify",
-      "whatBroke": "Authenticated Remote Command Injection in Coolify",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ThemeHackers/CVE-2026-34038.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ThemeHackers/CVE-2026-34038\ncd CVE-2026-34038\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ThemeHackers/CVE-2026-34038"
         ]
       ]
     }
