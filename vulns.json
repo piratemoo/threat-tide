@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T06:16:35Z",
+  "updatedAt": "2026-07-07T15:47:21Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,59 +51,17 @@
   ],
   "research": [
     {
-      "title": "Microsoft Windows Installer Folder Delete Privilege Escalation",
-      "source": "Exodus Intelligence",
-      "sourceUrl": "https://blog.exodusintel.com/",
-      "url": "https://blog.exodusintel.com/2026/07/06/microsoft-windows-installer-folder-delete-privilege-escalation/",
-      "summary": "By Endri Domi Overview This blog post details a logic vulnerability discovered internally in the COM interface exposed from the msi.dll binary. The vulnerability allows a low-privileged user to cause the MSI service to delete an arbitrary folder that the.",
-      "publishedAt": "2026-07-06T15:32:55Z",
-      "cves": [
-        "CVE-2025-27727"
-      ],
-      "tags": [
-        "Windows",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Is Your AppSec Program Built to Close the OWASP Top 10 2025 Coverage Gap?",
+      "title": "Qualys Joins Cisco Cloud Control Studio as a Launch Partner to Bring Risk Intelligence to Agentic Operations",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/07/06/owasp-top-10-2025-appsec-coverage-gap",
-      "summary": "Key Takeaways Most AppSec programs treat API-layer coverage as a DAST extension, but BOLA, BFLA, and SSRF require authenticated multi-role testing that traditional scanners weren\u2019t built to run at scale. Modern authentication flows (OAuth2, JWT validation,.",
-      "publishedAt": "2026-07-06T15:00:00Z",
+      "url": "https://blog.qualys.com/product-tech/2026/07/07/qualys-cisco-cloud-control-studio-launch-partner",
+      "summary": "Key Takeaways Qualys is a launch partner in Cisco Cloud Control Studio, Cisco\u2019s new unified platform for agentic IT operations. Joint customers can access Qualys intelligence Unified Asset Inventory, TruRisk Prioritized Findings, and orchestrate remediation.",
+      "publishedAt": "2026-07-07T15:00:00Z",
       "cves": [],
       "tags": [
-        "Windows",
-        "VPN Edge",
+        "Web",
+        "Kubernetes",
         "Session Theft"
-      ]
-    },
-    {
-      "title": "How NodeZero\u00ae Rapid Response Helps Operationalize BOD 26-04",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/intelligence/blogs/nodezero-rapid-response-bod-26-04/",
-      "summary": "Federal vulnerability management is entering a new phase. CISA\u2019s Binding Operational Directive (BOD) 26-04 represents an important evolution in how federal agencies approach vulnerability remediation. Rather than relying primarily on severity scores, the.",
-      "publishedAt": "2026-07-06T13:00:00Z",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "More than just data: The hidden security risks in Jupyter notebooks",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/hidden-security-risks-in-jupyter-notebooks/",
-      "summary": "Jupyter notebooks are a powerful tool for data scientists, researchers and developers, and their use has been boosted by the increasing popularity of AI and data science. They provide a flexible and interactive environment for combining live code, narrative.",
-      "publishedAt": "2026-07-06T13:00:00Z",
-      "cves": [
-        "CVE-2025-59842",
-        "CVE-2026-25847"
-      ],
-      "tags": [
-        "Windows",
-        "Kernel",
-        "RCE"
       ]
     }
   ],
@@ -554,74 +512,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-31694",
-      "title": "Linux kernel FUSE readdir cache out-of-bounds write (CVE-2026-31694): a malicious FUSE server overflows a.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xCyberstan/CVE-2026-31694-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.c",
-          "vm/build_vuln_kernel.sh",
-          "vm/config.sh",
-          "vm/make_rootfs.sh",
-          "vm/provision_guest.sh",
-          "vm/run_in_vm.sh",
-          "vm/run_vm.sh"
-        ],
-        "attackFiles": [
-          "exploit.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-31694"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xCyberstan",
-      "researcherUrl": "https://github.com/0xCyberstan",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:16 AM CDT",
-      "firstSeenAt": "2026-07-07T06:16:35Z",
-      "language": "C",
-      "summary": "Linux kernel FUSE readdir cache out-of-bounds write (): a malicious FUSE server overflows a page-cache page by 24 bytes. PoC plus an unprivileged local-root exploit via /etc/passwd page-cache corruption. Run only inside a VM.",
-      "technicalSummary": "Linux kernel FUSE readdir cache out-of-bounds write (): a malicious FUSE server overflows a page-cache page by 24 bytes. PoC plus an unprivileged local-root exploit via /etc/passwd page-cache corruption. Run only inside a VM.",
-      "breakdown": "Linux kernel FUSE readdir cache out-of-bounds write (): a malicious FUSE server overflows a page-cache page by 24 bytes. PoC plus an unprivileged local-root exploit via /etc/passwd page-cache corruption. Run only inside a VM.",
-      "whatBroke": "Linux kernel FUSE readdir cache out-of-bounds write (): a malicious FUSE server overflows a page-cache page by 24 bytes. PoC plus an unprivileged local-root exploit via /etc/passwd page-cache corruption. Run only inside a VM.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-31694-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-31694-POC\ncd CVE-2026-31694-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xCyberstan/CVE-2026-31694-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/474ce83c96a55f2eeb14dee2be375eeadfdacdf5"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-43284",
       "title": "Variant of dirtyfrag exploit",
       "ecosystem": "linux",
@@ -814,74 +704,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-58116",
-      "title": "\u2014 LLaMA-Factory WebUI RCE via `trust_remote_code`",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "build_and_verify.py",
-          "poc-model/configuration_poc.py",
-          "poc-model/modeling_poc.py"
-        ],
-        "attackFiles": [
-          "build_and_verify.py",
-          "poc-model/configuration_poc.py",
-          "poc-model/modeling_poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-58116"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Hunt-Benito",
-      "researcherUrl": "https://github.com/Hunt-Benito",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:06 AM CDT",
-      "firstSeenAt": "2026-07-02T07:06:16Z",
-      "language": "Python",
-      "summary": "LLaMA-Factory through 0.9.5 contains a remote code execution vulnerability that allows attackers with WebUI access to execute arbitrary Python code by supplying a malicious model path in the Chat or Training interfaces. The.",
-      "technicalSummary": "LLaMA-Factory through 0.9.5 contains a remote code execution vulnerability that allows attackers with WebUI access to execute arbitrary Python code by supplying a malicious model path in the Chat or Training interfaces. The.",
-      "breakdown": "LLaMA-Factory through 0.9.5 contains a remote code execution vulnerability that allows attackers with WebUI access to execute arbitrary Python code by supplying a malicious model path in the Chat or Training interfaces. The.",
-      "whatBroke": "LLaMA-Factory through 0.9.5 contains a remote code execution vulnerability that allows attackers with WebUI access to execute arbitrary Python code by supplying a malicious model path in the Chat or Training interfaces. The.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection\ncd llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection"
-        ],
-        [
-          "Vendor Advisory",
-          "https://gist.github.com/henrrrychau/08d76ec672f42136bbc1449c4f2973f8"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-34038",
       "title": "Authenticated Remote Command Injection in Coolify",
       "ecosystem": "cloud",
@@ -932,7 +754,7 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 75,
       "dayOffset": 4,
       "links": [
         [
@@ -942,70 +764,6 @@
         [
           "Vendor Advisory",
           "https://github.com/coollabsio/coolify/commit/23f9156c7306b221101f1ebbe4d3c6b5e2522acd"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-23744",
-      "title": "Exploit for MCPJam Inspector - Remote Code Execution (CVE-2026-23744)",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/diamorphine666/CVE-2026-23744-exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-23744.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-23744.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-23744"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "diamorphine666",
-      "researcherUrl": "https://github.com/diamorphine666",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "3:53 PM CDT",
-      "firstSeenAt": "2026-07-04T20:53:38Z",
-      "language": "Python",
-      "summary": "Exploit for MCPJam Inspector - Remote Code Execution ()",
-      "technicalSummary": "Exploit for MCPJam Inspector - Remote Code Execution ()",
-      "breakdown": "Exploit for MCPJam Inspector - Remote Code Execution ()",
-      "whatBroke": "Exploit for MCPJam Inspector - Remote Code Execution ()",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at diamorphine666/CVE-2026-23744-exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/diamorphine666/CVE-2026-23744-exploit\ncd CVE-2026-23744-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/diamorphine666/CVE-2026-23744-exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
@@ -1186,64 +944,183 @@
         [
           "GitHub",
           "https://github.com/shinthink/pbck-exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.joomlack.fr/"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-10580",
-      "title": "PoC exploit for CVE-2026-10580 - Authentication Bypass in Hippoo Mobile App for WooCommerce <= 1.9.4 leading.",
-      "ecosystem": "web",
+      "cve": "CVE-2026-58116",
+      "title": "\u2014 LLaMA-Factory WebUI RCE via `trust_remote_code`",
+      "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/0xgh057r3c0n/CVE-2026-10580",
+      "pocUrl": "https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "CVE-2026-10580.py",
-          "CVE-2026-10580.yaml"
+          "build_and_verify.py",
+          "poc-model/configuration_poc.py",
+          "poc-model/modeling_poc.py"
         ],
         "attackFiles": [
-          "CVE-2026-10580.py",
-          "CVE-2026-10580.yaml"
+          "build_and_verify.py",
+          "poc-model/configuration_poc.py",
+          "poc-model/modeling_poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-10580"
+          "CVE-2026-58116"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "0xgh057r3c0n",
-      "researcherUrl": "https://github.com/0xgh057r3c0n",
+      "researcher": "Hunt-Benito",
+      "researcherUrl": "https://github.com/Hunt-Benito",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:16 AM CDT",
-      "firstSeenAt": "2026-07-07T06:16:35Z",
+      "added": "2:06 AM CDT",
+      "firstSeenAt": "2026-07-02T07:06:16Z",
       "language": "Python",
-      "summary": "PoC exploit for Authentication Bypass in Hippoo Mobile App for WooCommerce <= 1.9.4 leading to Admin Account Takeover",
-      "technicalSummary": "PoC exploit for Authentication Bypass in Hippoo Mobile App for WooCommerce <= 1.9.4 leading to Admin Account Takeover",
-      "breakdown": "PoC exploit for Authentication Bypass in Hippoo Mobile App for WooCommerce <= 1.9.4 leading to Admin Account Takeover",
-      "whatBroke": "PoC exploit for Authentication Bypass in Hippoo Mobile App for WooCommerce <= 1.9.4 leading to Admin Account Takeover",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xgh057r3c0n/CVE-2026-10580.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xgh057r3c0n/CVE-2026-10580\ncd CVE-2026-10580\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection\ncd llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "Auth Bypass"
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Hunt-Benito/llama-factory-webui-rce-cve-2026-58116-trust-remote-code-model-path-injection"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-28867",
+      "title": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
+      "ecosystem": "ios",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/speedyfriend433/CVE-2026-28867-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.c"
+        ],
+        "attackFiles": [
+          "poc.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-28867"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "speedyfriend433",
+      "researcherUrl": "https://github.com/speedyfriend433",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:46 PM CDT",
+      "firstSeenAt": "2026-07-05T02:46:00Z",
+      "language": "C",
+      "summary": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
+      "technicalSummary": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
+      "breakdown": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
+      "whatBroke": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at speedyfriend433/CVE-2026-28867-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/speedyfriend433/CVE-2026-28867-PoC\ncd CVE-2026-28867-PoC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "iOS",
+        "Kernel",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/speedyfriend433/CVE-2026-28867-PoC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "title": "CVE-2026-46300 Variant of dirtyfrag exploit",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/MadExploits/CVE-2026-46300",
+      "pocValidation": {
+        "valid": true,
+        "score": 8,
+        "codeFiles": [
+          "CVE-2026-46300.pl",
+          "CVE-2026-46300.py",
+          "CVE-2026-46300.sh",
+          "dirtyfrag.c"
+        ],
+        "attackFiles": [
+          "CVE-2026-46300.pl",
+          "CVE-2026-46300.py",
+          "CVE-2026-46300.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43284",
+          "CVE-2026-43500",
+          "CVE-2026-46300"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "MadExploits",
+      "researcherUrl": "https://github.com/MadExploits",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:47 AM CDT",
+      "firstSeenAt": "2026-07-07T15:47:21Z",
+      "language": "Python",
+      "summary": "Variant of dirtyfrag exploit",
+      "technicalSummary": "Variant of dirtyfrag exploit",
+      "breakdown": "Variant of dirtyfrag exploit",
+      "whatBroke": "Variant of dirtyfrag exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MadExploits/CVE-2026-46300.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MadExploits/CVE-2026-46300\ncd CVE-2026-46300\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 75,
@@ -1251,7 +1128,66 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/0xgh057r3c0n/CVE-2026-10580"
+          "https://github.com/MadExploits/CVE-2026-46300"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-26114",
+      "title": "Python PoC",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/huynambka/cve-2026-26114-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "cve_2026_26114_rce.py",
+          "modules/exploits/windows/http/sharepoint_cve_2026_2614.rb"
+        ],
+        "attackFiles": [
+          "cve_2026_26114_rce.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-26114"
+        ],
+        "language": "Ruby"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "huynambka",
+      "researcherUrl": "https://github.com/huynambka",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:46 AM CDT",
+      "firstSeenAt": "2026-07-03T14:46:50Z",
+      "language": "Ruby",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at huynambka/cve-2026-26114-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/huynambka/cve-2026-26114-poc\ncd cve-2026-26114-poc\nruby <script>.rb --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/huynambka/cve-2026-26114-poc"
         ]
       ]
     }
