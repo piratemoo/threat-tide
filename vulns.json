@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T05:28:48Z",
+  "updatedAt": "2026-07-08T15:29:12Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,19 @@
   ],
   "research": [
     {
+      "title": "Operationalizing Day Minus Seven: The Cloud-Native ROC",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/07/08/cloud-roc-day-minus-seven-etm",
+      "summary": "Summary Frontier AI models in the post-Mythos era are changing the speed and scale of exposure risk. Security teams are entering an era where AI can help discover, chain, and exploit weaknesses faster than traditional programs can absorb. The challenge is no.",
+      "publishedAt": "2026-07-08T14:56:19Z",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "DevOps"
+      ]
+    },
+    {
       "title": "CVE-2026-48283 / CVE-2026-48313 | Adobe ColdFusion Pre-Authentication Unrestricted File Upload and Path Traversal Vulnerabilities",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
@@ -65,20 +78,6 @@
         "Web",
         "Webstack",
         "RCE"
-      ]
-    },
-    {
-      "title": "Qualys Joins Cisco Cloud Control Studio as a Launch Partner to Bring Risk Intelligence to Agentic Operations",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/07/07/qualys-cisco-cloud-control-studio-launch-partner",
-      "summary": "Key Takeaways Qualys is a launch partner in Cisco Cloud Control Studio, Cisco\u2019s new unified platform for agentic IT operations. Joint customers can access Qualys intelligence Unified Asset Inventory, TruRisk Prioritized Findings, and orchestrate remediation.",
-      "publishedAt": "2026-07-07T15:00:00Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Kubernetes",
-        "Session Theft"
       ]
     }
   ],
@@ -145,134 +144,6 @@
         [
           "Vendor Advisory",
           "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48907",
-      "title": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/NoXiVaR/CVE-2026-48907",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-48907.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-48907.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48907"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "NoXiVaR",
-      "researcherUrl": "https://github.com/NoXiVaR",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:28 AM CDT",
-      "firstSeenAt": "2026-07-08T05:28:48Z",
-      "language": "Python",
-      "summary": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
-      "technicalSummary": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
-      "breakdown": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
-      "whatBroke": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at NoXiVaR/CVE-2026-48907.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/NoXiVaR/CVE-2026-48907\ncd CVE-2026-48907\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Joomla Content Editor",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/NoXiVaR/CVE-2026-48907"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56290",
-      "title": "Joomlack Page Builder Improper Access Control Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Jenderal92/CVE-2026-56290",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-56290.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-56290.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56290"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Jenderal92",
-      "researcherUrl": "https://github.com/Jenderal92",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:30 PM CDT",
-      "firstSeenAt": "2026-07-08T04:30:25Z",
-      "language": "Python",
-      "summary": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
-      "technicalSummary": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
-      "breakdown": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
-      "whatBroke": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-56290.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-56290\ncd CVE-2026-56290\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Page Builder",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Jenderal92/CVE-2026-56290"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck"
         ]
       ]
     },
@@ -405,6 +276,133 @@
       ]
     },
     {
+      "cve": "CVE-2026-40047",
+      "title": "Reproducer for CVE-2026-40047: Apache Camel camel-docling CLI argument injection / path traversal",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-40047",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker-compose.yml",
+          "docling-stub.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-40047"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:58 AM CDT",
+      "firstSeenAt": "2026-07-08T10:58:16Z",
+      "language": "Java",
+      "summary": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
+      "technicalSummary": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
+      "breakdown": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
+      "whatBroke": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-40047.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-40047\ncd CVE-2026-40047\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-40047"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-40047.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-56290",
+      "title": "Joomlack Page Builder Improper Access Control Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Jenderal92/CVE-2026-56290",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-56290.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-56290.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56290"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Jenderal92",
+      "researcherUrl": "https://github.com/Jenderal92",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:30 PM CDT",
+      "firstSeenAt": "2026-07-08T04:30:25Z",
+      "language": "Python",
+      "summary": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
+      "technicalSummary": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
+      "breakdown": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
+      "whatBroke": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-56290.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-56290\ncd CVE-2026-56290\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Page Builder",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Jenderal92/CVE-2026-56290"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-48558",
       "title": "SimpleHelp Authentication Bypass Vulnerability",
       "ecosystem": "web",
@@ -479,14 +477,14 @@
       "pocUrl": "https://github.com/0xCyberstan/CVE-2026-53360-POC",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "trigger.c"
         ],
         "attackFiles": [
           "trigger.c"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-53360"
         ],
@@ -657,68 +655,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-42945",
-      "title": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/aratane/CVE-2026-42945",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "rift.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-42945"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "aratane",
-      "researcherUrl": "https://github.com/aratane",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "12:28 AM CDT",
-      "firstSeenAt": "2026-07-08T05:28:48Z",
-      "language": "Python",
-      "summary": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
-      "technicalSummary": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
-      "breakdown": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
-      "whatBroke": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at aratane/CVE-2026-42945.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/aratane/CVE-2026-42945\ncd CVE-2026-42945\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/aratane/CVE-2026-42945"
-        ],
-        [
-          "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000161019"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-34038",
       "title": "Authenticated Remote Command Injection in Coolify",
       "ecosystem": "cloud",
@@ -779,6 +715,72 @@
         [
           "Vendor Advisory",
           "https://github.com/coollabsio/coolify/commit/23f9156c7306b221101f1ebbe4d3c6b5e2522acd"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-14459",
+      "title": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/dasokkk/CVE-2026-14459-14460-pardus-software",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit/exploit-14459.sh",
+          "exploit/exploit-14460.sh",
+          "poc/poc.sh"
+        ],
+        "attackFiles": [
+          "exploit/exploit-14459.sh",
+          "exploit/exploit-14460.sh",
+          "poc/poc.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-14459"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "dasokkk",
+      "researcherUrl": "https://github.com/dasokkk",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:30 PM CDT",
+      "firstSeenAt": "2026-07-03T17:30:00Z",
+      "language": "Shell",
+      "summary": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
+      "technicalSummary": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
+      "breakdown": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
+      "whatBroke": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dasokkk/CVE-2026-14459-14460-pardus-software.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dasokkk/CVE-2026-14459-14460-pardus-software\ncd CVE-2026-14459-14460-pardus-software\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/dasokkk/CVE-2026-14459-14460-pardus-software"
+        ],
+        [
+          "Vendor Advisory",
+          "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-0497"
         ]
       ]
     },
@@ -847,6 +849,70 @@
       ]
     },
     {
+      "cve": "CVE-2026-38751",
+      "title": "This repository contains a proof-of-concept (PoC) exploit for CVE-2026-38751, affecting OpenSTAManager \u2264.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Mkps/CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "cve-2026-38751.py"
+        ],
+        "attackFiles": [
+          "cve-2026-38751.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-38751"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Mkps",
+      "researcherUrl": "https://github.com/Mkps",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:29 PM CDT",
+      "firstSeenAt": "2026-07-02T19:29:00Z",
+      "language": "Python",
+      "summary": "This repository contains a proof-of-concept (PoC) exploit for affecting OpenSTAManager \u2264 2.10. The vulnerability allows an authenticated attacker to upload a malicious module via the module update functionality, leading to.",
+      "technicalSummary": "This repository contains a proof-of-concept (PoC) exploit for affecting OpenSTAManager \u2264 2.10. The vulnerability allows an authenticated attacker to upload a malicious module via the module update functionality, leading to.",
+      "breakdown": "This repository contains a proof-of-concept (PoC) exploit for affecting OpenSTAManager \u2264 2.10. The vulnerability allows an authenticated attacker to upload a malicious module via the module update functionality, leading to.",
+      "whatBroke": "This repository contains a proof-of-concept (PoC) exploit for affecting OpenSTAManager \u2264 2.10. The vulnerability allows an authenticated attacker to upload a malicious module via the module update functionality, leading to.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Mkps/CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Mkps/CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC\ncd CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Mkps/CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/devcode-it/openstamanager"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-48939",
       "title": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
       "ecosystem": "web",
@@ -905,68 +971,6 @@
         [
           "Vendor Advisory",
           "https://www.icagenda.com/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-53694",
-      "title": "NoMachine Local Privilege Escalation via Argument Injection",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-53694"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "do4choo",
-      "researcherUrl": "https://github.com/do4choo",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:28 AM CDT",
-      "firstSeenAt": "2026-07-08T05:28:48Z",
-      "language": "Python",
-      "summary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
-      "technicalSummary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
-      "breakdown": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
-      "whatBroke": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at do4choo/CVE-2026-53694-NoMachine-LPE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE\ncd CVE-2026-53694-NoMachine-LPE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/do4choo/CVE-2026-53694-NoMachine-LPE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://kb.nomachine.com/SU05X00274"
         ]
       ]
     },
@@ -1104,7 +1108,7 @@
       "cve": "CVE-2026-49468",
       "title": "\u2014 LiteLLM (<1.84.0) unauthenticated auth bypass via Host-header route confusion. PoC + docker lab.",
       "ecosystem": "cloud",
-      "category": "vpn-edge",
+      "category": "kubernetes",
       "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass",
@@ -1143,13 +1147,12 @@
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "VPN Edge",
+        "Kubernetes",
         "Auth Bypass"
       ],
       "confidence": 98,
@@ -1159,50 +1162,44 @@
         [
           "GitHub",
           "https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/BerriAI/litellm/releases/tag/v1.84.0"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-28867",
-      "title": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "ecosystem": "ios",
+      "cve": "CVE-2026-6300",
+      "title": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as CVE-2026-6300.",
+      "ecosystem": "cloud",
       "category": "kernel",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/speedyfriend433/CVE-2026-28867-PoC",
+      "pocUrl": "https://github.com/notthemystery/CVE-2026-6300-PoC",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "poc.c"
+          "pwn.js"
         ],
-        "attackFiles": [
-          "poc.c"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-28867"
+          "CVE-2026-6300"
         ],
-        "language": "C"
+        "language": "JavaScript"
       },
       "reliability": "reliable exploit",
-      "researcher": "speedyfriend433",
-      "researcherUrl": "https://github.com/speedyfriend433",
+      "researcher": "notthemystery",
+      "researcherUrl": "https://github.com/notthemystery",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "9:46 PM CDT",
-      "firstSeenAt": "2026-07-05T02:46:00Z",
-      "language": "C",
-      "summary": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "technicalSummary": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "breakdown": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "whatBroke": "Kernel info leak Proof of Concept patched in iOS 26.4 / macOS 26.4",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at speedyfriend433/CVE-2026-28867-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/speedyfriend433/CVE-2026-28867-PoC\ncd CVE-2026-28867-PoC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "9:18 AM CDT",
+      "firstSeenAt": "2026-07-07T14:18:43Z",
+      "language": "JavaScript",
+      "summary": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
+      "technicalSummary": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
+      "breakdown": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
+      "whatBroke": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at notthemystery/CVE-2026-6300-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/notthemystery/CVE-2026-6300-PoC\ncd CVE-2026-6300-PoC\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "local privilege escalation after a foothold",
@@ -1210,21 +1207,17 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "iOS",
+        "Cloud",
         "Kernel",
-        "Exploit"
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/speedyfriend433/CVE-2026-28867-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/126792"
+          "https://github.com/notthemystery/CVE-2026-6300-PoC"
         ]
       ]
     }
