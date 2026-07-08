@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T20:55:03Z",
+  "updatedAt": "2026-07-08T05:28:48Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -136,7 +136,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -176,8 +176,8 @@
       "researcherUrl": "https://github.com/NoXiVaR",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "9:05 AM CDT",
-      "firstSeenAt": "2026-07-01T14:05:26Z",
+      "added": "12:28 AM CDT",
+      "firstSeenAt": "2026-07-08T05:28:48Z",
       "language": "Python",
       "summary": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
       "technicalSummary": "Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users.",
@@ -199,7 +199,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -218,14 +218,16 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/pbck-exploit",
+      "pocUrl": "https://github.com/Jenderal92/CVE-2026-56290",
       "pocValidation": {
         "valid": true,
-        "score": 7,
+        "score": 11,
         "codeFiles": [
-          "cve_2026_56290.py"
+          "CVE-2026-56290.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "CVE-2026-56290.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-56290"
@@ -233,19 +235,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
+      "researcher": "Jenderal92",
+      "researcherUrl": "https://github.com/Jenderal92",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:01 PM CDT",
-      "firstSeenAt": "2026-07-04T00:01:31Z",
+      "added": "11:30 PM CDT",
+      "firstSeenAt": "2026-07-08T04:30:25Z",
       "language": "Python",
-      "summary": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "technicalSummary": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "breakdown": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "whatBroke": "\ud83d\udce4 Mass exploitation framework for \u2014 Page Builder CK Joomla unauthenticated file upload to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/pbck-exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/pbck-exploit\ncd pbck-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
+      "technicalSummary": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
+      "breakdown": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
+      "whatBroke": "Mass Exploit for Joomla Com_pagebuilderck component (Unrestricted File Upload \u2192 RCE). Multi-threaded, automatic CSRF bypass, PHP shell uploader.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Jenderal92/CVE-2026-56290.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Jenderal92/CVE-2026-56290\ncd CVE-2026-56290\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Page Builder",
         "credential access from service context",
@@ -262,11 +264,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/shinthink/pbck-exploit"
+          "https://github.com/Jenderal92/CVE-2026-56290"
         ],
         [
           "Vendor Advisory",
@@ -326,7 +328,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -390,7 +392,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -455,7 +457,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -517,7 +519,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -578,7 +580,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -642,7 +644,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -680,8 +682,8 @@
       "researcherUrl": "https://github.com/aratane",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:30 AM CDT",
-      "firstSeenAt": "2026-07-01T08:30:57Z",
+      "added": "12:28 AM CDT",
+      "firstSeenAt": "2026-07-08T05:28:48Z",
       "language": "Python",
       "summary": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
       "technicalSummary": "A flaw was found in NGINX, specifically within the ngx_http_rewrite_module. An unauthenticated attacker can exploit this vulnerability by sending crafted HTTP requests under specific rewrite configurations. This can lead to a.",
@@ -704,7 +706,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -768,7 +770,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -832,7 +834,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -894,7 +896,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -934,8 +936,8 @@
       "researcherUrl": "https://github.com/do4choo",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "10:22 AM CDT",
-      "firstSeenAt": "2026-07-01T15:22:38Z",
+      "added": "12:28 AM CDT",
+      "firstSeenAt": "2026-07-08T05:28:48Z",
       "language": "Python",
       "summary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
       "technicalSummary": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection') vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.",
@@ -956,7 +958,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -1024,7 +1026,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1086,7 +1088,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -1095,6 +1097,72 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/fusion-builder/trunk/inc/class-fusion-form-db-entries.php#L79"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49468",
+      "title": "\u2014 LiteLLM (<1.84.0) unauthenticated auth bypass via Host-header route confusion. PoC + docker lab.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py",
+          "lab/config.yaml",
+          "lab/docker-compose.yml"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49468"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "BiiTts",
+      "researcherUrl": "https://github.com/BiiTts",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:05 AM CDT",
+      "firstSeenAt": "2026-07-03T06:05:18Z",
+      "language": "Python",
+      "summary": "\u2014 LiteLLM (<1.84.0) unauthenticated auth bypass via Host-header route confusion. PoC + docker lab.",
+      "technicalSummary": "\u2014 LiteLLM (<1.84.0) unauthenticated auth bypass via Host-header route confusion. PoC + docker lab.",
+      "breakdown": "\u2014 LiteLLM (<1.84.0) unauthenticated auth bypass via Host-header route confusion. PoC + docker lab.",
+      "whatBroke": "\u2014 LiteLLM (<1.84.0) unauthenticated auth bypass via Host-header route confusion. PoC + docker lab.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass\ncd CVE-2026-49468-LiteLLM-Auth-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/BerriAI/litellm/releases/tag/v1.84.0"
         ]
       ]
     },
@@ -1148,7 +1216,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1157,70 +1225,6 @@
         [
           "Vendor Advisory",
           "https://support.apple.com/en-us/126792"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-26114",
-      "title": "Python PoC",
-      "ecosystem": "windows",
-      "category": "sharepoint",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/huynambka/cve-2026-26114-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "cve_2026_26114_rce.py",
-          "modules/exploits/windows/http/sharepoint_cve_2026_2614.rb"
-        ],
-        "attackFiles": [
-          "cve_2026_26114_rce.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-26114"
-        ],
-        "language": "Ruby"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "huynambka",
-      "researcherUrl": "https://github.com/huynambka",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:46 AM CDT",
-      "firstSeenAt": "2026-07-03T14:46:50Z",
-      "language": "Ruby",
-      "summary": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
-      "technicalSummary": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
-      "breakdown": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
-      "whatBroke": "Deserialization of untrusted data in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at huynambka/cve-2026-26114-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/huynambka/cve-2026-26114-poc\ncd cve-2026-26114-poc\nruby <script>.rb --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "SharePoint",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/huynambka/cve-2026-26114-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-26114"
         ]
       ]
     }
