@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T06:13:20Z",
+  "updatedAt": "2026-07-09T16:06:59Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,20 @@
   ],
   "research": [
     {
+      "title": "Introducing SonarQube Hunter Agent(beta): Catch logic flaws, as you code.",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/hunter-agent-beta/",
+      "summary": "AI coding assistants have created a verification problem that nobody fully anticipated. Developers are now merging more code in a single sprint than they could write in a month just two years ago. The volume is real, the productivity gains are real, and the.",
+      "publishedAt": "2026-07-09T13:00:00Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local Lpe"
+      ]
+    },
+    {
       "title": "When AI-Accelerated Discovery Outruns Patching, Exploitability Proof Decides What Gets Fixed First",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
@@ -97,82 +111,68 @@
         "Webstack",
         "File Read"
       ]
-    },
-    {
-      "title": "Operationalizing Day Minus Seven: The Cloud-Native ROC",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/07/08/cloud-roc-day-minus-seven-etm",
-      "summary": "Summary Frontier AI models in the post-Mythos era are changing the speed and scale of exposure risk. Security teams are entering an era where AI can help discover, chain, and exploit weaknesses faster than traditional programs can absorb. The challenge is no.",
-      "publishedAt": "2026-07-08T14:56:19Z",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "DevOps"
-      ]
     }
   ],
   "vulns": [
     {
-      "cve": "CVE-2026-33017",
-      "title": "Langflow Code Injection Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
+      "cve": "CVE-2026-40047",
+      "title": "Reproducer for CVE-2026-40047: Apache Camel camel-docling CLI argument injection / path traversal",
+      "ecosystem": "windows",
+      "category": "exchange",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/c0gnit00/CVE-2026-33017",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-40047",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "CVE-2026-33017.py"
+          "docker-compose.yml",
+          "docling-stub.sh"
         ],
-        "attackFiles": [
-          "CVE-2026-33017.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-33017"
+          "CVE-2026-40047"
         ],
-        "language": "Python"
+        "language": "Java"
       },
       "reliability": "reliable exploit",
-      "researcher": "c0gnit00",
-      "researcherUrl": "https://github.com/c0gnit00",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:13 AM CDT",
-      "firstSeenAt": "2026-07-09T06:13:20Z",
-      "language": "Python",
-      "summary": "Python POC, Exploit for",
-      "technicalSummary": "Python POC, Exploit for",
-      "breakdown": "Python POC, Exploit for",
-      "whatBroke": "Python POC, Exploit for",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at c0gnit00/CVE-2026-33017.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/c0gnit00/CVE-2026-33017\ncd CVE-2026-33017\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "5:58 AM CDT",
+      "firstSeenAt": "2026-07-08T10:58:16Z",
+      "language": "Java",
+      "summary": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
+      "technicalSummary": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
+      "breakdown": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
+      "whatBroke": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-40047.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-40047\ncd CVE-2026-40047\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Langflow",
-        "internal pivot from an internet-facing control point",
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit",
-        "KEV"
+        "Windows",
+        "Exchange",
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
+      "weaponization": 74,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/c0gnit00/CVE-2026-33017"
+          "https://github.com/oscerd/CVE-2026-40047"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
+          "https://camel.apache.org/security/CVE-2026-40047.html"
         ]
       ]
     },
@@ -305,68 +305,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-40047",
-      "title": "Reproducer for CVE-2026-40047: Apache Camel camel-docling CLI argument injection / path traversal",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-40047",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml",
-          "docling-stub.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-40047"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:58 AM CDT",
-      "firstSeenAt": "2026-07-08T10:58:16Z",
-      "language": "Java",
-      "summary": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
-      "technicalSummary": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
-      "breakdown": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
-      "whatBroke": "Reproducer for Apache Camel camel-docling CLI argument injection / path traversal",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-40047.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-40047\ncd CVE-2026-40047\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-40047"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-40047.html"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-56290",
       "title": "Joomlack Page Builder Improper Access Control Vulnerability",
       "ecosystem": "web",
@@ -418,7 +356,7 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 75,
       "dayOffset": 2,
       "links": [
         [
@@ -746,6 +684,70 @@
       ]
     },
     {
+      "cve": "CVE-2026-4257",
+      "title": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/dann3xplo1t/CVE-2026-4257",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-4257.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-4257.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-4257"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "dann3xplo1t",
+      "researcherUrl": "https://github.com/dann3xplo1t",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "3:02 AM CDT",
+      "firstSeenAt": "2026-07-09T08:02:12Z",
+      "language": "Python",
+      "summary": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
+      "technicalSummary": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
+      "breakdown": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
+      "whatBroke": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dann3xplo1t/CVE-2026-4257.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dann3xplo1t/CVE-2026-4257\ncd CVE-2026-4257\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/dann3xplo1t/CVE-2026-4257"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/contact-form-by-supsystic/tags/1.7.36/modules/forms/views/forms.php#L323"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-53571",
       "title": "`server.fs.deny` bypass on Windows alternate paths PoC.",
       "ecosystem": "windows",
@@ -988,7 +990,7 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 75,
       "dayOffset": 3,
       "links": [
         [
@@ -1120,10 +1122,6 @@
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-48939"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.icagenda.com/"
         ]
       ]
     },
@@ -1182,10 +1180,6 @@
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-8713"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/fusion-builder/trunk/inc/class-fusion-form-db-entries.php#L79"
         ]
       ]
     },
@@ -1193,7 +1187,7 @@
       "cve": "CVE-2026-49468",
       "title": "\u2014 LiteLLM (<1.84.0) unauthenticated auth bypass via Host-header route confusion. PoC + docker lab.",
       "ecosystem": "cloud",
-      "category": "vpn-edge",
+      "category": "kubernetes",
       "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass",
@@ -1232,13 +1226,12 @@
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "VPN Edge",
+        "Kubernetes",
         "Auth Bypass"
       ],
       "confidence": 98,
@@ -1248,10 +1241,6 @@
         [
           "GitHub",
           "https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/BerriAI/litellm/releases/tag/v1.84.0"
         ]
       ]
     }
