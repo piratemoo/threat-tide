@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T16:06:59Z",
+  "updatedAt": "2026-07-09T20:53:13Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,29 @@
   ],
   "research": [
     {
+      "title": "How to Meet a 3-Day Remediation SLA & Comply with CISA BOD 26-04",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/07/09/cisa-bod-26-04-3-day-remediation-sla",
+      "summary": "Key Takeaways CISA BOD 26\u201304 mandates remediation of the publicly exposed, highest-risk, known-exploited vulnerabilities within 3 days. The directive applies a risk-based model evaluating exposure, KEV status, automation potential, and technical impact. Most.",
+      "publishedAt": "2026-07-09T19:30:37Z",
+      "cves": [],
+      "tags": []
+    },
+    {
+      "title": "How GitHub gave every repository a durable owner",
+      "source": "GitHub Security",
+      "sourceUrl": "https://github.blog/security/",
+      "url": "https://github.blog/security/application-security/how-github-gave-every-repository-a-durable-owner/",
+      "summary": "GitHub has over 14,000 repositories across our primary internal GitHub organization. As of early 2025, there were over 11,000 non-archived repositories, the vast majority of which with no clear owner. For repositories attached to production services, we have.",
+      "publishedAt": "2026-07-09T16:29:37Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Kubernetes"
+      ]
+    },
+    {
       "title": "Introducing SonarQube Hunter Agent(beta): Catch logic flaws, as you code.",
       "source": "SonarSource",
       "sourceUrl": "https://x.com/SonarSource",
@@ -74,42 +97,6 @@
       "cves": [],
       "tags": [
         "Auth Bypass"
-      ]
-    },
-    {
-      "title": "FortiBleed: Credential Reuse, Legacy Hashes, and the Risk of Internet-Exposed FortiGate Devices",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/08/fortibleed-fortigate-credential-reuse-internet-exposed",
-      "summary": "Key Takeaways FortiBleed refers to June 2026 public reporting of large-scale credential exposure and abuse targeting internet-reachable FortiGate management and SSL-VPN gateways driven by credential reuse and brute-force, not a single new zero-day. Risk is.",
-      "publishedAt": "2026-07-08T17:38:12Z",
-      "cves": [
-        "CVE-2018-13379",
-        "CVE-2022-40684",
-        "CVE-2022-42475",
-        "CVE-2023-27997",
-        "CVE-2024-21762"
-      ],
-      "tags": [
-        "Windows",
-        "VPN Edge",
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "CVE-2026-9181 | Esri ArcGIS Server Pre-Authentication Path Traversal Vulnerability",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-9181/",
-      "summary": "CVE-2026-9181 is a critical pre-authentication path traversal vulnerability affecting Esri ArcGIS Server 12.0 and prior. The vulnerability exists in the ArcGIS Server REST Uploads resource, where insufficient validation of crafted path parameters allows an.",
-      "publishedAt": "2026-07-08T17:00:06Z",
-      "cves": [
-        "CVE-2026-9181"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
       ]
     }
   ],
@@ -370,71 +357,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-48558",
-      "title": "SimpleHelp Authentication Bypass Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/J4ck3LSyN-Gen2/CVE-2026-48558",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48558"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "J4ck3LSyN-Gen2",
-      "researcherUrl": "https://github.com/J4ck3LSyN-Gen2",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:13 AM CDT",
-      "firstSeenAt": "2026-07-09T06:13:20Z",
-      "language": "Python",
-      "summary": "SimpleHelp OIDC Authentication Bypass PoC",
-      "technicalSummary": "SimpleHelp OIDC Authentication Bypass PoC",
-      "breakdown": "SimpleHelp OIDC Authentication Bypass PoC",
-      "whatBroke": "SimpleHelp OIDC Authentication Bypass PoC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at J4ck3LSyN-Gen2/CVE-2026-48558.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/J4ck3LSyN-Gen2/CVE-2026-48558\ncd CVE-2026-48558\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed SimpleHelp",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/J4ck3LSyN-Gen2/CVE-2026-48558"
-        ],
-        [
-          "Vendor Advisory",
-          "https://simple-help.com/security/simplehelp-security-update-2026-05"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-53360",
       "title": "PoC for CVE-2026-53360: guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC).",
       "ecosystem": "linux",
@@ -499,8 +421,8 @@
     {
       "cve": "CVE-2026-33454",
       "title": "Reproducer for CVE-2026-33454: Apache Camel camel-mail header injection to RCE via camel-exec",
-      "ecosystem": "windows",
-      "category": "exchange",
+      "ecosystem": "web",
+      "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oscerd/CVE-2026-33454",
@@ -535,12 +457,13 @@
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
-        "Exchange",
+        "Web",
+        "Webstack",
         "RCE"
       ],
       "confidence": 98,
@@ -550,10 +473,6 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-33454"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-33454.html"
         ]
       ]
     },
@@ -680,6 +599,70 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/5xg6xr99glocp3zsg9ht2zlbwlrst7ch"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-61343",
+      "title": "Librebooking Admin RCE PoC CVE-2026-61343",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/nmagill123/CVE-2026-61343-poc-librebooking-rce",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "librebooking_rce.py"
+        ],
+        "attackFiles": [
+          "librebooking_rce.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-61343"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "nmagill123",
+      "researcherUrl": "https://github.com/nmagill123",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:00 PM CDT",
+      "firstSeenAt": "2026-07-09T20:00:31Z",
+      "language": "Python",
+      "summary": "Librebooking Admin RCE PoC",
+      "technicalSummary": "Librebooking Admin RCE PoC",
+      "breakdown": "Librebooking Admin RCE PoC",
+      "whatBroke": "Librebooking Admin RCE PoC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at nmagill123/CVE-2026-61343-poc-librebooking-rce.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/nmagill123/CVE-2026-61343-poc-librebooking-rce\ncd CVE-2026-61343-poc-librebooking-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/nmagill123/CVE-2026-61343-poc-librebooking-rce"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/LibreBooking/librebooking/commit/cb9b7ad9da0243bd105809f6a4a8a6b9147c71ea"
         ]
       ]
     },
@@ -1004,70 +987,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-38751",
-      "title": "This repository contains a proof-of-concept (PoC) exploit for CVE-2026-38751, affecting OpenSTAManager \u2264.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Mkps/CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cve-2026-38751.py"
-        ],
-        "attackFiles": [
-          "cve-2026-38751.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-38751"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Mkps",
-      "researcherUrl": "https://github.com/Mkps",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:13 AM CDT",
-      "firstSeenAt": "2026-07-09T06:13:20Z",
-      "language": "Python",
-      "summary": "This repository contains a proof-of-concept (PoC) exploit for affecting OpenSTAManager \u2264 2.10. The vulnerability allows an authenticated attacker to upload a malicious module via the module update functionality, leading to.",
-      "technicalSummary": "This repository contains a proof-of-concept (PoC) exploit for affecting OpenSTAManager \u2264 2.10. The vulnerability allows an authenticated attacker to upload a malicious module via the module update functionality, leading to.",
-      "breakdown": "This repository contains a proof-of-concept (PoC) exploit for affecting OpenSTAManager \u2264 2.10. The vulnerability allows an authenticated attacker to upload a malicious module via the module update functionality, leading to.",
-      "whatBroke": "This repository contains a proof-of-concept (PoC) exploit for affecting OpenSTAManager \u2264 2.10. The vulnerability allows an authenticated attacker to upload a malicious module via the module update functionality, leading to.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Mkps/CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Mkps/CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC\ncd CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Mkps/CVE-2026-38751-OpenSTAManager-Arbitrary-File-Upload-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/devcode-it/openstamanager"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-48939",
       "title": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
       "ecosystem": "web",
@@ -1122,6 +1041,10 @@
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-48939"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.icagenda.com/"
         ]
       ]
     },
@@ -1180,6 +1103,10 @@
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-8713"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/fusion-builder/trunk/inc/class-fusion-form-db-entries.php#L79"
         ]
       ]
     },
@@ -1187,7 +1114,7 @@
       "cve": "CVE-2026-49468",
       "title": "\u2014 LiteLLM (<1.84.0) unauthenticated auth bypass via Host-header route confusion. PoC + docker lab.",
       "ecosystem": "cloud",
-      "category": "kubernetes",
+      "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass",
@@ -1226,12 +1153,13 @@
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "Kubernetes",
+        "VPN Edge",
         "Auth Bypass"
       ],
       "confidence": 98,
@@ -1241,6 +1169,70 @@
         [
           "GitHub",
           "https://github.com/BiiTts/CVE-2026-49468-LiteLLM-Auth-Bypass"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/BerriAI/litellm/releases/tag/v1.84.0"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-6300",
+      "title": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as CVE-2026-6300.",
+      "ecosystem": "cloud",
+      "category": "kernel",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/notthemystery/CVE-2026-6300-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "pwn.js"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-6300"
+        ],
+        "language": "JavaScript"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "notthemystery",
+      "researcherUrl": "https://github.com/notthemystery",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:18 AM CDT",
+      "firstSeenAt": "2026-07-07T14:18:43Z",
+      "language": "JavaScript",
+      "summary": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
+      "technicalSummary": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
+      "breakdown": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
+      "whatBroke": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at notthemystery/CVE-2026-6300-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/notthemystery/CVE-2026-6300-PoC\ncd CVE-2026-6300-PoC\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/notthemystery/CVE-2026-6300-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://chromereleases.googleblog.com/2026/04/stable-channel-update-for-desktop_15.html"
         ]
       ]
     }
