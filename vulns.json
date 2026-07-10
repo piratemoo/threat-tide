@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T06:12:31Z",
+  "updatedAt": "2026-07-10T15:37:23Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,21 @@
   ],
   "research": [
     {
+      "title": "CVE-2026-47291: Remote Code Execution in the Windows HTTP.sys",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "https://www.thezdi.com/blog/2026/7/9/cve-2026-47291-remote-code-execution-in-the-windows-httpsys",
+      "summary": "",
+      "publishedAt": "2026-07-10T14:00:00Z",
+      "cves": [
+        "CVE-2026-47291"
+      ],
+      "tags": [
+        "Windows",
+        "RCE"
+      ]
+    },
+    {
       "title": "How to Meet a 3-Day Remediation SLA & Comply with CISA BOD 26-04",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
@@ -71,20 +86,6 @@
       "tags": [
         "Web",
         "Kubernetes"
-      ]
-    },
-    {
-      "title": "Introducing SonarQube Hunter Agent(beta): Catch logic flaws, as you code.",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/hunter-agent-beta/",
-      "summary": "AI coding assistants have created a verification problem that nobody fully anticipated. Developers are now merging more code in a single sprint than they could write in a month just two years ago. The volume is real, the productivity gains are real, and the.",
-      "publishedAt": "2026-07-09T13:00:00Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local Lpe"
       ]
     }
   ],
@@ -567,68 +568,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-53360",
-      "title": "PoC for CVE-2026-53360: guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC).",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "medium",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xCyberstan/CVE-2026-53360-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "trigger.c"
-        ],
-        "attackFiles": [
-          "trigger.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-53360"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xCyberstan",
-      "researcherUrl": "https://github.com/0xCyberstan",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:27 AM CDT",
-      "firstSeenAt": "2026-07-04T12:27:13Z",
-      "language": "C",
-      "summary": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
-      "technicalSummary": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
-      "breakdown": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
-      "whatBroke": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-53360-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-53360-POC\ncd CVE-2026-53360-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xCyberstan/CVE-2026-53360-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/b328ede59ac34e7998e1eee5e5f0cc26c2a91846"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-33454",
       "title": "Reproducer for CVE-2026-33454: Apache Camel camel-mail header injection to RCE via camel-exec",
       "ecosystem": "windows",
@@ -816,6 +755,68 @@
       ]
     },
     {
+      "cve": "CVE-2026-12400",
+      "title": "\u2014 FlowForms IDOR: Unauthorized Form Modification",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0x00phantom-hat/CVE-2026-12400-Exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-12400"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0x00phantom-hat",
+      "researcherUrl": "https://github.com/0x00phantom-hat",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:10 PM CDT",
+      "firstSeenAt": "2026-07-09T21:10:54Z",
+      "language": "Python",
+      "summary": "The FlowForms \u2013 Conversational Form Builder plugin for WordPress is vulnerable to Insecure Direct Object Reference in all versions up to, and including, 1.1.1 via the update_form due to missing validation on a user controlled.",
+      "technicalSummary": "The FlowForms \u2013 Conversational Form Builder plugin for WordPress is vulnerable to Insecure Direct Object Reference in all versions up to, and including, 1.1.1 via the update_form due to missing validation on a user controlled.",
+      "breakdown": "The FlowForms \u2013 Conversational Form Builder plugin for WordPress is vulnerable to Insecure Direct Object Reference in all versions up to, and including, 1.1.1 via the update_form due to missing validation on a user controlled.",
+      "whatBroke": "The FlowForms \u2013 Conversational Form Builder plugin for WordPress is vulnerable to Insecure Direct Object Reference in all versions up to, and including, 1.1.1 via the update_form due to missing validation on a user controlled.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0x00phantom-hat/CVE-2026-12400-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0x00phantom-hat/CVE-2026-12400-Exploit\ncd CVE-2026-12400-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0x00phantom-hat/CVE-2026-12400-Exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/flowforms/tags/1.1.1/includes/class-rest-api.php#L48"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-61343",
       "title": "Librebooking Admin RCE PoC CVE-2026-61343",
       "ecosystem": "cloud",
@@ -876,70 +877,6 @@
         [
           "Vendor Advisory",
           "https://github.com/LibreBooking/librebooking/commit/cb9b7ad9da0243bd105809f6a4a8a6b9147c71ea"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-4257",
-      "title": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/dann3xplo1t/CVE-2026-4257",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-4257.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-4257.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-4257"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "dann3xplo1t",
-      "researcherUrl": "https://github.com/dann3xplo1t",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "3:02 AM CDT",
-      "firstSeenAt": "2026-07-09T08:02:12Z",
-      "language": "Python",
-      "summary": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "technicalSummary": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "breakdown": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "whatBroke": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dann3xplo1t/CVE-2026-4257.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dann3xplo1t/CVE-2026-4257\ncd CVE-2026-4257\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/dann3xplo1t/CVE-2026-4257"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/contact-form-by-supsystic/tags/1.7.36/modules/forms/views/forms.php#L323"
         ]
       ]
     },
@@ -1070,46 +1007,106 @@
       ]
     },
     {
-      "cve": "CVE-2026-14459",
-      "title": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
+      "cve": "CVE-2026-20896",
+      "title": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
       "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
+      "category": "kubernetes",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/dasokkk/CVE-2026-14459-14460-pardus-software",
+      "pocUrl": "https://github.com/szybnev/cve-2026-20896-gitea-poc",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exploit/exploit-14459.sh",
-          "exploit/exploit-14460.sh",
-          "poc/poc.sh"
+          "main.go",
+          "poc.sh"
         ],
         "attackFiles": [
-          "exploit/exploit-14459.sh",
-          "exploit/exploit-14460.sh",
-          "poc/poc.sh"
+          "poc.sh"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-14459"
+          "CVE-2026-20896"
         ],
-        "language": "Shell"
+        "language": "Go"
       },
       "reliability": "reliable exploit",
-      "researcher": "dasokkk",
-      "researcherUrl": "https://github.com/dasokkk",
+      "researcher": "szybnev",
+      "researcherUrl": "https://github.com/szybnev",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:12 AM CDT",
-      "firstSeenAt": "2026-07-10T06:12:31Z",
-      "language": "Shell",
-      "summary": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
-      "technicalSummary": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
-      "breakdown": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
-      "whatBroke": "Pardus Software Local Privilege Escalation PoC - affected from <= 1.0.4",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dasokkk/CVE-2026-14459-14460-pardus-software.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dasokkk/CVE-2026-14459-14460-pardus-software\ncd CVE-2026-14459-14460-pardus-software\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "3:31 PM CDT",
+      "firstSeenAt": "2026-07-07T20:31:16Z",
+      "language": "Go",
+      "summary": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "technicalSummary": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "breakdown": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "whatBroke": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at szybnev/cve-2026-20896-gitea-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/szybnev/cve-2026-20896-gitea-poc\ncd cve-2026-20896-gitea-poc\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Kubernetes",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/szybnev/cve-2026-20896-gitea-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-8206",
+      "title": "Kirki WordPress Plugin Unauthenticated Account Takeover - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/amnsecurity/CVE-2026-8206-Kirki-WP",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-8206.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-8206.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-8206"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "amnsecurity",
+      "researcherUrl": "https://github.com/amnsecurity",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:14 PM CDT",
+      "firstSeenAt": "2026-07-08T00:14:55Z",
+      "language": "Python",
+      "summary": "Kirki WordPress Plugin Unauthenticated Account Takeover - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "technicalSummary": "Kirki WordPress Plugin Unauthenticated Account Takeover - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "breakdown": "Kirki WordPress Plugin Unauthenticated Account Takeover - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "whatBroke": "Kirki WordPress Plugin Unauthenticated Account Takeover - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at amnsecurity/CVE-2026-8206-Kirki-WP.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/amnsecurity/CVE-2026-8206-Kirki-WP\ncd CVE-2026-8206-Kirki-WP\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -1117,21 +1114,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "Local LPE"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
+      "weaponization": 74,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/dasokkk/CVE-2026-14459-14460-pardus-software"
+          "https://github.com/amnsecurity/CVE-2026-8206-Kirki-WP"
         ],
         [
           "Vendor Advisory",
-          "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-0497"
+          "https://plugins.trac.wordpress.org/browser/kirki/tags/6.0.4/ComponentLibrary/controller/CompLibFormHandler.php#L330"
         ]
       ]
     },
@@ -1200,40 +1197,42 @@
       ]
     },
     {
-      "cve": "CVE-2026-48939",
-      "title": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "cve": "CVE-2026-49777",
+      "title": "WooCommerce Product Slider Pro Malicious Software Implantation RCE - PoC & Analysis | CVSS 10.0 CRITICAL |.",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-48939",
+      "pocUrl": "https://github.com/amnsecurity/CVE-2026-49777-WooCommerce-RCE",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "cve_2026_48939.py"
+          "CVE-2026-49777.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "CVE-2026-49777.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-48939"
+          "CVE-2026-49777"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
+      "researcher": "amnsecurity",
+      "researcherUrl": "https://github.com/amnsecurity",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:56 PM CDT",
-      "firstSeenAt": "2026-07-05T20:56:48Z",
+      "added": "7:15 PM CDT",
+      "firstSeenAt": "2026-07-08T00:15:29Z",
       "language": "Python",
-      "summary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
-      "technicalSummary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
-      "breakdown": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
-      "whatBroke": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-48939.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-48939\ncd CVE-2026-48939\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "WooCommerce Product Slider Pro Malicious Software Implantation RCE - PoC & Analysis | CVSS 10.0 CRITICAL | AMN SECURITY",
+      "technicalSummary": "WooCommerce Product Slider Pro Malicious Software Implantation RCE - PoC & Analysis | CVSS 10.0 CRITICAL | AMN SECURITY",
+      "breakdown": "WooCommerce Product Slider Pro Malicious Software Implantation RCE - PoC & Analysis | CVSS 10.0 CRITICAL | AMN SECURITY",
+      "whatBroke": "WooCommerce Product Slider Pro Malicious Software Implantation RCE - PoC & Analysis | CVSS 10.0 CRITICAL | AMN SECURITY",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at amnsecurity/CVE-2026-49777-WooCommerce-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/amnsecurity/CVE-2026-49777-WooCommerce-RCE\ncd CVE-2026-49777-WooCommerce-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -1248,16 +1247,16 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
+      "weaponization": 74,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/shinthink/CVE-2026-48939"
+          "https://github.com/amnsecurity/CVE-2026-49777-WooCommerce-RCE"
         ],
         [
           "Vendor Advisory",
-          "https://www.icagenda.com/"
+          "https://patchstack.com/database/wordpress/plugin/woo-product-slider-pro/vulnerability/wordpress-product-slider-pro-for-woocommerce-plugin-3-5-2-backdoor-vulnerability?_s_id=cve"
         ]
       ]
     }
