@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T15:37:23Z",
+  "updatedAt": "2026-07-10T20:38:40Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -63,29 +63,6 @@
       "tags": [
         "Windows",
         "RCE"
-      ]
-    },
-    {
-      "title": "How to Meet a 3-Day Remediation SLA & Comply with CISA BOD 26-04",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/07/09/cisa-bod-26-04-3-day-remediation-sla",
-      "summary": "Key Takeaways CISA BOD 26\u201304 mandates remediation of the publicly exposed, highest-risk, known-exploited vulnerabilities within 3 days. The directive applies a risk-based model evaluating exposure, KEV status, automation potential, and technical impact. Most.",
-      "publishedAt": "2026-07-09T19:30:37Z",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "How GitHub gave every repository a durable owner",
-      "source": "GitHub Security",
-      "sourceUrl": "https://github.blog/security/",
-      "url": "https://github.blog/security/application-security/how-github-gave-every-repository-a-durable-owner/",
-      "summary": "GitHub has over 14,000 repositories across our primary internal GitHub organization. As of early 2025, there were over 11,000 non-archived repositories, the vast majority of which with no clear owner. For repositories attached to production services, we have.",
-      "publishedAt": "2026-07-09T16:29:37Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Kubernetes"
       ]
     }
   ],
@@ -230,6 +207,69 @@
         [
           "Vendor Advisory",
           "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-48939",
+      "title": "iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-48939",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_48939.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48939"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:56 PM CDT",
+      "firstSeenAt": "2026-07-05T20:56:48Z",
+      "language": "Python",
+      "summary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "technicalSummary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "breakdown": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "whatBroke": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-48939.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-48939\ncd CVE-2026-48939\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed iCagenda",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-48939"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.icagenda.com/#download"
         ]
       ]
     },
@@ -1133,70 +1173,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-38526",
-      "title": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x (CVE-2026-38526)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/diamorphine666/CVE-2026-38526-Exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-38526.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-38526.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-38526"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "diamorphine666",
-      "researcherUrl": "https://github.com/diamorphine666",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:30 PM CDT",
-      "firstSeenAt": "2026-07-06T21:30:47Z",
-      "language": "Python",
-      "summary": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x ()",
-      "technicalSummary": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x ()",
-      "breakdown": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x ()",
-      "whatBroke": "Exploit for Authenticated Remote Code Execution (RCE) in Krayin CRM v2.2.x ()",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at diamorphine666/CVE-2026-38526-Exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/diamorphine666/CVE-2026-38526-Exploit\ncd CVE-2026-38526-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/diamorphine666/CVE-2026-38526-Exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/TREXNEGRO/Security-Advisories/tree/main/CVE-2026-38526"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-49777",
       "title": "WooCommerce Product Slider Pro Malicious Software Implantation RCE - PoC & Analysis | CVSS 10.0 CRITICAL |.",
       "ecosystem": "web",
@@ -1253,10 +1229,6 @@
         [
           "GitHub",
           "https://github.com/amnsecurity/CVE-2026-49777-WooCommerce-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/woo-product-slider-pro/vulnerability/wordpress-product-slider-pro-for-woocommerce-plugin-3-5-2-backdoor-vulnerability?_s_id=cve"
         ]
       ]
     }
