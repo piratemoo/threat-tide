@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T20:38:40Z",
+  "updatedAt": "2026-07-11T05:20:06Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -108,8 +108,8 @@
       "researcherUrl": "https://github.com/dinosn",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "1:45 AM CDT",
-      "firstSeenAt": "2026-07-04T06:45:18Z",
+      "added": "12:20 AM CDT",
+      "firstSeenAt": "2026-07-11T05:20:06Z",
       "language": "Python",
       "summary": "Apache ActiveMQ Classic RCE research: / CVE-2026-42588 bypass chain + hardened-6.2.6 audit findings + Crowdfense comparison",
       "technicalSummary": "Apache ActiveMQ Classic RCE research: / CVE-2026-42588 bypass chain + hardened-6.2.6 audit findings + Crowdfense comparison",
@@ -133,7 +133,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -198,7 +198,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -261,7 +261,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -323,7 +323,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -391,7 +391,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -455,7 +455,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -519,7 +519,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -571,8 +571,8 @@
       "researcherUrl": "https://github.com/dinosn",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:45 AM CDT",
-      "firstSeenAt": "2026-07-04T06:45:18Z",
+      "added": "12:20 AM CDT",
+      "firstSeenAt": "2026-07-11T05:20:06Z",
       "language": "Python",
       "summary": "Apache ActiveMQ Classic RCE research: CVE-2026-34197 / bypass chain + hardened-6.2.6 audit findings + Crowdfense comparison",
       "technicalSummary": "Apache ActiveMQ Classic RCE research: CVE-2026-34197 / bypass chain + hardened-6.2.6 audit findings + Crowdfense comparison",
@@ -595,7 +595,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -604,6 +604,68 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/ns0zktfo16s9ql2mmtqtlb6p6xcs45xm"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-53360",
+      "title": "PoC for CVE-2026-53360: guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC).",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xCyberstan/CVE-2026-53360-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "trigger.c"
+        ],
+        "attackFiles": [
+          "trigger.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-53360"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xCyberstan",
+      "researcherUrl": "https://github.com/0xCyberstan",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:20 AM CDT",
+      "firstSeenAt": "2026-07-11T05:20:06Z",
+      "language": "C",
+      "summary": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
+      "technicalSummary": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
+      "breakdown": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
+      "whatBroke": "PoC for guest-triggered heap out-of-bounds read/write in KVM SEV-SNP Page State Change (PSC) handling.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyberstan/CVE-2026-53360-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyberstan/CVE-2026-53360-POC\ncd CVE-2026-53360-POC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xCyberstan/CVE-2026-53360-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/b328ede59ac34e7998e1eee5e5f0cc26c2a91846"
         ]
       ]
     },
@@ -656,7 +718,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -718,7 +780,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -727,70 +789,6 @@
         [
           "Vendor Advisory",
           "https://camel.apache.org/security/CVE-2026-40048.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-44825",
-      "title": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr CVE-2026-44825 \u2014 Velocity template injection.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/solrradar",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "solr_scanner.py"
-        ],
-        "attackFiles": [
-          "solr_scanner.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-44825"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:12 AM CDT",
-      "firstSeenAt": "2026-07-10T06:12:31Z",
-      "language": "Python",
-      "summary": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
-      "technicalSummary": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
-      "breakdown": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
-      "whatBroke": "\u2604\ufe0f Mass reconnaissance & exploitation framework for Apache Solr \u2014 Velocity template injection to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/solrradar.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/solrradar\ncd solrradar\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/solrradar"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lists.apache.org/thread/5xg6xr99glocp3zsg9ht2zlbwlrst7ch"
         ]
       ]
     },
@@ -844,7 +842,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -908,7 +906,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -970,7 +968,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -983,130 +981,66 @@
       ]
     },
     {
-      "cve": "CVE-2026-34038",
-      "title": "Authenticated Remote Command Injection in Coolify",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-14762",
+      "title": "exploit for Hotel & Tourism Reservation 1.0. Time-based blind SQL injection via /admin/rooms.php?delete..",
+      "ecosystem": "web",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/ThemeHackers/CVE-2026-34038",
+      "pocUrl": "https://github.com/tc4dy/CVE-2026-14762-PoC-Exploit",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
+          "basic_exploit.py",
           "exploit.py"
         ],
         "attackFiles": [
+          "basic_exploit.py",
           "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-34038"
+          "CVE-2026-14762"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "ThemeHackers",
-      "researcherUrl": "https://github.com/ThemeHackers",
+      "researcher": "tc4dy",
+      "researcherUrl": "https://github.com/tc4dy",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:12 AM CDT",
-      "firstSeenAt": "2026-07-10T06:12:31Z",
+      "added": "7:20 AM CDT",
+      "firstSeenAt": "2026-07-07T12:20:08Z",
       "language": "Python",
-      "summary": "Authenticated Remote Command Injection in Coolify",
-      "technicalSummary": "Authenticated Remote Command Injection in Coolify",
-      "breakdown": "Authenticated Remote Command Injection in Coolify",
-      "whatBroke": "Authenticated Remote Command Injection in Coolify",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ThemeHackers/CVE-2026-34038.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ThemeHackers/CVE-2026-34038\ncd CVE-2026-34038\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "A vulnerability was detected in code-projects Hotel and Tourism Reservation 1.0. The impacted element is an unknown function of the file /admin/rooms.php of the component Room Management Page. The manipulation of the argument.",
+      "technicalSummary": "A vulnerability was detected in code-projects Hotel and Tourism Reservation 1.0. The impacted element is an unknown function of the file /admin/rooms.php of the component Room Management Page. The manipulation of the argument.",
+      "breakdown": "A vulnerability was detected in code-projects Hotel and Tourism Reservation 1.0. The impacted element is an unknown function of the file /admin/rooms.php of the component Room Management Page. The manipulation of the argument.",
+      "whatBroke": "A vulnerability was detected in code-projects Hotel and Tourism Reservation 1.0. The impacted element is an unknown function of the file /admin/rooms.php of the component Room Management Page. The manipulation of the argument.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tc4dy/CVE-2026-14762-PoC-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tc4dy/CVE-2026-14762-PoC-Exploit\ncd CVE-2026-14762-PoC-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ThemeHackers/CVE-2026-34038"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/coollabsio/coolify/commit/23f9156c7306b221101f1ebbe4d3c6b5e2522acd"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-20896",
-      "title": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
-      "ecosystem": "cloud",
-      "category": "kubernetes",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/szybnev/cve-2026-20896-gitea-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "main.go",
-          "poc.sh"
-        ],
-        "attackFiles": [
-          "poc.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-20896"
-        ],
-        "language": "Go"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "szybnev",
-      "researcherUrl": "https://github.com/szybnev",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:31 PM CDT",
-      "firstSeenAt": "2026-07-07T20:31:16Z",
-      "language": "Go",
-      "summary": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
-      "technicalSummary": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
-      "breakdown": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
-      "whatBroke": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at szybnev/cve-2026-20896-gitea-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/szybnev/cve-2026-20896-gitea-poc\ncd cve-2026-20896-gitea-poc\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Kubernetes",
-        "Auth Bypass"
+        "SQLi"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/szybnev/cve-2026-20896-gitea-poc"
+          "https://github.com/tc4dy/CVE-2026-14762-PoC-Exploit"
         ],
         [
           "Vendor Advisory",
-          "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/"
+          "https://code-projects.org/"
         ]
       ]
     },
@@ -1160,7 +1094,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1224,11 +1158,77 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/amnsecurity/CVE-2026-49777-WooCommerce-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/woo-product-slider-pro/vulnerability/wordpress-product-slider-pro-for-woocommerce-plugin-3-5-2-backdoor-vulnerability?_s_id=cve"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-54390",
+      "title": "\u2014 JTL Shop Smarty SSTI RCE | Pre-Auth Template Injection via fetch('string:' . ) | 5.2.0-5.7.1",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-54390",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_54390.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-54390"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:55 AM CDT",
+      "firstSeenAt": "2026-07-10T10:55:39Z",
+      "language": "Python",
+      "summary": "\u2014 JTL Shop Smarty SSTI RCE | Pre-Auth Template Injection via fetch('string:'. ) | 5.2.0-5.7.1",
+      "technicalSummary": "\u2014 JTL Shop Smarty SSTI RCE | Pre-Auth Template Injection via fetch('string:'. ) | 5.2.0-5.7.1",
+      "breakdown": "\u2014 JTL Shop Smarty SSTI RCE | Pre-Auth Template Injection via fetch('string:'. ) | 5.2.0-5.7.1",
+      "whatBroke": "\u2014 JTL Shop Smarty SSTI RCE | Pre-Auth Template Injection via fetch('string:'. ) | 5.2.0-5.7.1",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-54390.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-54390\ncd CVE-2026-54390\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-54390"
+        ],
+        [
+          "Vendor Advisory",
+          "https://forum.jtl-software.de/threads/jtl-shop-5-7-aktuell-5-7-2.246278/"
         ]
       ]
     }
