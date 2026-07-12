@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T20:09:08Z",
+  "updatedAt": "2026-07-12T05:35:57Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -52,6 +52,85 @@
   "research": [],
   "vulns": [
     {
+      "cve": "CVE-2026-20127",
+      "title": "Cisco Catalyst SD-WAN Controller and Manager Authentication Bypass Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/anuththara2007-W/CVE-2026-20127-Exploit-Extension",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "lib/vdaemon_exploit.rb",
+          "lib/vdaemon_exploit/cli.rb",
+          "lib/vdaemon_exploit/crypto/cert_generator.rb",
+          "lib/vdaemon_exploit/crypto/ssh_keygen.rb",
+          "lib/vdaemon_exploit/exploit/runner.rb",
+          "lib/vdaemon_exploit/protocol/constants.rb",
+          "lib/vdaemon_exploit/protocol/header.rb",
+          "lib/vdaemon_exploit/protocol/messages.rb"
+        ],
+        "attackFiles": [
+          "lib/vdaemon_exploit.rb",
+          "lib/vdaemon_exploit/cli.rb",
+          "lib/vdaemon_exploit/crypto/cert_generator.rb",
+          "lib/vdaemon_exploit/crypto/ssh_keygen.rb",
+          "lib/vdaemon_exploit/exploit/runner.rb",
+          "lib/vdaemon_exploit/protocol/constants.rb",
+          "lib/vdaemon_exploit/protocol/header.rb",
+          "lib/vdaemon_exploit/protocol/messages.rb"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20127"
+        ],
+        "language": "Ruby"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "anuththara2007-W",
+      "researcherUrl": "https://github.com/anuththara2007-W",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "11:08 PM CDT",
+      "firstSeenAt": "2026-07-12T04:08:28Z",
+      "language": "Ruby",
+      "summary": "Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote attacker to bypass.",
+      "technicalSummary": "Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote attacker to bypass.",
+      "breakdown": "Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote attacker to bypass.",
+      "whatBroke": "Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote attacker to bypass.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at anuththara2007-W/CVE-2026-20127-Exploit-Extension.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/anuththara2007-W/CVE-2026-20127-Exploit-Extension\ncd CVE-2026-20127-Exploit-Extension\nruby <script>.rb --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Catalyst SD-WAN Controller and Manager",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/anuththara2007-W/CVE-2026-20127-Exploit-Extension"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-48939",
       "title": "iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
       "ecosystem": "web",
@@ -77,8 +156,8 @@
       "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:56 PM CDT",
-      "firstSeenAt": "2026-07-05T20:56:48Z",
+      "added": "12:35 AM CDT",
+      "firstSeenAt": "2026-07-12T05:35:57Z",
       "language": "Python",
       "summary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
       "technicalSummary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
@@ -102,7 +181,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -164,7 +243,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -232,7 +311,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -294,7 +373,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -355,7 +434,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -417,7 +496,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -479,7 +558,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -541,7 +620,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -605,7 +684,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -669,7 +748,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -733,7 +812,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -795,7 +874,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -859,7 +938,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -923,7 +1002,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -985,7 +1064,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1023,8 +1102,8 @@
       "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:26 PM CDT",
-      "firstSeenAt": "2026-07-05T22:26:28Z",
+      "added": "12:35 AM CDT",
+      "firstSeenAt": "2026-07-12T05:35:57Z",
       "language": "Python",
       "summary": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
       "technicalSummary": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
@@ -1047,7 +1126,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -1111,7 +1190,7 @@
       ],
       "confidence": 98,
       "weaponization": 77,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1120,62 +1199,6 @@
         [
           "Vendor Advisory",
           "https://www.codeant.ai/security-research/pac4j-jwt-authentication-bypass-public-key"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-6300",
-      "title": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as CVE-2026-6300.",
-      "ecosystem": "cloud",
-      "category": "kernel",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/notthemystery/CVE-2026-6300-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "pwn.js"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-6300"
-        ],
-        "language": "JavaScript"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "notthemystery",
-      "researcherUrl": "https://github.com/notthemystery",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:18 AM CDT",
-      "firstSeenAt": "2026-07-07T14:18:43Z",
-      "language": "JavaScript",
-      "summary": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
-      "technicalSummary": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
-      "breakdown": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
-      "whatBroke": "This is a Proof-of-Concept for the Blink CSS UAF vulnerability tracked as.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at notthemystery/CVE-2026-6300-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/notthemystery/CVE-2026-6300-PoC\ncd CVE-2026-6300-PoC\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Kernel",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/notthemystery/CVE-2026-6300-PoC"
         ]
       ]
     }
