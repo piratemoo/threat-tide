@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-12T20:08:18Z",
+  "updatedAt": "2026-07-13T05:46:43Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -118,7 +118,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -182,7 +182,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -191,69 +191,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48939",
-      "title": "iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-48939",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve_2026_48939.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48939"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:35 AM CDT",
-      "firstSeenAt": "2026-07-12T05:35:57Z",
-      "language": "Python",
-      "summary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
-      "technicalSummary": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
-      "breakdown": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
-      "whatBroke": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-48939.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-48939\ncd CVE-2026-48939\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed iCagenda",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-48939"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.icagenda.com/#download"
         ]
       ]
     },
@@ -307,7 +244,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -375,7 +312,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -437,7 +374,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -475,8 +412,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:56 AM CDT",
-      "firstSeenAt": "2026-07-06T12:56:08Z",
+      "added": "12:46 AM CDT",
+      "firstSeenAt": "2026-07-13T05:46:43Z",
       "language": "Java",
       "summary": "Reproducer for Apache Camel camel-mail header injection to RCE via camel-exec",
       "technicalSummary": "Reproducer for Apache Camel camel-mail header injection to RCE via camel-exec",
@@ -498,7 +435,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -560,7 +497,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -622,7 +559,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -684,7 +621,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -748,7 +685,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -810,7 +747,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -872,7 +809,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -936,11 +873,15 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/Resolvdd/CVE-2026-38526-PoC-htb-nexus"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/TREXNEGRO/Security-Advisories/tree/main/CVE-2026-38526"
         ]
       ]
     },
@@ -996,11 +937,15 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
           "https://github.com/amnsecurity/CVE-2026-49777-WooCommerce-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/woo-product-slider-pro/vulnerability/wordpress-product-slider-pro-for-woocommerce-plugin-3-5-2-backdoor-vulnerability?_s_id=cve"
         ]
       ]
     },
@@ -1054,69 +999,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-54390"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-8713",
-      "title": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-8713",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve_2026_8713.py"
         ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-8713"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:08 PM CDT",
-      "firstSeenAt": "2026-07-12T20:08:18Z",
-      "language": "Python",
-      "summary": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
-      "technicalSummary": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
-      "breakdown": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
-      "whatBroke": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-8713.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-8713\ncd CVE-2026-8713\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
         [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-8713"
+          "Vendor Advisory",
+          "https://forum.jtl-software.de/threads/jtl-shop-5-7-aktuell-5-7-2.246278/"
         ]
       ]
     },
@@ -1172,11 +1063,143 @@
       ],
       "confidence": 98,
       "weaponization": 77,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/dua2z3rr/CVE-2026-29000-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.codeant.ai/security-research/pac4j-jwt-authentication-bypass-public-key"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-14762",
+      "title": "exploit for Hotel & Tourism Reservation 1.0. Time-based blind SQL injection via /admin/rooms.php?delete..",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/tc4dy/CVE-2026-14762-PoC-Exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "basic_exploit.py",
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "basic_exploit.py",
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-14762"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "tc4dy",
+      "researcherUrl": "https://github.com/tc4dy",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:20 AM CDT",
+      "firstSeenAt": "2026-07-07T12:20:08Z",
+      "language": "Python",
+      "summary": "A vulnerability was detected in code-projects Hotel and Tourism Reservation 1.0. The impacted element is an unknown function of the file /admin/rooms.php of the component Room Management Page. The manipulation of the argument.",
+      "technicalSummary": "A vulnerability was detected in code-projects Hotel and Tourism Reservation 1.0. The impacted element is an unknown function of the file /admin/rooms.php of the component Room Management Page. The manipulation of the argument.",
+      "breakdown": "A vulnerability was detected in code-projects Hotel and Tourism Reservation 1.0. The impacted element is an unknown function of the file /admin/rooms.php of the component Room Management Page. The manipulation of the argument.",
+      "whatBroke": "A vulnerability was detected in code-projects Hotel and Tourism Reservation 1.0. The impacted element is an unknown function of the file /admin/rooms.php of the component Room Management Page. The manipulation of the argument.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tc4dy/CVE-2026-14762-PoC-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tc4dy/CVE-2026-14762-PoC-Exploit\ncd CVE-2026-14762-PoC-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "SQLi"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/tc4dy/CVE-2026-14762-PoC-Exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://code-projects.org/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20896",
+      "title": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "ecosystem": "cloud",
+      "category": "kubernetes",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/szybnev/cve-2026-20896-gitea-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "main.go",
+          "poc.sh"
+        ],
+        "attackFiles": [
+          "poc.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20896"
+        ],
+        "language": "Go"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "szybnev",
+      "researcherUrl": "https://github.com/szybnev",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:31 PM CDT",
+      "firstSeenAt": "2026-07-07T20:31:16Z",
+      "language": "Go",
+      "summary": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "technicalSummary": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "breakdown": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "whatBroke": "Gitea Docker X-WEBAUTH-USER auth bypass checker",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at szybnev/cve-2026-20896-gitea-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/szybnev/cve-2026-20896-gitea-poc\ncd cve-2026-20896-gitea-poc\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Kubernetes",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/szybnev/cve-2026-20896-gitea-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/"
         ]
       ]
     }
