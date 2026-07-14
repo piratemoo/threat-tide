@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T15:00:01Z",
+  "updatedAt": "2026-07-14T20:19:06Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,14 +51,18 @@
   ],
   "research": [
     {
-      "title": "Meeting the ECB\u2019s AI-Enabled Cybersecurity Mandate with NodeZero\u00ae",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/downloads/factsheets/meeting-the-ecbs-ai-enabled-cybersecurity-mandate-with-nodezero/",
-      "summary": "AI-enabled attackers are dramatically reducing the time between vulnerability discovery and exploitation. For significant institutions supervised by the European Central Bank, that acceleration now requires a clear, evidence-backed response. The ECB has.",
-      "publishedAt": "2026-07-13T17:35:36Z",
+      "title": "How Qualys ETM Identity Detects Identity-Based Attacks Faster",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/07/14/how-qualys-etm-identity-detects-responds-to-identity-based-attacks",
+      "summary": "Key Takeaways Identity-based attacks are among the fastest and most effective intrusion methods because valid credentials let attackers operate as trusted users. Techniques like Pass-the-Hash, Kerberoasting, Domain Controller Synchronization (DCSync), and.",
+      "publishedAt": "2026-07-14T18:00:00Z",
       "cves": [],
-      "tags": []
+      "tags": [
+        "Windows",
+        "ADCS",
+        "Local Lpe"
+      ]
     }
   ],
   "vulns": [
@@ -269,6 +273,71 @@
       ]
     },
     {
+      "cve": "CVE-2026-42271",
+      "title": "command injection remote code execution exploit",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/amnsecurity/CVE-2026-42271-LiteLLM-RCE",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-42271"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "amnsecurity",
+      "researcherUrl": "https://github.com/amnsecurity",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "3:19 PM CDT",
+      "firstSeenAt": "2026-07-14T20:19:06Z",
+      "language": "Python",
+      "summary": "LiteLLM AI Gateway MCP Command Injection RCE - PoC & Analysis | CVSS 8.8 | AMN SECURITY",
+      "technicalSummary": "LiteLLM AI Gateway MCP Command Injection RCE - PoC & Analysis | CVSS 8.8 | AMN SECURITY",
+      "breakdown": "LiteLLM AI Gateway MCP Command Injection RCE - PoC & Analysis | CVSS 8.8 | AMN SECURITY",
+      "whatBroke": "LiteLLM AI Gateway MCP Command Injection RCE - PoC & Analysis | CVSS 8.8 | AMN SECURITY",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at amnsecurity/CVE-2026-42271-LiteLLM-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/amnsecurity/CVE-2026-42271-LiteLLM-RCE\ncd CVE-2026-42271-LiteLLM-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed LiteLLM",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/amnsecurity/CVE-2026-42271-LiteLLM-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-45659",
       "title": "Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability",
       "ecosystem": "windows",
@@ -454,74 +523,6 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/instant-appointment/trunk/includes/ajax/ajax_services.php#L3"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-12277",
-      "title": "Frontend File Manager Plugin (WordPress) <= 23.6 - Unauthenticated Arbitrary File Deletion to RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/moritakaaz/CVE-2026-12277",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "poc_curl.ps1",
-          "poc_curl.sh"
-        ],
-        "attackFiles": [
-          "exploit.py",
-          "poc_curl.ps1",
-          "poc_curl.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-12277"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "moritakaaz",
-      "researcherUrl": "https://github.com/moritakaaz",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:07 AM CDT",
-      "firstSeenAt": "2026-07-14T05:07:36Z",
-      "language": "Python",
-      "summary": "Frontend File Manager Plugin (WordPress) <= 23.6 - Unauthenticated Arbitrary File Deletion to RCE",
-      "technicalSummary": "Frontend File Manager Plugin (WordPress) <= 23.6 - Unauthenticated Arbitrary File Deletion to RCE",
-      "breakdown": "Frontend File Manager Plugin (WordPress) <= 23.6 - Unauthenticated Arbitrary File Deletion to RCE",
-      "whatBroke": "Frontend File Manager Plugin (WordPress) <= 23.6 - Unauthenticated Arbitrary File Deletion to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at moritakaaz/CVE-2026-12277.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/moritakaaz/CVE-2026-12277\ncd CVE-2026-12277\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/moritakaaz/CVE-2026-12277"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wpscan.com/vulnerability/30f208f6-9d7b-4aaf-8689-496521d1a1dc/"
         ]
       ]
     },
@@ -1018,10 +1019,70 @@
         [
           "GitHub",
           "https://github.com/bluedragonsecurity/CVE-2026-46215-EXPLOIT"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49230",
+      "title": "PoC for CVE-2026-49230: Apache APISIX jwe-decrypt authentication bypass (missing AES-GCM tag validation,.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/BiiTts/CVE-2026-49230-APISIX-jwe-decrypt-Auth-Bypass",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py",
+          "lab/backend.py",
+          "lab/config.yaml",
+          "lab/setup.sh",
+          "lab/teardown.sh"
         ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49230"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "BiiTts",
+      "researcherUrl": "https://github.com/BiiTts",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:46 PM CDT",
+      "firstSeenAt": "2026-07-09T21:46:14Z",
+      "language": "Python",
+      "summary": "PoC for Apache APISIX jwe-decrypt authentication bypass (missing AES-GCM tag validation, CWE-354, CVSS 9.1)",
+      "technicalSummary": "PoC for Apache APISIX jwe-decrypt authentication bypass (missing AES-GCM tag validation, CWE-354, CVSS 9.1)",
+      "breakdown": "PoC for Apache APISIX jwe-decrypt authentication bypass (missing AES-GCM tag validation, CWE-354, CVSS 9.1)",
+      "whatBroke": "PoC for Apache APISIX jwe-decrypt authentication bypass (missing AES-GCM tag validation, CWE-354, CVSS 9.1)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-49230-APISIX-jwe-decrypt-Auth-Bypass.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-49230-APISIX-jwe-decrypt-Auth-Bypass\ncd CVE-2026-49230-APISIX-jwe-decrypt-Auth-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
         [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/5e28b7b94408897e41c63477aabc9e1db439bc8c"
+          "GitHub",
+          "https://github.com/BiiTts/CVE-2026-49230-APISIX-jwe-decrypt-Auth-Bypass"
         ]
       ]
     },
@@ -1089,20 +1150,20 @@
     },
     {
       "cve": "CVE-2026-23744",
-      "title": "MCPJam Inspector unauthenticated RCE PoC",
-      "ecosystem": "cloud",
+      "title": "A proof-of-concept exploit for CVE-2026-23744 - MCPJam Inspector Remote Code Execution (RCE) vulnerability..",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/ozcanpng/CVE-2026-23744",
+      "pocUrl": "https://github.com/CerberusMrXi/CVE-2026-23744-MCPJam-Exploit",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "CVE-2026-23744.py"
+          "exploit.py"
         ],
         "attackFiles": [
-          "CVE-2026-23744.py"
+          "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -1111,83 +1172,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "ozcanpng",
-      "researcherUrl": "https://github.com/ozcanpng",
+      "researcher": "CerberusMrXi",
+      "researcherUrl": "https://github.com/CerberusMrXi",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "6:57 AM CDT",
-      "firstSeenAt": "2026-07-11T11:57:38Z",
+      "added": "1:21 PM CDT",
+      "firstSeenAt": "2026-07-14T18:21:10Z",
       "language": "Python",
-      "summary": "MCPJam Inspector unauthenticated RCE PoC",
-      "technicalSummary": "MCPJam Inspector unauthenticated RCE PoC",
-      "breakdown": "MCPJam Inspector unauthenticated RCE PoC",
-      "whatBroke": "MCPJam Inspector unauthenticated RCE PoC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ozcanpng/CVE-2026-23744.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ozcanpng/CVE-2026-23744\ncd CVE-2026-23744\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ozcanpng/CVE-2026-23744"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-4257",
-      "title": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/dann3xplo1t/CVE-2026-4257",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-4257.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-4257.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-4257"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "dann3xplo1t",
-      "researcherUrl": "https://github.com/dann3xplo1t",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "3:02 AM CDT",
-      "firstSeenAt": "2026-07-09T08:02:12Z",
-      "language": "Python",
-      "summary": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "technicalSummary": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "breakdown": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "whatBroke": "Contact Form by Supsystic <= 1.7.36 # SSTI to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dann3xplo1t/CVE-2026-4257.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dann3xplo1t/CVE-2026-4257\ncd CVE-2026-4257\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "A proof-of-concept exploit for MCPJam Inspector Remote Code Execution (RCE) vulnerability. This tool demonstrates the security flaw in versions <=1.4.2 and helps security researchers verify patches. For authorized testing and.",
+      "technicalSummary": "A proof-of-concept exploit for MCPJam Inspector Remote Code Execution (RCE) vulnerability. This tool demonstrates the security flaw in versions <=1.4.2 and helps security researchers verify patches. For authorized testing and.",
+      "breakdown": "A proof-of-concept exploit for MCPJam Inspector Remote Code Execution (RCE) vulnerability. This tool demonstrates the security flaw in versions <=1.4.2 and helps security researchers verify patches. For authorized testing and.",
+      "whatBroke": "A proof-of-concept exploit for MCPJam Inspector Remote Code Execution (RCE) vulnerability. This tool demonstrates the security flaw in versions <=1.4.2 and helps security researchers verify patches. For authorized testing and.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CerberusMrXi/CVE-2026-23744-MCPJam-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CerberusMrXi/CVE-2026-23744-MCPJam-Exploit\ncd CVE-2026-23744-MCPJam-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -1203,15 +1200,15 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/dann3xplo1t/CVE-2026-4257"
+          "https://github.com/CerberusMrXi/CVE-2026-23744-MCPJam-Exploit"
         ],
         [
           "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/contact-form-by-supsystic/tags/1.7.36/modules/forms/views/forms.php#L323"
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     }
