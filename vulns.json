@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T14:58:33Z",
+  "updatedAt": "2026-07-15T20:16:19Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,16 @@
   ],
   "research": [
     {
+      "title": "Cyber Resilience in the Age of AI-Driven Warfare",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/downloads/whitepapers/cyber-resilience-ai-driven-warfare/",
+      "summary": "AI is changing the economics and speed of cyber warfare. Vulnerabilities that once required skilled research teams to discover, analyze, and weaponize can increasingly be identified and exploited in minutes or hours. Attackers can operate at machine speed,.",
+      "publishedAt": "2026-07-15T18:33:28Z",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "Horizon3.ai Joins Anthropic\u2019s Project Glasswing to Help Defend Critical Infrastructure with the Attacker\u2019s Perspective",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
@@ -94,20 +104,6 @@
         "Android",
         "ADCS",
         "RCE"
-      ]
-    },
-    {
-      "title": "How Qualys ETM Identity Detects Identity-Based Attacks Faster",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/07/14/how-qualys-etm-identity-detects-responds-to-identity-based-attacks",
-      "summary": "Key Takeaways Identity-based attacks are among the fastest and most effective intrusion methods because valid credentials let attackers operate as trusted users. Techniques like Pass-the-Hash, Kerberoasting, Domain Controller Synchronization (DCSync), and.",
-      "publishedAt": "2026-07-14T18:00:00Z",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "ADCS",
-        "Local Lpe"
       ]
     }
   ],
@@ -192,6 +188,71 @@
       ]
     },
     {
+      "cve": "CVE-2026-48907",
+      "title": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/amnsecurity/CVE-2026-48907-Joomla-JCE-RCE",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-48907.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-48907.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48907"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "amnsecurity",
+      "researcherUrl": "https://github.com/amnsecurity",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "8:23 AM CDT",
+      "firstSeenAt": "2026-07-13T13:23:19Z",
+      "language": "Python",
+      "summary": "Joomla JCE Editor Unauthenticated RCE - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "technicalSummary": "Joomla JCE Editor Unauthenticated RCE - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "breakdown": "Joomla JCE Editor Unauthenticated RCE - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "whatBroke": "Joomla JCE Editor Unauthenticated RCE - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at amnsecurity/CVE-2026-48907-Joomla-JCE-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/amnsecurity/CVE-2026-48907-Joomla-JCE-RCE\ncd CVE-2026-48907-Joomla-JCE-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Joomla Content Editor",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/amnsecurity/CVE-2026-48907-Joomla-JCE-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-15282",
       "title": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS.",
       "ecosystem": "web",
@@ -250,6 +311,71 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/instant-appointment/trunk/includes/ajax/ajax_services.php#L3"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-15409",
+      "title": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/remmons-r7/rapid7-CVE-2026-15409",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "cve-2026-15409.py"
+        ],
+        "attackFiles": [
+          "cve-2026-15409.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-15409"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "remmons-r7",
+      "researcherUrl": "https://github.com/remmons-r7",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:37 AM CDT",
+      "firstSeenAt": "2026-07-15T15:37:11Z",
+      "language": "Python",
+      "summary": "This repo contains a proof-of-concept exploit for. It establishes non-root remote code execution on SonicWall SMA 1000 by implementing the Erlang protocol expected by localhost:1050 and tunneling it through the websocket for.",
+      "technicalSummary": "This repo contains a proof-of-concept exploit for. It establishes non-root remote code execution on SonicWall SMA 1000 by implementing the Erlang protocol expected by localhost:1050 and tunneling it through the websocket for.",
+      "breakdown": "This repo contains a proof-of-concept exploit for. It establishes non-root remote code execution on SonicWall SMA 1000 by implementing the Erlang protocol expected by localhost:1050 and tunneling it through the websocket for.",
+      "whatBroke": "This repo contains a proof-of-concept exploit for. It establishes non-root remote code execution on SonicWall SMA 1000 by implementing the Erlang protocol expected by localhost:1050 and tunneling it through the websocket for.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at remmons-r7/rapid7-CVE-2026-15409.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/remmons-r7/rapid7-CVE-2026-15409\ncd rapid7-CVE-2026-15409\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed SMA1000 Appliances",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/remmons-r7/rapid7-CVE-2026-15409"
+        ],
+        [
+          "Vendor Advisory",
+          "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
         ]
       ]
     }
