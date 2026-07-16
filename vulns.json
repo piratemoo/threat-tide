@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T20:16:19Z",
+  "updatedAt": "2026-07-16T05:17:30Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -69,42 +69,6 @@
       "publishedAt": "2026-07-15T12:15:17Z",
       "cves": [],
       "tags": []
-    },
-    {
-      "title": "ZDI-26-404: Delta Electronics DTM Soft Project File Parsing Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-404/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Delta Electronics DTM Soft. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
-      "publishedAt": "2026-07-15T05:00:00Z",
-      "cves": [
-        "CVE-2026-12578"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Microsoft and Adobe Patch Tuesday, July 2026 Security Update Review",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/14/microsoft-and-adobe-patch-tuesday-july-2026-security-update-review",
-      "summary": "Microsoft\u2019s July 2026 Patch Tuesday delivers security updates for a broad range of products and services, including several vulnerabilities that pose significant risks to enterprise environments. As attackers continue to target unpatched systems, the timely.",
-      "publishedAt": "2026-07-14T21:23:09Z",
-      "cves": [
-        "CVE-2026-42982",
-        "CVE-2026-48561",
-        "CVE-2026-48564",
-        "CVE-2026-49164",
-        "CVE-2026-49170"
-      ],
-      "tags": [
-        "Android",
-        "ADCS",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
@@ -175,7 +139,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -184,133 +148,6 @@
         [
           "Vendor Advisory",
           "https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48907",
-      "title": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/amnsecurity/CVE-2026-48907-Joomla-JCE-RCE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-48907.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-48907.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48907"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "amnsecurity",
-      "researcherUrl": "https://github.com/amnsecurity",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "8:23 AM CDT",
-      "firstSeenAt": "2026-07-13T13:23:19Z",
-      "language": "Python",
-      "summary": "Joomla JCE Editor Unauthenticated RCE - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
-      "technicalSummary": "Joomla JCE Editor Unauthenticated RCE - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
-      "breakdown": "Joomla JCE Editor Unauthenticated RCE - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
-      "whatBroke": "Joomla JCE Editor Unauthenticated RCE - PoC & Analysis | CVSS 9.8 CRITICAL | AMN SECURITY",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at amnsecurity/CVE-2026-48907-Joomla-JCE-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/amnsecurity/CVE-2026-48907-Joomla-JCE-RCE\ncd CVE-2026-48907-Joomla-JCE-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Joomla Content Editor",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/amnsecurity/CVE-2026-48907-Joomla-JCE-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-15282",
-      "title": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-15282",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve_2026_15282.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-15282"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:24 AM CDT",
-      "firstSeenAt": "2026-07-11T10:24:54Z",
-      "language": "Python",
-      "summary": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS 9.8",
-      "technicalSummary": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS 9.8",
-      "breakdown": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS 9.8",
-      "whatBroke": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS 9.8",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-15282.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-15282\ncd CVE-2026-15282\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-15282"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/instant-appointment/trunk/includes/ajax/ajax_services.php#L3"
         ]
       ]
     },
@@ -367,7 +204,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -376,6 +213,68 @@
         [
           "Vendor Advisory",
           "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-15282",
+      "title": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-15282",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_15282.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-15282"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:24 AM CDT",
+      "firstSeenAt": "2026-07-11T10:24:54Z",
+      "language": "Python",
+      "summary": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS 9.8",
+      "technicalSummary": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS 9.8",
+      "breakdown": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS 9.8",
+      "whatBroke": "Instant Appointment <= 1.2 \u2014 Unauthenticated Arbitrary File Upload to RCE via add_service_front AJAX | CVSS 9.8",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-15282.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-15282\ncd CVE-2026-15282\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-15282"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/instant-appointment/trunk/includes/ajax/ajax_services.php#L3"
         ]
       ]
     }
