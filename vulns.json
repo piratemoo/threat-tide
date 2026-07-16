@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T05:17:30Z",
+  "updatedAt": "2026-07-16T15:09:24Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -59,19 +59,74 @@
       "publishedAt": "2026-07-15T18:33:28Z",
       "cves": [],
       "tags": []
-    },
-    {
-      "title": "Horizon3.ai Joins Anthropic\u2019s Project Glasswing to Help Defend Critical Infrastructure with the Attacker\u2019s Perspective",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/news/press-release/horizon3-ai-joins-anthropics-project-glasswing/",
-      "summary": "SAN FRANCISCO\u2013July 15, 2026\u2013 Horizon3.ai, the AI-Native Proactive Security Company behind NodeZero\u00ae, today announced its participation in Anthropic\u2019s Project Glasswing, an initiative focused on securing the world\u2019s most critical infrastructure. Horizon3.ai.",
-      "publishedAt": "2026-07-15T12:15:17Z",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-34197",
+      "title": "Apache ActiveMQ Improper Input Validation Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-34197",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-34197"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "K3ysTr0K3R",
+      "researcherUrl": "https://github.com/K3ysTr0K3R",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "9:34 AM CDT",
+      "firstSeenAt": "2026-07-16T14:34:32Z",
+      "language": "Python",
+      "summary": "Apache ActiveMQ Jolokia Remote Code Execution (RCE)",
+      "technicalSummary": "Apache ActiveMQ Jolokia Remote Code Execution (RCE)",
+      "breakdown": "Apache ActiveMQ Jolokia Remote Code Execution (RCE)",
+      "whatBroke": "Apache ActiveMQ Jolokia Remote Code Execution (RCE)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-34197.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-34197\ncd CVE-2026-34197\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed ActiveMQ",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/K3ysTr0K3R/CVE-2026-34197"
+        ],
+        [
+          "Vendor Advisory",
+          "https://activemq.apache.org/security-advisories.data/CVE-2026-34197-announcement.txt"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-20127",
       "title": "Cisco Catalyst SD-WAN Controller and Manager Authentication Bypass Vulnerability",
@@ -148,6 +203,79 @@
         [
           "Vendor Advisory",
           "https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-54992",
+      "title": "Microsoft and Adobe Patch Tuesday, July 2026 Security Update Review",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/DavidCarliez/CVE-2026-54992-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "fake_remote_read_i.c",
+          "fake_remote_read_s.c",
+          "fake_remote_read_server.c",
+          "invoke-crash.ps1",
+          "remote_read_trigger.c",
+          "restore-helper.ps1",
+          "setup-target.ps1",
+          "start-emulator.ps1"
+        ],
+        "attackFiles": [
+          "remote_read_trigger.c"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-54992"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:49 AM CDT",
+      "firstSeenAt": "2026-07-16T09:49:11Z",
+      "language": "C",
+      "summary": "Proof of concept for an MSMQ remote-read integer overflow",
+      "technicalSummary": "Microsoft\u2019s July 2026 Patch Tuesday delivers security updates for a broad range of products and services, including several vulnerabilities that pose significant risks to enterprise environments. As attackers continue to target.",
+      "breakdown": "Microsoft\u2019s July 2026 Patch Tuesday delivers security updates for a broad range of products and services, including several vulnerabilities that pose significant risks to enterprise environments. As attackers continue to target.",
+      "whatBroke": "Proof of concept for an MSMQ remote-read integer overflow",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at DavidCarliez/CVE-2026-54992-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/DavidCarliez/CVE-2026-54992-PoC\ncd CVE-2026-54992-PoC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/DavidCarliez/CVE-2026-54992-PoC"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/14/microsoft-and-adobe-patch-tuesday-july-2026-security-update-review"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-54992"
         ]
       ]
     },
