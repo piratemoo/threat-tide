@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T05:47:24Z",
+  "updatedAt": "2026-07-20T15:18:17Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,77 +49,23 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [],
-  "vulns": [
+  "research": [
     {
-      "cve": "CVE-2026-15409",
-      "title": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/remmons-r7/rapid7-CVE-2026-15409",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cve-2026-15409.py"
-        ],
-        "attackFiles": [
-          "cve-2026-15409.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-15409"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:37 AM CDT",
-      "firstSeenAt": "2026-07-15T15:37:11Z",
-      "language": "Python",
-      "summary": "This repo contains a proof-of-concept exploit for. It establishes non-root remote code execution on SonicWall SMA 1000 by implementing the Erlang protocol expected by localhost:1050 and tunneling it through the websocket for.",
-      "technicalSummary": "CVE-2026-15409 and CVE-2026-15410 are actively exploited vulnerabilities affecting SonicWall Secure Mobile Access 1000 Series appliances. CVE-2026-15409 is a critical pre-authentication server-side request forgery vulnerability that can allow an.",
-      "breakdown": "CVE-2026-15409 and CVE-2026-15410 are actively exploited vulnerabilities affecting SonicWall Secure Mobile Access 1000 Series appliances. CVE-2026-15409 is a critical pre-authentication server-side request forgery vulnerability that can allow an.",
-      "whatBroke": "This repo contains a proof-of-concept exploit for. It establishes non-root remote code execution on SonicWall SMA 1000 by implementing the Erlang protocol expected by localhost:1050 and tunneling it through the websocket for.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at remmons-r7/rapid7-CVE-2026-15409.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/remmons-r7/rapid7-CVE-2026-15409\ncd rapid7-CVE-2026-15409\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed SMA1000 Appliances",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
+      "title": "Dnsmasq DNS Remote Heap Buffer Overflow",
+      "source": "Exodus Intelligence",
+      "sourceUrl": "https://blog.exodusintel.com/",
+      "url": "https://blog.exodusintel.com/2026/07/20/dnsmasq-dns-remote-heap-buffer-overflow/",
+      "summary": "By David Barksdale In this blog post, we discuss a heap buffer overflow vulnerability that we found in Dnsmasq. This vulnerability was fixed in version 2.92rel2 and 2.93 on 11 May 2026 and assigned CVE-2026-2291 . We cover the technical analysis of the.",
+      "publishedAt": "2026-07-20T15:15:06Z",
+      "cves": [
+        "CVE-2026-2291"
       ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/remmons-r7/rapid7-CVE-2026-15409"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-15409-cve-2026-15410/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
-        ]
+        "RCE"
       ]
-    },
+    }
+  ],
+  "vulns": [
     {
       "cve": "CVE-2026-33017",
       "title": "reverse shell remote code execution exploit",
@@ -452,71 +398,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-13001",
-      "title": "Podlove Podcast Publisher Unauthenticated File Upload RCE via is_image() vs extract_file_extension().",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-13001",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cve_2026_13001.py",
-          "payload.php"
-        ],
-        "attackFiles": [
-          "payload.php"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-13001"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:16 PM CDT",
-      "firstSeenAt": "2026-07-15T19:16:28Z",
-      "language": "Python",
-      "summary": "Podlove Podcast Publisher Unauthenticated File Upload RCE via is_image() vs extract_file_extension() Mismatch | CVSS 9.8",
-      "technicalSummary": "Podlove Podcast Publisher Unauthenticated File Upload RCE via is_image() vs extract_file_extension() Mismatch | CVSS 9.8",
-      "breakdown": "Podlove Podcast Publisher Unauthenticated File Upload RCE via is_image() vs extract_file_extension() Mismatch | CVSS 9.8",
-      "whatBroke": "Podlove Podcast Publisher Unauthenticated File Upload RCE via is_image() vs extract_file_extension() Mismatch | CVSS 9.8",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-13001.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-13001\ncd CVE-2026-13001\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-13001"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/podlove/podlove-publisher/commit/5b32468601e903bae2bcacfaf36ff583d2bc9387"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-58635",
       "title": "PoC for CVE-2026-58635: Windows Narrator Braille Local Privilege Escalation",
       "ecosystem": "windows",
@@ -647,6 +528,132 @@
         [
           "Vendor Advisory",
           "https://www.icagenda.com/#download"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "title": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + CVE-2026-60137)",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/SentinelXofficial/sxwp2shell",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "sxwp2shell.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "SentinelXofficial",
+      "researcherUrl": "https://github.com/SentinelXofficial",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "5:41 AM CDT",
+      "firstSeenAt": "2026-07-20T10:41:11Z",
+      "language": "Python",
+      "summary": "WordPress wp2shell pre-auth RCE exploit kit (+ CVE-2026-60137)",
+      "technicalSummary": "WordPress wp2shell pre-auth RCE exploit kit (+ CVE-2026-60137)",
+      "breakdown": "WordPress wp2shell pre-auth RCE exploit kit (+ CVE-2026-60137)",
+      "whatBroke": "WordPress wp2shell pre-auth RCE exploit kit (+ CVE-2026-60137)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SentinelXofficial/sxwp2shell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SentinelXofficial/sxwp2shell\ncd sxwp2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 80,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/SentinelXofficial/sxwp2shell"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ff9f-jf42-662q"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-60137",
+      "title": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + CVE-2026-60137)",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/SentinelXofficial/sxwp2shell",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "sxwp2shell.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "SentinelXofficial",
+      "researcherUrl": "https://github.com/SentinelXofficial",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:41 AM CDT",
+      "firstSeenAt": "2026-07-20T10:41:11Z",
+      "language": "Python",
+      "summary": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + )",
+      "technicalSummary": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + )",
+      "breakdown": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + )",
+      "whatBroke": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + )",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SentinelXofficial/sxwp2shell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SentinelXofficial/sxwp2shell\ncd sxwp2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 76,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/SentinelXofficial/sxwp2shell"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf"
         ]
       ]
     }
