@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T20:35:18Z",
+  "updatedAt": "2026-07-21T05:28:18Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -50,6 +50,23 @@
     "The GitHub Blog Security"
   ],
   "research": [
+    {
+      "title": "CVE-2026-60137 / CVE-2026-63030 | WordPress Core SQL Injection and Pre-Authentication Remote Code Execution Vulnerabilities",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-60137-cve-2026-63030/",
+      "summary": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "publishedAt": "2026-07-20T22:32:11Z",
+      "cves": [
+        "CVE-2026-60137",
+        "CVE-2026-63030"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
     {
       "title": "Top Five Compliance Audit Software and Tools: Mastering Modern Regulatory Risk",
       "source": "Qualys Research",
@@ -132,7 +149,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -195,7 +212,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -204,6 +221,156 @@
         [
           "Vendor Advisory",
           "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "title": "/ CVE-2026-63030 | WordPress Core SQL Injection and Pre-Authentication Remote Code Execution Vulnerabilities",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/4minx/CVE-2026-63030",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "POC.py"
+        ],
+        "attackFiles": [
+          "POC.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "7:11 AM CDT",
+      "firstSeenAt": "2026-07-18T12:11:11Z",
+      "language": "Python",
+      "summary": "(wp2shell) POC.",
+      "technicalSummary": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "breakdown": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "whatBroke": "(wp2shell) POC.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 4minx/CVE-2026-63030.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/4minx/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 80,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/4minx/CVE-2026-63030"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-60137-cve-2026-63030/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ff9f-jf42-662q"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-60137",
+      "title": "/ CVE-2026-63030 | WordPress Core SQL Injection and Pre-Authentication Remote Code Execution Vulnerabilities",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/47Cid/wp2shell-lab",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker/compose.yaml",
+          "docker/setup.sh",
+          "exploit/__init__.py",
+          "exploit/__main__.py",
+          "exploit/batch.py",
+          "exploit/blind.py",
+          "exploit/detect.py",
+          "exploit/fast.py"
+        ],
+        "attackFiles": [
+          "exploit/__init__.py",
+          "exploit/__main__.py",
+          "exploit/batch.py",
+          "exploit/blind.py",
+          "exploit/detect.py",
+          "exploit/fast.py",
+          "exploit/rce.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:16 PM CDT",
+      "firstSeenAt": "2026-07-18T03:16:37Z",
+      "language": "Python",
+      "summary": "Educational PoC + lab for CVE-2026-63030 + pre-auth SQLi in WordPress core via REST batch-route confusion",
+      "technicalSummary": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "breakdown": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "whatBroke": "Educational PoC + lab for CVE-2026-63030 + pre-auth SQLi in WordPress core via REST batch-route confusion",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 47Cid/wp2shell-lab.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/47Cid/wp2shell-lab\ncd wp2shell-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 76,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/47Cid/wp2shell-lab"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-60137-cve-2026-63030/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf"
         ]
       ]
     },
@@ -260,7 +427,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -331,7 +498,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -340,133 +507,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58635"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-63030",
-      "title": "WordPress REST Batch Route-Confusion SQL Injection Proof of Concept",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Ch4120N/CVE-2026-63030",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-63030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Ch4120N",
-      "researcherUrl": "https://github.com/Ch4120N",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "1:20 PM CDT",
-      "firstSeenAt": "2026-07-20T18:20:41Z",
-      "language": "Python",
-      "summary": "WordPress REST Batch Route-Confusion SQL Injection Proof of Concept",
-      "technicalSummary": "WordPress REST Batch Route-Confusion SQL Injection Proof of Concept",
-      "breakdown": "WordPress REST Batch Route-Confusion SQL Injection Proof of Concept",
-      "whatBroke": "WordPress REST Batch Route-Confusion SQL Injection Proof of Concept",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ch4120N/CVE-2026-63030.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ch4120N/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 80,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Ch4120N/CVE-2026-63030"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ff9f-jf42-662q"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-60137",
-      "title": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + CVE-2026-60137)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/SentinelXofficial/sxwp2shell",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "sxwp2shell.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-60137",
-          "CVE-2026-63030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "SentinelXofficial",
-      "researcherUrl": "https://github.com/SentinelXofficial",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:41 AM CDT",
-      "firstSeenAt": "2026-07-20T10:41:11Z",
-      "language": "Python",
-      "summary": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + )",
-      "technicalSummary": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + )",
-      "breakdown": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + )",
-      "whatBroke": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + )",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SentinelXofficial/sxwp2shell.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SentinelXofficial/sxwp2shell\ncd sxwp2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 76,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/SentinelXofficial/sxwp2shell"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf"
         ]
       ]
     }
