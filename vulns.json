@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T05:28:18Z",
+  "updatedAt": "2026-07-21T15:11:27Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,45 @@
   ],
   "research": [
     {
+      "title": "Manual Patching Can\u2019t Outrun AI. Automated Remediation Can.",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/07/21/ai-vulnerability-discovery-automated-remediation",
+      "summary": "Executive Summary AI is rapidly transforming vulnerability discovery, outpacing many security teams\u2019 ability to adapt. Microsoft\u2019s July 2026 Patch Tuesday addressed a record 622 vulnerabilities, an early signal of AI-accelerated discovery at scale.",
+      "publishedAt": "2026-07-21T15:05:36Z",
+      "cves": [],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "title": "CVE-2026-8933: Local Privilege Escalation in Set-Capabilities snap-confine",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/21/cve-2026-8933-snap-confine-local-privilege-escalation",
+      "summary": "The Qualys Threat Research Unit (TRU) has identified a Local Privilege Escalation (LPE) vulnerability in snap-confine (CVE-2026-8933). This flaw allows an unprivileged local user to gain full root access on default installations of Ubuntu Desktop 24.04,.",
+      "publishedAt": "2026-07-21T15:02:12Z",
+      "cves": [
+        "CVE-2026-8933"
+      ],
+      "tags": [
+        "Linux",
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "Integrate Aqua and ServiceNow to Prioritize Vulnerabilities by Runtime Reality",
+      "source": "Aqua Nautilus",
+      "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "url": "https://www.aquasec.com/blog/integrate-aqua-and-servicenow-to-prioritize-vulnerabilities-by-runtime-reality/",
+      "summary": "TL;DR Most of the vulnerabilities in a container environment will never be exploited, the hard part is knowing which ones will. The remediation timeline for production workloads is not shrinking fast enough to keep up with attacks that adapt at machine.",
+      "publishedAt": "2026-07-21T13:19:20Z",
+      "cves": [],
+      "tags": [
+        "Kubernetes"
+      ]
+    },
+    {
       "title": "CVE-2026-60137 / CVE-2026-63030 | WordPress Core SQL Injection and Pre-Authentication Remote Code Execution Vulnerabilities",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
@@ -96,6 +135,158 @@
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-63030",
+      "title": "WordPress Core Interpretation Conflict Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/4minx/CVE-2026-63030",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "POC.py"
+        ],
+        "attackFiles": [
+          "POC.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "7:11 AM CDT",
+      "firstSeenAt": "2026-07-18T12:11:11Z",
+      "language": "Python",
+      "summary": "(wp2shell) POC.",
+      "technicalSummary": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "breakdown": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "whatBroke": "(wp2shell) POC.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 4minx/CVE-2026-63030.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/4minx/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 80,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/4minx/CVE-2026-63030"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-60137-cve-2026-63030/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-60137",
+      "title": "WordPress Core SQL Injection Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/47Cid/wp2shell-lab",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker/compose.yaml",
+          "docker/setup.sh",
+          "exploit/__init__.py",
+          "exploit/__main__.py",
+          "exploit/batch.py",
+          "exploit/blind.py",
+          "exploit/detect.py",
+          "exploit/fast.py"
+        ],
+        "attackFiles": [
+          "exploit/__init__.py",
+          "exploit/__main__.py",
+          "exploit/batch.py",
+          "exploit/blind.py",
+          "exploit/detect.py",
+          "exploit/fast.py",
+          "exploit/rce.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:16 PM CDT",
+      "firstSeenAt": "2026-07-18T03:16:37Z",
+      "language": "Python",
+      "summary": "Educational PoC + lab for CVE-2026-63030 + pre-auth SQLi in WordPress core via REST batch-route confusion",
+      "technicalSummary": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "breakdown": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
+      "whatBroke": "Educational PoC + lab for CVE-2026-63030 + pre-auth SQLi in WordPress core via REST batch-route confusion",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 47Cid/wp2shell-lab.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/47Cid/wp2shell-lab\ncd wp2shell-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 76,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/47Cid/wp2shell-lab"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-60137-cve-2026-63030/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-33017",
       "title": "reverse shell remote code execution exploit",
@@ -158,284 +349,6 @@
         [
           "Vendor Advisory",
           "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48907",
-      "title": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ChiefYoru/CVE-2026-48907_PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "Joomla_jce.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48907"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ChiefYoru",
-      "researcherUrl": "https://github.com/ChiefYoru",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "3:21 AM CDT",
-      "firstSeenAt": "2026-07-19T08:21:14Z",
-      "language": "Python",
-      "summary": "Unauthenticated Remote Code Execution (RCE) vulnerability in the JCE (Joomla Content Editor) extension for Joomla",
-      "technicalSummary": "Unauthenticated Remote Code Execution (RCE) vulnerability in the JCE (Joomla Content Editor) extension for Joomla",
-      "breakdown": "Unauthenticated Remote Code Execution (RCE) vulnerability in the JCE (Joomla Content Editor) extension for Joomla",
-      "whatBroke": "Unauthenticated Remote Code Execution (RCE) vulnerability in the JCE (Joomla Content Editor) extension for Joomla",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ChiefYoru/CVE-2026-48907_PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ChiefYoru/CVE-2026-48907_PoC\ncd CVE-2026-48907_PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Joomla Content Editor",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ChiefYoru/CVE-2026-48907_PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-63030",
-      "title": "/ CVE-2026-63030 | WordPress Core SQL Injection and Pre-Authentication Remote Code Execution Vulnerabilities",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/4minx/CVE-2026-63030",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "POC.py"
-        ],
-        "attackFiles": [
-          "POC.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-63030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "7:11 AM CDT",
-      "firstSeenAt": "2026-07-18T12:11:11Z",
-      "language": "Python",
-      "summary": "(wp2shell) POC.",
-      "technicalSummary": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
-      "breakdown": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
-      "whatBroke": "(wp2shell) POC.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 4minx/CVE-2026-63030.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/4minx/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 80,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/4minx/CVE-2026-63030"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-60137-cve-2026-63030/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ff9f-jf42-662q"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-60137",
-      "title": "/ CVE-2026-63030 | WordPress Core SQL Injection and Pre-Authentication Remote Code Execution Vulnerabilities",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/47Cid/wp2shell-lab",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker/compose.yaml",
-          "docker/setup.sh",
-          "exploit/__init__.py",
-          "exploit/__main__.py",
-          "exploit/batch.py",
-          "exploit/blind.py",
-          "exploit/detect.py",
-          "exploit/fast.py"
-        ],
-        "attackFiles": [
-          "exploit/__init__.py",
-          "exploit/__main__.py",
-          "exploit/batch.py",
-          "exploit/blind.py",
-          "exploit/detect.py",
-          "exploit/fast.py",
-          "exploit/rce.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-60137",
-          "CVE-2026-63030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:16 PM CDT",
-      "firstSeenAt": "2026-07-18T03:16:37Z",
-      "language": "Python",
-      "summary": "Educational PoC + lab for CVE-2026-63030 + pre-auth SQLi in WordPress core via REST batch-route confusion",
-      "technicalSummary": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
-      "breakdown": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
-      "whatBroke": "Educational PoC + lab for CVE-2026-63030 + pre-auth SQLi in WordPress core via REST batch-route confusion",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 47Cid/wp2shell-lab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/47Cid/wp2shell-lab\ncd wp2shell-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 76,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/47Cid/wp2shell-lab"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-60137-cve-2026-63030/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56290",
-      "title": "Joomlack Page Builder Improper Access Control Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ChiefYoru/CVE-2026-56290_PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "pbck_rce.py"
-        ],
-        "attackFiles": [
-          "pbck_rce.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56290"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ChiefYoru",
-      "researcherUrl": "https://github.com/ChiefYoru",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:07 AM CDT",
-      "firstSeenAt": "2026-07-19T08:07:26Z",
-      "language": "Python",
-      "summary": "The Joomla extension Page Builder CK is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
-      "technicalSummary": "The Joomla extension Page Builder CK is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
-      "breakdown": "The Joomla extension Page Builder CK is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
-      "whatBroke": "The Joomla extension Page Builder CK is vulnerable to an unauthenticated arbitrary file upload that allows uploading executable files and leads to full RCE.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ChiefYoru/CVE-2026-56290_PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ChiefYoru/CVE-2026-56290_PoC\ncd CVE-2026-56290_PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Page Builder",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ChiefYoru/CVE-2026-56290_PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.joomlack.fr/en/joomla-extensions/page-builder-ck"
         ]
       ]
     },
@@ -507,6 +420,70 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58635"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-9198",
+      "title": "\u2014 Langflow OSS Unauthenticated RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xdak/CVE-2026-9198_exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-9198"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xdak",
+      "researcherUrl": "https://github.com/0xdak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:14 AM CDT",
+      "firstSeenAt": "2026-07-21T11:14:59Z",
+      "language": "Python",
+      "summary": "IBM Langflow OSS 1.0.0 through 1.10.0 allows unauthenticated attackers to chain /api/v1/auto_login (mints SUPERUSER tokens to any network caller) with /api/v1/validate/code (executes user code via exec()) to achieve full RCE on.",
+      "technicalSummary": "IBM Langflow OSS 1.0.0 through 1.10.0 allows unauthenticated attackers to chain /api/v1/auto_login (mints SUPERUSER tokens to any network caller) with /api/v1/validate/code (executes user code via exec()) to achieve full RCE on.",
+      "breakdown": "IBM Langflow OSS 1.0.0 through 1.10.0 allows unauthenticated attackers to chain /api/v1/auto_login (mints SUPERUSER tokens to any network caller) with /api/v1/validate/code (executes user code via exec()) to achieve full RCE on.",
+      "whatBroke": "IBM Langflow OSS 1.0.0 through 1.10.0 allows unauthenticated attackers to chain /api/v1/auto_login (mints SUPERUSER tokens to any network caller) with /api/v1/validate/code (executes user code via exec()) to achieve full RCE on.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xdak/CVE-2026-9198_exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xdak/CVE-2026-9198_exploit\ncd CVE-2026-9198_exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xdak/CVE-2026-9198_exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.ibm.com/support/pages/node/7278927"
         ]
       ]
     }
