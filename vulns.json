@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T20:22:21Z",
+  "updatedAt": "2026-07-22T05:26:57Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -98,53 +98,6 @@
       "tags": [
         "Kubernetes"
       ]
-    },
-    {
-      "title": "ZDI-26-446: Microsoft Windows WMI Providers Incorrect Authorization Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-446/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Microsoft Windows. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-07-21T05:00:00Z",
-      "cves": [
-        "CVE-2026-50297"
-      ],
-      "tags": [
-        "Windows",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-445: Microsoft Windows WMI Providers Incorrect Authorization Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-445/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Microsoft Windows. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-07-21T05:00:00Z",
-      "cves": [
-        "CVE-2026-50325"
-      ],
-      "tags": [
-        "Windows",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "CVE-2026-60137 / CVE-2026-63030 | WordPress Core SQL Injection and Pre-Authentication Remote Code Execution Vulnerabilities",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-60137-cve-2026-63030/",
-      "summary": "WordPress Core contains two vulnerabilities that can be chained together to enable unauthenticated remote code execution on default WordPress installations. CVE-2026-60137 is a SQL injection vulnerability in that improperly sanitizes the parameter, while.",
-      "publishedAt": "2026-07-20T22:32:11Z",
-      "cves": [
-        "CVE-2026-60137",
-        "CVE-2026-63030"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
@@ -201,7 +154,7 @@
       ],
       "confidence": 98,
       "weaponization": 80,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -284,7 +237,7 @@
       ],
       "confidence": 98,
       "weaponization": 76,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -353,7 +306,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -417,7 +370,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -484,7 +437,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -546,7 +499,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -607,7 +560,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -654,8 +607,8 @@
       "researcherUrl": "https://github.com/DavidCarliez",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:53 AM CDT",
-      "firstSeenAt": "2026-07-15T12:53:34Z",
+      "added": "12:26 AM CDT",
+      "firstSeenAt": "2026-07-22T05:26:57Z",
       "language": "C++",
       "summary": "PoC for Windows Narrator Braille Local Privilege Escalation",
       "technicalSummary": "PoC for Windows Narrator Braille Local Privilege Escalation",
@@ -678,7 +631,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -740,7 +693,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -778,8 +731,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:25 AM CDT",
-      "firstSeenAt": "2026-07-15T07:25:28Z",
+      "added": "12:26 AM CDT",
+      "firstSeenAt": "2026-07-22T05:26:57Z",
       "language": "Java",
       "summary": "Reproducer for Apache Camel camel-lucene QUERY header injection enabling authorization bypass / index data exfiltration (fixed in 4.14.8/4.18.3/4.21.0)",
       "technicalSummary": "Reproducer for Apache Camel camel-lucene QUERY header injection enabling authorization bypass / index data exfiltration (fixed in 4.14.8/4.18.3/4.21.0)",
@@ -801,7 +754,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -839,8 +792,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:13 PM CDT",
-      "firstSeenAt": "2026-07-15T19:13:53Z",
+      "added": "12:26 AM CDT",
+      "firstSeenAt": "2026-07-22T05:26:57Z",
       "language": "Java",
       "summary": "Reproducer for Apache Camel camel-neo4j Cypher injection via property names in CamelNeo4jMatchProperties, enabling authorization bypass / cross-label data exfiltration (fixed in 4.14.8/4.18.3/4.21.0)",
       "technicalSummary": "Reproducer for Apache Camel camel-neo4j Cypher injection via property names in CamelNeo4jMatchProperties, enabling authorization bypass / cross-label data exfiltration (fixed in 4.14.8/4.18.3/4.21.0)",
@@ -863,7 +816,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -925,7 +878,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -999,11 +952,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/karollooool/CVE-2026-50416-writeup-and-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50416"
         ]
       ]
     },
@@ -1058,7 +1015,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -1120,7 +1077,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1159,8 +1116,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:15 AM CDT",
-      "firstSeenAt": "2026-07-15T13:15:04Z",
+      "added": "12:26 AM CDT",
+      "firstSeenAt": "2026-07-22T05:26:57Z",
       "language": "Java",
       "summary": "Reproducer for CVE-2026-46590: Apache Camel camel-pqc key-lifecycle unsafe deserialization (FileBasedKeyLifecycleManager legacy.key migration via ObjectInputStream), incomplete remediation of (fixed in 4.18.3/4.21.0)",
       "technicalSummary": "Reproducer for CVE-2026-46590: Apache Camel camel-pqc key-lifecycle unsafe deserialization (FileBasedKeyLifecycleManager legacy.key migration via ObjectInputStream), incomplete remediation of (fixed in 4.18.3/4.21.0)",
@@ -1181,7 +1138,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -1215,8 +1172,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:57 AM CDT",
-      "firstSeenAt": "2026-07-15T09:57:19Z",
+      "added": "12:26 AM CDT",
+      "firstSeenAt": "2026-07-22T05:26:57Z",
       "language": "Java",
       "summary": "Reproducer for Apache Camel camel-couchbase CCB_* header injection enabling document disclosure, tampering, and TTL-forced data destruction (fixed in 4.14.8/4.18.3/4.21.0)",
       "technicalSummary": "Reproducer for Apache Camel camel-couchbase CCB_* header injection enabling document disclosure, tampering, and TTL-forced data destruction (fixed in 4.14.8/4.18.3/4.21.0)",
@@ -1237,7 +1194,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -1271,8 +1228,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:14 AM CDT",
-      "firstSeenAt": "2026-07-15T12:14:18Z",
+      "added": "12:26 AM CDT",
+      "firstSeenAt": "2026-07-22T05:26:57Z",
       "language": "Java",
       "summary": "Reproducer for Apache Camel camel-couchdb CouchDb* header injection (operation confusion) subverting a write-only endpoint into read + delete of arbitrary documents (fixed in 4.14.8/4.18.3/4.21.0)",
       "technicalSummary": "Reproducer for Apache Camel camel-couchdb CouchDb* header injection (operation confusion) subverting a write-only endpoint into read + delete of arbitrary documents (fixed in 4.14.8/4.18.3/4.21.0)",
@@ -1293,7 +1250,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
