@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T15:18:48Z",
+  "updatedAt": "2026-07-23T20:17:35Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,26 @@
   ],
   "research": [
     {
+      "title": "Verification Closes the Loop",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/intelligence/blogs/verification-closes-the-loop/",
+      "summary": "Most organizations assume remediation reduces risk. It\u2019s a reasonable assumption. A vulnerability is identified, a patch is applied, the scanner comes back clean, and the ticket is closed. The workflow is complete, the metrics improve, and the issue is.",
+      "publishedAt": "2026-07-23T17:37:53Z",
+      "cves": [],
+      "tags": []
+    },
+    {
+      "title": "The case for a cooldown: Why Dependabot now waits before issuing version updates",
+      "source": "GitHub Security",
+      "sourceUrl": "https://github.blog/security/",
+      "url": "https://github.blog/security/supply-chain-security/the-case-for-a-cooldown-why-dependabot-now-waits-before-issuing-version-updates/",
+      "summary": "In September 2025, an attacker phished the credentials of a single npm maintainer and published booby-trapped versions of chalk , debug , and around a dozen other packages that are together downloaded more than 2 billion times a week. The code rewrote.",
+      "publishedAt": "2026-07-23T16:00:00Z",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "wp2shell hits WordPress: detecting pre-auth RCE from plugin drop to command execution",
       "source": "Elastic Security Labs",
       "sourceUrl": "https://www.elastic.co/security-labs",
@@ -66,47 +86,6 @@
         "Webstack",
         "RCE"
       ]
-    },
-    {
-      "title": "CVE-2026-60167, CVE-2026-60168, CVE-2026-60169 & CVE-2026-60170 | Oracle Hospitality Simphony Multiple Vulnerabilities",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/oracle-hospitality-simphony-vulnerabilities/",
-      "summary": "Oracle\u2019s July 2026 Critical Patch Update addresses four remotely exploitable vulnerabilities affecting Oracle Hospitality Simphony. Discovered and responsibly disclosed by Horizon3.ai researcher Jimi Sebree, the vulnerabilities affect two Simphony.",
-      "publishedAt": "2026-07-22T19:32:52Z",
-      "cves": [
-        "CVE-2026-60167",
-        "CVE-2026-60168",
-        "CVE-2026-60169",
-        "CVE-2026-60170"
-      ],
-      "tags": []
-    },
-    {
-      "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/22/refluxfs-a-linux-kernel-local-privilege-escalation-to-root-in-xfs-cve-2026-64600",
-      "summary": "Executive summary Qualys Threat Research Unit (TRU) identified CVE-2026-64600, a race condition in the Linux kernel\u2019s XFS filesystem copy-on-write path. An attacker with an ordinary local account can exploit this race condition to overwrite protected files.",
-      "publishedAt": "2026-07-22T16:23:46Z",
-      "cves": [
-        "CVE-2026-64600"
-      ],
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "Next chapter: Restructuring GitHub\u2019s bug bounty program",
-      "source": "GitHub Security",
-      "sourceUrl": "https://github.blog/security/",
-      "url": "https://github.blog/security/next-chapter-restructuring-githubs-bug-bounty-program/",
-      "summary": "The security research community makes GitHub safer for everyone. That\u2019s the simple idea behind our bug bounty program. For more than a decade, researchers from around the world have helped us find and fix vulnerabilities before they could be exploited, and.",
-      "publishedAt": "2026-07-22T16:00:00Z",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
@@ -257,36 +236,35 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/soverineg/cve-2026-41940-PoC",
+      "pocUrl": "https://github.com/dann3xplo1t/Cpanel",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "exp.py"
+          "Exec.py"
         ],
-        "attackFiles": [
-          "exp.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-41940"
+          "CVE-2026-41940",
+          "CVE-2026-41948"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "soverineg",
-      "researcherUrl": "https://github.com/soverineg",
+      "researcher": "dann3xplo1t",
+      "researcherUrl": "https://github.com/dann3xplo1t",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "9:15 AM CDT",
-      "firstSeenAt": "2026-07-20T14:15:54Z",
+      "added": "10:42 AM CDT",
+      "firstSeenAt": "2026-07-23T15:42:12Z",
       "language": "Python",
-      "summary": "A cPanel and WHM authentication bypassing tool",
-      "technicalSummary": "A cPanel and WHM authentication bypassing tool",
-      "breakdown": "A cPanel and WHM authentication bypassing tool",
-      "whatBroke": "A cPanel and WHM authentication bypassing tool",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at soverineg/cve-2026-41940-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/soverineg/cve-2026-41940-PoC\ncd cve-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "& CVE-2026-41948 \u2014 cPanel & WHM Auth Bypass",
+      "technicalSummary": "& CVE-2026-41948 \u2014 cPanel & WHM Auth Bypass",
+      "breakdown": "& CVE-2026-41948 \u2014 cPanel & WHM Auth Bypass",
+      "whatBroke": "& CVE-2026-41948 \u2014 cPanel & WHM Auth Bypass",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dann3xplo1t/Cpanel.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dann3xplo1t/Cpanel\ncd Cpanel\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
         "credential access from service context",
@@ -303,11 +281,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/soverineg/cve-2026-41940-PoC"
+          "https://github.com/dann3xplo1t/Cpanel"
         ],
         [
           "Vendor Advisory",
@@ -764,6 +742,70 @@
       ]
     },
     {
+      "cve": "CVE-2026-58057",
+      "title": "reverse shell remote code execution exploit",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/CerberusMrXi/Flowise-CVE-2026-58057-exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-58057"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "CerberusMrXi",
+      "researcherUrl": "https://github.com/CerberusMrXi",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:07 PM CDT",
+      "firstSeenAt": "2026-07-23T18:07:43Z",
+      "language": "Python",
+      "summary": "Flowise Windows RCE exploit for. Bypasses environment variable validation via case-sensitive flaw. Uses node_options to inject arbitrary code through MCP stdio. Supports reverse shell, persistence, file upload, credential.",
+      "technicalSummary": "Flowise Windows RCE exploit for. Bypasses environment variable validation via case-sensitive flaw. Uses node_options to inject arbitrary code through MCP stdio. Supports reverse shell, persistence, file upload, credential.",
+      "breakdown": "Flowise Windows RCE exploit for. Bypasses environment variable validation via case-sensitive flaw. Uses node_options to inject arbitrary code through MCP stdio. Supports reverse shell, persistence, file upload, credential.",
+      "whatBroke": "Flowise Windows RCE exploit for. Bypasses environment variable validation via case-sensitive flaw. Uses node_options to inject arbitrary code through MCP stdio. Supports reverse shell, persistence, file upload, credential.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CerberusMrXi/Flowise-CVE-2026-58057-exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CerberusMrXi/Flowise-CVE-2026-58057-exploit\ncd Flowise-CVE-2026-58057-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/CerberusMrXi/Flowise-CVE-2026-58057-exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/FlowiseAI/Flowise/pull/6471"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-46215",
       "title": "DRM GEM UAF Exploit for Linux 7.0 - by Antonius (sw0rdm4n, w1sdom, ev1lut10n)",
       "ecosystem": "linux",
@@ -1146,8 +1188,8 @@
     {
       "cve": "CVE-2026-48205",
       "title": "Reproducer for CVE-2026-48205: Apache Camel camel-dns dns.* header injection redirecting DNS queries to an.",
-      "ecosystem": "web",
-      "category": "webstack",
+      "ecosystem": "windows",
+      "category": "exchange",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oscerd/CVE-2026-48205",
@@ -1180,13 +1222,12 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48205\ncd CVE-2026-48205\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Webstack",
+        "Windows",
+        "Exchange",
         "Exploit"
       ],
       "confidence": 98,
@@ -1196,63 +1237,10 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-48205"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48206",
-      "title": "Reproducer for CVE-2026-48206: Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-48206",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
         ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48206"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:19 AM CDT",
-      "firstSeenAt": "2026-07-20T07:19:04Z",
-      "language": "Java",
-      "summary": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
-      "technicalSummary": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
-      "breakdown": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
-      "whatBroke": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-48206.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48206\ncd CVE-2026-48206\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
         [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-48206"
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-48205.html"
         ]
       ]
     }
