@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-24T05:28:08Z",
+  "updatedAt": "2026-07-24T15:02:00Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -195,7 +195,7 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 89,
+      "weaponization": 99,
       "dayOffset": 2,
       "links": [
         [
@@ -473,41 +473,43 @@
     },
     {
       "cve": "CVE-2026-9198",
-      "title": "\u2014 Langflow OSS Unauthenticated RCE",
+      "title": "Proof of Concept for CVE-2026-9198 - IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/0xdak/CVE-2026-9198_exploit",
+      "pocUrl": "https://github.com/ywh-jfellus/CVE-2026-9198",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 12,
         "codeFiles": [
-          "exploit.py"
+          "patched/docker-compose.yaml",
+          "poc.py",
+          "vulnerable/docker-compose.yaml"
         ],
         "attackFiles": [
-          "exploit.py"
+          "poc.py"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
           "CVE-2026-9198"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "0xdak",
-      "researcherUrl": "https://github.com/0xdak",
+      "researcher": "ywh-jfellus",
+      "researcherUrl": "https://github.com/ywh-jfellus",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:14 AM CDT",
-      "firstSeenAt": "2026-07-21T11:14:59Z",
+      "added": "4:29 AM CDT",
+      "firstSeenAt": "2026-07-24T09:29:30Z",
       "language": "Python",
-      "summary": "IBM Langflow OSS 1.0.0 through 1.10.0 allows unauthenticated attackers to chain /api/v1/auto_login (mints SUPERUSER tokens to any network caller) with /api/v1/validate/code (executes user code via exec()) to achieve full RCE on.",
-      "technicalSummary": "IBM Langflow OSS 1.0.0 through 1.10.0 allows unauthenticated attackers to chain /api/v1/auto_login (mints SUPERUSER tokens to any network caller) with /api/v1/validate/code (executes user code via exec()) to achieve full RCE on.",
-      "breakdown": "IBM Langflow OSS 1.0.0 through 1.10.0 allows unauthenticated attackers to chain /api/v1/auto_login (mints SUPERUSER tokens to any network caller) with /api/v1/validate/code (executes user code via exec()) to achieve full RCE on.",
-      "whatBroke": "IBM Langflow OSS 1.0.0 through 1.10.0 allows unauthenticated attackers to chain /api/v1/auto_login (mints SUPERUSER tokens to any network caller) with /api/v1/validate/code (executes user code via exec()) to achieve full RCE on.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xdak/CVE-2026-9198_exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xdak/CVE-2026-9198_exploit\ncd CVE-2026-9198_exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Proof of Concept for IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
+      "technicalSummary": "Proof of Concept for IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
+      "breakdown": "Proof of Concept for IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
+      "whatBroke": "Proof of Concept for IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ywh-jfellus/CVE-2026-9198.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ywh-jfellus/CVE-2026-9198\ncd CVE-2026-9198\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -523,11 +525,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/0xdak/CVE-2026-9198_exploit"
+          "https://github.com/ywh-jfellus/CVE-2026-9198"
         ],
         [
           "Vendor Advisory",
@@ -594,196 +596,6 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/6r8cngvy43y2yk4jj3w060dt8vx0yzpr"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-21858",
-      "title": "+ CVE-2025-68613 \u2014 n8n unauthenticated file read to RCE exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/qianlijaingshan/n8n-cve-2026-21858",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml",
-          "init/setup.sh",
-          "n8n-audit.sh",
-          "n8n-chain.py",
-          "run.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2025-68613",
-          "CVE-2026-21858"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "qianlijaingshan",
-      "researcherUrl": "https://github.com/qianlijaingshan",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "3:56 AM CDT",
-      "firstSeenAt": "2026-07-21T08:56:03Z",
-      "language": "Python",
-      "summary": "+ CVE-2025-68613 \u2014 n8n unauthenticated file read to RCE exploit",
-      "technicalSummary": "+ CVE-2025-68613 \u2014 n8n unauthenticated file read to RCE exploit",
-      "breakdown": "+ CVE-2025-68613 \u2014 n8n unauthenticated file read to RCE exploit",
-      "whatBroke": "+ CVE-2025-68613 \u2014 n8n unauthenticated file read to RCE exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at qianlijaingshan/n8n-cve-2026-21858.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/qianlijaingshan/n8n-cve-2026-21858\ncd n8n-cve-2026-21858\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/qianlijaingshan/n8n-cve-2026-21858"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/n8n-io/n8n/security/advisories/GHSA-v4pr-fm98-w9pg"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-47323",
-      "title": "Reproducer for CVE-2026-47323: Apache Camel CXF/Knative HeaderFilterStrategy missing inbound filtering,.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-47323",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-47323"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:28 AM CDT",
-      "firstSeenAt": "2026-07-24T05:28:08Z",
-      "language": "Java",
-      "summary": "Reproducer for Apache Camel CXF/Knative HeaderFilterStrategy missing inbound filtering, enabling Camel control-header injection (RCE via camel-exec) through CXF-RS/CXF-SOAP/Knative endpoints (fixed in 4.14.6/4.18.2/4.19.0)",
-      "technicalSummary": "Reproducer for Apache Camel CXF/Knative HeaderFilterStrategy missing inbound filtering, enabling Camel control-header injection (RCE via camel-exec) through CXF-RS/CXF-SOAP/Knative endpoints (fixed in 4.14.6/4.18.2/4.19.0)",
-      "breakdown": "Reproducer for Apache Camel CXF/Knative HeaderFilterStrategy missing inbound filtering, enabling Camel control-header injection (RCE via camel-exec) through CXF-RS/CXF-SOAP/Knative endpoints (fixed in 4.14.6/4.18.2/4.19.0)",
-      "whatBroke": "Reproducer for Apache Camel CXF/Knative HeaderFilterStrategy missing inbound filtering, enabling Camel control-header injection (RCE via camel-exec) through CXF-RS/CXF-SOAP/Knative endpoints (fixed in 4.14.6/4.18.2/4.19.0)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-47323.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-47323\ncd CVE-2026-47323\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-47323"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-47323.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49042",
-      "title": "PoC reproducer for CVE-2026-49042 (Apache Camel camel-langchain4j-tools): a prompt-injected LLM's tool-call.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-49042",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49042"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:23 AM CDT",
-      "firstSeenAt": "2026-07-20T08:23:46Z",
-      "language": "Java",
-      "summary": "PoC reproducer for (Apache Camel camel-langchain4j-tools): a prompt-injected LLM's tool-call arguments become unfiltered Exchange headers, hijacking the tool route's exec: sink for RCE. Fixed in 4.14.8/4.18.3/4.21.0.",
-      "technicalSummary": "PoC reproducer for (Apache Camel camel-langchain4j-tools): a prompt-injected LLM's tool-call arguments become unfiltered Exchange headers, hijacking the tool route's exec: sink for RCE. Fixed in 4.14.8/4.18.3/4.21.0.",
-      "breakdown": "PoC reproducer for (Apache Camel camel-langchain4j-tools): a prompt-injected LLM's tool-call arguments become unfiltered Exchange headers, hijacking the tool route's exec: sink for RCE. Fixed in 4.14.8/4.18.3/4.21.0.",
-      "whatBroke": "PoC reproducer for (Apache Camel camel-langchain4j-tools): a prompt-injected LLM's tool-call arguments become unfiltered Exchange headers, hijacking the tool route's exec: sink for RCE. Fixed in 4.14.8/4.18.3/4.21.0.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-49042.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-49042\ncd CVE-2026-49042\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-49042"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-49042.html"
         ]
       ]
     },
@@ -978,80 +790,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-50416",
-      "title": "Windows 11 KASLR bypass",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/karollooool/CVE-2026-50416-writeup-and-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc/kaslr_bypass_poc.c",
-          "poc/kaslr_sandbox_proof.c",
-          "poc/supporting_proof_exploitability.c",
-          "poc/supporting_proof_no_caps_lpac.c",
-          "poc/supporting_proof_no_window.c",
-          "poc/supporting_proof_remote_trigger.c",
-          "poc/supporting_proof_sensitive_data.c"
-        ],
-        "attackFiles": [
-          "poc/kaslr_bypass_poc.c",
-          "poc/kaslr_sandbox_proof.c",
-          "poc/supporting_proof_exploitability.c",
-          "poc/supporting_proof_no_caps_lpac.c",
-          "poc/supporting_proof_no_window.c",
-          "poc/supporting_proof_remote_trigger.c",
-          "poc/supporting_proof_sensitive_data.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-50416"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "karollooool",
-      "researcherUrl": "https://github.com/karollooool",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:28 AM CDT",
-      "firstSeenAt": "2026-07-24T05:28:08Z",
-      "language": "C",
-      "summary": "Windows 11 KASLR bypass",
-      "technicalSummary": "Windows 11 KASLR bypass",
-      "breakdown": "Windows 11 KASLR bypass",
-      "whatBroke": "Windows 11 KASLR bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at karollooool/CVE-2026-50416-writeup-and-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/karollooool/CVE-2026-50416-writeup-and-poc\ncd CVE-2026-50416-writeup-and-poc\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/karollooool/CVE-2026-50416-writeup-and-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50416"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-53595",
       "title": "(+ CVE-2026-53593) \u2014 FreeScout Anonymous ATO \u2192 RCE",
       "ecosystem": "web",
@@ -1178,13 +916,13 @@
       ]
     },
     {
-      "cve": "CVE-2026-48203",
-      "title": "Reproducer for CVE-2026-48203: Apache Camel camel-solr SolrParam./SolrField. header injection enabling Solr.",
+      "cve": "CVE-2026-48205",
+      "title": "Reproducer for CVE-2026-48205: Apache Camel camel-dns dns.* header injection redirecting DNS queries to an.",
       "ecosystem": "windows",
       "category": "exchange",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-48203",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-48205",
       "pocValidation": {
         "valid": true,
         "score": 9,
@@ -1194,7 +932,7 @@
         "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-48203"
+          "CVE-2026-48205"
         ],
         "language": "Java"
       },
@@ -1203,15 +941,15 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:28 AM CDT",
-      "firstSeenAt": "2026-07-24T05:28:08Z",
+      "added": "10:02 AM CDT",
+      "firstSeenAt": "2026-07-24T15:02:00Z",
       "language": "Java",
-      "summary": "Reproducer for Apache Camel camel-solr SolrParam./SolrField. header injection enabling Solr document-field injection and SSRF via the shards parameter (fixed in 4.14.8/4.18.3/4.21.0)",
-      "technicalSummary": "Reproducer for Apache Camel camel-solr SolrParam./SolrField. header injection enabling Solr document-field injection and SSRF via the shards parameter (fixed in 4.14.8/4.18.3/4.21.0)",
-      "breakdown": "Reproducer for Apache Camel camel-solr SolrParam./SolrField. header injection enabling Solr document-field injection and SSRF via the shards parameter (fixed in 4.14.8/4.18.3/4.21.0)",
-      "whatBroke": "Reproducer for Apache Camel camel-solr SolrParam./SolrField. header injection enabling Solr document-field injection and SSRF via the shards parameter (fixed in 4.14.8/4.18.3/4.21.0)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-48203.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48203\ncd CVE-2026-48203\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Reproducer for Apache Camel camel-dns dns.* header injection redirecting DNS queries to an attacker-controlled resolver (SSRF via DNS) and enabling internal-hostname reconnaissance (fixed in 4.14.8/4.18.3/4.21.0)",
+      "technicalSummary": "Reproducer for Apache Camel camel-dns dns.* header injection redirecting DNS queries to an attacker-controlled resolver (SSRF via DNS) and enabling internal-hostname reconnaissance (fixed in 4.14.8/4.18.3/4.21.0)",
+      "breakdown": "Reproducer for Apache Camel camel-dns dns.* header injection redirecting DNS queries to an attacker-controlled resolver (SSRF via DNS) and enabling internal-hostname reconnaissance (fixed in 4.14.8/4.18.3/4.21.0)",
+      "whatBroke": "Reproducer for Apache Camel camel-dns dns.* header injection redirecting DNS queries to an attacker-controlled resolver (SSRF via DNS) and enabling internal-hostname reconnaissance (fixed in 4.14.8/4.18.3/4.21.0)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-48205.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48205\ncd CVE-2026-48205\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "lateral movement if secrets or management access are recovered"
@@ -1228,11 +966,245 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/oscerd/CVE-2026-48203"
+          "https://github.com/oscerd/CVE-2026-48205"
         ],
         [
           "Vendor Advisory",
-          "http://camel.apache.org/security/CVE-2026-48203.html"
+          "https://camel.apache.org/security/CVE-2026-48205.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-48206",
+      "title": "Reproducer for CVE-2026-48206: Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-48206",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-quarkus/docker-compose.yml",
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48206"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:19 AM CDT",
+      "firstSeenAt": "2026-07-20T07:19:04Z",
+      "language": "Java",
+      "summary": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
+      "technicalSummary": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
+      "breakdown": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
+      "whatBroke": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-48206.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48206\ncd CVE-2026-48206\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-48206"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-48206.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49086",
+      "title": "PoC reproducer for CVE-2026-49086 (Apache Camel camel-dapr): the pub/sub consumer copies the untrusted.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-49086",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49086"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:12 AM CDT",
+      "firstSeenAt": "2026-07-20T12:12:06Z",
+      "language": "Java",
+      "summary": "PoC reproducer for (Apache Camel camel-dapr): the pub/sub consumer copies the untrusted CloudEvent's pubsubName/topic into producer-routing headers, letting an attacker redirect a republished message to an arbitrary Dapr pub/sub.",
+      "technicalSummary": "PoC reproducer for (Apache Camel camel-dapr): the pub/sub consumer copies the untrusted CloudEvent's pubsubName/topic into producer-routing headers, letting an attacker redirect a republished message to an arbitrary Dapr pub/sub.",
+      "breakdown": "PoC reproducer for (Apache Camel camel-dapr): the pub/sub consumer copies the untrusted CloudEvent's pubsubName/topic into producer-routing headers, letting an attacker redirect a republished message to an arbitrary Dapr pub/sub.",
+      "whatBroke": "PoC reproducer for (Apache Camel camel-dapr): the pub/sub consumer copies the untrusted CloudEvent's pubsubName/topic into producer-routing headers, letting an attacker redirect a republished message to an arbitrary Dapr pub/sub.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-49086.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-49086\ncd CVE-2026-49086\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-49086"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49097",
+      "title": "PoC reproducer for CVE-2026-49097 (Apache Camel camel-irc): the non-Camel-prefixed irc.sendTo header escapes.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-49097",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49097"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:41 AM CDT",
+      "firstSeenAt": "2026-07-20T13:41:41Z",
+      "language": "Java",
+      "summary": "PoC reproducer for (Apache Camel camel-irc): the non-Camel-prefixed irc.sendTo header escapes the HTTP header filter and overrides the producer's configured channel, redirecting an IRC message to an attacker-chosen destination..",
+      "technicalSummary": "PoC reproducer for (Apache Camel camel-irc): the non-Camel-prefixed irc.sendTo header escapes the HTTP header filter and overrides the producer's configured channel, redirecting an IRC message to an attacker-chosen destination..",
+      "breakdown": "PoC reproducer for (Apache Camel camel-irc): the non-Camel-prefixed irc.sendTo header escapes the HTTP header filter and overrides the producer's configured channel, redirecting an IRC message to an attacker-chosen destination..",
+      "whatBroke": "PoC reproducer for (Apache Camel camel-irc): the non-Camel-prefixed irc.sendTo header escapes the HTTP header filter and overrides the producer's configured channel, redirecting an IRC message to an attacker-chosen destination..",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-49097.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-49097\ncd CVE-2026-49097\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-49097"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-27971",
+      "title": "\u2014 Qwik `server$` Unauthenticated RCE PoC",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Ghalendar/CVE-2026-27971_POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit_combat.py"
+        ],
+        "attackFiles": [
+          "exploit_combat.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-27971"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Ghalendar",
+      "researcherUrl": "https://github.com/Ghalendar",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:55 AM CDT",
+      "firstSeenAt": "2026-07-21T07:55:45Z",
+      "language": "Python",
+      "summary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghalendar/CVE-2026-27971_POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghalendar/CVE-2026-27971_POC\ncd CVE-2026-27971_POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 77,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Ghalendar/CVE-2026-27971_POC"
         ]
       ]
     }
