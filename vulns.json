@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T20:17:35Z",
+  "updatedAt": "2026-07-24T05:28:08Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -69,23 +69,6 @@
       "publishedAt": "2026-07-23T16:00:00Z",
       "cves": [],
       "tags": []
-    },
-    {
-      "title": "wp2shell hits WordPress: detecting pre-auth RCE from plugin drop to command execution",
-      "source": "Elastic Security Labs",
-      "sourceUrl": "https://www.elastic.co/security-labs",
-      "url": "https://www.elastic.co/security-labs/wp2shell-wordpress-rce-detection-elastic-defend",
-      "summary": "On July 17, 2026, Searchlight Cyber disclosed wp2shell , a pre-authentication remote code execution chain in WordPress Core ( CVE-2026-63030 , CVE-2026-60137 ). Proof-of-concept tools hit GitHub within hours. hashkitten published the chain after PoCs started.",
-      "publishedAt": "2026-07-23T00:00:00Z",
-      "cves": [
-        "CVE-2026-60137",
-        "CVE-2026-63030"
-      ],
-      "tags": [
-        "Linux",
-        "Webstack",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
@@ -143,7 +126,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -213,7 +196,7 @@
       ],
       "confidence": 98,
       "weaponization": 89,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -236,35 +219,36 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/dann3xplo1t/Cpanel",
+      "pocUrl": "https://github.com/soverineg/cve-2026-41940-PoC",
       "pocValidation": {
         "valid": true,
-        "score": 7,
+        "score": 11,
         "codeFiles": [
-          "Exec.py"
+          "exp.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "exp.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-41940",
-          "CVE-2026-41948"
+          "CVE-2026-41940"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "dann3xplo1t",
-      "researcherUrl": "https://github.com/dann3xplo1t",
+      "researcher": "soverineg",
+      "researcherUrl": "https://github.com/soverineg",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "10:42 AM CDT",
-      "firstSeenAt": "2026-07-23T15:42:12Z",
+      "added": "9:15 AM CDT",
+      "firstSeenAt": "2026-07-20T14:15:54Z",
       "language": "Python",
-      "summary": "& CVE-2026-41948 \u2014 cPanel & WHM Auth Bypass",
-      "technicalSummary": "& CVE-2026-41948 \u2014 cPanel & WHM Auth Bypass",
-      "breakdown": "& CVE-2026-41948 \u2014 cPanel & WHM Auth Bypass",
-      "whatBroke": "& CVE-2026-41948 \u2014 cPanel & WHM Auth Bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dann3xplo1t/Cpanel.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dann3xplo1t/Cpanel\ncd Cpanel\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "A cPanel and WHM authentication bypassing tool",
+      "technicalSummary": "A cPanel and WHM authentication bypassing tool",
+      "breakdown": "A cPanel and WHM authentication bypassing tool",
+      "whatBroke": "A cPanel and WHM authentication bypassing tool",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at soverineg/cve-2026-41940-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/soverineg/cve-2026-41940-PoC\ncd cve-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
         "credential access from service context",
@@ -281,11 +265,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/dann3xplo1t/Cpanel"
+          "https://github.com/soverineg/cve-2026-41940-PoC"
         ],
         [
           "Vendor Advisory",
@@ -346,7 +330,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -411,7 +395,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -475,7 +459,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -539,7 +523,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -548,6 +532,68 @@
         [
           "Vendor Advisory",
           "https://www.ibm.com/support/pages/node/7278927"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-62183",
+      "title": "Apache Syncope: User self-service privilege escalation",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/NicPWNs/CVE-2026-62183",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.sh"
+        ],
+        "attackFiles": [
+          "poc.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-62183"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "NicPWNs",
+      "researcherUrl": "https://github.com/NicPWNs",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:56 PM CDT",
+      "firstSeenAt": "2026-07-20T22:56:04Z",
+      "language": "Shell",
+      "summary": "Apache Syncope: User self-service privilege escalation",
+      "technicalSummary": "Apache Syncope: User self-service privilege escalation",
+      "breakdown": "Apache Syncope: User self-service privilege escalation",
+      "whatBroke": "Apache Syncope: User self-service privilege escalation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at NicPWNs/CVE-2026-62183.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/NicPWNs/CVE-2026-62183\ncd CVE-2026-62183\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/NicPWNs/CVE-2026-62183"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread/6r8cngvy43y2yk4jj3w060dt8vx0yzpr"
         ]
       ]
     },
@@ -606,7 +652,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -644,8 +690,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:01 AM CDT",
-      "firstSeenAt": "2026-07-17T08:01:31Z",
+      "added": "12:28 AM CDT",
+      "firstSeenAt": "2026-07-24T05:28:08Z",
       "language": "Java",
       "summary": "Reproducer for Apache Camel CXF/Knative HeaderFilterStrategy missing inbound filtering, enabling Camel control-header injection (RCE via camel-exec) through CXF-RS/CXF-SOAP/Knative endpoints (fixed in 4.14.6/4.18.2/4.19.0)",
       "technicalSummary": "Reproducer for Apache Camel CXF/Knative HeaderFilterStrategy missing inbound filtering, enabling Camel control-header injection (RCE via camel-exec) through CXF-RS/CXF-SOAP/Knative endpoints (fixed in 4.14.6/4.18.2/4.19.0)",
@@ -668,7 +714,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -729,7 +775,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -793,7 +839,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -855,7 +901,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -864,6 +910,70 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/5e28b7b94408897e41c63477aabc9e1db439bc8c"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-23744",
+      "title": "Proof-of-concept and offensive security research analyzing CVE-2026-23744 (MCPJam Inspector Unauthenticated.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/nullRoot-Red/CVE-2026-23744",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-23744"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "nullRoot-Red",
+      "researcherUrl": "https://github.com/nullRoot-Red",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "4:31 PM CDT",
+      "firstSeenAt": "2026-07-23T21:31:22Z",
+      "language": "Python",
+      "summary": "Proof-of-concept and offensive security research analyzing (MCPJam Inspector Unauthenticated RCE, Patched in v1.4.3+).",
+      "technicalSummary": "Proof-of-concept and offensive security research analyzing (MCPJam Inspector Unauthenticated RCE, Patched in v1.4.3+).",
+      "breakdown": "Proof-of-concept and offensive security research analyzing (MCPJam Inspector Unauthenticated RCE, Patched in v1.4.3+).",
+      "whatBroke": "Proof-of-concept and offensive security research analyzing (MCPJam Inspector Unauthenticated RCE, Patched in v1.4.3+).",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at nullRoot-Red/CVE-2026-23744.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/nullRoot-Red/CVE-2026-23744\ncd CVE-2026-23744\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/nullRoot-Red/CVE-2026-23744"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
         ]
       ]
     },
@@ -907,8 +1017,8 @@
       "researcherUrl": "https://github.com/karollooool",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:12 AM CDT",
-      "firstSeenAt": "2026-07-17T12:12:33Z",
+      "added": "12:28 AM CDT",
+      "firstSeenAt": "2026-07-24T05:28:08Z",
       "language": "C",
       "summary": "Windows 11 KASLR bypass",
       "technicalSummary": "Windows 11 KASLR bypass",
@@ -929,7 +1039,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -991,7 +1101,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -1055,7 +1165,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1093,8 +1203,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:20 AM CDT",
-      "firstSeenAt": "2026-07-17T10:20:42Z",
+      "added": "12:28 AM CDT",
+      "firstSeenAt": "2026-07-24T05:28:08Z",
       "language": "Java",
       "summary": "Reproducer for Apache Camel camel-solr SolrParam./SolrField. header injection enabling Solr document-field injection and SSRF via the shards parameter (fixed in 4.14.8/4.18.3/4.21.0)",
       "technicalSummary": "Reproducer for Apache Camel camel-solr SolrParam./SolrField. header injection enabling Solr document-field injection and SSRF via the shards parameter (fixed in 4.14.8/4.18.3/4.21.0)",
@@ -1114,7 +1224,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -1123,124 +1233,6 @@
         [
           "Vendor Advisory",
           "http://camel.apache.org/security/CVE-2026-48203.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48204",
-      "title": "Reproducer for CVE-2026-48204: Apache Camel camel-mongodb-gridfs gridfs.* header injection overriding the.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-48204",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48204"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:00 AM CDT",
-      "firstSeenAt": "2026-07-17T13:00:45Z",
-      "language": "Java",
-      "summary": "Reproducer for Apache Camel camel-mongodb-gridfs gridfs.* header injection overriding the GridFS operation (enumerate/read/delete files) from an unauthenticated HTTP request (fixed in 4.14.8/4.18.3/4.21.0)",
-      "technicalSummary": "Reproducer for Apache Camel camel-mongodb-gridfs gridfs.* header injection overriding the GridFS operation (enumerate/read/delete files) from an unauthenticated HTTP request (fixed in 4.14.8/4.18.3/4.21.0)",
-      "breakdown": "Reproducer for Apache Camel camel-mongodb-gridfs gridfs.* header injection overriding the GridFS operation (enumerate/read/delete files) from an unauthenticated HTTP request (fixed in 4.14.8/4.18.3/4.21.0)",
-      "whatBroke": "Reproducer for Apache Camel camel-mongodb-gridfs gridfs.* header injection overriding the GridFS operation (enumerate/read/delete files) from an unauthenticated HTTP request (fixed in 4.14.8/4.18.3/4.21.0)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-48204.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48204\ncd CVE-2026-48204\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-48204"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-48204.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48205",
-      "title": "Reproducer for CVE-2026-48205: Apache Camel camel-dns dns.* header injection redirecting DNS queries to an.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-48205",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48205"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:58 AM CDT",
-      "firstSeenAt": "2026-07-17T15:58:52Z",
-      "language": "Java",
-      "summary": "Reproducer for Apache Camel camel-dns dns.* header injection redirecting DNS queries to an attacker-controlled resolver (SSRF via DNS) and enabling internal-hostname reconnaissance (fixed in 4.14.8/4.18.3/4.21.0)",
-      "technicalSummary": "Reproducer for Apache Camel camel-dns dns.* header injection redirecting DNS queries to an attacker-controlled resolver (SSRF via DNS) and enabling internal-hostname reconnaissance (fixed in 4.14.8/4.18.3/4.21.0)",
-      "breakdown": "Reproducer for Apache Camel camel-dns dns.* header injection redirecting DNS queries to an attacker-controlled resolver (SSRF via DNS) and enabling internal-hostname reconnaissance (fixed in 4.14.8/4.18.3/4.21.0)",
-      "whatBroke": "Reproducer for Apache Camel camel-dns dns.* header injection redirecting DNS queries to an attacker-controlled resolver (SSRF via DNS) and enabling internal-hostname reconnaissance (fixed in 4.14.8/4.18.3/4.21.0)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-48205.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48205\ncd CVE-2026-48205\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-48205"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-48205.html"
         ]
       ]
     }
