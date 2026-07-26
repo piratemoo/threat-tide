@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26T14:42:16Z",
+  "updatedAt": "2026-07-26T20:14:53Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -191,71 +191,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-41940",
-      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/soverineg/cve-2026-41940-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exp.py"
-        ],
-        "attackFiles": [
-          "exp.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-41940"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "soverineg",
-      "researcherUrl": "https://github.com/soverineg",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:15 AM CDT",
-      "firstSeenAt": "2026-07-20T14:15:54Z",
-      "language": "Python",
-      "summary": "A cPanel and WHM authentication bypassing tool",
-      "technicalSummary": "A cPanel and WHM authentication bypassing tool",
-      "breakdown": "A cPanel and WHM authentication bypassing tool",
-      "whatBroke": "A cPanel and WHM authentication bypassing tool",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at soverineg/cve-2026-41940-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/soverineg/cve-2026-41940-PoC\ncd cve-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/soverineg/cve-2026-41940-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-0770",
       "title": "Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
       "ecosystem": "cloud",
@@ -388,70 +323,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-41089",
-      "title": "Technical analysis and Proof-of-Concept (PoC) for CVE-2026-41089, a critical unauthenticated Remote Code.",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HydraSoft/CVE-2026-41089-Netlogon-RCE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-41089.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-41089.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-41089"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HydraSoft",
-      "researcherUrl": "https://github.com/HydraSoft",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:05 PM CDT",
-      "firstSeenAt": "2026-07-21T02:05:07Z",
-      "language": "Python",
-      "summary": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
-      "technicalSummary": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
-      "breakdown": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
-      "whatBroke": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HydraSoft/CVE-2026-41089-Netlogon-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HydraSoft/CVE-2026-41089-Netlogon-RCE\ncd CVE-2026-41089-Netlogon-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HydraSoft/CVE-2026-41089-Netlogon-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41089"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-64600",
       "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
       "ecosystem": "linux",
@@ -512,6 +383,70 @@
         [
           "Vendor Advisory",
           "https://cdn2.qualys.com/advisory/2026/07/22/RefluXFS.txt"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-41089",
+      "title": "Technical analysis and Proof-of-Concept (PoC) for CVE-2026-41089, a critical unauthenticated Remote Code.",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HydraSoft/CVE-2026-41089-Netlogon-RCE",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-41089.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-41089.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-41089"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HydraSoft",
+      "researcherUrl": "https://github.com/HydraSoft",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "9:05 PM CDT",
+      "firstSeenAt": "2026-07-21T02:05:07Z",
+      "language": "Python",
+      "summary": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
+      "technicalSummary": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
+      "breakdown": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
+      "whatBroke": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HydraSoft/CVE-2026-41089-Netlogon-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HydraSoft/CVE-2026-41089-Netlogon-RCE\ncd CVE-2026-41089-Netlogon-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HydraSoft/CVE-2026-41089-Netlogon-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41089"
         ]
       ]
     },
@@ -651,14 +586,14 @@
       "pocUrl": "https://github.com/nullRoot-Red/CVE-2026-23744",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "exploit.py"
         ],
         "attackFiles": [
           "exploit.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-23744"
         ],
@@ -702,75 +637,6 @@
         [
           "Vendor Advisory",
           "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-43499",
-      "title": "exploit configuration for realme RMX3888 (Android 16) - 20 verified kernel offsets",
-      "ecosystem": "android",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Bailan766/rmx3888-cve-2026-43499-config",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "compile_rmx3888.sh",
-          "src/fops.c",
-          "src/main.c",
-          "src/pipe.c",
-          "src/preload.c",
-          "src/root.c",
-          "src/slide.c",
-          "src/su_daemon.c"
-        ],
-        "attackFiles": [
-          "src/targets/oriole-CP2A.260605.012/exploit.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43499"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Bailan766",
-      "researcherUrl": "https://github.com/Bailan766",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:23 AM CDT",
-      "firstSeenAt": "2026-07-23T10:23:19Z",
-      "language": "C",
-      "summary": "exploit configuration for realme RMX3888 (Android 16) - 20 verified kernel offsets",
-      "technicalSummary": "exploit configuration for realme RMX3888 (Android 16) - 20 verified kernel offsets",
-      "breakdown": "exploit configuration for realme RMX3888 (Android 16) - 20 verified kernel offsets",
-      "whatBroke": "exploit configuration for realme RMX3888 (Android 16) - 20 verified kernel offsets",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Bailan766/rmx3888-cve-2026-43499-config.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Bailan766/rmx3888-cve-2026-43499-config\ncd rmx3888-cve-2026-43499-config\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Android",
-        "Kernel",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Bailan766/rmx3888-cve-2026-43499-config"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
         ]
       ]
     },
@@ -826,6 +692,10 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-55993"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-55993.html"
         ]
       ]
     },
@@ -881,6 +751,10 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-55994"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-55994.html"
         ]
       ]
     },
@@ -951,9 +825,9 @@
     {
       "cve": "CVE-2026-48206",
       "title": "Reproducer for CVE-2026-48206: Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oscerd/CVE-2026-48206",
       "pocValidation": {
@@ -986,14 +860,15 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48206\ncd CVE-2026-48206\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
+        "Windows",
+        "Exchange",
+        "Auth Bypass"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1002,15 +877,19 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-48206"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-48206.html"
         ]
       ]
     },
     {
       "cve": "CVE-2026-49086",
       "title": "PoC reproducer for CVE-2026-49086 (Apache Camel camel-dapr): the pub/sub consumer copies the untrusted.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "medium",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oscerd/CVE-2026-49086",
       "pocValidation": {
@@ -1042,12 +921,13 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-49086\ncd CVE-2026-49086\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
-        "Exchange",
+        "Web",
+        "Webstack",
         "Exploit"
       ],
       "confidence": 98,
@@ -1057,10 +937,6 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-49086"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-49086.html"
         ]
       ]
     },
@@ -1174,6 +1050,122 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-49098"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-56139",
+      "title": "PoC reproducer for CVE-2026-56139 (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-56139",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56139"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:39 AM CDT",
+      "firstSeenAt": "2026-07-22T10:39:11Z",
+      "language": "Java",
+      "summary": "PoC reproducer for (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes muteException=false, so a configured muteException=true is ignored and an uncaught exception's full stack trace is returned to the client.",
+      "technicalSummary": "PoC reproducer for (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes muteException=false, so a configured muteException=true is ignored and an uncaught exception's full stack trace is returned to the client.",
+      "breakdown": "PoC reproducer for (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes muteException=false, so a configured muteException=true is ignored and an uncaught exception's full stack trace is returned to the client.",
+      "whatBroke": "PoC reproducer for (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes muteException=false, so a configured muteException=true is ignored and an uncaught exception's full stack trace is returned to the client.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-56139.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-56139\ncd CVE-2026-56139\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-56139"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-27971",
+      "title": "\u2014 Qwik `server$` Unauthenticated RCE PoC",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Ghalendar/CVE-2026-27971_POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit_combat.py"
+        ],
+        "attackFiles": [
+          "exploit_combat.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-27971"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Ghalendar",
+      "researcherUrl": "https://github.com/Ghalendar",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:55 AM CDT",
+      "firstSeenAt": "2026-07-21T07:55:45Z",
+      "language": "Python",
+      "summary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghalendar/CVE-2026-27971_POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghalendar/CVE-2026-27971_POC\ncd CVE-2026-27971_POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 77,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Ghalendar/CVE-2026-27971_POC"
         ]
       ]
     }
