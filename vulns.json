@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26T20:14:53Z",
+  "updatedAt": "2026-07-27T05:58:08Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -104,7 +104,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -174,7 +174,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -187,6 +187,135 @@
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-41940",
+      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/soverineg/cve-2026-41940-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exp.py"
+        ],
+        "attackFiles": [
+          "exp.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-41940"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "soverineg",
+      "researcherUrl": "https://github.com/soverineg",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "12:58 AM CDT",
+      "firstSeenAt": "2026-07-27T05:58:08Z",
+      "language": "Python",
+      "summary": "A cPanel and WHM authentication bypassing tool",
+      "technicalSummary": "A cPanel and WHM authentication bypassing tool",
+      "breakdown": "A cPanel and WHM authentication bypassing tool",
+      "whatBroke": "A cPanel and WHM authentication bypassing tool",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at soverineg/cve-2026-41940-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/soverineg/cve-2026-41940-PoC\ncd cve-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/soverineg/cve-2026-41940-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-64600",
+      "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/vulnquest58/VQ-RefluxCore",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "vq-refluxcore.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-64600"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:27 PM CDT",
+      "firstSeenAt": "2026-07-24T23:27:22Z",
+      "language": "Shell",
+      "summary": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
+      "technicalSummary": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1070\" height=\"602\" src=\"https://blog.qualys.com/wp-content/uploads/2026/07/Logo-1070x602.png\" alt=\"\" class=\"wp-image-41223\".",
+      "breakdown": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1070\" height=\"602\" src=\"https://blog.qualys.com/wp-content/uploads/2026/07/Logo-1070x602.png\" alt=\"\" class=\"wp-image-41223\".",
+      "whatBroke": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at vulnquest58/VQ-RefluxCore.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/vulnquest58/VQ-RefluxCore\ncd VQ-RefluxCore\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/vulnquest58/VQ-RefluxCore"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/22/refluxfs-a-linux-kernel-local-privilege-escalation-to-root-in-xfs-cve-2026-64600"
+        ],
+        [
+          "Vendor Advisory",
+          "https://cdn2.qualys.com/advisory/2026/07/22/RefluXFS.txt"
         ]
       ]
     },
@@ -243,7 +372,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -310,7 +439,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -319,70 +448,6 @@
         [
           "Vendor Advisory",
           "https://cgit.git.savannah.gnu.org/cgit/inetutils.git"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-64600",
-      "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/vulnquest58/VQ-RefluxCore",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "vq-refluxcore.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-64600"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:27 PM CDT",
-      "firstSeenAt": "2026-07-24T23:27:22Z",
-      "language": "Shell",
-      "summary": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
-      "technicalSummary": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1070\" height=\"602\" src=\"https://blog.qualys.com/wp-content/uploads/2026/07/Logo-1070x602.png\" alt=\"\" class=\"wp-image-41223\".",
-      "breakdown": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1070\" height=\"602\" src=\"https://blog.qualys.com/wp-content/uploads/2026/07/Logo-1070x602.png\" alt=\"\" class=\"wp-image-41223\".",
-      "whatBroke": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at vulnquest58/VQ-RefluxCore.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/vulnquest58/VQ-RefluxCore\ncd VQ-RefluxCore\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/vulnquest58/VQ-RefluxCore"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/22/refluxfs-a-linux-kernel-local-privilege-escalation-to-root-in-xfs-cve-2026-64600"
-        ],
-        [
-          "Vendor Advisory",
-          "https://cdn2.qualys.com/advisory/2026/07/22/RefluXFS.txt"
         ]
       ]
     },
@@ -414,8 +479,8 @@
       "researcherUrl": "https://github.com/HydraSoft",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "9:05 PM CDT",
-      "firstSeenAt": "2026-07-21T02:05:07Z",
+      "added": "12:58 AM CDT",
+      "firstSeenAt": "2026-07-27T05:58:08Z",
       "language": "Python",
       "summary": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
       "technicalSummary": "Technical analysis and Proof-of-Concept (PoC) for a critical unauthenticated Remote Code Execution (RCE) vulnerability in the Windows Netlogon service affecting Domain Controllers.",
@@ -438,7 +503,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -478,8 +543,8 @@
       "researcherUrl": "https://github.com/NicPWNs",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:56 PM CDT",
-      "firstSeenAt": "2026-07-20T22:56:04Z",
+      "added": "12:58 AM CDT",
+      "firstSeenAt": "2026-07-27T05:58:08Z",
       "language": "Shell",
       "summary": "Apache Syncope: User self-service privilege escalation",
       "technicalSummary": "Apache Syncope: User self-service privilege escalation",
@@ -500,7 +565,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -564,7 +629,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -628,7 +693,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -687,7 +752,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -746,7 +811,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -810,7 +875,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -825,9 +890,9 @@
     {
       "cve": "CVE-2026-48206",
       "title": "Reproducer for CVE-2026-48206: Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "critical",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/oscerd/CVE-2026-48206",
       "pocValidation": {
@@ -849,8 +914,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:19 AM CDT",
-      "firstSeenAt": "2026-07-20T07:19:04Z",
+      "added": "12:58 AM CDT",
+      "firstSeenAt": "2026-07-27T05:58:08Z",
       "language": "Java",
       "summary": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
       "technicalSummary": "Reproducer for Apache Camel camel-jira IssueKey (and other non-Camel-prefixed) header injection driving arbitrary JIRA issue operations with the endpoint's service-account credentials (fixed in 4.14.8/4.18.3/4.21.0)",
@@ -860,27 +925,22 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-48206\ncd CVE-2026-48206\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
-        "Exchange",
-        "Auth Bypass"
+        "Web",
+        "Webstack",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-48206"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-48206.html"
         ]
       ]
     },
@@ -910,8 +970,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:12 AM CDT",
-      "firstSeenAt": "2026-07-20T12:12:06Z",
+      "added": "12:58 AM CDT",
+      "firstSeenAt": "2026-07-27T05:58:08Z",
       "language": "Java",
       "summary": "PoC reproducer for (Apache Camel camel-dapr): the pub/sub consumer copies the untrusted CloudEvent's pubsubName/topic into producer-routing headers, letting an attacker redirect a republished message to an arbitrary Dapr pub/sub.",
       "technicalSummary": "PoC reproducer for (Apache Camel camel-dapr): the pub/sub consumer copies the untrusted CloudEvent's pubsubName/topic into producer-routing headers, letting an attacker redirect a republished message to an arbitrary Dapr pub/sub.",
@@ -932,7 +992,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -966,8 +1026,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:41 AM CDT",
-      "firstSeenAt": "2026-07-20T13:41:41Z",
+      "added": "12:58 AM CDT",
+      "firstSeenAt": "2026-07-27T05:58:08Z",
       "language": "Java",
       "summary": "PoC reproducer for (Apache Camel camel-irc): the non-Camel-prefixed irc.sendTo header escapes the HTTP header filter and overrides the producer's configured channel, redirecting an IRC message to an attacker-chosen destination..",
       "technicalSummary": "PoC reproducer for (Apache Camel camel-irc): the non-Camel-prefixed irc.sendTo header escapes the HTTP header filter and overrides the producer's configured channel, redirecting an IRC message to an attacker-chosen destination..",
@@ -988,68 +1048,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-49097"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49098",
-      "title": "PoC reproducer for CVE-2026-49098 (Apache Camel camel-kafka): the non-Camel-prefixed kafka.OVERRIDE_TOPIC.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-49098",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49098"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:39 AM CDT",
-      "firstSeenAt": "2026-07-20T16:39:45Z",
-      "language": "Java",
-      "summary": "PoC reproducer for (Apache Camel camel-kafka): the non-Camel-prefixed kafka.OVERRIDE_TOPIC header escapes the upstream HTTP header filter and overrides the producer's configured topic, injecting an attacker-forged record onto a.",
-      "technicalSummary": "PoC reproducer for (Apache Camel camel-kafka): the non-Camel-prefixed kafka.OVERRIDE_TOPIC header escapes the upstream HTTP header filter and overrides the producer's configured topic, injecting an attacker-forged record onto a.",
-      "breakdown": "PoC reproducer for (Apache Camel camel-kafka): the non-Camel-prefixed kafka.OVERRIDE_TOPIC header escapes the upstream HTTP header filter and overrides the producer's configured topic, injecting an attacker-forged record onto a.",
-      "whatBroke": "PoC reproducer for (Apache Camel camel-kafka): the non-Camel-prefixed kafka.OVERRIDE_TOPIC header escapes the upstream HTTP header filter and overrides the producer's configured topic, injecting an attacker-forged record onto a.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-49098.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-49098\ncd CVE-2026-49098\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-49098"
         ]
       ]
     },
@@ -1101,7 +1104,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -1110,42 +1113,45 @@
       ]
     },
     {
-      "cve": "CVE-2026-27971",
-      "title": "\u2014 Qwik `server$` Unauthenticated RCE PoC",
+      "cve": "CVE-2026-41179",
+      "title": "RCE in rclone",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Ghalendar/CVE-2026-27971_POC",
+      "pocUrl": "https://github.com/s-vx/CVE-2026-41179",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exploit_combat.py"
+          "rce.py",
+          "run.sh",
+          "shell.sh"
         ],
         "attackFiles": [
-          "exploit_combat.py"
+          "rce.py",
+          "shell.sh"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-27971"
+          "CVE-2026-41179"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Ghalendar",
-      "researcherUrl": "https://github.com/Ghalendar",
+      "researcher": "s-vx",
+      "researcherUrl": "https://github.com/s-vx",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:55 AM CDT",
-      "firstSeenAt": "2026-07-21T07:55:45Z",
+      "difficulty": "easy",
+      "added": "11:13 PM CDT",
+      "firstSeenAt": "2026-07-27T04:13:43Z",
       "language": "Python",
-      "summary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghalendar/CVE-2026-27971_POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghalendar/CVE-2026-27971_POC\ncd CVE-2026-27971_POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "RCE in rclone",
+      "technicalSummary": "RCE in rclone",
+      "breakdown": "RCE in rclone",
+      "whatBroke": "RCE in rclone",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at s-vx/CVE-2026-41179.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/s-vx/CVE-2026-41179\ncd CVE-2026-41179\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -1160,12 +1166,12 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 77,
-      "dayOffset": 5,
+      "weaponization": 79,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/Ghalendar/CVE-2026-27971_POC"
+          "https://github.com/s-vx/CVE-2026-41179"
         ]
       ]
     }
