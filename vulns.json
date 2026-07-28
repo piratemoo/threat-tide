@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-28T05:22:09Z",
+  "updatedAt": "2026-07-28T15:27:39Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -60,23 +60,6 @@
       "cves": [],
       "tags": [
         "Cloud"
-      ]
-    },
-    {
-      "title": "From Virtual Share to Physical Shell: Leveraging Windows\u2019 Inconsistent Access Control for LPE",
-      "source": "Exodus Intelligence",
-      "sourceUrl": "https://blog.exodusintel.com/",
-      "url": "https://blog.exodusintel.com/2026/07/27/from-virtual-share-to-physical-shell-leveraging-windows-inconsistent-access-control-for-lpe/",
-      "summary": "By Siddh Shah Overview This blog post describes exploiting two vulnerabilities patched in the Microsoft Windows December 2025 security updates. In the update, three CVEs were assigned to the vulnerable component, two of which, CVE-2025-59517 and.",
-      "publishedAt": "2026-07-27T15:02:32Z",
-      "cves": [
-        "CVE-2025-59517",
-        "CVE-2025-64673"
-      ],
-      "tags": [
-        "Windows",
-        "Kernel",
-        "Local Lpe"
       ]
     }
   ],
@@ -221,70 +204,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-64600",
-      "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/vulnquest58/VQ-RefluxCore",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "vq-refluxcore.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-64600"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:27 PM CDT",
-      "firstSeenAt": "2026-07-24T23:27:22Z",
-      "language": "Shell",
-      "summary": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
-      "technicalSummary": "<img loading=\"lazy\" decoding=\"async\" width=\"1070\" height=\"602\" src=\"https://blog.qualys.com/wp-content/uploads/2026/07/Logo-1070x602.png\" alt=\"\" class=\"wp-image-41223\".",
-      "breakdown": "<img loading=\"lazy\" decoding=\"async\" width=\"1070\" height=\"602\" src=\"https://blog.qualys.com/wp-content/uploads/2026/07/Logo-1070x602.png\" alt=\"\" class=\"wp-image-41223\".",
-      "whatBroke": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at vulnquest58/VQ-RefluxCore.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/vulnquest58/VQ-RefluxCore\ncd VQ-RefluxCore\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/vulnquest58/VQ-RefluxCore"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/22/refluxfs-a-linux-kernel-local-privilege-escalation-to-root-in-xfs-cve-2026-64600"
-        ],
-        [
-          "Vendor Advisory",
-          "https://cdn2.qualys.com/advisory/2026/07/22/RefluXFS.txt"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-0770",
       "title": "Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
       "ecosystem": "cloud",
@@ -417,6 +336,137 @@
       ]
     },
     {
+      "cve": "CVE-2026-64600",
+      "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/bha-vin/CVE-2026-64600-Exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "Detection.sh",
+          "exploit.c"
+        ],
+        "attackFiles": [
+          "exploit.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-64600"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:35 AM CDT",
+      "firstSeenAt": "2026-07-28T09:35:50Z",
+      "language": "C",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: xfs: resample the data fork mapping after cycling ILOCK xfs_reflink_fill_{cow_hole,delalloc} are both presented with an inode, a data fork mapping, and a cow.",
+      "technicalSummary": "<img loading=\"lazy\" decoding=\"async\" width=\"1070\" height=\"602\" src=\"https://blog.qualys.com/wp-content/uploads/2026/07/Logo-1070x602.png\" alt=\"\" class=\"wp-image-41223\".",
+      "breakdown": "<img loading=\"lazy\" decoding=\"async\" width=\"1070\" height=\"602\" src=\"https://blog.qualys.com/wp-content/uploads/2026/07/Logo-1070x602.png\" alt=\"\" class=\"wp-image-41223\".",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: xfs: resample the data fork mapping after cycling ILOCK xfs_reflink_fill_{cow_hole,delalloc} are both presented with an inode, a data fork mapping, and a cow.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at bha-vin/CVE-2026-64600-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/bha-vin/CVE-2026-64600-Exploit\ncd CVE-2026-64600-Exploit\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/bha-vin/CVE-2026-64600-Exploit"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/22/refluxfs-a-linux-kernel-local-privilege-escalation-to-root-in-xfs-cve-2026-64600"
+        ],
+        [
+          "Vendor Advisory",
+          "https://cdn2.qualys.com/advisory/2026/07/22/RefluXFS.txt"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-60206",
+      "title": "Technical analysis and Proof-of-Concept for CVE-2026-60206, a critical Oracle WebLogic Server SAML.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Debajyoti0-0/CVE-2026-60206",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60206"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Debajyoti0-0",
+      "researcherUrl": "https://github.com/Debajyoti0-0",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:13 AM CDT",
+      "firstSeenAt": "2026-07-25T15:13:41Z",
+      "language": "Python",
+      "summary": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
+      "technicalSummary": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
+      "breakdown": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
+      "whatBroke": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Debajyoti0-0/CVE-2026-60206.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Debajyoti0-0/CVE-2026-60206\ncd CVE-2026-60206\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Debajyoti0-0/CVE-2026-60206"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.oracle.com/security-alerts/cpujul2026.html"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-58057",
       "title": "reverse shell remote code execution exploit",
       "ecosystem": "windows",
@@ -467,7 +517,7 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 74,
       "dayOffset": 5,
       "links": [
         [
@@ -609,184 +659,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-55993",
-      "title": "PoC reproducer for CVE-2026-55993 (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-55993",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-55993"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:13 AM CDT",
-      "firstSeenAt": "2026-07-22T09:13:11Z",
-      "language": "Java",
-      "summary": "PoC reproducer for (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies connection query parameters onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks.",
-      "technicalSummary": "PoC reproducer for (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies connection query parameters onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks.",
-      "breakdown": "PoC reproducer for (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies connection query parameters onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks.",
-      "whatBroke": "PoC reproducer for (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies connection query parameters onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-55993.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-55993\ncd CVE-2026-55993\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-55993"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-55993.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-55994",
-      "title": "PoC reproducer for CVE-2026-55994 (Apache Camel camel-iggy): the consumer copies an Iggy message's.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-55994",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-55994"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:03 AM CDT",
-      "firstSeenAt": "2026-07-22T10:03:08Z",
-      "language": "Java",
-      "summary": "PoC reproducer for (Apache Camel camel-iggy): the consumer copies an Iggy message's user-headers onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks resolved property.",
-      "technicalSummary": "PoC reproducer for (Apache Camel camel-iggy): the consumer copies an Iggy message's user-headers onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks resolved property.",
-      "breakdown": "PoC reproducer for (Apache Camel camel-iggy): the consumer copies an Iggy message's user-headers onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks resolved property.",
-      "whatBroke": "PoC reproducer for (Apache Camel camel-iggy): the consumer copies an Iggy message's user-headers onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks resolved property.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-55994.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-55994\ncd CVE-2026-55994\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-55994"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-55994.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56139",
-      "title": "PoC reproducer for CVE-2026-56139 (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "medium",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-56139",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56139"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:39 AM CDT",
-      "firstSeenAt": "2026-07-22T10:39:11Z",
-      "language": "Java",
-      "summary": "PoC reproducer for (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes muteException=false, so a configured muteException=true is ignored and an uncaught exception's full stack trace is returned to the client.",
-      "technicalSummary": "PoC reproducer for (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes muteException=false, so a configured muteException=true is ignored and an uncaught exception's full stack trace is returned to the client.",
-      "breakdown": "PoC reproducer for (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes muteException=false, so a configured muteException=true is ignored and an uncaught exception's full stack trace is returned to the client.",
-      "whatBroke": "PoC reproducer for (Apache Camel camel-undertow Rest DSL): the Rest DSL binding hard-codes muteException=false, so a configured muteException=true is ignored and an uncaught exception's full stack trace is returned to the client.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-56139.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-56139\ncd CVE-2026-56139\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-56139"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-56139.html"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-41179",
       "title": "RCE in rclone",
       "ecosystem": "cloud",
@@ -850,70 +722,6 @@
         [
           "Vendor Advisory",
           "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-27971",
-      "title": "\u2014 Qwik `server$` Unauthenticated RCE PoC",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Ghalendar/CVE-2026-27971_POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit_combat.py"
-        ],
-        "attackFiles": [
-          "exploit_combat.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-27971"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Ghalendar",
-      "researcherUrl": "https://github.com/Ghalendar",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:22 AM CDT",
-      "firstSeenAt": "2026-07-28T05:22:09Z",
-      "language": "Python",
-      "summary": "Qwik is a performance focused javascript framework. qwik <=1.19.0 is vulnerable to RCE due to an unsafe deserialization vulnerability in the server$ RPC mechanism that allows any unauthenticated user to execute arbitrary code on.",
-      "technicalSummary": "Qwik is a performance focused javascript framework. qwik <=1.19.0 is vulnerable to RCE due to an unsafe deserialization vulnerability in the server$ RPC mechanism that allows any unauthenticated user to execute arbitrary code on.",
-      "breakdown": "Qwik is a performance focused javascript framework. qwik <=1.19.0 is vulnerable to RCE due to an unsafe deserialization vulnerability in the server$ RPC mechanism that allows any unauthenticated user to execute arbitrary code on.",
-      "whatBroke": "Qwik is a performance focused javascript framework. qwik <=1.19.0 is vulnerable to RCE due to an unsafe deserialization vulnerability in the server$ RPC mechanism that allows any unauthenticated user to execute arbitrary code on.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghalendar/CVE-2026-27971_POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghalendar/CVE-2026-27971_POC\ncd CVE-2026-27971_POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 77,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Ghalendar/CVE-2026-27971_POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/QwikDev/qwik/security/advisories/GHSA-p9x5-jp3h-96mm"
         ]
       ]
     },
@@ -1037,6 +845,10 @@
         [
           "GitHub",
           "https://github.com/mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.apple.com/en-us/128067"
         ]
       ]
     },
@@ -1098,48 +910,48 @@
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-58480"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/blocksy-companion/vulnerability/wordpress-blocksy-companion-plugin-2-1-46-unauthenticated-arbitrary-file-upload-vulnerability"
         ]
       ]
     },
     {
       "cve": "CVE-2026-9198",
-      "title": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
+      "title": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/0xgh057r3c0n/CVE-2026-9198",
+      "pocUrl": "https://github.com/samael0x4/CVE-2026-9198",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "CVE-2026-9198.py",
-          "CVE-2026-9198.yaml"
+          "2026-9198.yaml"
         ],
-        "attackFiles": [
-          "CVE-2026-9198.py",
-          "CVE-2026-9198.yaml"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-9198"
         ],
-        "language": "Python"
+        "language": "YAML"
       },
       "reliability": "reliable exploit",
-      "researcher": "0xgh057r3c0n",
-      "researcherUrl": "https://github.com/0xgh057r3c0n",
+      "researcher": "samael0x4",
+      "researcherUrl": "https://github.com/samael0x4",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:50 PM CDT",
-      "firstSeenAt": "2026-07-24T20:50:04Z",
-      "language": "Python",
-      "summary": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "technicalSummary": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "breakdown": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "whatBroke": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xgh057r3c0n/CVE-2026-9198.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xgh057r3c0n/CVE-2026-9198\ncd CVE-2026-9198\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "2:50 AM CDT",
+      "firstSeenAt": "2026-07-28T07:50:48Z",
+      "language": "YAML",
+      "summary": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
+      "technicalSummary": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
+      "breakdown": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
+      "whatBroke": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at samael0x4/CVE-2026-9198.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/samael0x4/CVE-2026-9198\ncd CVE-2026-9198\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -1155,55 +967,227 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/0xgh057r3c0n/CVE-2026-9198"
+          "https://github.com/samael0x4/CVE-2026-9198"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-13233",
-      "title": "(Drupal OpenAI Provider, SA-CONTRIB-2026-053): response-URL SSRF / local file read. Untrusted upstream, not.",
-      "ecosystem": "web",
+      "cve": "CVE-2026-14266",
+      "title": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
+      "ecosystem": "cloud",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/KuniNogu/drupal-openai-provider-ssrf-cve-2026-13233",
+      "pocUrl": "https://github.com/liyuxuan504-byte/CVE-2026-14266",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "detections/sigma/php-sensitive-file-open.yml",
-          "detections/sigma/web-egress-to-internal-after-imagegen.yml",
-          "reproducer/docker-compose.yml",
-          "reproducer/mock-openai-server.py"
+          "poc/poc-cve-2026-14266-rce.py",
+          "tools/04-heap-analyze.ps1",
+          "tools/05-mini-debugger.ps1",
+          "tools/06-guard-dump.ps1"
         ],
         "attackFiles": [
-          "reproducer/docker-compose.yml",
-          "reproducer/mock-openai-server.py"
+          "poc/poc-cve-2026-14266-rce.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-13233"
+          "CVE-2026-14266"
+        ],
+        "language": "PowerShell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "liyuxuan504-byte",
+      "researcherUrl": "https://github.com/liyuxuan504-byte",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:13 AM CDT",
+      "firstSeenAt": "2026-07-25T12:13:30Z",
+      "language": "PowerShell",
+      "summary": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
+      "technicalSummary": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
+      "breakdown": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
+      "whatBroke": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at liyuxuan504-byte/CVE-2026-14266.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/liyuxuan504-byte/CVE-2026-14266\ncd CVE-2026-14266\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/liyuxuan504-byte/CVE-2026-14266"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-40000",
+      "title": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Skorpion96/CVE-2026-40000",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "IntentLauncher/build.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-40000"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Skorpion96",
+      "researcherUrl": "https://github.com/Skorpion96",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:52 PM CDT",
+      "firstSeenAt": "2026-07-27T18:52:47Z",
+      "language": "Java",
+      "summary": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
+      "technicalSummary": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
+      "breakdown": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
+      "whatBroke": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Skorpion96/CVE-2026-40000.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Skorpion96/CVE-2026-40000\ncd CVE-2026-40000\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "File Read"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Skorpion96/CVE-2026-40000"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-41477",
+      "title": "Unauthenticated IPC Local Privilege Escalation to SYSTEM via Debauchee Barrier Daemon TCP Port 24801",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/cduram/NotCVE-2026-0010",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "Debauchee_Barrier_Privesc.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-0010",
+          "CVE-2026-41477"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "KuniNogu",
-      "researcherUrl": "https://github.com/KuniNogu",
+      "researcher": "cduram",
+      "researcherUrl": "https://github.com/cduram",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:22 AM CDT",
-      "firstSeenAt": "2026-07-28T05:22:09Z",
+      "added": "11:07 AM CDT",
+      "firstSeenAt": "2026-07-24T16:07:53Z",
       "language": "Python",
-      "summary": "(Drupal OpenAI Provider, SA-CONTRIB-2026-053): response-URL SSRF / local file read. Untrusted upstream, not the prompt. Safe reproducer + detections. Fixed in 1.1.1/1.2.2.",
-      "technicalSummary": "(Drupal OpenAI Provider, SA-CONTRIB-2026-053): response-URL SSRF / local file read. Untrusted upstream, not the prompt. Safe reproducer + detections. Fixed in 1.1.1/1.2.2.",
-      "breakdown": "(Drupal OpenAI Provider, SA-CONTRIB-2026-053): response-URL SSRF / local file read. Untrusted upstream, not the prompt. Safe reproducer + detections. Fixed in 1.1.1/1.2.2.",
-      "whatBroke": "(Drupal OpenAI Provider, SA-CONTRIB-2026-053): response-URL SSRF / local file read. Untrusted upstream, not the prompt. Safe reproducer + detections. Fixed in 1.1.1/1.2.2.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at KuniNogu/drupal-openai-provider-ssrf-cve-2026-13233.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/KuniNogu/drupal-openai-provider-ssrf-cve-2026-13233\ncd drupal-openai-provider-ssrf-cve-2026-13233\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Unauthenticated IPC Local Privilege Escalation to SYSTEM via Debauchee Barrier Daemon TCP Port 24801",
+      "technicalSummary": "Unauthenticated IPC Local Privilege Escalation to SYSTEM via Debauchee Barrier Daemon TCP Port 24801",
+      "breakdown": "Unauthenticated IPC Local Privilege Escalation to SYSTEM via Debauchee Barrier Daemon TCP Port 24801",
+      "whatBroke": "Unauthenticated IPC Local Privilege Escalation to SYSTEM via Debauchee Barrier Daemon TCP Port 24801",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cduram/NotCVE-2026-0010.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cduram/NotCVE-2026-0010\ncd NotCVE-2026-0010\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/cduram/NotCVE-2026-0010"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-57588",
+      "title": "PoC for CVE-2026-57588 - SQL injection in Nessus 10.12.0 XML import. Generates malicious .nessus files to.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/CerberusMrXi/CVE-2026-57588-Nessus-XML-Import-SQL-Injection-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-57588"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "CerberusMrXi",
+      "researcherUrl": "https://github.com/CerberusMrXi",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:27 AM CDT",
+      "firstSeenAt": "2026-07-28T15:27:39Z",
+      "language": "Python",
+      "summary": "PoC for SQL injection in Nessus 10.12.0 XML import. Generates malicious.nessus files to enumerate databases, exfiltrate credentials, and test time-based blind injection. For authorized security research. Author: Sudeepa.",
+      "technicalSummary": "PoC for SQL injection in Nessus 10.12.0 XML import. Generates malicious.nessus files to enumerate databases, exfiltrate credentials, and test time-based blind injection. For authorized security research. Author: Sudeepa.",
+      "breakdown": "PoC for SQL injection in Nessus 10.12.0 XML import. Generates malicious.nessus files to enumerate databases, exfiltrate credentials, and test time-based blind injection. For authorized security research. Author: Sudeepa.",
+      "whatBroke": "PoC for SQL injection in Nessus 10.12.0 XML import. Generates malicious.nessus files to enumerate databases, exfiltrate credentials, and test time-based blind injection. For authorized security research. Author: Sudeepa.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CerberusMrXi/CVE-2026-57588-Nessus-XML-Import-SQL-Injection-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CerberusMrXi/CVE-2026-57588-Nessus-XML-Import-SQL-Injection-PoC\ncd CVE-2026-57588-Nessus-XML-Import-SQL-Injection-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -1213,7 +1197,7 @@
       "tags": [
         "Web",
         "Webstack",
-        "File Read"
+        "SQLi"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1221,11 +1205,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/KuniNogu/drupal-openai-provider-ssrf-cve-2026-13233"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.drupal.org/sa-contrib-2026-053"
+          "https://github.com/CerberusMrXi/CVE-2026-57588-Nessus-XML-Import-SQL-Injection-PoC"
         ]
       ]
     }
