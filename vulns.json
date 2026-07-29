@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-28T20:21:23Z",
+  "updatedAt": "2026-07-29T05:29:50Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -135,8 +135,8 @@
       "researcherUrl": "https://www.elastic.co/security-labs",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "10:46 PM CDT",
-      "firstSeenAt": "2026-07-23T03:46:34Z",
+      "added": "12:29 AM CDT",
+      "firstSeenAt": "2026-07-29T05:29:50Z",
       "language": "Python",
       "summary": "CVE Reproduction: cve-2026-63030_60137-wordpress_rce_reproduction",
       "technicalSummary": "On July 17, 2026, Searchlight Cyber disclosed wp2shell , a pre-authentication remote code execution chain in WordPress Core (<a.",
@@ -160,7 +160,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -205,8 +205,8 @@
       "researcherUrl": "https://www.elastic.co/security-labs",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "11:21 AM CDT",
-      "firstSeenAt": "2026-07-22T16:21:56Z",
+      "added": "12:29 AM CDT",
+      "firstSeenAt": "2026-07-29T05:29:50Z",
       "language": "Python",
       "summary": "& Wp2shell Poc",
       "technicalSummary": "On July 17, 2026, Searchlight Cyber disclosed wp2shell , a pre-authentication remote code execution chain in WordPress Core (<a.",
@@ -230,7 +230,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -274,8 +274,8 @@
       "researcherUrl": "https://github.com/razureink",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "10:46 PM CDT",
-      "firstSeenAt": "2026-07-23T03:46:10Z",
+      "added": "12:29 AM CDT",
+      "firstSeenAt": "2026-07-29T05:29:50Z",
       "language": "Python",
       "summary": "CVE Reproduction: langflow_rce_reproduction",
       "technicalSummary": "CVE Reproduction: langflow_rce_reproduction",
@@ -299,7 +299,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -366,7 +366,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -431,7 +431,7 @@
       ],
       "confidence": 98,
       "weaponization": 83,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -494,7 +494,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -507,70 +507,6 @@
         [
           "Vendor Advisory",
           "https://cdn2.qualys.com/advisory/2026/07/22/RefluXFS.txt"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-60206",
-      "title": "Technical analysis and Proof-of-Concept for CVE-2026-60206, a critical Oracle WebLogic Server SAML.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Debajyoti0-0/CVE-2026-60206",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-60206"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Debajyoti0-0",
-      "researcherUrl": "https://github.com/Debajyoti0-0",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:13 AM CDT",
-      "firstSeenAt": "2026-07-25T15:13:41Z",
-      "language": "Python",
-      "summary": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
-      "technicalSummary": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
-      "breakdown": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
-      "whatBroke": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Debajyoti0-0/CVE-2026-60206.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Debajyoti0-0/CVE-2026-60206\ncd CVE-2026-60206\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Debajyoti0-0/CVE-2026-60206"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.oracle.com/security-alerts/cpujul2026.html"
         ]
       ]
     },
@@ -626,7 +562,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -639,13 +575,13 @@
       ]
     },
     {
-      "cve": "CVE-2026-23744",
-      "title": "Proof-of-concept and offensive security research analyzing CVE-2026-23744 (MCPJam Inspector Unauthenticated.",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-60206",
+      "title": "Technical analysis and Proof-of-Concept for CVE-2026-60206, a critical Oracle WebLogic Server SAML.",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/nullRoot-Red/CVE-2026-23744",
+      "pocUrl": "https://github.com/Debajyoti0-0/CVE-2026-60206",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -657,24 +593,24 @@
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-23744"
+          "CVE-2026-60206"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "nullRoot-Red",
-      "researcherUrl": "https://github.com/nullRoot-Red",
+      "researcher": "Debajyoti0-0",
+      "researcherUrl": "https://github.com/Debajyoti0-0",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "4:31 PM CDT",
-      "firstSeenAt": "2026-07-23T21:31:22Z",
+      "difficulty": "moderate",
+      "added": "10:13 AM CDT",
+      "firstSeenAt": "2026-07-25T15:13:41Z",
       "language": "Python",
-      "summary": "Proof-of-concept and offensive security research analyzing (MCPJam Inspector Unauthenticated RCE, Patched in v1.4.3+).",
-      "technicalSummary": "Proof-of-concept and offensive security research analyzing (MCPJam Inspector Unauthenticated RCE, Patched in v1.4.3+).",
-      "breakdown": "Proof-of-concept and offensive security research analyzing (MCPJam Inspector Unauthenticated RCE, Patched in v1.4.3+).",
-      "whatBroke": "Proof-of-concept and offensive security research analyzing (MCPJam Inspector Unauthenticated RCE, Patched in v1.4.3+).",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at nullRoot-Red/CVE-2026-23744.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/nullRoot-Red/CVE-2026-23744\ncd CVE-2026-23744\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
+      "technicalSummary": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
+      "breakdown": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
+      "whatBroke": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Debajyoti0-0/CVE-2026-60206.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Debajyoti0-0/CVE-2026-60206\ncd CVE-2026-60206\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -684,21 +620,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "RCE"
+        "Auth Bypass"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 5,
+      "weaponization": 73,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/nullRoot-Red/CVE-2026-23744"
+          "https://github.com/Debajyoti0-0/CVE-2026-60206"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
+          "https://www.oracle.com/security-alerts/cpujul2026.html"
         ]
       ]
     },
@@ -754,7 +690,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -763,6 +699,310 @@
         [
           "Vendor Advisory",
           "https://github.com/alibaba/fastjson2/wiki/Security-Advisory:-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-39875",
+      "title": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-39875"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "mac-123456789-lab",
+      "researcherUrl": "https://github.com/mac-123456789-lab",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:14 PM CDT",
+      "firstSeenAt": "2026-07-27T19:14:06Z",
+      "language": "Python",
+      "summary": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
+      "technicalSummary": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
+      "breakdown": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
+      "whatBroke": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE\ncd CVE-2026-39875-macOS-CUPS-LPE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.apple.com/en-us/128067"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-64725",
+      "title": "A PoC for CVE-2026-64725",
+      "ecosystem": "ios",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/altvist/cve-2026-64725-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "poc/gen_marker_oob_aiff.py",
+          "poc/marker_oob_harness.c"
+        ],
+        "attackFiles": [
+          "poc/gen_marker_oob_aiff.py",
+          "poc/marker_oob_harness.c"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-64725"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "altvist",
+      "researcherUrl": "https://github.com/altvist",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:11 AM CDT",
+      "firstSeenAt": "2026-07-28T11:11:28Z",
+      "language": "C",
+      "summary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.6 and iPadOS 26.6, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6, tvOS 26.6, visionOS 26.6, watchOS 26.6. An.",
+      "technicalSummary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.6 and iPadOS 26.6, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6, tvOS 26.6, visionOS 26.6, watchOS 26.6. An.",
+      "breakdown": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.6 and iPadOS 26.6, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6, tvOS 26.6, visionOS 26.6, watchOS 26.6. An.",
+      "whatBroke": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.6 and iPadOS 26.6, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6, tvOS 26.6, visionOS 26.6, watchOS 26.6. An.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at altvist/cve-2026-64725-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/altvist/cve-2026-64725-poc\ncd cve-2026-64725-poc\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "iOS",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/altvist/cve-2026-64725-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.apple.com/en-us/128066"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-55993",
+      "title": "PoC reproducer for CVE-2026-55993 (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-55993",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-55993"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:29 AM CDT",
+      "firstSeenAt": "2026-07-29T05:29:50Z",
+      "language": "Java",
+      "summary": "PoC reproducer for (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies connection query parameters onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks.",
+      "technicalSummary": "PoC reproducer for (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies connection query parameters onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks.",
+      "breakdown": "PoC reproducer for (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies connection query parameters onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks.",
+      "whatBroke": "PoC reproducer for (Apache Camel camel-atmosphere-websocket): the WebSocket consumer copies connection query parameters onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-55993.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-55993\ncd CVE-2026-55993\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-55993"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-55993.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-55994",
+      "title": "PoC reproducer for CVE-2026-55994 (Apache Camel camel-iggy): the consumer copies an Iggy message's.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-55994",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-55994"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:29 AM CDT",
+      "firstSeenAt": "2026-07-29T05:29:50Z",
+      "language": "Java",
+      "summary": "PoC reproducer for (Apache Camel camel-iggy): the consumer copies an Iggy message's user-headers onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks resolved property.",
+      "technicalSummary": "PoC reproducer for (Apache Camel camel-iggy): the consumer copies an Iggy message's user-headers onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks resolved property.",
+      "breakdown": "PoC reproducer for (Apache Camel camel-iggy): the consumer copies an Iggy message's user-headers onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks resolved property.",
+      "whatBroke": "PoC reproducer for (Apache Camel camel-iggy): the consumer copies an Iggy message's user-headers onto the Exchange unfiltered, so an injected CamelHttpUri drives a server-side request (SSRF) and leaks resolved property.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-55994.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-55994\ncd CVE-2026-55994\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-55994"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-55994.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-40000",
+      "title": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Skorpion96/CVE-2026-40000",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "IntentLauncher/build.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-40000"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Skorpion96",
+      "researcherUrl": "https://github.com/Skorpion96",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:52 PM CDT",
+      "firstSeenAt": "2026-07-27T18:52:47Z",
+      "language": "Java",
+      "summary": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
+      "technicalSummary": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
+      "breakdown": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
+      "whatBroke": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Skorpion96/CVE-2026-40000.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Skorpion96/CVE-2026-40000\ncd CVE-2026-40000\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "File Read"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Skorpion96/CVE-2026-40000"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.zte.com.cn/zte-iccp-isupport-webui/bulletin/detail/7341653040963675660"
         ]
       ]
     },
@@ -821,7 +1061,7 @@
       ],
       "confidence": 98,
       "weaponization": 79,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -830,260 +1070,6 @@
         [
           "Vendor Advisory",
           "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-15158",
-      "title": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-58480",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-15158",
-          "CVE-2026-58480"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:59 AM CDT",
-      "firstSeenAt": "2026-07-26T08:59:36Z",
-      "language": "Python",
-      "summary": "/ \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "technicalSummary": "/ \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "breakdown": "/ \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "whatBroke": "/ \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-58480.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-58480\ncd CVE-2026-58480\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-58480"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/blocksy-companion/tags/2.1.46/framework/premium/extensions/custom-fonts/extension.php#L137"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-39875",
-      "title": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-39875"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "mac-123456789-lab",
-      "researcherUrl": "https://github.com/mac-123456789-lab",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:14 PM CDT",
-      "firstSeenAt": "2026-07-27T19:14:06Z",
-      "language": "Python",
-      "summary": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
-      "technicalSummary": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
-      "breakdown": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
-      "whatBroke": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE\ncd CVE-2026-39875-macOS-CUPS-LPE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/128067"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-58480",
-      "title": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-58480",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-15158",
-          "CVE-2026-58480"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:59 AM CDT",
-      "firstSeenAt": "2026-07-26T08:59:36Z",
-      "language": "Python",
-      "summary": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "technicalSummary": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "breakdown": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "whatBroke": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-58480.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-58480\ncd CVE-2026-58480\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-58480"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/blocksy-companion/vulnerability/wordpress-blocksy-companion-plugin-2-1-46-unauthenticated-arbitrary-file-upload-vulnerability"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-9198",
-      "title": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/samael0x4/CVE-2026-9198",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "2026-9198.yaml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-9198"
-        ],
-        "language": "YAML"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "samael0x4",
-      "researcherUrl": "https://github.com/samael0x4",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:50 AM CDT",
-      "firstSeenAt": "2026-07-28T07:50:48Z",
-      "language": "YAML",
-      "summary": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
-      "technicalSummary": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
-      "breakdown": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
-      "whatBroke": "IBM Langflow OSS 1.0.0 through 1.10.0 contains a remote code execution [RCE]",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at samael0x4/CVE-2026-9198.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/samael0x4/CVE-2026-9198\ncd CVE-2026-9198\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/samael0x4/CVE-2026-9198"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.ibm.com/support/pages/node/7278927"
         ]
       ]
     },
@@ -1142,7 +1128,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1151,128 +1137,124 @@
       ]
     },
     {
-      "cve": "CVE-2026-40000",
-      "title": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from.",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-15158",
+      "title": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth.",
+      "ecosystem": "web",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Skorpion96/CVE-2026-40000",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-58480",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "IntentLauncher/build.sh"
+          "exploit.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "exploit.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-40000"
+          "CVE-2026-15158",
+          "CVE-2026-58480"
         ],
-        "language": "Java"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Skorpion96",
-      "researcherUrl": "https://github.com/Skorpion96",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:52 PM CDT",
-      "firstSeenAt": "2026-07-27T18:52:47Z",
-      "language": "Java",
-      "summary": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
-      "technicalSummary": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
-      "breakdown": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
-      "whatBroke": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Skorpion96/CVE-2026-40000.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Skorpion96/CVE-2026-40000\ncd CVE-2026-40000\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "3:59 AM CDT",
+      "firstSeenAt": "2026-07-26T08:59:36Z",
+      "language": "Python",
+      "summary": "/ \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "technicalSummary": "/ \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "breakdown": "/ \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "whatBroke": "/ \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-58480.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-58480\ncd CVE-2026-58480\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "File Read"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/Skorpion96/CVE-2026-40000"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.zte.com.cn/zte-iccp-isupport-webui/bulletin/detail/7341653040963675660"
+          "https://github.com/shinthink/CVE-2026-58480"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-26216",
-      "title": "\u2014 Crawl4AI unauthenticated RCE via `hooks` (GHSA-5882-5rx9-xgxp)",
+      "cve": "CVE-2026-58480",
+      "title": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth.",
       "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "high",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/joaovicdev/EXPLOIT-CVE-2026-26216",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-58480",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "docker-compose.yml",
-          "exploit/exploit.py",
-          "vulnerable-app/hook_manager.py",
-          "vulnerable-app/server.py"
+          "exploit.py"
         ],
         "attackFiles": [
-          "exploit/exploit.py"
+          "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-26216"
+          "CVE-2026-15158",
+          "CVE-2026-58480"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "joaovicdev",
-      "researcherUrl": "https://github.com/joaovicdev",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:07 PM CDT",
-      "firstSeenAt": "2026-07-25T17:07:31Z",
+      "added": "3:59 AM CDT",
+      "firstSeenAt": "2026-07-26T08:59:36Z",
       "language": "Python",
-      "summary": "Crawl4AI versions prior to 0.8.0 contain a remote code execution vulnerability in the Docker API deployment. The /crawl endpoint accepts a hooks parameter containing Python code that is executed using exec(). The __import__.",
-      "technicalSummary": "Crawl4AI versions prior to 0.8.0 contain a remote code execution vulnerability in the Docker API deployment. The /crawl endpoint accepts a hooks parameter containing Python code that is executed using exec(). The __import__.",
-      "breakdown": "Crawl4AI versions prior to 0.8.0 contain a remote code execution vulnerability in the Docker API deployment. The /crawl endpoint accepts a hooks parameter containing Python code that is executed using exec(). The __import__.",
-      "whatBroke": "Crawl4AI versions prior to 0.8.0 contain a remote code execution vulnerability in the Docker API deployment. The /crawl endpoint accepts a hooks parameter containing Python code that is executed using exec(). The __import__.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at joaovicdev/EXPLOIT-CVE-2026-26216.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/joaovicdev/EXPLOIT-CVE-2026-26216\ncd EXPLOIT-CVE-2026-26216\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "technicalSummary": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "breakdown": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "whatBroke": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-58480.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-58480\ncd CVE-2026-58480\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Web",
-        "Kubernetes",
+        "Webstack",
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 74,
+      "weaponization": 73,
       "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/joaovicdev/EXPLOIT-CVE-2026-26216"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/unclecode/crawl4ai/blob/main/docs/blog/release-v0.8.0.md"
+          "https://github.com/shinthink/CVE-2026-58480"
         ]
       ]
     }
