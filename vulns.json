@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-29T20:14:56Z",
+  "updatedAt": "2026-07-30T05:15:51Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -115,36 +115,35 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/razureink/cve-2026-63030_60137-wordpress_rce_reproduction",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-63030",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "exploit.py"
+          "cve_2026_63030.py"
         ],
-        "attackFiles": [
-          "exploit.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
+          "CVE-2026-60137",
           "CVE-2026-63030"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Elastic Security Labs",
-      "researcherUrl": "https://www.elastic.co/security-labs",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "12:29 AM CDT",
-      "firstSeenAt": "2026-07-29T05:29:50Z",
+      "added": "5:48 AM CDT",
+      "firstSeenAt": "2026-07-24T10:48:23Z",
       "language": "Python",
-      "summary": "CVE Reproduction: cve-2026-63030_60137-wordpress_rce_reproduction",
-      "technicalSummary": "On July 17, 2026, Searchlight Cyber disclosed wp2shell , a pre-authentication remote code execution chain in WordPress Core (<a.",
-      "breakdown": "On July 17, 2026, Searchlight Cyber disclosed wp2shell , a pre-authentication remote code execution chain in WordPress Core (<a.",
-      "whatBroke": "CVE Reproduction: cve-2026-63030_60137-wordpress_rce_reproduction",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at razureink/cve-2026-63030_60137-wordpress_rce_reproduction.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/razureink/cve-2026-63030_60137-wordpress_rce_reproduction\ncd cve-2026-63030_60137-wordpress_rce_reproduction\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
+      "technicalSummary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
+      "breakdown": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
+      "whatBroke": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-63030.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Core",
         "credential access from service context",
@@ -161,15 +160,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
-          "https://github.com/razureink/cve-2026-63030_60137-wordpress_rce_reproduction"
-        ],
-        [
-          "Technical Paper",
-          "https://www.elastic.co/security-labs/wp2shell-wordpress-rce-detection-elastic-defend"
+          "https://github.com/shinthink/CVE-2026-63030"
         ],
         [
           "Vendor Advisory",
@@ -200,16 +195,16 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Elastic Security Labs",
-      "researcherUrl": "https://www.elastic.co/security-labs",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
       "difficulty": "easy",
       "added": "5:48 AM CDT",
       "firstSeenAt": "2026-07-24T10:48:23Z",
       "language": "Python",
       "summary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (CVE-2026-63030 + )",
-      "technicalSummary": "On July 17, 2026, Searchlight Cyber disclosed wp2shell , a pre-authentication remote code execution chain in WordPress Core (<a.",
-      "breakdown": "On July 17, 2026, Searchlight Cyber disclosed wp2shell , a pre-authentication remote code execution chain in WordPress Core (<a.",
+      "technicalSummary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (CVE-2026-63030 + )",
+      "breakdown": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (CVE-2026-63030 + )",
       "whatBroke": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (CVE-2026-63030 + )",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-63030.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
@@ -229,84 +224,15 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-63030"
         ],
         [
-          "Technical Paper",
-          "https://www.elastic.co/security-labs/wp2shell-wordpress-rce-detection-elastic-defend"
-        ],
-        [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-0770",
-      "title": "Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/razureink/cve-2026-0770-langflow_rce_reproduction",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-0770"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "razureink",
-      "researcherUrl": "https://github.com/razureink",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "12:29 AM CDT",
-      "firstSeenAt": "2026-07-29T05:29:50Z",
-      "language": "Python",
-      "summary": "CVE Reproduction: langflow_rce_reproduction",
-      "technicalSummary": "CVE Reproduction: langflow_rce_reproduction",
-      "breakdown": "CVE Reproduction: langflow_rce_reproduction",
-      "whatBroke": "CVE Reproduction: langflow_rce_reproduction",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at razureink/cve-2026-0770-langflow_rce_reproduction.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/razureink/cve-2026-0770-langflow_rce_reproduction\ncd cve-2026-0770-langflow_rce_reproduction\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Langflow",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/razureink/cve-2026-0770-langflow_rce_reproduction"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/langflow-ai/langflow/releases/tag/v1.9.0"
         ]
       ]
     },
@@ -363,7 +289,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -430,7 +356,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -470,8 +396,8 @@
       "researcherUrl": "https://github.com/CerberusMrXi",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:07 PM CDT",
-      "firstSeenAt": "2026-07-23T18:07:43Z",
+      "added": "12:15 AM CDT",
+      "firstSeenAt": "2026-07-30T05:15:51Z",
       "language": "Python",
       "summary": "Flowise Windows RCE exploit for. Bypasses environment variable validation via case-sensitive flaw. Uses node_options to inject arbitrary code through MCP stdio. Supports reverse shell, persistence, file upload, credential.",
       "technicalSummary": "Flowise Windows RCE exploit for. Bypasses environment variable validation via case-sensitive flaw. Uses node_options to inject arbitrary code through MCP stdio. Supports reverse shell, persistence, file upload, credential.",
@@ -494,7 +420,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -557,7 +483,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -621,7 +547,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -688,7 +614,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -752,7 +678,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -814,7 +740,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -878,7 +804,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -938,7 +864,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -1005,7 +931,7 @@
       ],
       "confidence": 98,
       "weaponization": 79,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1071,7 +997,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1136,11 +1062,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-58480"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/blocksy-companion/tags/2.1.46/framework/premium/extensions/custom-fonts/extension.php#L137"
         ]
       ]
     },
@@ -1196,11 +1126,77 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
           "https://github.com/GabrielHA12/Glassfish-research"
+        ],
+        [
+          "Vendor Advisory",
+          "https://gitlab.eclipse.org/security/cve-assignment/-/issues/87"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-57827",
+      "title": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 |.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-57827",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_57827.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-57827"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:19 PM CDT",
+      "firstSeenAt": "2026-07-29T20:19:30Z",
+      "language": "Python",
+      "summary": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
+      "technicalSummary": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
+      "breakdown": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
+      "whatBroke": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-57827.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-57827\ncd CVE-2026-57827\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-57827"
+        ],
+        [
+          "Vendor Advisory",
+          "https://mysites.guru/blog/rsfiles-unauthenticated-file-upload-rce/"
         ]
       ]
     },
@@ -1257,11 +1253,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-58480"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/blocksy-companion/vulnerability/wordpress-blocksy-companion-plugin-2-1-46-unauthenticated-arbitrary-file-upload-vulnerability"
         ]
       ]
     }
