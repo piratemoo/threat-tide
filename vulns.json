@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T20:21:02Z",
+  "updatedAt": "2026-07-31T05:43:23Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -67,70 +67,6 @@
   ],
   "vulns": [
     {
-      "cve": "CVE-2026-63030",
-      "title": "WordPress Core Interpretation Conflict Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-63030",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve_2026_63030.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-60137",
-          "CVE-2026-63030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "5:48 AM CDT",
-      "firstSeenAt": "2026-07-24T10:48:23Z",
-      "language": "Python",
-      "summary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
-      "technicalSummary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
-      "breakdown": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
-      "whatBroke": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-63030.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Core",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-63030"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-60137",
       "title": "WordPress Core SQL Injection Vulnerability",
       "ecosystem": "web",
@@ -156,9 +92,9 @@
       "researcher": "shinthink",
       "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "5:48 AM CDT",
-      "firstSeenAt": "2026-07-24T10:48:23Z",
+      "difficulty": "moderate",
+      "added": "12:43 AM CDT",
+      "firstSeenAt": "2026-07-31T05:43:23Z",
       "language": "Python",
       "summary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (CVE-2026-63030 + )",
       "technicalSummary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (CVE-2026-63030 + )",
@@ -181,8 +117,72 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 6,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-63030"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "title": "WordPress Core Interpretation Conflict Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-63030",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_63030.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:43 AM CDT",
+      "firstSeenAt": "2026-07-31T05:43:23Z",
+      "language": "Python",
+      "summary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
+      "technicalSummary": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
+      "breakdown": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
+      "whatBroke": "WordPress Core Pre-Auth RCE via REST Batch Route Confusion + SQLi (+ CVE-2026-60137)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-63030.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -221,7 +221,7 @@
       "researcher": "sfewer-r7",
       "researcherUrl": "https://github.com/sfewer-r7",
       "pocWorks": "Yes",
-      "difficulty": "easy",
+      "difficulty": "moderate",
       "added": "11:19 AM CDT",
       "firstSeenAt": "2026-07-28T16:19:31Z",
       "language": "Python",
@@ -246,8 +246,8 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 2,
+      "weaponization": 73,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -288,7 +288,7 @@
       "researcher": "s-vx",
       "researcherUrl": "https://github.com/s-vx",
       "pocWorks": "Yes",
-      "difficulty": "easy",
+      "difficulty": "moderate",
       "added": "3:05 PM CDT",
       "firstSeenAt": "2026-07-25T20:05:11Z",
       "language": "Python",
@@ -313,8 +313,8 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 5,
+      "weaponization": 73,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -378,7 +378,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -445,7 +445,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -507,7 +507,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -571,7 +571,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -580,6 +580,68 @@
         [
           "Vendor Advisory",
           "https://support.apple.com/en-us/128066"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-65883",
+      "title": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery +.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-65883",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_65883.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-65883"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:07 PM CDT",
+      "firstSeenAt": "2026-07-30T22:07:42Z",
+      "language": "Python",
+      "summary": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CVSS 10.0 | CWE-502 | aimy_captcha-less_form_guard < 20.1",
+      "technicalSummary": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CVSS 10.0 | CWE-502 | aimy_captcha-less_form_guard < 20.1",
+      "breakdown": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CVSS 10.0 | CWE-502 | aimy_captcha-less_form_guard < 20.1",
+      "whatBroke": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CVSS 10.0 | CWE-502 | aimy_captcha-less_form_guard < 20.1",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-65883.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-65883\ncd CVE-2026-65883\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-65883"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.aimy-extensions.com/joomla/captcha-less-form-guard.html"
         ]
       ]
     },
@@ -631,7 +693,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -691,7 +753,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -700,139 +762,6 @@
         [
           "Vendor Advisory",
           "https://support.zte.com.cn/zte-iccp-isupport-webui/bulletin/detail/7341653040963675660"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-41179",
-      "title": "RCE in rclone",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/s-vx/CVE-2026-41179",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "rce.py",
-          "run.sh",
-          "shell.sh"
-        ],
-        "attackFiles": [
-          "rce.py",
-          "shell.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-41179"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "s-vx",
-      "researcherUrl": "https://github.com/s-vx",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "11:13 PM CDT",
-      "firstSeenAt": "2026-07-27T04:13:43Z",
-      "language": "Python",
-      "summary": "RCE in rclone",
-      "technicalSummary": "RCE in rclone",
-      "breakdown": "RCE in rclone",
-      "whatBroke": "RCE in rclone",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at s-vx/CVE-2026-41179.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/s-vx/CVE-2026-41179\ncd CVE-2026-41179\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 79,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/s-vx/CVE-2026-41179"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-9198",
-      "title": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xgh057r3c0n/CVE-2026-9198",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-9198.py",
-          "CVE-2026-9198.yaml"
-        ],
-        "attackFiles": [
-          "CVE-2026-9198.py",
-          "CVE-2026-9198.yaml"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-9198"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xgh057r3c0n",
-      "researcherUrl": "https://github.com/0xgh057r3c0n",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:50 PM CDT",
-      "firstSeenAt": "2026-07-24T20:50:04Z",
-      "language": "Python",
-      "summary": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "technicalSummary": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "breakdown": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "whatBroke": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xgh057r3c0n/CVE-2026-9198.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xgh057r3c0n/CVE-2026-9198\ncd CVE-2026-9198\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xgh057r3c0n/CVE-2026-9198"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.ibm.com/support/pages/node/7278927"
         ]
       ]
     },
@@ -889,7 +818,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -953,7 +882,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1017,11 +946,82 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/GabrielHA12/Glassfish-research"
+        ],
+        [
+          "Vendor Advisory",
+          "https://gitlab.eclipse.org/security/cve-assignment/-/issues/87"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-41179",
+      "title": "RCE in rclone",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/s-vx/CVE-2026-41179",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "rce.py",
+          "run.sh",
+          "shell.sh"
+        ],
+        "attackFiles": [
+          "rce.py",
+          "shell.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-41179"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "s-vx",
+      "researcherUrl": "https://github.com/s-vx",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:13 PM CDT",
+      "firstSeenAt": "2026-07-27T04:13:43Z",
+      "language": "Python",
+      "summary": "RCE in rclone",
+      "technicalSummary": "RCE in rclone",
+      "breakdown": "RCE in rclone",
+      "whatBroke": "RCE in rclone",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at s-vx/CVE-2026-41179.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/s-vx/CVE-2026-41179\ncd CVE-2026-41179\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/s-vx/CVE-2026-41179"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
         ]
       ]
     },
@@ -1075,11 +1075,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-57827"
+        ],
+        [
+          "Vendor Advisory",
+          "https://mysites.guru/blog/rsfiles-unauthenticated-file-upload-rce/"
         ]
       ]
     },
@@ -1136,67 +1140,73 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-58480"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/blocksy-companion/vulnerability/wordpress-blocksy-companion-plugin-2-1-46-unauthenticated-arbitrary-file-upload-vulnerability"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-64600",
-      "title": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
+      "cve": "CVE-2026-61424",
+      "title": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags..",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/vulnquest58/VQ-RefluxCore",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-61424",
       "pocValidation": {
         "valid": true,
-        "score": 7,
+        "score": 9,
         "codeFiles": [
-          "vq-refluxcore.sh"
+          "cve_2026_61424.py"
         ],
         "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-64600"
+          "CVE-2026-61424"
         ],
-        "language": "Shell"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "vulnquest58",
-      "researcherUrl": "https://github.com/vulnquest58",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:27 PM CDT",
-      "firstSeenAt": "2026-07-24T23:27:22Z",
-      "language": "Shell",
-      "summary": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
-      "technicalSummary": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
-      "breakdown": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
-      "whatBroke": "is an advanced security research framework designed to model, analyze, and demonstrate Local Privilege Escalation (LPE) mechanics associated with kernel-level race conditions and filesystem structure vulnerabilities (/ RefluXFS)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at vulnquest58/VQ-RefluxCore.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/vulnquest58/VQ-RefluxCore\ncd VQ-RefluxCore\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "3:37 PM CDT",
+      "firstSeenAt": "2026-07-30T20:37:37Z",
+      "language": "Python",
+      "summary": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "technicalSummary": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "breakdown": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "whatBroke": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-61424.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-61424\ncd CVE-2026-61424\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
+        "Web",
+        "Webstack",
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/vulnquest58/VQ-RefluxCore"
+          "https://github.com/shinthink/CVE-2026-61424"
         ]
       ]
     }
