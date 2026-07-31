@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T15:24:51Z",
+  "updatedAt": "2026-07-31T20:24:48Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,19 @@
   ],
   "research": [
     {
+      "title": "Elastic goes all-in on Hacker Summer Camp at Black Hat and DEF CON in Las Vegas",
+      "source": "Elastic Security Labs",
+      "sourceUrl": "https://www.elastic.co/security-labs",
+      "url": "https://www.elastic.co/security-labs/elastic-security-black-hat-defcon-2026",
+      "summary": "At Elastic, we know that the best way to build security tools is to bring them to the community, have security pros use them, and let them tell us what features and functionality matter and why. This year, we\u2019re excited to do this at Black Hat and DEFCON,.",
+      "publishedAt": "2026-07-31T23:59:59Z",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "Kernel"
+      ]
+    },
+    {
       "title": "Exploring the Hugging Face Breach: mapping AI agent tactics to Elastic Defend",
       "source": "Elastic Security Labs",
       "sourceUrl": "https://www.elastic.co/security-labs",
@@ -62,19 +75,6 @@
         "Windows",
         "ADCS",
         "RCE"
-      ]
-    },
-    {
-      "title": "Elastic goes all-in on Hacker Summer Camp at Black Hat and DEF CON in Las Vegas",
-      "source": "Elastic Security Labs",
-      "sourceUrl": "https://www.elastic.co/security-labs",
-      "url": "https://www.elastic.co/security-labs/elastic-security-black-hat-defcon-2026",
-      "summary": "At Elastic, we know that the best way to build security tools is to bring them to the community, have security pros use them, and let them tell us what features and functionality matter and why. This year, we\u2019re excited to do this at Black Hat and DEFCON,.",
-      "publishedAt": "2026-07-31T00:00:00Z",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "Kernel"
       ]
     }
   ],
@@ -138,6 +138,72 @@
         [
           "Vendor Advisory",
           "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-50522",
+      "title": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+      "ecosystem": "windows",
+      "category": "sharepoint",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/4minx/CVE-2026-50522",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-50522.py",
+          "ysoserial/ExploitClass.cs",
+          "ysoserial/GhostWebShell.cs"
+        ],
+        "attackFiles": [
+          "CVE-2026-50522.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-50522"
+        ],
+        "language": "C#"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "4minx",
+      "researcherUrl": "https://github.com/4minx",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "3:23 AM CDT",
+      "firstSeenAt": "2026-07-25T08:23:28Z",
+      "language": "C#",
+      "summary": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+      "technicalSummary": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+      "breakdown": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+      "whatBroke": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 4minx/CVE-2026-50522.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/4minx/CVE-2026-50522\ncd CVE-2026-50522\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed SharePoint",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "SharePoint",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/4minx/CVE-2026-50522"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522"
         ]
       ]
     },
@@ -270,6 +336,78 @@
         [
           "Vendor Advisory",
           "https://cgit.git.savannah.gnu.org/cgit/inetutils.git"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43499",
+      "title": "GhostLock (CVE-2026-43499) exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/NothingFumo/ghostlock-aresin",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "src/fops.c",
+          "src/main.c",
+          "src/pipe.c",
+          "src/preload.c",
+          "src/root.c",
+          "src/slide.c",
+          "src/standalone.c",
+          "src/su_daemon.c"
+        ],
+        "attackFiles": [
+          "tools/test_exploit.sh",
+          "tools/verify_candidates.py",
+          "tools/verify_offsets.py",
+          "tools/verify_simple.c"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-43499"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "NothingFumo",
+      "researcherUrl": "https://github.com/NothingFumo",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:56 PM CDT",
+      "firstSeenAt": "2026-07-31T18:56:09Z",
+      "language": "C",
+      "summary": "GhostLock () exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64 kernel privilege escalation via futex PI chain manipulation",
+      "technicalSummary": "GhostLock () exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64 kernel privilege escalation via futex PI chain manipulation",
+      "breakdown": "GhostLock () exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64 kernel privilege escalation via futex PI chain manipulation",
+      "whatBroke": "GhostLock () exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64 kernel privilege escalation via futex PI chain manipulation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at NothingFumo/ghostlock-aresin.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/NothingFumo/ghostlock-aresin\ncd ghostlock-aresin\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/NothingFumo/ghostlock-aresin"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
         ]
       ]
     },
@@ -527,6 +665,72 @@
         [
           "Vendor Advisory",
           "https://support.apple.com/en-us/128066"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-12960",
+      "title": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit.",
+      "ecosystem": "android",
+      "category": "framework",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/l0lsec/CVE-2026-12960",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc/ExploitCommandService.java",
+          "poc/PublicMsg.java",
+          "poc/poc_commandservice_exploit.sh"
+        ],
+        "attackFiles": [
+          "poc/ExploitCommandService.java",
+          "poc/PublicMsg.java",
+          "poc/poc_commandservice_exploit.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-12960"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "l0lsec",
+      "researcherUrl": "https://github.com/l0lsec",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:07 AM CDT",
+      "firstSeenAt": "2026-07-25T07:07:51Z",
+      "language": "Shell",
+      "summary": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
+      "technicalSummary": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
+      "breakdown": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
+      "whatBroke": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at l0lsec/CVE-2026-12960.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/l0lsec/CVE-2026-12960\ncd CVE-2026-12960\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Android",
+        "Framework",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/l0lsec/CVE-2026-12960"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.asus.com/security-advisory/"
         ]
       ]
     },
@@ -1042,189 +1246,6 @@
         [
           "Vendor Advisory",
           "https://github.com/alibaba/fastjson2/wiki/Security-Advisory:-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-2586",
-      "title": "\u2014 Eclipse GlassFish EL injection to RCE",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/GabrielHA12/Glassfish-research",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "CVE-2026-2586.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-2586.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-2586"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "GabrielHA12",
-      "researcherUrl": "https://github.com/GabrielHA12",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:31 AM CDT",
-      "firstSeenAt": "2026-07-29T16:31:17Z",
-      "language": "Python",
-      "summary": "\u2014 Eclipse GlassFish EL injection to RCE",
-      "technicalSummary": "\u2014 Eclipse GlassFish EL injection to RCE",
-      "breakdown": "\u2014 Eclipse GlassFish EL injection to RCE",
-      "whatBroke": "\u2014 Eclipse GlassFish EL injection to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at GabrielHA12/Glassfish-research.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/GabrielHA12/Glassfish-research\ncd Glassfish-research\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/GabrielHA12/Glassfish-research"
-        ],
-        [
-          "Vendor Advisory",
-          "https://gitlab.eclipse.org/security/cve-assignment/-/issues/87"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-57827",
-      "title": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 |.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-57827",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve_2026_57827.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-57827"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:19 PM CDT",
-      "firstSeenAt": "2026-07-29T20:19:30Z",
-      "language": "Python",
-      "summary": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
-      "technicalSummary": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
-      "breakdown": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
-      "whatBroke": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-57827.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-57827\ncd CVE-2026-57827\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-57827"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-58480",
-      "title": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-58480",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-15158",
-          "CVE-2026-58480"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:59 AM CDT",
-      "firstSeenAt": "2026-07-26T08:59:36Z",
-      "language": "Python",
-      "summary": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "technicalSummary": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "breakdown": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "whatBroke": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-58480.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-58480\ncd CVE-2026-58480\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-58480"
         ]
       ]
     }
