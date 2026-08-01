@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T05:34:18Z",
+  "updatedAt": "2026-08-01T14:38:28Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -142,72 +142,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-50522",
-      "title": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
-      "ecosystem": "windows",
-      "category": "sharepoint",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/4minx/CVE-2026-50522",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-50522.py",
-          "ysoserial/ExploitClass.cs",
-          "ysoserial/GhostWebShell.cs"
-        ],
-        "attackFiles": [
-          "CVE-2026-50522.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-50522"
-        ],
-        "language": "C#"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "4minx",
-      "researcherUrl": "https://github.com/4minx",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "12:34 AM CDT",
-      "firstSeenAt": "2026-08-01T05:34:18Z",
-      "language": "C#",
-      "summary": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
-      "technicalSummary": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
-      "breakdown": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
-      "whatBroke": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 4minx/CVE-2026-50522.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/4minx/CVE-2026-50522\ncd CVE-2026-50522\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed SharePoint",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "SharePoint",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/4minx/CVE-2026-50522"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-16232",
       "title": "Check Point SmartConsole Improper Authentication Vulnerability",
       "ecosystem": "cloud",
@@ -217,14 +151,14 @@
       "pocUrl": "https://github.com/sfewer-r7/CVE-2026-16232",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "CVE-2026-16232.py"
         ],
         "attackFiles": [
           "CVE-2026-16232.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-16232"
         ],
@@ -475,73 +409,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-14266",
-      "title": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/liyuxuan504-byte/CVE-2026-14266",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc/poc-cve-2026-14266-rce.py",
-          "tools/04-heap-analyze.ps1",
-          "tools/05-mini-debugger.ps1",
-          "tools/06-guard-dump.ps1"
-        ],
-        "attackFiles": [
-          "poc/poc-cve-2026-14266-rce.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-14266"
-        ],
-        "language": "PowerShell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "liyuxuan504-byte",
-      "researcherUrl": "https://github.com/liyuxuan504-byte",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:34 AM CDT",
-      "firstSeenAt": "2026-08-01T05:34:18Z",
-      "language": "PowerShell",
-      "summary": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
-      "technicalSummary": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
-      "breakdown": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
-      "whatBroke": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at liyuxuan504-byte/CVE-2026-14266.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/liyuxuan504-byte/CVE-2026-14266\ncd CVE-2026-14266\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/liyuxuan504-byte/CVE-2026-14266"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.zerodayinitiative.com/advisories/ZDI-26-444/"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-39875",
       "title": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
       "ecosystem": "cloud",
@@ -551,14 +418,14 @@
       "pocUrl": "https://github.com/mac-123456789-lab/CVE-2026-39875-macOS-CUPS-LPE",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "poc.py"
         ],
         "attackFiles": [
           "poc.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-39875"
         ],
@@ -664,72 +531,6 @@
         [
           "Vendor Advisory",
           "https://support.apple.com/en-us/128066"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-12960",
-      "title": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit.",
-      "ecosystem": "android",
-      "category": "framework",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/l0lsec/CVE-2026-12960",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc/ExploitCommandService.java",
-          "poc/PublicMsg.java",
-          "poc/poc_commandservice_exploit.sh"
-        ],
-        "attackFiles": [
-          "poc/ExploitCommandService.java",
-          "poc/PublicMsg.java",
-          "poc/poc_commandservice_exploit.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-12960"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "l0lsec",
-      "researcherUrl": "https://github.com/l0lsec",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:34 AM CDT",
-      "firstSeenAt": "2026-08-01T05:34:18Z",
-      "language": "Shell",
-      "summary": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
-      "technicalSummary": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
-      "breakdown": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
-      "whatBroke": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at l0lsec/CVE-2026-12960.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/l0lsec/CVE-2026-12960\ncd CVE-2026-12960\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Android",
-        "Framework",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/l0lsec/CVE-2026-12960"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.asus.com/security-advisory/"
         ]
       ]
     },
@@ -1149,10 +950,10 @@
       "added": "9:58 PM CDT",
       "firstSeenAt": "2026-07-28T02:58:02Z",
       "language": "Java",
-      "summary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "summary": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
+      "technicalSummary": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
+      "breakdown": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
+      "whatBroke": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at why-success/fastjson-rce-lab.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/why-success/fastjson-rce-lab\ncd fastjson-rce-lab\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -1175,6 +976,10 @@
         [
           "GitHub",
           "https://github.com/why-success/fastjson-rce-lab"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/alibaba/fastjson2/wiki/Security-Advisory:-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83"
         ]
       ]
     },
@@ -1235,6 +1040,199 @@
         [
           "GitHub",
           "https://github.com/GabrielHA12/Glassfish-research"
+        ],
+        [
+          "Vendor Advisory",
+          "https://gitlab.eclipse.org/security/cve-assignment/-/issues/87"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-57827",
+      "title": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 |.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-57827",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_57827.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-57827"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:19 PM CDT",
+      "firstSeenAt": "2026-07-29T20:19:30Z",
+      "language": "Python",
+      "summary": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
+      "technicalSummary": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
+      "breakdown": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
+      "whatBroke": "\u2014 RSFiles! Joomla Component Unauthenticated File Upload RCE. Split-controller upload bypass. CVSS 9.8 | CWE-434 | com_rsfiles < 1.17.12",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-57827.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-57827\ncd CVE-2026-57827\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-57827"
+        ],
+        [
+          "Vendor Advisory",
+          "https://mysites.guru/blog/rsfiles-unauthenticated-file-upload-rce/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-58480",
+      "title": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-58480",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-15158",
+          "CVE-2026-58480"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:59 AM CDT",
+      "firstSeenAt": "2026-07-26T08:59:36Z",
+      "language": "Python",
+      "summary": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "technicalSummary": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "breakdown": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "whatBroke": "/ CVE-2026-15158 \u2014 Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-58480.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-58480\ncd CVE-2026-58480\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-58480"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/blocksy-companion/vulnerability/wordpress-blocksy-companion-plugin-2-1-46-unauthenticated-arbitrary-file-upload-vulnerability"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-61424",
+      "title": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags..",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-61424",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_61424.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-61424"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:37 PM CDT",
+      "firstSeenAt": "2026-07-30T20:37:37Z",
+      "language": "Python",
+      "summary": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "technicalSummary": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "breakdown": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "whatBroke": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-61424.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-61424\ncd CVE-2026-61424\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-61424"
+        ],
+        [
+          "Vendor Advisory",
+          "https://dj-extensions.com/dj-classifieds"
         ]
       ]
     }
