@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T20:24:48Z",
+  "updatedAt": "2026-08-01T05:34:18Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -64,17 +64,17 @@
       ]
     },
     {
-      "title": "Exploring the Hugging Face Breach: mapping AI agent tactics to Elastic Defend",
-      "source": "Elastic Security Labs",
-      "sourceUrl": "https://www.elastic.co/security-labs",
-      "url": "https://www.elastic.co/security-labs/ai-agent-attack-detection-hugging-face-breach",
-      "summary": "Hugging Face reconstructed more than 17,000 attacker events from a July 2026 intrusion driven by an autonomous artificial intelligence (AI) agent. The path was familiar: untrusted dataset content abused a processing worker (file disclosure, then code.",
-      "publishedAt": "2026-07-31T00:00:00Z",
-      "cves": [],
+      "title": "CVE-2026-20316 | Cisco Secure Firewall Management Center Static Credential Vulnerability",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-20316/",
+      "summary": "CVE-2026-20316 is a static credential vulnerability affecting Cisco Secure Firewall Management Center (FMC), Cisco\u2019s centralized management platform for Secure Firewall deployments. The vulnerability allows a remote, unauthenticated attacker to authenticate.",
+      "publishedAt": "2026-07-31T21:13:01Z",
+      "cves": [
+        "CVE-2026-20316"
+      ],
       "tags": [
-        "Windows",
-        "ADCS",
-        "RCE"
+        "Webstack"
       ]
     }
   ],
@@ -129,7 +129,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -171,8 +171,8 @@
       "researcherUrl": "https://github.com/4minx",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:23 AM CDT",
-      "firstSeenAt": "2026-07-25T08:23:28Z",
+      "added": "12:34 AM CDT",
+      "firstSeenAt": "2026-08-01T05:34:18Z",
       "language": "C#",
       "summary": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
       "technicalSummary": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
@@ -195,7 +195,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -260,7 +260,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -302,8 +302,8 @@
       "researcherUrl": "https://github.com/s-vx",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:05 PM CDT",
-      "firstSeenAt": "2026-07-25T20:05:11Z",
+      "added": "12:34 AM CDT",
+      "firstSeenAt": "2026-08-01T05:34:18Z",
       "language": "Python",
       "summary": "Auth Bypass in inetutils-telnetd",
       "technicalSummary": "Auth Bypass in inetutils-telnetd",
@@ -327,7 +327,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -341,51 +341,50 @@
     },
     {
       "cve": "CVE-2026-43499",
-      "title": "GhostLock (CVE-2026-43499) exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64.",
+      "title": "exploit adapter for MT6985 MediaTek Dimensity 9300 (vivo PD2241)",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/NothingFumo/ghostlock-aresin",
+      "pocUrl": "https://github.com/233laoliu/mt6985-CVE-2026-43499",
       "pocValidation": {
         "valid": true,
-        "score": 10,
+        "score": 11,
         "codeFiles": [
-          "src/fops.c",
-          "src/main.c",
-          "src/pipe.c",
-          "src/preload.c",
-          "src/root.c",
-          "src/slide.c",
-          "src/standalone.c",
-          "src/su_daemon.c"
+          "scripts/build_on_server.py",
+          "scripts/dump_abi_struct.py",
+          "scripts/extract_kernel_tar.py",
+          "scripts/server_check.py",
+          "scripts/server_compile.py",
+          "scripts/server_setup.py",
+          "scripts/verify_abi_offsets.py",
+          "scripts/verify_offsets.py"
         ],
         "attackFiles": [
-          "tools/test_exploit.sh",
-          "tools/verify_candidates.py",
-          "tools/verify_offsets.py",
-          "tools/verify_simple.c"
+          "scripts/server_check.py",
+          "scripts/verify_abi_offsets.py",
+          "scripts/verify_offsets.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-43499"
         ],
-        "language": "C"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "NothingFumo",
-      "researcherUrl": "https://github.com/NothingFumo",
+      "researcher": "233laoliu",
+      "researcherUrl": "https://github.com/233laoliu",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:56 PM CDT",
-      "firstSeenAt": "2026-07-31T18:56:09Z",
-      "language": "C",
-      "summary": "GhostLock () exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64 kernel privilege escalation via futex PI chain manipulation",
-      "technicalSummary": "GhostLock () exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64 kernel privilege escalation via futex PI chain manipulation",
-      "breakdown": "GhostLock () exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64 kernel privilege escalation via futex PI chain manipulation",
-      "whatBroke": "GhostLock () exploit for POCO F3 GT (aresin) \u2014 MediaTek Dimensity 1200, Linux 4.14.186 ARM64 kernel privilege escalation via futex PI chain manipulation",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at NothingFumo/ghostlock-aresin.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/NothingFumo/ghostlock-aresin\ncd ghostlock-aresin\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "3:16 AM CDT",
+      "firstSeenAt": "2026-07-29T08:16:43Z",
+      "language": "Python",
+      "summary": "exploit adapter for MT6985 MediaTek Dimensity 9300 (vivo PD2241)",
+      "technicalSummary": "exploit adapter for MT6985 MediaTek Dimensity 9300 (vivo PD2241)",
+      "breakdown": "exploit adapter for MT6985 MediaTek Dimensity 9300 (vivo PD2241)",
+      "whatBroke": "exploit adapter for MT6985 MediaTek Dimensity 9300 (vivo PD2241)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 233laoliu/mt6985-CVE-2026-43499.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/233laoliu/mt6985-CVE-2026-43499\ncd mt6985-CVE-2026-43499\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "local privilege escalation after a foothold",
@@ -395,15 +394,15 @@
       "tags": [
         "Linux",
         "Kernel",
-        "Local LPE"
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/NothingFumo/ghostlock-aresin"
+          "https://github.com/233laoliu/mt6985-CVE-2026-43499"
         ],
         [
           "Vendor Advisory",
@@ -439,8 +438,8 @@
       "researcherUrl": "https://github.com/Debajyoti0-0",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "10:13 AM CDT",
-      "firstSeenAt": "2026-07-25T15:13:41Z",
+      "added": "12:34 AM CDT",
+      "firstSeenAt": "2026-08-01T05:34:18Z",
       "language": "Python",
       "summary": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
       "technicalSummary": "Technical analysis and Proof-of-Concept for a critical Oracle WebLogic Server SAML authentication bypass vulnerability.",
@@ -463,7 +462,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -506,8 +505,8 @@
       "researcherUrl": "https://github.com/liyuxuan504-byte",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:13 AM CDT",
-      "firstSeenAt": "2026-07-25T12:13:30Z",
+      "added": "12:34 AM CDT",
+      "firstSeenAt": "2026-08-01T05:34:18Z",
       "language": "PowerShell",
       "summary": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
       "technicalSummary": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
@@ -530,7 +529,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -592,7 +591,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -656,7 +655,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -700,8 +699,8 @@
       "researcherUrl": "https://github.com/l0lsec",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:07 AM CDT",
-      "firstSeenAt": "2026-07-25T07:07:51Z",
+      "added": "12:34 AM CDT",
+      "firstSeenAt": "2026-08-01T05:34:18Z",
       "language": "Shell",
       "summary": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
       "technicalSummary": "Improper Export of Android Application Components in the ASUS Router app (com.asus.aihome). PoC, exploit APK, video, and vendor report. Fixed in 1.0.0.9.74.",
@@ -722,7 +721,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -786,7 +785,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -848,7 +847,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -908,7 +907,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -975,7 +974,7 @@
       ],
       "confidence": 98,
       "weaponization": 79,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1042,7 +1041,7 @@
       ],
       "confidence": 98,
       "weaponization": 76,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1051,72 +1050,6 @@
         [
           "Vendor Advisory",
           "https://github.com/dbgate/dbgate/releases/tag/v7.1.9"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-9198",
-      "title": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xgh057r3c0n/CVE-2026-9198",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-9198.py",
-          "CVE-2026-9198.yaml"
-        ],
-        "attackFiles": [
-          "CVE-2026-9198.py",
-          "CVE-2026-9198.yaml"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-9198"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xgh057r3c0n",
-      "researcherUrl": "https://github.com/0xgh057r3c0n",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:24 AM CDT",
-      "firstSeenAt": "2026-07-31T15:24:51Z",
-      "language": "Python",
-      "summary": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "technicalSummary": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "breakdown": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "whatBroke": "IBM Langflow Unauthenticated RCE via Auto-Login Bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xgh057r3c0n/CVE-2026-9198.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xgh057r3c0n/CVE-2026-9198\ncd CVE-2026-9198\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xgh057r3c0n/CVE-2026-9198"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.ibm.com/support/pages/node/7278927"
         ]
       ]
     },
@@ -1173,7 +1106,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1216,10 +1149,10 @@
       "added": "9:58 PM CDT",
       "firstSeenAt": "2026-07-28T02:58:02Z",
       "language": "Java",
-      "summary": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
-      "technicalSummary": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
-      "breakdown": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
-      "whatBroke": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
+      "summary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a remote code execution path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at why-success/fastjson-rce-lab.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/why-success/fastjson-rce-lab\ncd fastjson-rce-lab\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -1237,15 +1170,71 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/why-success/fastjson-rce-lab"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-2586",
+      "title": "\u2014 Eclipse GlassFish EL injection to RCE",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/GabrielHA12/Glassfish-research",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "CVE-2026-2586.py"
         ],
+        "attackFiles": [
+          "CVE-2026-2586.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-2586"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "GabrielHA12",
+      "researcherUrl": "https://github.com/GabrielHA12",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:31 AM CDT",
+      "firstSeenAt": "2026-07-29T16:31:17Z",
+      "language": "Python",
+      "summary": "\u2014 Eclipse GlassFish EL injection to RCE",
+      "technicalSummary": "\u2014 Eclipse GlassFish EL injection to RCE",
+      "breakdown": "\u2014 Eclipse GlassFish EL injection to RCE",
+      "whatBroke": "\u2014 Eclipse GlassFish EL injection to RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at GabrielHA12/Glassfish-research.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/GabrielHA12/Glassfish-research\ncd Glassfish-research\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
         [
-          "Vendor Advisory",
-          "https://github.com/alibaba/fastjson2/wiki/Security-Advisory:-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83"
+          "GitHub",
+          "https://github.com/GabrielHA12/Glassfish-research"
         ]
       ]
     }
