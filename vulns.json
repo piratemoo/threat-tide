@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T14:40:58Z",
+  "updatedAt": "2026-08-02T20:14:34Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -110,71 +110,6 @@
         [
           "Vendor Advisory",
           "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-39987",
-      "title": "Marimo Remote Code Execution Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/jasonbernier/CVE-2026-39987",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-39987"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "jasonbernier",
-      "researcherUrl": "https://github.com/jasonbernier",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:22 AM CDT",
-      "firstSeenAt": "2026-08-02T14:22:20Z",
-      "language": "Python",
-      "summary": "Simple POC for",
-      "technicalSummary": "Simple POC for",
-      "breakdown": "Simple POC for",
-      "whatBroke": "Simple POC for",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at jasonbernier/CVE-2026-39987.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/jasonbernier/CVE-2026-39987\ncd CVE-2026-39987\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Marimo",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/jasonbernier/CVE-2026-39987"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
         ]
       ]
     },
@@ -514,12 +449,12 @@
       "pocUrl": "https://github.com/shinthink/CVE-2026-65883",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 10,
         "codeFiles": [
           "cve_2026_65883.py"
         ],
         "attackFiles": [],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
           "CVE-2026-65883"
         ],
@@ -951,67 +886,9 @@
       ]
     },
     {
-      "cve": "CVE-2026-61424",
-      "title": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags..",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-61424",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve_2026_61424.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-61424"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:37 PM CDT",
-      "firstSeenAt": "2026-07-30T20:37:37Z",
-      "language": "Python",
-      "summary": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
-      "technicalSummary": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
-      "breakdown": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
-      "whatBroke": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-61424.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-61424\ncd CVE-2026-61424\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-61424"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-41651",
       "title": "Local privilege escalation via TOCTOU race condition in PackageKit's.",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
@@ -1052,7 +929,7 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "Local LPE"
       ],
@@ -1063,6 +940,10 @@
         [
           "GitHub",
           "https://github.com/gbuyssens/CVE-2026-41651"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/PackageKit/PackageKit/blob/04057883189efa225a7c785591aa87cb299782f8/src/pk-transaction.c#L2273-L2277"
         ]
       ]
     },
@@ -1128,6 +1009,150 @@
         [
           "GitHub",
           "https://github.com/ywh-jfellus/CVE-2026-65761"
+        ],
+        [
+          "Vendor Advisory",
+          "https://mysites.guru/blog/easystore-security-disclosure/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-54121",
+      "title": "(CertiGhost) without MachineAccountQuota POC",
+      "ecosystem": "windows",
+      "category": "adcs",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/KrakenEU/CVE-2026-54121-CertiGhost",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "certighost.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-54121"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "KrakenEU",
+      "researcherUrl": "https://github.com/KrakenEU",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:04 AM CDT",
+      "firstSeenAt": "2026-07-31T08:04:50Z",
+      "language": "Python",
+      "summary": "(CertiGhost) without MachineAccountQuota POC",
+      "technicalSummary": "(CertiGhost) without MachineAccountQuota POC",
+      "breakdown": "(CertiGhost) without MachineAccountQuota POC",
+      "whatBroke": "(CertiGhost) without MachineAccountQuota POC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at KrakenEU/CVE-2026-54121-CertiGhost.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/KrakenEU/CVE-2026-54121-CertiGhost\ncd CVE-2026-54121-CertiGhost\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "identity escalation or relay path",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "ADCS",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/KrakenEU/CVE-2026-54121-CertiGhost"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-54121"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-56121",
+      "title": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/luongtrieudai2005/Oraculum-Bugs-Found",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "bentoml/CWE-502-01-runner-deserialization-rce/oraculum/harness.py",
+          "bentoml/CWE-502-01-runner-deserialization-rce/poc/poc_direct.py",
+          "bentoml/CWE-502-01-runner-deserialization-rce/poc/repro.sh",
+          "bentoml/CWE-502-01-runner-deserialization-rce/poc/repro_runner.py",
+          "dvc/CWE-502-01-pickle-repro-args-rce/oraculum/harness.py",
+          "dvc/CWE-502-01-pickle-repro-args-rce/poc/poc_direct.py",
+          "dvc/CWE-502-01-pickle-repro-args-rce/poc/repro.sh",
+          "dvc/CWE-502-01-pickle-repro-args-rce/poc/repro_runner.py"
+        ],
+        "attackFiles": [
+          "bentoml/CWE-502-01-runner-deserialization-rce/oraculum/harness.py",
+          "bentoml/CWE-502-01-runner-deserialization-rce/poc/poc_direct.py",
+          "bentoml/CWE-502-01-runner-deserialization-rce/poc/repro.sh",
+          "bentoml/CWE-502-01-runner-deserialization-rce/poc/repro_runner.py",
+          "dvc/CWE-502-01-pickle-repro-args-rce/oraculum/harness.py",
+          "dvc/CWE-502-01-pickle-repro-args-rce/poc/poc_direct.py",
+          "dvc/CWE-502-01-pickle-repro-args-rce/poc/repro.sh",
+          "dvc/CWE-502-01-pickle-repro-args-rce/poc/repro_runner.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2024-9070",
+          "CVE-2025-27520",
+          "CVE-2026-56121"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "luongtrieudai2005",
+      "researcherUrl": "https://github.com/luongtrieudai2005",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:42 AM CDT",
+      "firstSeenAt": "2026-07-31T07:42:41Z",
+      "language": "Python",
+      "summary": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
+      "technicalSummary": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
+      "breakdown": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
+      "whatBroke": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at luongtrieudai2005/Oraculum-Bugs-Found.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/luongtrieudai2005/Oraculum-Bugs-Found\ncd Oraculum-Bugs-Found\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/luongtrieudai2005/Oraculum-Bugs-Found"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/feast-dev/feast/commit/835cda8e2c1359f1f496ad72701dbd6a73bdb25a"
         ]
       ]
     }
