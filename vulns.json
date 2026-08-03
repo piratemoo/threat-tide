@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T20:14:34Z",
+  "updatedAt": "2026-08-03T05:50:40Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -101,7 +101,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -166,7 +166,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -175,6 +175,71 @@
         [
           "Vendor Advisory",
           "https://support.checkpoint.com/results/sk/sk185169/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-1337",
+      "title": "A prompt injection in a code\u2011review bot that executes AI\u2011generated fixes in a sandbox. The sandbox uses a.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/George0Papasotiriou/CVE-2026-1337-AI-Coding-Assistant-Prompt-Injection-to-Sandbox-Escape",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "ai_code_review_bot.py",
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-1337"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "George0Papasotiriou",
+      "researcherUrl": "https://github.com/George0Papasotiriou",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:06 PM CDT",
+      "firstSeenAt": "2026-08-03T00:06:14Z",
+      "language": "Python",
+      "summary": "A prompt injection in a code\u2011review bot that executes AI\u2011generated fixes in a sandbox. The sandbox uses a blacklist to prevent dangerous commands, but a polyglot payload bypasses the filter and achieves remote code execution.",
+      "technicalSummary": "A prompt injection in a code\u2011review bot that executes AI\u2011generated fixes in a sandbox. The sandbox uses a blacklist to prevent dangerous commands, but a polyglot payload bypasses the filter and achieves remote code execution.",
+      "breakdown": "A prompt injection in a code\u2011review bot that executes AI\u2011generated fixes in a sandbox. The sandbox uses a blacklist to prevent dangerous commands, but a polyglot payload bypasses the filter and achieves remote code execution.",
+      "whatBroke": "A prompt injection in a code\u2011review bot that executes AI\u2011generated fixes in a sandbox. The sandbox uses a blacklist to prevent dangerous commands, but a polyglot payload bypasses the filter and achieves remote code execution.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at George0Papasotiriou/CVE-2026-1337-AI-Coding-Assistant-Prompt-Injection-to-Sandbox-Escape.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/George0Papasotiriou/CVE-2026-1337-AI-Coding-Assistant-Prompt-Injection-to-Sandbox-Escape\ncd CVE-2026-1337-AI-Coding-Assistant-Prompt-Injection-to-Sandbox-Escape\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/George0Papasotiriou/CVE-2026-1337-AI-Coding-Assistant-Prompt-Injection-to-Sandbox-Escape"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/JoakimBulow/CVE-2026-1337"
         ]
       ]
     },
@@ -237,7 +302,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -277,8 +342,8 @@
       "researcherUrl": "https://github.com/mac-123456789-lab",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:14 PM CDT",
-      "firstSeenAt": "2026-07-27T19:14:06Z",
+      "added": "12:50 AM CDT",
+      "firstSeenAt": "2026-08-03T05:50:40Z",
       "language": "Python",
       "summary": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
       "technicalSummary": "Unprivileged user to root on macOS Sonoma, Sequoia, and Tahoe. Patched in macOS 26.6 / 15.7.8 / 14.8.8.",
@@ -299,7 +364,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -363,7 +428,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -372,70 +437,6 @@
         [
           "Vendor Advisory",
           "https://support.apple.com/en-us/128066"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-66066",
-      "title": "Agent skill that audits a Rails codebase for CVE-2026-66066 (KindaRails2Shell) \u2014 Active Storage + libvips.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/paveg/rails-activestorage-vips-audit",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          ".github/dependabot.yml",
-          ".github/workflows/ci.yml",
-          "skills/rails-activestorage-vips-audit/scripts/collect-evidence.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-66066"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "paveg",
-      "researcherUrl": "https://github.com/paveg",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:10 AM CDT",
-      "firstSeenAt": "2026-07-29T16:10:53Z",
-      "language": "Shell",
-      "summary": "Agent skill that audits a Rails codebase for (KindaRails2Shell) \u2014 Active Storage + libvips arbitrary file read / RCE, checking Rails and libvips versions and block-untrusted mitigations",
-      "technicalSummary": "Agent skill that audits a Rails codebase for (KindaRails2Shell) \u2014 Active Storage + libvips arbitrary file read / RCE, checking Rails and libvips versions and block-untrusted mitigations",
-      "breakdown": "Agent skill that audits a Rails codebase for (KindaRails2Shell) \u2014 Active Storage + libvips arbitrary file read / RCE, checking Rails and libvips versions and block-untrusted mitigations",
-      "whatBroke": "Agent skill that audits a Rails codebase for (KindaRails2Shell) \u2014 Active Storage + libvips arbitrary file read / RCE, checking Rails and libvips versions and block-untrusted mitigations",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at paveg/rails-activestorage-vips-audit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/paveg/rails-activestorage-vips-audit\ncd rails-activestorage-vips-audit\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/paveg/rails-activestorage-vips-audit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/rails/rails/commit/1c01bb587206ee6eb0e1179c2cef96a6a47acb1e"
         ]
       ]
     },
@@ -449,12 +450,12 @@
       "pocUrl": "https://github.com/shinthink/CVE-2026-65883",
       "pocValidation": {
         "valid": true,
-        "score": 10,
+        "score": 9,
         "codeFiles": [
           "cve_2026_65883.py"
         ],
         "attackFiles": [],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-65883"
         ],
@@ -489,7 +490,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -498,6 +499,74 @@
         [
           "Vendor Advisory",
           "https://www.aimy-extensions.com/joomla/captcha-less-form-guard.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-66066",
+      "title": "PoC for CVE-2026-66066 in Ruby on Rails",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Zer0SumGam3/CVE-2026-66066-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "overlay/app/controllers/uploads_controller.rb",
+          "overlay/app/models/upload.rb",
+          "overlay/config/routes.rb",
+          "rails_vips_oast_poc.py",
+          "run_lab.sh"
+        ],
+        "attackFiles": [
+          "rails_vips_oast_poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-66066"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Zer0SumGam3",
+      "researcherUrl": "https://github.com/Zer0SumGam3",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:08 PM CDT",
+      "firstSeenAt": "2026-07-29T21:08:30Z",
+      "language": "Python",
+      "summary": "PoC for in Ruby on Rails",
+      "technicalSummary": "PoC for in Ruby on Rails",
+      "breakdown": "PoC for in Ruby on Rails",
+      "whatBroke": "PoC for in Ruby on Rails",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Zer0SumGam3/CVE-2026-66066-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Zer0SumGam3/CVE-2026-66066-POC\ncd CVE-2026-66066-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Zer0SumGam3/CVE-2026-66066-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/rails/rails/commit/1c01bb587206ee6eb0e1179c2cef96a6a47acb1e"
         ]
       ]
     },
@@ -527,8 +596,8 @@
       "researcherUrl": "https://github.com/Skorpion96",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:52 PM CDT",
-      "firstSeenAt": "2026-07-27T18:52:47Z",
+      "added": "12:50 AM CDT",
+      "firstSeenAt": "2026-08-03T05:50:40Z",
       "language": "Java",
       "summary": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
       "technicalSummary": "A poc for a vulnerability in ZTE File Manager (zte.com.cn.filer) which allows to read arbitrary files from other apps as the privileges of this file manager",
@@ -549,7 +618,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -558,73 +627,6 @@
         [
           "Vendor Advisory",
           "https://support.zte.com.cn/zte-iccp-isupport-webui/bulletin/detail/7341653040963675660"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-41179",
-      "title": "RCE in rclone",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/s-vx/CVE-2026-41179",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "rce.py",
-          "run.sh",
-          "shell.sh"
-        ],
-        "attackFiles": [
-          "rce.py",
-          "shell.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-41179"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "s-vx",
-      "researcherUrl": "https://github.com/s-vx",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "12:35 AM CDT",
-      "firstSeenAt": "2026-08-02T05:35:05Z",
-      "language": "Python",
-      "summary": "RCE in rclone",
-      "technicalSummary": "RCE in rclone",
-      "breakdown": "RCE in rclone",
-      "whatBroke": "RCE in rclone",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at s-vx/CVE-2026-41179.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/s-vx/CVE-2026-41179\ncd CVE-2026-41179\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 79,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/s-vx/CVE-2026-41179"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/rclone/rclone/blob/bf55d5e6d37fd86164a87782191f9e1ffcaafa82/backend/webdav/webdav.go"
         ]
       ]
     },
@@ -683,7 +685,7 @@
       ],
       "confidence": 98,
       "weaponization": 76,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -723,8 +725,8 @@
       "researcherUrl": "https://github.com/why-success",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "9:58 PM CDT",
-      "firstSeenAt": "2026-07-28T02:58:02Z",
+      "added": "12:50 AM CDT",
+      "firstSeenAt": "2026-08-03T05:50:40Z",
       "language": "Java",
       "summary": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
       "technicalSummary": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
@@ -747,7 +749,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -811,7 +813,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -820,6 +822,69 @@
         [
           "Vendor Advisory",
           "https://gitlab.eclipse.org/security/cve-assignment/-/issues/87"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-4040",
+      "title": "\u2013 Race Condition in File Upload Leading to RCE",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/George0Papasotiriou/CVE-2026-4040-Race-Condition-in-File-Upload-Leading-to-RCE",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit_race_upload.py",
+          "upload_server.py"
+        ],
+        "attackFiles": [
+          "exploit_race_upload.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-4040"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "George0Papasotiriou",
+      "researcherUrl": "https://github.com/George0Papasotiriou",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:46 PM CDT",
+      "firstSeenAt": "2026-08-03T01:46:54Z",
+      "language": "Python",
+      "summary": "A vulnerability was identified in OpenClaw up to 2026.2.17. This issue affects the function tools.exec.safeBins of the component File Existence Handler. The manipulation leads to information exposure through discrepancy. The.",
+      "technicalSummary": "A vulnerability was identified in OpenClaw up to 2026.2.17. This issue affects the function tools.exec.safeBins of the component File Existence Handler. The manipulation leads to information exposure through discrepancy. The.",
+      "breakdown": "A vulnerability was identified in OpenClaw up to 2026.2.17. This issue affects the function tools.exec.safeBins of the component File Existence Handler. The manipulation leads to information exposure through discrepancy. The.",
+      "whatBroke": "A vulnerability was identified in OpenClaw up to 2026.2.17. This issue affects the function tools.exec.safeBins of the component File Existence Handler. The manipulation leads to information exposure through discrepancy. The.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at George0Papasotiriou/CVE-2026-4040-Race-Condition-in-File-Upload-Leading-to-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/George0Papasotiriou/CVE-2026-4040-Race-Condition-in-File-Upload-Leading-to-RCE\ncd CVE-2026-4040-Race-Condition-in-File-Upload-Leading-to-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/George0Papasotiriou/CVE-2026-4040-Race-Condition-in-File-Upload-Leading-to-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/openclaw/openclaw/"
         ]
       ]
     },
@@ -873,7 +938,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -882,6 +947,68 @@
         [
           "Vendor Advisory",
           "https://mysites.guru/blog/rsfiles-unauthenticated-file-upload-rce/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-61424",
+      "title": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags..",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/shinthink/CVE-2026-61424",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve_2026_61424.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-61424"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "shinthink",
+      "researcherUrl": "https://github.com/shinthink",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:37 PM CDT",
+      "firstSeenAt": "2026-07-30T20:37:37Z",
+      "language": "Python",
+      "summary": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "technicalSummary": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "breakdown": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "whatBroke": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | CWE-434 | com_djclassifieds < 3.11.2",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-61424.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-61424\ncd CVE-2026-61424\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/shinthink/CVE-2026-61424"
+        ],
+        [
+          "Vendor Advisory",
+          "https://dj-extensions.com/dj-classifieds"
         ]
       ]
     },
@@ -935,7 +1062,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1004,7 +1131,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1017,142 +1144,62 @@
       ]
     },
     {
-      "cve": "CVE-2026-54121",
-      "title": "(CertiGhost) without MachineAccountQuota POC",
-      "ecosystem": "windows",
-      "category": "adcs",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/KrakenEU/CVE-2026-54121-CertiGhost",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "certighost.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-54121"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "KrakenEU",
-      "researcherUrl": "https://github.com/KrakenEU",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:04 AM CDT",
-      "firstSeenAt": "2026-07-31T08:04:50Z",
-      "language": "Python",
-      "summary": "(CertiGhost) without MachineAccountQuota POC",
-      "technicalSummary": "(CertiGhost) without MachineAccountQuota POC",
-      "breakdown": "(CertiGhost) without MachineAccountQuota POC",
-      "whatBroke": "(CertiGhost) without MachineAccountQuota POC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at KrakenEU/CVE-2026-54121-CertiGhost.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/KrakenEU/CVE-2026-54121-CertiGhost\ncd CVE-2026-54121-CertiGhost\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "identity escalation or relay path",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "ADCS",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/KrakenEU/CVE-2026-54121-CertiGhost"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-54121"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56121",
-      "title": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
-      "ecosystem": "web",
+      "cve": "CVE-2026-32746",
+      "title": "Kangaroo is a exploit built on CVE-2026-32746. i made this for security researchers, IT professionals,.",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/luongtrieudai2005/Oraculum-Bugs-Found",
+      "pocUrl": "https://github.com/MonkeySeC-sys/Kangaroo",
       "pocValidation": {
         "valid": true,
         "score": 7,
         "codeFiles": [
-          "bentoml/CWE-502-01-runner-deserialization-rce/oraculum/harness.py",
-          "bentoml/CWE-502-01-runner-deserialization-rce/poc/poc_direct.py",
-          "bentoml/CWE-502-01-runner-deserialization-rce/poc/repro.sh",
-          "bentoml/CWE-502-01-runner-deserialization-rce/poc/repro_runner.py",
-          "dvc/CWE-502-01-pickle-repro-args-rce/oraculum/harness.py",
-          "dvc/CWE-502-01-pickle-repro-args-rce/poc/poc_direct.py",
-          "dvc/CWE-502-01-pickle-repro-args-rce/poc/repro.sh",
-          "dvc/CWE-502-01-pickle-repro-args-rce/poc/repro_runner.py"
+          "Kangaroo.go"
         ],
-        "attackFiles": [
-          "bentoml/CWE-502-01-runner-deserialization-rce/oraculum/harness.py",
-          "bentoml/CWE-502-01-runner-deserialization-rce/poc/poc_direct.py",
-          "bentoml/CWE-502-01-runner-deserialization-rce/poc/repro.sh",
-          "bentoml/CWE-502-01-runner-deserialization-rce/poc/repro_runner.py",
-          "dvc/CWE-502-01-pickle-repro-args-rce/oraculum/harness.py",
-          "dvc/CWE-502-01-pickle-repro-args-rce/poc/poc_direct.py",
-          "dvc/CWE-502-01-pickle-repro-args-rce/poc/repro.sh",
-          "dvc/CWE-502-01-pickle-repro-args-rce/poc/repro_runner.py"
-        ],
-        "hasUsage": true,
+        "attackFiles": [],
+        "hasUsage": false,
         "cveRefs": [
-          "CVE-2024-9070",
-          "CVE-2025-27520",
-          "CVE-2026-56121"
+          "CVE-2026-32746"
         ],
-        "language": "Python"
+        "language": "Go"
       },
       "reliability": "reliable exploit",
-      "researcher": "luongtrieudai2005",
-      "researcherUrl": "https://github.com/luongtrieudai2005",
+      "researcher": "MonkeySeC-sys",
+      "researcherUrl": "https://github.com/MonkeySeC-sys",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:42 AM CDT",
-      "firstSeenAt": "2026-07-31T07:42:41Z",
-      "language": "Python",
-      "summary": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
-      "technicalSummary": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
-      "breakdown": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
-      "whatBroke": "N\u1ed9i dung c\u00e1c bug t\u00ecm v\u00e0 verify, POC b\u1edfi d\u1ef1 \u00e1n Oraculum",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at luongtrieudai2005/Oraculum-Bugs-Found.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/luongtrieudai2005/Oraculum-Bugs-Found\ncd Oraculum-Bugs-Found\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "5:44 PM CDT",
+      "firstSeenAt": "2026-08-02T22:44:47Z",
+      "language": "Go",
+      "summary": "Kangaroo is a exploit built on. i made this for security researchers, IT professionals, DevOps. so they can understand it better. DO NOT USE THIS FOR ILLEGAL USE, IF YOU DO... YOU MAY BE SUBJECT TO ARREST, AND FINES.",
+      "technicalSummary": "Kangaroo is a exploit built on. i made this for security researchers, IT professionals, DevOps. so they can understand it better. DO NOT USE THIS FOR ILLEGAL USE, IF YOU DO... YOU MAY BE SUBJECT TO ARREST, AND FINES.",
+      "breakdown": "Kangaroo is a exploit built on. i made this for security researchers, IT professionals, DevOps. so they can understand it better. DO NOT USE THIS FOR ILLEGAL USE, IF YOU DO... YOU MAY BE SUBJECT TO ARREST, AND FINES.",
+      "whatBroke": "Kangaroo is a exploit built on. i made this for security researchers, IT professionals, DevOps. so they can understand it better. DO NOT USE THIS FOR ILLEGAL USE, IF YOU DO... YOU MAY BE SUBJECT TO ARREST, AND FINES.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MonkeySeC-sys/Kangaroo.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MonkeySeC-sys/Kangaroo\ncd Kangaroo\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "RCE"
+        "Memory Corruption"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
+      "weaponization": 91,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/luongtrieudai2005/Oraculum-Bugs-Found"
+          "https://github.com/MonkeySeC-sys/Kangaroo"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/feast-dev/feast/commit/835cda8e2c1359f1f496ad72701dbd6a73bdb25a"
+          "https://lists.gnu.org/archive/html/bug-inetutils/2026-03/msg00031.html"
         ]
       ]
     }
