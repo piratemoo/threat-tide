@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T15:31:08Z",
+  "updatedAt": "2026-08-04T20:38:15Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,40 +51,18 @@
   ],
   "research": [
     {
-      "title": "Zero-Day Remediation Meets Operational Resiliency",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/08/03/zero-day-remediation-operational-resiliency-trurisk-eliminate",
-      "summary": "Executive Summary In the Frontier AI era, the number of CISA-known exploited vulnerabilities has increased by 6.5x over the past four years, and time-to-exploitation has collapsed to -7 days. Traditional monthly patch cycles cannot keep up. Organizations.",
-      "publishedAt": "2026-08-03T16:00:49Z",
-      "cves": [],
-      "tags": [
-        "Windows"
-      ]
-    },
-    {
-      "title": "Agent Val Now Validates the Entire Attack Surface: From Network to Host",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/08/03/truconfirm-cloud-agent-endpoint-exploit-validation",
-      "summary": "Powered by TruConfirm \u2014 Exploit Validation That Now Runs on the Network and the Host Executive Summary Qualys TruConfirm now validates exploitability across the entire attack surface, not just the network. Cloud Agent-Based TruConfirm brings the same.",
-      "publishedAt": "2026-08-03T15:45:19Z",
+      "title": "Agents vs. agents: how we triage HackerOne reports for $2 each, 85% as well as a human",
+      "source": "Elastic Security Labs",
+      "sourceUrl": "https://www.elastic.co/security-labs",
+      "url": "https://www.elastic.co/security-labs/ai-vulnerability-triage-bug-bounty-hackerone",
+      "summary": "Large language models (LLMs) made it trivially cheap to generate vulnerability reports. In the first half of 2026 alone, our HackerOne bug bounty program received over 1,390 reports, more than the full-year totals for 2024 and 2025 combined. Every one of.",
+      "publishedAt": "2026-08-04T00:00:00Z",
       "cves": [],
       "tags": [
         "Linux",
         "Kernel",
-        "RCE"
+        "Local Lpe"
       ]
-    },
-    {
-      "title": "How TTEC Turned Hidden Attack Paths Into Audit-Ready Security Validation",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/customer-story/ttec-security-validation-customer-story/",
-      "summary": "TTEC, a global leader in customer experience (CX), needed a way to validate what attackers could actually exploit across a rapidly changing enterprise environment while producing evidence that could withstand increasing audit and customer scrutiny. This.",
-      "publishedAt": "2026-08-03T15:37:27Z",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
@@ -154,21 +132,83 @@
       ]
     },
     {
+      "cve": "CVE-2026-31431",
+      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/dev1681/CVE-2026-31431",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "copy2.py",
+          "copyfail.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-31431"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "dev1681",
+      "researcherUrl": "https://github.com/dev1681",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:38 AM CDT",
+      "firstSeenAt": "2026-08-04T16:38:07Z",
+      "language": "Python",
+      "summary": "copyfail poc here",
+      "technicalSummary": "copyfail poc here",
+      "breakdown": "copyfail poc here",
+      "whatBroke": "copyfail poc here",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dev1681/CVE-2026-31431.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dev1681/CVE-2026-31431\ncd CVE-2026-31431\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/dev1681/CVE-2026-31431"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-39987",
       "title": "Marimo Remote Code Execution Vulnerability",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/jasonbernier/CVE-2026-39987",
+      "pocUrl": "https://github.com/Wind010/CVE-2026-39987_PoC",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exploit.py"
+          "poc.py"
         ],
         "attackFiles": [
-          "exploit.py"
+          "poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -177,19 +217,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "jasonbernier",
-      "researcherUrl": "https://github.com/jasonbernier",
+      "researcher": "Wind010",
+      "researcherUrl": "https://github.com/Wind010",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "9:22 AM CDT",
-      "firstSeenAt": "2026-08-02T14:22:20Z",
+      "added": "1:32 AM CDT",
+      "firstSeenAt": "2026-08-03T06:32:49Z",
       "language": "Python",
-      "summary": "Simple POC for",
-      "technicalSummary": "Simple POC for",
-      "breakdown": "Simple POC for",
-      "whatBroke": "Simple POC for",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at jasonbernier/CVE-2026-39987.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/jasonbernier/CVE-2026-39987\ncd CVE-2026-39987\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "A proof-of-concept for",
+      "technicalSummary": "A proof-of-concept for",
+      "breakdown": "A proof-of-concept for",
+      "whatBroke": "A proof-of-concept for",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Wind010/CVE-2026-39987_PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Wind010/CVE-2026-39987_PoC\ncd CVE-2026-39987_PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Marimo",
         "credential access from service context",
@@ -206,11 +246,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/jasonbernier/CVE-2026-39987"
+          "https://github.com/Wind010/CVE-2026-39987_PoC"
         ],
         [
           "Vendor Advisory",
@@ -284,6 +324,70 @@
       ]
     },
     {
+      "cve": "CVE-2026-12720",
+      "title": "Proof-of-Concept (PoC)",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/webshellseo8/CVE-2026-12720-Proof-of-Concept",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-12720.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-12720.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-12720"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "webshellseo8",
+      "researcherUrl": "https://github.com/webshellseo8",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:49 PM CDT",
+      "firstSeenAt": "2026-08-04T17:49:50Z",
+      "language": "Python",
+      "summary": "The Kirki WordPress plugin before 6.0.13 does not restrict which classes may be instantiated when it deserialises data that unauthenticated users can store, leading to PHP Object Injection that is triggered when an administrator.",
+      "technicalSummary": "The Kirki WordPress plugin before 6.0.13 does not restrict which classes may be instantiated when it deserialises data that unauthenticated users can store, leading to PHP Object Injection that is triggered when an administrator.",
+      "breakdown": "The Kirki WordPress plugin before 6.0.13 does not restrict which classes may be instantiated when it deserialises data that unauthenticated users can store, leading to PHP Object Injection that is triggered when an administrator.",
+      "whatBroke": "The Kirki WordPress plugin before 6.0.13 does not restrict which classes may be instantiated when it deserialises data that unauthenticated users can store, leading to PHP Object Injection that is triggered when an administrator.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at webshellseo8/CVE-2026-12720-Proof-of-Concept.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/webshellseo8/CVE-2026-12720-Proof-of-Concept\ncd CVE-2026-12720-Proof-of-Concept\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/webshellseo8/CVE-2026-12720-Proof-of-Concept"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wpscan.com/vulnerability/22f5af1c-972e-4e31-9afa-bf50ac278c66/"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-14483",
       "title": "\u2014 Realtyna WPL / Organic IDX Unauthenticated Arbitrary File Upload \u2192 RCE",
       "ecosystem": "web",
@@ -348,6 +452,72 @@
       ]
     },
     {
+      "cve": "CVE-2026-15964",
+      "title": "PoC & checker for CVE-2026-15964 - unauthenticated password change in the WordPress plugin Single Sign On.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Instructor-Admin/CVE-2026-15964-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-15964-checker.py",
+          "CVE-2026-15964.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-15964-checker.py",
+          "CVE-2026-15964.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-15964"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Instructor-Admin",
+      "researcherUrl": "https://github.com/Instructor-Admin",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:19 PM CDT",
+      "firstSeenAt": "2026-08-01T22:19:05Z",
+      "language": "Python",
+      "summary": "PoC & checker for unauthenticated password change in the WordPress plugin Single Sign On For TNG <= 2.0.0 (CVSS 9.8)",
+      "technicalSummary": "PoC & checker for unauthenticated password change in the WordPress plugin Single Sign On For TNG <= 2.0.0 (CVSS 9.8)",
+      "breakdown": "PoC & checker for unauthenticated password change in the WordPress plugin Single Sign On For TNG <= 2.0.0 (CVSS 9.8)",
+      "whatBroke": "PoC & checker for unauthenticated password change in the WordPress plugin Single Sign On For TNG <= 2.0.0 (CVSS 9.8)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Instructor-Admin/CVE-2026-15964-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Instructor-Admin/CVE-2026-15964-PoC\ncd CVE-2026-15964-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Instructor-Admin/CVE-2026-15964-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/single-sign-on-for-tng/tags/2.0.0/single-sign-on-for-tng.php#L102"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-52680",
       "title": "\u2014 Apache Kyuubi REST Batch Path-Traversal Arbitrary File Write",
       "ecosystem": "web",
@@ -406,6 +576,68 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/b0qx2v8k5v4rrqsh53pb146t7so0lmrk"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-59243",
+      "title": "\u2014 Apache Airflow FAB Provider OAuth Auth Bypass \u2192 DAG RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xdak/CVE-2026-59243_exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-59243"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xdak",
+      "researcherUrl": "https://github.com/0xdak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:17 PM CDT",
+      "firstSeenAt": "2026-08-04T20:17:55Z",
+      "language": "Python",
+      "summary": "The FAB auth manager's Azure AD OAuth login defaulted `verify_signature=False` when decoding the ID token, so an attacker able to present a forged or unsigned (`alg:none`) ID token to the OAuth callback could bypass.",
+      "technicalSummary": "The FAB auth manager's Azure AD OAuth login defaulted `verify_signature=False` when decoding the ID token, so an attacker able to present a forged or unsigned (`alg:none`) ID token to the OAuth callback could bypass.",
+      "breakdown": "The FAB auth manager's Azure AD OAuth login defaulted `verify_signature=False` when decoding the ID token, so an attacker able to present a forged or unsigned (`alg:none`) ID token to the OAuth callback could bypass.",
+      "whatBroke": "The FAB auth manager's Azure AD OAuth login defaulted `verify_signature=False` when decoding the ID token, so an attacker able to present a forged or unsigned (`alg:none`) ID token to the OAuth callback could bypass.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xdak/CVE-2026-59243_exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xdak/CVE-2026-59243_exploit\ncd CVE-2026-59243_exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xdak/CVE-2026-59243_exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/apache/airflow/pull/69374"
         ]
       ]
     },
@@ -932,40 +1164,42 @@
       ]
     },
     {
-      "cve": "CVE-2026-65883",
-      "title": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery +.",
+      "cve": "CVE-2026-67206",
+      "title": "Wolf CMS <= 0.8.3.1 - RCE via Arbitrary File Write",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-65883",
+      "pocUrl": "https://github.com/anirbala98/CVE-2026-67206",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "cve_2026_65883.py"
+          "exploit.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "exploit.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-65883"
+          "CVE-2026-67206"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
+      "researcher": "anirbala98",
+      "researcherUrl": "https://github.com/anirbala98",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:07 PM CDT",
-      "firstSeenAt": "2026-07-30T22:07:42Z",
+      "added": "1:07 PM CDT",
+      "firstSeenAt": "2026-08-01T18:07:57Z",
       "language": "Python",
-      "summary": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CVSS 10.0 | CWE-502 | aimy_captcha-less_form_guard < 20.1",
-      "technicalSummary": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CVSS 10.0 | CWE-502 | aimy_captcha-less_form_guard < 20.1",
-      "breakdown": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CVSS 10.0 | CWE-502 | aimy_captcha-less_form_guard < 20.1",
-      "whatBroke": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CVSS 10.0 | CWE-502 | aimy_captcha-less_form_guard < 20.1",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-65883.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-65883\ncd CVE-2026-65883\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Wolf CMS <= 0.8.3.1 - RCE via Arbitrary File Write",
+      "technicalSummary": "Wolf CMS <= 0.8.3.1 - RCE via Arbitrary File Write",
+      "breakdown": "Wolf CMS <= 0.8.3.1 - RCE via Arbitrary File Write",
+      "whatBroke": "Wolf CMS <= 0.8.3.1 - RCE via Arbitrary File Write",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at anirbala98/CVE-2026-67206.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/anirbala98/CVE-2026-67206\ncd CVE-2026-67206\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -981,275 +1215,15 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/shinthink/CVE-2026-65883"
+          "https://github.com/anirbala98/CVE-2026-67206"
         ],
         [
           "Vendor Advisory",
-          "https://www.aimy-extensions.com/joomla/captcha-less-form-guard.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-66066",
-      "title": "PoC for CVE-2026-66066 in Ruby on Rails",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Zer0SumGam3/CVE-2026-66066-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "overlay/app/controllers/uploads_controller.rb",
-          "overlay/app/models/upload.rb",
-          "overlay/config/routes.rb",
-          "rails_vips_oast_poc.py",
-          "run_lab.sh"
-        ],
-        "attackFiles": [
-          "rails_vips_oast_poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-66066"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Zer0SumGam3",
-      "researcherUrl": "https://github.com/Zer0SumGam3",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:08 PM CDT",
-      "firstSeenAt": "2026-07-29T21:08:30Z",
-      "language": "Python",
-      "summary": "PoC for in Ruby on Rails",
-      "technicalSummary": "PoC for in Ruby on Rails",
-      "breakdown": "PoC for in Ruby on Rails",
-      "whatBroke": "PoC for in Ruby on Rails",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Zer0SumGam3/CVE-2026-66066-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Zer0SumGam3/CVE-2026-66066-POC\ncd CVE-2026-66066-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Zer0SumGam3/CVE-2026-66066-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/rails/rails/commit/1c01bb587206ee6eb0e1179c2cef96a6a47acb1e"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-52102",
-      "title": "Exploit PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/showmeyourhands/CVE-2026-52102-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-52102-PoC.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-52102-PoC.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-52102"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "showmeyourhands",
-      "researcherUrl": "https://github.com/showmeyourhands",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:53 AM CDT",
-      "firstSeenAt": "2026-08-04T12:53:56Z",
-      "language": "Python",
-      "summary": "An OS command injection vulnerability in the openmediavault-md plugin of OpenMediaVault v8.0.4-1 allows attackers to execute arbitrary commands as root via injecting shell metacharacters.",
-      "technicalSummary": "An OS command injection vulnerability in the openmediavault-md plugin of OpenMediaVault v8.0.4-1 allows attackers to execute arbitrary commands as root via injecting shell metacharacters.",
-      "breakdown": "An OS command injection vulnerability in the openmediavault-md plugin of OpenMediaVault v8.0.4-1 allows attackers to execute arbitrary commands as root via injecting shell metacharacters.",
-      "whatBroke": "An OS command injection vulnerability in the openmediavault-md plugin of OpenMediaVault v8.0.4-1 allows attackers to execute arbitrary commands as root via injecting shell metacharacters.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at showmeyourhands/CVE-2026-52102-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/showmeyourhands/CVE-2026-52102-PoC\ncd CVE-2026-52102-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/showmeyourhands/CVE-2026-52102-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://gist.github.com/NtGabrielGomes/46817d363821cf8c5ff4882c811a4325"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-33937",
-      "title": "Python POC, Exploit for Handlebars.js AST Injection RCE, Handlebars.js versions 4.0.0 through 4.7.8 are.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/c0gnit00/CVE-2026-33937",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-33937"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "c0gnit00",
-      "researcherUrl": "https://github.com/c0gnit00",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:27 AM CDT",
-      "firstSeenAt": "2026-08-03T06:27:58Z",
-      "language": "Python",
-      "summary": "Python POC, Exploit for Handlebars.js AST Injection RCE, Handlebars.js versions 4.0.0 through 4.7.8 are affected. CVSS score: 9.8 Critical.",
-      "technicalSummary": "Python POC, Exploit for Handlebars.js AST Injection RCE, Handlebars.js versions 4.0.0 through 4.7.8 are affected. CVSS score: 9.8 Critical.",
-      "breakdown": "Python POC, Exploit for Handlebars.js AST Injection RCE, Handlebars.js versions 4.0.0 through 4.7.8 are affected. CVSS score: 9.8 Critical.",
-      "whatBroke": "Python POC, Exploit for Handlebars.js AST Injection RCE, Handlebars.js versions 4.0.0 through 4.7.8 are affected. CVSS score: 9.8 Critical.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at c0gnit00/CVE-2026-33937.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/c0gnit00/CVE-2026-33937\ncd CVE-2026-33937\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/c0gnit00/CVE-2026-33937"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/handlebars-lang/handlebars.js/commit/68d8df5a88e0a26fe9e6084c5c6aaebe67b07da2"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-16723",
-      "title": "Fastjson RCE",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/EQSTLab/CVE-2026-16723",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "attacker/exploit.py"
-        ],
-        "attackFiles": [
-          "attacker/exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-16723"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "EQSTLab",
-      "researcherUrl": "https://github.com/EQSTLab",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:40 AM CDT",
-      "firstSeenAt": "2026-07-30T07:40:31Z",
-      "language": "Python",
-      "summary": "Fastjson RCE",
-      "technicalSummary": "Fastjson RCE",
-      "breakdown": "Fastjson RCE",
-      "whatBroke": "Fastjson RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at EQSTLab/CVE-2026-16723.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/EQSTLab/CVE-2026-16723\ncd CVE-2026-16723\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/EQSTLab/CVE-2026-16723"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/alibaba/fastjson2/wiki/Security-Advisory:-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83"
+          "https://github.com/Caycon/cve-advisories/blob/main/2026/WolfCms/CVE-2026-67206.md"
         ]
       ]
     }
