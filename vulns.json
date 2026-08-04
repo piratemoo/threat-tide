@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-03T20:35:48Z",
+  "updatedAt": "2026-08-04T05:21:34Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -155,7 +155,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -220,7 +220,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -285,7 +285,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -347,7 +347,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -356,84 +356,90 @@
       ]
     },
     {
-      "cve": "CVE-2026-64725",
-      "title": "A PoC for CVE-2026-64725",
-      "ecosystem": "ios",
+      "cve": "CVE-2026-67599",
+      "title": "Authenticated Blind OS Command Injection in ClearOS",
+      "ecosystem": "linux",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/altvist/cve-2026-64725-poc",
+      "pocUrl": "https://github.com/LazyTitan33/CVE-2026-67599_ClearOS_RCE",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "poc/gen_marker_oob_aiff.py",
-          "poc/marker_oob_harness.c"
+          "CVE-2026-67599.py"
         ],
         "attackFiles": [
-          "poc/gen_marker_oob_aiff.py",
-          "poc/marker_oob_harness.c"
+          "CVE-2026-67599.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-64725"
+          "CVE-2026-67599"
         ],
-        "language": "C"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "altvist",
-      "researcherUrl": "https://github.com/altvist",
+      "researcher": "LazyTitan33",
+      "researcherUrl": "https://github.com/LazyTitan33",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:11 AM CDT",
-      "firstSeenAt": "2026-07-28T11:11:28Z",
-      "language": "C",
-      "summary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.6 and iPadOS 26.6, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6, tvOS 26.6, visionOS 26.6, watchOS 26.6. An.",
-      "technicalSummary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.6 and iPadOS 26.6, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6, tvOS 26.6, visionOS 26.6, watchOS 26.6. An.",
-      "breakdown": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.6 and iPadOS 26.6, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6, tvOS 26.6, visionOS 26.6, watchOS 26.6. An.",
-      "whatBroke": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.6 and iPadOS 26.6, macOS Sequoia 15.7.8, macOS Sonoma 14.8.8, macOS Tahoe 26.6, tvOS 26.6, visionOS 26.6, watchOS 26.6. An.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at altvist/cve-2026-64725-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/altvist/cve-2026-64725-poc\ncd cve-2026-64725-poc\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "2:27 AM CDT",
+      "firstSeenAt": "2026-07-31T07:27:30Z",
+      "language": "Python",
+      "summary": "Authenticated Blind OS Command Injection in ClearOS",
+      "technicalSummary": "Authenticated Blind OS Command Injection in ClearOS",
+      "breakdown": "Authenticated Blind OS Command Injection in ClearOS",
+      "whatBroke": "Authenticated Blind OS Command Injection in ClearOS",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at LazyTitan33/CVE-2026-67599_ClearOS_RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/LazyTitan33/CVE-2026-67599_ClearOS_RCE\ncd CVE-2026-67599_ClearOS_RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "iOS",
+        "Linux",
         "Webstack",
-        "Memory Corruption"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/altvist/cve-2026-64725-poc"
+          "https://github.com/LazyTitan33/CVE-2026-67599_ClearOS_RCE"
         ],
         [
           "Vendor Advisory",
-          "https://support.apple.com/en-us/128066"
+          "https://clearos.com/"
         ]
       ]
     },
     {
       "cve": "CVE-2026-66066",
-      "title": "(KindaRails2Shell) PoC - Rails Active Storage/libvips arbitrary file read to RCE; for authorized security.",
+      "title": "PoC for CVE-2026-66066 in Ruby on Rails",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/kindarails2shell-poc",
+      "pocUrl": "https://github.com/Zer0SumGam3/CVE-2026-66066-POC",
       "pocValidation": {
         "valid": true,
-        "score": 7,
+        "score": 11,
         "codeFiles": [
-          "kr2s.py"
+          "overlay/app/controllers/uploads_controller.rb",
+          "overlay/app/models/upload.rb",
+          "overlay/config/routes.rb",
+          "rails_vips_oast_poc.py",
+          "run_lab.sh"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "rails_vips_oast_poc.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-66066"
@@ -441,19 +447,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
+      "researcher": "Zer0SumGam3",
+      "researcherUrl": "https://github.com/Zer0SumGam3",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:31 AM CDT",
-      "firstSeenAt": "2026-08-03T12:31:12Z",
+      "added": "4:08 PM CDT",
+      "firstSeenAt": "2026-07-29T21:08:30Z",
       "language": "Python",
-      "summary": "(KindaRails2Shell) PoC - Rails Active Storage/libvips arbitrary file read to RCE; for authorized security testing",
-      "technicalSummary": "(KindaRails2Shell) PoC - Rails Active Storage/libvips arbitrary file read to RCE; for authorized security testing",
-      "breakdown": "(KindaRails2Shell) PoC - Rails Active Storage/libvips arbitrary file read to RCE; for authorized security testing",
-      "whatBroke": "(KindaRails2Shell) PoC - Rails Active Storage/libvips arbitrary file read to RCE; for authorized security testing",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/kindarails2shell-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/kindarails2shell-poc\ncd kindarails2shell-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PoC for in Ruby on Rails",
+      "technicalSummary": "PoC for in Ruby on Rails",
+      "breakdown": "PoC for in Ruby on Rails",
+      "whatBroke": "PoC for in Ruby on Rails",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Zer0SumGam3/CVE-2026-66066-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Zer0SumGam3/CVE-2026-66066-POC\ncd CVE-2026-66066-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -469,11 +475,11 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
-          "https://github.com/HackSpeak/kindarails2shell-poc"
+          "https://github.com/Zer0SumGam3/CVE-2026-66066-POC"
         ],
         [
           "Vendor Advisory",
@@ -531,7 +537,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -595,7 +601,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -604,70 +610,6 @@
         [
           "Vendor Advisory",
           "https://github.com/handlebars-lang/handlebars.js/commit/68d8df5a88e0a26fe9e6084c5c6aaebe67b07da2"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-16723",
-      "title": "fastjson rce lab",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/why-success/fastjson-rce-lab",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "src/main/java/com/lab/fastjson/Application.java",
-          "src/main/java/com/lab/fastjson/ParseController.java",
-          "start.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-16723"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "why-success",
-      "researcherUrl": "https://github.com/why-success",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:50 AM CDT",
-      "firstSeenAt": "2026-08-03T05:50:40Z",
-      "language": "Java",
-      "summary": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
-      "technicalSummary": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
-      "breakdown": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
-      "whatBroke": "A remote code execution (RCE) vulnerability exists in fastjson 1.2.68 through 1.2.83. This vulnerability is exploitable under fastjson's stock default configuration \u2014 no AutoType enablement required, no classpath gadget required.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at why-success/fastjson-rce-lab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/why-success/fastjson-rce-lab\ncd fastjson-rce-lab\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/why-success/fastjson-rce-lab"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/alibaba/fastjson2/wiki/Security-Advisory:-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83"
         ]
       ]
     },
@@ -723,7 +665,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -786,7 +728,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -795,6 +737,133 @@
         [
           "Vendor Advisory",
           "https://github.com/openclaw/openclaw/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-49176",
+      "title": "WalletService LPE \u2014 standalone PoC + Cobalt Strike BOF (SYSTEM command on interactive session)",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/777erp/CVE-2026-49176_BOF",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "entry.cpp",
+          "payload/shell_broker.c",
+          "payload/wallet_callback.c",
+          "resources/strip_bof.ps1"
+        ],
+        "attackFiles": [
+          "payload/shell_broker.c",
+          "payload/wallet_callback.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49176"
+        ],
+        "language": "C++"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "777erp",
+      "researcherUrl": "https://github.com/777erp",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:57 AM CDT",
+      "firstSeenAt": "2026-07-29T06:57:56Z",
+      "language": "C++",
+      "summary": "WalletService LPE \u2014 standalone PoC + Cobalt Strike BOF (SYSTEM command on interactive session)",
+      "technicalSummary": "WalletService LPE \u2014 standalone PoC + Cobalt Strike BOF (SYSTEM command on interactive session)",
+      "breakdown": "WalletService LPE \u2014 standalone PoC + Cobalt Strike BOF (SYSTEM command on interactive session)",
+      "whatBroke": "WalletService LPE \u2014 standalone PoC + Cobalt Strike BOF (SYSTEM command on interactive session)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 777erp/CVE-2026-49176_BOF.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/777erp/CVE-2026-49176_BOF\ncd CVE-2026-49176_BOF\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/777erp/CVE-2026-49176_BOF"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-49176"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-53921",
+      "title": "ROP remote code execution exploit",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/tc4dy/CVE-2026-53921-PoC-Exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py",
+          "verifier.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-53921"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "tc4dy",
+      "researcherUrl": "https://github.com/tc4dy",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:21 AM CDT",
+      "firstSeenAt": "2026-08-04T05:21:34Z",
+      "language": "Python",
+      "summary": "\u2013 odhcpd Stack Overflow (CVSS 9.8) \ud83d\udee1\ufe0f Vuln detailed and comprehensive Write-Up and Verifier & Multi-exploit for OpenWrt DHCPv6 RCE. Dual-vector (IA_NA/IA_PD) overflow with MIPS/ARM shellcode, ROP chains, SOCKS5 proxy,.",
+      "technicalSummary": "\u2013 odhcpd Stack Overflow (CVSS 9.8) \ud83d\udee1\ufe0f Vuln detailed and comprehensive Write-Up and Verifier & Multi-exploit for OpenWrt DHCPv6 RCE. Dual-vector (IA_NA/IA_PD) overflow with MIPS/ARM shellcode, ROP chains, SOCKS5 proxy,.",
+      "breakdown": "\u2013 odhcpd Stack Overflow (CVSS 9.8) \ud83d\udee1\ufe0f Vuln detailed and comprehensive Write-Up and Verifier & Multi-exploit for OpenWrt DHCPv6 RCE. Dual-vector (IA_NA/IA_PD) overflow with MIPS/ARM shellcode, ROP chains, SOCKS5 proxy,.",
+      "whatBroke": "\u2013 odhcpd Stack Overflow (CVSS 9.8) \ud83d\udee1\ufe0f Vuln detailed and comprehensive Write-Up and Verifier & Multi-exploit for OpenWrt DHCPv6 RCE. Dual-vector (IA_NA/IA_PD) overflow with MIPS/ARM shellcode, ROP chains, SOCKS5 proxy,.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tc4dy/CVE-2026-53921-PoC-Exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tc4dy/CVE-2026-53921-PoC-Exploit\ncd CVE-2026-53921-PoC-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/tc4dy/CVE-2026-53921-PoC-Exploit"
         ]
       ]
     },
@@ -848,15 +917,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-57827"
-        ],
-        [
-          "Vendor Advisory",
-          "https://mysites.guru/blog/rsfiles-unauthenticated-file-upload-rce/"
         ]
       ]
     },
@@ -910,75 +975,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-61424"
-        ],
-        [
-          "Vendor Advisory",
-          "https://dj-extensions.com/dj-classifieds"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-67599",
-      "title": "Authenticated Blind OS Command Injection in ClearOS",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/LazyTitan33/CVE-2026-67599_ClearOS_RCE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-67599.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-67599.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-67599"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "LazyTitan33",
-      "researcherUrl": "https://github.com/LazyTitan33",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:27 AM CDT",
-      "firstSeenAt": "2026-07-31T07:27:30Z",
-      "language": "Python",
-      "summary": "Authenticated Blind OS Command Injection in ClearOS",
-      "technicalSummary": "Authenticated Blind OS Command Injection in ClearOS",
-      "breakdown": "Authenticated Blind OS Command Injection in ClearOS",
-      "whatBroke": "Authenticated Blind OS Command Injection in ClearOS",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at LazyTitan33/CVE-2026-67599_ClearOS_RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/LazyTitan33/CVE-2026-67599_ClearOS_RCE\ncd CVE-2026-67599_ClearOS_RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/LazyTitan33/CVE-2026-67599_ClearOS_RCE"
         ]
       ]
     },
@@ -1034,7 +1035,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1049,7 +1050,7 @@
     {
       "cve": "CVE-2026-41651",
       "title": "Local privilege escalation via TOCTOU race condition in PackageKit's.",
-      "ecosystem": "cloud",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
@@ -1090,17 +1091,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/gbuyssens/CVE-2026-41651"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/PackageKit/PackageKit/blob/04057883189efa225a7c785591aa87cb299782f8/src/pk-transaction.c#L2273-L2277"
         ]
       ]
     },
@@ -1163,7 +1168,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -1230,7 +1235,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
