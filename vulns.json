@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T20:36:14Z",
+  "updatedAt": "2026-08-06T05:24:06Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -79,59 +79,25 @@
         "DevOps",
         "Session Theft"
       ]
-    },
-    {
-      "title": "ZDI-26-526: (0Day) PAX Technology Q80 Application Installer Signature Verification Bypass Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-526/",
-      "summary": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of PAX Technology Q80. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.5.",
-      "publishedAt": "2026-08-05T05:00:00Z",
-      "cves": [],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-525: (0Day) PAX Technology Q80 AIP File Parsing Link Following Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-525/",
-      "summary": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of PAX Technology Q80. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.5.",
-      "publishedAt": "2026-08-05T05:00:00Z",
-      "cves": [],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-524: (0Day) PAX Technology Q80 XCB Daemon Missing Authentication Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-524/",
-      "summary": "This vulnerability allows network-adjacent attackers to disclose sensitive information and modify configuration on affected installations of PAX Technology Q80. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating.",
-      "publishedAt": "2026-08-05T05:00:00Z",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
     {
       "cve": "CVE-2026-63030",
-      "title": "WordPress Core Interpretation Conflict Vulnerability",
+      "title": "SQL injection remote code execution exploit",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-63030-WP2Shell",
+      "pocUrl": "https://github.com/AnggaTechI/CVE-2026-63030",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "CVE-2026-63030.py"
+          "exploit.py"
         ],
         "attackFiles": [
-          "CVE-2026-63030.py"
+          "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -140,19 +106,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Industri4l-H3ll-Xpl0it3rs",
-      "researcherUrl": "https://github.com/Industri4l-H3ll-Xpl0it3rs",
+      "researcher": "AnggaTechI",
+      "researcherUrl": "https://github.com/AnggaTechI",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "5:23 PM CDT",
-      "firstSeenAt": "2026-07-30T22:23:03Z",
+      "added": "4:21 PM CDT",
+      "firstSeenAt": "2026-08-05T21:21:12Z",
       "language": "Python",
-      "summary": "Exploit | by gr1tx",
-      "technicalSummary": "Exploit | by gr1tx",
-      "breakdown": "Exploit | by gr1tx",
-      "whatBroke": "Exploit | by gr1tx",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Industri4l-H3ll-Xpl0it3rs/CVE-2026-63030-WP2Shell.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-63030-WP2Shell\ncd CVE-2026-63030-WP2Shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
+      "technicalSummary": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
+      "breakdown": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
+      "whatBroke": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at AnggaTechI/CVE-2026-63030.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/AnggaTechI/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Core",
         "credential access from service context",
@@ -169,11 +135,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-63030-WP2Shell"
+          "https://github.com/AnggaTechI/CVE-2026-63030"
         ],
         [
           "Vendor Advisory",
@@ -188,54 +154,35 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/linux-lpe-2026",
+      "pocUrl": "https://github.com/dev1681/CVE-2026-31431",
       "pocValidation": {
         "valid": true,
-        "score": 6,
+        "score": 9,
         "codeFiles": [
-          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
-          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c",
-          "pocs/CVE-2026-43503-dirty-clone/CVE-2026-43503.c",
-          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.py",
-          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.sh",
-          "pocs/CVE-2026-46331-pedit-cow/packet_edit_meme.c",
-          "pocs/CVE-2026-46331-pedit-cow/pedit_primitive.c",
-          "pocs/CVE-2026-46331-pedit-cow/test_cve.c"
+          "copy2.py",
+          "copyfail.py"
         ],
-        "attackFiles": [
-          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
-          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-23111",
-          "CVE-2026-31431",
-          "CVE-2026-43284",
-          "CVE-2026-43456",
-          "CVE-2026-43503",
-          "CVE-2026-46215",
-          "CVE-2026-46300",
-          "CVE-2026-46331",
-          "CVE-2026-46333",
-          "CVE-2026-53264",
-          "CVE-2026-64600"
+          "CVE-2026-31431"
         ],
-        "language": "C"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
+      "researcher": "dev1681",
+      "researcherUrl": "https://github.com/dev1681",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:06 AM CDT",
-      "firstSeenAt": "2026-08-05T11:06:15Z",
-      "language": "C",
-      "summary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "technicalSummary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "breakdown": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "whatBroke": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/linux-lpe-2026.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/linux-lpe-2026\ncd linux-lpe-2026\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "11:38 AM CDT",
+      "firstSeenAt": "2026-08-04T16:38:07Z",
+      "language": "Python",
+      "summary": "copyfail poc here",
+      "technicalSummary": "copyfail poc here",
+      "breakdown": "copyfail poc here",
+      "whatBroke": "copyfail poc here",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dev1681/CVE-2026-31431.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dev1681/CVE-2026-31431\ncd CVE-2026-31431\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Kernel",
         "local privilege escalation after a foothold",
@@ -250,11 +197,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/HackSpeak/linux-lpe-2026"
+          "https://github.com/dev1681/CVE-2026-31431"
         ],
         [
           "Vendor Advisory",
@@ -315,7 +262,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -380,7 +327,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -445,7 +392,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -525,7 +472,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -590,7 +537,7 @@
       ],
       "confidence": 98,
       "weaponization": 86,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -654,7 +601,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -718,7 +665,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -784,7 +731,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -846,7 +793,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -907,7 +854,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -989,7 +936,7 @@
       ],
       "confidence": 98,
       "weaponization": 78,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1071,7 +1018,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1151,7 +1098,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1231,7 +1178,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1312,7 +1259,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1392,7 +1339,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
