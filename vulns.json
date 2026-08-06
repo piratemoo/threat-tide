@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T05:24:06Z",
+  "updatedAt": "2026-08-06T15:23:15Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -64,20 +64,6 @@
       "tags": [
         "RMM",
         "Auth Bypass"
-      ]
-    },
-    {
-      "title": "The return of Shai-Hulud: How SonarQube detects and contains the npm worm",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/the-return-of-shai-hulud/",
-      "summary": "Here we go again. A fresh wave of the self-propagating Shai-Hulud worm is surging through the npm ecosystem. Its goal now is the same as it was with every prior wave: steal developer and CI credentials, then use those credentials to republish itself inside.",
-      "publishedAt": "2026-08-05T13:00:00Z",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "DevOps",
-        "Session Theft"
       ]
     }
   ],
@@ -206,6 +192,79 @@
         [
           "Vendor Advisory",
           "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-60137",
+      "title": "WordPress Core SQL Injection Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/johnlodan/wp2shell-rce",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "src/cli.ts",
+          "src/command.ts",
+          "src/menu.ts",
+          "src/scanner.ts",
+          "src/sql/payloads.ts",
+          "src/sql/sql.ts",
+          "src/utils/api.ts",
+          "src/utils/auth.ts"
+        ],
+        "attackFiles": [
+          "src/scanner.ts"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "TypeScript"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "johnlodan",
+      "researcherUrl": "https://github.com/johnlodan",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "11:33 AM CDT",
+      "firstSeenAt": "2026-08-02T16:33:02Z",
+      "language": "TypeScript",
+      "summary": "WordPress CVE-2026-63030 and security tool for detecting exposure to the WP2Shell pre-authentication RCE chain.",
+      "technicalSummary": "WordPress CVE-2026-63030 and security tool for detecting exposure to the WP2Shell pre-authentication RCE chain.",
+      "breakdown": "WordPress CVE-2026-63030 and security tool for detecting exposure to the WP2Shell pre-authentication RCE chain.",
+      "whatBroke": "WordPress CVE-2026-63030 and security tool for detecting exposure to the WP2Shell pre-authentication RCE chain.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at johnlodan/wp2shell-rce.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/johnlodan/wp2shell-rce\ncd wp2shell-rce\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/johnlodan/wp2shell-rce"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
         ]
       ]
     },
@@ -1268,86 +1327,6 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/12401fcfb01f53ccc63ab0a3246570fe8f3105ee"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-46215",
-      "title": "2026 Linux kernel LPE roundup - technical analysis + complete CVE index (Copy Fail, Dirty Frag, RefluXFS,.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/linux-lpe-2026",
-      "pocValidation": {
-        "valid": true,
-        "score": 6,
-        "codeFiles": [
-          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
-          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c",
-          "pocs/CVE-2026-43503-dirty-clone/CVE-2026-43503.c",
-          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.py",
-          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.sh",
-          "pocs/CVE-2026-46331-pedit-cow/packet_edit_meme.c",
-          "pocs/CVE-2026-46331-pedit-cow/pedit_primitive.c",
-          "pocs/CVE-2026-46331-pedit-cow/test_cve.c"
-        ],
-        "attackFiles": [
-          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
-          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-23111",
-          "CVE-2026-31431",
-          "CVE-2026-43284",
-          "CVE-2026-43456",
-          "CVE-2026-43503",
-          "CVE-2026-46215",
-          "CVE-2026-46300",
-          "CVE-2026-46331",
-          "CVE-2026-46333",
-          "CVE-2026-53264",
-          "CVE-2026-64600"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:06 AM CDT",
-      "firstSeenAt": "2026-08-05T11:06:15Z",
-      "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/linux-lpe-2026.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/linux-lpe-2026\ncd linux-lpe-2026\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HackSpeak/linux-lpe-2026"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/5e28b7b94408897e41c63477aabc9e1db439bc8c"
         ]
       ]
     }
