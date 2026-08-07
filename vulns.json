@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-07T04:30:30Z",
+  "updatedAt": "2026-08-07T14:16:33Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -62,20 +62,6 @@
         "Web",
         "Webstack"
       ]
-    },
-    {
-      "title": "OpenAI GPT-5.6 Sol and Terra: An evaluation",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/openai-gpt-5-6-sol-and-terra/",
-      "summary": "Every model that writes better code hands your team the same bill: more code to check, and less time to check it. That gap between how fast code arrives and how fast a team can verify it is verification debt, and a stronger model does not pay it down. It.",
-      "publishedAt": "2026-08-06T13:00:00Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "ADCS",
-        "File Read"
-      ]
     }
   ],
   "vulns": [
@@ -132,7 +118,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -151,35 +137,54 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/dev1681/CVE-2026-31431",
+      "pocUrl": "https://github.com/HackSpeak/linux-lpe-2026",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 6,
         "codeFiles": [
-          "copy2.py",
-          "copyfail.py"
+          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
+          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c",
+          "pocs/CVE-2026-43503-dirty-clone/CVE-2026-43503.c",
+          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.py",
+          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.sh",
+          "pocs/CVE-2026-46331-pedit-cow/packet_edit_meme.c",
+          "pocs/CVE-2026-46331-pedit-cow/pedit_primitive.c",
+          "pocs/CVE-2026-46331-pedit-cow/test_cve.c"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
+          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-31431"
+          "CVE-2026-23111",
+          "CVE-2026-31431",
+          "CVE-2026-43284",
+          "CVE-2026-43456",
+          "CVE-2026-43503",
+          "CVE-2026-46215",
+          "CVE-2026-46300",
+          "CVE-2026-46331",
+          "CVE-2026-46333",
+          "CVE-2026-53264",
+          "CVE-2026-64600"
         ],
-        "language": "Python"
+        "language": "C"
       },
       "reliability": "reliable exploit",
-      "researcher": "dev1681",
-      "researcherUrl": "https://github.com/dev1681",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "11:38 AM CDT",
-      "firstSeenAt": "2026-08-04T16:38:07Z",
-      "language": "Python",
-      "summary": "copyfail poc here",
-      "technicalSummary": "copyfail poc here",
-      "breakdown": "copyfail poc here",
-      "whatBroke": "copyfail poc here",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dev1681/CVE-2026-31431.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dev1681/CVE-2026-31431\ncd CVE-2026-31431\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "6:06 AM CDT",
+      "firstSeenAt": "2026-08-05T11:06:15Z",
+      "language": "C",
+      "summary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
+      "technicalSummary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
+      "breakdown": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
+      "whatBroke": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/linux-lpe-2026.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/linux-lpe-2026\ncd linux-lpe-2026\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Kernel",
         "local privilege escalation after a foothold",
@@ -198,7 +203,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/dev1681/CVE-2026-31431"
+          "https://github.com/HackSpeak/linux-lpe-2026"
         ],
         [
           "Vendor Advisory",
@@ -267,7 +272,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -276,71 +281,6 @@
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-39987",
-      "title": "Marimo Remote Code Execution Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Wind010/CVE-2026-39987_PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-39987"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Wind010",
-      "researcherUrl": "https://github.com/Wind010",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "1:32 AM CDT",
-      "firstSeenAt": "2026-08-03T06:32:49Z",
-      "language": "Python",
-      "summary": "A proof-of-concept for",
-      "technicalSummary": "A proof-of-concept for",
-      "breakdown": "A proof-of-concept for",
-      "whatBroke": "A proof-of-concept for",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Wind010/CVE-2026-39987_PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Wind010/CVE-2026-39987_PoC\ncd CVE-2026-39987_PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Marimo",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Wind010/CVE-2026-39987_PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
         ]
       ]
     },
@@ -397,7 +337,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -406,6 +346,71 @@
         [
           "Vendor Advisory",
           "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-39987",
+      "title": "Marimo Remote Code Execution Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/alreadyClosed/CVE-2026-39987",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-39987.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-39987.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-39987"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "alreadyClosed",
+      "researcherUrl": "https://github.com/alreadyClosed",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "2:04 AM CDT",
+      "firstSeenAt": "2026-08-07T07:04:38Z",
+      "language": "Python",
+      "summary": "for marimo 0.20.4 PoC",
+      "technicalSummary": "for marimo 0.20.4 PoC",
+      "breakdown": "for marimo 0.20.4 PoC",
+      "whatBroke": "for marimo 0.20.4 PoC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at alreadyClosed/CVE-2026-39987.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/alreadyClosed/CVE-2026-39987\ncd CVE-2026-39987\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Marimo",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/alreadyClosed/CVE-2026-39987"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
         ]
       ]
     },
@@ -477,7 +482,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -542,7 +547,7 @@
       ],
       "confidence": 98,
       "weaponization": 86,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -551,134 +556,6 @@
         [
           "Vendor Advisory",
           "https://www.ibm.com/support/pages/node/7278927"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-12720",
-      "title": "Proof-of-Concept (PoC)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/webshellseo8/CVE-2026-12720-Proof-of-Concept",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-12720.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-12720.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-12720"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "webshellseo8",
-      "researcherUrl": "https://github.com/webshellseo8",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:49 PM CDT",
-      "firstSeenAt": "2026-08-04T17:49:50Z",
-      "language": "Python",
-      "summary": "The Kirki WordPress plugin before 6.0.13 does not restrict which classes may be instantiated when it deserialises data that unauthenticated users can store, leading to PHP Object Injection that is triggered when an administrator.",
-      "technicalSummary": "The Kirki WordPress plugin before 6.0.13 does not restrict which classes may be instantiated when it deserialises data that unauthenticated users can store, leading to PHP Object Injection that is triggered when an administrator.",
-      "breakdown": "The Kirki WordPress plugin before 6.0.13 does not restrict which classes may be instantiated when it deserialises data that unauthenticated users can store, leading to PHP Object Injection that is triggered when an administrator.",
-      "whatBroke": "The Kirki WordPress plugin before 6.0.13 does not restrict which classes may be instantiated when it deserialises data that unauthenticated users can store, leading to PHP Object Injection that is triggered when an administrator.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at webshellseo8/CVE-2026-12720-Proof-of-Concept.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/webshellseo8/CVE-2026-12720-Proof-of-Concept\ncd CVE-2026-12720-Proof-of-Concept\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/webshellseo8/CVE-2026-12720-Proof-of-Concept"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wpscan.com/vulnerability/22f5af1c-972e-4e31-9afa-bf50ac278c66/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-14483",
-      "title": "\u2014 Realtyna WPL / Organic IDX Unauthenticated Arbitrary File Upload \u2192 RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xdak/CVE-2026-14483_exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-14483"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xdak",
-      "researcherUrl": "https://github.com/0xdak",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:07 AM CDT",
-      "firstSeenAt": "2026-08-04T12:07:14Z",
-      "language": "Python",
-      "summary": "The Realtyna Organic IDX plugin + WPL Real Estate plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 5.2.0 via the upload function. This is due to missing file type validation in.",
-      "technicalSummary": "The Realtyna Organic IDX plugin + WPL Real Estate plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 5.2.0 via the upload function. This is due to missing file type validation in.",
-      "breakdown": "The Realtyna Organic IDX plugin + WPL Real Estate plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 5.2.0 via the upload function. This is due to missing file type validation in.",
-      "whatBroke": "The Realtyna Organic IDX plugin + WPL Real Estate plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 5.2.0 via the upload function. This is due to missing file type validation in.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xdak/CVE-2026-14483_exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xdak/CVE-2026-14483_exploit\ncd CVE-2026-14483_exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xdak/CVE-2026-14483_exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/real-estate-listing-realtyna-wpl/trunk/assets/migrations/basic/1.0.0.sql#L1119"
         ]
       ]
     },
@@ -736,7 +613,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -745,6 +622,68 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/single-sign-on-for-tng/tags/2.0.0/single-sign-on-for-tng.php#L102"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-64564",
+      "title": "SCTPhantom (CVE-2026-64564) SCTP ASCONF DEL-IP UAF LPE PoC (Debian 13 6.12.95) \u2014 community PoC mirror, MIT;.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/CVE-2026-64564",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "lpe_debian.6.12.95.c"
+        ],
+        "attackFiles": [
+          "lpe_debian.6.12.95.c"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-64564"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:47 AM CDT",
+      "firstSeenAt": "2026-08-07T12:47:28Z",
+      "language": "C",
+      "summary": "SCTPhantom () SCTP ASCONF DEL-IP UAF LPE PoC (Debian 13 6.12.95) \u2014 community PoC mirror, MIT; for authorized security testing",
+      "technicalSummary": "SCTPhantom () SCTP ASCONF DEL-IP UAF LPE PoC (Debian 13 6.12.95) \u2014 community PoC mirror, MIT; for authorized security testing",
+      "breakdown": "SCTPhantom () SCTP ASCONF DEL-IP UAF LPE PoC (Debian 13 6.12.95) \u2014 community PoC mirror, MIT; for authorized security testing",
+      "whatBroke": "SCTPhantom () SCTP ASCONF DEL-IP UAF LPE PoC (Debian 13 6.12.95) \u2014 community PoC mirror, MIT; for authorized security testing",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-64564.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-64564\ncd CVE-2026-64564\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/CVE-2026-64564"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/74e8f3e7114f0e26d1b2c4c048044db9fcc27603"
         ]
       ]
     },
@@ -797,7 +736,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -879,7 +818,7 @@
       ],
       "confidence": 98,
       "weaponization": 78,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -961,7 +900,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1041,7 +980,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1121,7 +1060,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1202,7 +1141,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1282,7 +1221,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1346,10 +1285,10 @@
       "added": "6:06 AM CDT",
       "firstSeenAt": "2026-08-05T11:06:15Z",
       "language": "C",
-      "summary": "The affected component exposes a local lpe path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a local lpe path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a local lpe path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a local lpe path with recent public exploit tooling signal.",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/linux-lpe-2026.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/linux-lpe-2026\ncd linux-lpe-2026\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -1365,11 +1304,95 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/HackSpeak/linux-lpe-2026"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/2bec122b9fb91507a758ab5e3e5c4fbe7cb3f61b"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-53264",
+      "title": "2026 Linux kernel LPE roundup - technical analysis + complete CVE index (Copy Fail, Dirty Frag, RefluXFS,.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/linux-lpe-2026",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
+          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c",
+          "pocs/CVE-2026-43503-dirty-clone/CVE-2026-43503.c",
+          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.py",
+          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.sh",
+          "pocs/CVE-2026-46331-pedit-cow/packet_edit_meme.c",
+          "pocs/CVE-2026-46331-pedit-cow/pedit_primitive.c",
+          "pocs/CVE-2026-46331-pedit-cow/test_cve.c"
+        ],
+        "attackFiles": [
+          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
+          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-23111",
+          "CVE-2026-31431",
+          "CVE-2026-43284",
+          "CVE-2026-43456",
+          "CVE-2026-43503",
+          "CVE-2026-46215",
+          "CVE-2026-46300",
+          "CVE-2026-46331",
+          "CVE-2026-46333",
+          "CVE-2026-53264",
+          "CVE-2026-64600"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:06 AM CDT",
+      "firstSeenAt": "2026-08-05T11:06:15Z",
+      "language": "C",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: net/sched: act_api: use RCU with deferred freeing for action lifecycle When NEWTFILTER and DELFILTER are run concurrently it is possible to create a race with.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: net/sched: act_api: use RCU with deferred freeing for action lifecycle When NEWTFILTER and DELFILTER are run concurrently it is possible to create a race with.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: net/sched: act_api: use RCU with deferred freeing for action lifecycle When NEWTFILTER and DELFILTER are run concurrently it is possible to create a race with.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: net/sched: act_api: use RCU with deferred freeing for action lifecycle When NEWTFILTER and DELFILTER are run concurrently it is possible to create a race with.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/linux-lpe-2026.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/linux-lpe-2026\ncd linux-lpe-2026\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/linux-lpe-2026"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/18af5d2ef0c4f65787fd1280c8b23286b9f2a835"
         ]
       ]
     }
