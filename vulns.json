@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-07T00:43:15Z",
+  "updatedAt": "2026-08-07T04:30:30Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -1346,10 +1346,10 @@
       "added": "6:06 AM CDT",
       "firstSeenAt": "2026-08-05T11:06:15Z",
       "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
+      "summary": "The affected component exposes a local lpe path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a local lpe path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a local lpe path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a local lpe path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/linux-lpe-2026.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/linux-lpe-2026\ncd linux-lpe-2026\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
@@ -1370,10 +1370,6 @@
         [
           "GitHub",
           "https://github.com/HackSpeak/linux-lpe-2026"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/2bec122b9fb91507a758ab5e3e5c4fbe7cb3f61b"
         ]
       ]
     }
