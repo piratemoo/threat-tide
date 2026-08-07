@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T15:23:15Z",
+  "updatedAt": "2026-08-07T00:43:15Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,19 +51,30 @@
   ],
   "research": [
     {
-      "title": "CVE-2026-18556 and CVE-2026-18577 | N-able N-central Authentication Bypass Vulnerabilities",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-18556-cve-2026-18577/",
-      "summary": "CVE-2026-18556 and CVE-2026-18577 are authentication bypass vulnerabilities affecting N-able N-central, a remote monitoring and management (RMM) platform used by managed service providers (MSPs) and enterprise IT teams to administer large fleets of.",
-      "publishedAt": "2026-08-05T18:54:10Z",
-      "cves": [
-        "CVE-2026-18556",
-        "CVE-2026-18577"
-      ],
+      "title": "How we took malware advisories beyond npm",
+      "source": "GitHub Security",
+      "sourceUrl": "https://github.blog/security/",
+      "url": "https://github.blog/security/supply-chain-security/how-we-took-malware-advisories-beyond-npm/",
+      "summary": "A compromised package can steal credentials the moment you install it, and until recently, GitHub could only flag those in npm. Not anymore. This is the story of how the supply chain engineering team behind Dependabot expanded malware advisories to eight.",
+      "publishedAt": "2026-08-06T16:51:12Z",
+      "cves": [],
       "tags": [
-        "RMM",
-        "Auth Bypass"
+        "Web",
+        "Webstack"
+      ]
+    },
+    {
+      "title": "OpenAI GPT-5.6 Sol and Terra: An evaluation",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/openai-gpt-5-6-sol-and-terra/",
+      "summary": "Every model that writes better code hands your team the same bill: more code to check, and less time to check it. That gap between how fast code arrives and how fast a team can verify it is verification debt, and a stronger model does not pay it down. It.",
+      "publishedAt": "2026-08-06T13:00:00Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "ADCS",
+        "File Read"
       ]
     }
   ],
@@ -395,71 +406,6 @@
         [
           "Vendor Advisory",
           "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-16232",
-      "title": "Check Point SmartConsole Improper Authentication Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/CVE-2026-16232",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-16232.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-16232.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-16232"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "7:55 AM CDT",
-      "firstSeenAt": "2026-08-03T12:55:37Z",
-      "language": "Python",
-      "summary": "(Check Point SmartConsole authentication bypass) PoC - unauth to admin; for authorized security testing",
-      "technicalSummary": "(Check Point SmartConsole authentication bypass) PoC - unauth to admin; for authorized security testing",
-      "breakdown": "(Check Point SmartConsole authentication bypass) PoC - unauth to admin; for authorized security testing",
-      "whatBroke": "(Check Point SmartConsole authentication bypass) PoC - unauth to admin; for authorized security testing",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-16232.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-16232\ncd CVE-2026-16232\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed SmartConsole",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HackSpeak/CVE-2026-16232"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.checkpoint.com/results/sk/sk185169/"
         ]
       ]
     },
@@ -799,68 +745,6 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/single-sign-on-for-tng/tags/2.0.0/single-sign-on-for-tng.php#L102"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-52680",
-      "title": "\u2014 Apache Kyuubi REST Batch Path-Traversal Arbitrary File Write",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xdak/CVE-2026-52680_exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-52680"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xdak",
-      "researcherUrl": "https://github.com/0xdak",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:35 AM CDT",
-      "firstSeenAt": "2026-08-04T09:35:45Z",
-      "language": "Python",
-      "summary": "Apache Kyuubi REST batch multipart upload handling uses the client-supplied multipart filename when creating a temporary uploaded resource. A remote attacker who can access the REST batch upload endpoint can provide path.",
-      "technicalSummary": "Apache Kyuubi REST batch multipart upload handling uses the client-supplied multipart filename when creating a temporary uploaded resource. A remote attacker who can access the REST batch upload endpoint can provide path.",
-      "breakdown": "Apache Kyuubi REST batch multipart upload handling uses the client-supplied multipart filename when creating a temporary uploaded resource. A remote attacker who can access the REST batch upload endpoint can provide path.",
-      "whatBroke": "Apache Kyuubi REST batch multipart upload handling uses the client-supplied multipart filename when creating a temporary uploaded resource. A remote attacker who can access the REST batch upload endpoint can provide path.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xdak/CVE-2026-52680_exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xdak/CVE-2026-52680_exploit\ncd CVE-2026-52680_exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xdak/CVE-2026-52680_exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lists.apache.org/thread/b0qx2v8k5v4rrqsh53pb146t7so0lmrk"
         ]
       ]
     },
@@ -1327,6 +1211,169 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/12401fcfb01f53ccc63ab0a3246570fe8f3105ee"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-46215",
+      "title": "2026 Linux kernel LPE roundup - technical analysis + complete CVE index (Copy Fail, Dirty Frag, RefluXFS,.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/linux-lpe-2026",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
+          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c",
+          "pocs/CVE-2026-43503-dirty-clone/CVE-2026-43503.c",
+          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.py",
+          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.sh",
+          "pocs/CVE-2026-46331-pedit-cow/packet_edit_meme.c",
+          "pocs/CVE-2026-46331-pedit-cow/pedit_primitive.c",
+          "pocs/CVE-2026-46331-pedit-cow/test_cve.c"
+        ],
+        "attackFiles": [
+          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
+          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-23111",
+          "CVE-2026-31431",
+          "CVE-2026-43284",
+          "CVE-2026-43456",
+          "CVE-2026-43503",
+          "CVE-2026-46215",
+          "CVE-2026-46300",
+          "CVE-2026-46331",
+          "CVE-2026-46333",
+          "CVE-2026-53264",
+          "CVE-2026-64600"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:06 AM CDT",
+      "firstSeenAt": "2026-08-05T11:06:15Z",
+      "language": "C",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: drm: Set old handle to NULL before prime swap in change_handle There was a potential race condition in change_handle. The ioctl briefly had a single object with.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/linux-lpe-2026.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/linux-lpe-2026\ncd linux-lpe-2026\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/linux-lpe-2026"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/5e28b7b94408897e41c63477aabc9e1db439bc8c"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-46331",
+      "title": "2026 Linux kernel LPE roundup - technical analysis + complete CVE index (Copy Fail, Dirty Frag, RefluXFS,.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/linux-lpe-2026",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
+          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c",
+          "pocs/CVE-2026-43503-dirty-clone/CVE-2026-43503.c",
+          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.py",
+          "pocs/CVE-2026-46300-fragnesia/CVE-2026-46300.sh",
+          "pocs/CVE-2026-46331-pedit-cow/packet_edit_meme.c",
+          "pocs/CVE-2026-46331-pedit-cow/pedit_primitive.c",
+          "pocs/CVE-2026-46331-pedit-cow/test_cve.c"
+        ],
+        "attackFiles": [
+          "pocs/CVE-2026-31431-copy-fail/copy_fail_exp.py",
+          "pocs/CVE-2026-43284-43500-dirty-frag/exp.c",
+          "pocs/CVE-2026-46331-pedit-cow/packet_edit_meme.c",
+          "pocs/CVE-2026-46331-pedit-cow/pedit_primitive.c",
+          "pocs/CVE-2026-46331-pedit-cow/test_cve.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-23111",
+          "CVE-2026-31431",
+          "CVE-2026-43284",
+          "CVE-2026-43456",
+          "CVE-2026-43503",
+          "CVE-2026-46215",
+          "CVE-2026-46300",
+          "CVE-2026-46331",
+          "CVE-2026-46333",
+          "CVE-2026-53264",
+          "CVE-2026-64600"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:06 AM CDT",
+      "firstSeenAt": "2026-08-05T11:06:15Z",
+      "language": "C",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: net/sched: fix pedit partial COW leading to page cache corruption tcf_pedit_act() computes the COW range for skb_ensure_writable() once before the key loop.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/linux-lpe-2026.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/linux-lpe-2026\ncd linux-lpe-2026\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/linux-lpe-2026"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/2bec122b9fb91507a758ab5e3e5c4fbe7cb3f61b"
         ]
       ]
     }
