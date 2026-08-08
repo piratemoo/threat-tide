@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T13:50:55Z",
+  "updatedAt": "2026-08-08T19:37:17Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -178,71 +178,6 @@
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-15409",
-      "title": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Ch4120N/CVE-2026-15409",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cve-2026-15409.py"
-        ],
-        "attackFiles": [
-          "cve-2026-15409.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-15409"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Ch4120N",
-      "researcherUrl": "https://github.com/Ch4120N",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:59 AM CDT",
-      "firstSeenAt": "2026-08-03T14:59:04Z",
-      "language": "Python",
-      "summary": "Proof-of-Concept exploit for (SonicWall SMA 1000 RCE) via Erlang distribution over WebSocket. Achieves unauthenticated remote code execution as couchdb user.",
-      "technicalSummary": "Proof-of-Concept exploit for (SonicWall SMA 1000 RCE) via Erlang distribution over WebSocket. Achieves unauthenticated remote code execution as couchdb user.",
-      "breakdown": "Proof-of-Concept exploit for (SonicWall SMA 1000 RCE) via Erlang distribution over WebSocket. Achieves unauthenticated remote code execution as couchdb user.",
-      "whatBroke": "Proof-of-Concept exploit for (SonicWall SMA 1000 RCE) via Erlang distribution over WebSocket. Achieves unauthenticated remote code execution as couchdb user.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ch4120N/CVE-2026-15409.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ch4120N/CVE-2026-15409\ncd CVE-2026-15409\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed SMA1000 Appliances",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Ch4120N/CVE-2026-15409"
-        ],
-        [
-          "Vendor Advisory",
-          "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008"
         ]
       ]
     },
@@ -505,70 +440,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-64638",
-      "title": "XSS2Shell (CVE-2026-64638) WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/CVE-2026-64638",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "xss2shell_poc.py"
-        ],
-        "attackFiles": [
-          "xss2shell_poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-64638"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:51 AM CDT",
-      "firstSeenAt": "2026-08-08T08:51:12Z",
-      "language": "Python",
-      "summary": "XSS2Shell () WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security testing",
-      "technicalSummary": "XSS2Shell () WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security testing",
-      "breakdown": "XSS2Shell () WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security testing",
-      "whatBroke": "XSS2Shell () WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security testing",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-64638.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-64638\ncd CVE-2026-64638\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HackSpeak/CVE-2026-64638"
-        ],
-        [
-          "Vendor Advisory",
-          "https://hackerone.com/reports/3877102"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-64561",
       "title": "Zapscape (CVE-2026-64561) KVM/x86 shadow MMU UAF guest-to-host escape PoC mirror \u2014 V4bel/@v4bel, MIT; for.",
       "ecosystem": "linux",
@@ -630,6 +501,70 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/0026dbb7de8ea76e97d6edf42fc3cc084564e2bf"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-64638",
+      "title": "XSS2Shell (CVE-2026-64638) WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/CVE-2026-64638",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "xss2shell_poc.py"
+        ],
+        "attackFiles": [
+          "xss2shell_poc.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-64638"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:51 AM CDT",
+      "firstSeenAt": "2026-08-08T08:51:12Z",
+      "language": "Python",
+      "summary": "XSS2Shell () WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security testing",
+      "technicalSummary": "XSS2Shell () WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security testing",
+      "breakdown": "XSS2Shell () WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security testing",
+      "whatBroke": "XSS2Shell () WordPress pre-auth XSS to RCE PoC mirror \u2014 WordSec, MIT; for authorized security testing",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-64638.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-64638\ncd CVE-2026-64638\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/CVE-2026-64638"
+        ],
+        [
+          "Vendor Advisory",
+          "https://hackerone.com/reports/3877102"
         ]
       ]
     },
@@ -1092,72 +1027,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-42826",
-      "title": "\u2014 Azure DevOps Information Disclosure PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/sam00/POC-CVE-2026-42826-2026-42826-Microsoft-Azure-DevOps-Information-Disclosure-Vulnerability",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "detect.py",
-          "e2e_test.py",
-          "exploit.py",
-          "test_exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py",
-          "test_exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-42826"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "sam00",
-      "researcherUrl": "https://github.com/sam00",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:19 AM CDT",
-      "firstSeenAt": "2026-08-03T16:19:32Z",
-      "language": "Python",
-      "summary": "Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthorized attacker to disclose information over a network.",
-      "technicalSummary": "Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthorized attacker to disclose information over a network.",
-      "breakdown": "Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthorized attacker to disclose information over a network.",
-      "whatBroke": "Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthorized attacker to disclose information over a network.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sam00/POC-CVE-2026-42826-2026-42826-Microsoft-Azure-DevOps-Information-Disclosure-Vulnerability.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sam00/POC-CVE-2026-42826-2026-42826-Microsoft-Azure-DevOps-Information-Disclosure-Vulnerability\ncd POC-CVE-2026-42826-2026-42826-Microsoft-Azure-DevOps-Information-Disclosure-Vulnerability\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/sam00/POC-CVE-2026-42826-2026-42826-Microsoft-Azure-DevOps-Information-Disclosure-Vulnerability"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42826"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-3891",
       "title": "PoC for CVE-2026-3891 \u2013 Unauthenticated File Upload RCE in Pix for WooCommerce \u2264 1.5.0. Automated nonce.",
       "ecosystem": "web",
@@ -1214,6 +1083,134 @@
         [
           "GitHub",
           "https://github.com/Ch4120N/CVE-2026-3891"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/payment-gateway-pix-for-woocommerce/tags/1.4.0/Includes/LknPaymentPixForWoocommercePixC6.php#L694"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-17566",
+      "title": "pgAdmin 4 Import/Export RCE (CVE-2026-17566) PoC - TO PROGRAM injection via backslash-escape mismatch",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/CVE-2026-17566",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "pgadmin4_rce_poc.py"
+        ],
+        "attackFiles": [
+          "pgadmin4_rce_poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-17566"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:59 AM CDT",
+      "firstSeenAt": "2026-08-04T12:59:59Z",
+      "language": "Python",
+      "summary": "pgAdmin 4 Import/Export RCE () PoC - TO PROGRAM injection via backslash-escape mismatch",
+      "technicalSummary": "pgAdmin 4 Import/Export RCE () PoC - TO PROGRAM injection via backslash-escape mismatch",
+      "breakdown": "pgAdmin 4 Import/Export RCE () PoC - TO PROGRAM injection via backslash-escape mismatch",
+      "whatBroke": "pgAdmin 4 Import/Export RCE () PoC - TO PROGRAM injection via backslash-escape mismatch",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-17566.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-17566\ncd CVE-2026-17566\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/CVE-2026-17566"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/pgadmin-org/pgadmin4/commit/1496fabe28c9f825f6bac0f0d000d9d3276322c3"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-52887",
+      "title": "SQL injection remote code execution exploit",
+      "ecosystem": "web",
+      "category": "kubernetes",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/BiiTts/CVE-2026-52887-NocoBase-SQLi-RCE",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py",
+          "lab/docker-compose.yml"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-52887"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "BiiTts",
+      "researcherUrl": "https://github.com/BiiTts",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:54 PM CDT",
+      "firstSeenAt": "2026-08-03T03:54:35Z",
+      "language": "Python",
+      "summary": "\u2014 NocoBase SQL injection -> PostgreSQL-superuser RCE (myInAppChannels:list filter, CVSS 10.0). Author PoC + source analysis + docker lab.",
+      "technicalSummary": "\u2014 NocoBase SQL injection -> PostgreSQL-superuser RCE (myInAppChannels:list filter, CVSS 10.0). Author PoC + source analysis + docker lab.",
+      "breakdown": "\u2014 NocoBase SQL injection -> PostgreSQL-superuser RCE (myInAppChannels:list filter, CVSS 10.0). Author PoC + source analysis + docker lab.",
+      "whatBroke": "\u2014 NocoBase SQL injection -> PostgreSQL-superuser RCE (myInAppChannels:list filter, CVSS 10.0). Author PoC + source analysis + docker lab.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-52887-NocoBase-SQLi-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-52887-NocoBase-SQLi-RCE\ncd CVE-2026-52887-NocoBase-SQLi-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Kubernetes",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/BiiTts/CVE-2026-52887-NocoBase-SQLi-RCE"
         ]
       ]
     }
