@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T16:48:04Z",
+  "updatedAt": "2026-08-10T19:57:12Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -323,6 +323,71 @@
         [
           "Vendor Advisory",
           "https://security.paloaltonetworks.com/CVE-2026-0300"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-63077",
+      "title": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
+      "ecosystem": "web",
+      "category": "devops",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/AnggaTechI/CVE-2026-63077",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-63077"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "AnggaTechI",
+      "researcherUrl": "https://github.com/AnggaTechI",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "1:32 AM CDT",
+      "firstSeenAt": "2026-08-08T06:32:09Z",
+      "language": "Python",
+      "summary": "\u2014 Unauthenticated Remote Code Execution in JetBrains TeamCity via agent polling protocol deserialization. CVSS 9.8 CRITICAL. Mass exploitation tool with interactive shell, multi-threading, and real-time result logging.",
+      "technicalSummary": "\u2014 Unauthenticated Remote Code Execution in JetBrains TeamCity via agent polling protocol deserialization. CVSS 9.8 CRITICAL. Mass exploitation tool with interactive shell, multi-threading, and real-time result logging.",
+      "breakdown": "\u2014 Unauthenticated Remote Code Execution in JetBrains TeamCity via agent polling protocol deserialization. CVSS 9.8 CRITICAL. Mass exploitation tool with interactive shell, multi-threading, and real-time result logging.",
+      "whatBroke": "\u2014 Unauthenticated Remote Code Execution in JetBrains TeamCity via agent polling protocol deserialization. CVSS 9.8 CRITICAL. Mass exploitation tool with interactive shell, multi-threading, and real-time result logging.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at AnggaTechI/CVE-2026-63077.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/AnggaTechI/CVE-2026-63077\ncd CVE-2026-63077\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed TeamCity",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "DevOps",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 81,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/AnggaTechI/CVE-2026-63077"
+        ],
+        [
+          "Vendor Advisory",
+          "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/;"
         ]
       ]
     },
@@ -960,65 +1025,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-56158",
-      "title": "\u2014 .NET Framework Remote Code Execution (RCE) PoC Exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/sam00/CVE-2026-56158-.NET-Framework-RCE-PoC-Exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "detect.py",
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56158"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "sam00",
-      "researcherUrl": "https://github.com/sam00",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:22 AM CDT",
-      "firstSeenAt": "2026-08-10T14:22:44Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sam00/CVE-2026-56158-.NET-Framework-RCE-PoC-Exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sam00/CVE-2026-56158-.NET-Framework-RCE-PoC-Exploit\ncd CVE-2026-56158-.NET-Framework-RCE-PoC-Exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/sam00/CVE-2026-56158-.NET-Framework-RCE-PoC-Exploit"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-60004",
       "title": "\u2014 Gitea <= 1.27.0 Pre-Auth RCE",
       "ecosystem": "cloud",
@@ -1133,6 +1139,10 @@
         [
           "GitHub",
           "https://github.com/shinthink/CVE-2026-63223"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/codeigniter4/CodeIgniter4/commit/b6e9a4fa1dca2df3d3f261bdf61532df8c6420aa"
         ]
       ]
     },
@@ -1140,8 +1150,8 @@
       "cve": "CVE-2026-64824",
       "title": "\u2014 Home Assistant backup-restore symlink path traversal \u2192 root RCE. First working PoC, verified on real HA.",
       "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
+      "category": "kubernetes",
+      "severity": "medium",
       "proof": "working public poc",
       "pocUrl": "https://github.com/Boreas37/CVE-2026-64824-PoC",
       "pocValidation": {
@@ -1179,13 +1189,12 @@
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Web",
-        "Webstack",
+        "Kubernetes",
         "RCE"
       ],
       "confidence": 98,
@@ -1195,6 +1204,10 @@
         [
           "GitHub",
           "https://github.com/Boreas37/CVE-2026-64824-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/home-assistant/core/commit/1e457600f1093c15e1325742d03e2b76498c79c1"
         ]
       ]
     }
