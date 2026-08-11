@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T19:57:12Z",
+  "updatedAt": "2026-08-11T03:51:04Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -899,68 +899,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-66066",
-      "title": "\u2014 KindaRails2Shell: Rails Active Storage/libvips Arbitrary File Read \u2192 RCE. MATLAB/HDF5 dual-identity file \u2192.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-66066",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve_2026_66066.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-66066"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:22 AM CDT",
-      "firstSeenAt": "2026-08-10T14:22:44Z",
-      "language": "Python",
-      "summary": "\u2014 KindaRails2Shell: Rails Active Storage/libvips Arbitrary File Read \u2192 RCE. MATLAB/HDF5 dual-identity file \u2192 SECRET_KEY_BASE theft \u2192 forged variation. CVSS 9.5 | Rails < 8.1.3.1",
-      "technicalSummary": "\u2014 KindaRails2Shell: Rails Active Storage/libvips Arbitrary File Read \u2192 RCE. MATLAB/HDF5 dual-identity file \u2192 SECRET_KEY_BASE theft \u2192 forged variation. CVSS 9.5 | Rails < 8.1.3.1",
-      "breakdown": "\u2014 KindaRails2Shell: Rails Active Storage/libvips Arbitrary File Read \u2192 RCE. MATLAB/HDF5 dual-identity file \u2192 SECRET_KEY_BASE theft \u2192 forged variation. CVSS 9.5 | Rails < 8.1.3.1",
-      "whatBroke": "\u2014 KindaRails2Shell: Rails Active Storage/libvips Arbitrary File Read \u2192 RCE. MATLAB/HDF5 dual-identity file \u2192 SECRET_KEY_BASE theft \u2192 forged variation. CVSS 9.5 | Rails < 8.1.3.1",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-66066.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-66066\ncd CVE-2026-66066\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-66066"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/rails/rails/commit/1c01bb587206ee6eb0e1179c2cef96a6a47acb1e"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-17566",
       "title": "pgAdmin 4 Import/Export RCE (CVE-2026-17566) PoC - TO PROGRAM injection via backslash-escape mismatch",
       "ecosystem": "cloud",
@@ -1085,68 +1023,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-63223",
-      "title": "\u2014 CI4RCE: CodeIgniter 4 is_image/mime_in File Upload RCE. Magic bytes bypass (getExtension vs.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/shinthink/CVE-2026-63223",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve_2026_63223.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-63223"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "shinthink",
-      "researcherUrl": "https://github.com/shinthink",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:52 AM CDT",
-      "firstSeenAt": "2026-08-04T05:52:46Z",
-      "language": "Python",
-      "summary": "\u2014 CI4RCE: CodeIgniter 4 is_image/mime_in File Upload RCE. Magic bytes bypass (getExtension vs getClientExtension). CVSS 9.8 | CWE-434 | CI4 < 4.7.4",
-      "technicalSummary": "\u2014 CI4RCE: CodeIgniter 4 is_image/mime_in File Upload RCE. Magic bytes bypass (getExtension vs getClientExtension). CVSS 9.8 | CWE-434 | CI4 < 4.7.4",
-      "breakdown": "\u2014 CI4RCE: CodeIgniter 4 is_image/mime_in File Upload RCE. Magic bytes bypass (getExtension vs getClientExtension). CVSS 9.8 | CWE-434 | CI4 < 4.7.4",
-      "whatBroke": "\u2014 CI4RCE: CodeIgniter 4 is_image/mime_in File Upload RCE. Magic bytes bypass (getExtension vs getClientExtension). CVSS 9.8 | CWE-434 | CI4 < 4.7.4",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shinthink/CVE-2026-63223.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shinthink/CVE-2026-63223\ncd CVE-2026-63223\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/shinthink/CVE-2026-63223"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/codeigniter4/CodeIgniter4/commit/b6e9a4fa1dca2df3d3f261bdf61532df8c6420aa"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-64824",
       "title": "\u2014 Home Assistant backup-restore symlink path traversal \u2192 root RCE. First working PoC, verified on real HA.",
       "ecosystem": "web",
@@ -1208,6 +1084,132 @@
         [
           "Vendor Advisory",
           "https://github.com/home-assistant/core/commit/1e457600f1093c15e1325742d03e2b76498c79c1"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-23744",
+      "title": "2026 23744",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/sonnelon/CVE-2026-23744-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-23744"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "sonnelon",
+      "researcherUrl": "https://github.com/sonnelon",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "10:57 AM CDT",
+      "firstSeenAt": "2026-08-10T15:57:48Z",
+      "language": "Python",
+      "summary": "MCPJam inspector is the local-first development platform for MCP servers. Versions 1.4.2 and earlier are vulnerable to remote code execution (RCE) vulnerability, which allows an attacker to send a crafted HTTP request that.",
+      "technicalSummary": "MCPJam inspector is the local-first development platform for MCP servers. Versions 1.4.2 and earlier are vulnerable to remote code execution (RCE) vulnerability, which allows an attacker to send a crafted HTTP request that.",
+      "breakdown": "MCPJam inspector is the local-first development platform for MCP servers. Versions 1.4.2 and earlier are vulnerable to remote code execution (RCE) vulnerability, which allows an attacker to send a crafted HTTP request that.",
+      "whatBroke": "MCPJam inspector is the local-first development platform for MCP servers. Versions 1.4.2 and earlier are vulnerable to remote code execution (RCE) vulnerability, which allows an attacker to send a crafted HTTP request that.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sonnelon/CVE-2026-23744-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sonnelon/CVE-2026-23744-PoC\ncd CVE-2026-23744-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/sonnelon/CVE-2026-23744-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-18649",
+      "title": "Proof of concept for CVE-2026-18649, a remote denial of service vulnerability in GStreamer's H.264 RTP.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xSemizzz/CVE-2026-18649",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "trigger.py"
+        ],
+        "attackFiles": [
+          "trigger.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-18649"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xSemizzz",
+      "researcherUrl": "https://github.com/0xSemizzz",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:14 PM CDT",
+      "firstSeenAt": "2026-08-06T17:14:30Z",
+      "language": "Python",
+      "summary": "Proof of concept for a remote denial of service vulnerability in GStreamer's H.264 RTP depayloader (rtph264depay).",
+      "technicalSummary": "Proof of concept for a remote denial of service vulnerability in GStreamer's H.264 RTP depayloader (rtph264depay).",
+      "breakdown": "Proof of concept for a remote denial of service vulnerability in GStreamer's H.264 RTP depayloader (rtph264depay).",
+      "whatBroke": "Proof of concept for a remote denial of service vulnerability in GStreamer's H.264 RTP depayloader (rtph264depay).",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xSemizzz/CVE-2026-18649.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xSemizzz/CVE-2026-18649\ncd CVE-2026-18649\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xSemizzz/CVE-2026-18649"
+        ],
+        [
+          "Vendor Advisory",
+          "https://access.redhat.com/security/cve/CVE-2026-18649"
         ]
       ]
     }
