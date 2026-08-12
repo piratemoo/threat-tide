@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T14:22:47Z",
+  "updatedAt": "2026-08-12T20:02:34Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,97 @@
   ],
   "research": [
     {
+      "title": "Qualys Introduces Real-Time Cloud Security Posture Management (CSPM) for Faster Risk Detection and Remediation",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/08/12/qualys-introduces-real-time-cloud-security-posture-management-cspm-for-faster-risk-detection-and-remediation",
+      "summary": "Key Takeaways Cloud environments change continuously, while security still relies on periodic scans, leaving gaps where risks go undetected. That gap becomes exposure. Qualys Real-Time CSPM monitors cloud changes as they happen, while still supporting.",
+      "publishedAt": "2026-08-12T19:34:38Z",
+      "cves": [],
+      "tags": [
+        "Web",
+        "DevOps"
+      ]
+    },
+    {
+      "title": "ZDI-26-563: (Pwn2Own) Home Assistant Green Simple Service Discovery Protocol Server-Side Request Forgery Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-563/",
+      "summary": "This vulnerability allows network-adjacent attackers to initiate arbitrary server-side requests on affected installations of Home Assistant Green. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 5.4.",
+      "publishedAt": "2026-08-12T05:00:00Z",
+      "cves": [],
+      "tags": []
+    },
+    {
+      "title": "ZDI-26-562: (Pwn2Own) Home Assistant Green mDNS Server-Side Request Forgery Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-562/",
+      "summary": "This vulnerability allows network-adjacent attackers to initiate arbitrary server-side requests on affected installations of Home Assistant Green. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 5.4.",
+      "publishedAt": "2026-08-12T05:00:00Z",
+      "cves": [],
+      "tags": []
+    },
+    {
+      "title": "ZDI-26-561: (Pwn2Own) Home Assistant Green go2rtc Command Injection Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-561/",
+      "summary": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Home Assistant Green. An attacker must first obtain the ability to access the device's localhost interface. The ZDI has assigned a CVSS rating of 7.5.",
+      "publishedAt": "2026-08-12T05:00:00Z",
+      "cves": [],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-560: (Pwn2Own) Home Assistant Green go2rtc Command Injection Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-560/",
+      "summary": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Home Assistant Green. An attacker must first obtain the ability to access the device's localhost interface. The ZDI has assigned a CVSS rating of 7.5.",
+      "publishedAt": "2026-08-12T05:00:00Z",
+      "cves": [],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-559: (Pwn2Own) Amazon Smart Plug OTA Update Process Out-Of-Bounds Write Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-559/",
+      "summary": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Amazon Smart Plug. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.5.",
+      "publishedAt": "2026-08-12T05:00:00Z",
+      "cves": [],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-558: (Pwn2Own) Amazon Smart Plug OTA Update Process Improper Certificate Validation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-558/",
+      "summary": "This vulnerability allows network-adjacent attackers to bypass certificate validation for OTA updates on affected installations of Amazon Smart Plug. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 6.8.",
+      "publishedAt": "2026-08-12T05:00:00Z",
+      "cves": [],
+      "tags": [
+        "ADCS"
+      ]
+    },
+    {
+      "title": "ZDI-26-557: (Pwn2Own) Amazon Smart Plug Insecure Fallback Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-557/",
+      "summary": "This vulnerability allows network-adjacent attackers to disclose sensitive information on affected installations of Amazon Smart Plug. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 4.3.",
+      "publishedAt": "2026-08-12T05:00:00Z",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "Microsoft and Adobe Patch Tuesday, August 2026 Security Update Review",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
@@ -68,19 +159,6 @@
         "Android",
         "ADCS",
         "RCE"
-      ]
-    },
-    {
-      "title": "From Scanner Findings to Verifiable Web Application Risk",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/customer-story/cloud-native-webapp-security-validation/",
-      "summary": "Web application scanners can surface potential vulnerabilities. They don\u2019t always prove what attackers can actually exploit or give developers the evidence they need to act. A cloud-native merchandise returns technology provider needed a better way to.",
-      "publishedAt": "2026-08-11T17:07:51Z",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack"
       ]
     }
   ],
@@ -217,71 +295,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-39987",
-      "title": "Marimo Remote Code Execution Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/MADA0L/CVE-2026-39987-Poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-39987-Poc.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-39987-Poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-39987"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "MADA0L",
-      "researcherUrl": "https://github.com/MADA0L",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:08 PM CDT",
-      "firstSeenAt": "2026-08-10T02:08:03Z",
-      "language": "Python",
-      "summary": "Proof of Concept (PoC) WebSocket client for (Marimo Pre-Auth RCE), intended for authorized security testing.",
-      "technicalSummary": "Proof of Concept (PoC) WebSocket client for (Marimo Pre-Auth RCE), intended for authorized security testing.",
-      "breakdown": "Proof of Concept (PoC) WebSocket client for (Marimo Pre-Auth RCE), intended for authorized security testing.",
-      "whatBroke": "Proof of Concept (PoC) WebSocket client for (Marimo Pre-Auth RCE), intended for authorized security testing.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MADA0L/CVE-2026-39987-Poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MADA0L/CVE-2026-39987-Poc\ncd CVE-2026-39987-Poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Marimo",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/MADA0L/CVE-2026-39987-Poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-0300",
       "title": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability",
       "ecosystem": "cloud",
@@ -344,6 +357,72 @@
         [
           "Vendor Advisory",
           "https://security.paloaltonetworks.com/CVE-2026-0300"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-39987",
+      "title": "authentication bypass remote code execution exploit",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/matesz44/cve-2026-39987",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "cmd/cve-2026-39987/main.go",
+          "pkg/runner/runner.go"
+        ],
+        "attackFiles": [
+          "cmd/cve-2026-39987/main.go"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-39987"
+        ],
+        "language": "Go"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "matesz44",
+      "researcherUrl": "https://github.com/matesz44",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "2:12 PM CDT",
+      "firstSeenAt": "2026-08-12T19:12:11Z",
+      "language": "Go",
+      "summary": "PoC: Marimo<0.23.0 Pre-Auth Remote Code Execution via Terminal WebSocket Authentication Bypass",
+      "technicalSummary": "PoC: Marimo<0.23.0 Pre-Auth Remote Code Execution via Terminal WebSocket Authentication Bypass",
+      "breakdown": "PoC: Marimo<0.23.0 Pre-Auth Remote Code Execution via Terminal WebSocket Authentication Bypass",
+      "whatBroke": "PoC: Marimo<0.23.0 Pre-Auth Remote Code Execution via Terminal WebSocket Authentication Bypass",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at matesz44/cve-2026-39987.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/matesz44/cve-2026-39987\ncd cve-2026-39987\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Marimo",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/matesz44/cve-2026-39987"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
         ]
       ]
     },
@@ -413,6 +492,71 @@
       ]
     },
     {
+      "cve": "CVE-2026-56164",
+      "title": "Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability",
+      "ecosystem": "windows",
+      "category": "sharepoint",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/sam00/POC-CVE-2026-56164-exploit",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py",
+          "payload_gen.py",
+          "scan.py"
+        ],
+        "attackFiles": [
+          "exploit.py",
+          "payload_gen.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-56164"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "sam00",
+      "researcherUrl": "https://github.com/sam00",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:30 AM CDT",
+      "firstSeenAt": "2026-08-06T13:30:07Z",
+      "language": "Python",
+      "summary": "is a critical missing-authentication vulnerability affecting on-premises Microsoft SharePoint Server. It allows unauthenticated, remote attackers to elevate privileges over a network.",
+      "technicalSummary": "is a critical missing-authentication vulnerability affecting on-premises Microsoft SharePoint Server. It allows unauthenticated, remote attackers to elevate privileges over a network.",
+      "breakdown": "is a critical missing-authentication vulnerability affecting on-premises Microsoft SharePoint Server. It allows unauthenticated, remote attackers to elevate privileges over a network.",
+      "whatBroke": "is a critical missing-authentication vulnerability affecting on-premises Microsoft SharePoint Server. It allows unauthenticated, remote attackers to elevate privileges over a network.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sam00/POC-CVE-2026-56164-exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sam00/POC-CVE-2026-56164-exploit\ncd POC-CVE-2026-56164-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed SharePoint Server",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "SharePoint",
+        "Exploit",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 90,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/sam00/POC-CVE-2026-56164-exploit"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-56164"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-41091",
       "title": "Microsoft Defender Link Following Vulnerability",
       "ecosystem": "windows",
@@ -470,71 +614,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-41091"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-9198",
-      "title": "IBM Langflow Code Injection Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/rmhowe425/PoC-CVE-2026-9198",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-9198"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "rmhowe425",
-      "researcherUrl": "https://github.com/rmhowe425",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:22 AM CDT",
-      "firstSeenAt": "2026-08-12T14:22:47Z",
-      "language": "Python",
-      "summary": "Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
-      "technicalSummary": "Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
-      "breakdown": "Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
-      "whatBroke": "Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rmhowe425/PoC-CVE-2026-9198.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rmhowe425/PoC-CVE-2026-9198\ncd PoC-CVE-2026-9198\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Langflow",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 86,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/rmhowe425/PoC-CVE-2026-9198"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.ibm.com/support/pages/node/7278927"
         ]
       ]
     },
@@ -729,67 +808,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-17106",
-      "title": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
-      "ecosystem": "cloud",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/masasron/CopyEscape-CVE-2026-17106",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "linux/entrypoint.sh",
-          "linux/monitor.c",
-          "linux/watched_preload.c",
-          "macos/demo-macos.sh",
-          "macos/entrypoint.sh",
-          "macos/monitor.c",
-          "macos/watched_preload.c"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-17106"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "masasron",
-      "researcherUrl": "https://github.com/masasron",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:02 PM CDT",
-      "firstSeenAt": "2026-08-09T21:02:40Z",
-      "language": "C",
-      "summary": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
-      "technicalSummary": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
-      "breakdown": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
-      "whatBroke": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at masasron/CopyEscape-CVE-2026-17106.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/masasron/CopyEscape-CVE-2026-17106\ncd CopyEscape-CVE-2026-17106\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Kubernetes",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/masasron/CopyEscape-CVE-2026-17106"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-64640",
       "title": "Reproducer for CVE-2026-64640 \u2014 Apache Polaris Iceberg REST register/register-view vends storage credentials.",
       "ecosystem": "web",
@@ -851,6 +869,66 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/scd8p9wy8b9j3om5wohbotpfycnmmjl4"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-17106",
+      "title": "PoC funcional de CVE-2026-17106 (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria.",
+      "ecosystem": "linux",
+      "category": "kubernetes",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "entrypoint.sh",
+          "monitor.c",
+          "run-poc.sh",
+          "watched_preload.c"
+        ],
+        "attackFiles": [
+          "run-poc.sh"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-17106"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "686f6c61",
+      "researcherUrl": "https://github.com/686f6c61",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:41 AM CDT",
+      "firstSeenAt": "2026-08-12T16:41:52Z",
+      "language": "C",
+      "summary": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
+      "technicalSummary": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
+      "breakdown": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
+      "whatBroke": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 686f6c61/POC-CopyEscape-CVE-2026-17106.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106\ncd POC-CopyEscape-CVE-2026-17106\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kubernetes",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106"
         ]
       ]
     }
