@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T04:13:52Z",
+  "updatedAt": "2026-08-12T14:22:47Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,7 +51,7 @@
   ],
   "research": [
     {
-      "title": "Microsoft Patch Tuesday, August 2026 Security Update Review",
+      "title": "Microsoft and Adobe Patch Tuesday, August 2026 Security Update Review",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
       "url": "https://blog.qualys.com/vulnerabilities-threat-research/patch-tuesday/2026/08/11/microsoft-patch-tuesday-august-2026-security-update-review",
@@ -81,147 +81,6 @@
       "tags": [
         "Web",
         "Webstack"
-      ]
-    },
-    {
-      "title": "Head Mare APT is exploiting vulnerabilities in an unpatched TrueConf server to deliver PhantomCore and PhantomGraph to video conference participants",
-      "source": "Kaspersky GReAT",
-      "sourceUrl": "https://securelist.com/",
-      "url": "https://securelist.com/tr/head-mare-targets-trueconf-server-with-phantomcore/120988/",
-      "summary": "",
-      "publishedAt": "2026-08-11T12:00:55Z",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "Critical SQL Injection in Metabase via Password Reset: CVE-2026-72898",
-      "source": "Bishop Fox",
-      "sourceUrl": "https://x.com/BishopFox",
-      "url": "https://bishopfox.com/blog/critical-sql-injection-in-metabase-via-password-reset-cve-2026-72898",
-      "summary": "Immediate action is advised for all organizations running self-hosted Metabase. A critical, unauthenticated SQL injection vulnerability has been disclosed in Metabase's password reset functionality, and Metabase has confirmed active exploitation in the wild.",
-      "publishedAt": "2026-08-11T07:00:00Z",
-      "cves": [
-        "CVE-2026-72898"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "SQLi"
-      ]
-    },
-    {
-      "title": "ZDI-26-556: Parallels RAS Client RDP Backend Service Exposed Dangerous Function Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-556/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Parallels RAS Client. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI.",
-      "publishedAt": "2026-08-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-18263"
-      ],
-      "tags": [
-        "Windows",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-555: Parallels RAS Client RDP Backend Service Exposed Dangerous Function Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-555/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Parallels RAS Client. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI.",
-      "publishedAt": "2026-08-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-18262"
-      ],
-      "tags": [
-        "Windows",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-554: Parallels RAS Client RDP Backend Service Exposed Dangerous Function Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-554/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Parallels RAS Client. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI.",
-      "publishedAt": "2026-08-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-13121"
-      ],
-      "tags": [
-        "Windows",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-553: OriginLab Origin Viewer OGW File Parsing Memory Corruption Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-553/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab Origin Viewer. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
-      "publishedAt": "2026-08-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-18294"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-552: OriginLab Origin Viewer OPJ File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-552/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab Origin Viewer. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
-      "publishedAt": "2026-08-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-18293"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-551: OriginLab OriginPro OGG File Parsing Memory Corruption Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-551/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab OriginPro . User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
-      "publishedAt": "2026-08-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-18292"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-550: OriginLab OriginPro OGW File Parsing Memory Corruption Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-550/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab OriginPro. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
-      "publishedAt": "2026-08-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-18291"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-549: OriginLab OriginPro OGG File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-549/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab OriginPro. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
-      "publishedAt": "2026-08-11T05:00:00Z",
-      "cves": [
-        "CVE-2026-18290"
-      ],
-      "tags": [
-        "RCE"
       ]
     }
   ],
@@ -254,8 +113,8 @@
       "researcherUrl": "https://github.com/AnggaTechI",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "4:21 PM CDT",
-      "firstSeenAt": "2026-08-05T21:21:12Z",
+      "added": "9:22 AM CDT",
+      "firstSeenAt": "2026-08-12T14:22:47Z",
       "language": "Python",
       "summary": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
       "technicalSummary": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
@@ -279,7 +138,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -345,7 +204,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -410,7 +269,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -476,7 +335,7 @@
       ],
       "confidence": 98,
       "weaponization": 98,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -541,7 +400,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -602,7 +461,7 @@
       ],
       "confidence": 98,
       "weaponization": 80,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -642,8 +501,8 @@
       "researcherUrl": "https://github.com/rmhowe425",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "12:44 PM CDT",
-      "firstSeenAt": "2026-08-05T17:44:08Z",
+      "added": "9:22 AM CDT",
+      "firstSeenAt": "2026-08-12T14:22:47Z",
       "language": "Python",
       "summary": "Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
       "technicalSummary": "Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
@@ -667,7 +526,7 @@
       ],
       "confidence": 98,
       "weaponization": 86,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -733,7 +592,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -797,7 +656,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -857,7 +716,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -871,15 +730,15 @@
     },
     {
       "cve": "CVE-2026-17106",
-      "title": "CopyEscape (CVE-2026-17106) docker cp container-to-host arbitrary file write PoC mirror \u2014 Imperva Ron Masas,.",
+      "title": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
       "ecosystem": "cloud",
       "category": "kubernetes",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/CVE-2026-17106",
+      "pocUrl": "https://github.com/masasron/CopyEscape-CVE-2026-17106",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 10,
         "codeFiles": [
           "linux/entrypoint.sh",
           "linux/monitor.c",
@@ -890,26 +749,26 @@
           "macos/watched_preload.c"
         ],
         "attackFiles": [],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
           "CVE-2026-17106"
         ],
         "language": "C"
       },
       "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
+      "researcher": "masasron",
+      "researcherUrl": "https://github.com/masasron",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:34 AM CDT",
-      "firstSeenAt": "2026-08-11T11:34:39Z",
+      "added": "4:02 PM CDT",
+      "firstSeenAt": "2026-08-09T21:02:40Z",
       "language": "C",
-      "summary": "CopyEscape () docker cp container-to-host arbitrary file write PoC mirror \u2014 Imperva Ron Masas, MIT; for authorized security testing",
-      "technicalSummary": "CopyEscape () docker cp container-to-host arbitrary file write PoC mirror \u2014 Imperva Ron Masas, MIT; for authorized security testing",
-      "breakdown": "CopyEscape () docker cp container-to-host arbitrary file write PoC mirror \u2014 Imperva Ron Masas, MIT; for authorized security testing",
-      "whatBroke": "CopyEscape () docker cp container-to-host arbitrary file write PoC mirror \u2014 Imperva Ron Masas, MIT; for authorized security testing",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-17106.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-17106\ncd CVE-2026-17106\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
+      "technicalSummary": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
+      "breakdown": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
+      "whatBroke": "PoC repository for the blog post CopyEscape: Taking Over Docker Hosts with docker cp",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at masasron/CopyEscape-CVE-2026-17106.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/masasron/CopyEscape-CVE-2026-17106\ncd CopyEscape-CVE-2026-17106\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "lateral movement if secrets or management access are recovered"
@@ -918,15 +777,15 @@
       "tags": [
         "Cloud",
         "Kubernetes",
-        "File Read"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/HackSpeak/CVE-2026-17106"
+          "https://github.com/masasron/CopyEscape-CVE-2026-17106"
         ]
       ]
     },
@@ -983,7 +842,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
