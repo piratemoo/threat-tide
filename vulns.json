@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T20:02:42Z",
+  "updatedAt": "2026-08-12T04:13:52Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,26 @@
   ],
   "research": [
     {
+      "title": "Microsoft Patch Tuesday, August 2026 Security Update Review",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/patch-tuesday/2026/08/11/microsoft-patch-tuesday-august-2026-security-update-review",
+      "summary": "The August 2026 Microsoft Patch Tuesday release delivers security fixes for vulnerabilities affecting a wide range of Microsoft products and services. As attackers continue to exploit unpatched vulnerabilities, timely patching remains critical for reducing.",
+      "publishedAt": "2026-08-11T21:55:19Z",
+      "cves": [
+        "CVE-2026-49163",
+        "CVE-2026-50481",
+        "CVE-2026-50515",
+        "CVE-2026-50516",
+        "CVE-2026-56161"
+      ],
+      "tags": [
+        "Android",
+        "ADCS",
+        "RCE"
+      ]
+    },
+    {
       "title": "From Scanner Findings to Verifiable Web Application Risk",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
@@ -72,6 +92,137 @@
       "publishedAt": "2026-08-11T12:00:55Z",
       "cves": [],
       "tags": []
+    },
+    {
+      "title": "Critical SQL Injection in Metabase via Password Reset: CVE-2026-72898",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/critical-sql-injection-in-metabase-via-password-reset-cve-2026-72898",
+      "summary": "Immediate action is advised for all organizations running self-hosted Metabase. A critical, unauthenticated SQL injection vulnerability has been disclosed in Metabase's password reset functionality, and Metabase has confirmed active exploitation in the wild.",
+      "publishedAt": "2026-08-11T07:00:00Z",
+      "cves": [
+        "CVE-2026-72898"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "SQLi"
+      ]
+    },
+    {
+      "title": "ZDI-26-556: Parallels RAS Client RDP Backend Service Exposed Dangerous Function Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-556/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Parallels RAS Client. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI.",
+      "publishedAt": "2026-08-11T05:00:00Z",
+      "cves": [
+        "CVE-2026-18263"
+      ],
+      "tags": [
+        "Windows",
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-555: Parallels RAS Client RDP Backend Service Exposed Dangerous Function Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-555/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Parallels RAS Client. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI.",
+      "publishedAt": "2026-08-11T05:00:00Z",
+      "cves": [
+        "CVE-2026-18262"
+      ],
+      "tags": [
+        "Windows",
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-554: Parallels RAS Client RDP Backend Service Exposed Dangerous Function Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-554/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Parallels RAS Client. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI.",
+      "publishedAt": "2026-08-11T05:00:00Z",
+      "cves": [
+        "CVE-2026-13121"
+      ],
+      "tags": [
+        "Windows",
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-553: OriginLab Origin Viewer OGW File Parsing Memory Corruption Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-553/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab Origin Viewer. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-08-11T05:00:00Z",
+      "cves": [
+        "CVE-2026-18294"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-552: OriginLab Origin Viewer OPJ File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-552/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab Origin Viewer. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-08-11T05:00:00Z",
+      "cves": [
+        "CVE-2026-18293"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-551: OriginLab OriginPro OGG File Parsing Memory Corruption Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-551/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab OriginPro . User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-08-11T05:00:00Z",
+      "cves": [
+        "CVE-2026-18292"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-550: OriginLab OriginPro OGW File Parsing Memory Corruption Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-550/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab OriginPro. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
+      "publishedAt": "2026-08-11T05:00:00Z",
+      "cves": [
+        "CVE-2026-18291"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-549: OriginLab OriginPro OGG File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-549/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of OriginLab OriginPro. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
+      "publishedAt": "2026-08-11T05:00:00Z",
+      "cves": [
+        "CVE-2026-18290"
+      ],
+      "tags": [
+        "RCE"
+      ]
     }
   ],
   "vulns": [
@@ -147,11 +298,13 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/sowarma/wp2shell-PoC",
+      "pocUrl": "https://github.com/g0d150ne/WP2Shell",
       "pocValidation": {
         "valid": true,
         "score": 7,
         "codeFiles": [
+          "wp2shell-exposure.yaml",
+          "wp2shell-exposure/wp2shell-exposure.py",
           "wp2shell.py"
         ],
         "attackFiles": [],
@@ -163,19 +316,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "sowarma",
-      "researcherUrl": "https://github.com/sowarma",
+      "researcher": "g0d150ne",
+      "researcherUrl": "https://github.com/g0d150ne",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "7:48 AM CDT",
-      "firstSeenAt": "2026-08-05T12:48:03Z",
+      "added": "3:26 AM CDT",
+      "firstSeenAt": "2026-08-09T08:26:51Z",
       "language": "Python",
-      "summary": "& RCE chain proof-of-concept",
-      "technicalSummary": "& RCE chain proof-of-concept",
-      "breakdown": "& RCE chain proof-of-concept",
-      "whatBroke": "& RCE chain proof-of-concept",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sowarma/wp2shell-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sowarma/wp2shell-PoC\ncd wp2shell-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "WP2Shell is a powerful and modular exploit framework that combines two critical WordPress vulnerabilities (CVE-2026-63030 and ) to achieve complete compromise of a target site without any credentials.",
+      "technicalSummary": "WP2Shell is a powerful and modular exploit framework that combines two critical WordPress vulnerabilities (CVE-2026-63030 and ) to achieve complete compromise of a target site without any credentials.",
+      "breakdown": "WP2Shell is a powerful and modular exploit framework that combines two critical WordPress vulnerabilities (CVE-2026-63030 and ) to achieve complete compromise of a target site without any credentials.",
+      "whatBroke": "WP2Shell is a powerful and modular exploit framework that combines two critical WordPress vulnerabilities (CVE-2026-63030 and ) to achieve complete compromise of a target site without any credentials.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at g0d150ne/WP2Shell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/g0d150ne/WP2Shell\ncd WP2Shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Core",
         "credential access from service context",
@@ -192,11 +345,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/sowarma/wp2shell-PoC"
+          "https://github.com/g0d150ne/WP2Shell"
         ],
         [
           "Vendor Advisory",
@@ -839,378 +992,6 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/scd8p9wy8b9j3om5wohbotpfycnmmjl4"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-70553",
-      "title": "MaxSite CMS Unauthenticated RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/woshidashabi1126/CVE-2026-70553-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-70553"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "woshidashabi1126",
-      "researcherUrl": "https://github.com/woshidashabi1126",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:10 AM CDT",
-      "firstSeenAt": "2026-08-06T14:10:05Z",
-      "language": "Python",
-      "summary": "MaxSite CMS contains a remote code execution vulnerability that allows unauthenticated attackers to inject arbitrary PHP code into the application configuration file by submitting crafted POST requests to the install endpoint.",
-      "technicalSummary": "MaxSite CMS contains a remote code execution vulnerability that allows unauthenticated attackers to inject arbitrary PHP code into the application configuration file by submitting crafted POST requests to the install endpoint.",
-      "breakdown": "MaxSite CMS contains a remote code execution vulnerability that allows unauthenticated attackers to inject arbitrary PHP code into the application configuration file by submitting crafted POST requests to the install endpoint.",
-      "whatBroke": "MaxSite CMS contains a remote code execution vulnerability that allows unauthenticated attackers to inject arbitrary PHP code into the application configuration file by submitting crafted POST requests to the install endpoint.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at woshidashabi1126/CVE-2026-70553-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/woshidashabi1126/CVE-2026-70553-PoC\ncd CVE-2026-70553-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/woshidashabi1126/CVE-2026-70553-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/maxsite/cms"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-64564",
-      "title": "LPE on Deb",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ethanolgolf/CVE-2026-64564",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "lpe_debian.6.12.95.c",
-          "lpe_ocos_docker.c"
-        ],
-        "attackFiles": [
-          "lpe_debian.6.12.95.c",
-          "lpe_ocos_docker.c"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-64564"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ethanolgolf",
-      "researcherUrl": "https://github.com/ethanolgolf",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:19 AM CDT",
-      "firstSeenAt": "2026-08-07T09:19:32Z",
-      "language": "C",
-      "summary": "LPE on Deb",
-      "technicalSummary": "LPE on Deb",
-      "breakdown": "LPE on Deb",
-      "whatBroke": "LPE on Deb",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ethanolgolf/CVE-2026-64564.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ethanolgolf/CVE-2026-64564\ncd CVE-2026-64564\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ethanolgolf/CVE-2026-64564"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/74e8f3e7114f0e26d1b2c4c048044db9fcc27603"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-64824",
-      "title": "\u2014 Home Assistant backup-restore symlink path traversal \u2192 root RCE. First working PoC, verified on real HA.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Boreas37/CVE-2026-64824-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-64824.py",
-          "build_backup.py",
-          "inject_backup.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-64824.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-64824"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Boreas37",
-      "researcherUrl": "https://github.com/Boreas37",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:21 AM CDT",
-      "firstSeenAt": "2026-08-10T12:21:47Z",
-      "language": "Python",
-      "summary": "\u2014 Home Assistant backup-restore symlink path traversal \u2192 root RCE. First working PoC, verified on real HA 2026.5.4 (sitecustomize.py overwrite). GHSA-cwh8-w64c-4j5h",
-      "technicalSummary": "\u2014 Home Assistant backup-restore symlink path traversal \u2192 root RCE. First working PoC, verified on real HA 2026.5.4 (sitecustomize.py overwrite). GHSA-cwh8-w64c-4j5h",
-      "breakdown": "\u2014 Home Assistant backup-restore symlink path traversal \u2192 root RCE. First working PoC, verified on real HA 2026.5.4 (sitecustomize.py overwrite). GHSA-cwh8-w64c-4j5h",
-      "whatBroke": "\u2014 Home Assistant backup-restore symlink path traversal \u2192 root RCE. First working PoC, verified on real HA 2026.5.4 (sitecustomize.py overwrite). GHSA-cwh8-w64c-4j5h",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Boreas37/CVE-2026-64824-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Boreas37/CVE-2026-64824-PoC\ncd CVE-2026-64824-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Boreas37/CVE-2026-64824-PoC"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-23744",
-      "title": "2026 23744",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/sonnelon/CVE-2026-23744-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-23744"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "sonnelon",
-      "researcherUrl": "https://github.com/sonnelon",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:57 AM CDT",
-      "firstSeenAt": "2026-08-10T15:57:48Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sonnelon/CVE-2026-23744-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sonnelon/CVE-2026-23744-PoC\ncd CVE-2026-23744-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/sonnelon/CVE-2026-23744-PoC"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-18649",
-      "title": "Proof of concept for CVE-2026-18649, a remote denial of service vulnerability in GStreamer's H.264 RTP.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xSemizzz/CVE-2026-18649",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "trigger.py"
-        ],
-        "attackFiles": [
-          "trigger.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-18649"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xSemizzz",
-      "researcherUrl": "https://github.com/0xSemizzz",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:14 PM CDT",
-      "firstSeenAt": "2026-08-06T17:14:30Z",
-      "language": "Python",
-      "summary": "Proof of concept for a remote denial of service vulnerability in GStreamer's H.264 RTP depayloader (rtph264depay).",
-      "technicalSummary": "Proof of concept for a remote denial of service vulnerability in GStreamer's H.264 RTP depayloader (rtph264depay).",
-      "breakdown": "Proof of concept for a remote denial of service vulnerability in GStreamer's H.264 RTP depayloader (rtph264depay).",
-      "whatBroke": "Proof of concept for a remote denial of service vulnerability in GStreamer's H.264 RTP depayloader (rtph264depay).",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xSemizzz/CVE-2026-18649.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xSemizzz/CVE-2026-18649\ncd CVE-2026-18649\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xSemizzz/CVE-2026-18649"
-        ],
-        [
-          "Vendor Advisory",
-          "https://access.redhat.com/errata/RHSA-2026:53452"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-19193",
-      "title": "Affected Asset:",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/patrickt2017/CVE-2026-19193-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-19193.cpp"
-        ],
-        "attackFiles": [
-          "CVE-2026-19193.cpp"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-19193"
-        ],
-        "language": "C++"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "patrickt2017",
-      "researcherUrl": "https://github.com/patrickt2017",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:09 PM CDT",
-      "firstSeenAt": "2026-08-09T03:09:24Z",
-      "language": "C++",
-      "summary": "A flaw has been found in Jiangmin Antivirus 21. Impacted is the function MessageNotifyCallback in the library kvcore.sys of the component Minifilter Port. Executing a manipulation can lead to improper access controls. The attack.",
-      "technicalSummary": "A flaw has been found in Jiangmin Antivirus 21. Impacted is the function MessageNotifyCallback in the library kvcore.sys of the component Minifilter Port. Executing a manipulation can lead to improper access controls. The attack.",
-      "breakdown": "A flaw has been found in Jiangmin Antivirus 21. Impacted is the function MessageNotifyCallback in the library kvcore.sys of the component Minifilter Port. Executing a manipulation can lead to improper access controls. The attack.",
-      "whatBroke": "A flaw has been found in Jiangmin Antivirus 21. Impacted is the function MessageNotifyCallback in the library kvcore.sys of the component Minifilter Port. Executing a manipulation can lead to improper access controls. The attack.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at patrickt2017/CVE-2026-19193-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/patrickt2017/CVE-2026-19193-PoC\ncd CVE-2026-19193-PoC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/patrickt2017/CVE-2026-19193-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/patrickt2017/CVE-2026-19193-PoC"
         ]
       ]
     }
