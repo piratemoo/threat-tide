@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T20:02:34Z",
+  "updatedAt": "2026-08-13T04:18:52Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -140,66 +140,47 @@
       "publishedAt": "2026-08-12T05:00:00Z",
       "cves": [],
       "tags": []
-    },
-    {
-      "title": "Microsoft and Adobe Patch Tuesday, August 2026 Security Update Review",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/vulnerabilities-threat-research/patch-tuesday/2026/08/11/microsoft-patch-tuesday-august-2026-security-update-review",
-      "summary": "The August 2026 Microsoft Patch Tuesday release delivers security fixes for vulnerabilities affecting a wide range of Microsoft products and services. As attackers continue to exploit unpatched vulnerabilities, timely patching remains critical for reducing.",
-      "publishedAt": "2026-08-11T21:55:19Z",
-      "cves": [
-        "CVE-2026-49163",
-        "CVE-2026-50481",
-        "CVE-2026-50515",
-        "CVE-2026-50516",
-        "CVE-2026-56161"
-      ],
-      "tags": [
-        "Android",
-        "ADCS",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
     {
       "cve": "CVE-2026-63030",
-      "title": "SQL injection remote code execution exploit",
+      "title": "WordPress Core Interpretation Conflict Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/AnggaTechI/CVE-2026-63030",
+      "pocUrl": "https://github.com/g0d150ne/WP2Shell",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "exploit.py"
+          "wp2shell-exposure.yaml",
+          "wp2shell-exposure/wp2shell-exposure.py",
+          "wp2shell.py"
         ],
-        "attackFiles": [
-          "exploit.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
+          "CVE-2026-60137",
           "CVE-2026-63030"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "AnggaTechI",
-      "researcherUrl": "https://github.com/AnggaTechI",
+      "researcher": "g0d150ne",
+      "researcherUrl": "https://github.com/g0d150ne",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "9:22 AM CDT",
-      "firstSeenAt": "2026-08-12T14:22:47Z",
+      "added": "3:26 AM CDT",
+      "firstSeenAt": "2026-08-09T08:26:51Z",
       "language": "Python",
-      "summary": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
-      "technicalSummary": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
-      "breakdown": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
-      "whatBroke": "WordPress Core Pre-Auth RCE \u2014 Batch Route Confusion + SQL Injection",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at AnggaTechI/CVE-2026-63030.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/AnggaTechI/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "WP2Shell is a powerful and modular exploit framework that combines two critical WordPress vulnerabilities (and CVE-2026-60137) to achieve complete compromise of a target site without any credentials.",
+      "technicalSummary": "WP2Shell is a powerful and modular exploit framework that combines two critical WordPress vulnerabilities (and CVE-2026-60137) to achieve complete compromise of a target site without any credentials.",
+      "breakdown": "WP2Shell is a powerful and modular exploit framework that combines two critical WordPress vulnerabilities (and CVE-2026-60137) to achieve complete compromise of a target site without any credentials.",
+      "whatBroke": "WP2Shell is a powerful and modular exploit framework that combines two critical WordPress vulnerabilities (and CVE-2026-60137) to achieve complete compromise of a target site without any credentials.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at g0d150ne/WP2Shell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/g0d150ne/WP2Shell\ncd WP2Shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Core",
         "credential access from service context",
@@ -216,11 +197,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/AnggaTechI/CVE-2026-63030"
+          "https://github.com/g0d150ne/WP2Shell"
         ],
         [
           "Vendor Advisory",
@@ -488,71 +469,6 @@
         [
           "Vendor Advisory",
           "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56164",
-      "title": "Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability",
-      "ecosystem": "windows",
-      "category": "sharepoint",
-      "severity": "medium",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/sam00/POC-CVE-2026-56164-exploit",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "payload_gen.py",
-          "scan.py"
-        ],
-        "attackFiles": [
-          "exploit.py",
-          "payload_gen.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56164"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "sam00",
-      "researcherUrl": "https://github.com/sam00",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:30 AM CDT",
-      "firstSeenAt": "2026-08-06T13:30:07Z",
-      "language": "Python",
-      "summary": "is a critical missing-authentication vulnerability affecting on-premises Microsoft SharePoint Server. It allows unauthenticated, remote attackers to elevate privileges over a network.",
-      "technicalSummary": "is a critical missing-authentication vulnerability affecting on-premises Microsoft SharePoint Server. It allows unauthenticated, remote attackers to elevate privileges over a network.",
-      "breakdown": "is a critical missing-authentication vulnerability affecting on-premises Microsoft SharePoint Server. It allows unauthenticated, remote attackers to elevate privileges over a network.",
-      "whatBroke": "is a critical missing-authentication vulnerability affecting on-premises Microsoft SharePoint Server. It allows unauthenticated, remote attackers to elevate privileges over a network.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sam00/POC-CVE-2026-56164-exploit.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sam00/POC-CVE-2026-56164-exploit\ncd POC-CVE-2026-56164-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed SharePoint Server",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "SharePoint",
-        "Exploit",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 90,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/sam00/POC-CVE-2026-56164-exploit"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-56164"
         ]
       ]
     },
@@ -869,66 +785,6 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/scd8p9wy8b9j3om5wohbotpfycnmmjl4"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-17106",
-      "title": "PoC funcional de CVE-2026-17106 (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria.",
-      "ecosystem": "linux",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "entrypoint.sh",
-          "monitor.c",
-          "run-poc.sh",
-          "watched_preload.c"
-        ],
-        "attackFiles": [
-          "run-poc.sh"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-17106"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "686f6c61",
-      "researcherUrl": "https://github.com/686f6c61",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:41 AM CDT",
-      "firstSeenAt": "2026-08-12T16:41:52Z",
-      "language": "C",
-      "summary": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
-      "technicalSummary": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
-      "breakdown": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
-      "whatBroke": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 686f6c61/POC-CopyEscape-CVE-2026-17106.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106\ncd POC-CopyEscape-CVE-2026-17106\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kubernetes",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106"
         ]
       ]
     }
