@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T04:15:24Z",
+  "updatedAt": "2026-08-14T14:18:02Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -51,6 +51,22 @@
   ],
   "research": [
     {
+      "title": "You\u2019re Back In The Room (Citrix NetScaler Pre-Auth RCE CVE-2026-8452(?))",
+      "source": "watchTowr Labs",
+      "sourceUrl": "https://x.com/watchtowrcyber",
+      "url": "https://labs.watchtowr.com/youre-back-in-the-room-citrix-netscaler-pre-auth-rce-cve-2026-8452/",
+      "summary": "Suddenly, you\u2019re in a room. You look around - oh, you\u2019re surrounded by other new starters at your new job. Yes, it\u2019s Monday, and you\u2019re being onboarded. You know the drill - it\u2019s the typical enterprise \u201cplease don\u2019t be a bad person or we may have to fire.",
+      "publishedAt": "2026-08-14T07:08:20Z",
+      "cves": [
+        "CVE-2026-8452"
+      ],
+      "tags": [
+        "Linux",
+        "VPN Edge",
+        "RCE"
+      ]
+    },
+    {
       "title": "CVE-2026-72898 | Metabase Pre-Authentication SQL Injection Vulnerability",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
@@ -89,130 +105,6 @@
       "publishedAt": "2026-08-13T15:07:45Z",
       "cves": [],
       "tags": []
-    },
-    {
-      "title": "ZDI-26-584: dnsmasq DNSSEC NSEC/NSEC3 Type Bitmap Processing Infinite Loop Denial-of-Service Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-584/",
-      "summary": "This vulnerability allows remote attackers to create a denial-of-service condition on affected installations of dnsmasq. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.5. The following CVEs are assigned:.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [
-        "CVE-2026-4890"
-      ],
-      "tags": []
-    },
-    {
-      "title": "ZDI-26-583: Clam AntiVirus 7z Archive Parsing Integer Overflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-583/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Clam AntiVirus. Interaction with this product is required to exploit this vulnerability but attack vectors may vary depending on the implementation. The ZDI has.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [
-        "CVE-2026-20215"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-582: Cisco Identity Services Engine PatchUpdateListener Directory Traversal Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-582/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Cisco Identity Services Engine. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 4.9. The following CVEs.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [
-        "CVE-2026-20148"
-      ],
-      "tags": []
-    },
-    {
-      "title": "ZDI-26-581: Cisco Identity Services Engine invokeScript Command Injection Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-581/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Cisco Identity Services Engine. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [
-        "CVE-2026-20147"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-580: Cisco Identity Services Engine Missing Authentication for Critical Function Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-580/",
-      "summary": "The vulnerability allows remote attackers to disclose sensitive information on affected installations of Cisco Identity Services Engine. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.5. The following.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [
-        "CVE-2026-20190"
-      ],
-      "tags": []
-    },
-    {
-      "title": "ZDI-26-579: Cisco Identity Services Engine zipFiles Directory Traversal Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-579/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Cisco Identity Services Engine. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [
-        "CVE-2026-20181"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-578: NGINX HTTP Dav Module Alias Directive Integer Underflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-578/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of NGINX. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 8.1. The following CVEs are assigned: CVE-2026-27654.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [
-        "CVE-2026-27654"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-577: Trend Micro VPN OpenSSL Configuration Uncontrolled Search Path Element Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-577/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Trend Micro VPN. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [
-        "CVE-2026-67212"
-      ],
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-576: Linux Kernel XFRM Race Condition Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-576/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Linux Kernel. An attacker must first obtain the ability to execute high-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-08-13T05:00:00Z",
-      "cves": [],
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local Lpe"
-      ]
     }
   ],
   "vulns": [
@@ -270,7 +162,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -336,7 +228,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -402,7 +294,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -467,7 +359,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -530,7 +422,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -591,7 +483,7 @@
       ],
       "confidence": 98,
       "weaponization": 80,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -600,384 +492,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-41091"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-23744",
-      "title": "reverse shell command injection exploit",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Mluex0/CVE-2026-23744-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "CVE_2026_23744.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-23744"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Mluex0",
-      "researcherUrl": "https://github.com/Mluex0",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "4:07 AM CDT",
-      "firstSeenAt": "2026-08-10T09:07:16Z",
-      "language": "Python",
-      "summary": "is an unauthenticated command injection in MCPJam Inspector \u22641.4.2 via /api/mcp/connect. This POC exploits it by sending a crafted JSON payload to execute arbitrary commands, granting a reverse shell with PTY.",
-      "technicalSummary": "is an unauthenticated command injection in MCPJam Inspector \u22641.4.2 via /api/mcp/connect. This POC exploits it by sending a crafted JSON payload to execute arbitrary commands, granting a reverse shell with PTY.",
-      "breakdown": "is an unauthenticated command injection in MCPJam Inspector \u22641.4.2 via /api/mcp/connect. This POC exploits it by sending a crafted JSON payload to execute arbitrary commands, granting a reverse shell with PTY.",
-      "whatBroke": "is an unauthenticated command injection in MCPJam Inspector \u22641.4.2 via /api/mcp/connect. This POC exploits it by sending a crafted JSON payload to execute arbitrary commands, granting a reverse shell with PTY.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Mluex0/CVE-2026-23744-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Mluex0/CVE-2026-23744-PoC\ncd CVE-2026-23744-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Mluex0/CVE-2026-23744-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-26119",
-      "title": "WAC RCE - CVE-2026-26119 Windows Admin Center authenticated RCE via WinREST/PowerShell invokeCommand.",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/r3vpwnx/CVE-2026-26119",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "wac_rce.py"
-        ],
-        "attackFiles": [
-          "wac_rce.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-26119"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "r3vpwnx",
-      "researcherUrl": "https://github.com/r3vpwnx",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:21 PM CDT",
-      "firstSeenAt": "2026-08-09T20:21:00Z",
-      "language": "Python",
-      "summary": "WAC RCE - Windows Admin Center authenticated RCE via WinREST/PowerShell invokeCommand.",
-      "technicalSummary": "WAC RCE - Windows Admin Center authenticated RCE via WinREST/PowerShell invokeCommand.",
-      "breakdown": "WAC RCE - Windows Admin Center authenticated RCE via WinREST/PowerShell invokeCommand.",
-      "whatBroke": "WAC RCE - Windows Admin Center authenticated RCE via WinREST/PowerShell invokeCommand.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at r3vpwnx/CVE-2026-26119.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/r3vpwnx/CVE-2026-26119\ncd CVE-2026-26119\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/r3vpwnx/CVE-2026-26119"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-26119"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-43499",
-      "title": "(GhostLock) rtmutex remove_waiter() UAF local-root PoC adapted for Qualcomm Android 4.19 kernels (Redmi K40.",
-      "ecosystem": "android",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/yijiacloud/ghostlock-cve-2026-43499-4.19-k40",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "build.sh",
-          "src/fops.c",
-          "src/main.c",
-          "src/pipe.c",
-          "src/preload.c",
-          "src/root.c",
-          "src/slide.c",
-          "src/su_daemon.c"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43499"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "yijiacloud",
-      "researcherUrl": "https://github.com/yijiacloud",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:00 AM CDT",
-      "firstSeenAt": "2026-08-11T07:00:12Z",
-      "language": "C",
-      "summary": "(GhostLock) rtmutex remove_waiter() UAF local-root PoC adapted for Qualcomm Android 4.19 kernels (Redmi K40 / Snapdragon 870 class), LD_PRELOAD based",
-      "technicalSummary": "(GhostLock) rtmutex remove_waiter() UAF local-root PoC adapted for Qualcomm Android 4.19 kernels (Redmi K40 / Snapdragon 870 class), LD_PRELOAD based",
-      "breakdown": "(GhostLock) rtmutex remove_waiter() UAF local-root PoC adapted for Qualcomm Android 4.19 kernels (Redmi K40 / Snapdragon 870 class), LD_PRELOAD based",
-      "whatBroke": "(GhostLock) rtmutex remove_waiter() UAF local-root PoC adapted for Qualcomm Android 4.19 kernels (Redmi K40 / Snapdragon 870 class), LD_PRELOAD based",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at yijiacloud/ghostlock-cve-2026-43499-4.19-k40.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/yijiacloud/ghostlock-cve-2026-43499-4.19-k40\ncd ghostlock-cve-2026-43499-4.19-k40\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Android",
-        "Kernel",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/yijiacloud/ghostlock-cve-2026-43499-4.19-k40"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-17106",
-      "title": "PoC funcional de CVE-2026-17106 (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria.",
-      "ecosystem": "linux",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "entrypoint.sh",
-          "monitor.c",
-          "run-poc.sh",
-          "watched_preload.c"
-        ],
-        "attackFiles": [
-          "run-poc.sh"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-17106"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "686f6c61",
-      "researcherUrl": "https://github.com/686f6c61",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:41 AM CDT",
-      "firstSeenAt": "2026-08-12T16:41:52Z",
-      "language": "C",
-      "summary": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
-      "technicalSummary": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
-      "breakdown": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
-      "whatBroke": "PoC funcional de (CopyEscape): carrera TOCTOU en docker cp que permite escritura arbitraria en el host Docker. Laboratorio Docker + monitor inotify + LD_PRELOAD. Variante macOS inocua y Linux destructiva.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 686f6c61/POC-CopyEscape-CVE-2026-17106.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106\ncd POC-CopyEscape-CVE-2026-17106\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kubernetes",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/686f6c61/POC-CopyEscape-CVE-2026-17106"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-64640",
-      "title": "Reproducer for CVE-2026-64640 \u2014 Apache Polaris Iceberg REST register/register-view vends storage credentials.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-64640",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "docker-compose.yml",
-          "exploit.sh",
-          "scripts/lib.sh",
-          "scripts/version-matrix.sh"
-        ],
-        "attackFiles": [
-          "exploit.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-64640"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:33 AM CDT",
-      "firstSeenAt": "2026-08-07T09:33:29Z",
-      "language": "Shell",
-      "summary": "Reproducer for \u2014 Apache Polaris Iceberg REST register/register-view vends storage credentials and reads an attacker-chosen metadata location before validating allowedLocations (confused-deputy cross-tenant read). Affected \u2264.",
-      "technicalSummary": "Reproducer for \u2014 Apache Polaris Iceberg REST register/register-view vends storage credentials and reads an attacker-chosen metadata location before validating allowedLocations (confused-deputy cross-tenant read). Affected \u2264.",
-      "breakdown": "Reproducer for \u2014 Apache Polaris Iceberg REST register/register-view vends storage credentials and reads an attacker-chosen metadata location before validating allowedLocations (confused-deputy cross-tenant read). Affected \u2264.",
-      "whatBroke": "Reproducer for \u2014 Apache Polaris Iceberg REST register/register-view vends storage credentials and reads an attacker-chosen metadata location before validating allowedLocations (confused-deputy cross-tenant read). Affected \u2264.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-64640.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-64640\ncd CVE-2026-64640\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-64640"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-53787",
-      "title": "my poc for CVE-2026-53787",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ChrisSEC2014/amasty-chekout-POC-rce",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-53787"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ChrisSEC2014",
-      "researcherUrl": "https://github.com/ChrisSEC2014",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:00 PM CDT",
-      "firstSeenAt": "2026-08-10T01:00:28Z",
-      "language": "Python",
-      "summary": "my poc for",
-      "technicalSummary": "my poc for",
-      "breakdown": "my poc for",
-      "whatBroke": "my poc for",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ChrisSEC2014/amasty-chekout-POC-rce.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ChrisSEC2014/amasty-chekout-POC-rce\ncd amasty-chekout-POC-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 77,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ChrisSEC2014/amasty-chekout-POC-rce"
-        ],
-        [
-          "Vendor Advisory",
-          "https://amasty.com/order-attributes-for-magento-2.html"
         ]
       ]
     }
