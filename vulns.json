@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T14:18:02Z",
+  "updatedAt": "2026-08-14T19:50:52Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -65,46 +65,6 @@
         "VPN Edge",
         "RCE"
       ]
-    },
-    {
-      "title": "CVE-2026-72898 | Metabase Pre-Authentication SQL Injection Vulnerability",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-72898/",
-      "summary": "CVE-2026-72898 is a critical unauthenticated SQL injection vulnerability in Metabase, a widely used open-source business intelligence and data analytics platform. Successful exploitation can give an attacker administrator access to the affected Metabase.",
-      "publishedAt": "2026-08-13T17:45:09Z",
-      "cves": [
-        "CVE-2026-72898"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "SQLi"
-      ]
-    },
-    {
-      "title": "What 50 open source projects taught us about security in the AI era",
-      "source": "GitHub Security",
-      "sourceUrl": "https://github.blog/security/",
-      "url": "https://github.blog/open-source/maintainers/what-50-open-source-projects-taught-us-about-security-in-the-ai-era/",
-      "summary": "AI is changing the pace of open source development and the security challenges that come with it. Maintainers are reviewing unfamiliar contributions, managing new attack surfaces, and responding to vulnerabilities with limited time and resources. Session 4.",
-      "publishedAt": "2026-08-13T16:00:00Z",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Session Theft"
-      ]
-    },
-    {
-      "title": "Why Validation Changes Everything. But Isn\u2019t Enough.",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/intelligence/blogs/why-validation-changes-everything/",
-      "summary": "Most organizations don\u2019t have a visibility problem. They have an uncertainty problem. Security teams are surrounded by findings. Vulnerabilities, misconfigurations, identity risks, exposed assets, threat intelligence, and endless dashboards all compete for.",
-      "publishedAt": "2026-08-13T15:07:45Z",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
@@ -368,6 +328,74 @@
         [
           "Vendor Advisory",
           "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-8452",
+      "title": "You\u2019re Back In The Room (Citrix NetScaler Pre-Auth RCE CVE-2026-8452(?))",
+      "ecosystem": "windows",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "watchTowr-vs-Citrix-Netscaler-PreAuth-RCE.py"
+        ],
+        "attackFiles": [
+          "watchTowr-vs-Citrix-Netscaler-PreAuth-RCE.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-8452"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:01 AM CDT",
+      "firstSeenAt": "2026-08-14T15:01:25Z",
+      "language": "Python",
+      "summary": "PreAuth RCE",
+      "technicalSummary": "Suddenly, you\u2019re in a room. You look around - oh,.",
+      "breakdown": "Suddenly, you\u2019re in a room. You look around - oh,.",
+      "whatBroke": "PreAuth RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452\ncd watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "VPN Edge",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/youre-back-in-the-room-citrix-netscaler-pre-auth-rce-cve-2026-8452/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696604"
         ]
       ]
     },
