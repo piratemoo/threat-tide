@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T02:58:48Z",
+  "updatedAt": "2026-08-15T13:37:01Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -49,24 +49,7 @@
     "Exodus Intelligence",
     "The GitHub Blog Security"
   ],
-  "research": [
-    {
-      "title": "You\u2019re Back In The Room (Citrix NetScaler Pre-Auth RCE CVE-2026-8452(?))",
-      "source": "watchTowr Labs",
-      "sourceUrl": "https://x.com/watchtowrcyber",
-      "url": "https://labs.watchtowr.com/youre-back-in-the-room-citrix-netscaler-pre-auth-rce-cve-2026-8452/",
-      "summary": "Suddenly, you\u2019re in a room. You look around - oh, you\u2019re surrounded by other new starters at your new job. Yes, it\u2019s Monday, and you\u2019re being onboarded. You know the drill - it\u2019s the typical enterprise \u201cplease don\u2019t be a bad person or we may have to fire.",
-      "publishedAt": "2026-08-14T07:08:20Z",
-      "cves": [
-        "CVE-2026-8452"
-      ],
-      "tags": [
-        "Linux",
-        "VPN Edge",
-        "RCE"
-      ]
-    }
-  ],
+  "research": [],
   "vulns": [
     {
       "cve": "CVE-2026-63030",
@@ -122,7 +105,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -131,6 +114,73 @@
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-72898",
+      "title": "Metabase SQL Injection Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/VuxNx/CVE-2026-72898",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.sh"
+        ],
+        "attackFiles": [
+          "poc.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-72898"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:59 AM CDT",
+      "firstSeenAt": "2026-08-15T11:59:26Z",
+      "language": "Shell",
+      "summary": "Metabase contains a SQL Injection vulnerability that allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, which can give them administrator access to the instance. From there,.",
+      "technicalSummary": "CVE-2026-72898 is a critical unauthenticated SQL injection vulnerability in Metabase, a widely used open-source business intelligence and data analytics platform. Successful exploitation can give an attacker administrator access to the affected Metabase.",
+      "breakdown": "CVE-2026-72898 is a critical unauthenticated SQL injection vulnerability in Metabase, a widely used open-source business intelligence and data analytics platform. Successful exploitation can give an attacker administrator access to the affected Metabase.",
+      "whatBroke": "Metabase contains a SQL Injection vulnerability that allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, which can give them administrator access to the instance. From there,.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at VuxNx/CVE-2026-72898.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/VuxNx/CVE-2026-72898\ncd CVE-2026-72898\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Metabase",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "SQLi",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 81,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/VuxNx/CVE-2026-72898"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-72898/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.metabase.com/blog/security-update"
         ]
       ]
     },
@@ -188,7 +238,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -254,7 +304,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -263,71 +313,6 @@
         [
           "Vendor Advisory",
           "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-63077",
-      "title": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
-      "ecosystem": "web",
-      "category": "devops",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/AnggaTechI/CVE-2026-63077",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-63077"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "AnggaTechI",
-      "researcherUrl": "https://github.com/AnggaTechI",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "1:32 AM CDT",
-      "firstSeenAt": "2026-08-08T06:32:09Z",
-      "language": "Python",
-      "summary": "\u2014 Unauthenticated Remote Code Execution in JetBrains TeamCity via agent polling protocol deserialization. CVSS 9.8 CRITICAL. Mass exploitation tool with interactive shell, multi-threading, and real-time result logging.",
-      "technicalSummary": "\u2014 Unauthenticated Remote Code Execution in JetBrains TeamCity via agent polling protocol deserialization. CVSS 9.8 CRITICAL. Mass exploitation tool with interactive shell, multi-threading, and real-time result logging.",
-      "breakdown": "\u2014 Unauthenticated Remote Code Execution in JetBrains TeamCity via agent polling protocol deserialization. CVSS 9.8 CRITICAL. Mass exploitation tool with interactive shell, multi-threading, and real-time result logging.",
-      "whatBroke": "\u2014 Unauthenticated Remote Code Execution in JetBrains TeamCity via agent polling protocol deserialization. CVSS 9.8 CRITICAL. Mass exploitation tool with interactive shell, multi-threading, and real-time result logging.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at AnggaTechI/CVE-2026-63077.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/AnggaTechI/CVE-2026-63077\ncd CVE-2026-63077\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed TeamCity",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "DevOps",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 81,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/AnggaTechI/CVE-2026-63077"
-        ],
-        [
-          "Vendor Advisory",
-          "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/;"
         ]
       ]
     },
@@ -383,7 +368,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -450,7 +435,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -511,7 +496,7 @@
       ],
       "confidence": 98,
       "weaponization": 80,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -573,7 +558,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -642,7 +627,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
