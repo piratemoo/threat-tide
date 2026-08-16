@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T19:27:33Z",
+  "updatedAt": "2026-08-16T22:42:35Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -381,6 +381,68 @@
       ]
     },
     {
+      "cve": "CVE-2026-18366",
+      "title": "Events Manager < 7.4.1 - Unauthenticated Privilege Escalation to Administrator",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Nxploited/CVE-2026-18366",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-18366.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-18366.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-18366"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Nxploited",
+      "researcherUrl": "https://github.com/Nxploited",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:21 PM CDT",
+      "firstSeenAt": "2026-08-16T20:21:02Z",
+      "language": "Python",
+      "summary": "Events Manager < 7.4.1 - Unauthenticated Privilege Escalation to Administrator",
+      "technicalSummary": "Events Manager < 7.4.1 - Unauthenticated Privilege Escalation to Administrator",
+      "breakdown": "Events Manager < 7.4.1 - Unauthenticated Privilege Escalation to Administrator",
+      "whatBroke": "Events Manager < 7.4.1 - Unauthenticated Privilege Escalation to Administrator",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nxploited/CVE-2026-18366.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nxploited/CVE-2026-18366\ncd CVE-2026-18366\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Nxploited/CVE-2026-18366"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wpscan.com/vulnerability/82767ce2-01e4-46ad-a52b-72d3ab2049bd/"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-68138",
       "title": "Linux qdisc rate-table race local privilege escalation PoC",
       "ecosystem": "linux",
@@ -446,6 +508,71 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/f43ee0c0730d6191629b5ee1ceae27b1ebfdc047"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-68398",
+      "title": "Ubuntu PPPoL2TP use-after-free local privilege escalation",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/aramosf/CVE-2026-68398",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.c",
+          "kaslr_prefetch.c",
+          "scripts/record-demo.sh",
+          "scripts/record-live.sh"
+        ],
+        "attackFiles": [
+          "exploit.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-68398"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "aramosf",
+      "researcherUrl": "https://github.com/aramosf",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:04 AM CDT",
+      "firstSeenAt": "2026-08-12T15:04:01Z",
+      "language": "C",
+      "summary": "Ubuntu PPPoL2TP use-after-free local privilege escalation",
+      "technicalSummary": "Ubuntu PPPoL2TP use-after-free local privilege escalation",
+      "breakdown": "Ubuntu PPPoL2TP use-after-free local privilege escalation",
+      "whatBroke": "Ubuntu PPPoL2TP use-after-free local privilege escalation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at aramosf/CVE-2026-68398.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/aramosf/CVE-2026-68398\ncd CVE-2026-68398\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/aramosf/CVE-2026-68398"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/06213c85d8c0994f786c093b8b2a517987943ca6"
         ]
       ]
     }
