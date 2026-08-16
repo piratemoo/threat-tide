@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T19:28:10Z",
+  "updatedAt": "2026-08-16T03:07:56Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -247,6 +247,72 @@
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-34910",
+      "title": "authentication bypass remote code execution exploit",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Boreas37/CVE-2026-34910-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-34908-unifi-auth-bypass.yaml",
+          "CVE-2026-34910.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-34910.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-34910"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Boreas37",
+      "researcherUrl": "https://github.com/Boreas37",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "11:58 AM CDT",
+      "firstSeenAt": "2026-08-09T16:58:00Z",
+      "language": "Python",
+      "summary": "/34909 \u2014 UniFi OS unauth RCE + file read via..%2f auth bypass (CVSS 10.0, KEV, Mirai ITW)",
+      "technicalSummary": "/34909 \u2014 UniFi OS unauth RCE + file read via..%2f auth bypass (CVSS 10.0, KEV, Mirai ITW)",
+      "breakdown": "/34909 \u2014 UniFi OS unauth RCE + file read via..%2f auth bypass (CVSS 10.0, KEV, Mirai ITW)",
+      "whatBroke": "/34909 \u2014 UniFi OS unauth RCE + file read via..%2f auth bypass (CVSS 10.0, KEV, Mirai ITW)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Boreas37/CVE-2026-34910-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Boreas37/CVE-2026-34910-PoC\ncd CVE-2026-34910-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed UniFi OS",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Boreas37/CVE-2026-34910-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
         ]
       ]
     },
