@@ -56,6 +56,16 @@ RSS_SOURCES = [
     ("Kaspersky Securelist", "https://securelist.com/feed/"),
     ("Exodus Intelligence", "https://blog.exodusintel.com/feed/"),
     ("The GitHub Blog Security", "https://github.blog/security/feed/"),
+    ("Apple Security Releases", "https://support.apple.com/en-us/100100/rss"),
+    ("Apple Developer Releases", "https://developer.apple.com/news/releases/rss/releases.rss"),
+    ("Microsoft Security Blog", "https://www.microsoft.com/en-us/security/blog/feed/"),
+    ("Microsoft MSRC Blog", "https://msrc.microsoft.com/blog/feed"),
+    ("Google Threat Intelligence", "https://cloud.google.com/blog/topics/threat-intelligence/rss.xml"),
+    ("Cofense", "https://cofense.com/feed/"),
+    ("Proofpoint", "https://www.proofpoint.com/us/rss.xml"),
+    ("Cisco Talos", "https://blog.talosintelligence.com/rss/"),
+    ("Unit 42", "https://unit42.paloaltonetworks.com/feed/"),
+    ("Huntress", "https://www.huntress.com/blog/rss.xml"),
 ]
 
 SOURCE_PROFILES = {
@@ -84,9 +94,19 @@ SOURCE_PROFILES = {
     "Kaspersky Securelist": ("Kaspersky GReAT", "https://securelist.com/"),
     "Exodus Intelligence": ("Exodus Intelligence", "https://blog.exodusintel.com/"),
     "The GitHub Blog Security": ("GitHub Security", "https://github.blog/security/"),
+    "Apple Security Releases": ("Apple Security", "https://support.apple.com/en-us/100100"),
+    "Apple Developer Releases": ("Apple Developer", "https://developer.apple.com/news/releases/"),
+    "Microsoft Security Blog": ("Microsoft Security", "https://www.microsoft.com/en-us/security/blog/"),
+    "Microsoft MSRC Blog": ("Microsoft MSRC", "https://msrc.microsoft.com/blog/"),
+    "Google Threat Intelligence": ("Google Threat Intelligence", "https://cloud.google.com/blog/topics/threat-intelligence"),
+    "Cofense": ("Cofense", "https://cofense.com/"),
+    "Proofpoint": ("Proofpoint", "https://www.proofpoint.com/us/blog"),
+    "Cisco Talos": ("Cisco Talos", "https://blog.talosintelligence.com/"),
+    "Unit 42": ("Unit 42", "https://unit42.paloaltonetworks.com/"),
+    "Huntress": ("Huntress", "https://www.huntress.com/blog"),
 }
 
-MOBILE_RESEARCHERS = [
+RESEARCHER_WATCHLIST = [
     ("@natashenka", "https://x.com/natashenka"),
     ("@alisaesage", "https://x.com/alisaesage"),
     ("@zerodayalpha", "https://x.com/zerodayalpha"),
@@ -102,11 +122,37 @@ MOBILE_RESEARCHERS = [
     ("@0xfluxsec", "https://x.com/0xfluxsec"),
     ("@Dinosn", "https://x.com/Dinosn"),
     ("@binitamshah", "https://x.com/binitamshah"),
+    ("@j00ru", "https://x.com/j00ru"),
+    ("@5aelo", "https://x.com/5aelo"),
+    ("@nedwill", "https://x.com/nedwill"),
+    ("@aionescu", "https://x.com/aionescu"),
+    ("@armitagehacke", "https://x.com/armitagehacke"),
+    ("@harmj0y", "https://x.com/harmj0y"),
+    ("@tifkin_", "https://x.com/tifkin_"),
+    ("@stephenfewer", "https://x.com/stephenfewer"),
+    ("@decoder_it", "https://x.com/decoder_it"),
+    ("@splinter_code", "https://x.com/splinter_code"),
+    ("@0xMarcio", "https://x.com/0xMarcio"),
+    ("@ProjectZeroBugs", "https://x.com/ProjectZeroBugs"),
+    ("@hasherezade", "https://x.com/hasherezade"),
+    ("@qwertyoruiopz", "https://x.com/qwertyoruiopz"),
+    ("@axi0mX", "https://x.com/axi0mX"),
+    ("@i41nbeer", "https://x.com/i41nbeer"),
+    ("@linushenze", "https://x.com/linushenze"),
+    ("@opa334dev", "https://x.com/opa334dev"),
+    ("@Siguza", "https://x.com/Siguza"),
+    ("@bazad", "https://x.com/bazad"),
+    ("@maddiestone", "https://x.com/maddiestone"),
+    ("@jannh", "https://x.com/jannh"),
+    ("@oldfresher", "https://x.com/oldfresher"),
+    ("@galbeniamini", "https://x.com/galbeniamini"),
+    ("@fluorescence", "https://x.com/fluorescence"),
+    ("@tamer_salama", "https://x.com/tamer_salama"),
 ]
 
-MOBILE_RESEARCHER_TERMS = {
+RESEARCHER_WATCHLIST_TERMS = {
     handle.lstrip("@").lower()
-    for handle, _ in MOBILE_RESEARCHERS
+    for handle, _ in RESEARCHER_WATCHLIST
 }
 
 for line in EXTRA_RSS_SOURCES.splitlines():
@@ -124,6 +170,9 @@ RESEARCH_SOURCE_NAMES = {
     "Synacktiv", "SSD Disclosure", "Rapid7 Blog", "Qualys Research",
     "PortSwigger Research", "Assetnote Research", "SonarSource",
     "Kaspersky Securelist", "Exodus Intelligence", "The GitHub Blog Security",
+    "Apple Security Releases", "Microsoft Security Blog", "Google Threat Intelligence",
+    "Apple Developer Releases", "Microsoft MSRC Blog", "Cofense", "Proofpoint",
+    "Cisco Talos", "Unit 42", "Huntress",
 }
 
 HIGH_SIGNAL = {
@@ -136,6 +185,49 @@ HIGH_SIGNAL = {
     "sharepoint", "teamcity", "webkit", "windows", "winrm", "wordpress", "vmware",
     "vpn", "zero-click", "zeroclick",
     "baseband", "binder", "dolby", "media framework", "pixel", "qualcomm", "sandbox",
+    "phishing", "social engineering", "credential harvesting", "aitm", "mfa bypass",
+}
+
+ANDROID_SIGNAL_TERMS = {
+    "android", "aosp", "pixel", "binder", "ashmem", "ion", "kgsl", "trusty",
+    "webview", "packageinstaller", "apk", "zygote", "selinux", "samsung",
+    "qualcomm", "mediatek", "mtk", "baseband", "bluetooth", "nfc",
+}
+
+IOS_SIGNAL_TERMS = {
+    "ios", "ipados", "iphone", "ipad", "safari", "webkit", "imessage",
+    "facetime", "coretrust", "xnu", "iokit", "pac", "kernelcache",
+    "dyld", "blastdoor", "sandbox escape", "jailbreak", "zeroclick",
+    "zero-click", "mobile safari",
+}
+
+PHISHING_SIGNAL_TERMS = {
+    "phishing", "spearphishing", "spear phishing", "social engineering",
+    "credential harvesting", "credential theft", "credential phishing",
+    "aitm", "adversary-in-the-middle", "adversary in the middle",
+    "browser-in-the-browser", "bitb", "evilginx", "modlishka",
+    "mfa bypass", "mfa fatigue", "push bombing", "qr phishing",
+    "quishing", "smishing", "vishing", "oauth consent", "consent phishing",
+    "business email compromise", "bec", "phishing kit", "landing page kit",
+    "login lure", "lure document", "callback phishing", "phishing-as-a-service",
+    "phishing as a service", "session cookie", "session hijack", "token theft", "token replay",
+    "device code phishing", "oauth device code", "microsoft 365 phishing",
+    "office 365 phishing", "entra id phishing", "okta phishing", "sso phishing",
+    "fake captcha", "clickfix", "malvertising", "typosquatting", "brand impersonation",
+    "deepfake", "voice cloning", "pretexting", "recruiter lure", "help desk scam",
+    "adversary tradecraft", "initial access broker",
+}
+
+TOPIC_SIGNAL_TERMS = ANDROID_SIGNAL_TERMS | IOS_SIGNAL_TERMS | PHISHING_SIGNAL_TERMS
+
+PHISHING_POC_TERMS = {
+    "cve", "vulnerability", "exploit", "exploitation", "poc", "proof of concept",
+    "proof-of-concept", "bypass", "mfa bypass", "aitm", "adversary-in-the-middle",
+    "adversary in the middle", "phishing kit", "landing page kit", "kit", "toolkit",
+    "framework", "evilginx", "modlishka", "browser-in-the-browser", "bitb",
+    "credential harvesting", "credential theft", "token theft", "token replay",
+    "session hijack", "session cookie", "oauth consent", "device code phishing",
+    "public release", "released", "github", "repository", "tooling",
 }
 
 PRIMITIVES = {
@@ -200,11 +292,37 @@ X_STYLE_DISCOVERY_QUERIES = [
     "CVE exploit PoC AndroidAuth",
     "CVE exploit PoC androidmalware2",
     "CVE exploit PoC ProjectZero",
+    "CVE exploit PoC ProjectZeroBugs",
     "CVE exploit PoC tiraniddo",
     "CVE exploit PoC 33y0re",
     "CVE exploit PoC 0xfluxsec",
     "CVE exploit PoC Dinosn",
     "CVE exploit PoC binitamshah",
+    "CVE exploit PoC j00ru",
+    "CVE exploit PoC 5aelo",
+    "CVE exploit PoC nedwill",
+    "CVE exploit PoC aionescu",
+    "CVE exploit PoC armitagehacke",
+    "CVE exploit PoC harmj0y",
+    "CVE exploit PoC tifkin",
+    "CVE exploit PoC stephenfewer",
+    "CVE exploit PoC decoder_it",
+    "CVE exploit PoC splinter_code",
+    "CVE exploit PoC 0xMarcio",
+    "CVE exploit PoC hasherezade",
+    "CVE exploit PoC qwertyoruiopz",
+    "CVE exploit PoC axi0mX",
+    "CVE exploit PoC i41nbeer",
+    "CVE exploit PoC linushenze",
+    "CVE exploit PoC opa334dev",
+    "CVE exploit PoC Siguza",
+    "CVE exploit PoC bazad",
+    "CVE exploit PoC maddiestone",
+    "CVE exploit PoC jannh",
+    "CVE exploit PoC oldfresher",
+    "CVE exploit PoC galbeniamini",
+    "CVE exploit PoC fluorescence",
+    "CVE exploit PoC tamer_salama",
     "CVE auth bypass exploit",
     "CVE command injection exploit",
     "CVE privilege escalation exploit",
@@ -225,8 +343,26 @@ def github_discovery_queries() -> list[str]:
         f"CVE-{CURRENT_CVE_YEAR} SharePoint exploit",
         f"CVE-{CURRENT_CVE_YEAR} Active Directory exploit",
         f"CVE-{CURRENT_CVE_YEAR} Android PoC",
+        f"CVE-{CURRENT_CVE_YEAR} Android exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Android LPE",
+        f"CVE-{CURRENT_CVE_YEAR} Android kernel exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Android sandbox escape",
+        f"CVE-{CURRENT_CVE_YEAR} Android Framework exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Android WebView exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Binder exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Qualcomm exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Arm Mali exploit",
+        f"CVE-{CURRENT_CVE_YEAR} Pixel exploit",
+        f"CVE-{CURRENT_CVE_YEAR} AOSP exploit",
         f"CVE-{CURRENT_CVE_YEAR} iOS PoC",
+        f"CVE-{CURRENT_CVE_YEAR} iOS exploit",
+        f"CVE-{CURRENT_CVE_YEAR} iOS jailbreak",
+        f"CVE-{CURRENT_CVE_YEAR} iOS kernel",
+        f"CVE-{CURRENT_CVE_YEAR} iPhone exploit",
+        f"CVE-{CURRENT_CVE_YEAR} iPadOS exploit",
         f"CVE-{CURRENT_CVE_YEAR} WebKit PoC",
+        f"CVE-{CURRENT_CVE_YEAR} Safari exploit",
+        f"CVE-{CURRENT_CVE_YEAR} baseband exploit",
         f"CVE-{CURRENT_CVE_YEAR} command injection",
         f"CVE-{CURRENT_CVE_YEAR} auth bypass",
         f"CVE-{CURRENT_CVE_YEAR} wordpress exploit",
@@ -236,8 +372,9 @@ def github_discovery_queries() -> list[str]:
     return list(dict.fromkeys(priority + X_STYLE_DISCOVERY_QUERIES[:12]))
 
 ECOSYSTEM_RULES = [
-    ("android", ["android", "aosp", "pixel"]),
-    ("ios", ["ios", "ipados", "iphone", "webkit", "safari", "imessage", "apple"]),
+    ("phishing", ["phishing", "spear phishing", "spearphishing", "social engineering", "credential harvesting", "aitm", "adversary-in-the-middle", "mfa bypass", "qr phishing", "quishing", "smishing", "vishing", "business email compromise", "bec", "phishing kit"]),
+    ("android", ["android", "aosp", "pixel", "binder", "packageinstaller", "android framework", "android system", "android kernel", "qualcomm", "mediatek", "arm mali", "mali gpu"]),
+    ("ios", ["ios", "ipados", "iphone", "ipad", "iphone os", "webkit", "safari", "imessage", "facetime", "coretrust", "blastdoor"]),
     ("windows", ["windows", "microsoft", "exchange", "sharepoint", "active directory", "ad cs", "adcs", "ntlm", "kerberos", "sccm", "hyper-v", "winrm", "rdp"]),
     ("linux", ["linux", "openssh", "sudo", "systemd", "ubuntu", "debian", "kernel"]),
     ("web", ["apache", "nginx", "tomcat", "iis", "php", "java servlet", "spring", "struts", "rails", "django", "laravel", "nodejs", "express", "confluence", "jira", "wordpress", "wordpress plugin", "woocommerce", "drupal", "coldfusion", "geoserver", "cpanel", "whm", "webpros", "webstack", "web app", "webapp", "web application", "appsec", "api", "rest api", "graphql", "oauth", "saml", "openid", "session", "cookie", "xss", "csrf", "ssrf", "sqli", "sql injection", "deserialization", "path traversal", "file upload", "template injection", "ssti", "xxe"]),
@@ -245,6 +382,8 @@ ECOSYSTEM_RULES = [
 ]
 
 CATEGORY_RULES = [
+    ("phishing", ["phishing", "spear phishing", "social engineering", "credential harvesting", "aitm", "adversary-in-the-middle", "mfa bypass", "qr phishing", "quishing", "smishing", "vishing", "business email compromise", "bec", "phishing kit"]),
+    ("mobile", ["android", "ios", "ipados", "iphone", "pixel", "aosp", "binder", "baseband", "mobile safari", "webkit", "imessage"]),
     ("adcs", ["ad cs", "adcs", "certificate"]),
     ("kerberos", ["kerberos"]),
     ("ntlm", ["ntlm", "relay"]),
@@ -559,6 +698,23 @@ def tag_value(text: str, rules: list[tuple[str, list[str]]], fallback: str) -> s
             return value
     return fallback
 
+def topic_value(text: str, source: str = "") -> str:
+    lower = f"{source} {text}".lower()
+    if contains_any(lower, PHISHING_SIGNAL_TERMS):
+        return "phishing"
+    if contains_any(lower, ANDROID_SIGNAL_TERMS):
+        return "android"
+    if contains_any(lower, IOS_SIGNAL_TERMS):
+        return "ios"
+    return "research"
+
+def mobile_cve_topic(text: str) -> str:
+    if contains_any(text, ANDROID_SIGNAL_TERMS):
+        return "android"
+    if contains_any(text, IOS_SIGNAL_TERMS):
+        return "ios"
+    return ""
+
 def primitive(text: str) -> str:
     for label, terms in PRIMITIVES.values():
         if contains_any(text, terms):
@@ -581,6 +737,8 @@ def labelize(value: str) -> str:
         "sqli": "SQLi",
         "sharepoint": "SharePoint",
         "sccm": "SCCM",
+        "phishing": "Phishing",
+        "mobile": "Mobile",
     }.get(value.lower(), value.replace("-", " ").title())
 
 def parse_date(value: str) -> dt.datetime:
@@ -645,7 +803,7 @@ def rss_mentions() -> dict[str, list[dict]]:
 
 def rss_research_items(now_utc: dt.datetime) -> list[dict]:
     research: list[dict] = []
-    cutoff = now_utc - dt.timedelta(hours=24)
+    cutoff = now_utc - dt.timedelta(days=LOOKBACK_DAYS)
     seen_urls: set[str] = set()
     for source, url in RSS_SOURCES:
         if source not in RESEARCH_SOURCE_NAMES:
@@ -658,7 +816,7 @@ def rss_research_items(now_utc: dt.datetime) -> list[dict]:
         except ET.ParseError:
             continue
         entries = [node for node in root.iter() if node.tag.split("}")[-1] in {"item", "entry"}]
-        for entry in entries[:15]:
+        for entry in entries[:30]:
             fields = {"title": "", "summary": "", "link": "", "published": ""}
             for child in list(entry):
                 tag = child.tag.split("}")[-1]
@@ -676,26 +834,34 @@ def rss_research_items(now_utc: dt.datetime) -> list[dict]:
                 continue
             text = norm(re.sub(r"<[^>]+>", " ", f"{fields['title']} {fields['summary']}"))
             cves = sorted({match.upper() for match in CVE_RE.findall(text)})
-            if not cves and not contains_any(text, RESEARCH_SIGNAL_TERMS):
+            topic = topic_value(text, source)
+            has_research_signal = contains_any(text, RESEARCH_SIGNAL_TERMS)
+            has_phishing_artifact_signal = topic == "phishing" and contains_any(text, PHISHING_POC_TERMS)
+            if not cves and not has_research_signal and not has_phishing_artifact_signal:
                 continue
-            if contains_any(text, DEFENSE_ONLY_TERMS) and not contains_any(text, ["exploit", "vulnerability", "cve", "poc"]):
+            if topic != "phishing" and contains_any(text, DEFENSE_ONLY_TERMS) and not contains_any(text, ["exploit", "vulnerability", "cve", "poc", "phishing", "credential", "aitm", "social engineering"]):
                 continue
             profile_name, profile_url = SOURCE_PROFILES.get(source, (source, url))
-            category = tag_value(text, CATEGORY_RULES, "")
-            ecosystem = tag_value(text, ECOSYSTEM_RULES, "")
+            category = tag_value(text, CATEGORY_RULES, topic if topic != "research" else "")
+            ecosystem = tag_value(text, ECOSYSTEM_RULES, topic if topic != "research" else "")
             prim = primitive(text)
             tags = []
-            for value in [ecosystem, category, prim]:
+            for value in [topic if topic != "research" else "", ecosystem, category, prim]:
                 if value and value != "Exploit":
                     tags.append(labelize(value))
             seen_urls.add(link)
+            summary = norm(re.sub(r"<[^>]+>", " ", fields["summary"])) or fields["title"]
             research.append({
                 "title": compact(fields["title"], 160),
                 "source": profile_name,
                 "sourceUrl": profile_url,
                 "url": link,
-                "summary": compact(re.sub(r"<[^>]+>", " ", fields["summary"]), 260),
+                "summary": compact(summary, 260),
                 "publishedAt": published.isoformat().replace("+00:00", "Z"),
+                "dayOffset": archive_day_offset(published.isoformat().replace("+00:00", "Z"), now_utc),
+                "ecosystem": ecosystem or topic,
+                "category": category or topic,
+                "topic": topic,
                 "cves": cves[:5],
                 "tags": list(dict.fromkeys(tags))[:6],
             })
@@ -1150,8 +1316,8 @@ def difficulty_label(repo: dict, prim: str, epss: float) -> str:
         return "situational"
     return "needs validation"
 
-def mobile_researcher_sources() -> list[str]:
-    return [f"Mobile researcher watchlist: {handle}" for handle, _ in MOBILE_RESEARCHERS]
+def researcher_watchlist_sources() -> list[str]:
+    return [f"Researcher watchlist: {handle}" for handle, _ in RESEARCHER_WATCHLIST]
 
 def operator_severity(nvd_sev: str, prim: str, ecosystem: str, category: str, epss: float, repo: dict, is_kev: bool, text: str) -> str:
     lower = text.lower()
@@ -1336,7 +1502,12 @@ current_year_rss = {
     for cve in rss
     if allowed_cve_year(cve)
 }
-candidate_cves = sorted(current_year_rss | recent_kev | current_year_github)
+current_year_mobile_nvd = {
+    cve
+    for cve, nvd in recent_nvd.items()
+    if allowed_cve_year(cve) and mobile_cve_topic(nvd.get("description", ""))
+}
+candidate_cves = sorted(current_year_rss | recent_kev | current_year_github | current_year_mobile_nvd)
 epss = epss_scores(candidate_cves)
 
 def synthetic_item(cve: str, nvd: dict, mention: dict | None) -> dict:
@@ -1370,6 +1541,7 @@ for cve in candidate_cves:
     signal = 0
     signal += 25 if item else 0
     signal += 18 if nvd_item else 0
+    signal += 30 if cve in current_year_mobile_nvd else 0
     signal += 12 if (nvd_item.get("severity", "").upper() in {"HIGH", "CRITICAL"} if nvd_item else False) else 0
     signal += 38 if mention else 0
     signal += 42 if repo_hint else 0
@@ -1377,7 +1549,7 @@ for cve in candidate_cves:
     signal += 45 if contains_any(text, HIGH_SIGNAL) else 0
     signal += 20 if any(contains_any(text, terms[1]) for terms in PRIMITIVES.values()) else 0
     signal += 12 if contains_any(text, ["windows", "exchange", "sharepoint", "adcs", "kerberos", "ntlm", "rce", "lpe", "android", "ios", "pixel", "webkit", "zero-click", "zeroclick"]) else 0
-    signal += 10 if contains_any(text, MOBILE_RESEARCHER_TERMS) else 0
+    signal += 10 if contains_any(text, RESEARCHER_WATCHLIST_TERMS) else 0
     signal += int((epss.get(cve, 0) or 0) * 70)
     if item:
         signal += max(0, 60 - min(60, (now_utc - parse_date(item.get("dateAdded", ""))).days // 7))
@@ -1426,7 +1598,7 @@ payload = {
     "updatedAt": now_utc.isoformat().replace("+00:00", "Z"),
     "cadence": "3x daily",
     "proofPolicy": "verified working public pocs",
-    "sources": ["CISA KEV", "FIRST EPSS", "NVD", "GitHub Search", "GitHub Fresh PoC Discovery", *mobile_researcher_sources(), *[name for name, _ in RSS_SOURCES]],
+    "sources": ["CISA KEV", "FIRST EPSS", "NVD", "GitHub Search", "GitHub Fresh PoC Discovery", *researcher_watchlist_sources(), *[name for name, _ in RSS_SOURCES]],
     "research": research_items,
     "vulns": entries,
 }

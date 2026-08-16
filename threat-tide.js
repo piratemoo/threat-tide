@@ -55,7 +55,41 @@
     { name: "0xfluxsec", lane: "windows exploit research", url: "https://x.com/0xfluxsec", weight: 86 },
     { name: "Dinosn", lane: "exploit research", url: "https://x.com/Dinosn", weight: 86 },
     { name: "binitamshah", lane: "exploit research", url: "https://x.com/binitamshah", weight: 86 },
+    { name: "j00ru", lane: "browser and Windows vuln research", url: "https://x.com/j00ru", weight: 90 },
+    { name: "5aelo", lane: "browser exploitation research", url: "https://x.com/5aelo", weight: 90 },
+    { name: "nedwill", lane: "browser and WebKit research", url: "https://x.com/nedwill", weight: 88 },
+    { name: "aionescu", lane: "Windows internals research", url: "https://x.com/aionescu", weight: 90 },
+    { name: "armitagehacke", lane: "exploit research", url: "https://x.com/armitagehacke", weight: 84 },
+    { name: "harmj0y", lane: "identity attack research", url: "https://x.com/harmj0y", weight: 90 },
+    { name: "tifkin_", lane: "exploit research", url: "https://x.com/tifkin_", weight: 84 },
+    { name: "stephenfewer", lane: "exploit development", url: "https://x.com/stephenfewer", weight: 88 },
+    { name: "decoder_it", lane: "exploit and malware research", url: "https://x.com/decoder_it", weight: 86 },
+    { name: "splinter_code", lane: "exploit research", url: "https://x.com/splinter_code", weight: 84 },
+    { name: "0xMarcio", lane: "exploit research", url: "https://x.com/0xMarcio", weight: 84 },
+    { name: "ProjectZeroBugs", lane: "Project Zero bug drops", url: "https://x.com/ProjectZeroBugs", weight: 94 },
+    { name: "hasherezade", lane: "malware and exploit research", url: "https://x.com/hasherezade", weight: 86 },
+    { name: "qwertyoruiopz", lane: "iOS exploit research", url: "https://x.com/qwertyoruiopz", weight: 92 },
+    { name: "axi0mX", lane: "iOS bootchain research", url: "https://x.com/axi0mX", weight: 92 },
+    { name: "i41nbeer", lane: "iOS kernel exploitation", url: "https://x.com/i41nbeer", weight: 94 },
+    { name: "linushenze", lane: "iOS and macOS research", url: "https://x.com/linushenze", weight: 90 },
+    { name: "opa334dev", lane: "iOS jailbreak research", url: "https://x.com/opa334dev", weight: 88 },
+    { name: "Siguza", lane: "iOS kernel research", url: "https://x.com/Siguza", weight: 90 },
+    { name: "bazad", lane: "kernel exploitation research", url: "https://x.com/bazad", weight: 90 },
+    { name: "maddiestone", lane: "0-day exploit analysis", url: "https://x.com/maddiestone", weight: 92 },
+    { name: "jannh", lane: "browser vulnerability research", url: "https://x.com/jannh", weight: 88 },
+    { name: "oldfresher", lane: "mobile exploit research", url: "https://x.com/oldfresher", weight: 86 },
+    { name: "galbeniamini", lane: "mobile/baseband research", url: "https://x.com/galbeniamini", weight: 90 },
+    { name: "fluorescence", lane: "mobile exploit research", url: "https://x.com/fluorescence", weight: 86 },
+    { name: "tamer_salama", lane: "mobile exploit research", url: "https://x.com/tamer_salama", weight: 86 },
     { name: "Google TAG", lane: "0-day threat intel", url: "https://blog.google/threat-analysis-group/", weight: 90 },
+    { name: "Google Threat Intelligence", lane: "actor tradecraft", url: "https://cloud.google.com/blog/topics/threat-intelligence", weight: 86 },
+    { name: "Microsoft Security Blog", lane: "identity and phishing research", url: "https://www.microsoft.com/en-us/security/blog/", weight: 84 },
+    { name: "Microsoft MSRC Blog", lane: "published CVE context", url: "https://msrc.microsoft.com/blog/", weight: 82 },
+    { name: "Proofpoint", lane: "phishing and social engineering", url: "https://www.proofpoint.com/us/blog", weight: 82 },
+    { name: "Cofense", lane: "phishing research", url: "https://cofense.com/", weight: 82 },
+    { name: "Cisco Talos", lane: "threat actor research", url: "https://blog.talosintelligence.com/", weight: 82 },
+    { name: "Unit 42", lane: "social engineering tradecraft", url: "https://unit42.paloaltonetworks.com/", weight: 82 },
+    { name: "Huntress", lane: "public exploit research", url: "https://www.huntress.com/blog", weight: 82 },
     { name: "watchTowr Labs", lane: "weaponizable research", url: "https://labs.watchtowr.com/", weight: 94 },
     { name: "Horizon3 Attack Team", lane: "exploit validation", url: "https://horizon3.ai/attack-research/", weight: 90 },
     { name: "_dirkjan", lane: "AD, Entra, Kerberos", url: "https://dirkjanm.io/", weight: 94 },
@@ -82,6 +116,7 @@
     { name: "Microsoft MSRC", lane: "Windows advisories", url: "https://msrc.microsoft.com/update-guide", weight: 78 },
     { name: "Android Bulletins", lane: "mobile advisories", url: "https://source.android.com/docs/security/bulletin", weight: 74 },
     { name: "Apple Security", lane: "iOS/macOS advisories", url: "https://support.apple.com/en-us/100100", weight: 74 },
+    { name: "Apple Developer Releases", lane: "iOS/macOS release notes", url: "https://developer.apple.com/news/releases/", weight: 72 },
     { name: "Chromium Security", lane: "browser advisories", url: "https://chromereleases.googleblog.com/", weight: 72 },
     { name: "VMware Advisories", lane: "virtualization", url: "https://support.broadcom.com/web/ecx/security-advisory", weight: 76 },
     { name: "Citrix Bulletins", lane: "edge appliances", url: "https://support.citrix.com/securitybulletins", weight: 76 },
@@ -640,6 +675,10 @@
       url: safeUrl(item.url),
       summary: cleanBlockText(item.summary || "", 340),
       publishedAt: cleanInlineText(item.publishedAt || "", 64),
+      ecosystem: cleanSlug(item.ecosystem || item.topic || "research", "research"),
+      category: cleanSlug(item.category || item.topic || "research", "research"),
+      topic: cleanSlug(item.topic || item.ecosystem || item.category || "research", "research"),
+      dayOffset: Math.max(0, Math.min(6, numberOr(item.dayOffset, 0))),
       tags,
       cves
     };
@@ -847,8 +886,7 @@
       || item.ecosystem === state.section
       || (state.section === "linux" && (item.ecosystem === "linux" || item.ecosystem === "bsd" || tags.includes("bsd")))
       || (state.section === "web" && (item.ecosystem === "web" || item.category === "webstack" || tags.includes("webstack") || tags.includes("web")))
-      || (state.section === "mobile" && (item.ecosystem === "android" || item.ecosystem === "ios"))
-      || (state.section === "phishing" && (item.ecosystem === "phishing" || item.category === "phishing" || item.tags.map(t => t.toLowerCase()).includes("phishing")));
+      || (state.section === "mobile" && (item.ecosystem === "android" || item.ecosystem === "ios"));
   }
 
   function filteredItems() {
@@ -864,13 +902,27 @@
     });
   }
 
-  function filteredResearchItems() {
-    if (state.day !== 0) return [];
+  function researchSectionMatches(item, section = state.section) {
+    const tags = item.tags.map((tag) => tag.toLowerCase());
+    if (section === "research") return true;
+    if (section === "phishing") {
+      return item.topic === "phishing"
+        || item.ecosystem === "phishing"
+        || item.category === "phishing"
+        || tags.includes("phishing")
+        || tags.includes("social engineering");
+    }
+    return false;
+  }
+
+  function filteredResearchItems(section = state.section) {
     const query = state.query.trim().toLowerCase();
     const tag = state.tag.trim().toLowerCase();
     return researchItems.filter((item) => {
-      const haystack = [item.title, item.source, item.summary, ...item.tags, ...item.cves].join(" ").toLowerCase();
-      return (!query || haystack.includes(query))
+      const haystack = [item.title, item.source, item.summary, item.ecosystem, item.category, item.topic, ...item.tags, ...item.cves].join(" ").toLowerCase();
+      return researchSectionMatches(item, section)
+        && ((item.dayOffset || 0) === state.day)
+        && (!query || haystack.includes(query))
         && (!tag || item.tags.some((itemTag) => itemTag.toLowerCase().includes(tag)) || item.cves.some((cve) => cve.toLowerCase().includes(tag)));
     });
   }
@@ -895,7 +947,11 @@
     const archive = root.querySelector(".pm-archive-days");
     if (!archive) return;
     archive.innerHTML = Array.from({ length: 7 }, (_, dayOffset) => {
-      const count = vulns.filter((item) => (item.dayOffset || 0) === dayOffset).length;
+      const count = state.section === "research"
+        ? researchItems.filter((item) => (item.dayOffset || 0) === dayOffset).length
+        : state.section === "phishing"
+          ? researchItems.filter((item) => (item.dayOffset || 0) === dayOffset && researchSectionMatches(item, "phishing")).length
+          : vulns.filter((item) => (item.dayOffset || 0) === dayOffset).length;
       const pressed = state.day === dayOffset ? "true" : "false";
       return `<button type="button" class="pm-archive-day" data-day="${dayOffset}" aria-pressed="${pressed}">
         <span>${archiveLabel(dayOffset)}</span>
@@ -929,6 +985,7 @@
       button.addEventListener("click", () => {
         state.section = button.dataset.section;
         if (state.section === "research") state.day = 0;
+        if (state.section === "research" || state.section === "phishing") state.severity = "all";
         render();
       });
     });
@@ -1196,8 +1253,15 @@
 
   // FIX 9: severity filter hidden on research tab
   function updateFilterVisibility() {
+    const filtersEl = root.querySelector(".pm-filters");
     const severityEl = root.querySelector('[data-filter="severity"]');
-    if (severityEl) severityEl.style.visibility = state.section === "research" ? "hidden" : "";
+    const hideSeverity = state.section === "research" || state.section === "phishing";
+    if (filtersEl) filtersEl.classList.toggle("pm-hide-severity", hideSeverity);
+    if (severityEl) {
+      severityEl.value = state.severity;
+      severityEl.hidden = hideSeverity;
+      severityEl.style.display = hideSeverity ? "none" : "";
+    }
   }
 
   // FIX 8: stat line shows correct text for research tab
@@ -1214,6 +1278,8 @@
     if (statLine) {
       statLine.innerHTML = state.section === "research"
         ? `<strong>${count}</strong> offensive research item${count === 1 ? "" : "s"} today`
+        : state.section === "phishing"
+          ? `<strong>${count}</strong> phishing/social engineering PoC/CVE signal${count === 1 ? "" : "s"} today`
         : `<strong>verified</strong> public pocs <b class="pm-count-inline" data-pm-count>${count}</b> posted today`;
     }
   }
@@ -1232,13 +1298,24 @@
 
   function render() {
     const showingResearch = state.section === "research";
-    const items = showingResearch ? filteredResearchItems() : filteredItems();
-    updateStats(items.length);
+    const showingPhishingFindings = state.section === "phishing";
+    const vulnItems = (showingResearch || showingPhishingFindings) ? [] : filteredItems();
+    const researchScopedItems = showingResearch
+      ? filteredResearchItems("research")
+      : showingPhishingFindings
+        ? filteredResearchItems("phishing")
+        : [];
+    const count = vulnItems.length + researchScopedItems.length;
+    updateStats(count);
     updateFilterVisibility();
     renderArchive();
     renderMenu();
-    root.querySelector(".pm-feed").innerHTML = items.length
-      ? (showingResearch ? items.map(researchCard).join("") : items.map(card).join(""))
+    root.querySelector(".pm-feed").innerHTML = count
+      ? (showingResearch
+          ? researchScopedItems.map(researchCard).join("")
+          : showingPhishingFindings
+            ? researchScopedItems.map(researchCard).join("")
+            : vulnItems.map(card).join(""))
       : `<div class="pm-panel pm-empty">${EMPTY_MESSAGE}</div>`;
     root.querySelectorAll(".pm-toggle").forEach((button) => {
       button.addEventListener("click", () => {

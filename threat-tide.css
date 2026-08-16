@@ -368,6 +368,10 @@ body.page-vulns .single-header {
     padding: 10px;
   }
 
+  #pm-vulns-app .pm-filters.pm-hide-severity {
+    grid-template-columns: minmax(0, 1fr) 130px;
+  }
+
   #pm-vulns-app input,
   #pm-vulns-app select {
     width: 100%;
@@ -969,6 +973,10 @@ body.page-vulns .single-header {
 
     #pm-vulns-app .pm-filters {
       grid-template-columns: 1fr 1fr;
+    }
+
+    #pm-vulns-app .pm-filters.pm-hide-severity {
+      grid-template-columns: 1fr;
     }
 
     #pm-vulns-app [data-filter="query"] {
