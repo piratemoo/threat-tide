@@ -1,6 +1,12 @@
 name: update-vulns-json
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "scripts/update_vulns.py"
+      - "threat-tide.js"
+      - "threat-tide.css"
+      - ".github/workflows/update-vulns-json.yml"
   schedule:
     - cron: "7 2,13,19 * * *"
 
