@@ -213,20 +213,24 @@ def main() -> int:
     state = load_json(STATE_PATH, {"messages": {}})
     state.setdefault("messages", {})
 
-    changed = False
+    missing = [
+        f"{channel}: set one of {', '.join(config['secrets'])}"
+        for channel, config in CHANNELS.items()
+        if not env_first(config["secrets"])
+    ]
+    if missing:
+        print("Missing required Discord webhook secrets:")
+        for item in missing:
+            print(f"- {item}")
+        return 1
+
     updated_channels = []
-    skipped_channels = []
 
     for channel, config in CHANNELS.items():
         webhook = env_first(config["secrets"])
-        if not webhook:
-            skipped_channels.append(channel)
-            continue
         message_id = env_first(config["message_ids"]) or state["messages"].get(channel, {}).get("messageId", "")
         payload = build_payload(channel, feed)
         new_id = upsert_message(channel, webhook, str(message_id), payload)
-        if new_id != message_id:
-            changed = True
         state["messages"][channel] = {
             "messageId": new_id,
             "updatedAt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
@@ -238,8 +242,7 @@ def main() -> int:
     elif not STATE_PATH.exists():
         save_json(STATE_PATH, state)
 
-    print("updated discord channels:", ", ".join(updated_channels) if updated_channels else "none")
-    print("skipped discord channels without webhook secrets:", ", ".join(skipped_channels) if skipped_channels else "none")
+    print("updated discord channels:", ", ".join(updated_channels))
     return 0
 
 
