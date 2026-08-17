@@ -927,6 +927,15 @@
     });
   }
 
+  function ensureVisibleDefaultDay() {
+    if (state.day !== 0 || state.query.trim() || state.tag.trim() || state.severity !== "all") return;
+    const hasToday = vulns.some((item) => (item.dayOffset || 0) === 0);
+    if (hasToday) return;
+    const firstDayWithVulns = Array.from({ length: 7 }, (_, dayOffset) => dayOffset)
+      .find((dayOffset) => vulns.some((item) => (item.dayOffset || 0) === dayOffset));
+    if (typeof firstDayWithVulns === "number") state.day = firstDayWithVulns;
+  }
+
   function renderSourcePool() {
     const count = root.querySelector("[data-pm-source-count]");
     const list = root.querySelector(".pm-source-list");
@@ -1280,7 +1289,7 @@
         ? `<strong>${count}</strong> offensive research item${count === 1 ? "" : "s"} today`
         : state.section === "phishing"
           ? `<strong>${count}</strong> phishing/social engineering PoC/CVE signal${count === 1 ? "" : "s"} today`
-        : `<strong>verified</strong> public pocs <b class="pm-count-inline" data-pm-count>${count}</b> posted today`;
+        : `<strong>verified</strong> public pocs <b class="pm-count-inline" data-pm-count>${count}</b> ${state.day === 0 ? "posted today" : "posted"}`;
     }
   }
 
@@ -1339,7 +1348,10 @@
   });
   renderSourcePool();
   render();
-  loadLiveFeed().then(render);
+  loadLiveFeed().then(() => {
+    ensureVisibleDefaultDay();
+    render();
+  });
 
   // Poll for feed updates every 15 minutes
   // Only re-renders if lastRunAt changed — no flicker if nothing is new
@@ -1358,6 +1370,7 @@
       liveFeedUpdatedAt = String(payload.updatedAt || "");
       vulns = items.map(normalizeVuln).filter((item) => item.cve && item.title);
       researchItems = research.map(normalizeResearchItem).filter((item) => item.title && item.url);
+      ensureVisibleDefaultDay();
       render();
     } catch (_) {}
   }, 15 * 60 * 1000);
