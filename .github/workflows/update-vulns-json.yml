@@ -51,11 +51,7 @@ jobs:
       - name: Update Discord posts
         env:
           DISCORD_VULNS_WEBHOOK: "${{ secrets.DISCORD_VULNS_WEBHOOK }}"
-          DISCORD_FEED_WEBHOOK: "${{ secrets.DISCORD_FEED_WEBHOOK }}"
-          DISCORD_VID_FEEDS_WEBHOOK: "${{ secrets.DISCORD_VID_FEEDS_WEBHOOK }}"
           DISCORD_VULNS_MESSAGE_ID: "${{ secrets.DISCORD_VULNS_MESSAGE_ID }}"
-          DISCORD_FEED_MESSAGE_ID: "${{ secrets.DISCORD_FEED_MESSAGE_ID }}"
-          DISCORD_VID_FEEDS_MESSAGE_ID: "${{ secrets.DISCORD_VID_FEEDS_MESSAGE_ID }}"
         run: python scripts/update_discord_posts.py
 
       - name: Commit Discord post state

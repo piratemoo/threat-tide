@@ -9,13 +9,12 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 FEED_PATH = Path("vulns.json")
 STATE_PATH = Path("discord-post-state.json")
 SITE_URL = "https://www.piratemoo.com/vulns/"
-LOCAL_TZ = ZoneInfo("America/Chicago")
 WEBHOOK_RE = re.compile(r"^https://(?:ptb\.|canary\.)?discord(?:app)?\.com/api/webhooks/(\d+)/([^/?#]+)")
 
 
@@ -24,15 +23,14 @@ CHANNELS = {
         "secrets": ("DISCORD_VULNS_WEBHOOK", "DISCORD_WEBHOOK_VULNS"),
         "message_ids": ("DISCORD_VULNS_MESSAGE_ID", "DISCORD_WEBHOOK_VULNS_MESSAGE_ID"),
     },
-    "feed": {
-        "secrets": ("DISCORD_FEED_WEBHOOK", "DISCORD_WEBHOOK_FEED"),
-        "message_ids": ("DISCORD_FEED_MESSAGE_ID", "DISCORD_WEBHOOK_FEED_MESSAGE_ID"),
-    },
-    "vid-feeds": {
-        "secrets": ("DISCORD_VID_FEEDS_WEBHOOK", "DISCORD_WEBHOOK_VID_FEEDS"),
-        "message_ids": ("DISCORD_VID_FEEDS_MESSAGE_ID", "DISCORD_WEBHOOK_VID_FEEDS_MESSAGE_ID"),
-    },
 }
+
+
+def local_tz() -> dt.tzinfo:
+    try:
+        return ZoneInfo("America/Chicago")
+    except ZoneInfoNotFoundError:
+        return dt.timezone(dt.timedelta(hours=-5), "CDT")
 
 
 def load_json(path: Path, fallback):
@@ -85,7 +83,8 @@ def local_time(value: str) -> str:
         parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError:
         parsed = dt.datetime.now(dt.timezone.utc)
-    return parsed.astimezone(LOCAL_TZ).strftime("%-I:%M %p %Z") if os.name != "nt" else parsed.astimezone(LOCAL_TZ).strftime("%#I:%M %p %Z")
+    zone = local_tz()
+    return parsed.astimezone(zone).strftime("%-I:%M %p %Z") if os.name != "nt" else parsed.astimezone(zone).strftime("%#I:%M %p %Z")
 
 
 def truncate(value: str, limit: int) -> str:
@@ -161,33 +160,14 @@ def build_payload(channel: str, feed: dict) -> dict:
         "avatar_url": "https://raw.githubusercontent.com/piratemoo/threat-tide/main/images/yespls.png",
         "allowed_mentions": {"parse": []},
     }
-    if channel == "vulns":
-        description = f"Last Check: **{updated}**\nverified public pocs - **{today_count} posted today**\n\n{vuln_lines(feed)}"
-        embed = {
-            "title": "Threat Tide",
-            "url": SITE_URL,
-            "description": truncate(description, 3900),
-            "color": 0xB026FF,
-            "footer": {"text": "working public poc feed"},
-        }
-    elif channel == "feed":
-        description = f"Last Check: **{updated}**\n\n{research_lines(feed)}"
-        embed = {
-            "title": "Threat Tide #feed",
-            "url": SITE_URL,
-            "description": truncate(description, 3900),
-            "color": 0xFF9D2E,
-            "footer": {"text": "fresh vuln research and exploit-relevant analysis"},
-        }
-    else:
-        description = f"Last Check: **{updated}**\n\n{research_lines(feed)}"
-        embed = {
-            "title": "Threat Tide #vid-feeds",
-            "url": SITE_URL,
-            "description": truncate(description, 3900),
-            "color": 0x00B7FF,
-            "footer": {"text": "video/research feed post maintained automatically"},
-        }
+    description = f"Last Check: **{updated}**\nverified public pocs - **{today_count} posted today**\n\n{vuln_lines(feed)}"
+    embed = {
+        "title": "Threat Tide",
+        "url": SITE_URL,
+        "description": truncate(description, 3900),
+        "color": 0xB026FF,
+        "footer": {"text": "working public poc feed"},
+    }
     return base | {"content": "", "embeds": [embed]}
 
 
