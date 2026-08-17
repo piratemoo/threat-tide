@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "scripts/update_vulns.py"
+      - "scripts/update_discord_posts.py"
       - "threat-tide.js"
       - "threat-tide.css"
       - ".github/workflows/update-vulns-json.yml"
@@ -44,3 +45,21 @@ jobs:
         if: always()
         run: |
           curl -s "https://purge.jsdelivr.net/gh/piratemoo/threat-tide@main/vulns.json" || true
+          curl -s "https://purge.jsdelivr.net/gh/piratemoo/threat-tide@main/threat-tide.js" || true
+          curl -s "https://purge.jsdelivr.net/gh/piratemoo/threat-tide@main/threat-tide.css" || true
+
+      - name: Update Discord posts
+        env:
+          DISCORD_VULNS_WEBHOOK: "${{ secrets.DISCORD_VULNS_WEBHOOK }}"
+          DISCORD_FEED_WEBHOOK: "${{ secrets.DISCORD_FEED_WEBHOOK }}"
+          DISCORD_VID_FEEDS_WEBHOOK: "${{ secrets.DISCORD_VID_FEEDS_WEBHOOK }}"
+          DISCORD_VULNS_MESSAGE_ID: "${{ secrets.DISCORD_VULNS_MESSAGE_ID }}"
+          DISCORD_FEED_MESSAGE_ID: "${{ secrets.DISCORD_FEED_MESSAGE_ID }}"
+          DISCORD_VID_FEEDS_MESSAGE_ID: "${{ secrets.DISCORD_VID_FEEDS_MESSAGE_ID }}"
+        run: python scripts/update_discord_posts.py
+
+      - name: Commit Discord post state
+        run: |
+          git add discord-post-state.json
+          git commit -m "Update Discord post state" || echo "No Discord state changes"
+          git push || echo "Nothing to push"
