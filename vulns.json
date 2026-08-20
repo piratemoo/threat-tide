@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T03:05:01Z",
+  "updatedAt": "2026-08-20T13:52:22Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,13 +87,89 @@
   ],
   "research": [
     {
+      "title": "Integrate Aqua and Datadog to Connect Runtime Security with Application Performance",
+      "source": "Aqua Nautilus",
+      "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "url": "https://www.aquasec.com/blog/integrate-aqua-and-datadog-to-connect-runtime-security-with-application-performance/",
+      "summary": "TL;DR AI is compressing the time between vulnerability discovery and exploitation, while security teams still depend on workflows that require people to review alerts and piece together context. A vulnerable or unauthorized image, a runtime policy violation.",
+      "publishedAt": "2026-08-20T12:27:22Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
+    },
+    {
+      "title": "UAT-10147 deploys SPECTRE: A cross-platform implant with Linux rootkit and BYOVD capabilities",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/uat-10147-deploys-spectre-a-cross-platform-implant-with-linux-rootkit-and-byovd-capabilities/",
+      "summary": "UAT-10147 is a highly capable Chinese-speaking intrusion actor operating a multi-platform post-exploitation ecosystem targeting IIS and Linux servers, combining search engine optimization (SEO) fraud monetization with advanced persistence and defense evasion.",
+      "publishedAt": "2026-08-20T10:00:50Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "kernel",
+      "topic": "phishing",
+      "cves": [
+        "CVE-2019-16098",
+        "CVE-2021-21551"
+      ],
+      "tags": [
+        "Phishing",
+        "Windows",
+        "Kernel",
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "UAT-10147: Chinese-speaking adversary integrates agentic AI into post-compromise operations",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/uat-10147-chinese-speaking-adversary-integrates-agentic-ai-into-post-compromise-operations/",
+      "summary": "Cisco Talos identified UAT-10147 targeting Windows and Linux web servers globally, impacting organizations in government, education, media, technology, and gaming sectors. The actor leveraged publicly disclosed vulnerabilities to gain initial access at.",
+      "publishedAt": "2026-08-20T10:00:32Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "ntlm",
+      "topic": "research",
+      "cves": [
+        "CVE-2010-3904",
+        "CVE-2015-3246",
+        "CVE-2015-5287",
+        "CVE-2019-18935",
+        "CVE-2021-23758"
+      ],
+      "tags": [
+        "Windows",
+        "Ntlm",
+        "RCE"
+      ]
+    },
+    {
+      "title": "Identity Abuse Through Trusted Communication Channels",
+      "source": "Unit 42",
+      "sourceUrl": "https://unit42.paloaltonetworks.com/",
+      "url": "https://unit42.paloaltonetworks.com/communication-channel-identity-risks/",
+      "summary": "Unit 42 details how attackers exploit enterprise collaboration tools for identity phishing and credential theft. Discover key defense strategies. The post Identity Abuse Through Trusted Communication Channels appeared first on Unit 42 .",
+      "publishedAt": "2026-08-20T10:00:25Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing"
+      ]
+    },
+    {
       "title": "Building Capacity and Resilience for U.S. Partners",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
       "url": "https://horizon3.ai/downloads/whitepapers/cyber-diplomacy-capacity-resilience/",
       "summary": "Nation-state actors and cybercriminals are using AI to find weaknesses, accelerate attacks, and exploit interconnected environments. Defending against them requires more than securing individual organizations. It means strengthening resilience across the.",
       "publishedAt": "2026-08-19T16:19:49Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -107,7 +183,7 @@
       "url": "https://horizon3.ai/intelligence/infographics/ctem-from-visibility-to-measurable-risk-reduction/",
       "summary": "Visibility alone does not reduce risk. Security teams have more exposure data than ever, but still struggle to answer the questions that matter: What can an attacker actually exploit? Which exposures create meaningful business risk? And did remediation.",
       "publishedAt": "2026-08-19T16:10:35Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -121,7 +197,7 @@
       "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/08/19/oracle-critical-patch-update-august-2026-security-update-review",
       "summary": "Oracle released its August edition of Critical Patch Update. The update received patches for 943 security vulnerabilities. Some of the vulnerabilities addressed in this update impact more than one product. These patches address vulnerabilities in various.",
       "publishedAt": "2026-08-19T13:49:27Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "framework",
       "topic": "research",
@@ -141,7 +217,7 @@
       "url": "https://blog.talosintelligence.com/describing-attacks-with-crime-script-analysis/",
       "summary": "Crime script analysis is a narrative-driven technique that can be used alongside, or as an alternative to, tactics, techniques, and procedures (TTPs) \u2014 creating human-readable stories that describe attacks in a way non-technical audiences can understand. By.",
       "publishedAt": "2026-08-19T10:00:52Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -157,7 +233,7 @@
       "url": "https://blog.qualys.com/product-tech/2026/08/18/cve-2026-68820-kev-bod-26-04-requirements",
       "summary": "Executive Summary CVE-2026-68820 is an actively exploited Windows vulnerability listed in CISA\u2019s Known Exploited Vulnerabilities (KEV) Catalog, with a remediation deadline as suggested by CISA BOD 26-04. CISA BOD 26-04 introduces risk-based remediation.",
       "publishedAt": "2026-08-18T18:06:38Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "windows",
       "category": "kernel",
       "topic": "research",
@@ -177,7 +253,7 @@
       "url": "https://www.sonarsource.com/blog/tokenomics-of-quality/",
       "summary": "Your AI coding bill is, increasingly, a data-formatting problem. Every time an agent pulls your open issues, your quality gate status, or your dependency risks into its context window, it pays tokens for the shape of that data as well as the content. Most of.",
       "publishedAt": "2026-08-17T13:00:00Z",
-      "dayOffset": 2,
+      "dayOffset": 3,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -195,7 +271,7 @@
       "url": "https://www.sonarsource.com/blog/claude-code-hooks-and-how-sonar-vortex-verifies-ai-code/",
       "summary": "An agent deleted someone's home folder . Again. This story is becoming all too familiar: A coding agent runs rm -rf , a tilde expands to the wrong path, and twenty years of files are gone. The agent apologizes in flawless prose. The files do not come back..",
       "publishedAt": "2026-08-17T13:00:00Z",
-      "dayOffset": 2,
+      "dayOffset": 3,
       "ecosystem": "web",
       "category": "kubernetes",
       "topic": "research",
@@ -216,7 +292,7 @@
       "url": "https://www.sonarsource.com/blog/claude-opus-5/",
       "summary": "Claude Opus 5 is Anthropic's latest flagship, released on July 24. Anthropic describes it as delivering frontier intelligence at half the price of Claude Fable 5, and calls out one capability in particular: Opus 5 is unusually good at verifying its own work.",
       "publishedAt": "2026-08-17T13:00:00Z",
-      "dayOffset": 2,
+      "dayOffset": 3,
       "ecosystem": "web",
       "category": "adcs",
       "topic": "research",
@@ -225,79 +301,6 @@
         "Web",
         "ADCS",
         "File Read"
-      ]
-    },
-    {
-      "title": "Phonescams: Casting a Wide Net in an Orchard of Low-Hanging Fruit",
-      "source": "Cofense",
-      "sourceUrl": "https://cofense.com/",
-      "url": "https://cofense.com/blog/phonescams-casting-a-wide-net-in-an-orchard-of-low-hanging-fruit",
-      "summary": "By: Joseph Hoggle, Cofense Phishing Defense Center Phonescams that impersonate some of America\u2019s favorite brands\u2014and some less expected ones\u2014are distributed en masse to Cofense client email inboxes daily. In the digital age, everyone is looking to get ahead,.",
-      "publishedAt": "2026-08-17T05:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing"
-      ]
-    },
-    {
-      "title": "You\u2019re Back In The Room (Citrix NetScaler Pre-Auth RCE CVE-2026-8452(?))",
-      "source": "watchTowr Labs",
-      "sourceUrl": "https://x.com/watchtowrcyber",
-      "url": "https://labs.watchtowr.com/youre-back-in-the-room-citrix-netscaler-pre-auth-rce-cve-2026-8452/",
-      "summary": "Suddenly, you\u2019re in a room. You look around - oh, you\u2019re surrounded by other new starters at your new job. Yes, it\u2019s Monday, and you\u2019re being onboarded. You know the drill - it\u2019s the typical enterprise \u201cplease don\u2019t be a bad person or we may have to fire.",
-      "publishedAt": "2026-08-14T07:08:20Z",
-      "dayOffset": 5,
-      "ecosystem": "linux",
-      "category": "vpn-edge",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-8452"
-      ],
-      "tags": [
-        "Linux",
-        "VPN Edge",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Curiouser and Curiouser",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/curiouser-and-curiouser/",
-      "summary": "Welcome to this week\u2019s edition of the Threat Source newsletter. \u201cExperiment is the mother of knowledge.\u201d \u2015 Madeleine L'Engle, A Wrinkle in Time \u201cDon't slide down the rabbit hole. The way down is a breeze, but climbing back's a battle.\u201d \u2015 Kate Morton, The.",
-      "publishedAt": "2026-08-13T18:00:18Z",
-      "dayOffset": 6,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "CVE-2026-72898 | Metabase Pre-Authentication SQL Injection Vulnerability",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-72898/",
-      "summary": "CVE-2026-72898 is a critical unauthenticated SQL injection vulnerability in Metabase, a widely used open-source business intelligence and data analytics platform. Successful exploitation can give an attacker administrator access to the affected Metabase.",
-      "publishedAt": "2026-08-13T17:45:09Z",
-      "dayOffset": 6,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-72898"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "SQLi"
       ]
     }
   ],
@@ -357,7 +360,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -401,8 +404,8 @@
       "researcherUrl": "https://github.com/lxxexxbxx",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "9:06 AM CDT",
-      "firstSeenAt": "2026-08-13T14:06:09Z",
+      "added": "8:52 AM CDT",
+      "firstSeenAt": "2026-08-20T13:52:22Z",
       "language": "Python",
       "summary": "Langflow Unauthenticated RCE PoC",
       "technicalSummary": "Langflow Unauthenticated RCE PoC",
@@ -426,7 +429,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -489,7 +492,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -557,7 +560,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -624,7 +627,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -688,7 +691,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -752,7 +755,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -820,7 +823,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -829,69 +832,6 @@
         [
           "Vendor Advisory",
           "https://patchstack.com/database/wordpress/plugin/geo-my-wp/vulnerability/wordpress-geo-my-wordpress-plugin-4-5-5-sql-injection-vulnerability?_s_id=cve"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-14669",
-      "title": "PostgreSQL to_char() timezone abbreviation heap buffer overflow PoC; for authorized security testing",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/CVE-2026-14669",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "docker-compose.yml",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-14669"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:37 AM CDT",
-      "firstSeenAt": "2026-08-18T11:37:14Z",
-      "language": "Python",
-      "summary": "PostgreSQL to_char() timezone abbreviation heap buffer overflow PoC; for authorized security testing",
-      "technicalSummary": "PostgreSQL to_char() timezone abbreviation heap buffer overflow PoC; for authorized security testing",
-      "breakdown": "PostgreSQL to_char() timezone abbreviation heap buffer overflow PoC; for authorized security testing",
-      "whatBroke": "PostgreSQL to_char() timezone abbreviation heap buffer overflow PoC; for authorized security testing",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-14669.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-14669\ncd CVE-2026-14669\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HackSpeak/CVE-2026-14669"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.postgresql.org/support/security/CVE-2026-14669/"
         ]
       ]
     },
@@ -925,8 +865,8 @@
       "researcherUrl": "https://github.com/ozcanpng",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:50 PM CDT",
-      "firstSeenAt": "2026-08-13T20:50:12Z",
+      "added": "8:52 AM CDT",
+      "firstSeenAt": "2026-08-20T13:52:22Z",
       "language": "Shell",
       "summary": "Original research and non-destructive PoC for an unauthenticated firmware update vulnerability with missing cryptographic firmware authentication in Netis NC63",
       "technicalSummary": "Original research and non-destructive PoC for an unauthenticated firmware update vulnerability with missing cryptographic firmware authentication in Netis NC63",
@@ -947,7 +887,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -956,6 +896,193 @@
         [
           "Vendor Advisory",
           "https://github.com/ozcanpng/CVE-2026-73673"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-9090",
+      "title": "PoC for CVE-2026-9090 \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC.",
+      "ecosystem": "web",
+      "category": "adcs",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Kimdir01/CVE-2026-9090-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "forge_saml.go"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-9090"
+        ],
+        "language": "Go"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Kimdir01",
+      "researcherUrl": "https://github.com/Kimdir01",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:41 AM CDT",
+      "firstSeenAt": "2026-08-15T16:41:51Z",
+      "language": "Go",
+      "summary": "PoC for \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC VU#780781.",
+      "technicalSummary": "PoC for \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC VU#780781.",
+      "breakdown": "PoC for \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC VU#780781.",
+      "whatBroke": "PoC for \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC VU#780781.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Kimdir01/CVE-2026-9090-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Kimdir01/CVE-2026-9090-poc\ncd CVE-2026-9090-poc\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "identity escalation or relay path",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "ADCS",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Kimdir01/CVE-2026-9090-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://kb.cert.org/vuls/id/780781"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20896",
+      "title": "An explanation and PoC to exploit CVE-2026-20896 Authentication Bypass Vulnerability on Gitea. Being able to.",
+      "ecosystem": "web",
+      "category": "kubernetes",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-20896.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-20896.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20896"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "judgedbykira",
+      "researcherUrl": "https://github.com/judgedbykira",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "2:01 PM CDT",
+      "firstSeenAt": "2026-08-15T19:01:05Z",
+      "language": "Python",
+      "summary": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
+      "technicalSummary": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
+      "breakdown": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
+      "whatBroke": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass\ncd CVE-2026-20896-Gitea-Authentication-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Kubernetes",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 98,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass"
+        ],
+        [
+          "Vendor Advisory",
+          "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-31816",
+      "title": "authentication bypass remote code execution exploit",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-31816",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-31816"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "K3ysTr0K3R",
+      "researcherUrl": "https://github.com/K3ysTr0K3R",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "3:11 PM CDT",
+      "firstSeenAt": "2026-08-14T20:11:03Z",
+      "language": "Python",
+      "summary": "Budibase Authentication Bypass to RCE",
+      "technicalSummary": "Budibase Authentication Bypass to RCE",
+      "breakdown": "Budibase Authentication Bypass to RCE",
+      "whatBroke": "Budibase Authentication Bypass to RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-31816.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-31816\ncd CVE-2026-31816\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 85,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/K3ysTr0K3R/CVE-2026-31816"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/Budibase/budibase/security/advisories/GHSA-gw94-hprh-4wj8"
         ]
       ]
     }
