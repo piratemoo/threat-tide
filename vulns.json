@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T13:52:22Z",
+  "updatedAt": "2026-08-20T19:37:42Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,43 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Is Cyber missing the Marque?",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/is-cyber-missing-the-marque/",
+      "summary": "Welcome to this week\u2019s edition of the Threat Source newsletter. Hello friend. I\u2019m Mick . This is my first Threat Source newsletter, so I should probably introduce myself before I start telling you all the things I think you should be paying attention to..",
+      "publishedAt": "2026-08-20T18:00:18Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing"
+      ]
+    },
+    {
+      "title": "CVE-2026-69414 ShieldBreak Zero-Day: No Patch, and CISA BOD 26-04 Gives You 14 Days",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/08/20/shieldbreak-the-windows-defender-zero-day-with-no-patch-detect-it-mitigate-it-with-qualys",
+      "summary": "Executive Summary ShieldBreak (CVE-2026-69414) is a zero-day elevation-of-privilege vulnerability in the Microsoft Malware Protection Engine used by Microsoft Defender, allowing a low-privilege local attacker to escalate to SYSTEM. A public PoC was released.",
+      "publishedAt": "2026-08-20T14:02:12Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-50656",
+        "CVE-2026-69414"
+      ],
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE"
+      ]
+    },
     {
       "title": "Integrate Aqua and Datadog to Connect Runtime Security with Application Performance",
       "source": "Aqua Nautilus",
@@ -263,45 +300,6 @@
         "Webstack",
         "File Read"
       ]
-    },
-    {
-      "title": "Claude Code hooks and how Sonar Vortex verifies AI code inside the loop",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/claude-code-hooks-and-how-sonar-vortex-verifies-ai-code/",
-      "summary": "An agent deleted someone's home folder . Again. This story is becoming all too familiar: A coding agent runs rm -rf , a tilde expands to the wrong path, and twenty years of files are gone. The agent apologizes in flawless prose. The files do not come back..",
-      "publishedAt": "2026-08-17T13:00:00Z",
-      "dayOffset": 3,
-      "ecosystem": "web",
-      "category": "kubernetes",
-      "topic": "research",
-      "cves": [
-        "CVE-2025-59536",
-        "CVE-2026-21852"
-      ],
-      "tags": [
-        "Web",
-        "Kubernetes",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Claude Opus 5: An evaluation review & metrics benchmarks",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/claude-opus-5/",
-      "summary": "Claude Opus 5 is Anthropic's latest flagship, released on July 24. Anthropic describes it as delivering frontier intelligence at half the price of Claude Fable 5, and calls out one capability in particular: Opus 5 is unusually good at verifying its own work.",
-      "publishedAt": "2026-08-17T13:00:00Z",
-      "dayOffset": 3,
-      "ecosystem": "web",
-      "category": "adcs",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "ADCS",
-        "File Read"
-      ]
     }
   ],
   "vulns": [
@@ -373,48 +371,44 @@
       ]
     },
     {
-      "cve": "CVE-2026-33017",
-      "title": "Langflow Code Injection Vulnerability",
+      "cve": "CVE-2026-39987",
+      "title": "Marimo Remote Code Execution Vulnerability",
       "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/lxxexxbxx/CVE-2026-33017",
+      "pocUrl": "https://github.com/dodeepsink/CVE-2026-39987.py",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "docker-compose.yml",
-          "entrypoint.sh",
-          "exploit.py",
-          "poc.py"
+          "CVE-2026-39987.py"
         ],
         "attackFiles": [
-          "exploit.py",
-          "poc.py"
+          "CVE-2026-39987.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-33017"
+          "CVE-2026-39987"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "lxxexxbxx",
-      "researcherUrl": "https://github.com/lxxexxbxx",
+      "researcher": "dodeepsink",
+      "researcherUrl": "https://github.com/dodeepsink",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "8:52 AM CDT",
-      "firstSeenAt": "2026-08-20T13:52:22Z",
+      "added": "2:25 PM CDT",
+      "firstSeenAt": "2026-08-20T19:25:00Z",
       "language": "Python",
-      "summary": "Langflow Unauthenticated RCE PoC",
-      "technicalSummary": "Langflow Unauthenticated RCE PoC",
-      "breakdown": "Langflow Unauthenticated RCE PoC",
-      "whatBroke": "Langflow Unauthenticated RCE PoC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at lxxexxbxx/CVE-2026-33017.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/lxxexxbxx/CVE-2026-33017\ncd CVE-2026-33017\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "This python script exploit the vulnerable marimo /terminal/ws endpoint and returns a interactive shell.",
+      "technicalSummary": "This python script exploit the vulnerable marimo /terminal/ws endpoint and returns a interactive shell.",
+      "breakdown": "This python script exploit the vulnerable marimo /terminal/ws endpoint and returns a interactive shell.",
+      "whatBroke": "This python script exploit the vulnerable marimo /terminal/ws endpoint and returns a interactive shell.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dodeepsink/CVE-2026-39987.py.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dodeepsink/CVE-2026-39987.py\ncd CVE-2026-39987.py\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Langflow",
+        "initial access through exposed Marimo",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -433,11 +427,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/lxxexxbxx/CVE-2026-33017"
+          "https://github.com/dodeepsink/CVE-2026-39987.py"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
         ]
       ]
     },
@@ -465,16 +459,16 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
+      "researcher": "4minx",
+      "researcherUrl": "https://github.com/4minx",
       "pocWorks": "Yes",
       "difficulty": "moderate",
       "added": "4:06 AM CDT",
       "firstSeenAt": "2026-08-15T09:06:56Z",
       "language": "Python",
       "summary": "PoC: Metabase Unauthenticated SQL Injection",
-      "technicalSummary": "CVE-2026-72898 is a critical unauthenticated SQL injection vulnerability in Metabase, a widely used open-source business intelligence and data analytics platform. Successful exploitation can give an attacker administrator access to the affected Metabase.",
-      "breakdown": "CVE-2026-72898 is a critical unauthenticated SQL injection vulnerability in Metabase, a widely used open-source business intelligence and data analytics platform. Successful exploitation can give an attacker administrator access to the affected Metabase.",
+      "technicalSummary": "PoC: Metabase Unauthenticated SQL Injection",
+      "breakdown": "PoC: Metabase Unauthenticated SQL Injection",
       "whatBroke": "PoC: Metabase Unauthenticated SQL Injection",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 4minx/CVE-2026-72898.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/4minx/CVE-2026-72898\ncd CVE-2026-72898\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
@@ -499,80 +493,8 @@
           "https://github.com/4minx/CVE-2026-72898"
         ],
         [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-72898/"
-        ],
-        [
           "Vendor Advisory",
           "https://www.metabase.com/blog/security-update"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-8452",
-      "title": "You\u2019re Back In The Room (Citrix NetScaler Pre-Auth RCE CVE-2026-8452(?))",
-      "ecosystem": "windows",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "watchTowr-vs-Citrix-Netscaler-PreAuth-RCE.py"
-        ],
-        "attackFiles": [
-          "watchTowr-vs-Citrix-Netscaler-PreAuth-RCE.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-8452"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "watchTowr Labs",
-      "researcherUrl": "https://x.com/watchtowrcyber",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:01 AM CDT",
-      "firstSeenAt": "2026-08-14T15:01:25Z",
-      "language": "Python",
-      "summary": "PreAuth RCE",
-      "technicalSummary": "Suddenly, you\u2019re in a room. You look around - oh,.",
-      "breakdown": "Suddenly, you\u2019re in a room. You look around - oh,.",
-      "whatBroke": "PreAuth RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452\ncd watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "VPN Edge",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452"
-        ],
-        [
-          "Technical Paper",
-          "https://labs.watchtowr.com/youre-back-in-the-room-citrix-netscaler-pre-auth-rce-cve-2026-8452/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX696604"
         ]
       ]
     },
@@ -768,6 +690,70 @@
       ]
     },
     {
+      "cve": "CVE-2026-18315",
+      "title": "Proof-of-concept for CVE-2026-18315 (TrueBooker WordPress Plugin): Unauthenticated Authorization Bypass.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/nastar-id/CVE-2026-18315-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-18315.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-18315.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-18315"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "nastar-id",
+      "researcherUrl": "https://github.com/nastar-id",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:33 PM CDT",
+      "firstSeenAt": "2026-08-20T17:33:36Z",
+      "language": "Python",
+      "summary": "Proof-of-concept for (TrueBooker WordPress Plugin): Unauthenticated Authorization Bypass Through User-Controlled Key to Account Takeover",
+      "technicalSummary": "Proof-of-concept for (TrueBooker WordPress Plugin): Unauthenticated Authorization Bypass Through User-Controlled Key to Account Takeover",
+      "breakdown": "Proof-of-concept for (TrueBooker WordPress Plugin): Unauthenticated Authorization Bypass Through User-Controlled Key to Account Takeover",
+      "whatBroke": "Proof-of-concept for (TrueBooker WordPress Plugin): Unauthenticated Authorization Bypass Through User-Controlled Key to Account Takeover",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at nastar-id/CVE-2026-18315-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/nastar-id/CVE-2026-18315-PoC\ncd CVE-2026-18315-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/nastar-id/CVE-2026-18315-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.svn.wordpress.org/truebooker-appointment-booking/tags/1.2.6/main/config/truebooker-style.php"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-52715",
       "title": "PoC funcional de CVE-2026-52715 (GeoLeak): SQLi no autenticada en GEO my WordPress <= 4.5.5 via.",
       "ecosystem": "web",
@@ -832,6 +818,69 @@
         [
           "Vendor Advisory",
           "https://patchstack.com/database/wordpress/plugin/geo-my-wp/vulnerability/wordpress-geo-my-wordpress-plugin-4-5-5-sql-injection-vulnerability?_s_id=cve"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-20896",
+      "title": "An explanation and PoC to exploit CVE-2026-20896 Authentication Bypass Vulnerability on Gitea. Being able to.",
+      "ecosystem": "web",
+      "category": "kubernetes",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-20896.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-20896.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-20896"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "judgedbykira",
+      "researcherUrl": "https://github.com/judgedbykira",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "2:01 PM CDT",
+      "firstSeenAt": "2026-08-15T19:01:05Z",
+      "language": "Python",
+      "summary": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
+      "technicalSummary": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
+      "breakdown": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
+      "whatBroke": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass\ncd CVE-2026-20896-Gitea-Authentication-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Kubernetes",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass"
+        ],
+        [
+          "Vendor Advisory",
+          "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/"
         ]
       ]
     },
@@ -956,69 +1005,6 @@
         [
           "Vendor Advisory",
           "https://kb.cert.org/vuls/id/780781"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-20896",
-      "title": "An explanation and PoC to exploit CVE-2026-20896 Authentication Bypass Vulnerability on Gitea. Being able to.",
-      "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-20896.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-20896.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-20896"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "judgedbykira",
-      "researcherUrl": "https://github.com/judgedbykira",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "2:01 PM CDT",
-      "firstSeenAt": "2026-08-15T19:01:05Z",
-      "language": "Python",
-      "summary": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
-      "technicalSummary": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
-      "breakdown": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
-      "whatBroke": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass\ncd CVE-2026-20896-Gitea-Authentication-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Kubernetes",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 98,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass"
-        ],
-        [
-          "Vendor Advisory",
-          "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/"
         ]
       ]
     },
