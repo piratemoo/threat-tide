@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T13:38:14Z",
+  "updatedAt": "2026-08-22T19:29:16Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -568,44 +568,44 @@
       ]
     },
     {
-      "cve": "CVE-2026-19598",
-      "title": "Proof of Concept for CVE-2026-19598 affecting Pods <= 3.3.9.",
-      "ecosystem": "web",
+      "cve": "CVE-2026-9198",
+      "title": "IBM Langflow Code Injection Vulnerability",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/DeadExpl0it/CVE-2026-19598-PoC",
+      "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-9198",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "CVE-2026-19598.py"
+          "exploit.py"
         ],
         "attackFiles": [
-          "CVE-2026-19598.py"
+          "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-19598"
+          "CVE-2026-9198"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "DeadExpl0it",
-      "researcherUrl": "https://github.com/DeadExpl0it",
+      "researcher": "K3ysTr0K3R",
+      "researcherUrl": "https://github.com/K3ysTr0K3R",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:10 PM CDT",
-      "firstSeenAt": "2026-08-19T02:10:44Z",
+      "difficulty": "easy",
+      "added": "10:55 AM CDT",
+      "firstSeenAt": "2026-08-22T15:55:09Z",
       "language": "Python",
-      "summary": "Proof of Concept for affecting Pods <= 3.3.9.",
-      "technicalSummary": "Proof of Concept for affecting Pods <= 3.3.9.",
-      "breakdown": "Proof of Concept for affecting Pods <= 3.3.9.",
-      "whatBroke": "Proof of Concept for affecting Pods <= 3.3.9.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at DeadExpl0it/CVE-2026-19598-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/DeadExpl0it/CVE-2026-19598-PoC\ncd CVE-2026-19598-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "IBM Langflow OSS Unauthenticated Remote Code Execution (RCE)",
+      "technicalSummary": "IBM Langflow OSS Unauthenticated Remote Code Execution (RCE)",
+      "breakdown": "IBM Langflow OSS Unauthenticated Remote Code Execution (RCE)",
+      "whatBroke": "IBM Langflow OSS Unauthenticated Remote Code Execution (RCE)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-9198.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-9198\ncd CVE-2026-9198\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed the affected product",
+        "initial access through exposed Langflow",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -613,21 +613,22 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Cloud",
         "Webstack",
-        "Auth Bypass"
+        "RCE",
+        "KEV"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
+      "weaponization": 88,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/DeadExpl0it/CVE-2026-19598-PoC"
+          "https://github.com/K3ysTr0K3R/CVE-2026-9198"
         ],
         [
           "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/pods/tags/3.3.9/includes/general.php#L400"
+          "https://www.ibm.com/support/pages/node/7278927"
         ]
       ]
     },
@@ -823,69 +824,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-20896",
-      "title": "An explanation and PoC to exploit CVE-2026-20896 Authentication Bypass Vulnerability on Gitea. Being able to.",
-      "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-20896.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-20896.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-20896"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "judgedbykira",
-      "researcherUrl": "https://github.com/judgedbykira",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "8:38 AM CDT",
-      "firstSeenAt": "2026-08-22T13:38:14Z",
-      "language": "Python",
-      "summary": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
-      "technicalSummary": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
-      "breakdown": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
-      "whatBroke": "An explanation and PoC to exploit Authentication Bypass Vulnerability on Gitea. Being able to steal session tokens for valid users in the Gitea instance.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass\ncd CVE-2026-20896-Gitea-Authentication-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Kubernetes",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/judgedbykira/CVE-2026-20896-Gitea-Authentication-Bypass"
-        ],
-        [
-          "Vendor Advisory",
-          "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-67919",
       "title": "halo cms plugin 1-request rce from a url, PoC + exploit chain",
       "ecosystem": "cloud",
@@ -958,66 +896,6 @@
         [
           "Vendor Advisory",
           "https://gist.github.com/unpredictable21/d392c26986e81a95676f2a370ecb272b"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-9090",
-      "title": "PoC for CVE-2026-9090 \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC.",
-      "ecosystem": "web",
-      "category": "adcs",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Kimdir01/CVE-2026-9090-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "forge_saml.go"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-9090"
-        ],
-        "language": "Go"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Kimdir01",
-      "researcherUrl": "https://github.com/Kimdir01",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:38 AM CDT",
-      "firstSeenAt": "2026-08-22T13:38:14Z",
-      "language": "Go",
-      "summary": "PoC for \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC VU#780781.",
-      "technicalSummary": "PoC for \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC VU#780781.",
-      "breakdown": "PoC for \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC VU#780781.",
-      "whatBroke": "PoC for \u2014 Casdoor SAML signature bypass (CWE-347). Reproduction-only; coordinated via CERT/CC VU#780781.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Kimdir01/CVE-2026-9090-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Kimdir01/CVE-2026-9090-poc\ncd CVE-2026-9090-poc\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "identity escalation or relay path",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "ADCS",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Kimdir01/CVE-2026-9090-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://kb.cert.org/vuls/id/780781"
         ]
       ]
     },
@@ -1234,10 +1112,6 @@
         [
           "GitHub",
           "https://github.com/securifera/CVE-2026-20217"
-        ],
-        [
-          "Vendor Advisory",
-          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-clamav-88cFYyxR"
         ]
       ]
     },
@@ -1306,10 +1180,6 @@
         [
           "GitHub",
           "https://github.com/HackSpeak/CVE-2026-23479"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/redis/redis/releases/tag/8.6.3"
         ]
       ]
     },
@@ -1366,10 +1236,6 @@
         [
           "GitHub",
           "https://github.com/absholi7ly/Elementor-Pro-Unauthenticated-Arbitrary-File-Upload-to-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/articles/critical-unauthenticated-file-upload-to-rce-in-elementor-pro-plugin?_s_id=cve"
         ]
       ]
     },
@@ -1429,10 +1295,6 @@
         [
           "GitHub",
           "https://github.com/Boreas37/CVE-2026-44848-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/portainer/portainer/security/advisories/GHSA-rrmm-9v76-h3p4"
         ]
       ]
     },
@@ -1494,6 +1356,125 @@
         [
           "GitHub",
           "https://github.com/SaiTeja-Erukude/CVE-2026-47103-python-statemachine-rce"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-73519",
+      "title": "PoC for CVE-2026-73519 - WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/squeeze440/CVE-2026-73519-WolfStack-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.sh"
+        ],
+        "attackFiles": [
+          "poc.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-73519"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "squeeze440",
+      "researcherUrl": "https://github.com/squeeze440",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:29 PM CDT",
+      "firstSeenAt": "2026-08-22T19:29:16Z",
+      "language": "Shell",
+      "summary": "PoC for WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "technicalSummary": "PoC for WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "breakdown": "PoC for WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "whatBroke": "PoC for WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at squeeze440/CVE-2026-73519-WolfStack-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/squeeze440/CVE-2026-73519-WolfStack-PoC\ncd CVE-2026-73519-WolfStack-PoC\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/squeeze440/CVE-2026-73519-WolfStack-PoC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-9147",
+      "title": "uproot <= 5.7.4 code injection via unsafe Python source generation from ROOT TStreamerInfo metadata.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/SaiTeja-Erukude/CVE-2026-9147-uproot-rce",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "root_file_builder.py",
+          "run_poc.py"
+        ],
+        "attackFiles": [
+          "run_poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-9147"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "SaiTeja-Erukude",
+      "researcherUrl": "https://github.com/SaiTeja-Erukude",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:29 PM CDT",
+      "firstSeenAt": "2026-08-22T19:29:16Z",
+      "language": "Python",
+      "summary": "uproot <= 5.7.4 code injection via unsafe Python source generation from ROOT TStreamerInfo metadata.",
+      "technicalSummary": "uproot <= 5.7.4 code injection via unsafe Python source generation from ROOT TStreamerInfo metadata.",
+      "breakdown": "uproot <= 5.7.4 code injection via unsafe Python source generation from ROOT TStreamerInfo metadata.",
+      "whatBroke": "uproot <= 5.7.4 code injection via unsafe Python source generation from ROOT TStreamerInfo metadata.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SaiTeja-Erukude/CVE-2026-9147-uproot-rce.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SaiTeja-Erukude/CVE-2026-9147-uproot-rce\ncd CVE-2026-9147-uproot-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/SaiTeja-Erukude/CVE-2026-9147-uproot-rce"
         ]
       ]
     }
