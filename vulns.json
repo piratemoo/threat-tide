@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T21:22:32Z",
+  "updatedAt": "2026-08-22T21:58:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -1429,54 +1429,52 @@
       ]
     },
     {
-      "cve": "CVE-2026-47103",
-      "title": "Python StateMachine 3.0.0 < 3.2.0 RCE via unsafe SCXML <data expr> evaluation and Python eval() injection.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
+      "cve": "CVE-2026-73519",
+      "title": "PoC for CVE-2026-73519 - WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "ecosystem": "web",
+      "category": "kubernetes",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/SaiTeja-Erukude/CVE-2026-47103-python-statemachine-rce",
+      "pocUrl": "https://github.com/squeeze440/CVE-2026-73519-WolfStack-PoC",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "package_builder.py",
-          "run_poc.py"
+          "poc.sh"
         ],
         "attackFiles": [
-          "run_poc.py"
+          "poc.sh"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-47103"
+          "CVE-2026-73519"
         ],
-        "language": "Python"
+        "language": "Shell"
       },
       "reliability": "reliable exploit",
-      "researcher": "SaiTeja-Erukude",
-      "researcherUrl": "https://github.com/SaiTeja-Erukude",
+      "researcher": "squeeze440",
+      "researcherUrl": "https://github.com/squeeze440",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:38 AM CDT",
-      "firstSeenAt": "2026-08-22T13:38:14Z",
-      "language": "Python",
-      "summary": "Python StateMachine 3.0.0 < 3.2.0 RCE via unsafe SCXML <data expr> evaluation and Python eval() injection.",
-      "technicalSummary": "Python StateMachine 3.0.0 < 3.2.0 RCE via unsafe SCXML <data expr> evaluation and Python eval() injection.",
-      "breakdown": "Python StateMachine 3.0.0 < 3.2.0 RCE via unsafe SCXML <data expr> evaluation and Python eval() injection.",
-      "whatBroke": "Python StateMachine 3.0.0 < 3.2.0 RCE via unsafe SCXML <data expr> evaluation and Python eval() injection.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SaiTeja-Erukude/CVE-2026-47103-python-statemachine-rce.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SaiTeja-Erukude/CVE-2026-47103-python-statemachine-rce\ncd CVE-2026-47103-python-statemachine-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "4:58 PM CDT",
+      "firstSeenAt": "2026-08-22T21:58:45Z",
+      "language": "Shell",
+      "summary": "PoC for WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "technicalSummary": "PoC for WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "breakdown": "PoC for WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "whatBroke": "PoC for WolfStack hardcoded cluster secret leads to unauthenticated RCE (CVSS 9.8)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at squeeze440/CVE-2026-73519-WolfStack-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/squeeze440/CVE-2026-73519-WolfStack-PoC\ncd CVE-2026-73519-WolfStack-PoC\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
+        "Web",
+        "Kubernetes",
         "RCE"
       ],
       "confidence": 98,
@@ -1485,7 +1483,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/SaiTeja-Erukude/CVE-2026-47103-python-statemachine-rce"
+          "https://github.com/squeeze440/CVE-2026-73519-WolfStack-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/wolfsoftwaresystemsltd/WolfStack/releases?page=7#release-v25.9.2"
         ]
       ]
     }
