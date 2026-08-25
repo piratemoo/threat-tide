@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T03:07:05Z",
+  "updatedAt": "2026-08-25T13:56:13Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,13 +87,31 @@
   ],
   "research": [
     {
+      "title": "The safety penalty: Reclaiming operational sovereignty in the age of AI",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/the-safety-penalty-reclaiming-operational-sovereignty-in-the-age-of-ai/",
+      "summary": "As frontier models advance in cyber capability, their guardrails also become more restrictive. Defenders relying on these models to power core SOC processes cannot afford to pay the \u201csafety penalty\u201d of being blocked by these safeguards. Organizations should.",
+      "publishedAt": "2026-08-25T10:00:22Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "vpn-edge",
+      "topic": "ios",
+      "cves": [],
+      "tags": [
+        "iOS",
+        "Windows",
+        "VPN Edge"
+      ]
+    },
+    {
       "title": "CVE-2026-69414 ShieldBreak Zero-Day: No Patch, and CISA BOD 26-04 Gives You 14 Days",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
       "url": "https://blog.qualys.com/product-tech/2026/08/24/shieldbreak-the-windows-defender-zero-day-with-no-patch-detect-it-mitigate-it-with-qualys",
       "summary": "Executive Summary ShieldBreak (CVE-2026-69414) is a zero-day elevation-of-privilege vulnerability in the Microsoft Malware Protection Engine used by Microsoft Defender, allowing a low-privilege local attacker to escalate to SYSTEM. A public PoC was released.",
       "publishedAt": "2026-08-25T00:48:03Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "webstack",
       "topic": "research",
@@ -114,7 +132,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-610/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Apple Safari. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "ios",
       "category": "kernel",
       "topic": "ios",
@@ -134,7 +152,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-609/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Linux Kernel. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "linux",
       "category": "kernel",
       "topic": "research",
@@ -152,7 +170,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-608/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Linux Kernel. An attacker must first obtain the ability to execute high-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "linux",
       "category": "kernel",
       "topic": "research",
@@ -170,7 +188,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-607/",
       "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Microsoft Office. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "research",
       "topic": "research",
@@ -186,7 +204,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-606/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Microsoft Windows. An attacker must first obtain the ability to execute low-privileged code in the context of LOCAL SERVICE on the target system in order to exploit.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "research",
       "topic": "research",
@@ -203,7 +221,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-605/",
       "summary": "This vulnerability allows remote attackers to disclose NTLM responses on affected installations of Microsoft Windows. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "ntlm",
       "topic": "research",
@@ -222,7 +240,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-604/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "kernel",
       "topic": "research",
@@ -241,7 +259,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-603/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "kernel",
       "topic": "research",
@@ -260,7 +278,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-602/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "kernel",
       "topic": "research",
@@ -279,31 +297,12 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-601/",
       "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "kernel",
       "topic": "research",
       "cves": [
         "CVE-2026-13129"
-      ],
-      "tags": [
-        "Kernel",
-        "Memory Corruption"
-      ]
-    },
-    {
-      "title": "ZDI-26-600: Foxit PDF Reader Annotation Use-After-Free Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-600/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
-      "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 0,
-      "ecosystem": "research",
-      "category": "kernel",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-57237"
       ],
       "tags": [
         "Kernel",
@@ -319,14 +318,12 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/mhassani97/cve-2026-63030-lab",
+      "pocUrl": "https://github.com/DeadExpl0it/wp2shell-poc",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 7,
         "codeFiles": [
-          "docker-compose.yml",
-          "fix-htaccess.ps1",
-          "init.sh"
+          "wp2shell.py"
         ],
         "attackFiles": [],
         "hasUsage": false,
@@ -334,22 +331,22 @@
           "CVE-2026-60137",
           "CVE-2026-63030"
         ],
-        "language": "Dockerfile"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "mhassani97",
-      "researcherUrl": "https://github.com/mhassani97",
+      "researcher": "DeadExpl0it",
+      "researcherUrl": "https://github.com/DeadExpl0it",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "7:26 AM CDT",
-      "firstSeenAt": "2026-08-20T12:26:03Z",
-      "language": "Dockerfile",
-      "summary": "wp2shell (& CVE-2026-60137) - full RCE chain",
-      "technicalSummary": "wp2shell (& CVE-2026-60137) - full RCE chain",
-      "breakdown": "wp2shell (& CVE-2026-60137) - full RCE chain",
-      "whatBroke": "wp2shell (& CVE-2026-60137) - full RCE chain",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mhassani97/cve-2026-63030-lab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mhassani97/cve-2026-63030-lab\ncd cve-2026-63030-lab\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "11:19 PM CDT",
+      "firstSeenAt": "2026-08-21T04:19:33Z",
+      "language": "Python",
+      "summary": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for and CVE-2026-60137",
+      "technicalSummary": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for and CVE-2026-60137",
+      "breakdown": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for and CVE-2026-60137",
+      "whatBroke": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for and CVE-2026-60137",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at DeadExpl0it/wp2shell-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/DeadExpl0it/wp2shell-poc\ncd wp2shell-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Core",
         "credential access from service context",
@@ -366,11 +363,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/mhassani97/cve-2026-63030-lab"
+          "https://github.com/DeadExpl0it/wp2shell-poc"
         ],
         [
           "Vendor Advisory",
@@ -430,7 +427,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -496,7 +493,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -560,7 +557,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -625,7 +622,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -692,7 +689,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -701,6 +698,134 @@
         [
           "Vendor Advisory",
           "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-34910",
+      "title": "Ubiquiti UniFi OS Improper Input Validation Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/gagaltotal/CVE-2026-34910-unifi-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-34910.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-34910.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-34909",
+          "CVE-2026-34910"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "gagaltotal",
+      "researcherUrl": "https://github.com/gagaltotal",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "6:22 AM CDT",
+      "firstSeenAt": "2026-08-22T11:22:33Z",
+      "language": "Python",
+      "summary": "Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection.",
+      "technicalSummary": "Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection.",
+      "breakdown": "Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection.",
+      "whatBroke": "Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at gagaltotal/CVE-2026-34910-unifi-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/gagaltotal/CVE-2026-34910-unifi-poc\ncd CVE-2026-34910-unifi-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed UniFi OS",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/gagaltotal/CVE-2026-34910-unifi-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-34909",
+      "title": "Ubiquiti UniFi OS Path Traversal Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/gagaltotal/CVE-2026-34910-unifi-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "CVE-2026-34910.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-34909",
+          "CVE-2026-34910"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "gagaltotal",
+      "researcherUrl": "https://github.com/gagaltotal",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:22 AM CDT",
+      "firstSeenAt": "2026-08-22T11:22:33Z",
+      "language": "Python",
+      "summary": "Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account.",
+      "technicalSummary": "Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account.",
+      "breakdown": "Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account.",
+      "whatBroke": "Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at gagaltotal/CVE-2026-34910-unifi-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/gagaltotal/CVE-2026-34910-unifi-poc\ncd CVE-2026-34910-unifi-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed UniFi OS",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/gagaltotal/CVE-2026-34910-unifi-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b"
         ]
       ]
     },
@@ -757,7 +882,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -766,77 +891,6 @@
         [
           "Vendor Advisory",
           "https://www.ibm.com/support/pages/node/7278927"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-19478",
-      "title": "GitLab CE/EE GraphQL Directive Code Injection Vulnerability",
-      "ecosystem": "web",
-      "category": "devops",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/dinosn/gitlab-cve-2026-19478-lab",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "docker-compose.yml",
-          "poc_cve_2026_19478.py",
-          "poc_cve_2026_19650.py",
-          "setup.sh"
-        ],
-        "attackFiles": [
-          "poc_cve_2026_19478.py",
-          "poc_cve_2026_19650.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-19478",
-          "CVE-2026-19650"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:50 AM CDT",
-      "firstSeenAt": "2026-08-18T10:50:03Z",
-      "language": "Python",
-      "summary": "Reproducible A/B lab + safe PoC for GitLab / CVE-2026-19650 (GraphQL @gl_introduced)",
-      "technicalSummary": "CVE-2026-19478 is a critical code injection vulnerability in GitLab Community Edition (CE) and Enterprise Edition (EE). Under certain conditions, an unauthenticated remote attacker can exploit a GraphQL directive to modify or delete public projects and.",
-      "breakdown": "CVE-2026-19478 is a critical code injection vulnerability in GitLab Community Edition (CE) and Enterprise Edition (EE). Under certain conditions, an unauthenticated remote attacker can exploit a GraphQL directive to modify or delete public projects and.",
-      "whatBroke": "Reproducible A/B lab + safe PoC for GitLab / CVE-2026-19650 (GraphQL @gl_introduced)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dinosn/gitlab-cve-2026-19478-lab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dinosn/gitlab-cve-2026-19478-lab\ncd gitlab-cve-2026-19478-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "DevOps",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 77,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/dinosn/gitlab-cve-2026-19478-lab"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-19478/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-4-released/"
         ]
       ]
     },
@@ -887,7 +941,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -950,15 +1004,71 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
           "https://github.com/aye468448-eng/CVE-2026-0073-Android-adbd-authentication-bypass"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-16348",
+      "title": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Slagzz/CVE-2026-16348",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-16348.py"
         ],
+        "attackFiles": [
+          "CVE-2026-16348.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-16348"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Slagzz",
+      "researcherUrl": "https://github.com/Slagzz",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:56 PM CDT",
+      "firstSeenAt": "2026-08-25T02:56:28Z",
+      "language": "Python",
+      "summary": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
+      "technicalSummary": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
+      "breakdown": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
+      "whatBroke": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Slagzz/CVE-2026-16348.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Slagzz/CVE-2026-16348\ncd CVE-2026-16348\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
         [
-          "Vendor Advisory",
-          "https://source.android.com/docs/security/bulletin/2026/2026-05-01"
+          "GitHub",
+          "https://github.com/Slagzz/CVE-2026-16348"
         ]
       ]
     },
@@ -1014,15 +1124,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
           "https://github.com/HackSpeak/CVE-2026-53365"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/293fe8f2d1b5ac464ca16a8eba09571bbbb34ba9"
         ]
       ]
     },
@@ -1077,7 +1183,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1136,7 +1242,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1194,7 +1300,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1251,7 +1357,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -1308,134 +1414,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-66906"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-66907",
-      "title": "Reproducer for CVE-2026-66907 (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-66907",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-66907"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:23 AM CDT",
-      "firstSeenAt": "2026-08-24T15:23:30Z",
-      "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "technicalSummary": "Reproducer for (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "breakdown": "Reproducer for (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "whatBroke": "Reproducer for (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-66907.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-66907\ncd CVE-2026-66907\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-66907"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-32475",
-      "title": "PoC for CVE-2026-32475: Elementor Pro <=4.2.1 unauthenticated file upload to RCE. Stdlib-only Python.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Boreas37/CVE-2026-32475-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "docker-compose.yml",
-          "el_rce_poc.py",
-          "setup_form_page.php"
-        ],
-        "attackFiles": [
-          "el_rce_poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-32475"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Boreas37",
-      "researcherUrl": "https://github.com/Boreas37",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:20 PM CDT",
-      "firstSeenAt": "2026-08-25T01:20:49Z",
-      "language": "Python",
-      "summary": "PoC for Elementor Pro <=4.2.1 unauthenticated file upload to RCE. Stdlib-only Python.",
-      "technicalSummary": "PoC for Elementor Pro <=4.2.1 unauthenticated file upload to RCE. Stdlib-only Python.",
-      "breakdown": "PoC for Elementor Pro <=4.2.1 unauthenticated file upload to RCE. Stdlib-only Python.",
-      "whatBroke": "PoC for Elementor Pro <=4.2.1 unauthenticated file upload to RCE. Stdlib-only Python.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Boreas37/CVE-2026-32475-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Boreas37/CVE-2026-32475-PoC\ncd CVE-2026-32475-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Boreas37/CVE-2026-32475-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/articles/critical-unauthenticated-file-upload-to-rce-in-elementor-pro-plugin?_s_id=cve"
         ]
       ]
     }
