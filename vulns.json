@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T13:56:13Z",
+  "updatedAt": "2026-08-25T19:38:42Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,22 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Integrate Aqua and VMware Tanzu to Control What Happens in Your Private Cloud",
+      "source": "Aqua Nautilus",
+      "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "url": "https://www.aquasec.com/blog/integrate-aqua-and-vmware-tanzu-to-control-what-happens-in-your-private-cloud/",
+      "summary": "TL;DR Highly regulated industries like financial services often choose private cloud platforms such as VMware Tanzu Application Service (TAS) to retain greater control over their infrastructure, applications and sensitive data. That control does not remove.",
+      "publishedAt": "2026-08-25T15:13:43Z",
+      "dayOffset": 0,
+      "ecosystem": "cloud",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Cloud"
+      ]
+    },
     {
       "title": "The safety penalty: Reclaiming operational sovereignty in the age of AI",
       "source": "Cisco Talos",
@@ -288,25 +304,6 @@
       "tags": [
         "Kernel",
         "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-601: Foxit PDF Reader Annotation Use-After-Free Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-601/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
-      "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "kernel",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-13129"
-      ],
-      "tags": [
-        "Kernel",
-        "Memory Corruption"
       ]
     }
   ],
@@ -1009,6 +1006,10 @@
         [
           "GitHub",
           "https://github.com/aye468448-eng/CVE-2026-0073-Android-adbd-authentication-bypass"
+        ],
+        [
+          "Vendor Advisory",
+          "https://source.android.com/docs/security/bulletin/2026/2026-05-01"
         ]
       ]
     },
@@ -1069,6 +1070,10 @@
         [
           "GitHub",
           "https://github.com/Slagzz/CVE-2026-16348"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.tp-link.com/en/support/download/archer-be800/v1/#Firmware"
         ]
       ]
     },
@@ -1179,7 +1184,7 @@
       "tags": [
         "Windows",
         "Exchange",
-        "RCE"
+        "Auth Bypass"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1188,6 +1193,10 @@
         [
           "GitHub",
           "https://github.com/hypnguyen1209/CVE-2026-62911"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62911"
         ]
       ]
     },
@@ -1305,6 +1314,10 @@
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-28672"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread/99ysjqcmz950o3jgm6pqx1wb696onzq7"
         ]
       ]
     },
