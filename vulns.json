@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T03:13:23Z",
+  "updatedAt": "2026-08-26T13:59:03Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,13 +87,44 @@
   ],
   "research": [
     {
+      "title": "Exploits and vulnerabilities in Q2 2026",
+      "source": "Kaspersky GReAT",
+      "sourceUrl": "https://securelist.com/",
+      "url": "https://securelist.com/vulnerabilities-and-exploits-in-q2-2026/121091/",
+      "summary": "Exploits and vulnerabilities in Q2 2026",
+      "publishedAt": "2026-08-26T10:00:04Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
+    },
+    {
+      "title": "Understanding Browser Trust Abuse: Exploiting Enterprise\u2019s Most Trusted Interface",
+      "source": "Cofense",
+      "sourceUrl": "https://cofense.com/",
+      "url": "https://cofense.com/blog/understanding-browser-trust-abuse-exploiting-enterprise-s-most-trusted-interface",
+      "summary": "By: Marie Mamaril, Intelligence Team The biggest change in browser-related threats is not a new flaw in browser software. It is a shift in how threat actors operate. Instead of breaking into the browser, they increasingly trick the people using it by.",
+      "publishedAt": "2026-08-26T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing",
+        "Session Theft"
+      ]
+    },
+    {
       "title": "Integrate Aqua and VMware Tanzu to Control What Happens in Your Private Cloud",
       "source": "Aqua Nautilus",
       "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
       "url": "https://www.aquasec.com/blog/integrate-aqua-and-vmware-tanzu-to-control-what-happens-in-your-private-cloud/",
       "summary": "TL;DR Highly regulated industries like financial services often choose private cloud platforms such as VMware Tanzu Application Service (TAS) to retain greater control over their infrastructure, applications and sensitive data. That control does not remove.",
       "publishedAt": "2026-08-25T15:13:43Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "cloud",
       "category": "research",
       "topic": "research",
@@ -109,7 +140,7 @@
       "url": "https://blog.talosintelligence.com/the-safety-penalty-reclaiming-operational-sovereignty-in-the-age-of-ai/",
       "summary": "As frontier models advance in cyber capability, their guardrails also become more restrictive. Defenders relying on these models to power core SOC processes cannot afford to pay the \u201csafety penalty\u201d of being blocked by these safeguards. Organizations should.",
       "publishedAt": "2026-08-25T10:00:22Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "vpn-edge",
       "topic": "ios",
@@ -127,7 +158,7 @@
       "url": "https://blog.qualys.com/product-tech/2026/08/24/shieldbreak-the-windows-defender-zero-day-with-no-patch-detect-it-mitigate-it-with-qualys",
       "summary": "Executive Summary ShieldBreak (CVE-2026-69414) is a zero-day elevation-of-privilege vulnerability in the Microsoft Malware Protection Engine used by Microsoft Defender, allowing a low-privilege local attacker to escalate to SYSTEM. A public PoC was released.",
       "publishedAt": "2026-08-25T00:48:03Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "windows",
       "category": "webstack",
       "topic": "research",
@@ -148,7 +179,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-610/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Apple Safari. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "ios",
       "category": "kernel",
       "topic": "ios",
@@ -168,7 +199,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-609/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Linux Kernel. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "linux",
       "category": "kernel",
       "topic": "research",
@@ -186,7 +217,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-608/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Linux Kernel. An attacker must first obtain the ability to execute high-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "linux",
       "category": "kernel",
       "topic": "research",
@@ -204,7 +235,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-607/",
       "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Microsoft Office. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "windows",
       "category": "research",
       "topic": "research",
@@ -220,7 +251,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-606/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Microsoft Windows. An attacker must first obtain the ability to execute low-privileged code in the context of LOCAL SERVICE on the target system in order to exploit.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "windows",
       "category": "research",
       "topic": "research",
@@ -237,7 +268,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-605/",
       "summary": "This vulnerability allows remote attackers to disclose NTLM responses on affected installations of Microsoft Windows. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "windows",
       "category": "ntlm",
       "topic": "research",
@@ -256,7 +287,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-604/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
       "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "kernel",
       "topic": "research",
@@ -267,87 +298,47 @@
         "Kernel",
         "RCE"
       ]
-    },
-    {
-      "title": "ZDI-26-603: Foxit PDF Reader Annotation Use-After-Free Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-603/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
-      "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "kernel",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-13127"
-      ],
-      "tags": [
-        "Kernel",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-602: Foxit PDF Reader Doc Object Use-After-Free Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-602/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
-      "publishedAt": "2026-08-24T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "kernel",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-13128"
-      ],
-      "tags": [
-        "Kernel",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
     {
-      "cve": "CVE-2026-41940",
-      "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
+      "cve": "CVE-2026-63030",
+      "title": "WordPress Core Interpretation Conflict Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/lanicer/cve-2026-41940-PoC",
+      "pocUrl": "https://github.com/DeadExpl0it/wp2shell-poc",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "cve.py",
-          "exp.py"
+          "wp2shell.py"
         ],
-        "attackFiles": [
-          "exp.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-41940"
+          "CVE-2026-60137",
+          "CVE-2026-63030"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "lanicer",
-      "researcherUrl": "https://github.com/lanicer",
+      "researcher": "DeadExpl0it",
+      "researcherUrl": "https://github.com/DeadExpl0it",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "7:46 AM CDT",
-      "firstSeenAt": "2026-08-19T12:46:46Z",
+      "added": "11:19 PM CDT",
+      "firstSeenAt": "2026-08-21T04:19:33Z",
       "language": "Python",
-      "summary": "A cPanel and WHM authentication bypassing tool",
-      "technicalSummary": "A cPanel and WHM authentication bypassing tool",
-      "breakdown": "A cPanel and WHM authentication bypassing tool",
-      "whatBroke": "A cPanel and WHM authentication bypassing tool",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at lanicer/cve-2026-41940-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/lanicer/cve-2026-41940-PoC\ncd cve-2026-41940-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for and CVE-2026-60137",
+      "technicalSummary": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for and CVE-2026-60137",
+      "breakdown": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for and CVE-2026-60137",
+      "whatBroke": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for and CVE-2026-60137",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at DeadExpl0it/wp2shell-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/DeadExpl0it/wp2shell-poc\ncd wp2shell-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed cPanel & WHM and WP2 (WordPress Squared)",
+        "initial access through exposed Core",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -357,7 +348,7 @@
       "tags": [
         "Web",
         "Webstack",
-        "Auth Bypass",
+        "RCE",
         "KEV"
       ],
       "confidence": 98,
@@ -366,11 +357,75 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/lanicer/cve-2026-41940-PoC"
+          "https://github.com/DeadExpl0it/wp2shell-poc"
         ],
         [
           "Vendor Advisory",
-          "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-60137",
+      "title": "WordPress Core SQL Injection Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/DeadExpl0it/wp2shell-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "wp2shell.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "DeadExpl0it",
+      "researcherUrl": "https://github.com/DeadExpl0it",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "11:19 PM CDT",
+      "firstSeenAt": "2026-08-21T04:19:33Z",
+      "language": "Python",
+      "summary": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for CVE-2026-63030 and",
+      "technicalSummary": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for CVE-2026-63030 and",
+      "breakdown": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for CVE-2026-63030 and",
+      "whatBroke": "wp2shell \u2014 WordPress Core Pre-Auth RCE Chain poc for CVE-2026-63030 and",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at DeadExpl0it/wp2shell-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/DeadExpl0it/wp2shell-poc\ncd wp2shell-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/DeadExpl0it/wp2shell-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
         ]
       ]
     },
@@ -426,7 +481,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -491,7 +546,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -558,7 +613,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -624,7 +679,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -686,7 +741,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -751,7 +806,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -811,7 +866,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -871,7 +926,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -935,7 +990,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -995,7 +1050,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1004,6 +1059,66 @@
         [
           "Vendor Advisory",
           "https://camel.apache.org/security/CVE-2026-60093.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-63039",
+      "title": "Reproducer for CVE-2026-63039 (Apache InLong AuditAlertRule MyBatis ORDER BY SQL injection via.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-63039",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-63039"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:34 AM CDT",
+      "firstSeenAt": "2026-08-24T16:34:41Z",
+      "language": "Java",
+      "summary": "Reproducer for (Apache InLong AuditAlertRule MyBatis ORDER BY SQL injection via orderField/orderType)",
+      "technicalSummary": "Reproducer for (Apache InLong AuditAlertRule MyBatis ORDER BY SQL injection via orderField/orderType)",
+      "breakdown": "Reproducer for (Apache InLong AuditAlertRule MyBatis ORDER BY SQL injection via orderField/orderType)",
+      "whatBroke": "Reproducer for (Apache InLong AuditAlertRule MyBatis ORDER BY SQL injection via orderField/orderType)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-63039.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-63039\ncd CVE-2026-63039\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "SQLi"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-63039"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread/wzpsgwcx2hxj025pcml0loxr16kl93qt"
         ]
       ]
     },
@@ -1055,7 +1170,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1115,7 +1230,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1181,7 +1296,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -1241,7 +1356,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1300,142 +1415,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
           "https://github.com/XiaoBaiLovesStirring/cve-2026-0013-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://source.android.com/docs/security/bulletin/2026/2026-03-01"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-0073",
-      "title": "Research on CVE-2026-0073. An auth bypass allowing any attacker with local network access to connect to an.",
-      "ecosystem": "android",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/aye468448-eng/CVE-2026-0073-Android-adbd-authentication-bypass",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-0073"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "aye468448-eng",
-      "researcherUrl": "https://github.com/aye468448-eng",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:53 AM CDT",
-      "firstSeenAt": "2026-08-21T16:53:02Z",
-      "language": "Python",
-      "summary": "Research on. An auth bypass allowing any attacker with local network access to connect to an Android device with dev tools and wireless debugging or ADB-over-TCP enabled. Device needs to have been paired before. This has been.",
-      "technicalSummary": "Research on. An auth bypass allowing any attacker with local network access to connect to an Android device with dev tools and wireless debugging or ADB-over-TCP enabled. Device needs to have been paired before. This has been.",
-      "breakdown": "Research on. An auth bypass allowing any attacker with local network access to connect to an Android device with dev tools and wireless debugging or ADB-over-TCP enabled. Device needs to have been paired before. This has been.",
-      "whatBroke": "Research on. An auth bypass allowing any attacker with local network access to connect to an Android device with dev tools and wireless debugging or ADB-over-TCP enabled. Device needs to have been paired before. This has been.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at aye468448-eng/CVE-2026-0073-Android-adbd-authentication-bypass.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/aye468448-eng/CVE-2026-0073-Android-adbd-authentication-bypass\ncd CVE-2026-0073-Android-adbd-authentication-bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Android",
-        "Mobile",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/aye468448-eng/CVE-2026-0073-Android-adbd-authentication-bypass"
-        ],
-        [
-          "Vendor Advisory",
-          "https://source.android.com/docs/security/bulletin/2026/2026-05-01"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-53365",
-      "title": "VsockDrop (CVE-2026-53365) Linux kernel io_uring zerocopy vsock LPE exploit mirror \u2014 MaherAzzouzi, MIT; for.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/CVE-2026-53365",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.c",
-          "interp.c",
-          "rootsh.c"
-        ],
-        "attackFiles": [
-          "exploit.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-53365"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:26 AM CDT",
-      "firstSeenAt": "2026-08-19T12:26:19Z",
-      "language": "C",
-      "summary": "VsockDrop () Linux kernel io_uring zerocopy vsock LPE exploit mirror \u2014 MaherAzzouzi, MIT; for authorized security testing",
-      "technicalSummary": "VsockDrop () Linux kernel io_uring zerocopy vsock LPE exploit mirror \u2014 MaherAzzouzi, MIT; for authorized security testing",
-      "breakdown": "VsockDrop () Linux kernel io_uring zerocopy vsock LPE exploit mirror \u2014 MaherAzzouzi, MIT; for authorized security testing",
-      "whatBroke": "VsockDrop () Linux kernel io_uring zerocopy vsock LPE exploit mirror \u2014 MaherAzzouzi, MIT; for authorized security testing",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-53365.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-53365\ncd CVE-2026-53365\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HackSpeak/CVE-2026-53365"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/293fe8f2d1b5ac464ca16a8eba09571bbbb34ba9"
         ]
       ]
     }
