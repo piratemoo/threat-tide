@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T17:03:56Z",
+  "updatedAt": "2026-08-29T21:39:50Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -223,6 +223,20 @@
       ]
     },
     {
+      "title": "Exploits and vulnerabilities in Q2 2026",
+      "source": "Kaspersky GReAT",
+      "sourceUrl": "https://securelist.com/",
+      "url": "https://securelist.com/vulnerabilities-and-exploits-in-q2-2026/121091/",
+      "summary": "Exploits and vulnerabilities in Q2 2026",
+      "publishedAt": "2026-08-26T10:00:04Z",
+      "dayOffset": 3,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "Understanding Browser Trust Abuse: Exploiting Enterprise\u2019s Most Trusted Interface",
       "source": "Cofense",
       "sourceUrl": "https://cofense.com/",
@@ -271,27 +285,6 @@
         "iOS",
         "Windows",
         "VPN Edge"
-      ]
-    },
-    {
-      "title": "CVE-2026-69414 ShieldBreak Zero-Day: No Patch, and CISA BOD 26-04 Gives You 14 Days",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/08/24/shieldbreak-the-windows-defender-zero-day-with-no-patch-detect-it-mitigate-it-with-qualys",
-      "summary": "Executive Summary ShieldBreak (CVE-2026-69414) is a zero-day elevation-of-privilege vulnerability in the Microsoft Malware Protection Engine used by Microsoft Defender, allowing a low-privilege local attacker to escalate to SYSTEM. A public PoC was released.",
-      "publishedAt": "2026-08-25T00:48:03Z",
-      "dayOffset": 5,
-      "ecosystem": "windows",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-50656",
-        "CVE-2026-69414"
-      ],
-      "tags": [
-        "Windows",
-        "Webstack",
-        "RCE"
       ]
     }
   ],
@@ -422,250 +415,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-66906",
-      "title": "Reproducer for CVE-2026-66906 (Apache Camel camel-azure-storage-blob downloadBlobToFile path traversal) \u2014.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-66906",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-66906"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:29 AM CDT",
-      "firstSeenAt": "2026-08-24T15:29:24Z",
-      "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-azure-storage-blob downloadBlobToFile path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "technicalSummary": "Reproducer for (Apache Camel camel-azure-storage-blob downloadBlobToFile path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "breakdown": "Reproducer for (Apache Camel camel-azure-storage-blob downloadBlobToFile path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "whatBroke": "Reproducer for (Apache Camel camel-azure-storage-blob downloadBlobToFile path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-66906.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-66906\ncd CVE-2026-66906\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-66906"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-66906.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-66907",
-      "title": "Reproducer for CVE-2026-66907 (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-66907",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-66907"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:23 AM CDT",
-      "firstSeenAt": "2026-08-24T15:23:30Z",
-      "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "technicalSummary": "Reproducer for (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "breakdown": "Reproducer for (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "whatBroke": "Reproducer for (Apache Camel camel-google-storage downloadFileName path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-66907.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-66907\ncd CVE-2026-66907\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-66907"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-66907.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-16348",
-      "title": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Slagzz/CVE-2026-16348",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-16348.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-16348.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-16348"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Slagzz",
-      "researcherUrl": "https://github.com/Slagzz",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:56 PM CDT",
-      "firstSeenAt": "2026-08-25T02:56:28Z",
-      "language": "Python",
-      "summary": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
-      "technicalSummary": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
-      "breakdown": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
-      "whatBroke": "TP-Link Archer BE800 V1 \u2014 VPN Key Injection RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Slagzz/CVE-2026-16348.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Slagzz/CVE-2026-16348\ncd CVE-2026-16348\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Slagzz/CVE-2026-16348"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.tp-link.com/en/support/download/archer-be800/v1/#Firmware"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-60093",
-      "title": "Reproducer for CVE-2026-60093 (Apache Camel camel-azure-storage-datalake downloadToFile path traversal) \u2014.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-60093",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-60093"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:42 AM CDT",
-      "firstSeenAt": "2026-08-24T15:42:01Z",
-      "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-azure-storage-datalake downloadToFile path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "technicalSummary": "Reproducer for (Apache Camel camel-azure-storage-datalake downloadToFile path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "breakdown": "Reproducer for (Apache Camel camel-azure-storage-datalake downloadToFile path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "whatBroke": "Reproducer for (Apache Camel camel-azure-storage-datalake downloadToFile path traversal) \u2014 Camel Spring Boot + Camel Quarkus",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-60093.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-60093\ncd CVE-2026-60093\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-60093"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-60093.html"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-63621",
       "title": "Reproducer for CVE-2026-63621 (Apache Camel camel-knative structured CloudEvent header injection) \u2014 Camel.",
       "ecosystem": "windows",
@@ -722,66 +471,6 @@
         [
           "Vendor Advisory",
           "https://camel.apache.org/security/CVE-2026-63621.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-66908",
-      "title": "Reproducer for CVE-2026-66908 (Apache Camel camel-platform-http-main JWT iss/aud not validated) \u2014 standalone.",
-      "ecosystem": "web",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-66908",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-main/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-66908"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:04 AM CDT",
-      "firstSeenAt": "2026-08-24T15:04:38Z",
-      "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-platform-http-main JWT iss/aud not validated) \u2014 standalone camel-main",
-      "technicalSummary": "Reproducer for (Apache Camel camel-platform-http-main JWT iss/aud not validated) \u2014 standalone camel-main",
-      "breakdown": "Reproducer for (Apache Camel camel-platform-http-main JWT iss/aud not validated) \u2014 standalone camel-main",
-      "whatBroke": "Reproducer for (Apache Camel camel-platform-http-main JWT iss/aud not validated) \u2014 standalone camel-main",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-66908.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-66908\ncd CVE-2026-66908\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "VPN Edge",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-66908"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-66908.html"
         ]
       ]
     },
@@ -1200,70 +889,6 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread/wzpsgwcx2hxj025pcml0loxr16kl93qt"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56705",
-      "title": "\u2014 Adminer < 5.4.3 Unauthenticated RCE via MSSQL PDO DSN Injection",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ChiefYoru/Exploit-CVE-2026-56705",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "adminer_exploit.py"
-        ],
-        "attackFiles": [
-          "adminer_exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-56705"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ChiefYoru",
-      "researcherUrl": "https://github.com/ChiefYoru",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:08 AM CDT",
-      "firstSeenAt": "2026-08-26T05:08:55Z",
-      "language": "Python",
-      "summary": "\u2014 Adminer < 5.4.3 Unauthenticated RCE via MSSQL PDO DSN Injection",
-      "technicalSummary": "\u2014 Adminer < 5.4.3 Unauthenticated RCE via MSSQL PDO DSN Injection",
-      "breakdown": "\u2014 Adminer < 5.4.3 Unauthenticated RCE via MSSQL PDO DSN Injection",
-      "whatBroke": "\u2014 Adminer < 5.4.3 Unauthenticated RCE via MSSQL PDO DSN Injection",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ChiefYoru/Exploit-CVE-2026-56705.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ChiefYoru/Exploit-CVE-2026-56705\ncd Exploit-CVE-2026-56705\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ChiefYoru/Exploit-CVE-2026-56705"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/vrana/adminer/security/advisories/GHSA-r4x9-5m63-3vxw"
         ]
       ]
     }
