@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T17:20:11Z",
+  "updatedAt": "2026-08-30T21:53:16Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -955,6 +955,68 @@
         [
           "GitHub",
           "https://github.com/e4zyy/Project-CVE-2026-75604"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-19632",
+      "title": "TranslatePress One-Day PoC",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/YonLiud/CVE-2026-19632",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-19632"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "YonLiud",
+      "researcherUrl": "https://github.com/YonLiud",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:07 AM CDT",
+      "firstSeenAt": "2026-08-26T09:07:43Z",
+      "language": "Python",
+      "summary": "TranslatePress One-Day PoC",
+      "technicalSummary": "TranslatePress One-Day PoC",
+      "breakdown": "TranslatePress One-Day PoC",
+      "whatBroke": "TranslatePress One-Day PoC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at YonLiud/CVE-2026-19632.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/YonLiud/CVE-2026-19632\ncd CVE-2026-19632\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/YonLiud/CVE-2026-19632"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/translatepress-multilingual/tags/3.3.1/class-translate-press.php#L361"
         ]
       ]
     },
