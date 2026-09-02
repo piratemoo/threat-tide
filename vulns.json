@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-02T07:02:35Z",
+  "updatedAt": "2026-09-02T17:06:12Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,24 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Anatomy of a Silent Domain Takeover",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/09/02/anatomy-of-a-silent-domain-takeover-ad-real-time-monitoring",
+      "summary": "Key Takeaways Modern AD attacks use legitimate protocols end-to-end, no malware, no exploit, nothing for signature tools to fingerprint. The evidence is already in the logs; what is missing is the narrative linking five benign-looking Windows events into a.",
+      "publishedAt": "2026-09-02T15:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "kerberos",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "Kerberos",
+        "Session Theft"
+      ]
+    },
     {
       "title": "CVE-2026-9586 | Sangoma Switchvox Unauthenticated SQL Injection Remote Code Execution Vulnerability",
       "source": "Horizon3 Attack Team",
@@ -269,63 +287,46 @@
         "Phishing",
         "File Read"
       ]
-    },
-    {
-      "title": "PCI DSS 4.0.1: Application Requirements You\u2019re Being Assessed On in 2026",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/08/27/pci-dss-4-0-1-application-requirements-youre-being-assessed-on-in-2026",
-      "summary": "Key Takeaways Since March 31, 2025, all 51 former \u201cbest practice\u201d requirements in PCI DSS 4.0 have been fully scored. Every 2026 assessment covers them. A large share of the new weight sits in the PCI DSS 4.0.1 application requirements , concentrated in.",
-      "publishedAt": "2026-08-27T17:52:38Z",
-      "dayOffset": 6,
-      "ecosystem": "web",
-      "category": "vpn-edge",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "VPN Edge"
-      ]
     }
   ],
   "vulns": [
     {
-      "cve": "CVE-2026-33017",
-      "title": "Langflow Code Injection Vulnerability",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-24423",
+      "title": "SmarterTools SmarterMail Missing Authentication for Critical Function Vulnerability",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/e4zyy/Project-CVE-2026-33017",
+      "pocUrl": "https://github.com/CyberAlp0/SmarterMail-CVE-2026-24423-",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "LangflowRCE.py"
+          "MalHub.py"
         ],
         "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-33017"
+          "CVE-2026-24423"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "e4zyy",
-      "researcherUrl": "https://github.com/e4zyy",
+      "researcher": "CyberAlp0",
+      "researcherUrl": "https://github.com/CyberAlp0",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "1:38 AM CDT",
-      "firstSeenAt": "2026-08-28T06:38:22Z",
+      "added": "7:39 AM CDT",
+      "firstSeenAt": "2026-09-02T12:39:55Z",
       "language": "Python",
-      "summary": "Langflow Unauthenticated RCE Exploit",
-      "technicalSummary": "Langflow Unauthenticated RCE Exploit",
-      "breakdown": "Langflow Unauthenticated RCE Exploit",
-      "whatBroke": "Langflow Unauthenticated RCE Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at e4zyy/Project-CVE-2026-33017.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/e4zyy/Project-CVE-2026-33017\ncd Project-CVE-2026-33017\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Exploit for \u2014 a critical unauthenticated RCE in SmarterMail's ConnectToHub API. Affects all builds prior to 9511.",
+      "technicalSummary": "Exploit for \u2014 a critical unauthenticated RCE in SmarterMail's ConnectToHub API. Affects all builds prior to 9511.",
+      "breakdown": "Exploit for \u2014 a critical unauthenticated RCE in SmarterMail's ConnectToHub API. Affects all builds prior to 9511.",
+      "whatBroke": "Exploit for \u2014 a critical unauthenticated RCE in SmarterMail's ConnectToHub API. Affects all builds prior to 9511.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CyberAlp0/SmarterMail-CVE-2026-24423-.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CyberAlp0/SmarterMail-CVE-2026-24423-\ncd SmarterMail-CVE-2026-24423-\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Langflow",
+        "initial access through exposed SmarterMail",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -333,153 +334,22 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "RCE",
         "KEV"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/e4zyy/Project-CVE-2026-33017"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-24061",
-      "title": "GNU InetUtils Argument Injection Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/iLokaas/CVE-2026-24061-payload",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-24061.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-24061.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-24061"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "iLokaas",
-      "researcherUrl": "https://github.com/iLokaas",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "3:14 PM CDT",
-      "firstSeenAt": "2026-08-28T20:14:45Z",
-      "language": "Python",
-      "summary": "A PoC exploit for GNU InetUtils telnetd Argument Injection Authentication Bypass",
-      "technicalSummary": "A PoC exploit for GNU InetUtils telnetd Argument Injection Authentication Bypass",
-      "breakdown": "A PoC exploit for GNU InetUtils telnetd Argument Injection Authentication Bypass",
-      "whatBroke": "A PoC exploit for GNU InetUtils telnetd Argument Injection Authentication Bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at iLokaas/CVE-2026-24061-payload.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/iLokaas/CVE-2026-24061-payload\ncd CVE-2026-24061-payload\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed InetUtils",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/iLokaas/CVE-2026-24061-payload"
-        ],
-        [
-          "Vendor Advisory",
-          "https://cgit.git.savannah.gnu.org/cgit/inetutils.git"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-18080",
-      "title": "Poc CVE-2026-18080",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Polosss/By-Poloss..-..CVE-2026-18080",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.php",
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.php",
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-18080"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Polosss",
-      "researcherUrl": "https://github.com/Polosss",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:02 AM CDT",
-      "firstSeenAt": "2026-09-02T07:02:35Z",
-      "language": "Python",
-      "summary": "The ERP: Complete HR, Accounting & CRM Suite Built for WooCommerce plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 1.17.8 via the save_attachments() function. This is due.",
-      "technicalSummary": "The ERP: Complete HR, Accounting & CRM Suite Built for WooCommerce plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 1.17.8 via the save_attachments() function. This is due.",
-      "breakdown": "The ERP: Complete HR, Accounting & CRM Suite Built for WooCommerce plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 1.17.8 via the save_attachments() function. This is due.",
-      "whatBroke": "The ERP: Complete HR, Accounting & CRM Suite Built for WooCommerce plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 1.17.8 via the save_attachments() function. This is due.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Polosss/By-Poloss..-..CVE-2026-18080.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Polosss/By-Poloss..-..CVE-2026-18080\ncd By-Poloss..-..CVE-2026-18080\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
       "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/Polosss/By-Poloss..-..CVE-2026-18080"
+          "https://github.com/CyberAlp0/SmarterMail-CVE-2026-24423-"
         ],
         [
           "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/changeset/3656848/erp"
+          "https://www.smartertools.com/smartermail/release-notes/current"
         ]
       ]
     },
@@ -684,14 +554,14 @@
       "pocUrl": "https://github.com/rmhowe425/POC-CVE-2026-19295",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 12,
         "codeFiles": [
           "poc.py"
         ],
         "attackFiles": [
           "poc.py"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
           "CVE-2026-19295"
         ],
@@ -733,68 +603,6 @@
         [
           "Vendor Advisory",
           "https://www.ibm.com/support/pages/node/7284733"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-82286",
-      "title": "\u2014 gpt-crawler <=1.5.1 unauthenticated arbitrary file write via outputFileName (POST /crawl). PoC +.",
-      "ecosystem": "cloud",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/BiiTts/CVE-2026-82286-gpt-crawler-Arbitrary-File-Write",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "lab/run.sh"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-82286"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "BiiTts",
-      "researcherUrl": "https://github.com/BiiTts",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:38 PM CDT",
-      "firstSeenAt": "2026-08-29T01:38:38Z",
-      "language": "Python",
-      "summary": "\u2014 gpt-crawler <=1.5.1 unauthenticated arbitrary file write via outputFileName (POST /crawl). PoC + self-contained Docker lab. CVSS 8.6, CWE-22.",
-      "technicalSummary": "\u2014 gpt-crawler <=1.5.1 unauthenticated arbitrary file write via outputFileName (POST /crawl). PoC + self-contained Docker lab. CVSS 8.6, CWE-22.",
-      "breakdown": "\u2014 gpt-crawler <=1.5.1 unauthenticated arbitrary file write via outputFileName (POST /crawl). PoC + self-contained Docker lab. CVSS 8.6, CWE-22.",
-      "whatBroke": "\u2014 gpt-crawler <=1.5.1 unauthenticated arbitrary file write via outputFileName (POST /crawl). PoC + self-contained Docker lab. CVSS 8.6, CWE-22.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BiiTts/CVE-2026-82286-gpt-crawler-Arbitrary-File-Write.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BiiTts/CVE-2026-82286-gpt-crawler-Arbitrary-File-Write\ncd CVE-2026-82286-gpt-crawler-Arbitrary-File-Write\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Kubernetes",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/BiiTts/CVE-2026-82286-gpt-crawler-Arbitrary-File-Write"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/BuilderIO/gpt-crawler"
         ]
       ]
     },
@@ -992,6 +800,68 @@
         [
           "Vendor Advisory",
           "https://www.ibm.com/support/pages/node/7284733"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-5027",
+      "title": "Description",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/rmhowe425/POC-CVE-2026-5027",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-5027"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "rmhowe425",
+      "researcherUrl": "https://github.com/rmhowe425",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:29 AM CDT",
+      "firstSeenAt": "2026-09-02T13:29:25Z",
+      "language": "Python",
+      "summary": "The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",
+      "technicalSummary": "The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",
+      "breakdown": "The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",
+      "whatBroke": "The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rmhowe425/POC-CVE-2026-5027.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rmhowe425/POC-CVE-2026-5027\ncd POC-CVE-2026-5027\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/rmhowe425/POC-CVE-2026-5027"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.tenable.com/security/research/tra-2026-26"
         ]
       ]
     },
@@ -1196,7 +1066,7 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Cxyofficial/k50g-pocof4gt-cve-2026-43499-poc",
+      "pocUrl": "https://github.com/Cxyofficial/K50G-POCOF4GT-CVE-2026-43499-PoC",
       "pocValidation": {
         "valid": true,
         "score": 9,
@@ -1223,8 +1093,8 @@
       "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
       "breakdown": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
       "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Cxyofficial/k50g-pocof4gt-cve-2026-43499-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Cxyofficial/k50g-pocof4gt-cve-2026-43499-poc\ncd k50g-pocof4gt-cve-2026-43499-poc\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Cxyofficial/K50G-POCOF4GT-CVE-2026-43499-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Cxyofficial/K50G-POCOF4GT-CVE-2026-43499-PoC\ncd K50G-POCOF4GT-CVE-2026-43499-PoC\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "local privilege escalation after a foothold",
@@ -1242,71 +1112,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/Cxyofficial/k50g-pocof4gt-cve-2026-43499-poc"
+          "https://github.com/Cxyofficial/K50G-POCOF4GT-CVE-2026-43499-PoC"
         ],
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-53613",
-      "title": "Vulnerable Versions",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/mohamedjawady/CVE-2026-53613-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit_direct_shell.sh",
-          "exploit_shell.sh"
-        ],
-        "attackFiles": [
-          "exploit_direct_shell.sh",
-          "exploit_shell.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-53613"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "mohamedjawady",
-      "researcherUrl": "https://github.com/mohamedjawady",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:02 AM CDT",
-      "firstSeenAt": "2026-09-02T07:02:35Z",
-      "language": "Shell",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mohamedjawady/CVE-2026-53613-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mohamedjawady/CVE-2026-53613-poc\ncd CVE-2026-53613-poc\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/mohamedjawady/CVE-2026-53613-poc"
         ]
       ]
     }
