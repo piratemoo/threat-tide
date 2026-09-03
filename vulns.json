@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T07:06:32Z",
+  "updatedAt": "2026-09-03T17:00:13Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -425,15 +425,15 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/realalexandergeorgiev/artifactory-CVE-2026-82329-poc.py",
+      "pocUrl": "https://github.com/0xCyp1337/CVE-2026-82329",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "artifactory-CVE-2026-82329-poc.py"
+          "CVE-2026-82329.py"
         ],
         "attackFiles": [
-          "artifactory-CVE-2026-82329-poc.py"
+          "CVE-2026-82329.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -442,19 +442,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "realalexandergeorgiev",
-      "researcherUrl": "https://github.com/realalexandergeorgiev",
+      "researcher": "0xCyp1337",
+      "researcherUrl": "https://github.com/0xCyp1337",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:52 AM CDT",
-      "firstSeenAt": "2026-09-02T06:52:32Z",
+      "added": "11:58 AM CDT",
+      "firstSeenAt": "2026-09-03T16:58:15Z",
       "language": "Python",
-      "summary": "\u2014 JFrog Artifactory unauthenticated authentication bypass (\"phantom join key\" -> forged service admin token)",
-      "technicalSummary": "\u2014 JFrog Artifactory unauthenticated authentication bypass (\"phantom join key\" -> forged service admin token)",
-      "breakdown": "\u2014 JFrog Artifactory unauthenticated authentication bypass (\"phantom join key\" -> forged service admin token)",
-      "whatBroke": "\u2014 JFrog Artifactory unauthenticated authentication bypass (\"phantom join key\" -> forged service admin token)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at realalexandergeorgiev/artifactory-CVE-2026-82329-poc.py.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/realalexandergeorgiev/artifactory-CVE-2026-82329-poc.py\ncd artifactory-CVE-2026-82329-poc.py\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "CVE\u20112026\u201182329 is a critical authentication bypass in JFrog Artifactory (CVSS 9.8) allowing unauthenticated attackers to obtain full administrative privileges. Actively exploited in the wild. Affects self\u2011hosted versions before.",
+      "technicalSummary": "CVE\u20112026\u201182329 is a critical authentication bypass in JFrog Artifactory (CVSS 9.8) allowing unauthenticated attackers to obtain full administrative privileges. Actively exploited in the wild. Affects self\u2011hosted versions before.",
+      "breakdown": "CVE\u20112026\u201182329 is a critical authentication bypass in JFrog Artifactory (CVSS 9.8) allowing unauthenticated attackers to obtain full administrative privileges. Actively exploited in the wild. Affects self\u2011hosted versions before.",
+      "whatBroke": "CVE\u20112026\u201182329 is a critical authentication bypass in JFrog Artifactory (CVSS 9.8) allowing unauthenticated attackers to obtain full administrative privileges. Actively exploited in the wild. Affects self\u2011hosted versions before.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyp1337/CVE-2026-82329.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyp1337/CVE-2026-82329\ncd CVE-2026-82329\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Artifactory",
         "credential access from service context",
@@ -470,12 +470,12 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
+      "weaponization": 79,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/realalexandergeorgiev/artifactory-CVE-2026-82329-poc.py"
+          "https://github.com/0xCyp1337/CVE-2026-82329"
         ],
         [
           "Vendor Advisory",
@@ -550,64 +550,65 @@
       ]
     },
     {
-      "cve": "CVE-2026-75604",
-      "title": "A Python-based exploitation framework for CVE-2026-75604 that enables authorized penetration testers to.",
-      "ecosystem": "windows",
+      "cve": "CVE-2026-33017",
+      "title": "Langflow Code Injection Vulnerability",
+      "ecosystem": "cloud",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/e4zyy/Project-CVE-2026-75604",
+      "pocUrl": "https://github.com/ahseven/CVE-2026-33017-PoC-Reverse-Shell",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "NextRCE.py"
+          "exploit.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "exploit.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-75604"
+          "CVE-2026-33017"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "e4zyy",
-      "researcherUrl": "https://github.com/e4zyy",
+      "researcher": "ahseven",
+      "researcherUrl": "https://github.com/ahseven",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:06 AM CDT",
-      "firstSeenAt": "2026-09-03T07:06:32Z",
+      "added": "8:44 AM CDT",
+      "firstSeenAt": "2026-08-28T13:44:33Z",
       "language": "Python",
-      "summary": "A Python-based exploitation framework for that enables authorized penetration testers to validate Next.js Windows cache traversal vulnerabilities. Deploys reverse shells and webshells via path traversal, with built-in target.",
-      "technicalSummary": "A Python-based exploitation framework for that enables authorized penetration testers to validate Next.js Windows cache traversal vulnerabilities. Deploys reverse shells and webshells via path traversal, with built-in target.",
-      "breakdown": "A Python-based exploitation framework for that enables authorized penetration testers to validate Next.js Windows cache traversal vulnerabilities. Deploys reverse shells and webshells via path traversal, with built-in target.",
-      "whatBroke": "A Python-based exploitation framework for that enables authorized penetration testers to validate Next.js Windows cache traversal vulnerabilities. Deploys reverse shells and webshells via path traversal, with built-in target.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at e4zyy/Project-CVE-2026-75604.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/e4zyy/Project-CVE-2026-75604\ncd Project-CVE-2026-75604\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PoC Reverse Shell",
+      "technicalSummary": "PoC Reverse Shell",
+      "breakdown": "PoC Reverse Shell",
+      "whatBroke": "PoC Reverse Shell",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ahseven/CVE-2026-33017-PoC-Reverse-Shell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ahseven/CVE-2026-33017-PoC-Reverse-Shell\ncd CVE-2026-33017-PoC-Reverse-Shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
+        "initial access through exposed Langflow",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
+        "Cloud",
         "Webstack",
-        "RCE"
+        "Exploit",
+        "KEV"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
+      "weaponization": 99,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
-          "https://github.com/e4zyy/Project-CVE-2026-75604"
+          "https://github.com/ahseven/CVE-2026-33017-PoC-Reverse-Shell"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/vercel/next.js/commit/968b9fcb26bdeb8e0a861a9df05361474666d51b"
+          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
         ]
       ]
     },
@@ -670,6 +671,70 @@
         [
           "Vendor Advisory",
           "https://github.com/ExploreIO/CVE-2026-79483-FastGPT-NoSQL-Injection"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-62735",
+      "title": "Windows HTTP.sys integer overflow -> nonpaged pool overflow LPE PoC (CVE-2026-62735): crash + full SYSTEM.",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/CVE-2026-62735",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "crash/poc.cpp",
+          "poc/poc.cpp"
+        ],
+        "attackFiles": [
+          "crash/poc.cpp",
+          "poc/poc.cpp"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-62735"
+        ],
+        "language": "C++"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:41 AM CDT",
+      "firstSeenAt": "2026-09-03T10:41:14Z",
+      "language": "C++",
+      "summary": "Windows HTTP.sys integer overflow -> nonpaged pool overflow LPE PoC (): crash + full SYSTEM exploit; for authorized testing",
+      "technicalSummary": "Windows HTTP.sys integer overflow -> nonpaged pool overflow LPE PoC (): crash + full SYSTEM exploit; for authorized testing",
+      "breakdown": "Windows HTTP.sys integer overflow -> nonpaged pool overflow LPE PoC (): crash + full SYSTEM exploit; for authorized testing",
+      "whatBroke": "Windows HTTP.sys integer overflow -> nonpaged pool overflow LPE PoC (): crash + full SYSTEM exploit; for authorized testing",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-62735.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-62735\ncd CVE-2026-62735\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/CVE-2026-62735"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62735"
         ]
       ]
     },
@@ -1062,6 +1127,68 @@
       ]
     },
     {
+      "cve": "CVE-2026-82222",
+      "title": "Public PoC for CVE-2026-82222",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/UdinChan/cve-2026-82222-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "cve-2026-82222.py"
+        ],
+        "attackFiles": [
+          "cve-2026-82222.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-82222"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "UdinChan",
+      "researcherUrl": "https://github.com/UdinChan",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:53 PM CDT",
+      "firstSeenAt": "2026-08-30T01:53:59Z",
+      "language": "Python",
+      "summary": "Public PoC for",
+      "technicalSummary": "Public PoC for",
+      "breakdown": "Public PoC for",
+      "whatBroke": "Public PoC for",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at UdinChan/cve-2026-82222-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/UdinChan/cve-2026-82222-poc\ncd cve-2026-82222-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/UdinChan/cve-2026-82222-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/articles/unauthenticated-php-object-injection-to-remote-code-execution-on-givewp?_s_id=cve"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-0769",
       "title": "Description",
       "ecosystem": "cloud",
@@ -1122,327 +1249,6 @@
         [
           "Vendor Advisory",
           "https://www.zerodayinitiative.com/advisories/ZDI-26-035/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-5027",
-      "title": "Description",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/rmhowe425/POC-CVE-2026-5027",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-5027"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "rmhowe425",
-      "researcherUrl": "https://github.com/rmhowe425",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:29 AM CDT",
-      "firstSeenAt": "2026-09-02T13:29:25Z",
-      "language": "Python",
-      "summary": "The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",
-      "technicalSummary": "The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",
-      "breakdown": "The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",
-      "whatBroke": "The 'POST /api/v2/files' endpoint does not sanitize the 'filename' parameter from the multipart form data, allowing an attacker to write files to arbitrary locations on the filesystem using path traversal sequences ('../').",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rmhowe425/POC-CVE-2026-5027.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rmhowe425/POC-CVE-2026-5027\ncd POC-CVE-2026-5027\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/rmhowe425/POC-CVE-2026-5027"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.tenable.com/security/research/tra-2026-26"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-0073",
-      "title": "Security research PoC for CVE-2026-0073: ADB authentication bypass verification",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/naheeju/POC-CVE-2026-0073",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "cmd/main.go"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-0073"
-        ],
-        "language": "Go"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "naheeju",
-      "researcherUrl": "https://github.com/naheeju",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:39 AM CDT",
-      "firstSeenAt": "2026-08-31T11:39:29Z",
-      "language": "Go",
-      "summary": "Security research PoC for ADB authentication bypass verification",
-      "technicalSummary": "Security research PoC for ADB authentication bypass verification",
-      "breakdown": "Security research PoC for ADB authentication bypass verification",
-      "whatBroke": "Security research PoC for ADB authentication bypass verification",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at naheeju/POC-CVE-2026-0073.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/naheeju/POC-CVE-2026-0073\ncd POC-CVE-2026-0073\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/naheeju/POC-CVE-2026-0073"
-        ],
-        [
-          "Vendor Advisory",
-          "https://source.android.com/docs/security/bulletin/2026/2026-05-01"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-23751",
-      "title": "Patched RemotingClient to exploit CVE-2026-23751 (Tungsten Automation - Kofax Capture Unauthenticated File.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/SieBRUM/CVE-2026-23751-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "Payload/Payload.cs",
-          "RemotingClient_MBRO_Lazy/Program.cs",
-          "RemotingClient_MBRO_Lazy/Properties/AssemblyInfo.cs",
-          "Shared/ChannelUriFixingClientChannelSinkProvider.cs",
-          "Shared/Properties/AssemblyInfo.cs",
-          "Shared/Shared.cs"
-        ],
-        "attackFiles": [
-          "Payload/Payload.cs"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-23751"
-        ],
-        "language": "C#"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "SieBRUM",
-      "researcherUrl": "https://github.com/SieBRUM",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:22 AM CDT",
-      "firstSeenAt": "2026-08-28T08:22:55Z",
-      "language": "C#",
-      "summary": "Patched RemotingClient to exploit (Tungsten Automation - Kofax Capture Unauthenticated File Read/Write, Remote Code Execution and SMB coercion via.NET HTTP Remoting)",
-      "technicalSummary": "Patched RemotingClient to exploit (Tungsten Automation - Kofax Capture Unauthenticated File Read/Write, Remote Code Execution and SMB coercion via.NET HTTP Remoting)",
-      "breakdown": "Patched RemotingClient to exploit (Tungsten Automation - Kofax Capture Unauthenticated File Read/Write, Remote Code Execution and SMB coercion via.NET HTTP Remoting)",
-      "whatBroke": "Patched RemotingClient to exploit (Tungsten Automation - Kofax Capture Unauthenticated File Read/Write, Remote Code Execution and SMB coercion via.NET HTTP Remoting)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SieBRUM/CVE-2026-23751-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SieBRUM/CVE-2026-23751-poc\ncd CVE-2026-23751-poc\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/SieBRUM/CVE-2026-23751-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://docshield.tungstenautomation.com/Portal/Products/en_US/KC/11.1.0-40hy9nfk91/KC.htm"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-67363",
-      "title": "Balboa form Command Injection POC",
-      "ecosystem": "web",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Lulztigre/cve-2026-67363-67364",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "balbooa_forms_poc.py"
-        ],
-        "attackFiles": [
-          "balbooa_forms_poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-67363"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Lulztigre",
-      "researcherUrl": "https://github.com/Lulztigre",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:45 PM CDT",
-      "firstSeenAt": "2026-08-30T18:45:17Z",
-      "language": "Python",
-      "summary": "Balboa form Command Injection POC",
-      "technicalSummary": "Balboa form Command Injection POC",
-      "breakdown": "Balboa form Command Injection POC",
-      "whatBroke": "Balboa form Command Injection POC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Lulztigre/cve-2026-67363-67364.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Lulztigre/cve-2026-67363-67364\ncd cve-2026-67363-67364\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "VPN Edge",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Lulztigre/cve-2026-67363-67364"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.balbooa.com/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-0768",
-      "title": "Description",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/rmhowe425/POC-CVE-2026-0768",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-0768"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "rmhowe425",
-      "researcherUrl": "https://github.com/rmhowe425",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:46 PM CDT",
-      "firstSeenAt": "2026-09-02T20:46:12Z",
-      "language": "Python",
-      "summary": "Langflow code Code Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required to exploit this.",
-      "technicalSummary": "Langflow code Code Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required to exploit this.",
-      "breakdown": "Langflow code Code Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required to exploit this.",
-      "whatBroke": "Langflow code Code Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required to exploit this.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rmhowe425/POC-CVE-2026-0768.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rmhowe425/POC-CVE-2026-0768\ncd POC-CVE-2026-0768\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/rmhowe425/POC-CVE-2026-0768"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.zerodayinitiative.com/advisories/ZDI-26-034/"
         ]
       ]
     }
