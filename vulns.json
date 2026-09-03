@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T17:00:13Z",
+  "updatedAt": "2026-09-03T21:39:19Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,42 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "The story behind the intelligence",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/the-story-behind-the-intelligence/",
+      "summary": "Welcome to this week\u2019s edition of the Threat Source newsletter. Our goal is to get accurate threat intelligence to our audience as quickly as possible, with all the context you need to ask the right questions of your own environment: How at risk are we from.",
+      "publishedAt": "2026-09-03T18:00:13Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing"
+      ]
+    },
+    {
+      "title": "Signature Optional - Analysis of CVE-2026-28323",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/signature-optional-analysis-of-cve-2026-28323",
+      "summary": "SolarWinds Web Help Desk treated SAML signature verification as optional and skipped every other validation the spec requires. Bishop Fox confirmed the full exploit end to end: one forged POST request, no credentials, full session takeover. Here is the root.",
+      "publishedAt": "2026-09-03T13:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-28323"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
+      ]
+    },
     {
       "title": "Anatomy of a Silent Domain Takeover",
       "source": "Qualys Research",
@@ -254,39 +290,6 @@
       "tags": [
         "RCE"
       ]
-    },
-    {
-      "title": "PaperCut Zero-Day: Active Exploitation and Pre-Auth RCE",
-      "source": "Huntress",
-      "sourceUrl": "https://www.huntress.com/blog",
-      "url": "https://www.huntress.com/blog/papercut-actively-exploited",
-      "summary": "PaperCut Zero-Day: Active Exploitation and Pre-Auth RCE",
-      "publishedAt": "2026-08-28T03:00:00Z",
-      "dayOffset": 7,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "\u201cSorry, I can\u2019t help with that\u201d: How your guardrails might become the attacker\u2019s best friend",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/sorry-i-cant-help-with-that-how-your-guardrails-might-become-the-attackers-best-friend/",
-      "summary": "Welcome to this week\u2019s edition of the Threat Source newsletter. Hello, everyone. Long time reader, first time writer here at the Threat Source newsletter! I wanted to start out by introducing myself. My colleague and friend Mick Baccio set the bar pretty.",
-      "publishedAt": "2026-08-27T18:00:24Z",
-      "dayOffset": 7,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "File Read"
-      ]
     }
   ],
   "vulns": [
@@ -428,14 +431,14 @@
       "pocUrl": "https://github.com/0xCyp1337/CVE-2026-82329",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 12,
         "codeFiles": [
           "CVE-2026-82329.py"
         ],
         "attackFiles": [
           "CVE-2026-82329.py"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
           "CVE-2026-82329"
         ],
@@ -739,45 +742,113 @@
       ]
     },
     {
-      "cve": "CVE-2026-10036",
-      "title": "SpeechBrain < 1.1.1 checkpoint metadata RCE via unsafe PyYAML parsing of CKPT.yaml.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
+      "cve": "CVE-2026-82222",
+      "title": "Authorized Docker lab and clean PoC for validating CVE-2026-82222 RCE in GiveWP 4.16.5.1 and the 4.16.7.2 fix.",
+      "ecosystem": "web",
+      "category": "kubernetes",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/SaiTeja-Erukude/CVE-2026-10036-speechbrain-rce",
+      "pocUrl": "https://github.com/dinosn/givewp-cve-2026-82222-rce-lab",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "attacker-controlled-checkpoints/CKPT+benign-newer/CKPT.yaml",
-          "attacker-controlled-checkpoints/CKPT+poisoned-metadata/CKPT.yaml",
-          "package_builder.py",
-          "run_poc.py"
+          ".github/workflows/validate.yml",
+          "CVE-2026-8222-RCE.py",
+          "docker-compose.yml",
+          "poc/direct-pop-control.php",
+          "poc/poc.py",
+          "scripts/fetch-assets.sh"
         ],
         "attackFiles": [
-          "run_poc.py"
+          "CVE-2026-8222-RCE.py",
+          "poc/direct-pop-control.php",
+          "poc/poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-10036"
+          "CVE-2026-82222"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "SaiTeja-Erukude",
-      "researcherUrl": "https://github.com/SaiTeja-Erukude",
+      "researcher": "dinosn",
+      "researcherUrl": "https://github.com/dinosn",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "7:32 AM CDT",
-      "firstSeenAt": "2026-08-28T12:32:50Z",
+      "added": "12:15 AM CDT",
+      "firstSeenAt": "2026-08-30T05:15:27Z",
       "language": "Python",
-      "summary": "SpeechBrain < 1.1.1 checkpoint metadata RCE via unsafe PyYAML parsing of CKPT.yaml.",
-      "technicalSummary": "SpeechBrain < 1.1.1 checkpoint metadata RCE via unsafe PyYAML parsing of CKPT.yaml.",
-      "breakdown": "SpeechBrain < 1.1.1 checkpoint metadata RCE via unsafe PyYAML parsing of CKPT.yaml.",
-      "whatBroke": "SpeechBrain < 1.1.1 checkpoint metadata RCE via unsafe PyYAML parsing of CKPT.yaml.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SaiTeja-Erukude/CVE-2026-10036-speechbrain-rce.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SaiTeja-Erukude/CVE-2026-10036-speechbrain-rce\ncd CVE-2026-10036-speechbrain-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Authorized Docker lab and clean PoC for validating RCE in GiveWP 4.16.5.1 and the 4.16.7.2 fix.",
+      "technicalSummary": "Authorized Docker lab and clean PoC for validating RCE in GiveWP 4.16.5.1 and the 4.16.7.2 fix.",
+      "breakdown": "Authorized Docker lab and clean PoC for validating RCE in GiveWP 4.16.5.1 and the 4.16.7.2 fix.",
+      "whatBroke": "Authorized Docker lab and clean PoC for validating RCE in GiveWP 4.16.5.1 and the 4.16.7.2 fix.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dinosn/givewp-cve-2026-82222-rce-lab.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dinosn/givewp-cve-2026-82222-rce-lab\ncd givewp-cve-2026-82222-rce-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Kubernetes",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/dinosn/givewp-cve-2026-82222-rce-lab"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/articles/unauthenticated-php-object-injection-to-remote-code-execution-on-givewp?_s_id=cve"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-48611",
+      "title": "Automated PoC for CVE-2026-48611 \u2014 phpBB OAuth login_link authentication bypass",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Ethicalgrey/phpBB-CVE-2026-48611",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-48611.py",
+          "install.sh"
+        ],
+        "attackFiles": [
+          "CVE-2026-48611.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48611"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Ethicalgrey",
+      "researcherUrl": "https://github.com/Ethicalgrey",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:35 AM CDT",
+      "firstSeenAt": "2026-08-30T15:35:30Z",
+      "language": "Python",
+      "summary": "Automated PoC for \u2014 phpBB OAuth login_link authentication bypass",
+      "technicalSummary": "Automated PoC for \u2014 phpBB OAuth login_link authentication bypass",
+      "breakdown": "Automated PoC for \u2014 phpBB OAuth login_link authentication bypass",
+      "whatBroke": "Automated PoC for \u2014 phpBB OAuth login_link authentication bypass",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ethicalgrey/phpBB-CVE-2026-48611.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ethicalgrey/phpBB-CVE-2026-48611\ncd phpBB-CVE-2026-48611\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -787,21 +858,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "RCE"
+        "Auth Bypass"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
+      "weaponization": 76,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/SaiTeja-Erukude/CVE-2026-10036-speechbrain-rce"
+          "https://github.com/Ethicalgrey/phpBB-CVE-2026-48611"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/SaiTeja-Erukude/CVE-2026-10036-speechbrain-rce"
+          "https://www.phpbb.com/community/viewtopic.php?t=2672170"
         ]
       ]
     },
@@ -926,329 +997,6 @@
         [
           "Vendor Advisory",
           "https://github.com/BuilderIO/gpt-crawler"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-4001",
-      "title": "WooCommerce plugin: safe formula-based product pricing, closing CVE-2026-4001's eval()-based RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/htrxuan/hdwebmobile-formula-pricing",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "assets/js/hdfp-admin.js",
-          "assets/js/hdfp-frontend.js",
-          "hdwebmobile-formula-pricing.php",
-          "includes/class-hdfp-activator.php",
-          "includes/class-hdfp-admin.php",
-          "includes/class-hdfp-cart.php",
-          "includes/class-hdfp-core.php",
-          "includes/class-hdfp-formula-evaluator.php"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-4001"
-        ],
-        "language": "PHP"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "htrxuan",
-      "researcherUrl": "https://github.com/htrxuan",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:51 PM CDT",
-      "firstSeenAt": "2026-08-29T03:51:17Z",
-      "language": "PHP",
-      "summary": "WooCommerce plugin: safe formula-based product pricing, closing 's eval()-based RCE",
-      "technicalSummary": "WooCommerce plugin: safe formula-based product pricing, closing 's eval()-based RCE",
-      "breakdown": "WooCommerce plugin: safe formula-based product pricing, closing 's eval()-based RCE",
-      "whatBroke": "WooCommerce plugin: safe formula-based product pricing, closing 's eval()-based RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at htrxuan/hdwebmobile-formula-pricing.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/htrxuan/hdwebmobile-formula-pricing\ncd hdwebmobile-formula-pricing\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/htrxuan/hdwebmobile-formula-pricing"
-        ],
-        [
-          "Vendor Advisory",
-          "https://acowebs.com/woo-custom-product-addons/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-18729",
-      "title": "Description",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/rmhowe425/POC-CVE-2026-18729",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-18729"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "rmhowe425",
-      "researcherUrl": "https://github.com/rmhowe425",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:48 PM CDT",
-      "firstSeenAt": "2026-08-29T22:48:19Z",
-      "language": "Python",
-      "summary": "IBM Langflow OSS 1.0.0 through 1.11.1 could allow a remote authenticated attacker to execute arbitrary code due to improper control of generation of code.",
-      "technicalSummary": "IBM Langflow OSS 1.0.0 through 1.11.1 could allow a remote authenticated attacker to execute arbitrary code due to improper control of generation of code.",
-      "breakdown": "IBM Langflow OSS 1.0.0 through 1.11.1 could allow a remote authenticated attacker to execute arbitrary code due to improper control of generation of code.",
-      "whatBroke": "IBM Langflow OSS 1.0.0 through 1.11.1 could allow a remote authenticated attacker to execute arbitrary code due to improper control of generation of code.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rmhowe425/POC-CVE-2026-18729.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rmhowe425/POC-CVE-2026-18729\ncd POC-CVE-2026-18729\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/rmhowe425/POC-CVE-2026-18729"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.ibm.com/support/pages/node/7284733"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-19286",
-      "title": "Description",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/rmhowe425/POC-CVE-2026-19286",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-19286"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "rmhowe425",
-      "researcherUrl": "https://github.com/rmhowe425",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:02 PM CDT",
-      "firstSeenAt": "2026-08-29T17:02:13Z",
-      "language": "Python",
-      "summary": "IBM Langflow OSS 1.0.0 through 1.11.1 could allow a remote attacker to execute arbitrary code due to improper enforcement of security restrictions on the A2A public endpoint.",
-      "technicalSummary": "IBM Langflow OSS 1.0.0 through 1.11.1 could allow a remote attacker to execute arbitrary code due to improper enforcement of security restrictions on the A2A public endpoint.",
-      "breakdown": "IBM Langflow OSS 1.0.0 through 1.11.1 could allow a remote attacker to execute arbitrary code due to improper enforcement of security restrictions on the A2A public endpoint.",
-      "whatBroke": "IBM Langflow OSS 1.0.0 through 1.11.1 could allow a remote attacker to execute arbitrary code due to improper enforcement of security restrictions on the A2A public endpoint.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rmhowe425/POC-CVE-2026-19286.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rmhowe425/POC-CVE-2026-19286\ncd POC-CVE-2026-19286\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/rmhowe425/POC-CVE-2026-19286"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.ibm.com/support/pages/node/7284733"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-82222",
-      "title": "Public PoC for CVE-2026-82222",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/UdinChan/cve-2026-82222-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cve-2026-82222.py"
-        ],
-        "attackFiles": [
-          "cve-2026-82222.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-82222"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "UdinChan",
-      "researcherUrl": "https://github.com/UdinChan",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:53 PM CDT",
-      "firstSeenAt": "2026-08-30T01:53:59Z",
-      "language": "Python",
-      "summary": "Public PoC for",
-      "technicalSummary": "Public PoC for",
-      "breakdown": "Public PoC for",
-      "whatBroke": "Public PoC for",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at UdinChan/cve-2026-82222-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/UdinChan/cve-2026-82222-poc\ncd cve-2026-82222-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/UdinChan/cve-2026-82222-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/articles/unauthenticated-php-object-injection-to-remote-code-execution-on-givewp?_s_id=cve"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-0769",
-      "title": "Description",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/rmhowe425/POC-CVE-2026-0769",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-0769"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "rmhowe425",
-      "researcherUrl": "https://github.com/rmhowe425",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "6:34 PM CDT",
-      "firstSeenAt": "2026-09-02T23:34:00Z",
-      "language": "Python",
-      "summary": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required.",
-      "technicalSummary": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required.",
-      "breakdown": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required.",
-      "whatBroke": "Langflow eval_custom_component_code Eval Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Langflow. Authentication is not required.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rmhowe425/POC-CVE-2026-0769.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rmhowe425/POC-CVE-2026-0769\ncd POC-CVE-2026-0769\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/rmhowe425/POC-CVE-2026-0769"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.zerodayinitiative.com/advisories/ZDI-26-035/"
         ]
       ]
     }
