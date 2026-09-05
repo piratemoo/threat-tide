@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T15:57:10Z",
+  "updatedAt": "2026-09-05T21:06:36Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -503,7 +503,7 @@
       "pocUrl": "https://github.com/HackSpeak/CVE-2026-62735",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "crash/poc.cpp",
           "poc/poc.cpp"
@@ -512,7 +512,7 @@
           "crash/poc.cpp",
           "poc/poc.cpp"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-62735"
         ],
@@ -619,6 +619,67 @@
         [
           "Vendor Advisory",
           "https://www.phpbb.com/community/viewtopic.php?t=2672170"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43499",
+      "title": "uid=0(root) gid=0(root) ...",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Cxyofficial/K50G-POCOF4GT-CVE-2026-43499-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "ksu-module/chuxin_permissive_netfix/service.sh",
+          "ksu_loader.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43499"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Cxyofficial",
+      "researcherUrl": "https://github.com/Cxyofficial",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:26 AM CDT",
+      "firstSeenAt": "2026-09-01T09:26:04Z",
+      "language": "Shell",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Cxyofficial/K50G-POCOF4GT-CVE-2026-43499-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Cxyofficial/K50G-POCOF4GT-CVE-2026-43499-PoC\ncd K50G-POCOF4GT-CVE-2026-43499-PoC\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Cxyofficial/K50G-POCOF4GT-CVE-2026-43499-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
         ]
       ]
     },
