@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T07:14:36Z",
+  "updatedAt": "2026-09-10T16:57:36Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,226 +87,283 @@
   ],
   "research": [
     {
-      "title": "Active exploitation of Cisco Secure Firewall Management Center vulnerabilities",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/fmc-ongoing-exploitation/",
-      "summary": "Cisco Talos is actively tracking the exploitation of two vulnerabilities in Cisco\u2019s Secure Firewall Management Center (FMC) Software. First, CVE-2026-20079 is an authentication bypass vulnerability in unpatched instances of Cisco\u2019s Secure FMC Software, which.",
-      "publishedAt": "2026-09-09T16:08:59Z",
-      "dayOffset": 1,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [
-        "CVE-2026-20079",
-        "CVE-2026-20316"
-      ],
-      "tags": [
-        "Phishing",
-        "Auth Bypass"
-      ]
+      "title": "The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE",
+      "source": "Unit 42",
+      "sourceUrl": "https://unit42.paloaltonetworks.com/",
+      "url": "https://unit42.paloaltonetworks.com/kubernetes-spiffe-spire-identity-spoofing/",
+      "summary": "Learn how root access on a compromised K8s node allows attackers to utilize SPIFFE/SPIRE metadata to spoof and harvest co-located workload identities. The post The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE appeared first on.",
+      "publishedAt": "2026-09-10T10:00:43Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
     },
     {
-      "title": "The Models That Found 10,000 Zero-Days Broke Into Three Companies Using Weak Passwords",
+      "title": "What Is ISPM? How It Differs from IAM, PAM, IGA, and IDaaS",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/qualys-insights/2026/09/09/the-models-that-found-10000-zero-days-broke-into-three-companies-using-weak-passwords",
-      "summary": "The question of whether a Frontier AI model could find vulnerabilities that no human researcher had found was settled in April. Claude Mythos Preview identified thousands of previously unknown flaws across every major operating system and browser, including.",
-      "publishedAt": "2026-09-09T15:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "adcs",
+      "url": "https://blog.qualys.com/product-tech/2026/09/10/what-is-ispm-vs-iam-pam-iga-idaas",
+      "summary": "Key Takeaways Identity Security Posture Management (ISPM) is the continuous risk and posture layer of the identity stack not a replacement for Identity and Access Management (IAM), Privileged Access Management (PAM), Identity Governance and Administration.",
+      "publishedAt": "2026-09-10T08:54:26Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "kerberos",
       "topic": "research",
       "cves": [],
       "tags": [
-        "Web",
-        "ADCS",
-        "SQLi"
-      ]
-    },
-    {
-      "title": "7 questions for assessing Cyber Resilience Act codebase readiness",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/seven-questions-for-assessing-cyber-resilience-act-codebase-readiness/",
-      "summary": "September is here, and for different people it means different things\u2014kids begin their school years, teens are off to university, and manufacturers of products with digital elements that sell them in the European Union are getting ready for mandatory.",
-      "publishedAt": "2026-09-09T13:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "devops",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "DevOps"
-      ]
-    },
-    {
-      "title": "ZDI-26-647: VMware Workstation VMXNET3 TSO Segmentation Integer Overflow Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-647/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of VMware Workstation. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this vulnerability. The.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "cloud",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-59346"
-      ],
-      "tags": [
-        "Cloud",
+        "Windows",
+        "Kerberos",
         "Local Lpe"
       ]
     },
     {
-      "title": "ZDI-26-646: Progress Software Kemp LoadMaster escape_quotes Uninitialized Memory Remote Code Execution Vulnerability",
+      "title": "ZDI-26-679: Adobe Photoshop DCM JPEG Image Parsing Integer Overflow Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-646/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Progress Software Kemp LoadMaster. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-679/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Photoshop. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-8037"
+        "CVE-2026-75862"
       ],
       "tags": [
         "RCE"
       ]
     },
     {
-      "title": "ZDI-26-645: Fortinet FortiSandbox write_remote_backup_to_crontab cronValue Command Injection Remote Code Execution Vulnerability",
+      "title": "ZDI-26-678: Adobe Photoshop DCM File Parsing Integer Overflow Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-645/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Fortinet FortiSandbox. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are assigned:.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-84387"
-      ],
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-644: Oracle VirtualBox VMSVGA Race Condition Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-644/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this vulnerability. The.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-678/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Photoshop. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-60155"
-      ],
-      "tags": [
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-643: Oracle VirtualBox VMSVGA Out-Of-Bounds Read Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-643/",
-      "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-60162"
+        "CVE-2026-75863"
       ],
       "tags": [
         "RCE"
       ]
     },
     {
-      "title": "ZDI-26-642: Oracle VirtualBox IDisplay Out-Of-Bounds Read Local Privilege Escalation Vulnerability",
+      "title": "ZDI-26-677: Adobe Photoshop DCM JPEG-LS Image Parsing Integer Overflow Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-642/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this vulnerability. The.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-677/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Photoshop. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-60159"
-      ],
-      "tags": [
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-641: Oracle VirtualBox VirtioSCSI Out-Of-Bounds Read Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-641/",
-      "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-71114"
+        "CVE-2026-75771"
       ],
       "tags": [
         "RCE"
       ]
     },
     {
-      "title": "ZDI-26-640: Oracle VirtualBox VirtioSCSI Uninitialized Memory Information Disclosure Vulnerability",
+      "title": "ZDI-26-676: Adobe Acrobat Reader DC DigSig Use-After-Free Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-640/",
-      "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-676/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-81973"
+      ],
+      "tags": [
+        "Kernel",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-675: Adobe Acrobat Reader DC Annotation Use-After-Free Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-675/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-81976"
+      ],
+      "tags": [
+        "Kernel",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-674: Adobe Acrobat Reader DC Annotation Out-Of-Bounds Write Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-674/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-71132"
+        "CVE-2026-81981"
       ],
       "tags": [
         "RCE"
       ]
     },
     {
-      "title": "ZDI-26-639: Oracle VirtualBox VMSVGA Heap-based Buffer Overflow Local Privilege Escalation Vulnerability",
+      "title": "ZDI-26-673: Adobe Acrobat Pro DC Doc Object Use-After-Free Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-639/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this vulnerability. The.",
-      "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 1,
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-673/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Pro DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-81988"
+      ],
+      "tags": [
+        "Kernel",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-672: Adobe Acrobat Reader DC PDF File Parsing Integer Underflow Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-672/",
+      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-71116"
+        "CVE-2026-81977"
+      ],
+      "tags": []
+    },
+    {
+      "title": "ZDI-26-671: Adobe Acrobat Reader DC Dialog Object Type Confusion Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-671/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-80161"
       ],
       "tags": [
-        "Local Lpe"
+        "RCE"
       ]
+    },
+    {
+      "title": "ZDI-26-670: Adobe Acrobat Pro DC Doc Object Out-Of-Bounds Read Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-670/",
+      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Adobe Acrobat Pro DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-81991"
+      ],
+      "tags": []
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-63077",
+      "title": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
+      "ecosystem": "web",
+      "category": "devops",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xCyp1337/CVE-2026-63077",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-63077.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-63077.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-63077"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xCyp1337",
+      "researcherUrl": "https://github.com/0xCyp1337",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "8:32 AM CDT",
+      "firstSeenAt": "2026-09-04T13:32:31Z",
+      "language": "Python",
+      "summary": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
+      "technicalSummary": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
+      "breakdown": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
+      "whatBroke": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyp1337/CVE-2026-63077.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyp1337/CVE-2026-63077\ncd CVE-2026-63077\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed TeamCity",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "DevOps",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xCyp1337/CVE-2026-63077"
+        ],
+        [
+          "Vendor Advisory",
+          "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/;"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-31431",
       "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
