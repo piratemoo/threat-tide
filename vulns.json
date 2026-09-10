@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T16:57:36Z",
+  "updatedAt": "2026-09-10T21:33:44Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,26 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "We've got one word for it, and it's usually the wrong one",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/weve-got-one-word-for-it-and-its-usually-the-wrong-one/",
+      "summary": "Welcome to this week\u2019s edition of the Threat Source newsletter. Ask anybody in this industry what the work does to the health of the people who do it and you get one word back: burnout. It's a fine word, in and of itself. It\u2019s easy to reach for,.",
+      "publishedAt": "2026-09-10T18:00:15Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [
+        "CVE-2026-20079",
+        "CVE-2026-20316"
+      ],
+      "tags": [
+        "Phishing",
+        "Session Theft"
+      ]
+    },
     {
       "title": "The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE",
       "source": "Unit 42",
@@ -280,22 +300,6 @@
       "tags": [
         "RCE"
       ]
-    },
-    {
-      "title": "ZDI-26-670: Adobe Acrobat Pro DC Doc Object Out-Of-Bounds Read Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-670/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Adobe Acrobat Pro DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious.",
-      "publishedAt": "2026-09-10T05:00:00Z",
-      "dayOffset": 0,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-81991"
-      ],
-      "tags": []
     }
   ],
   "vulns": [
@@ -696,6 +700,196 @@
         [
           "Vendor Advisory",
           "https://docs.jfrog.com/releases/docs/jfrog-security-advisories"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-11387",
+      "title": "SMS & OTP for WooCommerce, Order Notifications & Abandoned Cart Recovery plugin for WordPress; SMS Alert.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/abraxas/CVE-2026-11387-WooCommerce-SMS-OTP",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-11387-WooCommerce-SMS-OTP-Abraxas-Labs.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-11387-WooCommerce-SMS-OTP-Abraxas-Labs.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-11387"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "abraxas",
+      "researcherUrl": "https://github.com/abraxas",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:06 PM CDT",
+      "firstSeenAt": "2026-09-09T17:06:12Z",
+      "language": "Python",
+      "summary": "SMS & OTP for WooCommerce, Order Notifications & Abandoned Cart Recovery plugin for WordPress; SMS Alert <3.9.6; Unauthenticated Privilege Escalation (Forced Password Reset)",
+      "technicalSummary": "SMS & OTP for WooCommerce, Order Notifications & Abandoned Cart Recovery plugin for WordPress; SMS Alert <3.9.6; Unauthenticated Privilege Escalation (Forced Password Reset)",
+      "breakdown": "SMS & OTP for WooCommerce, Order Notifications & Abandoned Cart Recovery plugin for WordPress; SMS Alert <3.9.6; Unauthenticated Privilege Escalation (Forced Password Reset)",
+      "whatBroke": "SMS & OTP for WooCommerce, Order Notifications & Abandoned Cart Recovery plugin for WordPress; SMS Alert <3.9.6; Unauthenticated Privilege Escalation (Forced Password Reset)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at abraxas/CVE-2026-11387-WooCommerce-SMS-OTP.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/abraxas/CVE-2026-11387-WooCommerce-SMS-OTP\ncd CVE-2026-11387-WooCommerce-SMS-OTP\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/abraxas/CVE-2026-11387-WooCommerce-SMS-OTP"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/sms-alert/tags/3.9.5/handler/forms/class-ultimatemember.php#L288"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-0920",
+      "title": "A PoC exploit for CVE-2026-0920 - WordPress Plugin LA-Studio Element Kit / Unauthenticated Privilege.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-0920",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-0920"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "K3ysTr0K3R",
+      "researcherUrl": "https://github.com/K3ysTr0K3R",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:39 AM CDT",
+      "firstSeenAt": "2026-09-05T16:39:31Z",
+      "language": "Python",
+      "summary": "A PoC exploit for WordPress Plugin LA-Studio Element Kit / Unauthenticated Privilege Escalation",
+      "technicalSummary": "A PoC exploit for WordPress Plugin LA-Studio Element Kit / Unauthenticated Privilege Escalation",
+      "breakdown": "A PoC exploit for WordPress Plugin LA-Studio Element Kit / Unauthenticated Privilege Escalation",
+      "whatBroke": "A PoC exploit for WordPress Plugin LA-Studio Element Kit / Unauthenticated Privilege Escalation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-0920.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-0920\ncd CVE-2026-0920\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/K3ysTr0K3R/CVE-2026-0920"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/lastudio-element-kit/tags/1.5.6.3/includes/integrations/override.php#L301"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-54121",
+      "title": "certighost-oneclick",
+      "ecosystem": "windows",
+      "category": "adcs",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/TryA9ain/Certighost_CVE-2026-54121",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "build_exe.ps1",
+          "certighost.py",
+          "certighost_redirect.py",
+          "check_ca.py",
+          "cleanup_ghost.py"
+        ],
+        "attackFiles": [
+          "check_ca.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-54121"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "TryA9ain",
+      "researcherUrl": "https://github.com/TryA9ain",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:57 PM CDT",
+      "firstSeenAt": "2026-09-09T03:57:43Z",
+      "language": "Python",
+      "summary": "Improper authorization in Active Directory Certificate Services (AD CS) allows an authorized attacker to elevate privileges over a network.",
+      "technicalSummary": "Improper authorization in Active Directory Certificate Services (AD CS) allows an authorized attacker to elevate privileges over a network.",
+      "breakdown": "Improper authorization in Active Directory Certificate Services (AD CS) allows an authorized attacker to elevate privileges over a network.",
+      "whatBroke": "Improper authorization in Active Directory Certificate Services (AD CS) allows an authorized attacker to elevate privileges over a network.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at TryA9ain/Certighost_CVE-2026-54121.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/TryA9ain/Certighost_CVE-2026-54121\ncd Certighost_CVE-2026-54121\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "identity escalation or relay path",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "ADCS",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/TryA9ain/Certighost_CVE-2026-54121"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-54121"
         ]
       ]
     }
