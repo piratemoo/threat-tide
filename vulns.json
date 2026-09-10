@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T21:38:01Z",
+  "updatedAt": "2026-09-10T07:14:36Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -93,7 +93,7 @@
       "url": "https://blog.talosintelligence.com/fmc-ongoing-exploitation/",
       "summary": "Cisco Talos is actively tracking the exploitation of two vulnerabilities in Cisco\u2019s Secure Firewall Management Center (FMC) Software. First, CVE-2026-20079 is an authentication bypass vulnerability in unpatched instances of Cisco\u2019s Secure FMC Software, which.",
       "publishedAt": "2026-09-09T16:08:59Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -113,7 +113,7 @@
       "url": "https://blog.qualys.com/qualys-insights/2026/09/09/the-models-that-found-10000-zero-days-broke-into-three-companies-using-weak-passwords",
       "summary": "The question of whether a Frontier AI model could find vulnerabilities that no human researcher had found was settled in April. Claude Mythos Preview identified thousands of previously unknown flaws across every major operating system and browser, including.",
       "publishedAt": "2026-09-09T15:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "web",
       "category": "adcs",
       "topic": "research",
@@ -131,7 +131,7 @@
       "url": "https://www.sonarsource.com/blog/seven-questions-for-assessing-cyber-resilience-act-codebase-readiness/",
       "summary": "September is here, and for different people it means different things\u2014kids begin their school years, teens are off to university, and manufacturers of products with digital elements that sell them in the European Union are getting ready for mandatory.",
       "publishedAt": "2026-09-09T13:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "devops",
       "topic": "research",
@@ -141,246 +141,172 @@
       ]
     },
     {
-      "title": "ZDI-26-623: Linux Kernel IPv6 Multicast Routing Use-After-Free Local Privilege Escalation Vulnerability",
+      "title": "ZDI-26-647: VMware Workstation VMXNET3 TSO Segmentation Integer Overflow Local Privilege Escalation Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-623/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Linux Kernel. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-647/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of VMware Workstation. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this vulnerability. The.",
       "publishedAt": "2026-09-09T05:00:00Z",
-      "dayOffset": 0,
-      "ecosystem": "linux",
-      "category": "kernel",
+      "dayOffset": 1,
+      "ecosystem": "cloud",
+      "category": "research",
       "topic": "research",
-      "cves": [],
+      "cves": [
+        "CVE-2026-59346"
+      ],
       "tags": [
-        "Linux",
-        "Kernel",
+        "Cloud",
         "Local Lpe"
       ]
     },
     {
-      "title": "Microsoft Patch Tuesday for September 2026 \u2014 Snort rules and prominent vulnerabilities",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/microsoft-patch-tuesday-for-september-2026/",
-      "summary": "Microsoft has released its monthly security update for September 2026, which includes 973 vulnerabilities affecting a range of products, including 113 that Microsoft marked as \"critical.\" Microsoft notes that 2 of the vulnerabilities disclosed this month.",
-      "publishedAt": "2026-09-08T22:16:35Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "kerberos",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-58599",
-        "CVE-2026-62906",
-        "CVE-2026-62916",
-        "CVE-2026-65669",
-        "CVE-2026-65772"
-      ],
-      "tags": [
-        "Windows",
-        "Kerberos",
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "Microsoft and Adobe Patch Tuesday, September 2026 Security Update Review",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/09/08/microsoft-patch-tuesday-september-2026-security-update-review",
-      "summary": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products. The security updates are packed with security fixes, providing organizations with important updates to help protect.",
-      "publishedAt": "2026-09-08T19:11:05Z",
-      "dayOffset": 1,
-      "ecosystem": "android",
-      "category": "mobile",
-      "topic": "android",
-      "cves": [
-        "CVE-2026-58599",
-        "CVE-2026-62906",
-        "CVE-2026-62916",
-        "CVE-2026-65669",
-        "CVE-2026-65772"
-      ],
-      "tags": [
-        "Android",
-        "Mobile",
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "4 Questions to Ask When Evaluating an Exposure Management Platform",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/09/08/questions-evaluating-exposure-management-platform",
-      "summary": "Executive Summary Exposure management platforms are increasingly evaluated based on post-detection actions rather than detection itself. This piece sets out four questions to ask when evaluating one: whether it narrows vulnerabilities to the exploitable.",
-      "publishedAt": "2026-09-08T15:57:05Z",
+      "title": "ZDI-26-646: Progress Software Kemp LoadMaster escape_quotes Uninitialized Memory Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-646/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Progress Software Kemp LoadMaster. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are.",
+      "publishedAt": "2026-09-09T05:00:00Z",
       "dayOffset": 1,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "ClearFake WebDAV infection chain delivers Amatera stealer, ZigCryptoStealer, and NetSupport Manager",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/clearfake-webdav-infection-chain/",
-      "summary": "Cisco Talos began an investigation after observing a DLL named \"verification.google\" executing from WebDAV at a Ukrainian government organization. We assess with moderate confidence that the attacks are not targeted at a particular organization, but are a.",
-      "publishedAt": "2026-09-08T10:01:07Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "adcs",
-      "topic": "phishing",
-      "cves": [],
+      "cves": [
+        "CVE-2026-8037"
+      ],
       "tags": [
-        "Phishing",
-        "Windows",
-        "ADCS",
-        "Session Theft"
+        "RCE"
       ]
     },
     {
-      "title": "ClickFix moves into the browser: Cryptocurrency theft with Google-hosted C2",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/clickfix-moves-into-the-browser/",
-      "summary": "Cisco Talos is tracking a cryptocurrency-stealing campaign that abuses the Google Visualization API for command and control (C2), retrieving obfuscated JavaScript from a publicly published Google Sheets document and injecting it into the victim's browser.",
-      "publishedAt": "2026-09-08T10:00:38Z",
-      "dayOffset": 1,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "Session Theft"
-      ]
-    },
-    {
-      "title": "ZDI-26-622: Microsoft Windows IKEv2 AES-GCM Decryption Integer Underflow Remote Code Execution Vulnerability",
+      "title": "ZDI-26-645: Fortinet FortiSandbox write_remote_backup_to_crontab cronValue Command Injection Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-622/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Microsoft Windows. Authentication is not required to exploit this vulnerability, but only systems with specific IPsec configurations are vulnerable. The ZDI has.",
-      "publishedAt": "2026-09-08T05:00:00Z",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-645/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Fortinet FortiSandbox. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are assigned:.",
+      "publishedAt": "2026-09-09T05:00:00Z",
       "dayOffset": 1,
-      "ecosystem": "windows",
+      "ecosystem": "cloud",
       "category": "vpn-edge",
       "topic": "research",
       "cves": [
-        "CVE-2026-50696"
+        "CVE-2026-84387"
       ],
       "tags": [
-        "Windows",
+        "Cloud",
         "VPN Edge",
         "RCE"
       ]
     },
     {
-      "title": "ZDI-26-621: Microsoft Windows UMPDDrvRealizeBrush Improper Object Management Local Privilege Escalation Vulnerability",
+      "title": "ZDI-26-644: Oracle VirtualBox VMSVGA Race Condition Local Privilege Escalation Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-621/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Microsoft Windows. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-09-08T05:00:00Z",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-644/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this vulnerability. The.",
+      "publishedAt": "2026-09-09T05:00:00Z",
       "dayOffset": 1,
-      "ecosystem": "windows",
+      "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-62712"
+        "CVE-2026-60155"
       ],
       "tags": [
-        "Windows",
         "Local Lpe"
       ]
     },
     {
-      "title": "ZDI-26-620: Microsoft Windows UMPDDrvPlgBlt Improper Object Management Local Privilege Escalation Vulnerability",
+      "title": "ZDI-26-643: Oracle VirtualBox VMSVGA Out-Of-Bounds Read Information Disclosure Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-620/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Microsoft Windows. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-09-08T05:00:00Z",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-643/",
+      "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this.",
+      "publishedAt": "2026-09-09T05:00:00Z",
       "dayOffset": 1,
-      "ecosystem": "windows",
+      "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-62712"
+        "CVE-2026-60162"
       ],
       "tags": [
-        "Windows",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-642: Oracle VirtualBox IDisplay Out-Of-Bounds Read Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-642/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this vulnerability. The.",
+      "publishedAt": "2026-09-09T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-60159"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-641: Oracle VirtualBox VirtioSCSI Out-Of-Bounds Read Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-641/",
+      "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this.",
+      "publishedAt": "2026-09-09T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-71114"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-640: Oracle VirtualBox VirtioSCSI Uninitialized Memory Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-640/",
+      "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this.",
+      "publishedAt": "2026-09-09T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-71132"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-639: Oracle VirtualBox VMSVGA Heap-based Buffer Overflow Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-639/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Oracle VirtualBox. An attacker must first obtain the ability to execute high-privileged code on the target guest system in order to exploit this vulnerability. The.",
+      "publishedAt": "2026-09-09T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-71116"
+      ],
+      "tags": [
         "Local Lpe"
       ]
     }
   ],
   "vulns": [
-    {
-      "cve": "CVE-2026-63077",
-      "title": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
-      "ecosystem": "web",
-      "category": "devops",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xCyp1337/CVE-2026-63077",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-63077.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-63077.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-63077"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xCyp1337",
-      "researcherUrl": "https://github.com/0xCyp1337",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "8:32 AM CDT",
-      "firstSeenAt": "2026-09-04T13:32:31Z",
-      "language": "Python",
-      "summary": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
-      "technicalSummary": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
-      "breakdown": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
-      "whatBroke": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyp1337/CVE-2026-63077.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyp1337/CVE-2026-63077\ncd CVE-2026-63077\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed TeamCity",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "DevOps",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xCyp1337/CVE-2026-63077"
-        ],
-        [
-          "Vendor Advisory",
-          "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/;"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-31431",
       "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
@@ -440,7 +366,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -508,7 +434,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -517,71 +443,6 @@
         [
           "Vendor Advisory",
           "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-69451",
-      "title": "Microsoft and Adobe Patch Tuesday, September 2026 Security Update Review",
-      "ecosystem": "windows",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/fj016/CVE-2026-69451-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          ".github/workflows/build.yml",
-          "fastprox_eop.cpp"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-69451"
-        ],
-        "language": "C++"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:18 PM CDT",
-      "firstSeenAt": "2026-09-07T20:18:07Z",
-      "language": "C++",
-      "summary": "PoC for the Fastprox EoP",
-      "technicalSummary": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products. The security updates are packed with security fixes, providing organizations with.",
-      "breakdown": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products. The security updates are packed with security fixes, providing organizations with.",
-      "whatBroke": "PoC for the Fastprox EoP",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fj016/CVE-2026-69451-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fj016/CVE-2026-69451-PoC\ncd CVE-2026-69451-PoC\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/fj016/CVE-2026-69451-PoC"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/vulnerabilities-threat-research/2026/09/08/microsoft-patch-tuesday-september-2026-security-update-review"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69451"
         ]
       ]
     },
@@ -638,7 +499,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -647,6 +508,72 @@
         [
           "Vendor Advisory",
           "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-83991",
+      "title": "Microsoft and Adobe Patch Tuesday, September 2026 Security Update Review",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/karollooool/CVE-2026-83991-writeup-and-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "main_poc.c"
+        ],
+        "attackFiles": [
+          "main_poc.c"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-83991"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:44 PM CDT",
+      "firstSeenAt": "2026-09-09T01:44:35Z",
+      "language": "C",
+      "summary": "Windows Cloud Files access-check bypass",
+      "technicalSummary": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products. The security updates are packed with security fixes, providing organizations with.",
+      "breakdown": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products. The security updates are packed with security fixes, providing organizations with.",
+      "whatBroke": "Windows Cloud Files access-check bypass",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at karollooool/CVE-2026-83991-writeup-and-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/karollooool/CVE-2026-83991-writeup-and-poc\ncd CVE-2026-83991-writeup-and-poc\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/karollooool/CVE-2026-83991-writeup-and-poc"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/vulnerabilities-threat-research/2026/09/08/microsoft-patch-tuesday-september-2026-security-update-review"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-83991"
         ]
       ]
     },
@@ -703,7 +630,7 @@
       ],
       "confidence": 98,
       "weaponization": 79,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
