@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T07:13:56Z",
+  "updatedAt": "2026-09-11T16:59:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,6 +87,30 @@
   ],
   "research": [
     {
+      "title": "Linux Detection Engineering - Local Privilege Escalation",
+      "source": "Elastic Security Labs",
+      "sourceUrl": "https://www.elastic.co/security-labs",
+      "url": "https://www.elastic.co/security-labs/threat-command/linux-privilege-escalation-detection-framework",
+      "summary": "Local privilege escalation (LPE) is the step that turns a foothold into full control of a host. An attacker who lands as an unprivileged user rarely stops there. They want root, and Linux keeps offering new ways to get it. In this edition of our \"Linux.",
+      "publishedAt": "2026-09-11T00:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "windows",
+      "category": "kerberos",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-31431",
+        "CVE-2026-31635",
+        "CVE-2026-43284",
+        "CVE-2026-43500",
+        "CVE-2026-43503"
+      ],
+      "tags": [
+        "Windows",
+        "Kerberos",
+        "Local Lpe"
+      ]
+    },
+    {
       "title": "We've got one word for it, and it's usually the wrong one",
       "source": "Cisco Talos",
       "sourceUrl": "https://blog.talosintelligence.com/",
@@ -104,6 +128,22 @@
       "tags": [
         "Phishing",
         "Session Theft"
+      ]
+    },
+    {
+      "title": "Credential Theft: How Attackers Steal & Use Stolen Credentials",
+      "source": "Huntress",
+      "sourceUrl": "https://www.huntress.com/blog",
+      "url": "https://www.huntress.com/blog/credential-theft-expanding-your-reach",
+      "summary": "Credential Theft: How Attackers Steal & Use Stolen Credentials",
+      "publishedAt": "2026-09-10T16:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing"
       ]
     },
     {
@@ -267,180 +307,9 @@
       "tags": [
         "RCE"
       ]
-    },
-    {
-      "title": "ZDI-26-673: Adobe Acrobat Pro DC Doc Object Use-After-Free Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-673/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Pro DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
-      "publishedAt": "2026-09-10T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "kernel",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-81988"
-      ],
-      "tags": [
-        "Kernel",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-672: Adobe Acrobat Reader DC PDF File Parsing Integer Underflow Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-672/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious.",
-      "publishedAt": "2026-09-10T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-81977"
-      ],
-      "tags": []
     }
   ],
   "vulns": [
-    {
-      "cve": "CVE-2026-63077",
-      "title": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
-      "ecosystem": "web",
-      "category": "devops",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xCyp1337/CVE-2026-63077",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-63077.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-63077.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-63077"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "0xCyp1337",
-      "researcherUrl": "https://github.com/0xCyp1337",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "2:13 AM CDT",
-      "firstSeenAt": "2026-09-11T07:13:56Z",
-      "language": "Python",
-      "summary": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
-      "technicalSummary": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
-      "breakdown": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
-      "whatBroke": "Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xCyp1337/CVE-2026-63077.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xCyp1337/CVE-2026-63077\ncd CVE-2026-63077\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed TeamCity",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "DevOps",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xCyp1337/CVE-2026-63077"
-        ],
-        [
-          "Vendor Advisory",
-          "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-31431",
-      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/FranklinF25/cve-2026-31431",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "lab/rootfs/tools/secretgate.c",
-          "lab/rootfs/tools/smoke.c",
-          "lab/scripts/build.sh",
-          "lab/scripts/run.sh",
-          "poc/detector.c",
-          "poc/lpe.c",
-          "poc/sgl-stress.c"
-        ],
-        "attackFiles": [
-          "poc/detector.c",
-          "poc/lpe.c",
-          "poc/sgl-stress.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-31431"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "FranklinF25",
-      "researcherUrl": "https://github.com/FranklinF25",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:13 AM CDT",
-      "firstSeenAt": "2026-09-11T07:13:56Z",
-      "language": "C",
-      "summary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "technicalSummary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "breakdown": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "whatBroke": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at FranklinF25/cve-2026-31431.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/FranklinF25/cve-2026-31431\ncd cve-2026-31431\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Kernel",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/FranklinF25/cve-2026-31431"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-41940",
       "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
@@ -575,6 +444,69 @@
       ]
     },
     {
+      "cve": "CVE-2026-78997",
+      "title": "\u2014 UC Browser for Android Universal XSS (UXSS)",
+      "ecosystem": "android",
+      "category": "mobile",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Hunt-Benito/the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "callback_oracle.py",
+          "frida_hooks.js",
+          "poc_url_builder.py"
+        ],
+        "attackFiles": [
+          "poc_url_builder.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-78997"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Hunt-Benito",
+      "researcherUrl": "https://github.com/Hunt-Benito",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:32 AM CDT",
+      "firstSeenAt": "2026-09-11T11:32:56Z",
+      "language": "Python",
+      "summary": "UC Browser for Android (package com.UCMobile.intl, version 13.7.8.1314) contains a Universal Cross-Site Scripting vulnerability that allows an attacker to execute arbitrary JavaScript in the context of any origin. An attacker.",
+      "technicalSummary": "UC Browser for Android (package com.UCMobile.intl, version 13.7.8.1314) contains a Universal Cross-Site Scripting vulnerability that allows an attacker to execute arbitrary JavaScript in the context of any origin. An attacker.",
+      "breakdown": "UC Browser for Android (package com.UCMobile.intl, version 13.7.8.1314) contains a Universal Cross-Site Scripting vulnerability that allows an attacker to execute arbitrary JavaScript in the context of any origin. An attacker.",
+      "whatBroke": "UC Browser for Android (package com.UCMobile.intl, version 13.7.8.1314) contains a Universal Cross-Site Scripting vulnerability that allows an attacker to execute arbitrary JavaScript in the context of any origin. An attacker.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss\ncd the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Android",
+        "Mobile",
+        "XSS"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Hunt-Benito/the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss"
+        ],
+        [
+          "Vendor Advisory",
+          "https://gist.github.com/OmriInbar-Novee/9fd65fe08c1b1cff6a19350e44425de2"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-83991",
       "title": "Microsoft and Adobe Patch Tuesday, September 2026 Security Update Review",
       "ecosystem": "windows",
@@ -637,6 +569,69 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-83991"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-33017",
+      "title": "Langflow Code Injection Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/MaximilianoMeyer/CVE-2026-33017",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-33017.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-33017.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-33017"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "MaximilianoMeyer",
+      "researcherUrl": "https://github.com/MaximilianoMeyer",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:44 AM CDT",
+      "firstSeenAt": "2026-09-11T13:44:25Z",
+      "language": "Python",
+      "summary": "Simple Proof Of Concept about CVE 2026-33017",
+      "technicalSummary": "Simple Proof Of Concept about CVE 2026-33017",
+      "breakdown": "Simple Proof Of Concept about CVE 2026-33017",
+      "whatBroke": "Simple Proof Of Concept about CVE 2026-33017",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MaximilianoMeyer/CVE-2026-33017.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MaximilianoMeyer/CVE-2026-33017\ncd CVE-2026-33017\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Langflow",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/MaximilianoMeyer/CVE-2026-33017"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
         ]
       ]
     },
