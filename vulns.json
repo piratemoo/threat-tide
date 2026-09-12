@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T07:05:44Z",
+  "updatedAt": "2026-09-12T16:12:13Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -122,6 +122,30 @@
       ],
       "tags": [
         "Session Theft"
+      ]
+    },
+    {
+      "title": "Linux Detection Engineering - Local Privilege Escalation",
+      "source": "Elastic Security Labs",
+      "sourceUrl": "https://www.elastic.co/security-labs",
+      "url": "https://www.elastic.co/security-labs/threat-command/linux-privilege-escalation-detection-framework",
+      "summary": "Local privilege escalation (LPE) is the step that turns a foothold into full control of a host. An attacker who lands as an unprivileged user rarely stops there. They want root, and Linux keeps offering new ways to get it. In this edition of our \"Linux.",
+      "publishedAt": "2026-09-11T00:00:00Z",
+      "dayOffset": 2,
+      "ecosystem": "windows",
+      "category": "kerberos",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-31431",
+        "CVE-2026-31635",
+        "CVE-2026-43284",
+        "CVE-2026-43500",
+        "CVE-2026-43503"
+      ],
+      "tags": [
+        "Windows",
+        "Kerberos",
+        "Local Lpe"
       ]
     },
     {
@@ -279,25 +303,6 @@
       "topic": "research",
       "cves": [
         "CVE-2026-81973"
-      ],
-      "tags": [
-        "Kernel",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-675: Adobe Acrobat Reader DC Annotation Use-After-Free Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-675/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
-      "publishedAt": "2026-09-10T05:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "research",
-      "category": "kernel",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-81976"
       ],
       "tags": [
         "Kernel",
