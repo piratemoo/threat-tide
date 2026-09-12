@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T21:39:59Z",
+  "updatedAt": "2026-09-12T07:05:44Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -93,7 +93,7 @@
       "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-85706/",
       "summary": "CVE-2026-85706 is a critical path traversal vulnerability affecting GitLab Community Edition (CE) and Enterprise Edition (EE). The vulnerability exists in the repository commits API and, under certain conditions, allows an unauthenticated attacker to read.",
       "publishedAt": "2026-09-11T20:13:49Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "web",
       "category": "devops",
       "topic": "research",
@@ -113,7 +113,7 @@
       "url": "https://bishopfox.com/blog/cve-2026-82329-unauthenticated-administrative-access-in-jfrog-artifactory-via-an-empty-cluster-join-key",
       "summary": "A misconfigured cluster join key in JFrog Artifactory's default install lets unauthenticated attackers mint a permanent admin token in one request. Bishop Fox reproduced the full chain, confirmed in-the-wild exploitation, and shares a non-invasive detection.",
       "publishedAt": "2026-09-11T13:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -125,37 +125,13 @@
       ]
     },
     {
-      "title": "Linux Detection Engineering - Local Privilege Escalation",
-      "source": "Elastic Security Labs",
-      "sourceUrl": "https://www.elastic.co/security-labs",
-      "url": "https://www.elastic.co/security-labs/threat-command/linux-privilege-escalation-detection-framework",
-      "summary": "Local privilege escalation (LPE) is the step that turns a foothold into full control of a host. An attacker who lands as an unprivileged user rarely stops there. They want root, and Linux keeps offering new ways to get it. In this edition of our \"Linux.",
-      "publishedAt": "2026-09-11T00:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "kerberos",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-31431",
-        "CVE-2026-31635",
-        "CVE-2026-43284",
-        "CVE-2026-43500",
-        "CVE-2026-43503"
-      ],
-      "tags": [
-        "Windows",
-        "Kerberos",
-        "Local Lpe"
-      ]
-    },
-    {
       "title": "We've got one word for it, and it's usually the wrong one",
       "source": "Cisco Talos",
       "sourceUrl": "https://blog.talosintelligence.com/",
       "url": "https://blog.talosintelligence.com/weve-got-one-word-for-it-and-its-usually-the-wrong-one/",
       "summary": "Welcome to this week\u2019s edition of the Threat Source newsletter. Ask anybody in this industry what the work does to the health of the people who do it and you get one word back: burnout. It's a fine word, in and of itself. It\u2019s easy to reach for,.",
       "publishedAt": "2026-09-10T18:00:15Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -175,7 +151,7 @@
       "url": "https://www.huntress.com/blog/credential-theft-expanding-your-reach",
       "summary": "Credential Theft: How Attackers Steal & Use Stolen Credentials",
       "publishedAt": "2026-09-10T16:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -191,7 +167,7 @@
       "url": "https://bishopfox.com/blog/mind-the-config-detecting-and-weaponizing-netscaler-cve-2026-19490",
       "summary": "A single unauthenticated request bypasses authentication on NetScaler Gateway and AAA virtual servers. Whether that means a dead-end session, a proxy into the internal network, or root on the appliance depends entirely on configuration. Bishop Fox maps every.",
       "publishedAt": "2026-09-10T13:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "vpn-edge",
       "topic": "research",
@@ -211,7 +187,7 @@
       "url": "https://unit42.paloaltonetworks.com/kubernetes-spiffe-spire-identity-spoofing/",
       "summary": "Learn how root access on a compromised K8s node allows attackers to utilize SPIFFE/SPIRE metadata to spoof and harvest co-located workload identities. The post The Machine With Many Faces: Post-Exploitation Identity Misuse in SPIFFE/SPIRE appeared first on.",
       "publishedAt": "2026-09-10T10:00:43Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -225,7 +201,7 @@
       "url": "https://blog.qualys.com/product-tech/2026/09/10/what-is-ispm-vs-iam-pam-iga-idaas",
       "summary": "Key Takeaways Identity Security Posture Management (ISPM) is the continuous risk and posture layer of the identity stack not a replacement for Identity and Access Management (IAM), Privileged Access Management (PAM), Identity Governance and Administration.",
       "publishedAt": "2026-09-10T08:54:26Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "windows",
       "category": "kerberos",
       "topic": "research",
@@ -243,7 +219,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-679/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Photoshop. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
       "publishedAt": "2026-09-10T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -261,7 +237,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-678/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Photoshop. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
       "publishedAt": "2026-09-10T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -279,7 +255,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-677/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Photoshop. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
       "publishedAt": "2026-09-10T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -297,12 +273,31 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-676/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
       "publishedAt": "2026-09-10T05:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "kernel",
       "topic": "research",
       "cves": [
         "CVE-2026-81973"
+      ],
+      "tags": [
+        "Kernel",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-675: Adobe Acrobat Reader DC Annotation Use-After-Free Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-675/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Acrobat Reader DC. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
+      "publishedAt": "2026-09-10T05:00:00Z",
+      "dayOffset": 2,
+      "ecosystem": "research",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-81976"
       ],
       "tags": [
         "Kernel",
@@ -367,7 +362,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -432,7 +427,7 @@
       ],
       "confidence": 98,
       "weaponization": 79,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -445,71 +440,6 @@
         [
           "Vendor Advisory",
           "https://docs.jfrog.com/releases/docs/jfrog-security-advisories"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-39987",
-      "title": "Marimo Remote Code Execution Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/stapat1245/CVE-2026-39987-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-39987.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-39987.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-39987"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "stapat1245",
-      "researcherUrl": "https://github.com/stapat1245",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "3:09 PM CDT",
-      "firstSeenAt": "2026-09-07T20:09:31Z",
-      "language": "Python",
-      "summary": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
-      "technicalSummary": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
-      "breakdown": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
-      "whatBroke": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at stapat1245/CVE-2026-39987-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/stapat1245/CVE-2026-39987-PoC\ncd CVE-2026-39987-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Marimo",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/stapat1245/CVE-2026-39987-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
         ]
       ]
     },
@@ -564,7 +494,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -573,72 +503,6 @@
         [
           "Vendor Advisory",
           "https://gist.github.com/OmriInbar-Novee/9fd65fe08c1b1cff6a19350e44425de2"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-83991",
-      "title": "Microsoft and Adobe Patch Tuesday, September 2026 Security Update Review",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "medium",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/karollooool/CVE-2026-83991-writeup-and-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "main_poc.c"
-        ],
-        "attackFiles": [
-          "main_poc.c"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-83991"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:44 PM CDT",
-      "firstSeenAt": "2026-09-09T01:44:35Z",
-      "language": "C",
-      "summary": "Windows Cloud Files access-check bypass",
-      "technicalSummary": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products. The security updates are packed with security fixes, providing organizations with.",
-      "breakdown": "Microsoft kicks off September with its monthly Patch Tuesday release, delivering fixes for security vulnerabilities affecting its products. The security updates are packed with security fixes, providing organizations with.",
-      "whatBroke": "Windows Cloud Files access-check bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at karollooool/CVE-2026-83991-writeup-and-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/karollooool/CVE-2026-83991-writeup-and-poc\ncd CVE-2026-83991-writeup-and-poc\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/karollooool/CVE-2026-83991-writeup-and-poc"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/vulnerabilities-threat-research/2026/09/08/microsoft-patch-tuesday-september-2026-security-update-review"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-83991"
         ]
       ]
     },
@@ -693,7 +557,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -702,67 +566,6 @@
         [
           "Vendor Advisory",
           "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-73310",
-      "title": "Sanitized XenForo write-up and proof of concept for CVE-2026-73310.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/BomboBombone/CVE-2026-73310",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-73310"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "BomboBombone",
-      "researcherUrl": "https://github.com/BomboBombone",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:35 AM CDT",
-      "firstSeenAt": "2026-09-08T16:35:04Z",
-      "language": "Python",
-      "summary": "Sanitized XenForo write-up and proof of concept for.",
-      "technicalSummary": "Sanitized XenForo write-up and proof of concept for.",
-      "breakdown": "Sanitized XenForo write-up and proof of concept for.",
-      "whatBroke": "Sanitized XenForo write-up and proof of concept for.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BomboBombone/CVE-2026-73310.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BomboBombone/CVE-2026-73310\ncd CVE-2026-73310\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/BomboBombone/CVE-2026-73310"
-        ],
-        [
-          "Vendor Advisory",
-          "https://bombobombone.github.io/posts/cve-2026-73310/"
         ]
       ]
     }
