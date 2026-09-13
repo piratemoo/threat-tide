@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T07:24:41Z",
+  "updatedAt": "2026-09-13T16:56:15Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -571,6 +571,80 @@
         [
           "Vendor Advisory",
           "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-42018",
+      "title": "JFrog Artifactory Improper Authentication Vulnerability",
+      "ecosystem": "cloud",
+      "category": "kubernetes",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/BL0odz/JFrog_CVE-2026-65615-ByGLM",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "attack-chain-package/baseline/baseline-system.yaml",
+          "attack-chain-package/deploy/system.yaml",
+          "attack-chain-package/exploit/exp.py",
+          "attack-chain-package/exploit/forge_jwt.py",
+          "attack-chain-package/recovery/recover5.sh",
+          "attack-chain-package/recovery/verify5.sh",
+          "attack-chain-package/recovery/verify_http2.sh"
+        ],
+        "attackFiles": [
+          "attack-chain-package/exploit/exp.py",
+          "attack-chain-package/exploit/forge_jwt.py",
+          "attack-chain-package/recovery/verify_http2.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-42018",
+          "CVE-2026-65615",
+          "CVE-2026-65616"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "BL0odz",
+      "researcherUrl": "https://github.com/BL0odz",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:25 AM CDT",
+      "firstSeenAt": "2026-09-13T08:25:56Z",
+      "language": "Python",
+      "summary": "JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+      "technicalSummary": "JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+      "breakdown": "JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+      "whatBroke": "JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BL0odz/JFrog_CVE-2026-65615-ByGLM.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BL0odz/JFrog_CVE-2026-65615-ByGLM\ncd JFrog_CVE-2026-65615-ByGLM\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Artifactory",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Kubernetes",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/BL0odz/JFrog_CVE-2026-65615-ByGLM"
+        ],
+        [
+          "Vendor Advisory",
+          "https://docs.jfrog.com/releases/docs/jfrog-security-advisories"
         ]
       ]
     },
