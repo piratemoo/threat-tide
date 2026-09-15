@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T17:37:54Z",
+  "updatedAt": "2026-09-15T22:06:08Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,22 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Before You Patch. Why Patch Reliability Matters for Confident Deployment",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/09/15/before-you-patch-why-patch-reliability-matters-for-confident-deployment",
+      "summary": "Executive Summary Microsoft\u2019s September 2026 security updates, KB5124008 and KB5124012 , have been linked to USB audio failures on some Windows systems, highlighting the operational risk that can accompany security patching. Qualys TruRisk Eliminate.",
+      "publishedAt": "2026-09-15T18:00:53Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Windows"
+      ]
+    },
     {
       "title": "Automate Asset Isolation: Your Last Resort to Meet Remediation Deadlines",
       "source": "Qualys Research",
@@ -284,26 +300,6 @@
         "Linux",
         "Kernel",
         "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-694: Linux Kernel Net Scheduler Clsact Qdisc Use-After-Free Local Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-694/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Linux Kernel. An attacker must first obtain the ability to execute high-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-09-14T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "linux",
-      "category": "kernel",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-23413"
-      ],
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local Lpe"
       ]
     }
   ],
@@ -768,6 +764,262 @@
         [
           "Vendor Advisory",
           "https://wpscan.com/vulnerability/854a0756-ff87-4a65-959a-2e051a302a12/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-0303",
+      "title": "Checkov PoC: arbitrary code execution through auto-loaded configuration and unsigned external Python checks.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/YonLiud/CVE-2026-0303",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "compose.yaml",
+          "exploit/.checkov.yml",
+          "exploit/external-checks/__init__.py",
+          "exploit/external-checks/poc_check.py"
+        ],
+        "attackFiles": [
+          "exploit/.checkov.yml",
+          "exploit/external-checks/__init__.py",
+          "exploit/external-checks/poc_check.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-0303"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "YonLiud",
+      "researcherUrl": "https://github.com/YonLiud",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:53 AM CDT",
+      "firstSeenAt": "2026-09-10T12:53:35Z",
+      "language": "Python",
+      "summary": "Checkov PoC: arbitrary code execution through auto-loaded configuration and unsigned external Python checks.",
+      "technicalSummary": "Checkov PoC: arbitrary code execution through auto-loaded configuration and unsigned external Python checks.",
+      "breakdown": "Checkov PoC: arbitrary code execution through auto-loaded configuration and unsigned external Python checks.",
+      "whatBroke": "Checkov PoC: arbitrary code execution through auto-loaded configuration and unsigned external Python checks.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at YonLiud/CVE-2026-0303.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/YonLiud/CVE-2026-0303\ncd CVE-2026-0303\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/YonLiud/CVE-2026-0303"
+        ],
+        [
+          "Vendor Advisory",
+          "https://security.paloaltonetworks.com/CVE-2026-0303"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-32996",
+      "title": "A vulnerability in Veeam Agent for Microsoft Windows allows for Local Privilege Escalation.",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/suce0155/CVE-2026-32996",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-32996/Program.cs"
+        ],
+        "attackFiles": [
+          "CVE-2026-32996/Program.cs"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-32996"
+        ],
+        "language": "C#"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "suce0155",
+      "researcherUrl": "https://github.com/suce0155",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:28 PM CDT",
+      "firstSeenAt": "2026-09-15T18:28:22Z",
+      "language": "C#",
+      "summary": "A vulnerability in Veeam Agent for Microsoft Windows allows for Local Privilege Escalation.",
+      "technicalSummary": "A vulnerability in Veeam Agent for Microsoft Windows allows for Local Privilege Escalation.",
+      "breakdown": "A vulnerability in Veeam Agent for Microsoft Windows allows for Local Privilege Escalation.",
+      "whatBroke": "A vulnerability in Veeam Agent for Microsoft Windows allows for Local Privilege Escalation.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at suce0155/CVE-2026-32996.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/suce0155/CVE-2026-32996\ncd CVE-2026-32996\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/suce0155/CVE-2026-32996"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.veeam.com/kb4852"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-78997",
+      "title": "\u2014 UC Browser for Android Universal XSS (UXSS)",
+      "ecosystem": "android",
+      "category": "mobile",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Hunt-Benito/the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "callback_oracle.py",
+          "frida_hooks.js",
+          "poc_url_builder.py"
+        ],
+        "attackFiles": [
+          "poc_url_builder.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-78997"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Hunt-Benito",
+      "researcherUrl": "https://github.com/Hunt-Benito",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:32 AM CDT",
+      "firstSeenAt": "2026-09-11T11:32:56Z",
+      "language": "Python",
+      "summary": "UC Browser for Android (package com.UCMobile.intl, version 13.7.8.1314) contains a Universal Cross-Site Scripting vulnerability that allows an attacker to execute arbitrary JavaScript in the context of any origin. An attacker.",
+      "technicalSummary": "UC Browser for Android (package com.UCMobile.intl, version 13.7.8.1314) contains a Universal Cross-Site Scripting vulnerability that allows an attacker to execute arbitrary JavaScript in the context of any origin. An attacker.",
+      "breakdown": "UC Browser for Android (package com.UCMobile.intl, version 13.7.8.1314) contains a Universal Cross-Site Scripting vulnerability that allows an attacker to execute arbitrary JavaScript in the context of any origin. An attacker.",
+      "whatBroke": "UC Browser for Android (package com.UCMobile.intl, version 13.7.8.1314) contains a Universal Cross-Site Scripting vulnerability that allows an attacker to execute arbitrary JavaScript in the context of any origin. An attacker.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss\ncd the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Android",
+        "Mobile",
+        "XSS"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Hunt-Benito/the-callback-that-outlived-the-page-cve-2026-78997-uc-browser-android-universal-xss"
+        ],
+        [
+          "Vendor Advisory",
+          "https://gist.github.com/OmriInbar-Novee/9fd65fe08c1b1cff6a19350e44425de2"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-77770",
+      "title": "miniOrange 2FA CVE POC",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/cflowsec/CVE-2026-77770",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "cve-2026-77770-miniorange-2fa-option-delete.py"
+        ],
+        "attackFiles": [
+          "cve-2026-77770-miniorange-2fa-option-delete.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-77770"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "cflowsec",
+      "researcherUrl": "https://github.com/cflowsec",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:50 PM CDT",
+      "firstSeenAt": "2026-09-13T03:50:21Z",
+      "language": "Python",
+      "summary": "miniOrange 2FA CVE POC",
+      "technicalSummary": "miniOrange 2FA CVE POC",
+      "breakdown": "miniOrange 2FA CVE POC",
+      "whatBroke": "miniOrange 2FA CVE POC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cflowsec/CVE-2026-77770.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cflowsec/CVE-2026-77770\ncd CVE-2026-77770\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/cflowsec/CVE-2026-77770"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wpscan.com/vulnerability/68bc7294-1ee6-44a9-9995-3b23b921f750/"
         ]
       ]
     }
