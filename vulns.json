@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-16T22:03:11Z",
+  "updatedAt": "2026-09-17T07:32:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -93,7 +93,7 @@
       "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-86218/",
       "summary": "CVE-2026-86218 is a critical pre-authentication remote code execution vulnerability affecting N-able N-central. An unauthenticated attacker with network access to a vulnerable N-central server could exploit the vulnerability to execute code without user.",
       "publishedAt": "2026-09-16T16:06:08Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -111,7 +111,7 @@
       "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/09/16/oracle-critical-security-patch-update-september-2026-review",
       "summary": "Oracle released its September edition of Critical Security Patch Update. The update received patches for 673 security vulnerabilities. Some of the vulnerabilities addressed in this update impact more than one product. These patches address vulnerabilities in.",
       "publishedAt": "2026-09-16T14:15:08Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "framework",
       "topic": "research",
@@ -134,7 +134,7 @@
       "url": "https://blog.talosintelligence.com/securing-the-unpatchable-in-an-age-of-ai-driven-vulnerabilities/",
       "summary": "AI is accelerating vulnerability discovery, leaving unpatchable operational technology (OT) systems at risk. Hoping for the best is not a viable anti-exploitation strategy. Deploying next-generation firewalls directly upstream allows for virtual patching.",
       "publishedAt": "2026-09-16T10:00:36Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "vpn-edge",
       "topic": "research",
@@ -145,13 +145,103 @@
       ]
     },
     {
+      "title": "ZDI-26-713: GIMP APNG File Parsing Stack-based Buffer Overflow Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-713/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of GIMP. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has assigned a.",
+      "publishedAt": "2026-09-16T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-92183"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-712: NoMachine nxhtd Server-Side Request Forgery Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-712/",
+      "summary": "This vulnerability allows remote attackers to initiate arbitrary server-side requests on affected installations of NoMachine. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are.",
+      "publishedAt": "2026-09-16T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-92210"
+      ],
+      "tags": []
+    },
+    {
+      "title": "ZDI-26-711: NoMachine Redis Improper Authentication Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-711/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of NoMachine. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
+      "publishedAt": "2026-09-16T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-92209"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-710: NoMachine mDNS Heap-based Buffer Overflow Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-710/",
+      "summary": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of NoMachine. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 8.8. The following CVEs are assigned:.",
+      "publishedAt": "2026-09-16T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-92208"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-709: Cisco Secure Firewall Management Center CommandSinkRmi Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-709/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Cisco Secure Firewall Management Center. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 8.1. The following.",
+      "publishedAt": "2026-09-16T05:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-20242"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
       "title": "ZDI-26-708: (0Day) Microsoft Windows HTTP Proxy Privilege Escalation Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-708/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of Microsoft Windows. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
       "publishedAt": "2026-09-16T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "research",
       "topic": "research",
@@ -168,7 +258,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-707/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of MindsDB. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 8.8. The following CVEs are assigned: CVE-2026-92207.",
       "publishedAt": "2026-09-16T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -186,7 +276,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-706/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of CrewAI crewAI. User interaction is required to exploit this vulnerability in that the target must load a malicious agent configuration from the repository. The.",
       "publishedAt": "2026-09-16T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "framework",
       "topic": "research",
@@ -205,7 +295,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-705/",
       "summary": "This vulnerability allows remote attackers to create arbitrary files on affected installations of BusyBox. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
       "publishedAt": "2026-09-16T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -214,89 +304,6 @@
       ],
       "tags": [
         "File Read"
-      ]
-    },
-    {
-      "title": "ZDI-26-704: (0Day) Airbyte OneDrive Connector _get_shared_drive_object Server-Side Request Forgery Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-704/",
-      "summary": "This vulnerability allows remote attackers to initiate arbitrary server-side requests on affected installations of Airbyte. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.7. The following CVEs are assigned:.",
-      "publishedAt": "2026-09-16T05:00:00Z",
-      "dayOffset": 0,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-92204"
-      ],
-      "tags": []
-    },
-    {
-      "title": "ZDI-26-703: (0Day) Airbyte SharePoint Connector _get_shared_drive_object Server-Side Request Forgery Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-703/",
-      "summary": "This vulnerability allows remote attackers to initiate arbitrary server-side requests on affected installations of Airbyte. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.7. The following CVEs are assigned:.",
-      "publishedAt": "2026-09-16T05:00:00Z",
-      "dayOffset": 0,
-      "ecosystem": "windows",
-      "category": "sharepoint",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-92203"
-      ],
-      "tags": [
-        "Windows",
-        "SharePoint"
-      ]
-    },
-    {
-      "title": "Before You Patch. Why Patch Reliability Matters for Confident Deployment",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/09/15/before-you-patch-why-patch-reliability-matters-for-confident-deployment",
-      "summary": "Executive Summary Microsoft\u2019s September 2026 security updates, KB5124008 and KB5124012 , have been linked to USB audio failures on some Windows systems, highlighting the operational risk that can accompany security patching. Qualys TruRisk Eliminate.",
-      "publishedAt": "2026-09-15T18:00:53Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Windows"
-      ]
-    },
-    {
-      "title": "Automate Asset Isolation: Your Last Resort to Meet Remediation Deadlines",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/09/15/automate-asset-isolation-cisa-kev-deadlines",
-      "summary": "Executive Summary Remediation deadlines slip for reasons outside your control: a patch does not exist yet, a patch is delayed, or a remediation attempt fails. The outcome is the same either way: the host stays unpatched and stays on the network. TruRisk.",
-      "publishedAt": "2026-09-15T15:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Windows"
-      ]
-    },
-    {
-      "title": "Security Data Isn\u2019t the Problem. Security Context Is.",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/intelligence/blogs/security-data-context-crowdstrike/",
-      "summary": "Security teams have never had more data. Every day, security operations centers ingest information from endpoints, identities, cloud platforms, vulnerability scanners, threat intelligence feeds, exposure management platforms, and countless other tools..",
-      "publishedAt": "2026-09-15T13:12:00Z",
-      "dayOffset": 1,
-      "ecosystem": "cloud",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Cloud"
       ]
     }
   ],
@@ -308,16 +315,14 @@
       "category": "devops",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/guneykabel/cve-2026-85706",
+      "pocUrl": "https://github.com/plur1bu5/gitread",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "exploit.py"
+          "gitread.py"
         ],
-        "attackFiles": [
-          "exploit.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-85706"
@@ -329,15 +334,15 @@
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "10:24 AM CDT",
-      "firstSeenAt": "2026-09-11T15:24:22Z",
+      "added": "2:51 PM CDT",
+      "firstSeenAt": "2026-09-13T19:51:54Z",
       "language": "Python",
-      "summary": "Exploit poc for an unauthenticated arbitrary file read on Gitlab CE-EE affecting versions: 18.7\u201319.1.7; 19.2.0\u201319.2.5; 19.3.0\u201319.3.1",
+      "summary": "\u00b7 GitLab CE/EE unauthenticated file read \u00b7 research PoC with oracle mode, fd enumeration, and tiered loot targeting",
       "technicalSummary": "CVE-2026-85706 is a critical path traversal vulnerability affecting GitLab Community Edition (CE) and Enterprise Edition (EE). The vulnerability exists in the repository commits API and, under certain conditions, allows an unauthenticated attacker to read.",
       "breakdown": "CVE-2026-85706 is a critical path traversal vulnerability affecting GitLab Community Edition (CE) and Enterprise Edition (EE). The vulnerability exists in the repository commits API and, under certain conditions, allows an unauthenticated attacker to read.",
-      "whatBroke": "Exploit poc for an unauthenticated arbitrary file read on Gitlab CE-EE affecting versions: 18.7\u201319.1.7; 19.2.0\u201319.2.5; 19.3.0\u201319.3.1",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at guneykabel/cve-2026-85706.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/guneykabel/cve-2026-85706\ncd cve-2026-85706\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "\u00b7 GitLab CE/EE unauthenticated file read \u00b7 research PoC with oracle mode, fd enumeration, and tiered loot targeting",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at plur1bu5/gitread.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/plur1bu5/gitread\ncd gitread\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Community Edition and Enterprise Edition",
         "internal pivot from an internet-facing control point",
@@ -352,11 +357,11 @@
       ],
       "confidence": 98,
       "weaponization": 82,
-      "dayOffset": 5,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/guneykabel/cve-2026-85706"
+          "https://github.com/plur1bu5/gitread"
         ],
         [
           "Technical Paper",
@@ -421,7 +426,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -486,7 +491,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -549,7 +554,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -611,7 +616,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -689,7 +694,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -751,7 +756,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -814,7 +819,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -823,68 +828,6 @@
         [
           "Vendor Advisory",
           "https://gist.github.com/OmriInbar-Novee/9fd65fe08c1b1cff6a19350e44425de2"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-77770",
-      "title": "miniOrange 2FA CVE POC",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/cflowsec/CVE-2026-77770",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "cve-2026-77770-miniorange-2fa-option-delete.py"
-        ],
-        "attackFiles": [
-          "cve-2026-77770-miniorange-2fa-option-delete.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-77770"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "cflowsec",
-      "researcherUrl": "https://github.com/cflowsec",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:50 PM CDT",
-      "firstSeenAt": "2026-09-13T03:50:21Z",
-      "language": "Python",
-      "summary": "miniOrange 2FA CVE POC",
-      "technicalSummary": "miniOrange 2FA CVE POC",
-      "breakdown": "miniOrange 2FA CVE POC",
-      "whatBroke": "miniOrange 2FA CVE POC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cflowsec/CVE-2026-77770.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cflowsec/CVE-2026-77770\ncd CVE-2026-77770\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/cflowsec/CVE-2026-77770"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wpscan.com/vulnerability/68bc7294-1ee6-44a9-9995-3b23b921f750/"
         ]
       ]
     },
@@ -938,7 +881,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -1000,7 +943,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
