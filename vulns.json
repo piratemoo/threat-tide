@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T17:02:17Z",
+  "updatedAt": "2026-09-18T21:35:05Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -99,6 +99,23 @@
       "topic": "research",
       "cves": [],
       "tags": []
+    },
+    {
+      "title": "The refactor you could never afford",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/the-refactor-you-could-never-afford/",
+      "summary": "For twenty years, the case against refactoring a legacy system was an economic one, and it was hard to argue with. A system needs to improve precisely because its structure makes every change harder. But understanding it, testing it, and reshaping it consume.",
+      "publishedAt": "2026-09-18T13:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack"
+      ]
     },
     {
       "title": "OpenAI GPT-6 Astra: An evaluation",
@@ -276,98 +293,9 @@
         "Phishing",
         "Auth Bypass"
       ]
-    },
-    {
-      "title": "ZDI-26-714: Samsung rlottie Stack-based Buffer Overflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-714/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Samsung rlottie. Interaction with the rlottie library is required to exploit this vulnerability but attack vectors may vary depending on the implementation. The.",
-      "publishedAt": "2026-09-17T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "android",
-      "category": "android",
-      "topic": "android",
-      "cves": [
-        "CVE-2026-91826"
-      ],
-      "tags": [
-        "Android",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
-    {
-      "cve": "CVE-2026-85706",
-      "title": "GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
-      "ecosystem": "web",
-      "category": "devops",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/0xenesbayram/cve-2026-85706",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "lab/docker-compose.yml",
-          "poc/detect.sh",
-          "poc/exploit.sh"
-        ],
-        "attackFiles": [
-          "poc/detect.sh",
-          "poc/exploit.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-85706"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:08 AM CDT",
-      "firstSeenAt": "2026-09-14T09:08:42Z",
-      "language": "Shell",
-      "summary": "\u2014 GitLab unauthenticated arbitrary file read (CVSS 10.0). Root-cause analysis, vulnerable Docker lab, and PoC.",
-      "technicalSummary": "CVE-2026-85706 is a critical path traversal vulnerability affecting GitLab Community Edition (CE) and Enterprise Edition (EE). The vulnerability exists in the repository commits API and, under certain conditions, allows an unauthenticated attacker to read.",
-      "breakdown": "CVE-2026-85706 is a critical path traversal vulnerability affecting GitLab Community Edition (CE) and Enterprise Edition (EE). The vulnerability exists in the repository commits API and, under certain conditions, allows an unauthenticated attacker to read.",
-      "whatBroke": "\u2014 GitLab unauthenticated arbitrary file read (CVSS 10.0). Root-cause analysis, vulnerable Docker lab, and PoC.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xenesbayram/cve-2026-85706.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xenesbayram/cve-2026-85706\ncd cve-2026-85706\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Community Edition and Enterprise Edition",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "DevOps",
-        "File Read",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 82,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/0xenesbayram/cve-2026-85706"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-85706/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-31431",
       "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
@@ -500,67 +428,68 @@
       ]
     },
     {
-      "cve": "CVE-2026-39987",
-      "title": "Marimo Remote Code Execution Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
+      "cve": "CVE-2026-85706",
+      "title": "GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+      "ecosystem": "web",
+      "category": "devops",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/julichaan/CVE-2026-39987_POC",
+      "pocUrl": "https://github.com/0xenesbayram/cve-2026-85706",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exploit.py"
+          "lab/docker-compose.yml",
+          "poc/detect.sh",
+          "poc/exploit.sh"
         ],
         "attackFiles": [
-          "exploit.py"
+          "poc/detect.sh",
+          "poc/exploit.sh"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-39987"
+          "CVE-2026-85706"
         ],
-        "language": "Python"
+        "language": "Shell"
       },
       "reliability": "reliable exploit",
-      "researcher": "julichaan",
-      "researcherUrl": "https://github.com/julichaan",
+      "researcher": "0xenesbayram",
+      "researcherUrl": "https://github.com/0xenesbayram",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "2:20 AM CDT",
-      "firstSeenAt": "2026-09-18T07:20:30Z",
-      "language": "Python",
-      "summary": "Marimo WS Preauth RCE",
-      "technicalSummary": "Marimo WS Preauth RCE",
-      "breakdown": "Marimo WS Preauth RCE",
-      "whatBroke": "Marimo WS Preauth RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at julichaan/CVE-2026-39987_POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/julichaan/CVE-2026-39987_POC\ncd CVE-2026-39987_POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "difficulty": "moderate",
+      "added": "4:08 AM CDT",
+      "firstSeenAt": "2026-09-14T09:08:42Z",
+      "language": "Shell",
+      "summary": "\u2014 GitLab unauthenticated arbitrary file read (CVSS 10.0). Root-cause analysis, vulnerable Docker lab, and PoC.",
+      "technicalSummary": "\u2014 GitLab unauthenticated arbitrary file read (CVSS 10.0). Root-cause analysis, vulnerable Docker lab, and PoC.",
+      "breakdown": "\u2014 GitLab unauthenticated arbitrary file read (CVSS 10.0). Root-cause analysis, vulnerable Docker lab, and PoC.",
+      "whatBroke": "\u2014 GitLab unauthenticated arbitrary file read (CVSS 10.0). Root-cause analysis, vulnerable Docker lab, and PoC.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xenesbayram/cve-2026-85706.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xenesbayram/cve-2026-85706\ncd cve-2026-85706\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Marimo",
-        "credential access from service context",
-        "webshell or command execution follow-up",
+        "initial access through exposed Community Edition and Enterprise Edition",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
+        "Web",
+        "DevOps",
+        "File Read",
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
+      "weaponization": 84,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
-          "https://github.com/julichaan/CVE-2026-39987_POC"
+          "https://github.com/0xenesbayram/cve-2026-85706"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/"
         ]
       ]
     },
@@ -774,66 +703,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-81000",
-      "title": "https://heyitsas.im/posts/lpe-quartet/",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/manizada/TUNderflow",
-      "pocValidation": {
-        "valid": true,
-        "score": 8,
-        "codeFiles": [
-          "tunderflow_root_repro.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-81000"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "manizada",
-      "researcherUrl": "https://github.com/manizada",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:38 PM CDT",
-      "firstSeenAt": "2026-09-18T04:38:22Z",
-      "language": "Python",
-      "summary": "https://heyitsas.im/posts/lpe-quartet/",
-      "technicalSummary": "https://heyitsas.im/posts/lpe-quartet/",
-      "breakdown": "https://heyitsas.im/posts/lpe-quartet/",
-      "whatBroke": "https://heyitsas.im/posts/lpe-quartet/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at manizada/TUNderflow.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/manizada/TUNderflow\ncd TUNderflow\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/manizada/TUNderflow"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/010eee265d6bd8769b6a523d2a0693d9b3f5df43"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-27540",
       "title": "WWLC WordPress unauth upload RCE suite \u2014 authorized testing only",
       "ecosystem": "web",
@@ -959,68 +828,6 @@
         [
           "Vendor Advisory",
           "https://www.veeam.com/kb4852"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-14962",
-      "title": "Wordpress Plugin ELEX WooCommerce Request a Quote unauthenticated SQL injection POC",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/cflowsec/CVE-2026-14962",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "cve-2026-14962-elex-raq-sqli.py"
-        ],
-        "attackFiles": [
-          "cve-2026-14962-elex-raq-sqli.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-14962"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "cflowsec",
-      "researcherUrl": "https://github.com/cflowsec",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:20 AM CDT",
-      "firstSeenAt": "2026-09-18T07:20:30Z",
-      "language": "Python",
-      "summary": "Wordpress Plugin ELEX WooCommerce Request a Quote unauthenticated SQL injection POC",
-      "technicalSummary": "Wordpress Plugin ELEX WooCommerce Request a Quote unauthenticated SQL injection POC",
-      "breakdown": "Wordpress Plugin ELEX WooCommerce Request a Quote unauthenticated SQL injection POC",
-      "whatBroke": "Wordpress Plugin ELEX WooCommerce Request a Quote unauthenticated SQL injection POC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cflowsec/CVE-2026-14962.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cflowsec/CVE-2026-14962\ncd CVE-2026-14962\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "SQLi"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/cflowsec/CVE-2026-14962"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wpscan.com/vulnerability/854a0756-ff87-4a65-959a-2e051a302a12/"
         ]
       ]
     },
@@ -1201,6 +1008,68 @@
         [
           "GitHub",
           "https://github.com/infernosalex/CVE-2026-33439-Python-PoC"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-90781",
+      "title": "Standalone reproducer for CVE-2026-90781: 1-byte OOB write in alsa-lib __snd_ctl_ascii_elem_id_parse() name=.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HarshRajSinghania/CVE-2026-90781-alsa-lib-oob",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "reproducer.c"
+        ],
+        "attackFiles": [
+          "reproducer.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-90781"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HarshRajSinghania",
+      "researcherUrl": "https://github.com/HarshRajSinghania",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:03 AM CDT",
+      "firstSeenAt": "2026-09-13T16:03:00Z",
+      "language": "C",
+      "summary": "Standalone reproducer for 1-byte OOB write in alsa-lib __snd_ctl_ascii_elem_id_parse() name= parsing (quoted and unquoted)",
+      "technicalSummary": "Standalone reproducer for 1-byte OOB write in alsa-lib __snd_ctl_ascii_elem_id_parse() name= parsing (quoted and unquoted)",
+      "breakdown": "Standalone reproducer for 1-byte OOB write in alsa-lib __snd_ctl_ascii_elem_id_parse() name= parsing (quoted and unquoted)",
+      "whatBroke": "Standalone reproducer for 1-byte OOB write in alsa-lib __snd_ctl_ascii_elem_id_parse() name= parsing (quoted and unquoted)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HarshRajSinghania/CVE-2026-90781-alsa-lib-oob.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HarshRajSinghania/CVE-2026-90781-alsa-lib-oob\ncd CVE-2026-90781-alsa-lib-oob\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HarshRajSinghania/CVE-2026-90781-alsa-lib-oob"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/alsa-project/alsa-lib"
         ]
       ]
     }
