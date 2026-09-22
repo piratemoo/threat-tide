@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T17:36:12Z",
+  "updatedAt": "2026-09-22T21:58:45Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -133,6 +133,24 @@
       "tags": [
         "Phishing",
         "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-719: Cisco ThousandEyes Virtual Appliance DHCP Client Command Injection Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-719/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Cisco ThousandEyes Virtual Appliance. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs.",
+      "publishedAt": "2026-09-22T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-20350"
+      ],
+      "tags": [
+        "RCE"
       ]
     },
     {
@@ -271,26 +289,6 @@
         "CVE-2026-20235"
       ],
       "tags": []
-    },
-    {
-      "title": "ZDI-26-717: Cisco Identity Services Engine AlarmMessageDiskQueue Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-717/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Cisco Identity Services Engine. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are.",
-      "publishedAt": "2026-09-18T05:00:00Z",
-      "dayOffset": 4,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-20211"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
@@ -421,76 +419,6 @@
         [
           "Vendor Advisory",
           "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48908",
-      "title": "JoomShaper SP Page Builder Unrestricted Upload of File with Dangerous Type Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/winrarzipsexploit/CVE-2026-48908",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-48908-Suite.py",
-          "CVE-2026-48908.py",
-          "payloads/x7-panel.php",
-          "sppb48908_core.py",
-          "winrarzips_brand.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-48908-Suite.py",
-          "CVE-2026-48908.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48908"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "winrarzipsexploit",
-      "researcherUrl": "https://github.com/winrarzipsexploit",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "12:48 PM CDT",
-      "firstSeenAt": "2026-09-17T17:48:56Z",
-      "language": "Python",
-      "summary": "SP Page Builder (Joomla) unauth RCE suite \u2014 authorized testing only",
-      "technicalSummary": "SP Page Builder (Joomla) unauth RCE suite \u2014 authorized testing only",
-      "breakdown": "SP Page Builder (Joomla) unauth RCE suite \u2014 authorized testing only",
-      "whatBroke": "SP Page Builder (Joomla) unauth RCE suite \u2014 authorized testing only",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at winrarzipsexploit/CVE-2026-48908.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/winrarzipsexploit/CVE-2026-48908\ncd CVE-2026-48908\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed SP Page Builder",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 85,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/winrarzipsexploit/CVE-2026-48908"
-        ],
-        [
-          "Vendor Advisory",
-          "https://extensions.joomla.org/extension/sp-page-builder/"
         ]
       ]
     },
@@ -690,73 +618,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-27540",
-      "title": "WWLC WordPress unauth upload RCE suite \u2014 authorized testing only",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/winrarzipsexploit/CVE-2026-27540",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-27540-Suite.py",
-          "payloads/x7-panel.php",
-          "winrarzips_brand.py",
-          "wwlc_core.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-27540-Suite.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-27540"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "winrarzipsexploit",
-      "researcherUrl": "https://github.com/winrarzipsexploit",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:44 PM CDT",
-      "firstSeenAt": "2026-09-17T18:44:20Z",
-      "language": "Python",
-      "summary": "WWLC WordPress unauth upload RCE suite \u2014 authorized testing only",
-      "technicalSummary": "WWLC WordPress unauth upload RCE suite \u2014 authorized testing only",
-      "breakdown": "WWLC WordPress unauth upload RCE suite \u2014 authorized testing only",
-      "whatBroke": "WWLC WordPress unauth upload RCE suite \u2014 authorized testing only",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at winrarzipsexploit/CVE-2026-27540.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/winrarzipsexploit/CVE-2026-27540\ncd CVE-2026-27540\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/winrarzipsexploit/CVE-2026-27540"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/Wordpress/Plugin/woocommerce-wholesale-lead-capture/vulnerability/wordpress-woocommerce-wholesale-lead-capture-plugin-1-17-8-arbitrary-file-upload-vulnerability?_s_id=cve"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-36213",
       "title": "MEmu Android Emulator 9.2.7.0 Local Privilege Escalation",
       "ecosystem": "android",
@@ -814,6 +675,76 @@
         [
           "Vendor Advisory",
           "https://github.com/sec-zone/CVE-2026-36213"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-87902",
+      "title": "WordPress - WordPress Core - Critical 9.2 - Unauthenticated Local File Inclusion (conditional RCE)",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/abraxas/CVE-2026-87902",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-87902-Abraxas-Labs.py",
+          "lab/docker-compose.yml",
+          "lab/lab-theme/index.php",
+          "lab/lab-theme/page-templates/full-width.php",
+          "lab/lab-theme/page.php",
+          "lab/run.sh",
+          "lab/witness.php"
+        ],
+        "attackFiles": [
+          "CVE-2026-87902-Abraxas-Labs.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-87902"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "abraxas",
+      "researcherUrl": "https://github.com/abraxas",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:13 PM CDT",
+      "firstSeenAt": "2026-09-22T18:13:48Z",
+      "language": "Python",
+      "summary": "WordPress - WordPress Core - Critical 9.2 - Unauthenticated Local File Inclusion (conditional RCE)",
+      "technicalSummary": "WordPress - WordPress Core - Critical 9.2 - Unauthenticated Local File Inclusion (conditional RCE)",
+      "breakdown": "WordPress - WordPress Core - Critical 9.2 - Unauthenticated Local File Inclusion (conditional RCE)",
+      "whatBroke": "WordPress - WordPress Core - Critical 9.2 - Unauthenticated Local File Inclusion (conditional RCE)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at abraxas/CVE-2026-87902.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/abraxas/CVE-2026-87902\ncd CVE-2026-87902\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/abraxas/CVE-2026-87902"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp"
         ]
       ]
     },
@@ -879,6 +810,70 @@
       ]
     },
     {
+      "cve": "CVE-2026-49179",
+      "title": "Active Directory WriteSPNScript Command Injection",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/overgrowncarrot1/CVE-2026-49179-Active-Directory-WriteSPNScript-Command-Injection",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "spn_prl_exploit.py"
+        ],
+        "attackFiles": [
+          "spn_prl_exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-49179"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "overgrowncarrot1",
+      "researcherUrl": "https://github.com/overgrowncarrot1",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:02 AM CDT",
+      "firstSeenAt": "2026-09-17T14:02:46Z",
+      "language": "Python",
+      "summary": "Active Directory WriteSPNScript Command Injection",
+      "technicalSummary": "Active Directory WriteSPNScript Command Injection",
+      "breakdown": "Active Directory WriteSPNScript Command Injection",
+      "whatBroke": "Active Directory WriteSPNScript Command Injection",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at overgrowncarrot1/CVE-2026-49179-Active-Directory-WriteSPNScript-Command-Injection.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/overgrowncarrot1/CVE-2026-49179-Active-Directory-WriteSPNScript-Command-Injection\ncd CVE-2026-49179-Active-Directory-WriteSPNScript-Command-Injection\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/overgrowncarrot1/CVE-2026-49179-Active-Directory-WriteSPNScript-Command-Injection"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-49179"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-42978",
       "title": "Explore and validate CVE-2026-42978 PoC with an integrated AI security tool, multi-protocol terminal, and.",
       "ecosystem": "windows",
@@ -935,515 +930,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42978"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-93958",
-      "title": "command injection remote code execution exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/CVE-2026-93958",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "r95_exp.py"
-        ],
-        "attackFiles": [
-          "r95_exp.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-93958"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:10 AM CDT",
-      "firstSeenAt": "2026-09-20T13:10:55Z",
-      "language": "Python",
-      "summary": "D-Link R95 (BE9500) DHMAPI SetTimeSettings command injection -> root RCE PoC (); for authorized testing",
-      "technicalSummary": "D-Link R95 (BE9500) DHMAPI SetTimeSettings command injection -> root RCE PoC (); for authorized testing",
-      "breakdown": "D-Link R95 (BE9500) DHMAPI SetTimeSettings command injection -> root RCE PoC (); for authorized testing",
-      "whatBroke": "D-Link R95 (BE9500) DHMAPI SetTimeSettings command injection -> root RCE PoC (); for authorized testing",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-93958.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-93958\ncd CVE-2026-93958\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HackSpeak/CVE-2026-93958"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/FoundTL/D-Link-R95-BE9500"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-1961",
-      "title": "command injection remote code execution exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/kalnux/CVE-2026-1961-foreman-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "malicious_vsphere_server.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-1961"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "kalnux",
-      "researcherUrl": "https://github.com/kalnux",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:16 PM CDT",
-      "firstSeenAt": "2026-09-17T19:16:49Z",
-      "language": "Python",
-      "summary": "PoC for \u2014 command injection in Foreman's WebSocket proxy (lib/ws_proxy.rb) via unsanitized compute resource hostname, leading to RCE as the foreman user. Responsibly disclosed and patched.",
-      "technicalSummary": "PoC for \u2014 command injection in Foreman's WebSocket proxy (lib/ws_proxy.rb) via unsanitized compute resource hostname, leading to RCE as the foreman user. Responsibly disclosed and patched.",
-      "breakdown": "PoC for \u2014 command injection in Foreman's WebSocket proxy (lib/ws_proxy.rb) via unsanitized compute resource hostname, leading to RCE as the foreman user. Responsibly disclosed and patched.",
-      "whatBroke": "PoC for \u2014 command injection in Foreman's WebSocket proxy (lib/ws_proxy.rb) via unsanitized compute resource hostname, leading to RCE as the foreman user. Responsibly disclosed and patched.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at kalnux/CVE-2026-1961-foreman-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/kalnux/CVE-2026-1961-foreman-poc\ncd CVE-2026-1961-foreman-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/kalnux/CVE-2026-1961-foreman-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://access.redhat.com/errata/RHSA-2026:5968"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-32604",
-      "title": "A PoC exploit for CVE-2026-32604 - Spinnaker GitRepo Artifact RCE",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/K3ysTr0K3R/CVE-2026-32604",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-32604"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "K3ysTr0K3R",
-      "researcherUrl": "https://github.com/K3ysTr0K3R",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:48 PM CDT",
-      "firstSeenAt": "2026-09-17T20:48:21Z",
-      "language": "Python",
-      "summary": "A PoC exploit for Spinnaker GitRepo Artifact RCE",
-      "technicalSummary": "A PoC exploit for Spinnaker GitRepo Artifact RCE",
-      "breakdown": "A PoC exploit for Spinnaker GitRepo Artifact RCE",
-      "whatBroke": "A PoC exploit for Spinnaker GitRepo Artifact RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at K3ysTr0K3R/CVE-2026-32604.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/K3ysTr0K3R/CVE-2026-32604\ncd CVE-2026-32604\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/K3ysTr0K3R/CVE-2026-32604"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/spinnaker/spinnaker/releases/tag/spinnaker-release-2025.3.2"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-48519",
-      "title": "pre-auth rce poc in IBM langflow <= 1.9.1",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/lukehebe/IBM-Langflow-CVE-2026-48519-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "rce.py"
-        ],
-        "attackFiles": [
-          "rce.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-48519"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "lukehebe",
-      "researcherUrl": "https://github.com/lukehebe",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:35 AM CDT",
-      "firstSeenAt": "2026-09-22T16:35:55Z",
-      "language": "Python",
-      "summary": "pre-auth rce poc in IBM langflow <= 1.9.1",
-      "technicalSummary": "pre-auth rce poc in IBM langflow <= 1.9.1",
-      "breakdown": "pre-auth rce poc in IBM langflow <= 1.9.1",
-      "whatBroke": "pre-auth rce poc in IBM langflow <= 1.9.1",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at lukehebe/IBM-Langflow-CVE-2026-48519-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/lukehebe/IBM-Langflow-CVE-2026-48519-poc\ncd IBM-Langflow-CVE-2026-48519-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/lukehebe/IBM-Langflow-CVE-2026-48519-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/langflow-ai/langflow/security/advisories/GHSA-v5ff-9q35-q26f"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-92805",
-      "title": "UVdesk unauth wizard super-admin POC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/cflowsec/CVE-2026-92805",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cve-2026-92805-uvdesk-wizard-admin.py"
-        ],
-        "attackFiles": [
-          "cve-2026-92805-uvdesk-wizard-admin.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-92805"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "cflowsec",
-      "researcherUrl": "https://github.com/cflowsec",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:57 AM CDT",
-      "firstSeenAt": "2026-09-17T16:57:27Z",
-      "language": "Python",
-      "summary": "UVdesk unauth wizard super-admin POC",
-      "technicalSummary": "UVdesk unauth wizard super-admin POC",
-      "breakdown": "UVdesk unauth wizard super-admin POC",
-      "whatBroke": "UVdesk unauth wizard super-admin POC",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cflowsec/CVE-2026-92805.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cflowsec/CVE-2026-92805\ncd CVE-2026-92805\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/cflowsec/CVE-2026-92805"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/uvdesk/community-skeleton"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-43786",
-      "title": "Proof of concept for CVE-2026-43786, a local privilege escalation vulnerability in macOS CoreServices that.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Malwation/CVE-2026-43786",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-43786.c"
-        ],
-        "attackFiles": [
-          "CVE-2026-43786.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43786"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Malwation",
-      "researcherUrl": "https://github.com/Malwation",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:02 AM CDT",
-      "firstSeenAt": "2026-09-21T15:02:05Z",
-      "language": "C",
-      "summary": "Proof of concept for a local privilege escalation vulnerability in macOS CoreServices that allows an application to gain root privileges.",
-      "technicalSummary": "Proof of concept for a local privilege escalation vulnerability in macOS CoreServices that allows an application to gain root privileges.",
-      "breakdown": "Proof of concept for a local privilege escalation vulnerability in macOS CoreServices that allows an application to gain root privileges.",
-      "whatBroke": "Proof of concept for a local privilege escalation vulnerability in macOS CoreServices that allows an application to gain root privileges.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Malwation/CVE-2026-43786.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Malwation/CVE-2026-43786\ncd CVE-2026-43786\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Malwation/CVE-2026-43786"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/149035"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-65616",
-      "title": "Trained to Escalate: Forensic Analysis and Local Replication of RLHF-Induced Privilege Escalation in AI.",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/alixiacf/hpim-training-lab",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "entrypoint.sh",
-          "log.sh",
-          "reinicio_full.sh",
-          "root.sh",
-          "run_cdp.py",
-          "start.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-65616"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "alixiacf",
-      "researcherUrl": "https://github.com/alixiacf",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:55 AM CDT",
-      "firstSeenAt": "2026-09-19T16:55:07Z",
-      "language": "Python",
-      "summary": "Trained to Escalate: Forensic Analysis and Local Replication of RLHF-Induced Privilege Escalation in AI Agents ()",
-      "technicalSummary": "Trained to Escalate: Forensic Analysis and Local Replication of RLHF-Induced Privilege Escalation in AI Agents ()",
-      "breakdown": "Trained to Escalate: Forensic Analysis and Local Replication of RLHF-Induced Privilege Escalation in AI Agents ()",
-      "whatBroke": "Trained to Escalate: Forensic Analysis and Local Replication of RLHF-Induced Privilege Escalation in AI Agents ()",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at alixiacf/hpim-training-lab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/alixiacf/hpim-training-lab\ncd hpim-training-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/alixiacf/hpim-training-lab"
-        ],
-        [
-          "Vendor Advisory",
-          "https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-75827",
-      "title": "getgrav - High 8.8 - Unauthenticated GET /poc-form - Arbitrary File Write",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/abraxas/CVE-2026-75827",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-75827-Abraxas-Labs.py",
-          "lab/docker-compose.override.yml",
-          "lab/docker-compose.yml"
-        ],
-        "attackFiles": [
-          "CVE-2026-75827-Abraxas-Labs.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-75827"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "abraxas",
-      "researcherUrl": "https://github.com/abraxas",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:57 PM CDT",
-      "firstSeenAt": "2026-09-18T17:57:47Z",
-      "language": "Python",
-      "summary": "getgrav - High 8.8 - Unauthenticated GET /poc-form - Arbitrary File Write",
-      "technicalSummary": "getgrav - High 8.8 - Unauthenticated GET /poc-form - Arbitrary File Write",
-      "breakdown": "getgrav - High 8.8 - Unauthenticated GET /poc-form - Arbitrary File Write",
-      "whatBroke": "getgrav - High 8.8 - Unauthenticated GET /poc-form - Arbitrary File Write",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at abraxas/CVE-2026-75827.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/abraxas/CVE-2026-75827\ncd CVE-2026-75827\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/abraxas/CVE-2026-75827"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/getgrav/grav/security/advisories/GHSA-f8wv-xp27-6gq7"
         ]
       ]
     }
