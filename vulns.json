@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T17:48:49Z",
+  "updatedAt": "2026-09-23T22:12:02Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,6 +87,24 @@
   ],
   "research": [
     {
+      "title": "CVE-2024-0244 \u2013 A heap buffer overflow in the Canon MF753Cdw printer",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "https://www.thezdi.com/blog/2026/9/23/cve-2024-0244-a-heap-buffer-overflow-in-the-canon-mf753cdw-printer",
+      "summary": "CVE-2024-0244 \u2013 A heap buffer overflow in the Canon MF753Cdw printer",
+      "publishedAt": "2026-09-23T19:03:34Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2024-0244"
+      ],
+      "tags": [
+        "Memory Corruption"
+      ]
+    },
+    {
       "title": "CISA BOD 26-04 Timelines for Three Linux Kernel CVEs",
       "source": "Qualys Research",
       "sourceUrl": "https://blog.qualys.com/",
@@ -128,173 +146,170 @@
       ]
     },
     {
-      "title": "NodeZero Federal",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/downloads/factsheets/nodezero-federal/",
-      "summary": "Federal agencies face relentless pressure to defend critical systems against increasingly sophisticated threats. The challenge isn\u2019t finding vulnerabilities\u2014it\u2019s proving which ones are actually exploitable before adversaries take advantage of them. NodeZero.",
-      "publishedAt": "2026-09-22T13:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "Claude Opus 5.5: An evaluation review and metrics benchmarks",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/claude-opus-5-5-an-evaluation/",
-      "summary": "In comparison to Claude Opus 5, Claude Opus 5.5 produced fewer blocker-level bugs, vulnerabilities, and code smells, and did so by writing significantly fewer lines of code and consuming fewer output tokens. This is one of Anthropic's cleanest, most.",
-      "publishedAt": "2026-09-22T13:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "adcs",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "ADCS",
-        "File Read"
-      ]
-    },
-    {
-      "title": "The Closed Quorum: Inside the first reported autonomous AI C2 implant",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/",
-      "summary": "CLOSEDQUORUM, a malware binary discovered through Cisco Talos\u2019 CAIRN project , exhibits fully autonomous command and control (C2). While we do not have confirmation of in-the-wild deployment, artifacts from the binary were used to connect the developer to.",
-      "publishedAt": "2026-09-22T10:00:58Z",
-      "dayOffset": 1,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-719: Cisco ThousandEyes Virtual Appliance DHCP Client Command Injection Remote Code Execution Vulnerability",
+      "title": "ZDI-26-734: Foxit PDF Reader RichMedia Annotation Directory Traversal Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-719/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Cisco ThousandEyes Virtual Appliance. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs.",
-      "publishedAt": "2026-09-22T05:00:00Z",
-      "dayOffset": 1,
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-734/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-20350"
+        "CVE-2026-91801"
       ],
       "tags": [
         "RCE"
       ]
     },
     {
-      "title": "From Payment Plan to Ransomware - Inside a Global Group Attack",
-      "source": "Cofense",
-      "sourceUrl": "https://cofense.com/",
-      "url": "https://cofense.com/blog/from-payment-plan-to-ransomware-inside-a-global-group-attack",
-      "summary": "By: Iris Suaner, Cofense Phishing Defense Center Highly sophisticated ransomware now targets industries worldwide. Today\u2019s ransomware allows threat actors to infiltrate networks, encrypt confidential data, and hold critical systems hostage until a.",
-      "publishedAt": "2026-09-22T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
+      "title": "ZDI-26-733: Foxit PDF Reader Portfolio Directory Traversal Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-733/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-91797"
+      ],
       "tags": [
-        "Phishing",
         "RCE"
       ]
     },
     {
-      "title": "How SonarQube Hunter Agent adds a new layer of assurance for regulated companies",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/how-hunter-agent-adds-a-new-layer-of-assurance/",
-      "summary": "AI-assisted development is increasing both the volume and velocity of code, while code verification capacity struggles to keep pace. Static analysis, software composition analysis , and infrastructure scanning automate much of the discovery process. But.",
-      "publishedAt": "2026-09-21T13:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "Windows Exploitation Techniques: Dangling COM Object Registrations",
-      "source": "Project Zero",
-      "sourceUrl": "https://projectzero.google/",
-      "url": "https://projectzero.google/2026/09/windows-dangling-com.html",
-      "summary": "This short blog post is about abusing a privilege escalation bug that Microsoft recently fixed in Windows, CVE-2026-66804, that I and 14 others reported. This issue is an incomplete fix for CVE-2026-50343, a bug dubbed \u201cDark Elevator\u201d by Calif. The root.",
-      "publishedAt": "2026-09-21T07:00:00Z",
-      "dayOffset": 2,
+      "title": "ZDI-26-732: Foxit PDF Reader importIcon NTLM Response Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-732/",
+      "summary": "This vulnerability allows remote attackers to disclose NTLM responses on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "windows",
-      "category": "research",
+      "category": "ntlm",
       "topic": "research",
       "cves": [
-        "CVE-2026-50343",
-        "CVE-2026-66804"
+        "CVE-2026-91796"
       ],
       "tags": [
         "Windows",
-        "Local Lpe"
+        "Ntlm"
       ]
     },
     {
-      "title": "Cloud Threat Emulation on Autopilot: Context is Everything",
-      "source": "Elastic Security Labs",
-      "sourceUrl": "https://www.elastic.co/security-labs",
-      "url": "https://www.elastic.co/security-labs/threat-command/cloud-threat-emulation-methodology",
-      "summary": "Cloud threat emulation needs more than detonation Cloud threat emulation is not firing an API call and calling it done. Public practice already says the quiet part out loud. Intelligence-driven impersonation of real adversary TTPs, in a controlled.",
-      "publishedAt": "2026-09-21T00:00:00Z",
-      "dayOffset": 3,
-      "ecosystem": "windows",
-      "category": "kubernetes",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "Kubernetes",
-        "Session Theft"
-      ]
-    },
-    {
-      "title": "How Kyocera AVX Built a Global Security Validation Program from Zero",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/customer-story/kyocera-avx-global-security-validation/",
-      "summary": "Building a security validation program across global manufacturing environments requires more than deploying another scanning tool. Security teams need to identify which weaknesses attackers can actually exploit, prioritize remediation, and validate risk.",
-      "publishedAt": "2026-09-18T16:12:24Z",
-      "dayOffset": 5,
+      "title": "ZDI-26-731: Foxit PDF Reader FileOpen Uninitialized Variable Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-731/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
-      "cves": [],
-      "tags": []
+      "cves": [
+        "CVE-2026-91795"
+      ],
+      "tags": [
+        "RCE"
+      ]
     },
     {
-      "title": "The refactor you could never afford",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/the-refactor-you-could-never-afford/",
-      "summary": "For twenty years, the case against refactoring a legacy system was an economic one, and it was hard to argue with. A system needs to improve precisely because its structure makes every change harder. But understanding it, testing it, and reshaping it consume.",
-      "publishedAt": "2026-09-18T13:00:00Z",
-      "dayOffset": 5,
-      "ecosystem": "web",
-      "category": "webstack",
+      "title": "ZDI-26-730: Foxit PDF Reader DeviceN Colorspace Out-Of-Bounds Write Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-730/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
       "topic": "research",
-      "cves": [],
+      "cves": [
+        "CVE-2026-91794"
+      ],
       "tags": [
-        "Web",
-        "Webstack"
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-729: Foxit PDF Reader Doc Object Use-After-Free Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-729/",
+      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-91793"
+      ],
+      "tags": [
+        "Kernel",
+        "Memory Corruption"
+      ]
+    },
+    {
+      "title": "ZDI-26-728: Foxit PDF Reader Doc Object Use-After-Free Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-728/",
+      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-57238"
+      ],
+      "tags": [
+        "Kernel",
+        "Memory Corruption"
+      ]
+    },
+    {
+      "title": "ZDI-26-727: Foxit PDF Reader Annotation Use-After-Free Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-727/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI.",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-13128"
+      ],
+      "tags": [
+        "Kernel",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-726: Foxit PDF Reader Doc Object Use-After-Free Information Disclosure Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-726/",
+      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Foxit PDF Reader. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file..",
+      "publishedAt": "2026-09-23T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-13129"
+      ],
+      "tags": [
+        "Kernel",
+        "Memory Corruption"
       ]
     }
   ],
@@ -750,6 +765,74 @@
       ]
     },
     {
+      "cve": "CVE-2026-28609",
+      "title": "Proof-of-concept and instrumented reproduction harness for CVE-2026-28609, an out-of-bounds write in.",
+      "ecosystem": "android",
+      "category": "mobile",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/devrodT2/CVE-2026-28609-matroska-pcm-oob",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit/generator.py",
+          "harness/harness_c_abi.cpp",
+          "scripts/build_foundation.sh",
+          "scripts/build_harness.sh",
+          "scripts/build_plugin.sh",
+          "scripts/run.sh"
+        ],
+        "attackFiles": [
+          "exploit/generator.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-28609"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "devrodT2",
+      "researcherUrl": "https://github.com/devrodT2",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:31 PM CDT",
+      "firstSeenAt": "2026-09-20T17:31:00Z",
+      "language": "Shell",
+      "summary": "Proof-of-concept and instrumented reproduction harness for an out-of-bounds write in Android's MatroskaExtractor reachable via a crafted WebM file with a big-endian PCM audio track.",
+      "technicalSummary": "Proof-of-concept and instrumented reproduction harness for an out-of-bounds write in Android's MatroskaExtractor reachable via a crafted WebM file with a big-endian PCM audio track.",
+      "breakdown": "Proof-of-concept and instrumented reproduction harness for an out-of-bounds write in Android's MatroskaExtractor reachable via a crafted WebM file with a big-endian PCM audio track.",
+      "whatBroke": "Proof-of-concept and instrumented reproduction harness for an out-of-bounds write in Android's MatroskaExtractor reachable via a crafted WebM file with a big-endian PCM audio track.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at devrodT2/CVE-2026-28609-matroska-pcm-oob.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/devrodT2/CVE-2026-28609-matroska-pcm-oob\ncd CVE-2026-28609-matroska-pcm-oob\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Android",
+        "Mobile",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/devrodT2/CVE-2026-28609-matroska-pcm-oob"
+        ],
+        [
+          "Vendor Advisory",
+          "https://source.android.com/docs/security/bulletin/2026/2026-09-01"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-36213",
       "title": "MEmu Android Emulator 9.2.7.0 Local Privilege Escalation",
       "ecosystem": "android",
@@ -1005,6 +1088,135 @@
         [
           "Vendor Advisory",
           "https://github.com/FoundTL/D-Link-R95-BE9500"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-94095",
+      "title": "command injection remote code execution exploit",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/CVE-2026-94095",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-94095"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:48 AM CDT",
+      "firstSeenAt": "2026-09-21T10:48:06Z",
+      "language": "Python",
+      "summary": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
+      "technicalSummary": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
+      "breakdown": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
+      "whatBroke": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-94095.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-94095\ncd CVE-2026-94095\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/CVE-2026-94095"
+        ],
+        [
+          "Vendor Advisory",
+          "https://app.notion.com/p/Netcore-NBR200V2-Vul-3-39f797159f15802296c7f6e110363435"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-90817",
+      "title": "Unauth REDCap RCE (CVE-2026-90817) mass check PoC \u2014 requires public survey hash for full validation.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/murrez/CVE-2026-90817",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "fofa_to_list.py",
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-90817"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "murrez",
+      "researcherUrl": "https://github.com/murrez",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:05 PM CDT",
+      "firstSeenAt": "2026-09-21T04:05:26Z",
+      "language": "Python",
+      "summary": "Unauth REDCap RCE () mass check PoC \u2014 requires public survey hash for full validation.",
+      "technicalSummary": "Unauth REDCap RCE () mass check PoC \u2014 requires public survey hash for full validation.",
+      "breakdown": "Unauth REDCap RCE () mass check PoC \u2014 requires public survey hash for full validation.",
+      "whatBroke": "Unauth REDCap RCE () mass check PoC \u2014 requires public survey hash for full validation.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-90817.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-90817\ncd CVE-2026-90817\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/murrez/CVE-2026-90817"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.securifera.com/advisories/"
         ]
       ]
     },
