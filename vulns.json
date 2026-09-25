@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-25T07:38:34Z",
+  "updatedAt": "2026-09-25T17:53:36Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,26 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Master Key Included: Detecting SolarWinds ARM CVE-2026-28326",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/detecting-solarwinds-arm-cve-2026-28326",
+      "summary": "A hardcoded authentication secret ships with every SolarWinds Access Rights Manager install, and reaching TCP 55555 is enough to hit a .NET deserialization sink. Bishop Fox confirmed SYSTEM-level code execution, breaks down the root cause, and shares a safe.",
+      "publishedAt": "2026-09-25T13:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-28326"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
     {
       "title": "AI-powered fuzzing with the GitHub Security Lab Taskflow Agent",
       "source": "GitHub Security Lab",
@@ -278,24 +298,6 @@
       "topic": "research",
       "cves": [
         "CVE-2026-92202"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-747: Wireshark RF4CE Packet Parsing Buffer Overflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-747/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Wireshark. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-09-23T05:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-96417"
       ],
       "tags": [
         "RCE"
@@ -509,17 +511,14 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/arvindear/wp2shell-PoC",
+      "pocUrl": "https://github.com/fl0ydsec/CVE-2026-63030",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 7,
         "codeFiles": [
-          "exp.py",
           "wp2shell.py"
         ],
-        "attackFiles": [
-          "exp.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-60137",
@@ -528,19 +527,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "arvindear",
-      "researcherUrl": "https://github.com/arvindear",
+      "researcher": "fl0ydsec",
+      "researcherUrl": "https://github.com/fl0ydsec",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:38 AM CDT",
-      "firstSeenAt": "2026-09-25T07:38:34Z",
+      "added": "8:04 PM CDT",
+      "firstSeenAt": "2026-09-24T01:04:05Z",
       "language": "Python",
-      "summary": "& RCE chain proof-of-concept",
-      "technicalSummary": "& RCE chain proof-of-concept",
-      "breakdown": "& RCE chain proof-of-concept",
-      "whatBroke": "& RCE chain proof-of-concept",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at arvindear/wp2shell-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/arvindear/wp2shell-PoC\ncd wp2shell-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "WP2Shell - CVE-2026-63030 + WordPress Core pre-auth RCE mass exploit",
+      "technicalSummary": "WP2Shell - CVE-2026-63030 + WordPress Core pre-auth RCE mass exploit",
+      "breakdown": "WP2Shell - CVE-2026-63030 + WordPress Core pre-auth RCE mass exploit",
+      "whatBroke": "WP2Shell - CVE-2026-63030 + WordPress Core pre-auth RCE mass exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fl0ydsec/CVE-2026-63030.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fl0ydsec/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Core",
         "credential access from service context",
@@ -557,145 +556,15 @@
       ],
       "confidence": 98,
       "weaponization": 77,
-      "dayOffset": 0,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/arvindear/wp2shell-PoC"
+          "https://github.com/fl0ydsec/CVE-2026-63030"
         ],
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-31431",
-      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Minime794/copyfail",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "copy_fail.exp.c",
-          "copy_fail_exp.py"
-        ],
-        "attackFiles": [
-          "copy_fail.exp.c",
-          "copy_fail_exp.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-31431"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Minime794",
-      "researcherUrl": "https://github.com/Minime794",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:38 AM CDT",
-      "firstSeenAt": "2026-09-25T07:38:34Z",
-      "language": "Python",
-      "summary": "Copy-Fail-Exploit-",
-      "technicalSummary": "Copy-Fail-Exploit-",
-      "breakdown": "Copy-Fail-Exploit-",
-      "whatBroke": "Copy-Fail-Exploit-",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Minime794/copyfail.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Minime794/copyfail\ncd copyfail\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Kernel",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Minime794/copyfail"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-39987",
-      "title": "Marimo Remote Code Execution Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/mfahdk/CVE-2026-39987_RCE_PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-39987"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "mfahdk",
-      "researcherUrl": "https://github.com/mfahdk",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "7:40 AM CDT",
-      "firstSeenAt": "2026-09-20T12:40:18Z",
-      "language": "Python",
-      "summary": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
-      "technicalSummary": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
-      "breakdown": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
-      "whatBroke": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at mfahdk/CVE-2026-39987_RCE_PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/mfahdk/CVE-2026-39987_RCE_PoC\ncd CVE-2026-39987_RCE_PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Marimo",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/mfahdk/CVE-2026-39987_RCE_PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
         ]
       ]
     },
@@ -1152,6 +1021,10 @@
         [
           "GitHub",
           "https://github.com/Aayushbankar/cve-2026-28576"
+        ],
+        [
+          "Vendor Advisory",
+          "https://source.android.com/docs/security/bulletin/android-17"
         ]
       ]
     },
@@ -1277,6 +1150,10 @@
         [
           "GitHub",
           "https://github.com/yzy0okrkv1hngo0r/CVE-2026-36213-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/sec-zone/CVE-2026-36213"
         ]
       ]
     },
@@ -1344,70 +1221,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-94095",
-      "title": "command injection remote code execution exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HackSpeak/CVE-2026-94095",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-94095"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HackSpeak",
-      "researcherUrl": "https://github.com/HackSpeak",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:48 AM CDT",
-      "firstSeenAt": "2026-09-21T10:48:06Z",
-      "language": "Python",
-      "summary": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
-      "technicalSummary": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
-      "breakdown": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
-      "whatBroke": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-94095.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-94095\ncd CVE-2026-94095\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HackSpeak/CVE-2026-94095"
-        ],
-        [
-          "Vendor Advisory",
-          "https://app.notion.com/p/Netcore-NBR200V2-Vul-3-39f797159f15802296c7f6e110363435"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-93958",
       "title": "command injection remote code execution exploit",
       "ecosystem": "cloud",
@@ -1468,6 +1281,200 @@
         [
           "Vendor Advisory",
           "https://github.com/FoundTL/D-Link-R95-BE9500"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-94095",
+      "title": "command injection remote code execution exploit",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/CVE-2026-94095",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-94095"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:48 AM CDT",
+      "firstSeenAt": "2026-09-21T10:48:06Z",
+      "language": "Python",
+      "summary": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
+      "technicalSummary": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
+      "breakdown": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
+      "whatBroke": "Netcore NBR200V2 traceroute command injection PoC (); ubus JSON-RPC -> system() root RCE; for authorized testing",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-94095.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-94095\ncd CVE-2026-94095\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/CVE-2026-94095"
+        ],
+        [
+          "Vendor Advisory",
+          "https://app.notion.com/p/Netcore-NBR200V2-Vul-3-39f797159f15802296c7f6e110363435"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-90817",
+      "title": "Unauth REDCap RCE (CVE-2026-90817) mass check PoC \u2014 requires public survey hash for full validation.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/murrez/CVE-2026-90817",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "fofa_to_list.py",
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-90817"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "murrez",
+      "researcherUrl": "https://github.com/murrez",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:05 PM CDT",
+      "firstSeenAt": "2026-09-21T04:05:26Z",
+      "language": "Python",
+      "summary": "Unauth REDCap RCE () mass check PoC \u2014 requires public survey hash for full validation.",
+      "technicalSummary": "Unauth REDCap RCE () mass check PoC \u2014 requires public survey hash for full validation.",
+      "breakdown": "Unauth REDCap RCE () mass check PoC \u2014 requires public survey hash for full validation.",
+      "whatBroke": "Unauth REDCap RCE () mass check PoC \u2014 requires public survey hash for full validation.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-90817.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-90817\ncd CVE-2026-90817\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/murrez/CVE-2026-90817"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.securifera.com/advisories/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-93349",
+      "title": "Frictionless <= 5.20.0rc1 OS command injection via CLI explore.",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/SaiTeja-Erukude/CVE-2026-93349-frictionless-command-injection",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "package_builder.py",
+          "run_poc.py"
+        ],
+        "attackFiles": [
+          "run_poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-93349"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "SaiTeja-Erukude",
+      "researcherUrl": "https://github.com/SaiTeja-Erukude",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:07 AM CDT",
+      "firstSeenAt": "2026-09-23T16:07:06Z",
+      "language": "Python",
+      "summary": "Frictionless <= 5.20.0rc1 OS command injection via CLI explore.",
+      "technicalSummary": "Frictionless <= 5.20.0rc1 OS command injection via CLI explore.",
+      "breakdown": "Frictionless <= 5.20.0rc1 OS command injection via CLI explore.",
+      "whatBroke": "Frictionless <= 5.20.0rc1 OS command injection via CLI explore.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SaiTeja-Erukude/CVE-2026-93349-frictionless-command-injection.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SaiTeja-Erukude/CVE-2026-93349-frictionless-command-injection\ncd CVE-2026-93349-frictionless-command-injection\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/SaiTeja-Erukude/CVE-2026-93349-frictionless-command-injection"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/SaiTeja-Erukude/CVE-2026-93349-frictionless-command-injection"
         ]
       ]
     }
