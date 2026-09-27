@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T17:39:41Z",
+  "updatedAt": "2026-09-27T22:00:38Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -310,19 +310,17 @@
       "title": "WordPress Core Remote File Inclusion Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/ressl/cve-2026-87902-poc",
+      "pocUrl": "https://github.com/Maalfer/CVE-2026-87902-exploit",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "cve-2026-87902.py",
-          "docker-compose.yml",
-          "lab/up.sh"
+          "exploit.py"
         ],
         "attackFiles": [
-          "cve-2026-87902.py"
+          "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -331,19 +329,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "ressl",
-      "researcherUrl": "https://github.com/ressl",
+      "researcher": "Maalfer",
+      "researcherUrl": "https://github.com/Maalfer",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "1:40 PM CDT",
-      "firstSeenAt": "2026-09-22T18:40:26Z",
+      "added": "3:18 PM CDT",
+      "firstSeenAt": "2026-09-27T20:18:56Z",
       "language": "Python",
-      "summary": "PoC for \u2014 unauthenticated path traversal in WordPress page-template resolution (local PHP inclusion, conditional RCE) with a pinned vulnerable lab",
-      "technicalSummary": "PoC for \u2014 unauthenticated path traversal in WordPress page-template resolution (local PHP inclusion, conditional RCE) with a pinned vulnerable lab",
-      "breakdown": "PoC for \u2014 unauthenticated path traversal in WordPress page-template resolution (local PHP inclusion, conditional RCE) with a pinned vulnerable lab",
-      "whatBroke": "PoC for \u2014 unauthenticated path traversal in WordPress page-template resolution (local PHP inclusion, conditional RCE) with a pinned vulnerable lab",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ressl/cve-2026-87902-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ressl/cve-2026-87902-poc\ncd cve-2026-87902-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Exploit para explotar la vulnerabilidad que se acontece en el core de WordPress",
+      "technicalSummary": "Exploit para explotar la vulnerabilidad que se acontece en el core de WordPress",
+      "breakdown": "Exploit para explotar la vulnerabilidad que se acontece en el core de WordPress",
+      "whatBroke": "Exploit para explotar la vulnerabilidad que se acontece en el core de WordPress",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Maalfer/CVE-2026-87902-exploit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Maalfer/CVE-2026-87902-exploit\ncd CVE-2026-87902-exploit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Core",
         "credential access from service context",
@@ -360,15 +358,269 @@
       ],
       "confidence": 98,
       "weaponization": 87,
-      "dayOffset": 5,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/ressl/cve-2026-87902-poc"
+          "https://github.com/Maalfer/CVE-2026-87902-exploit"
         ],
         [
           "Vendor Advisory",
           "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "title": "WordPress Core Interpretation Conflict Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/fl0ydsec/CVE-2026-63030",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "wp2shell.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "fl0ydsec",
+      "researcherUrl": "https://github.com/fl0ydsec",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "8:04 PM CDT",
+      "firstSeenAt": "2026-09-24T01:04:05Z",
+      "language": "Python",
+      "summary": "WP2Shell - + CVE-2026-60137 WordPress Core pre-auth RCE mass exploit",
+      "technicalSummary": "WP2Shell - + CVE-2026-60137 WordPress Core pre-auth RCE mass exploit",
+      "breakdown": "WP2Shell - + CVE-2026-60137 WordPress Core pre-auth RCE mass exploit",
+      "whatBroke": "WP2Shell - + CVE-2026-60137 WordPress Core pre-auth RCE mass exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fl0ydsec/CVE-2026-63030.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fl0ydsec/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 81,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/fl0ydsec/CVE-2026-63030"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-60137",
+      "title": "WordPress Core SQL Injection Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/fl0ydsec/CVE-2026-63030",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "wp2shell.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "fl0ydsec",
+      "researcherUrl": "https://github.com/fl0ydsec",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "8:04 PM CDT",
+      "firstSeenAt": "2026-09-24T01:04:05Z",
+      "language": "Python",
+      "summary": "WP2Shell - CVE-2026-63030 + WordPress Core pre-auth RCE mass exploit",
+      "technicalSummary": "WP2Shell - CVE-2026-63030 + WordPress Core pre-auth RCE mass exploit",
+      "breakdown": "WP2Shell - CVE-2026-63030 + WordPress Core pre-auth RCE mass exploit",
+      "whatBroke": "WP2Shell - CVE-2026-63030 + WordPress Core pre-auth RCE mass exploit",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fl0ydsec/CVE-2026-63030.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fl0ydsec/CVE-2026-63030\ncd CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 77,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/fl0ydsec/CVE-2026-63030"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-59310",
+      "title": "Broadcom VMware vCenter Path Traversal Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/ChinaRan0/CVE-2026-59310-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit_cve_2026_59310.py"
+        ],
+        "attackFiles": [
+          "exploit_cve_2026_59310.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-59310"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "ChinaRan0",
+      "researcherUrl": "https://github.com/ChinaRan0",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:05 AM CDT",
+      "firstSeenAt": "2026-09-25T16:05:26Z",
+      "language": "Python",
+      "summary": "Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+      "technicalSummary": "Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+      "breakdown": "Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+      "whatBroke": "Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ChinaRan0/CVE-2026-59310-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ChinaRan0/CVE-2026-59310-POC\ncd CVE-2026-59310-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed VMware vCenter",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 85,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/ChinaRan0/CVE-2026-59310-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-67279",
+      "title": "Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+      "ecosystem": "web",
+      "category": "ssh",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/HackSpeak/CVE-2026-67279",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "CVE-2026-67276/CVE-2026-67276.py",
+          "CVE-2026-67276/forge_67276.py",
+          "CVE-2026-86060.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-67279",
+          "CVE-2026-86060"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "HackSpeak",
+      "researcherUrl": "https://github.com/HackSpeak",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "10:46 PM CDT",
+      "firstSeenAt": "2026-09-26T03:46:49Z",
+      "language": "Python",
+      "summary": "MikroTrick (MikroTik RouterOS SSH takeover chain) PoC mirror - + CVE-2026-86060 (+67276); for authorized lab testing",
+      "technicalSummary": "MikroTrick (MikroTik RouterOS SSH takeover chain) PoC mirror - + CVE-2026-86060 (+67276); for authorized lab testing",
+      "breakdown": "MikroTrick (MikroTik RouterOS SSH takeover chain) PoC mirror - + CVE-2026-86060 (+67276); for authorized lab testing",
+      "whatBroke": "MikroTrick (MikroTik RouterOS SSH takeover chain) PoC mirror - + CVE-2026-86060 (+67276); for authorized lab testing",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackSpeak/CVE-2026-67279.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackSpeak/CVE-2026-67279\ncd CVE-2026-67279\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed RouterOS",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "SSH",
+        "Session Theft",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/HackSpeak/CVE-2026-67279"
+        ],
+        [
+          "Vendor Advisory",
+          "https://mikrotik.com/supportsec/september-2026-vulnerability/?utm_source=chatgpt.com"
         ]
       ]
     },
@@ -1031,6 +1283,134 @@
       ]
     },
     {
+      "cve": "CVE-2026-13249",
+      "title": "Unauthenticated arbitrary file upload on Honeywell PD45 web admin (firmware F10.19.010040\u2013before.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/murrez/CVE-2026-13249",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-13249"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "murrez",
+      "researcherUrl": "https://github.com/murrez",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:59 AM CDT",
+      "firstSeenAt": "2026-09-26T11:59:53Z",
+      "language": "Python",
+      "summary": "Unauthenticated arbitrary file upload on Honeywell PD45 web admin (firmware F10.19.010040\u2013before F10.22.030745) leading to RCE. Python check/exploit PoC",
+      "technicalSummary": "Unauthenticated arbitrary file upload on Honeywell PD45 web admin (firmware F10.19.010040\u2013before F10.22.030745) leading to RCE. Python check/exploit PoC",
+      "breakdown": "Unauthenticated arbitrary file upload on Honeywell PD45 web admin (firmware F10.19.010040\u2013before F10.22.030745) leading to RCE. Python check/exploit PoC",
+      "whatBroke": "Unauthenticated arbitrary file upload on Honeywell PD45 web admin (firmware F10.19.010040\u2013before F10.22.030745) leading to RCE. Python check/exploit PoC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-13249.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-13249\ncd CVE-2026-13249\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/murrez/CVE-2026-13249"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.honeywell.com/us/en/legal/product-security#security-notices"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-96889",
+      "title": "This repository documents the VectorFreed RCE chain and includes a PoC for CVE-2026-96889.",
+      "ecosystem": "cloud",
+      "category": "kernel",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/rafabd1/VectorFreed",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "pocs/poc-uaf.py"
+        ],
+        "attackFiles": [
+          "pocs/poc-uaf.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-96889"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "rafabd1",
+      "researcherUrl": "https://github.com/rafabd1",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:54 PM CDT",
+      "firstSeenAt": "2026-09-21T18:54:00Z",
+      "language": "Python",
+      "summary": "This repository documents the VectorFreed RCE chain and includes a PoC for.",
+      "technicalSummary": "This repository documents the VectorFreed RCE chain and includes a PoC for.",
+      "breakdown": "This repository documents the VectorFreed RCE chain and includes a PoC for.",
+      "whatBroke": "This repository documents the VectorFreed RCE chain and includes a PoC for.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rafabd1/VectorFreed.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rafabd1/VectorFreed\ncd VectorFreed\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Kernel",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/rafabd1/VectorFreed"
+        ],
+        [
+          "Vendor Advisory",
+          "https://access.redhat.com/security/cve/CVE-2026-96889"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-93349",
       "title": "Frictionless <= 5.20.0rc1 OS command injection via CLI explore.",
       "ecosystem": "cloud",
@@ -1092,70 +1472,6 @@
         [
           "Vendor Advisory",
           "https://github.com/SaiTeja-Erukude/CVE-2026-93349-frictionless-command-injection"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-82901",
-      "title": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-82901",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-82901"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:11 PM CDT",
-      "firstSeenAt": "2026-09-26T21:11:27Z",
-      "language": "Python",
-      "summary": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF Generator is enabled \u2192 wp-content/uploads/uacf7-uploads/. Fix: 3.5.51+. https://pocbit.org/pocs/",
-      "technicalSummary": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF Generator is enabled \u2192 wp-content/uploads/uacf7-uploads/. Fix: 3.5.51+. https://pocbit.org/pocs/",
-      "breakdown": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF Generator is enabled \u2192 wp-content/uploads/uacf7-uploads/. Fix: 3.5.51+. https://pocbit.org/pocs/",
-      "whatBroke": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF Generator is enabled \u2192 wp-content/uploads/uacf7-uploads/. Fix: 3.5.51+. https://pocbit.org/pocs/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-82901.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-82901\ncd CVE-2026-82901\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-82901"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/ultimate-addons-for-contact-form-7/tags/3.5.48/addons/pdf-generator/pdf-generator.php#L608"
         ]
       ]
     }
