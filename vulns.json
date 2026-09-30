@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T18:22:49Z",
+  "updatedAt": "2026-09-30T22:56:28Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,6 +87,26 @@
   ],
   "research": [
     {
+      "title": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated September 30)",
+      "source": "Unit 42",
+      "sourceUrl": "https://unit42.paloaltonetworks.com/",
+      "url": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
+      "summary": "Unit 42 is aware of possible 0-day activity against NetScaler devices. Citrix reports CVE-2026-88771, CVE-2026-88772 have been exploited in the wild. The post Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild (Updated.",
+      "publishedAt": "2026-09-30T20:00:04Z",
+      "dayOffset": 0,
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-88771",
+        "CVE-2026-88772"
+      ],
+      "tags": [
+        "Cloud",
+        "VPN Edge"
+      ]
+    },
+    {
       "title": "China-nexus UAT-11587 targets government and policy organizations across Asia with Antino backdoor",
       "source": "Cisco Talos",
       "sourceUrl": "https://blog.talosintelligence.com/",
@@ -116,6 +136,44 @@
       "topic": "research",
       "cves": [],
       "tags": []
+    },
+    {
+      "title": "ZDI-26-750: WatchGuard FireWare OS spamd statushdlr Stack-based Buffer Overflow Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-750/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of WatchGuard FireWare OS. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are assigned:.",
+      "publishedAt": "2026-09-30T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-18145"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-749: WatchGuard FireWare OS samld SAMLSession Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-749/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of WatchGuard FireWare OS. An attacker must first obtain the ability to write to the samld session directory on the target system in order to exploit this.",
+      "publishedAt": "2026-09-30T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-13046"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
     },
     {
       "title": "Autonomous Remediation Is Already Running at Enterprise Scale",
@@ -238,59 +296,78 @@
         "DevOps",
         "Local Lpe"
       ]
-    },
-    {
-      "title": "Securing the keys to the kingdom: Announcing Executive Threat Detection",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/securing-the-keys-to-the-kingdom-announcing-executive-threat-detection/",
-      "summary": "Attackers are using greater sophistication to gain access to high-yield targets like executives, and company-wide security measures can easily miss these subtle, personal attacks. Executive Threat Detection offers protection for up to 10 principals, with.",
-      "publishedAt": "2026-09-29T10:00:36Z",
-      "dayOffset": 1,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing"
-      ]
-    },
-    {
-      "title": "Lessons from Microsoft Patch KB5002907: Two Layers of Patch Control in Qualys TruRisk Eliminate",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/09/29/lessons-from-microsoft-patch-kb5002907-two-layers-of-patch-control-in-qualys-trurisk-eliminate",
-      "summary": "How reliability scoring keeps risky patches out of zero-touch jobs, and how one blocking rule stops a paused update across your environment. Executive Summary Microsoft has paused the rollout of KB5002907, an optional Microsoft 365 Apps update that left some.",
-      "publishedAt": "2026-09-29T08:28:47Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Windows"
-      ]
-    },
-    {
-      "title": "How we found 24 Android vulnerabilities using our open source AI security agent",
-      "source": "GitHub Security",
-      "sourceUrl": "https://github.blog/security/",
-      "url": "https://github.blog/security/how-we-found-24-android-vulnerabilities-using-our-open-source-ai-security-agent/",
-      "summary": "With the rise of AI in the security space, our team created the GitHub Security Lab Taskflow Agent as a way for security researchers to easily automate, package, and share the AI prompts and workflows that they find effective for their work. In this blog.",
-      "publishedAt": "2026-09-28T19:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "android",
-      "category": "mobile",
-      "topic": "android",
-      "cves": [],
-      "tags": [
-        "Android",
-        "Mobile",
-        "File Read"
-      ]
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-88772",
+      "title": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/murrez/CVE-2026-88772",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-88772"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:24 PM CDT",
+      "firstSeenAt": "2026-09-27T20:24:56Z",
+      "language": "Python",
+      "summary": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+      "technicalSummary": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/09/image-14.png\" class=\"kg-image\" alt=\"Here We Go Again (Citrix NetScaler DTLS Preauth Memory Overflow CVE-2026-88772)\".",
+      "breakdown": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/09/image-14.png\" class=\"kg-image\" alt=\"Here We Go Again (Citrix NetScaler DTLS Preauth Memory Overflow CVE-2026-88772)\".",
+      "whatBroke": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-88772.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-88772\ncd CVE-2026-88772\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed NetScaler",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/murrez/CVE-2026-88772"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/here-we-go-again-citrix-netscaler-dtls-preauth-memory-overflow-cve-2026-88772/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://community.citrix.com/techzone-blogs/110_security-updates/netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve-2026-88771-through-cve-2026-88778"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-41940",
       "title": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
@@ -569,6 +646,72 @@
       ]
     },
     {
+      "cve": "CVE-2026-100721",
+      "title": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/murrez/CVE-2026-100721",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "lab/poc.js",
+          "poc.py"
+        ],
+        "attackFiles": [
+          "lab/poc.js",
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-100721"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "murrez",
+      "researcherUrl": "https://github.com/murrez",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:45 AM CDT",
+      "firstSeenAt": "2026-09-28T09:45:48Z",
+      "language": "Python",
+      "summary": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
+      "technicalSummary": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
+      "breakdown": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
+      "whatBroke": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-100721.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-100721\ncd CVE-2026-100721\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/murrez/CVE-2026-100721"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/patriksimek/vm2/commit/6ac3916da84e060c403e407b6b6318fcc66b0e72"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-12227",
       "title": "is a critical (CVSS 9.8) unauthenticated Local File Inclusion (LFI) vulnerability in the Visual Composer.",
       "ecosystem": "web",
@@ -629,6 +772,70 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/changeset/3619572/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-82384",
+      "title": "PoC: Apache Roller 6.1.5 unauthenticated XML-RPC ex:serializable Java deserialization (pre-auth RCE). Check,.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/murrez/CVE-2026-82384",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-82384"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "murrez",
+      "researcherUrl": "https://github.com/murrez",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:24 AM CDT",
+      "firstSeenAt": "2026-09-28T08:24:47Z",
+      "language": "Python",
+      "summary": "PoC: Apache Roller 6.1.5 unauthenticated XML-RPC ex:serializable Java deserialization (pre-auth RCE). Check, ysoserial exploit, mass bulk scanning, colored CLI. PoCbit \u2014 https://pocbit.org/pocs/",
+      "technicalSummary": "PoC: Apache Roller 6.1.5 unauthenticated XML-RPC ex:serializable Java deserialization (pre-auth RCE). Check, ysoserial exploit, mass bulk scanning, colored CLI. PoCbit \u2014 https://pocbit.org/pocs/",
+      "breakdown": "PoC: Apache Roller 6.1.5 unauthenticated XML-RPC ex:serializable Java deserialization (pre-auth RCE). Check, ysoserial exploit, mass bulk scanning, colored CLI. PoCbit \u2014 https://pocbit.org/pocs/",
+      "whatBroke": "PoC: Apache Roller 6.1.5 unauthenticated XML-RPC ex:serializable Java deserialization (pre-auth RCE). Check, ysoserial exploit, mass bulk scanning, colored CLI. PoCbit \u2014 https://pocbit.org/pocs/",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-82384.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-82384\ncd CVE-2026-82384\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/murrez/CVE-2026-82384"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/apache/roller/pull/171"
         ]
       ]
     },
@@ -1211,26 +1418,33 @@
     },
     {
       "cve": "CVE-2026-43499",
-      "title": "GhostLock futex-PI UAF LPE exploit for POCO M7 5G - kernel 5.10.226",
-      "ecosystem": "linux",
-      "category": "kernel",
+      "title": "Firmware-specific CVE-2026-43499 and KernelSU payload for Samsung Galaxy S25 Ultra SM-S938N (KOO),.",
+      "ecosystem": "android",
+      "category": "mobile",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/shubhampathak65/CVE-2026-43499",
+      "pocUrl": "https://github.com/HaSiyo/Root-My-Galaxy-Payloads-KernelSU",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "core/fops.c",
-          "core/main.c",
-          "core/miniadb.c",
-          "core/pipe.c",
-          "core/pipe_physrw.c",
-          "core/root.c",
-          "core/slide.c",
-          "core/sysctl.c"
+          ".github/workflows/dfroot-lkm.yml",
+          ".github/workflows/exploit-build.yml",
+          ".github/workflows/ksu-build.yml",
+          ".github/workflows/upstream-watch.yml",
+          "dfroot-lkm/dirtyfrag.c",
+          "kernelsu/tools/audit_module_against_target.py",
+          "kernelsu/tools/extract_target_symvers.py",
+          "src/fops.c"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          ".github/workflows/exploit-build.yml",
+          "tools/check_kernel_version.py",
+          "tools/check_pair_version.py",
+          "tools/check_rkp_branch.py",
+          "tools/update_exploit_feed.py",
+          "tools/verify_pair.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-43499"
@@ -1238,178 +1452,40 @@
         "language": "C"
       },
       "reliability": "reliable exploit",
-      "researcher": "shubhampathak65",
-      "researcherUrl": "https://github.com/shubhampathak65",
+      "researcher": "HaSiyo",
+      "researcherUrl": "https://github.com/HaSiyo",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:53 AM CDT",
-      "firstSeenAt": "2026-09-29T09:53:13Z",
+      "added": "4:54 PM CDT",
+      "firstSeenAt": "2026-09-30T21:54:59Z",
       "language": "C",
-      "summary": "GhostLock futex-PI UAF LPE exploit for POCO M7 5G - kernel 5.10.226",
-      "technicalSummary": "GhostLock futex-PI UAF LPE exploit for POCO M7 5G - kernel 5.10.226",
-      "breakdown": "GhostLock futex-PI UAF LPE exploit for POCO M7 5G - kernel 5.10.226",
-      "whatBroke": "GhostLock futex-PI UAF LPE exploit for POCO M7 5G - kernel 5.10.226",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shubhampathak65/CVE-2026-43499.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shubhampathak65/CVE-2026-43499\ncd CVE-2026-43499\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Firmware-specific and KernelSU payload for Samsung Galaxy S25 Ultra SM-S938N (KOO), S938NKSUCDZIF, Android 17 / kernel 6.6.127.",
+      "technicalSummary": "Firmware-specific and KernelSU payload for Samsung Galaxy S25 Ultra SM-S938N (KOO), S938NKSUCDZIF, Android 17 / kernel 6.6.127.",
+      "breakdown": "Firmware-specific and KernelSU payload for Samsung Galaxy S25 Ultra SM-S938N (KOO), S938NKSUCDZIF, Android 17 / kernel 6.6.127.",
+      "whatBroke": "Firmware-specific and KernelSU payload for Samsung Galaxy S25 Ultra SM-S938N (KOO), S938NKSUCDZIF, Android 17 / kernel 6.6.127.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HaSiyo/Root-My-Galaxy-Payloads-KernelSU.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HaSiyo/Root-My-Galaxy-Payloads-KernelSU\ncd Root-My-Galaxy-Payloads-KernelSU\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE"
+        "Android",
+        "Mobile",
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/shubhampathak65/CVE-2026-43499"
+          "https://github.com/HaSiyo/Root-My-Galaxy-Payloads-KernelSU"
         ],
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-93485",
-      "title": "Laboratorio pedag\u00f3gico de CVE-2026-93485 (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/686f6c61/POC-WP-CORE-CVE-2026-93485",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cli/poc.py",
-          "docker-compose.yml",
-          "docker/wordpress/fetch-wordpress.sh",
-          "docker/wordpress/lab-entrypoint.sh",
-          "exploit/01_plant_comment.sh",
-          "exploit/02_admin_view.sh",
-          "exploit/03_demo_root_cause.php",
-          "exploit/04_payload_rce.js"
-        ],
-        "attackFiles": [
-          "cli/poc.py",
-          "exploit/01_plant_comment.sh",
-          "exploit/02_admin_view.sh",
-          "exploit/03_demo_root_cause.php",
-          "exploit/04_payload_rce.js",
-          "exploit/05_rce.sh",
-          "exploit/06_post_colaborador.sh",
-          "exploit/webshell/c2s-demo.php"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-93485"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "686f6c61",
-      "researcherUrl": "https://github.com/686f6c61",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:34 AM CDT",
-      "firstSeenAt": "2026-09-26T12:34:44Z",
-      "language": "Python",
-      "summary": "Laboratorio pedag\u00f3gico de (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda wpautop -> RCE, con demo del root cause auto-verificada, control 7.1.1 y la v\u00eda Post2Shell",
-      "technicalSummary": "Laboratorio pedag\u00f3gico de (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda wpautop -> RCE, con demo del root cause auto-verificada, control 7.1.1 y la v\u00eda Post2Shell",
-      "breakdown": "Laboratorio pedag\u00f3gico de (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda wpautop -> RCE, con demo del root cause auto-verificada, control 7.1.1 y la v\u00eda Post2Shell",
-      "whatBroke": "Laboratorio pedag\u00f3gico de (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda wpautop -> RCE, con demo del root cause auto-verificada, control 7.1.1 y la v\u00eda Post2Shell",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 686f6c61/POC-WP-CORE-CVE-2026-93485.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/686f6c61/POC-WP-CORE-CVE-2026-93485\ncd POC-WP-CORE-CVE-2026-93485\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/686f6c61/POC-WP-CORE-CVE-2026-93485"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-78006",
-      "title": "The Events Calendar Wordpress Plugin Mass Exploit CVE-2026-78006 & CVE-2026-78159",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/antid00t/CVE-2026-78006-CVE-2026-78159",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "tec.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-78006",
-          "CVE-2026-78159"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "antid00t",
-      "researcherUrl": "https://github.com/antid00t",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:45 PM CDT",
-      "firstSeenAt": "2026-09-28T00:45:37Z",
-      "language": "Python",
-      "summary": "The Events Calendar Wordpress Plugin Mass Exploit & CVE-2026-78159",
-      "technicalSummary": "The Events Calendar Wordpress Plugin Mass Exploit & CVE-2026-78159",
-      "breakdown": "The Events Calendar Wordpress Plugin Mass Exploit & CVE-2026-78159",
-      "whatBroke": "The Events Calendar Wordpress Plugin Mass Exploit & CVE-2026-78159",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at antid00t/CVE-2026-78006-CVE-2026-78159.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/antid00t/CVE-2026-78006-CVE-2026-78159\ncd CVE-2026-78006-CVE-2026-78159\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/antid00t/CVE-2026-78006-CVE-2026-78159"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/the-events-calendar/tags/6.17.3/common/src/Tribe/Utils/Collection_Trait.php#L247"
         ]
       ]
     }
