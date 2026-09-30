@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T08:20:38Z",
+  "updatedAt": "2026-09-30T18:22:49Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,37 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "China-nexus UAT-11587 targets government and policy organizations across Asia with Antino backdoor",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/china-nexus-uat-11587-targets-government-and-policy-organizations-across-asia-with-antino-backdoor/",
+      "summary": "Cisco Talos uncovered a cluster of activity we track as UAT-11587 targeting government and policy organizations across Asia, including in Taiwan, India, the Philippines, and Cambodia, to deliver a previously undocumented backdoor referred to as \u201cAntino\u201d in.",
+      "publishedAt": "2026-09-30T10:00:01Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing",
+        "RCE"
+      ]
+    },
+    {
+      "title": "Horizon3\u2019s Tales from the Trenches: Anthropic\u2019s Mythos and Rejetto HFS",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/disclosures/anthropic-mythos-rejetto-hfs-rce/",
+      "summary": "Anthropic started Project Glasswing with the mission of securing the world\u2019s most critical software. Since joining the project in July of 2026, Horizon3 has used Anthropic\u2019s Mythos model in its vulnerability research pipelines to discover many critical.",
+      "publishedAt": "2026-09-30T10:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
+    },
     {
       "title": "Autonomous Remediation Is Already Running at Enterprise Scale",
       "source": "Qualys Research",
@@ -256,46 +287,6 @@
         "Android",
         "Mobile",
         "File Read"
-      ]
-    },
-    {
-      "title": "CVE-2026-19490 | Citrix NetScaler ADC and NetScaler Gateway Authentication Bypass Vulnerability",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-19490/",
-      "summary": "CVE-2026-19490 is an authentication bypass vulnerability affecting certain customer-managed NetScaler ADC and NetScaler Gateway appliances. An unauthenticated remote attacker may be able to bypass authentication when an affected appliance is configured as a.",
-      "publishedAt": "2026-09-28T16:35:40Z",
-      "dayOffset": 2,
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-19490"
-      ],
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild",
-      "source": "Unit 42",
-      "sourceUrl": "https://unit42.paloaltonetworks.com/",
-      "url": "https://unit42.paloaltonetworks.com/netscaler-zero-days-exploited/",
-      "summary": "Unit 42 is aware of possible 0-day activity against NetScaler devices. Citrix reports CVE-2026-88771, CVE-2026-88772 have been exploited in the wild. The post Threat Brief: NetScaler Zero Days CVE-2026-88771 and CVE-2026-88772 Exploited in the Wild appeared.",
-      "publishedAt": "2026-09-28T15:02:04Z",
-      "dayOffset": 2,
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-88771",
-        "CVE-2026-88772"
-      ],
-      "tags": [
-        "Cloud",
-        "VPN Edge"
       ]
     }
   ],
@@ -833,12 +824,12 @@
     },
     {
       "cve": "CVE-2026-18143",
-      "title": "Unauthenticated arbitrary file upload in Addify Request a Quote for WooCommerce \u2264 2.9.2 via public AJAX.",
+      "title": "single PoC for CVE-2026-18143 Unauth AFU (Arbitrary File Upload)",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-18143",
+      "pocUrl": "https://github.com/ghannyxploit404/CVE-2026-18143",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -855,19 +846,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
+      "researcher": "ghannyxploit404",
+      "researcherUrl": "https://github.com/ghannyxploit404",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:00 AM CDT",
-      "firstSeenAt": "2026-09-26T08:00:13Z",
+      "added": "11:35 PM CDT",
+      "firstSeenAt": "2026-09-30T04:35:37Z",
       "language": "Python",
-      "summary": "Unauthenticated arbitrary file upload in Addify Request a Quote for WooCommerce \u2264 2.9.2 via public AJAX afrfq_submit_quote_via_popup \u2014 unsafe move_uploaded_file() with attacker-controlled.php filenames into web-accessible RFQ.",
-      "technicalSummary": "Unauthenticated arbitrary file upload in Addify Request a Quote for WooCommerce \u2264 2.9.2 via public AJAX afrfq_submit_quote_via_popup \u2014 unsafe move_uploaded_file() with attacker-controlled.php filenames into web-accessible RFQ.",
-      "breakdown": "Unauthenticated arbitrary file upload in Addify Request a Quote for WooCommerce \u2264 2.9.2 via public AJAX afrfq_submit_quote_via_popup \u2014 unsafe move_uploaded_file() with attacker-controlled.php filenames into web-accessible RFQ.",
-      "whatBroke": "Unauthenticated arbitrary file upload in Addify Request a Quote for WooCommerce \u2264 2.9.2 via public AJAX afrfq_submit_quote_via_popup \u2014 unsafe move_uploaded_file() with attacker-controlled.php filenames into web-accessible RFQ.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-18143.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-18143\ncd CVE-2026-18143\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "single PoC for Unauth AFU (Arbitrary File Upload)",
+      "technicalSummary": "single PoC for Unauth AFU (Arbitrary File Upload)",
+      "breakdown": "single PoC for Unauth AFU (Arbitrary File Upload)",
+      "whatBroke": "single PoC for Unauth AFU (Arbitrary File Upload)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ghannyxploit404/CVE-2026-18143.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ghannyxploit404/CVE-2026-18143\ncd CVE-2026-18143\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -881,11 +872,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/murrez/CVE-2026-18143"
+          "https://github.com/ghannyxploit404/CVE-2026-18143"
         ],
         [
           "Vendor Advisory",
@@ -1082,68 +1073,6 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/browser/customer-reviews-woocommerce/tags/5.120.0/includes/reminders/class-cr-local-forms-ajax.php#L57"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-94130",
-      "title": "Unauthenticated SQL injection in Joomla YouTube Gallery (joomlaboat.com, com_youtubegallery) \u2264 5.7.2 \u2014 video.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-94130",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-94130"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:34 PM CDT",
-      "firstSeenAt": "2026-09-26T20:34:08Z",
-      "language": "Python",
-      "summary": "Unauthenticated SQL injection in Joomla YouTube Gallery (joomlaboat.com, com_youtubegallery) \u2264 5.7.2 \u2014 video search/sort on the public yg_api endpoint. Python check/exploit PoC for \u2014 PoCbit.",
-      "technicalSummary": "Unauthenticated SQL injection in Joomla YouTube Gallery (joomlaboat.com, com_youtubegallery) \u2264 5.7.2 \u2014 video search/sort on the public yg_api endpoint. Python check/exploit PoC for \u2014 PoCbit.",
-      "breakdown": "Unauthenticated SQL injection in Joomla YouTube Gallery (joomlaboat.com, com_youtubegallery) \u2264 5.7.2 \u2014 video search/sort on the public yg_api endpoint. Python check/exploit PoC for \u2014 PoCbit.",
-      "whatBroke": "Unauthenticated SQL injection in Joomla YouTube Gallery (joomlaboat.com, com_youtubegallery) \u2264 5.7.2 \u2014 video search/sort on the public yg_api endpoint. Python check/exploit PoC for \u2014 PoCbit.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-94130.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-94130\ncd CVE-2026-94130\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "SQLi"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-94130"
-        ],
-        [
-          "Vendor Advisory",
-          "https://joomlaboat.com/youtube-gallery"
         ]
       ]
     },
@@ -1418,72 +1347,69 @@
         [
           "GitHub",
           "https://github.com/686f6c61/POC-WP-CORE-CVE-2026-93485"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/wordpress/wordpress/vulnerability/wordpress-wordpress-wordpress-7-1-cross-site-scripting-xss-vulnerability?_s_id=cve"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-100740",
-      "title": "PoC: D-Link DIR-895L A1_102b07 L2TP Host Name AVP out-of-bounds write in tunnel_set_params (UDP 1701)..",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-78006",
+      "title": "The Events Calendar Wordpress Plugin Mass Exploit CVE-2026-78006 & CVE-2026-78159",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-100740",
+      "pocUrl": "https://github.com/antid00t/CVE-2026-78006-CVE-2026-78159",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "poc.py"
+          "tec.py"
         ],
-        "attackFiles": [
-          "poc.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-100740"
+          "CVE-2026-78006",
+          "CVE-2026-78159"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
+      "researcher": "antid00t",
+      "researcherUrl": "https://github.com/antid00t",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:40 AM CDT",
-      "firstSeenAt": "2026-09-27T05:40:35Z",
+      "added": "7:45 PM CDT",
+      "firstSeenAt": "2026-09-28T00:45:37Z",
       "language": "Python",
-      "summary": "PoC: D-Link DIR-895L A1_102b07 L2TP Host Name AVP out-of-bounds write in tunnel_set_params (UDP 1701). Device fingerprint + optional OOB trigger packet for authorized lab testing. https://pocbit.org/pocs/",
-      "technicalSummary": "PoC: D-Link DIR-895L A1_102b07 L2TP Host Name AVP out-of-bounds write in tunnel_set_params (UDP 1701). Device fingerprint + optional OOB trigger packet for authorized lab testing. https://pocbit.org/pocs/",
-      "breakdown": "PoC: D-Link DIR-895L A1_102b07 L2TP Host Name AVP out-of-bounds write in tunnel_set_params (UDP 1701). Device fingerprint + optional OOB trigger packet for authorized lab testing. https://pocbit.org/pocs/",
-      "whatBroke": "PoC: D-Link DIR-895L A1_102b07 L2TP Host Name AVP out-of-bounds write in tunnel_set_params (UDP 1701). Device fingerprint + optional OOB trigger packet for authorized lab testing. https://pocbit.org/pocs/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-100740.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-100740\ncd CVE-2026-100740\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "The Events Calendar Wordpress Plugin Mass Exploit & CVE-2026-78159",
+      "technicalSummary": "The Events Calendar Wordpress Plugin Mass Exploit & CVE-2026-78159",
+      "breakdown": "The Events Calendar Wordpress Plugin Mass Exploit & CVE-2026-78159",
+      "whatBroke": "The Events Calendar Wordpress Plugin Mass Exploit & CVE-2026-78159",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at antid00t/CVE-2026-78006-CVE-2026-78159.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/antid00t/CVE-2026-78006-CVE-2026-78159\ncd CVE-2026-78006-CVE-2026-78159\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "Memory Corruption"
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 74,
       "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/murrez/CVE-2026-100740"
+          "https://github.com/antid00t/CVE-2026-78006-CVE-2026-78159"
         ],
         [
           "Vendor Advisory",
-          "https://tzh00203.notion.site/D-Link-DIR-895L-L2TP-Host-Name-AVP-Out-of-Bounds-Write-33cb5c52018a8061b139cacc39d58fff"
+          "https://plugins.trac.wordpress.org/browser/the-events-calendar/tags/6.17.3/common/src/Tribe/Utils/Collection_Trait.php#L247"
         ]
       ]
     }
