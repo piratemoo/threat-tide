@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T18:20:04Z",
+  "updatedAt": "2026-10-02T22:55:23Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,6 +87,20 @@
   ],
   "research": [
     {
+      "title": "Horizon3 + CrowdStrike: Prove. Prioritize. Verify.",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/downloads/factsheets/horizon3-crowdstrike-integration/",
+      "summary": "Security teams have more vulnerability data than ever, but knowing a weakness exists isn\u2019t the same as knowing whether an attacker can actually exploit it. Horizon3 and CrowdStrike bring NodeZero\u00ae exploitability intelligence from autonomous pentesting into.",
+      "publishedAt": "2026-10-02T19:00:45Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "Integrate Aqua and Jira to Turn Security Findings Into Action",
       "source": "Aqua Nautilus",
       "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
@@ -101,6 +115,24 @@
       "tags": [
         "Web",
         "Webstack"
+      ]
+    },
+    {
+      "title": "How one squad at Sonar reviews AI-generated code: A look at our agentic workflow",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/how-one-squad-at-sonar-review-ai-code/",
+      "summary": "Verification is mandatory in the agentic era. Here is what that looks like inside Sonar. In episode 4 of The Next Commit , Sonar's podcast on how developers actually work with AI, host Tom Howlett sat down with Quentin Chevrin, a front-end developer on the.",
+      "publishedAt": "2026-10-02T13:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
       ]
     },
     {
@@ -259,44 +291,6 @@
       "topic": "research",
       "cves": [],
       "tags": []
-    },
-    {
-      "title": "ZDI-26-750: WatchGuard FireWare OS spamd statushdlr Stack-based Buffer Overflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-750/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of WatchGuard FireWare OS. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are assigned:.",
-      "publishedAt": "2026-09-30T05:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-18145"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-749: WatchGuard FireWare OS samld SAMLSession Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-749/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of WatchGuard FireWare OS. An attacker must first obtain the ability to write to the samld session directory on the target system in order to exploit this.",
-      "publishedAt": "2026-09-30T05:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-13046"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
@@ -581,138 +575,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-100721",
-      "title": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-100721",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "lab/poc.js",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "lab/poc.js",
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-100721"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:45 AM CDT",
-      "firstSeenAt": "2026-09-28T09:45:48Z",
-      "language": "Python",
-      "summary": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
-      "technicalSummary": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
-      "breakdown": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
-      "whatBroke": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-100721.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-100721\ncd CVE-2026-100721\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-100721"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/patriksimek/vm2/commit/6ac3916da84e060c403e407b6b6318fcc66b0e72"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-49869",
-      "title": "Kestra OSS OS Command Injection Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/EQSTLab/CVE-2026-49869",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "entrypoint.sh",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-49869"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "EQSTLab",
-      "researcherUrl": "https://github.com/EQSTLab",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:24 AM CDT",
-      "firstSeenAt": "2026-09-29T05:24:33Z",
-      "language": "Python",
-      "summary": "Kestra Unauthenticated RCE",
-      "technicalSummary": "Kestra Unauthenticated RCE",
-      "breakdown": "Kestra Unauthenticated RCE",
-      "whatBroke": "Kestra Unauthenticated RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at EQSTLab/CVE-2026-49869.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/EQSTLab/CVE-2026-49869\ncd CVE-2026-49869\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Kestra OSS",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/EQSTLab/CVE-2026-49869"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/kestra-io/kestra/security/advisories/GHSA-5vc5-wxxq-3fjx"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-86060",
       "title": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
       "ecosystem": "cloud",
@@ -903,134 +765,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-82901",
-      "title": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-82901",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-82901"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:11 PM CDT",
-      "firstSeenAt": "2026-09-26T21:11:27Z",
-      "language": "Python",
-      "summary": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF Generator is enabled \u2192 wp-content/uploads/uacf7-uploads/. Fix: 3.5.51+. https://pocbit.org/pocs/",
-      "technicalSummary": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF Generator is enabled \u2192 wp-content/uploads/uacf7-uploads/. Fix: 3.5.51+. https://pocbit.org/pocs/",
-      "breakdown": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF Generator is enabled \u2192 wp-content/uploads/uacf7-uploads/. Fix: 3.5.51+. https://pocbit.org/pocs/",
-      "whatBroke": "PoC: WordPress Ultra Addons for Contact Form 7 \u22643.5.50 unauth file upload via signature field when PDF Generator is enabled \u2192 wp-content/uploads/uacf7-uploads/. Fix: 3.5.51+. https://pocbit.org/pocs/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-82901.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-82901\ncd CVE-2026-82901\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-82901"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/ultimate-addons-for-contact-form-7/tags/3.5.48/addons/pdf-generator/pdf-generator.php#L608"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-85984",
-      "title": "PoC: WordPress miniOrange OTP \u22645.5.5 unauth admin bypass (mo_wp_login_intent=otp + empty password)..",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-85984",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-85984"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:25 PM CDT",
-      "firstSeenAt": "2026-09-28T04:25:20Z",
-      "language": "Python",
-      "summary": "PoC: WordPress miniOrange OTP \u22645.5.5 unauth admin bypass (mo_wp_login_intent=otp + empty password). Check/exploit, user enum, colored CLI. https://pocbit.org/pocs/",
-      "technicalSummary": "PoC: WordPress miniOrange OTP \u22645.5.5 unauth admin bypass (mo_wp_login_intent=otp + empty password). Check/exploit, user enum, colored CLI. https://pocbit.org/pocs/",
-      "breakdown": "PoC: WordPress miniOrange OTP \u22645.5.5 unauth admin bypass (mo_wp_login_intent=otp + empty password). Check/exploit, user enum, colored CLI. https://pocbit.org/pocs/",
-      "whatBroke": "PoC: WordPress miniOrange OTP \u22645.5.5 unauth admin bypass (mo_wp_login_intent=otp + empty password). Check/exploit, user enum, colored CLI. https://pocbit.org/pocs/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-85984.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-85984\ncd CVE-2026-85984\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-85984"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/miniorange-otp-verification/tags/5.5.5/includes/js/loginform.js#L176"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-76570",
       "title": "PoC (PoCbit) \u2014 Joomla JCTables (com_jctables) <1.21.1: unauth SQL read/write via front-end JSON API.",
       "ecosystem": "web",
@@ -1155,84 +889,6 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/changeset/3619572/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-93485",
-      "title": "Laboratorio pedag\u00f3gico de CVE-2026-93485 (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/686f6c61/POC-WP-CORE-CVE-2026-93485",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "cli/poc.py",
-          "docker-compose.yml",
-          "docker/wordpress/fetch-wordpress.sh",
-          "docker/wordpress/lab-entrypoint.sh",
-          "exploit/01_plant_comment.sh",
-          "exploit/02_admin_view.sh",
-          "exploit/03_demo_root_cause.php",
-          "exploit/04_payload_rce.js"
-        ],
-        "attackFiles": [
-          "cli/poc.py",
-          "exploit/01_plant_comment.sh",
-          "exploit/02_admin_view.sh",
-          "exploit/03_demo_root_cause.php",
-          "exploit/04_payload_rce.js",
-          "exploit/05_rce.sh",
-          "exploit/06_post_colaborador.sh",
-          "exploit/webshell/c2s-demo.php"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-93485"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "686f6c61",
-      "researcherUrl": "https://github.com/686f6c61",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:34 AM CDT",
-      "firstSeenAt": "2026-09-26T12:34:44Z",
-      "language": "Python",
-      "summary": "Laboratorio pedag\u00f3gico de (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda wpautop -> RCE, con demo del root cause auto-verificada, control 7.1.1 y la v\u00eda Post2Shell",
-      "technicalSummary": "Laboratorio pedag\u00f3gico de (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda wpautop -> RCE, con demo del root cause auto-verificada, control 7.1.1 y la v\u00eda Post2Shell",
-      "breakdown": "Laboratorio pedag\u00f3gico de (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda wpautop -> RCE, con demo del root cause auto-verificada, control 7.1.1 y la v\u00eda Post2Shell",
-      "whatBroke": "Laboratorio pedag\u00f3gico de (Comment2Shell): stored XSS no autenticado en WordPress core v\u00eda wpautop -> RCE, con demo del root cause auto-verificada, control 7.1.1 y la v\u00eda Post2Shell",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 686f6c61/POC-WP-CORE-CVE-2026-93485.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/686f6c61/POC-WP-CORE-CVE-2026-93485\ncd POC-WP-CORE-CVE-2026-93485\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/686f6c61/POC-WP-CORE-CVE-2026-93485"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/wordpress/wordpress/vulnerability/wordpress-wordpress-wordpress-7-1-cross-site-scripting-xss-vulnerability?_s_id=cve"
         ]
       ]
     },
