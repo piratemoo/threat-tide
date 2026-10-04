@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T17:26:22Z",
+  "updatedAt": "2026-10-04T22:17:32Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -364,75 +364,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-88772",
-      "title": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-88772",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-88772"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "watchTowr Labs",
-      "researcherUrl": "https://x.com/watchtowrcyber",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:19 AM CDT",
-      "firstSeenAt": "2026-10-04T08:19:25Z",
-      "language": "Python",
-      "summary": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
-      "technicalSummary": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/09/image-14.png\" class=\"kg-image\" alt=\"Here We Go Again (Citrix NetScaler DTLS Preauth Memory Overflow CVE-2026-88772)\".",
-      "breakdown": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/09/image-14.png\" class=\"kg-image\" alt=\"Here We Go Again (Citrix NetScaler DTLS Preauth Memory Overflow CVE-2026-88772)\".",
-      "whatBroke": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-88772.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-88772\ncd CVE-2026-88772\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed NetScaler",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-88772"
-        ],
-        [
-          "Technical Paper",
-          "https://labs.watchtowr.com/here-we-go-again-citrix-netscaler-dtls-preauth-memory-overflow-cve-2026-88772/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://community.citrix.com/techzone-blogs/110_security-updates/netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve-2026-88771-through-cve-2026-88778"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-87902",
       "title": "WordPress Core Remote File Inclusion Vulnerability",
       "ecosystem": "web",
@@ -640,70 +571,6 @@
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-76570",
-      "title": "PoC (PoCbit) \u2014 Joomla JCTables (com_jctables) <1.21.1: unauth SQL read/write via front-end JSON API.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-76570",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "_engine.py",
-          "_lab_test.py",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-76570"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:20 PM CDT",
-      "firstSeenAt": "2026-09-30T17:20:47Z",
-      "language": "Python",
-      "summary": "PoC (PoCbit) \u2014 Joomla JCTables (com_jctables) <1.21.1: unauth SQL read/write via front-end JSON API getdatarow/getrow (CVSS 4.0 10.0 AT:N). check + exploit + mass. https://www.cve.org/CVERecord?id=",
-      "technicalSummary": "PoC (PoCbit) \u2014 Joomla JCTables (com_jctables) <1.21.1: unauth SQL read/write via front-end JSON API getdatarow/getrow (CVSS 4.0 10.0 AT:N). check + exploit + mass. https://www.cve.org/CVERecord?id=",
-      "breakdown": "PoC (PoCbit) \u2014 Joomla JCTables (com_jctables) <1.21.1: unauth SQL read/write via front-end JSON API getdatarow/getrow (CVSS 4.0 10.0 AT:N). check + exploit + mass. https://www.cve.org/CVERecord?id=",
-      "whatBroke": "PoC (PoCbit) \u2014 Joomla JCTables (com_jctables) <1.21.1: unauth SQL read/write via front-end JSON API getdatarow/getrow (CVSS 4.0 10.0 AT:N). check + exploit + mass. https://www.cve.org/CVERecord?id=",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-76570.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-76570\ncd CVE-2026-76570\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-76570"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.joomcode.com/"
         ]
       ]
     },
@@ -1020,72 +887,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62735"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-102425",
-      "title": "PoC (PoCbit) \u2014 Joomla Balbooa Forms (com_baforms) <2.4.3.4 unauth RCE via field shortcode injection in.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-102425",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "_engine.py",
-          "poc.py",
-          "up.php"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-102425"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:00 AM CDT",
-      "firstSeenAt": "2026-09-30T08:00:21Z",
-      "language": "Python",
-      "summary": "PoC (PoCbit) \u2014 Joomla Balbooa Forms (com_baforms) <2.4.3.4 unauth RCE via field shortcode injection in post-submission PHP eval(). check + exploit + mass bulk. https://pocbit.org/pocs/",
-      "technicalSummary": "PoC (PoCbit) \u2014 Joomla Balbooa Forms (com_baforms) <2.4.3.4 unauth RCE via field shortcode injection in post-submission PHP eval(). check + exploit + mass bulk. https://pocbit.org/pocs/",
-      "breakdown": "PoC (PoCbit) \u2014 Joomla Balbooa Forms (com_baforms) <2.4.3.4 unauth RCE via field shortcode injection in post-submission PHP eval(). check + exploit + mass bulk. https://pocbit.org/pocs/",
-      "whatBroke": "PoC (PoCbit) \u2014 Joomla Balbooa Forms (com_baforms) <2.4.3.4 unauth RCE via field shortcode injection in post-submission PHP eval(). check + exploit + mass bulk. https://pocbit.org/pocs/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-102425.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-102425\ncd CVE-2026-102425\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-102425"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.balbooa.com/"
         ]
       ]
     }
