@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T08:50:28Z",
+  "updatedAt": "2026-10-05T21:13:52Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,39 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Secure Your Mission-Critical Application Estate: Qualys TotalAppSec is Now FedRAMP High Authorized (FedRAMP Certified Class D)",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/10/05/totalappsec-fedramp-high-federal-application-security",
+      "summary": "Key Takeaways Qualys TotalAppSec is now FedRAMP High Authorized on the Qualys Government Platform (FedRAMP Certified Class D, package FR2231052341). Federal AI use cases more than doubled in a year (3,611 use cases across 56 agencies), and most AI.",
+      "publishedAt": "2026-10-05T16:29:39Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "exchange",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "Exchange"
+      ]
+    },
+    {
+      "title": "Behind the tags: How Elastic SIEM grades 1,781 detection rules on noise, speed, and threat coverage",
+      "source": "Elastic Security Labs",
+      "sourceUrl": "https://www.elastic.co/security-labs",
+      "url": "https://www.elastic.co/security-labs/threat-command/elastic-siem-detection-rule-tags",
+      "summary": "Of Elastic's 2100+ prebuilt detection rules , 385 are tagged Profile: Recommended and 296 are tagged Aggressive . The rest (62% of the list) are deliberately left untagged. Prebuilt rule now carries tags like Noise: Low , Performance: Fast , and Profile:.",
+      "publishedAt": "2026-10-05T00:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing"
+      ]
+    },
     {
       "title": "Horizon3 + CrowdStrike: Prove. Prioritize. Verify.",
       "source": "Horizon3 Attack Team",
@@ -260,109 +293,9 @@
         "Cloud",
         "VPN Edge"
       ]
-    },
-    {
-      "title": "China-nexus UAT-11587 targets government and policy organizations across Asia with Antino backdoor",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/china-nexus-uat-11587-targets-government-and-policy-organizations-across-asia-with-antino-backdoor/",
-      "summary": "Cisco Talos uncovered a cluster of activity we track as UAT-11587 targeting government and policy organizations across Asia, including in Taiwan, India, the Philippines, and Cambodia, to deliver a previously undocumented backdoor referred to as \u201cAntino\u201d in.",
-      "publishedAt": "2026-09-30T10:00:01Z",
-      "dayOffset": 5,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Horizon3\u2019s Tales from the Trenches: Anthropic\u2019s Mythos and Rejetto HFS",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/disclosures/anthropic-mythos-rejetto-hfs-rce/",
-      "summary": "Anthropic started Project Glasswing with the mission of securing the world\u2019s most critical software. Since joining the project in July of 2026, Horizon3 has used Anthropic\u2019s Mythos model in its vulnerability research pipelines to discover many critical.",
-      "publishedAt": "2026-09-30T10:00:00Z",
-      "dayOffset": 5,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": []
     }
   ],
   "vulns": [
-    {
-      "cve": "CVE-2026-86950",
-      "title": "Apple Multiple Products Out-of-Bounds Write Vulnerability",
-      "ecosystem": "ios",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/msuiche/hotcell",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          ".github/workflows/ci.yml",
-          "assets/default.yaml",
-          "assets/hotcell_agent.js",
-          "build.rs",
-          "src/cli.rs",
-          "src/events.rs",
-          "src/lib.rs",
-          "src/live.rs"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-86950"
-        ],
-        "language": "Rust"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "msuiche",
-      "researcherUrl": "https://github.com/msuiche",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:13 PM CDT",
-      "firstSeenAt": "2026-10-01T18:13:27Z",
-      "language": "Rust",
-      "summary": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
-      "technicalSummary": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
-      "breakdown": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
-      "whatBroke": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at msuiche/hotcell.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/msuiche/hotcell\ncd hotcell\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Multiple Products",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "iOS",
-        "Mobile",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/msuiche/hotcell"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/149226"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-87902",
       "title": "WordPress Core Remote File Inclusion Vulnerability",
@@ -508,6 +441,75 @@
       ]
     },
     {
+      "cve": "CVE-2026-86950",
+      "title": "Apple Multiple Products Out-of-Bounds Write Vulnerability",
+      "ecosystem": "ios",
+      "category": "mobile",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/msuiche/hotcell",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          ".github/workflows/ci.yml",
+          "assets/default.yaml",
+          "assets/hotcell_agent.js",
+          "build.rs",
+          "src/cli.rs",
+          "src/events.rs",
+          "src/lib.rs",
+          "src/live.rs"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-86950"
+        ],
+        "language": "Rust"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "msuiche",
+      "researcherUrl": "https://github.com/msuiche",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:13 PM CDT",
+      "firstSeenAt": "2026-10-01T18:13:27Z",
+      "language": "Rust",
+      "summary": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
+      "technicalSummary": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
+      "breakdown": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
+      "whatBroke": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at msuiche/hotcell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/msuiche/hotcell\ncd hotcell\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Multiple Products",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "iOS",
+        "Mobile",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/msuiche/hotcell"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.apple.com/en-us/149226"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-63030",
       "title": "WordPress Core Interpretation Conflict Vulnerability",
       "ecosystem": "web",
@@ -636,6 +638,71 @@
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-39987",
+      "title": "Marimo Remote Code Execution Vulnerability",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-39987-Marimo-RCE",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "CVE-2026-39987.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-39987.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-39987"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Industri4l-H3ll-Xpl0it3rs",
+      "researcherUrl": "https://github.com/Industri4l-H3ll-Xpl0it3rs",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "10:48 AM CDT",
+      "firstSeenAt": "2026-10-05T15:48:26Z",
+      "language": "Python",
+      "summary": "Exploit | by infrar3d",
+      "technicalSummary": "Exploit | by infrar3d",
+      "breakdown": "Exploit | by infrar3d",
+      "whatBroke": "Exploit | by infrar3d",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Industri4l-H3ll-Xpl0it3rs/CVE-2026-39987-Marimo-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-39987-Marimo-RCE\ncd CVE-2026-39987-Marimo-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Marimo",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-39987-Marimo-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
         ]
       ]
     },
@@ -830,72 +897,6 @@
         [
           "Vendor Advisory",
           "https://plugins.trac.wordpress.org/changeset/3619572/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-100721",
-      "title": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-100721",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "lab/poc.js",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "lab/poc.js",
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-100721"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:50 AM CDT",
-      "firstSeenAt": "2026-10-05T08:50:28Z",
-      "language": "Python",
-      "summary": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
-      "technicalSummary": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
-      "breakdown": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
-      "whatBroke": "PoC: vm2 <3.12.2 NodeVM external allowlist bypass \u2192 sandbox escape / host RCE. Local Node lab (evil-left-pad), remote sandbox API mass exploit, colorful CLI. PoCbit \u2014 https://pocbit.org/pocs/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-100721.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-100721\ncd CVE-2026-100721\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-100721"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/patriksimek/vm2/commit/6ac3916da84e060c403e407b6b6318fcc66b0e72"
         ]
       ]
     },
