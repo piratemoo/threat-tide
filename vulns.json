@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T18:52:18Z",
+  "updatedAt": "2026-10-06T22:57:38Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -291,42 +291,44 @@
   ],
   "vulns": [
     {
-      "cve": "CVE-2026-87902",
-      "title": "WordPress Core Remote File Inclusion Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
+      "cve": "CVE-2026-39808",
+      "title": "Fortinet FortiSandbox OS Command Injection Vulnerability",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/tonydelouvre/CVE-2026-87902",
+      "pocUrl": "https://github.com/gotr00t0day/CVE-2026-39808",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "xwp_gui.py"
+          "CVE-2026-39808.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "CVE-2026-39808.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-87902"
+          "CVE-2026-39808"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "tonydelouvre",
-      "researcherUrl": "https://github.com/tonydelouvre",
+      "researcher": "gotr00t0day",
+      "researcherUrl": "https://github.com/gotr00t0day",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:52 AM CDT",
-      "firstSeenAt": "2026-10-06T08:52:11Z",
+      "added": "10:50 AM CDT",
+      "firstSeenAt": "2026-10-03T15:50:23Z",
       "language": "Python",
-      "summary": "XWP_RCE \u2014 Hacker Console",
-      "technicalSummary": "XWP_RCE \u2014 Hacker Console",
-      "breakdown": "XWP_RCE \u2014 Hacker Console",
-      "whatBroke": "XWP_RCE \u2014 Hacker Console",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at tonydelouvre/CVE-2026-87902.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/tonydelouvre/CVE-2026-87902\ncd CVE-2026-87902\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "An unauthenticated OS command injection vulnerability",
+      "technicalSummary": "An unauthenticated OS command injection vulnerability",
+      "breakdown": "An unauthenticated OS command injection vulnerability",
+      "whatBroke": "An unauthenticated OS command injection vulnerability",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at gotr00t0day/CVE-2026-39808.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/gotr00t0day/CVE-2026-39808\ncd CVE-2026-39808\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Core",
+        "initial access through exposed FortiSandbox",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -334,22 +336,22 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Webstack",
+        "Cloud",
+        "VPN Edge",
         "RCE",
         "KEV"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/tonydelouvre/CVE-2026-87902"
+          "https://github.com/gotr00t0day/CVE-2026-39808"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp"
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
         ]
       ]
     },
@@ -419,6 +421,73 @@
         [
           "Vendor Advisory",
           "https://support.apple.com/en-us/149226"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "title": "WordPress Core Interpretation Conflict Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/hitechcloud-vietnam/wp2shell-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exp.py",
+          "wp2shell.py"
+        ],
+        "attackFiles": [
+          "exp.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "hitechcloud-vietnam",
+      "researcherUrl": "https://github.com/hitechcloud-vietnam",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "1:47 PM CDT",
+      "firstSeenAt": "2026-10-03T18:47:36Z",
+      "language": "Python",
+      "summary": "& CVE-2026-60137 RCE chain proof-of-concept",
+      "technicalSummary": "& CVE-2026-60137 RCE chain proof-of-concept",
+      "breakdown": "& CVE-2026-60137 RCE chain proof-of-concept",
+      "whatBroke": "& CVE-2026-60137 RCE chain proof-of-concept",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hitechcloud-vietnam/wp2shell-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hitechcloud-vietnam/wp2shell-PoC\ncd wp2shell-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 81,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/hitechcloud-vietnam/wp2shell-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
         ]
       ]
     },
@@ -494,6 +563,73 @@
       ]
     },
     {
+      "cve": "CVE-2026-60137",
+      "title": "WordPress Core SQL Injection Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/hitechcloud-vietnam/wp2shell-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exp.py",
+          "wp2shell.py"
+        ],
+        "attackFiles": [
+          "exp.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "hitechcloud-vietnam",
+      "researcherUrl": "https://github.com/hitechcloud-vietnam",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:47 PM CDT",
+      "firstSeenAt": "2026-10-03T18:47:36Z",
+      "language": "Python",
+      "summary": "& RCE chain proof-of-concept",
+      "technicalSummary": "& RCE chain proof-of-concept",
+      "breakdown": "& RCE chain proof-of-concept",
+      "whatBroke": "& RCE chain proof-of-concept",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hitechcloud-vietnam/wp2shell-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hitechcloud-vietnam/wp2shell-PoC\ncd wp2shell-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 77,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/hitechcloud-vietnam/wp2shell-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-39987",
       "title": "Marimo Remote Code Execution Vulnerability",
       "ecosystem": "cloud",
@@ -555,6 +691,140 @@
         [
           "Vendor Advisory",
           "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-96349",
+      "title": "\u2014 WordPress SiteSkite plugin \u22642.1.8 unauthenticated RCE (CVSS 10.0, CWE-94). PoCbit mass-exploit PoC: legacy.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/murrez/CVE-2026-96349",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "_engine.py",
+          "poc.py",
+          "up.php"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-96349"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "murrez",
+      "researcherUrl": "https://github.com/murrez",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:23 PM CDT",
+      "firstSeenAt": "2026-10-01T04:23:00Z",
+      "language": "Python",
+      "summary": "Unauthenticated Remote Code Execution (RCE) in SiteSkite <= 2.1.8 versions.",
+      "technicalSummary": "Unauthenticated Remote Code Execution (RCE) in SiteSkite <= 2.1.8 versions.",
+      "breakdown": "Unauthenticated Remote Code Execution (RCE) in SiteSkite <= 2.1.8 versions.",
+      "whatBroke": "Unauthenticated Remote Code Execution (RCE) in SiteSkite <= 2.1.8 versions.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-96349.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-96349\ncd CVE-2026-96349\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/murrez/CVE-2026-96349"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/siteskite/vulnerability/wordpress-siteskite-plugin-2-1-8-remote-code-execution-rce-vulnerability?_s_id=cve"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-103956",
+      "title": "Loom for AWS - Critical - Auth bypass - unauthenticated super-admin when no IdP is configured",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/abraxas/cve-2026-103956-loom-unauth",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "cve-2026-103956-loom-unauth-Abraxas-Labs.py",
+          "lab/docker-compose.yml",
+          "lab/poc.py",
+          "lab/run.sh"
+        ],
+        "attackFiles": [
+          "cve-2026-103956-loom-unauth-Abraxas-Labs.py",
+          "lab/poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-103956"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "abraxas",
+      "researcherUrl": "https://github.com/abraxas",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:54 PM CDT",
+      "firstSeenAt": "2026-10-03T21:54:10Z",
+      "language": "Python",
+      "summary": "Loom for AWS - Critical - Auth bypass - unauthenticated super-admin when no IdP is configured",
+      "technicalSummary": "Loom for AWS - Critical - Auth bypass - unauthenticated super-admin when no IdP is configured",
+      "breakdown": "Loom for AWS - Critical - Auth bypass - unauthenticated super-admin when no IdP is configured",
+      "whatBroke": "Loom for AWS - Critical - Auth bypass - unauthenticated super-admin when no IdP is configured",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at abraxas/cve-2026-103956-loom-unauth.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/abraxas/cve-2026-103956-loom-unauth\ncd cve-2026-103956-loom-unauth\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/abraxas/cve-2026-103956-loom-unauth"
+        ],
+        [
+          "Vendor Advisory",
+          "https://aws.amazon.com/security/security-bulletins/2026-124-aws/"
         ]
       ]
     },
@@ -1005,19 +1275,15 @@
         [
           "GitHub",
           "https://github.com/AlanNewberry/CVE-2026-4480-samba-print-command-injection-rce"
-        ],
-        [
-          "Vendor Advisory",
-          "https://access.redhat.com/errata/RHSA-2026:22644"
         ]
       ]
     },
     {
       "cve": "CVE-2026-42589",
       "title": "Gotenberg RCE Chain \u2014 CVE-2026-42589 + CVE-2026-40281",
-      "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "high",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/HackfutSecRoot/-GOTENBERG-RCE-CHAIN",
       "pocValidation": {
@@ -1055,12 +1321,13 @@
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Kubernetes",
+        "Cloud",
+        "Webstack",
         "RCE"
       ],
       "confidence": 98,
@@ -1070,18 +1337,14 @@
         [
           "GitHub",
           "https://github.com/HackfutSecRoot/-GOTENBERG-RCE-CHAIN"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/gotenberg/gotenberg/security/advisories/GHSA-rqgh-gxv4-6657"
         ]
       ]
     },
     {
       "cve": "CVE-2026-52993",
       "title": "\u2014 reproduction",
-      "ecosystem": "linux",
-      "category": "kernel",
+      "ecosystem": "cloud",
+      "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
       "pocUrl": "https://github.com/CaptainAI-Labs/CaptainAI-LPE-CVE-2026-52993",
@@ -1122,21 +1385,21 @@
       "added": "5:12 AM CDT",
       "firstSeenAt": "2026-09-30T10:12:29Z",
       "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: tipc: fix double-free in tipc_buf_append() tipc_msg_validate() can potentially reallocate the skb it is validating, freeing the old one. In tipc_buf_append(),.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: tipc: fix double-free in tipc_buf_append() tipc_msg_validate() can potentially reallocate the skb it is validating, freeing the old one. In tipc_buf_append(),.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: tipc: fix double-free in tipc_buf_append() tipc_msg_validate() can potentially reallocate the skb it is validating, freeing the old one. In tipc_buf_append(),.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: tipc: fix double-free in tipc_buf_append() tipc_msg_validate() can potentially reallocate the skb it is validating, freeing the old one. In tipc_buf_append(),.",
+      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
+      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
       "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CaptainAI-Labs/CaptainAI-LPE-CVE-2026-52993.",
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CaptainAI-Labs/CaptainAI-LPE-CVE-2026-52993\ncd CaptainAI-LPE-CVE-2026-52993\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kernel",
+        "Cloud",
+        "Webstack",
         "Exploit"
       ],
       "confidence": 98,
@@ -1146,10 +1409,66 @@
         [
           "GitHub",
           "https://github.com/CaptainAI-Labs/CaptainAI-LPE-CVE-2026-52993"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-55559",
+      "title": "Unauthenticated RCE in Yamcs mission control via YAML injection in reconfigureInstance()",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/MRdark-ops/CVE-2026-55559",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
         ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-55559"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "MRdark-ops",
+      "researcherUrl": "https://github.com/MRdark-ops",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:30 AM CDT",
+      "firstSeenAt": "2026-10-02T14:30:25Z",
+      "language": "Python",
+      "summary": "Unauthenticated RCE in Yamcs mission control via YAML injection in reconfigureInstance()",
+      "technicalSummary": "Unauthenticated RCE in Yamcs mission control via YAML injection in reconfigureInstance()",
+      "breakdown": "Unauthenticated RCE in Yamcs mission control via YAML injection in reconfigureInstance()",
+      "whatBroke": "Unauthenticated RCE in Yamcs mission control via YAML injection in reconfigureInstance()",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MRdark-ops/CVE-2026-55559.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MRdark-ops/CVE-2026-55559\ncd CVE-2026-55559\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
         [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/0274f24485fc38032d4093e463dc3ff5c7a667c9"
+          "GitHub",
+          "https://github.com/MRdark-ops/CVE-2026-55559"
         ]
       ]
     }
