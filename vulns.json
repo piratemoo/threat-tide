@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T19:17:41Z",
+  "updatedAt": "2026-10-08T08:48:30Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,13 +87,37 @@
   ],
   "research": [
     {
+      "title": "Microsoft, Adobe, Apple, and Foxit vulnerabilities",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/microsoft-adobe-apple-and-foxit-vulnerabilities/",
+      "summary": "Cisco Talos\u2019 Vulnerability Discovery & Research team recently disclosed vulnerabilities in Adobe, Apple, Foxit Reader, and Microsoft. The vulnerabilities mentioned in this blog post have been patched by their respective vendors, in adherence to Cisco\u2019s.",
+      "publishedAt": "2026-10-07T19:27:08Z",
+      "dayOffset": 1,
+      "ecosystem": "windows",
+      "category": "kernel",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-48388",
+        "CVE-2026-49177",
+        "CVE-2026-50475",
+        "CVE-2026-57256",
+        "CVE-2026-58613"
+      ],
+      "tags": [
+        "Windows",
+        "Kernel",
+        "RCE"
+      ]
+    },
+    {
       "title": "One breach, please, and make no mistakes",
       "source": "Cisco Talos",
       "sourceUrl": "https://blog.talosintelligence.com/",
       "url": "https://blog.talosintelligence.com/one-breach-please-and-make-no-mistakes/",
       "summary": "For some time now, the cybersecurity community has seen examples of autonomous agents, built inside AI labs, attacking public infrastructure (to name a few, Hugging Face , DSEWiki , and RubyGems ). Of course, frontier labs have built-in security to prevent.",
       "publishedAt": "2026-10-07T10:00:25Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -110,7 +134,7 @@
       "url": "https://horizon3.ai/attack-research/disclosures/cve-2026-102489-zammad-session-leak-rce/",
       "summary": "On 24 September 2026, the Dutch Institute for Vulnerability Disclosure (DIVD) announced publicly that they had suffered a security incident and had attributed it to an \u201cagentic AI powered attack\u201d given the forensic artifacts they discovered during the.",
       "publishedAt": "2026-10-07T10:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -130,7 +154,7 @@
       "url": "https://cofense.com/blog/from-guest-complaints-to-malware-blockchain-abuse-targets-hotels",
       "summary": "By: Kahng An, Intelligence Team Cofense Intelligence has been tracking a series of email campaigns that target the accommodation industry with fake guest complaints or reviews that deliver blockchain technology-abusing malware. These emails appear to likely.",
       "publishedAt": "2026-10-07T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "webstack",
       "topic": "phishing",
@@ -149,7 +173,7 @@
       "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-21589/",
       "summary": "CVE-2026-21589 allows unauthenticated remote attackers to read specific files within the web application root directory of affected Atlassian products. Attackers must know the exact filename and path, and cannot list directory contents. Sensitive information.",
       "publishedAt": "2026-10-06T23:15:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -169,7 +193,7 @@
       "url": "https://labs.watchtowr.com/you-wont-hear-about-these-even-in-myths-atlassian-jira-confluence-and-more-pre-auth-arbitrary-file-read-cve-2026-21589/",
       "summary": "Welcome back to yet another episode of \"security was taken seriously\". Being who we are (and constantly being exposed to what we see\u2026), we recognize we have been doomed to eternal damnation as we keep on watching security best practices crumble behind.",
       "publishedAt": "2026-10-06T17:01:36Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "devops",
       "topic": "research",
@@ -189,7 +213,7 @@
       "url": "https://www.aquasec.com/blog/can-vulnerability-scanning-tell-you-what-youre-exposed-to-right-now/",
       "summary": "TL;DR: Scan results show what is exposed right now only if you can rescan the moment risk changes, and most tools still wait for the next scheduled cycle. Aqua real time scanning lets teams start an on demand scan from the Aqua Hub or API, rescan only what.",
       "publishedAt": "2026-10-06T13:00:53Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -206,7 +230,7 @@
       "url": "https://bishopfox.com/blog/why-ai-attack-surface-extends-your-stack",
       "summary": "Integrating AI into enterprise applications creates risk across every layer of the stack, not just the model. This post maps the full AI attack surface, shows how a prompt injection can chain into credential theft and cross-tenant data exposure, and explains.",
       "publishedAt": "2026-10-06T13:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -222,7 +246,7 @@
       "url": "https://www.sonarsource.com/blog/sonar-vortex-is-now-available-on-sonarqube-server/",
       "summary": "Overview Most teams running SonarQube Server already have software developers using coding agents. What they do not have is a way to say what standard those agents are working to. Each AI agent gets its context from whatever instruction file somebody wrote.",
       "publishedAt": "2026-10-06T13:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -240,7 +264,7 @@
       "url": "https://projectzero.google/2026/10/emergency-patching.html",
       "summary": "Project Zero often works with software vendors to remediate the vulnerabilities we report and provide broader guidance on making software more secure. Some vendors express concern about potential scenarios in which they are unable to fix vulnerabilities that.",
       "publishedAt": "2026-10-06T07:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -251,30 +275,13 @@
       ]
     },
     {
-      "title": "Secure Your Mission-Critical Application Estate: Qualys TotalAppSec is Now FedRAMP High Authorized (FedRAMP Certified Class D)",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/product-tech/2026/10/05/totalappsec-fedramp-high-federal-application-security",
-      "summary": "Key Takeaways Qualys TotalAppSec is now FedRAMP High Authorized on the Qualys Government Platform (FedRAMP Certified Class D, package FR2231052341). Federal AI use cases more than doubled in a year (3,611 use cases across 56 agencies), and most AI.",
-      "publishedAt": "2026-10-05T16:29:39Z",
-      "dayOffset": 2,
-      "ecosystem": "windows",
-      "category": "exchange",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Windows",
-        "Exchange"
-      ]
-    },
-    {
       "title": "Behind the tags: How Elastic SIEM grades 1,781 detection rules on noise, speed, and threat coverage",
       "source": "Elastic Security Labs",
       "sourceUrl": "https://www.elastic.co/security-labs",
       "url": "https://www.elastic.co/security-labs/threat-command/elastic-siem-detection-rule-tags",
       "summary": "Of Elastic's 2100+ prebuilt detection rules , 385 are tagged Profile: Recommended and 296 are tagged Aggressive . The rest (62% of the list) are deliberately left untagged. Prebuilt rule now carries tags like Noise: Low , Performance: Fast , and Profile:.",
       "publishedAt": "2026-10-05T00:00:00Z",
-      "dayOffset": 3,
+      "dayOffset": 4,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -290,7 +297,7 @@
       "url": "https://horizon3.ai/downloads/factsheets/horizon3-crowdstrike-integration/",
       "summary": "Security teams have more vulnerability data than ever, but knowing a weakness exists isn\u2019t the same as knowing whether an attacker can actually exploit it. Horizon3 and CrowdStrike bring NodeZero\u00ae exploitability intelligence from autonomous pentesting into.",
       "publishedAt": "2026-10-02T19:00:45Z",
-      "dayOffset": 5,
+      "dayOffset": 6,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -332,8 +339,8 @@
       "researcherUrl": "https://github.com/msuiche",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:13 PM CDT",
-      "firstSeenAt": "2026-10-01T18:13:27Z",
+      "added": "3:48 AM CDT",
+      "firstSeenAt": "2026-10-08T08:48:30Z",
       "language": "Rust",
       "summary": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
       "technicalSummary": "Runtime exploit monitor for Apple document/image pipelines (iOS/macOS) \u2014 EXPMON concept: Frida agent + behavioral rules. First target: the glyph chain.",
@@ -356,7 +363,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -365,71 +372,6 @@
         [
           "Vendor Advisory",
           "https://support.apple.com/en-us/149226"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-10520",
-      "title": "Ivanti Sentry OS Command Injection Vulnerability",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/01xJB/CVE-2026-10520-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-10520"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "01xJB",
-      "researcherUrl": "https://github.com/01xJB",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:21 AM CDT",
-      "firstSeenAt": "2026-10-07T14:21:59Z",
-      "language": "Python",
-      "summary": "Exploit for | Ivanti Sentry - OS Command Injection",
-      "technicalSummary": "Exploit for | Ivanti Sentry - OS Command Injection",
-      "breakdown": "Exploit for | Ivanti Sentry - OS Command Injection",
-      "whatBroke": "Exploit for | Ivanti Sentry - OS Command Injection",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 01xJB/CVE-2026-10520-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/01xJB/CVE-2026-10520-POC\ncd CVE-2026-10520-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Sentry",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/01xJB/CVE-2026-10520-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
         ]
       ]
     },
@@ -488,7 +430,7 @@
       ],
       "confidence": 98,
       "weaponization": 81,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -497,6 +439,71 @@
         [
           "Vendor Advisory",
           "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-10520",
+      "title": "Ivanti Sentry OS Command Injection Vulnerability",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/01xJB/CVE-2026-10520-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-10520"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "01xJB",
+      "researcherUrl": "https://github.com/01xJB",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "9:21 AM CDT",
+      "firstSeenAt": "2026-10-07T14:21:59Z",
+      "language": "Python",
+      "summary": "Exploit for | Ivanti Sentry - OS Command Injection",
+      "technicalSummary": "Exploit for | Ivanti Sentry - OS Command Injection",
+      "breakdown": "Exploit for | Ivanti Sentry - OS Command Injection",
+      "whatBroke": "Exploit for | Ivanti Sentry - OS Command Injection",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 01xJB/CVE-2026-10520-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/01xJB/CVE-2026-10520-POC\ncd CVE-2026-10520-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Sentry",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/01xJB/CVE-2026-10520-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
         ]
       ]
     },
@@ -555,7 +562,7 @@
       ],
       "confidence": 98,
       "weaponization": 77,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -620,7 +627,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -658,8 +665,8 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:22 AM CDT",
-      "firstSeenAt": "2026-10-01T10:22:10Z",
+      "added": "3:48 AM CDT",
+      "firstSeenAt": "2026-10-08T08:48:30Z",
       "language": "Java",
       "summary": "Reproducer for (Apache Camel Quarkus camel-quarkus-support-xalan drops the JAXP external access restrictions, XXE / SSRF) \u2014 Camel Quarkus",
       "technicalSummary": "Reproducer for (Apache Camel Quarkus camel-quarkus-support-xalan drops the JAXP external access restrictions, XXE / SSRF) \u2014 Camel Quarkus",
@@ -680,7 +687,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -744,7 +751,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -814,7 +821,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -878,7 +885,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -940,7 +947,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -949,197 +956,6 @@
         [
           "Vendor Advisory",
           "https://blog.qualys.com/vulnerabilities-threat-research/2026/03/17/cve-2026-3888-important-snap-flaw-enables-local-privilege-escalation-to-root"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-42589",
-      "title": "Gotenberg RCE Chain \u2014 CVE-2026-42589 + CVE-2026-40281",
-      "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/HackfutSecRoot/-GOTENBERG-RCE-CHAIN",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "auto_revshell.py",
-          "gotenberg_rce.py"
-        ],
-        "attackFiles": [
-          "gotenberg_rce.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-40281",
-          "CVE-2026-42589"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "HackfutSecRoot",
-      "researcherUrl": "https://github.com/HackfutSecRoot",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:40 PM CDT",
-      "firstSeenAt": "2026-10-03T21:40:17Z",
-      "language": "Python",
-      "summary": "Gotenberg RCE Chain \u2014 + CVE-2026-40281",
-      "technicalSummary": "Gotenberg RCE Chain \u2014 + CVE-2026-40281",
-      "breakdown": "Gotenberg RCE Chain \u2014 + CVE-2026-40281",
-      "whatBroke": "Gotenberg RCE Chain \u2014 + CVE-2026-40281",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at HackfutSecRoot/-GOTENBERG-RCE-CHAIN.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/HackfutSecRoot/-GOTENBERG-RCE-CHAIN\ncd -GOTENBERG-RCE-CHAIN\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Kubernetes",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 75,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/HackfutSecRoot/-GOTENBERG-RCE-CHAIN"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/gotenberg/gotenberg/security/advisories/GHSA-rqgh-gxv4-6657"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-92592",
-      "title": "Proof of concept for CVE-2026-92592: Craft CMS authenticated RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/godylockz/CVE-2026-92592",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "craftcms_rce.py"
-        ],
-        "attackFiles": [
-          "craftcms_rce.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-92592"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "godylockz",
-      "researcherUrl": "https://github.com/godylockz",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:29 AM CDT",
-      "firstSeenAt": "2026-10-03T06:29:20Z",
-      "language": "Python",
-      "summary": "Proof of concept for Craft CMS authenticated RCE",
-      "technicalSummary": "Proof of concept for Craft CMS authenticated RCE",
-      "breakdown": "Proof of concept for Craft CMS authenticated RCE",
-      "whatBroke": "Proof of concept for Craft CMS authenticated RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at godylockz/CVE-2026-92592.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/godylockz/CVE-2026-92592\ncd CVE-2026-92592\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/godylockz/CVE-2026-92592"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/craftcms/cms/security/advisories/GHSA-5r92-75j8-c534"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-105080",
-      "title": "2026 105080",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/beyavuz/cve-2026-105080-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-105080"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "beyavuz",
-      "researcherUrl": "https://github.com/beyavuz",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:17 AM CDT",
-      "firstSeenAt": "2026-10-06T10:17:40Z",
-      "language": "Python",
-      "summary": "In ConvertX before 0.19.0, converters/calibre.ts does not block recipe files, and instead passes them to the ebook-convert program from Calibre. This affects executable code in a.recipe or.downloaded_recipe file.",
-      "technicalSummary": "In ConvertX before 0.19.0, converters/calibre.ts does not block recipe files, and instead passes them to the ebook-convert program from Calibre. This affects executable code in a.recipe or.downloaded_recipe file.",
-      "breakdown": "In ConvertX before 0.19.0, converters/calibre.ts does not block recipe files, and instead passes them to the ebook-convert program from Calibre. This affects executable code in a.recipe or.downloaded_recipe file.",
-      "whatBroke": "In ConvertX before 0.19.0, converters/calibre.ts does not block recipe files, and instead passes them to the ebook-convert program from Calibre. This affects executable code in a.recipe or.downloaded_recipe file.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at beyavuz/cve-2026-105080-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/beyavuz/cve-2026-105080-poc\ncd cve-2026-105080-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/beyavuz/cve-2026-105080-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/C4illin/ConvertX/commit/0ca17dad7fa65e2e34823b59b95dd00bb1066b66"
         ]
       ]
     }
