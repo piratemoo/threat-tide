@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T08:52:12Z",
+  "updatedAt": "2026-10-09T18:44:35Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,62 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Death By A Thousand PaperCuts (PaperCut Pre-Auth RCE Chain and Patch Bypasses WT-2026-0141-0144/CVE-2026-82077/CVE-2026-82078/CVE-2026-81578)",
+      "source": "watchTowr Labs",
+      "sourceUrl": "https://x.com/watchtowrcyber",
+      "url": "https://labs.watchtowr.com/death-by-a-thousand-papercuts-papercut-pre-auth-rce-chain-and-patch-bypasses-wt-2026-0141-0144-cve-2026-82077-cve-2026-82078-cve-2026-81578/",
+      "summary": "Before we begin, yes - it's confusing. There are more vulnerabilities with watchTowr IDs in this blog post than there are CVE IDs (assigned by PaperCut), due to PaperCut bundling vulnerabilities and then patch bypasses for those same vulnerabilities into.",
+      "publishedAt": "2026-10-09T17:31:14Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2023-27350",
+        "CVE-2023-27351",
+        "CVE-2026-81578",
+        "CVE-2026-81579",
+        "CVE-2026-82077"
+      ],
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Auth Bypass"
+      ]
+    },
+    {
+      "title": "AI Changed the Economics of Cyberattacks",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/downloads/whitepapers/ai-economics-cyberattacks-exposure-management/",
+      "summary": "For decades, cybersecurity programs operated on a basic assumption: attackers had limited time, resources, and specialized expertise. Reconnaissance took days. Vulnerability research took weeks. Building attack paths required skilled operators. Artificial.",
+      "publishedAt": "2026-10-09T16:12:09Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
+    },
+    {
+      "title": "OpenAI GPT-6.1 Sol: An evaluation",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/openai-gpt-6-1-sol-evaluation/",
+      "summary": "Compared with GPT-6 Sol, GPT-6.1 Sol writes 39% more code, lifts its pass rate by 2.20 points, and produces fewer findings per line on every measure we track. GPT-6.1 Sol writes more code than either GPT-6 variant, recovers most of the pass rate gap with.",
+      "publishedAt": "2026-10-09T13:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "adcs",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "ADCS",
+        "Session Theft"
+      ]
+    },
     {
       "title": "Threat Actors Exploit Critical AhsayCBS Flaws to Drop Webshells and XMRig Cryptominer",
       "source": "Huntress",
@@ -252,65 +308,6 @@
         "Web",
         "Webstack",
         "RCE"
-      ]
-    },
-    {
-      "title": "From Guest Complaints to Malware: Blockchain Abuse Targets Hotels",
-      "source": "Cofense",
-      "sourceUrl": "https://cofense.com/",
-      "url": "https://cofense.com/blog/from-guest-complaints-to-malware-blockchain-abuse-targets-hotels",
-      "summary": "By: Kahng An, Intelligence Team Cofense Intelligence has been tracking a series of email campaigns that target the accommodation industry with fake guest complaints or reviews that deliver blockchain technology-abusing malware. These emails appear to likely.",
-      "publishedAt": "2026-10-07T05:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "windows",
-      "category": "webstack",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "Windows",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "CVE-2026-21589 | Atlassian Data Center Products Unauthenticated Arbitrary File Read Vulnerability",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-21589/",
-      "summary": "CVE-2026-21589 allows unauthenticated remote attackers to read specific files within the web application root directory of affected Atlassian products. Attackers must know the exact filename and path, and cannot list directory contents. Sensitive information.",
-      "publishedAt": "2026-10-06T23:15:00Z",
-      "dayOffset": 3,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-21589"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
-      ]
-    },
-    {
-      "title": "You Won\u2019t Hear About These, Even In Myths (Atlassian Jira, Confluence (and more) Pre-Auth Arbitrary File Read CVE-2026-21589)",
-      "source": "watchTowr Labs",
-      "sourceUrl": "https://x.com/watchtowrcyber",
-      "url": "https://labs.watchtowr.com/you-wont-hear-about-these-even-in-myths-atlassian-jira-confluence-and-more-pre-auth-arbitrary-file-read-cve-2026-21589/",
-      "summary": "Welcome back to yet another episode of \"security was taken seriously\". Being who we are (and constantly being exposed to what we see\u2026), we recognize we have been doomed to eternal damnation as we keep on watching security best practices crumble behind.",
-      "publishedAt": "2026-10-06T17:01:36Z",
-      "dayOffset": 3,
-      "ecosystem": "web",
-      "category": "devops",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-21589"
-      ],
-      "tags": [
-        "Web",
-        "DevOps",
-        "File Read"
       ]
     }
   ],
@@ -646,68 +643,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-105030",
-      "title": "A python3 PoC for CVE-2026-105030 Kener 4.0.0 before 4.1.6 Hidden Monitor Data Disclosure via Dashboard API",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/asvorg/CVE-2026-105030-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-105030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "asvorg",
-      "researcherUrl": "https://github.com/asvorg",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:52 AM CDT",
-      "firstSeenAt": "2026-10-09T08:52:12Z",
-      "language": "Python",
-      "summary": "A python3 PoC for Kener 4.0.0 before 4.1.6 Hidden Monitor Data Disclosure via Dashboard API",
-      "technicalSummary": "A python3 PoC for Kener 4.0.0 before 4.1.6 Hidden Monitor Data Disclosure via Dashboard API",
-      "breakdown": "A python3 PoC for Kener 4.0.0 before 4.1.6 Hidden Monitor Data Disclosure via Dashboard API",
-      "whatBroke": "A python3 PoC for Kener 4.0.0 before 4.1.6 Hidden Monitor Data Disclosure via Dashboard API",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at asvorg/CVE-2026-105030-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/asvorg/CVE-2026-105030-poc\ncd CVE-2026-105030-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/asvorg/CVE-2026-105030-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/rajnandan1/kener"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-102282",
       "title": "adm-zip LPE via SUID/SGID preservation during archive extraction (fixed in 0.6.1)",
       "ecosystem": "cloud",
@@ -778,70 +713,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-96451",
-      "title": "Privilege Escalation vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/MRdark-ops/wpexploit-CVE-2026-96451",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-96451.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-96451.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-96451"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "MRdark-ops",
-      "researcherUrl": "https://github.com/MRdark-ops",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:47 AM CDT",
-      "firstSeenAt": "2026-10-07T16:47:16Z",
-      "language": "Python",
-      "summary": "Privilege Escalation vulnerability",
-      "technicalSummary": "Privilege Escalation vulnerability",
-      "breakdown": "Privilege Escalation vulnerability",
-      "whatBroke": "Privilege Escalation vulnerability",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MRdark-ops/wpexploit-CVE-2026-96451.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MRdark-ops/wpexploit-CVE-2026-96451\ncd wpexploit-CVE-2026-96451\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/MRdark-ops/wpexploit-CVE-2026-96451"
-        ],
-        [
-          "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/ultimate-member/vulnerability/wordpress-ultimate-member-plugin-2-13-1-privilege-escalation-vulnerability?_s_id=cve"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-3888",
       "title": "Exploit para CVE-2026-3888: race condition en snap-confine con hijack del loader para escalar a root en Linux.",
       "ecosystem": "linux",
@@ -900,68 +771,6 @@
         [
           "Vendor Advisory",
           "https://blog.qualys.com/vulnerabilities-threat-research/2026/03/17/cve-2026-3888-important-snap-flaw-enables-local-privilege-escalation-to-root"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-102782",
-      "title": "\u2014 OrdaSoft Joomla Simple Membership <7.4.0 unauth SQLi (CWE-89, CVSS 4.0 9.3). PoCbit PoC: checkLoginPass +.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-102782",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-102782"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:42 PM CDT",
-      "firstSeenAt": "2026-10-07T19:42:43Z",
-      "language": "Python",
-      "summary": "\u2014 OrdaSoft Joomla Simple Membership <7.4.0 unauth SQLi (CWE-89, CVSS 4.0 9.3). PoCbit PoC: checkLoginPass + login param extractvalue error leak. check/exploit/mass, hits.txt & exploited.txt. Fix 7.4.0+. https://pocbit.org/pocs/",
-      "technicalSummary": "\u2014 OrdaSoft Joomla Simple Membership <7.4.0 unauth SQLi (CWE-89, CVSS 4.0 9.3). PoCbit PoC: checkLoginPass + login param extractvalue error leak. check/exploit/mass, hits.txt & exploited.txt. Fix 7.4.0+. https://pocbit.org/pocs/",
-      "breakdown": "\u2014 OrdaSoft Joomla Simple Membership <7.4.0 unauth SQLi (CWE-89, CVSS 4.0 9.3). PoCbit PoC: checkLoginPass + login param extractvalue error leak. check/exploit/mass, hits.txt & exploited.txt. Fix 7.4.0+. https://pocbit.org/pocs/",
-      "whatBroke": "\u2014 OrdaSoft Joomla Simple Membership <7.4.0 unauth SQLi (CWE-89, CVSS 4.0 9.3). PoCbit PoC: checkLoginPass + login param extractvalue error leak. check/exploit/mass, hits.txt & exploited.txt. Fix 7.4.0+. https://pocbit.org/pocs/",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-102782.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-102782\ncd CVE-2026-102782\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "SQLi"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-102782"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.ordasoft.com/"
         ]
       ]
     }
