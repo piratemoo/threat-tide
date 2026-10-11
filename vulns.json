@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T08:40:06Z",
+  "updatedAt": "2026-10-11T17:59:25Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -313,80 +313,6 @@
   ],
   "vulns": [
     {
-      "cve": "CVE-2026-102489",
-      "title": "Zammad GmbH Zammad Session Fixation Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Hunt-Benito/the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "ioc_check.sh",
-          "ioc_check_test.sh",
-          "minibox_attack.rb",
-          "minibox_server.rb",
-          "ruby_behavior_probe.rb"
-        ],
-        "attackFiles": [
-          "ioc_check.sh",
-          "ioc_check_test.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-102489"
-        ],
-        "language": "Ruby"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:54 AM CDT",
-      "firstSeenAt": "2026-10-07T09:54:23Z",
-      "language": "Ruby",
-      "summary": "Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
-      "technicalSummary": "CVE-2026-102489 is an unauthenticated session disclosure vulnerability in Zammad, an open-source helpdesk and customer support ticketing platform. An attacker can obtain connected users\u2019 session cookies and hijack their sessions. Hijacking an.",
-      "breakdown": "CVE-2026-102489 is an unauthenticated session disclosure vulnerability in Zammad, an open-source helpdesk and customer support ticketing platform. An attacker can obtain connected users\u2019 session cookies and hijack their sessions. Hijacking an.",
-      "whatBroke": "Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce\ncd the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce\nruby <script>.rb --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Zammad",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Hunt-Benito/the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-102489/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://zammad.com/en/product/releases/"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-10520",
       "title": "Ivanti Sentry OS Command Injection Vulnerability",
       "ecosystem": "cloud",
@@ -603,71 +529,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-24061",
-      "title": "authentication bypass privilege escalation exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Yoksulcvt/CVE-2026-24061-Telnet-Authentication-Bypass",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-24061.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-24061.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-24061"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Yoksulcvt",
-      "researcherUrl": "https://github.com/Yoksulcvt",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "1:11 PM CDT",
-      "firstSeenAt": "2026-10-07T18:11:32Z",
-      "language": "Python",
-      "summary": "Telnet 2.7 Authentication Bypass and Privilege Escalation | Telnet 2.7 Kimlik do\u011frulama Zafiyeti Ve Yetki Y\u00fckseltme Sald\u0131r\u0131s\u0131",
-      "technicalSummary": "Telnet 2.7 Authentication Bypass and Privilege Escalation | Telnet 2.7 Kimlik do\u011frulama Zafiyeti Ve Yetki Y\u00fckseltme Sald\u0131r\u0131s\u0131",
-      "breakdown": "Telnet 2.7 Authentication Bypass and Privilege Escalation | Telnet 2.7 Kimlik do\u011frulama Zafiyeti Ve Yetki Y\u00fckseltme Sald\u0131r\u0131s\u0131",
-      "whatBroke": "Telnet 2.7 Authentication Bypass and Privilege Escalation | Telnet 2.7 Kimlik do\u011frulama Zafiyeti Ve Yetki Y\u00fckseltme Sald\u0131r\u0131s\u0131",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Yoksulcvt/CVE-2026-24061-Telnet-Authentication-Bypass.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Yoksulcvt/CVE-2026-24061-Telnet-Authentication-Bypass\ncd CVE-2026-24061-Telnet-Authentication-Bypass\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed InetUtils",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Yoksulcvt/CVE-2026-24061-Telnet-Authentication-Bypass"
-        ],
-        [
-          "Vendor Advisory",
-          "https://cgit.git.savannah.gnu.org/cgit/inetutils.git"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-39987",
       "title": "Marimo Remote Code Execution Vulnerability",
       "ecosystem": "cloud",
@@ -729,70 +590,6 @@
         [
           "Vendor Advisory",
           "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-105844",
-      "title": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3)..",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-105844",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-105844"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:55 PM CDT",
-      "firstSeenAt": "2026-10-07T19:55:44Z",
-      "language": "Python",
-      "summary": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3). PoCbit PoC: POST /api/exports/export-preview fields __proto__.overrideAccess \u2192 ACL bypass / data leak..",
-      "technicalSummary": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3). PoCbit PoC: POST /api/exports/export-preview fields __proto__.overrideAccess \u2192 ACL bypass / data leak..",
-      "breakdown": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3). PoCbit PoC: POST /api/exports/export-preview fields __proto__.overrideAccess \u2192 ACL bypass / data leak..",
-      "whatBroke": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3). PoCbit PoC: POST /api/exports/export-preview fields __proto__.overrideAccess \u2192 ACL bypass / data leak..",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-105844.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-105844\ncd CVE-2026-105844\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-105844"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/payloadcms/payload/commit/a742140ab4fca3160f7f83e9e7d996552ffc3b5a"
         ]
       ]
     },
@@ -926,68 +723,64 @@
       ]
     },
     {
-      "cve": "CVE-2026-103355",
-      "title": "Unlimited Elements For Elementor <= 2.0.20 unauthenticated blind SQL injection via terms-listing identifiers.",
-      "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "medium",
+      "cve": "CVE-2026-3888",
+      "title": "Exploit para CVE-2026-3888: race condition en snap-confine con hijack del loader para escalar a root en Linux.",
+      "ecosystem": "linux",
+      "category": "webstack",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Hassham1/CVE-2026-103355-unlimited-elements-sqli-poc",
+      "pocUrl": "https://github.com/AlanNewberry/CVE-2026-3888-snap-confine-privilege-escalation",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          ".github/workflows/validate.yml",
-          "docker-compose.yml",
-          "nuclei/cve-2026-103355.yaml",
-          "poc/poc_cve_2026_103355.py",
-          "provision/install.php"
+          "firefox_2404.c",
+          "librootshell.c",
+          "snap-confine-privesc.sh"
         ],
-        "attackFiles": [
-          "nuclei/cve-2026-103355.yaml",
-          "poc/poc_cve_2026_103355.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-103355"
+          "CVE-2026-3888"
         ],
-        "language": "Python"
+        "language": "C"
       },
       "reliability": "reliable exploit",
-      "researcher": "Hassham1",
-      "researcherUrl": "https://github.com/Hassham1",
+      "researcher": "AlanNewberry",
+      "researcherUrl": "https://github.com/AlanNewberry",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:40 AM CDT",
-      "firstSeenAt": "2026-10-11T08:40:06Z",
-      "language": "Python",
-      "summary": "Unlimited Elements For Elementor <= 2.0.20 unauthenticated blind SQL injection via terms-listing identifiers (CVSS 9.3): Docker validation lab with vulnerable (2.0.20) vs patched (2.0.21) controls, read-only boolean-oracle PoC,.",
-      "technicalSummary": "Unlimited Elements For Elementor <= 2.0.20 unauthenticated blind SQL injection via terms-listing identifiers (CVSS 9.3): Docker validation lab with vulnerable (2.0.20) vs patched (2.0.21) controls, read-only boolean-oracle PoC,.",
-      "breakdown": "Unlimited Elements For Elementor <= 2.0.20 unauthenticated blind SQL injection via terms-listing identifiers (CVSS 9.3): Docker validation lab with vulnerable (2.0.20) vs patched (2.0.21) controls, read-only boolean-oracle PoC,.",
-      "whatBroke": "Unlimited Elements For Elementor <= 2.0.20 unauthenticated blind SQL injection via terms-listing identifiers (CVSS 9.3): Docker validation lab with vulnerable (2.0.20) vs patched (2.0.21) controls, read-only boolean-oracle PoC,.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hassham1/CVE-2026-103355-unlimited-elements-sqli-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hassham1/CVE-2026-103355-unlimited-elements-sqli-poc\ncd CVE-2026-103355-unlimited-elements-sqli-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "11:07 AM CDT",
+      "firstSeenAt": "2026-10-06T16:07:23Z",
+      "language": "C",
+      "summary": "Exploit para race condition en snap-confine con hijack del loader para escalar a root en Linux.",
+      "technicalSummary": "Exploit para race condition en snap-confine con hijack del loader para escalar a root en Linux.",
+      "breakdown": "Exploit para race condition en snap-confine con hijack del loader para escalar a root en Linux.",
+      "whatBroke": "Exploit para race condition en snap-confine con hijack del loader para escalar a root en Linux.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at AlanNewberry/CVE-2026-3888-snap-confine-privilege-escalation.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/AlanNewberry/CVE-2026-3888-snap-confine-privilege-escalation\ncd CVE-2026-3888-snap-confine-privilege-escalation\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Kubernetes",
-        "SQLi"
+        "Linux",
+        "Webstack",
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/Hassham1/CVE-2026-103355-unlimited-elements-sqli-poc"
+          "https://github.com/AlanNewberry/CVE-2026-3888-snap-confine-privilege-escalation"
         ],
         [
           "Vendor Advisory",
-          "https://patchstack.com/database/wordpress/plugin/unlimited-elements-for-elementor/vulnerability/wordpress-unlimited-elements-for-elementor-free-widgets-addons-templates-plugin-2-0-20-sql-injection-vulnerability-2?_s_id=cve"
+          "https://blog.qualys.com/vulnerabilities-threat-research/2026/03/17/cve-2026-3888-important-snap-flaw-enables-local-privilege-escalation-to-root"
         ]
       ]
     }
