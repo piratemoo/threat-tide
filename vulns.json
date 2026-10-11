@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T17:59:25Z",
+  "updatedAt": "2026-10-11T22:46:49Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -375,6 +375,69 @@
         [
           "Vendor Advisory",
           "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-104286",
+      "title": "Fortinet FortiMail Path Traversal Vulnerability",
+      "ecosystem": "web",
+      "category": "vpn-edge",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/0xREBYTE/CVE-2026-104286-PoC",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "cve-2026-104286.py"
+        ],
+        "attackFiles": [
+          "cve-2026-104286.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-104286"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "0xREBYTE",
+      "researcherUrl": "https://github.com/0xREBYTE",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:26 PM CDT",
+      "firstSeenAt": "2026-10-11T18:26:02Z",
+      "language": "Python",
+      "summary": "PoC FortiMail",
+      "technicalSummary": "PoC FortiMail",
+      "breakdown": "PoC FortiMail",
+      "whatBroke": "PoC FortiMail",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 0xREBYTE/CVE-2026-104286-PoC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/0xREBYTE/CVE-2026-104286-PoC\ncd CVE-2026-104286-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed FortiMail",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "VPN Edge",
+        "File Read",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/0xREBYTE/CVE-2026-104286-PoC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"
         ]
       ]
     },
