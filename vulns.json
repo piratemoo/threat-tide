@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T09:02:47Z",
+  "updatedAt": "2026-10-12T21:41:28Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,23 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Auditing the auditor: Unmasking Apex Accelerator",
+      "source": "Elastic Security Labs",
+      "sourceUrl": "https://www.elastic.co/security-labs",
+      "url": "https://www.elastic.co/security-labs/threat-command/apex-accelerator-malicious-npm-packages",
+      "summary": "Elastic Security Labs identified a malicious npm package, @apexacc/cli , which led us to an operation posing as a Web3 accelerator. That operation had spent months building a public presence, targeting cryptocurrency start-ups and founders with offers of.",
+      "publishedAt": "2026-10-12T00:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing",
+        "Local Lpe"
+      ]
+    },
     {
       "title": "Death By A Thousand PaperCuts (PaperCut Pre-Auth RCE Chain and Patch Bypasses WT-2026-0141-0144/CVE-2026-82077/CVE-2026-82078/CVE-2026-81578)",
       "source": "watchTowr Labs",
@@ -289,26 +306,6 @@
         "Phishing",
         "Session Theft"
       ]
-    },
-    {
-      "title": "Zammad CVE-2026-102489: Session Leak to RCE",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/disclosures/cve-2026-102489-zammad-session-leak-rce/",
-      "summary": "On 24 September 2026, the Dutch Institute for Vulnerability Disclosure (DIVD) announced publicly that they had suffered a security incident and had attributed it to an \u201cagentic AI powered attack\u201d given the forensic artifacts they discovered during the.",
-      "publishedAt": "2026-10-07T10:00:00Z",
-      "dayOffset": 5,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-102489"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
@@ -319,34 +316,41 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/1xPwn/CVE-2026-102489",
+      "pocUrl": "https://github.com/Hunt-Benito/the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "zammad.go"
+          "ioc_check.sh",
+          "ioc_check_test.sh",
+          "minibox_attack.rb",
+          "minibox_server.rb",
+          "ruby_behavior_probe.rb"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "ioc_check.sh",
+          "ioc_check_test.sh"
+        ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-102489"
         ],
-        "language": "Go"
+        "language": "Ruby"
       },
       "reliability": "reliable exploit",
       "researcher": "Horizon3 Attack Team",
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:50 PM CDT",
-      "firstSeenAt": "2026-10-11T20:50:52Z",
-      "language": "Go",
-      "summary": "exploit in golang",
+      "added": "4:54 AM CDT",
+      "firstSeenAt": "2026-10-07T09:54:23Z",
+      "language": "Ruby",
+      "summary": "Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
       "technicalSummary": "CVE-2026-102489 is an unauthenticated session disclosure vulnerability in Zammad, an open-source helpdesk and customer support ticketing platform. An attacker can obtain connected users\u2019 session cookies and hijack their sessions. Hijacking an.",
       "breakdown": "CVE-2026-102489 is an unauthenticated session disclosure vulnerability in Zammad, an open-source helpdesk and customer support ticketing platform. An attacker can obtain connected users\u2019 session cookies and hijack their sessions. Hijacking an.",
-      "whatBroke": "exploit in golang",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 1xPwn/CVE-2026-102489.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/1xPwn/CVE-2026-102489\ncd CVE-2026-102489\ngo run . --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Hunt-Benito/the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Hunt-Benito/the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce\ncd the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce\nruby <script>.rb --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Zammad",
         "credential access from service context",
@@ -363,11 +367,11 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 1,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/1xPwn/CVE-2026-102489"
+          "https://github.com/Hunt-Benito/the-cookie-in-the-error-message-cve-2026-102489-zammad-session-hijack-to-rce"
         ],
         [
           "Technical Paper",
@@ -376,72 +380,6 @@
         [
           "Vendor Advisory",
           "https://zammad.com/en/product/releases/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-10520",
-      "title": "Ivanti Sentry OS Command Injection Vulnerability",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/01xJB/CVE-2026-10520-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          ".github/FUNDING.yml",
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-10520"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "01xJB",
-      "researcherUrl": "https://github.com/01xJB",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:21 AM CDT",
-      "firstSeenAt": "2026-10-07T14:21:59Z",
-      "language": "Python",
-      "summary": "Exploit for | Ivanti Sentry - OS Command Injection",
-      "technicalSummary": "Exploit for | Ivanti Sentry - OS Command Injection",
-      "breakdown": "Exploit for | Ivanti Sentry - OS Command Injection",
-      "whatBroke": "Exploit for | Ivanti Sentry - OS Command Injection",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 01xJB/CVE-2026-10520-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/01xJB/CVE-2026-10520-POC\ncd CVE-2026-10520-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Sentry",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/01xJB/CVE-2026-10520-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US"
         ]
       ]
     },
@@ -505,6 +443,74 @@
         [
           "Vendor Advisory",
           "https://fortiguard.fortinet.com/psirt/FG-IR-26-175"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-21589",
+      "title": "You Won\u2019t Hear About These, Even In Myths (Atlassian Jira, Confluence (and more) Pre-Auth Arbitrary File.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/murrez/CVE-2026-21589",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-21589"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:31 AM CDT",
+      "firstSeenAt": "2026-10-08T08:31:03Z",
+      "language": "Python",
+      "summary": "This is a vulnerability in Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center. Crowd Data Center, Crucible and Fisheye. This Arbitrary File Access.",
+      "technicalSummary": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/10/1920--1080---2--5-.png\" alt=\"You Won\u2019t Hear About These, Even In Myths (Atlassian Jira, Confluence (and more) Pre-Auth Arbitrary File Read.",
+      "breakdown": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/10/1920--1080---2--5-.png\" alt=\"You Won\u2019t Hear About These, Even In Myths (Atlassian Jira, Confluence (and more) Pre-Auth Arbitrary File Read.",
+      "whatBroke": "This is a vulnerability in Bitbucket Data Center, Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center. Crowd Data Center, Crucible and Fisheye. This Arbitrary File Access.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-21589.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-21589\ncd CVE-2026-21589\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 75,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/murrez/CVE-2026-21589"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/you-wont-hear-about-these-even-in-myths-atlassian-jira-confluence-and-more-pre-auth-arbitrary-file-read-cve-2026-21589/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://jira.atlassian.com/browse/BAM-26567"
         ]
       ]
     },
@@ -591,71 +597,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-39987",
-      "title": "Marimo Remote Code Execution Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-39987-Marimo-RCE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-39987.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-39987.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-39987"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Industri4l-H3ll-Xpl0it3rs",
-      "researcherUrl": "https://github.com/Industri4l-H3ll-Xpl0it3rs",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "4:02 AM CDT",
-      "firstSeenAt": "2026-10-12T09:02:47Z",
-      "language": "Python",
-      "summary": "Exploit | by infrar3d",
-      "technicalSummary": "Exploit | by infrar3d",
-      "breakdown": "Exploit | by infrar3d",
-      "whatBroke": "Exploit | by infrar3d",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Industri4l-H3ll-Xpl0it3rs/CVE-2026-39987-Marimo-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-39987-Marimo-RCE\ncd CVE-2026-39987-Marimo-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Marimo",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Industri4l-H3ll-Xpl0it3rs/CVE-2026-39987-Marimo-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-9586",
       "title": "Sangoma Switchvox SQL Injection Vulnerability",
       "ecosystem": "web",
@@ -721,43 +662,42 @@
       ]
     },
     {
-      "cve": "CVE-2026-23744",
-      "title": "MCPJam Inspector Remote Code Execution",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-105844",
+      "title": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3)..",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/01xJB/CVE-2026-23744-POC",
+      "pocUrl": "https://github.com/murrez/CVE-2026-105844",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          ".github/FUNDING.yml",
-          "exploit.py"
+          "poc.py"
         ],
         "attackFiles": [
-          "exploit.py"
+          "poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-23744"
+          "CVE-2026-105844"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "01xJB",
-      "researcherUrl": "https://github.com/01xJB",
+      "researcher": "murrez",
+      "researcherUrl": "https://github.com/murrez",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "9:58 AM CDT",
-      "firstSeenAt": "2026-10-07T14:58:12Z",
+      "difficulty": "moderate",
+      "added": "2:55 PM CDT",
+      "firstSeenAt": "2026-10-07T19:55:44Z",
       "language": "Python",
-      "summary": "MCPJam Inspector Remote Code Execution",
-      "technicalSummary": "MCPJam Inspector Remote Code Execution",
-      "breakdown": "MCPJam Inspector Remote Code Execution",
-      "whatBroke": "MCPJam Inspector Remote Code Execution",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 01xJB/CVE-2026-23744-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/01xJB/CVE-2026-23744-POC\ncd CVE-2026-23744-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3). PoCbit PoC: POST /api/exports/export-preview fields __proto__.overrideAccess \u2192 ACL bypass / data leak..",
+      "technicalSummary": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3). PoCbit PoC: POST /api/exports/export-preview fields __proto__.overrideAccess \u2192 ACL bypass / data leak..",
+      "breakdown": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3). PoCbit PoC: POST /api/exports/export-preview fields __proto__.overrideAccess \u2192 ACL bypass / data leak..",
+      "whatBroke": "\u2014 Payload CMS @payloadcms/plugin-import-export <3.88.0 unauth prototype pollution (CWE-1321, CVSS 4.0 9.3). PoCbit PoC: POST /api/exports/export-preview fields __proto__.overrideAccess \u2192 ACL bypass / data leak..",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-105844.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-105844\ncd CVE-2026-105844\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -767,21 +707,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 99,
+      "weaponization": 73,
       "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/01xJB/CVE-2026-23744-POC"
+          "https://github.com/murrez/CVE-2026-105844"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/MCPJam/inspector/commit/e6b9cf9d9e6c9cbec31493b1bdca3a1255fe3e7a"
+          "https://github.com/payloadcms/payload/commit/a742140ab4fca3160f7f83e9e7d996552ffc3b5a"
         ]
       ]
     },
