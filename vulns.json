@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T17:42:44Z",
+  "updatedAt": "2026-10-15T22:07:53Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,218 +87,232 @@
   ],
   "research": [
     {
-      "title": "ZDI-26-757: (0Day) Telegram rlottie Numeric Truncation Remote Code Execution Vulnerability",
+      "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
+      "source": "Unit 42",
+      "sourceUrl": "https://unit42.paloaltonetworks.com/",
+      "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
+      "summary": "Our analysis an AI-powered espionage campaign targeting government Linux infrastructure with custom malware, web shells, and advanced credential theft. The post AI-Powered Espionage Campaign Targets Government Linux Infrastructure appeared first on Unit 42 .",
+      "publishedAt": "2026-10-15T22:00:09Z",
+      "dayOffset": 0,
+      "ecosystem": "linux",
+      "category": "webstack",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing",
+        "Linux",
+        "Webstack"
+      ]
+    },
+    {
+      "title": "CVE-2026-104935 | Ivanti Connect Secure Authentication Bypass and Remote Code Execution Vulnerability",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-104935/",
+      "summary": "CVE-2026-104935 is an authentication bypass by spoofing vulnerability in Ivanti Connect Secure (ICS) that allows a remote, unauthenticated attacker to execute arbitrary commands. Ivanti assigns it a CVSS 3.1 score of 8.6 (High) and has confirmed exploitation.",
+      "publishedAt": "2026-10-15T18:29:07Z",
+      "dayOffset": 0,
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-104935"
+      ],
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "Auth Bypass"
+      ]
+    },
+    {
+      "title": "The Q3 Vulnerability Pulse: Discovery \u2260 Exploitation",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/the-q3-vulnerability-pulse-discovery-exploitation/",
+      "summary": "Welcome to this week\u2019s edition of the Threat Source newsletter. I've been following a lot of (sometimes heated) threads and discussions lately about the current vulnerability landscape. I learned new words/phrases such as Summer of Hell (although I'm writing.",
+      "publishedAt": "2026-10-15T18:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "vpn-edge",
+      "topic": "research",
+      "cves": [
+        "CVE-2014-125110",
+        "CVE-2015-1000013",
+        "CVE-2026-104935"
+      ],
+      "tags": [
+        "Windows",
+        "VPN Edge",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-778: Adobe Photoshop DCM Pixel Data Parsing Integer Overflow Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-757/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Telegram. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-778/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Photoshop. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-10-15T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "android",
+      "category": "mobile",
+      "topic": "android",
+      "cves": [
+        "CVE-2026-95636"
+      ],
+      "tags": [
+        "Android",
+        "Mobile",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-777: Adobe Photoshop AdobePDFL PDF JPEG Parsing Integer Overflow Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-777/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Adobe Photoshop. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
       "publishedAt": "2026-10-15T05:00:00Z",
       "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-111105"
+        "CVE-2026-83661"
       ],
       "tags": [
         "RCE"
       ]
     },
     {
-      "title": "CVE-2026-105133 and CVE-2026-105134 | AhsayCBS Authentication Bypass and Remote Code Execution Vulnerabilities",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-105133-and-cve-2026-105134/",
-      "summary": "CVE-2026-105133 and CVE-2026-105134 affect AhsayCBS (Cloud Backup Server), the centralized management server for Ahsay backup software. Attackers are chaining these vulnerabilities to bypass authentication and execute code on exposed servers. Their CVSS 3.x.",
-      "publishedAt": "2026-10-15T00:24:30Z",
-      "dayOffset": 1,
-      "ecosystem": "cloud",
+      "title": "ZDI-26-776: QNAP TS-453E syslog log_message Format String Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-776/",
+      "summary": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of QNAP TS-453E devices. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.5. The following CVEs are.",
+      "publishedAt": "2026-10-15T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
-        "CVE-2026-105133",
-        "CVE-2026-105134"
+        "CVE-2018-10388",
+        "CVE-2018-10389"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-775: GStreamer rtpL16depay Heap-based Buffer Overflow Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-775/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of GStreamer. Interaction with this library is required to exploit this vulnerability but attack vectors may vary depending on the implementation. The ZDI has.",
+      "publishedAt": "2026-10-15T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-111183"
+      ],
+      "tags": [
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-774: NoMachine Uncontrolled Search Path Element Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-774/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of NoMachine. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
+      "publishedAt": "2026-10-15T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-111185"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-773: NoMachine Named Pipe Incorrect Permission Assignment Local Privilege Escalation Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-773/",
+      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of NoMachine. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
+      "publishedAt": "2026-10-15T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-111184"
+      ],
+      "tags": [
+        "Local Lpe"
+      ]
+    },
+    {
+      "title": "ZDI-26-772: Fortinet FortiSandbox Admin Profile Improper Handling of Exceptional Conditions Denial-of-Service Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-772/",
+      "summary": "This vulnerability allows remote attackers to create a denial-of-service condition on affected installations of Fortinet FortiSandbox. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 4.9. The following CVEs are.",
+      "publishedAt": "2026-10-15T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-106170"
       ],
       "tags": [
         "Cloud",
-        "Auth Bypass"
+        "VPN Edge"
       ]
     },
     {
-      "title": "Unit 42 Uncovers PEERSTITCH, a Stealthy FortiGate Implant",
-      "source": "Unit 42",
-      "sourceUrl": "https://unit42.paloaltonetworks.com/",
-      "url": "https://unit42.paloaltonetworks.com/fortimanager-cve-2024-47575-peerstitch-malware/",
-      "summary": "We investigated an intrusion where attackers exploited CVE-2024-47575 to target 500+ firewalls and deploy PEERSTITCH, a memory-resident ARM64 malware. The post Unit 42 Uncovers PEERSTITCH, a Stealthy FortiGate Implant appeared first on Unit 42 .",
-      "publishedAt": "2026-10-14T22:00:44Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2024-47575"
-      ],
-      "tags": []
-    },
-    {
-      "title": "AhsayCBS Deep-Dive: Auth Bypass to RCE",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/attack-blogs/ahsaycbs-cve-2026-105133-cve-2026-105134-technical-analysis/",
-      "summary": "On 8 October 2026, Huntress released a report detailing the in-the-wild exploitation of AhsayCBS, an on-premises backup server application. The report described two vulnerabilities: By chaining the vulnerabilities together, attackers were observed writing.",
-      "publishedAt": "2026-10-14T16:47:17Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "Break the silence: Kazakhstan-nexus UAT-6275 targets CIS government organizations",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/break-the-silence-kazakhstan-nexus-uat-6275-targets-cis-government-organizations/",
-      "summary": "This research was conducted jointly with Julian-Ferdinand V\u00f6gele of Recorded Future\u2019s Insikt Group. Details of the joint research and presentation are available here . Cisco Talos identified UAT-6275 ( TAG-193 by Recorded Future) activity targeting.",
-      "publishedAt": "2026-10-14T14:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [
-        "CVE-2025-25257",
-        "CVE-2025-8088"
-      ],
-      "tags": [
-        "Phishing",
-        "Windows",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Prioritize what's actually exploitable: Vulnerability reachability is now available in SonarQube Advanced Security",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/vulnerability-reachability-is-now-available-in-sonarqube/",
-      "summary": "If you run software composition analysis (SCA) at any scale, you know the problem isn't finding vulnerabilities\u2014it's finding the ones that matter. A typical dependency tree pulls in hundreds, sometimes thousands of packages. Scan that tree against the CVE.",
-      "publishedAt": "2026-10-14T13:00:00Z",
-      "dayOffset": 1,
+      "title": "ZDI-26-771: Fortinet FortiSandbox login_user_profile Hard-Coded Credentials Authentication Bypass Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-771/",
+      "summary": "This vulnerability allows remote attackers to bypass authentication on affected installations of Fortinet FortiSandbox. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.3. The following CVEs are assigned:.",
+      "publishedAt": "2026-10-15T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "cloud",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Cloud"
-      ]
-    },
-    {
-      "title": "Sonar's new JS/TS engine: Tracing meaning, not syntax, to hunt down real vulnerabilities",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/sonars-new-js-ts-engine/",
-      "summary": "What theory-grounded static analysis is supposed to buy you Static analysis covers a range of techniques. Linters sit at one end: they parse the code into a syntax tree and match against shapes in that tree: eval() called with anything other than a string.",
-      "publishedAt": "2026-10-14T13:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "RCE"
-      ]
-    },
-    {
-      "title": "AI coding ROI is a throughput problem, and verification is how you solve it",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/ai-coding-roi-is-a-problem-verification-solves-it/",
-      "summary": "Planning season is around the corner, and for many engineering leaders this year's budget conversation includes a line item that barely existed two years ago: AI coding tools and the tokens they consume. The adoption story is easy to tell, since most.",
-      "publishedAt": "2026-10-14T13:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Session Theft"
-      ]
-    },
-    {
-      "title": "Microsoft Patch Tuesday for October 2026 \u2014 Snort rules and prominent vulnerabilities",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/microsoft-patch-tuesday-for-october-2026/",
-      "summary": "Microsoft has released its monthly security update for October 2026, which includes 1415 vulnerabilities affecting a range of products, including 85 that Microsoft marked as \"critical.\" Microsoft notes that 1 of the vulnerabilities disclosed this month have.",
-      "publishedAt": "2026-10-13T20:37:58Z",
-      "dayOffset": 2,
-      "ecosystem": "windows",
-      "category": "adcs",
+      "category": "vpn-edge",
       "topic": "research",
       "cves": [
-        "CVE-2026-100202",
-        "CVE-2026-100209",
-        "CVE-2026-100210",
-        "CVE-2026-100211",
-        "CVE-2026-100214"
+        "CVE-2026-107656"
       ],
       "tags": [
-        "Windows",
-        "ADCS",
+        "Cloud",
+        "VPN Edge",
         "Auth Bypass"
       ]
     },
     {
-      "title": "Submit and Execute: Weaponizing Reflected XSS in Siemens Teamcenter's Login Redirect (CVE-2026-58113)",
-      "source": "Bishop Fox",
-      "sourceUrl": "https://x.com/BishopFox",
-      "url": "https://bishopfox.com/blog/xss-siemens-teamcenters-login-redirect-cve-2026-58113",
-      "summary": "A crafted link, one page load, and no clicks required. Bishop Fox found a reflected XSS in Siemens Teamcenter\u2019s login redirect that auto-submits its own form, turning attribute injection into zero-interaction code execution and a silent surrogate delegation.",
-      "publishedAt": "2026-10-13T13:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-58113"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Acting on the AI Shift in Cyber Risk With Prevention at the Codebase Level",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/cyber-risk-with-prevention-at-the-codebase-level/",
-      "summary": "On June 22, 2026, the heads of the Five Eyes cyber security agencies issued a direct warning to business and technology leaders: AI is rapidly transforming cyber risk , and long-standing assumptions can become outdated in months rather than years. AI is.",
-      "publishedAt": "2026-10-13T13:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "research",
-      "category": "devops",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "DevOps"
-      ]
-    },
-    {
-      "title": "Sonar joins OpenAI Daybreak Cyber Partner Program, deepening collaboration on agentic security",
-      "source": "SonarSource",
-      "sourceUrl": "https://x.com/SonarSource",
-      "url": "https://www.sonarsource.com/blog/sonar-joins-openai-daybreak-program/",
-      "summary": "Today Sonar joined the OpenAI Daybreak Defense Network , gaining governed access to advanced cybersecurity frontier models. The program deepens Sonar\u2019s ongoing collaboration and engagement with OpenAI, following its commitment to the OpenAI call for.",
-      "publishedAt": "2026-10-13T13:00:00Z",
-      "dayOffset": 2,
+      "title": "ZDI-26-770: SonicWall Secure Mobile Access unzip Directory Traversal Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-770/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of SonicWall Secure Mobile Access. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.2. The following CVEs are.",
+      "publishedAt": "2026-10-15T05:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
-      "cves": [],
-      "tags": []
+      "cves": [
+        "CVE-2026-102257"
+      ],
+      "tags": [
+        "RCE"
+      ]
     }
   ],
   "vulns": [
