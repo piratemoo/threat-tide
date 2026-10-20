@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T07:24:49Z",
+  "updatedAt": "2026-10-20T17:55:05Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,79 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "There's only so much code: the rise in vulnerability numbers",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/theres-only-so-much-code-the-rise-in-vulnerability-numbers/",
+      "summary": "Frontier AI models (like Mythos) are rapidly mining decades of technical debt across ubiquitous legacy libraries, driving monthly Microsoft Patch Tuesday vulnerability advisories up more than tenfold (reaching 1,415 this month). This volume is overwhelming.",
+      "publishedAt": "2026-10-20T15:31:22Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2021-44228"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "title": "Google Gemini 4 Argon: An evaluation",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/google-gemini-4-argon-evaluation/",
+      "summary": "Gemini 4 Argon passes 85.66% of the tasks it is tested on. In our evaluation, it also produces more blocker vulnerabilities than blocker bugs. Passing tests and being safe to ship are different questions, and this model shows the gap clearly. Most of its.",
+      "publishedAt": "2026-10-20T13:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "adcs",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "ADCS",
+        "File Read"
+      ]
+    },
+    {
+      "title": "CVE-2026-106173 Deep-Dive: FortiSIEM gRPC Path Traversal File Write RCE",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/attack-research/cve-2026-106173-deep-dive-fortisiem-grpc-path-traversal-file-write-rce/",
+      "summary": "On 13 October 2026, Fortinet published a security advisory for a critical vulnerability affecting their FortiSIEM product. The vulnerability, CVE-2026-106173, allows for an arbitrary file write by abusing an issue in a gRPC service. Horizon3 is no stranger.",
+      "publishedAt": "2026-10-20T12:34:42Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "vpn-edge",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-106173"
+      ],
+      "tags": [
+        "Web",
+        "VPN Edge",
+        "RCE"
+      ]
+    },
+    {
+      "title": "Beyond Passwords: How Attackers Abuse Device Code Authentication",
+      "source": "Cofense",
+      "sourceUrl": "https://cofense.com/",
+      "url": "https://cofense.com/blog/beyond-passwords-how-attackers-abuse-device-code-authentication",
+      "summary": "By: Adriane Andaya, Cofense Phishing Defense Center The Cofense Phishing Defense Center (PDC) has analyzed several emails that may look like ordinary spam to the untrained eye. Threat actors attempt to mimic routine corporate emails and blend into everyday.",
+      "publishedAt": "2026-10-20T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing",
+        "Session Theft"
+      ]
+    },
     {
       "title": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 (Updated October 19)",
       "source": "Unit 42",
@@ -231,126 +304,49 @@
         "Kernel",
         "Memory Corruption"
       ]
-    },
-    {
-      "title": "ZDI-26-779: (0Day) Sparx Systems Enterprise Architect XSLT Debugger XML External Entity Processing Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-779/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of Sparx Systems Enterprise Architect. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a.",
-      "publishedAt": "2026-10-16T05:00:00Z",
-      "dayOffset": 4,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-88794"
-      ],
-      "tags": []
-    },
-    {
-      "title": "AI-Powered Espionage Campaign Targets Government Linux Infrastructure",
-      "source": "Unit 42",
-      "sourceUrl": "https://unit42.paloaltonetworks.com/",
-      "url": "https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/",
-      "summary": "Our analysis an AI-powered espionage campaign targeting government Linux infrastructure with custom malware, web shells, and advanced credential theft. The post AI-Powered Espionage Campaign Targets Government Linux Infrastructure appeared first on Unit 42 .",
-      "publishedAt": "2026-10-15T22:00:09Z",
-      "dayOffset": 5,
-      "ecosystem": "linux",
-      "category": "webstack",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing",
-        "Linux",
-        "Webstack"
-      ]
-    },
-    {
-      "title": "CVE-2026-104935 | Ivanti Connect Secure Authentication Bypass and Remote Code Execution Vulnerability",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-104935/",
-      "summary": "CVE-2026-104935 is an authentication bypass by spoofing vulnerability in Ivanti Connect Secure (ICS) that allows a remote, unauthenticated attacker to execute arbitrary commands. Ivanti assigns it a CVSS 3.1 score of 8.6 (High) and has confirmed exploitation.",
-      "publishedAt": "2026-10-15T18:29:07Z",
-      "dayOffset": 5,
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-104935"
-      ],
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "The Q3 Vulnerability Pulse: Discovery \u2260 Exploitation",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/the-q3-vulnerability-pulse-discovery-exploitation/",
-      "summary": "Welcome to this week\u2019s edition of the Threat Source newsletter. I've been following a lot of (sometimes heated) threads and discussions lately about the current vulnerability landscape. I learned new words/phrases such as Summer of Hell (although I'm writing.",
-      "publishedAt": "2026-10-15T18:00:00Z",
-      "dayOffset": 5,
-      "ecosystem": "windows",
-      "category": "vpn-edge",
-      "topic": "research",
-      "cves": [
-        "CVE-2014-125110",
-        "CVE-2015-1000013",
-        "CVE-2026-104935"
-      ],
-      "tags": [
-        "Windows",
-        "VPN Edge",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
     {
-      "cve": "CVE-2026-63030",
-      "title": "WordPress Core Interpretation Conflict Vulnerability",
+      "cve": "CVE-2026-105134",
+      "title": "Ahsay AhsayCBS Command Injection Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/gichirimaku/wp2shell-PoC",
+      "pocUrl": "https://github.com/horizon3ai/AhsayCBS-Auth-Bypass-RCE",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "exp.py",
-          "wp2shell.py"
+          "ahsay_rce_poc.py"
         ],
         "attackFiles": [
-          "exp.py"
+          "ahsay_rce_poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-60137",
-          "CVE-2026-63030"
+          "CVE-2026-105133",
+          "CVE-2026-105134"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "gichirimaku",
-      "researcherUrl": "https://github.com/gichirimaku",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "12:29 PM CDT",
-      "firstSeenAt": "2026-10-15T17:29:04Z",
+      "difficulty": "moderate",
+      "added": "8:44 AM CDT",
+      "firstSeenAt": "2026-10-14T13:44:45Z",
       "language": "Python",
-      "summary": "+ CVE-2026-60137 exploit RCE chain.",
-      "technicalSummary": "+ CVE-2026-60137 exploit RCE chain.",
-      "breakdown": "+ CVE-2026-60137 exploit RCE chain.",
-      "whatBroke": "+ CVE-2026-60137 exploit RCE chain.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at gichirimaku/wp2shell-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/gichirimaku/wp2shell-PoC\ncd wp2shell-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "A proof of concept exploit for CVE-2026-105133 and affecting AhsayCBS",
+      "technicalSummary": "CVE-2026-105133 and CVE-2026-105134 affect AhsayCBS (Cloud Backup Server), the centralized management server for Ahsay backup software. Attackers are chaining these vulnerabilities to bypass authentication and execute code on exposed servers. Their CVSS.",
+      "breakdown": "CVE-2026-105133 and CVE-2026-105134 affect AhsayCBS (Cloud Backup Server), the centralized management server for Ahsay backup software. Attackers are chaining these vulnerabilities to bypass authentication and execute code on exposed servers. Their CVSS.",
+      "whatBroke": "A proof of concept exploit for CVE-2026-105133 and affecting AhsayCBS",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at horizon3ai/AhsayCBS-Auth-Bypass-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/horizon3ai/AhsayCBS-Auth-Bypass-RCE\ncd AhsayCBS-Auth-Bypass-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Core",
+        "initial access through exposed AhsayCBS",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -364,60 +360,130 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 81,
-      "dayOffset": 5,
+      "weaponization": 76,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
-          "https://github.com/gichirimaku/wp2shell-PoC"
+          "https://github.com/horizon3ai/AhsayCBS-Auth-Bypass-RCE"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-105133-and-cve-2026-105134/"
         ],
         [
           "Vendor Advisory",
-          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+          "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-60137",
-      "title": "WordPress Core SQL Injection Vulnerability",
+      "cve": "CVE-2026-105133",
+      "title": "Ahsay AhsayCBS Improper Authentication Vulnerability",
       "ecosystem": "web",
       "category": "webstack",
-      "severity": "critical",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/gichirimaku/wp2shell-PoC",
+      "pocUrl": "https://github.com/horizon3ai/AhsayCBS-Auth-Bypass-RCE",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "exp.py",
-          "wp2shell.py"
+          "ahsay_rce_poc.py"
         ],
         "attackFiles": [
-          "exp.py"
+          "ahsay_rce_poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-60137",
-          "CVE-2026-63030"
+          "CVE-2026-105133",
+          "CVE-2026-105134"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "gichirimaku",
-      "researcherUrl": "https://github.com/gichirimaku",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:29 PM CDT",
-      "firstSeenAt": "2026-10-15T17:29:04Z",
+      "added": "8:44 AM CDT",
+      "firstSeenAt": "2026-10-14T13:44:45Z",
       "language": "Python",
-      "summary": "+ exploit RCE chain.",
-      "technicalSummary": "+ exploit RCE chain.",
-      "breakdown": "+ exploit RCE chain.",
-      "whatBroke": "+ exploit RCE chain.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at gichirimaku/wp2shell-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/gichirimaku/wp2shell-PoC\ncd wp2shell-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "A proof of concept exploit for and CVE-2026-105134 affecting AhsayCBS",
+      "technicalSummary": "CVE-2026-105133 and CVE-2026-105134 affect AhsayCBS (Cloud Backup Server), the centralized management server for Ahsay backup software. Attackers are chaining these vulnerabilities to bypass authentication and execute code on exposed servers. Their CVSS.",
+      "breakdown": "CVE-2026-105133 and CVE-2026-105134 affect AhsayCBS (Cloud Backup Server), the centralized management server for Ahsay backup software. Attackers are chaining these vulnerabilities to bypass authentication and execute code on exposed servers. Their CVSS.",
+      "whatBroke": "A proof of concept exploit for and CVE-2026-105134 affecting AhsayCBS",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at horizon3ai/AhsayCBS-Auth-Bypass-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/horizon3ai/AhsayCBS-Auth-Bypass-RCE\ncd AhsayCBS-Auth-Bypass-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Core",
+        "initial access through exposed AhsayCBS",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/horizon3ai/AhsayCBS-Auth-Bypass-RCE"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-105133-and-cve-2026-105134/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-106173",
+      "title": "Deep-Dive: FortiSIEM gRPC Path Traversal File Write RCE",
+      "ecosystem": "web",
+      "category": "vpn-edge",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/horizon3ai/CVE-2026-106173",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-106173.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-106173.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-106173"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:29 AM CDT",
+      "firstSeenAt": "2026-10-20T12:29:09Z",
+      "language": "Python",
+      "summary": "Proof of concept exploit for a path traversal file write leading to RCE for Fortinet FortiSIEM",
+      "technicalSummary": "On 13 October 2026, Fortinet published a security advisory for a critical vulnerability affecting their FortiSIEM product. The vulnerability, CVE-2026-106173, allows for an arbitrary file write by abusing an issue in a gRPC service. Horizon3 is no.",
+      "breakdown": "On 13 October 2026, Fortinet published a security advisory for a critical vulnerability affecting their FortiSIEM product. The vulnerability, CVE-2026-106173, allows for an arbitrary file write by abusing an issue in a gRPC service. Horizon3 is no.",
+      "whatBroke": "Proof of concept exploit for a path traversal file write leading to RCE for Fortinet FortiSIEM",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at horizon3ai/CVE-2026-106173.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/horizon3ai/CVE-2026-106173\ncd CVE-2026-106173\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -426,21 +492,24 @@
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
+        "VPN Edge",
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 77,
-      "dayOffset": 5,
+      "weaponization": 73,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/gichirimaku/wp2shell-PoC"
+          "https://github.com/horizon3ai/CVE-2026-106173"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/cve-2026-106173-deep-dive-fortisiem-grpc-path-traversal-file-write-rce/"
         ],
         [
           "Vendor Advisory",
-          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-180"
         ]
       ]
     },
@@ -695,6 +764,134 @@
         [
           "Vendor Advisory",
           "https://github.com/langflow-ai/langflow/security/advisories/GHSA-vwmf-pq79-vjvx"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-67279",
+      "title": "Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+      "ecosystem": "web",
+      "category": "ssh",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/GoldAden/mikrotrick-verifier",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          ".github/workflows/selftest.yml",
+          "install_termux.sh",
+          "mtx.py",
+          "tools/mikrotrick_check.py",
+          "tools/mock_routeros.py"
+        ],
+        "attackFiles": [
+          "tools/mikrotrick_check.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-67279"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "GoldAden",
+      "researcherUrl": "https://github.com/GoldAden",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:14 PM CDT",
+      "firstSeenAt": "2026-10-17T21:14:35Z",
+      "language": "Python",
+      "summary": "Non-destructive behavioral verifier for the MikroTik RouterOS SSH auth-bypass (/ MikroTrick). Measures server reaction only \u2014 no exploit payload.",
+      "technicalSummary": "Non-destructive behavioral verifier for the MikroTik RouterOS SSH auth-bypass (/ MikroTrick). Measures server reaction only \u2014 no exploit payload.",
+      "breakdown": "Non-destructive behavioral verifier for the MikroTik RouterOS SSH auth-bypass (/ MikroTrick). Measures server reaction only \u2014 no exploit payload.",
+      "whatBroke": "Non-destructive behavioral verifier for the MikroTik RouterOS SSH auth-bypass (/ MikroTrick). Measures server reaction only \u2014 no exploit payload.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at GoldAden/mikrotrick-verifier.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/GoldAden/mikrotrick-verifier\ncd mikrotrick-verifier\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed RouterOS",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "SSH",
+        "Session Theft",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/GoldAden/mikrotrick-verifier"
+        ],
+        [
+          "Vendor Advisory",
+          "https://mikrotik.com/supportsec/september-2026-vulnerability/?utm_source=chatgpt.com"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-104748",
+      "title": "\u2014 Unauthenticated Privilege Escalation in SimpleForm WordPress Plugin",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/MrjHaxcore/CVE-2026-104748",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-104748.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-104748.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-104748"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "MrjHaxcore",
+      "researcherUrl": "https://github.com/MrjHaxcore",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:33 AM CDT",
+      "firstSeenAt": "2026-10-14T16:33:30Z",
+      "language": "Python",
+      "summary": "The SimpleForm \u2013 Form Maker to Chat Apps with Quiz, Poll and Multi Lead Notifications plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.10.0 This is due to the.",
+      "technicalSummary": "The SimpleForm \u2013 Form Maker to Chat Apps with Quiz, Poll and Multi Lead Notifications plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.10.0 This is due to the.",
+      "breakdown": "The SimpleForm \u2013 Form Maker to Chat Apps with Quiz, Poll and Multi Lead Notifications plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.10.0 This is due to the.",
+      "whatBroke": "The SimpleForm \u2013 Form Maker to Chat Apps with Quiz, Poll and Multi Lead Notifications plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.10.0 This is due to the.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MrjHaxcore/CVE-2026-104748.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MrjHaxcore/CVE-2026-104748\ncd CVE-2026-104748\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/MrjHaxcore/CVE-2026-104748"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.svn.wordpress.org/simple-form/trunk/"
         ]
       ]
     }
