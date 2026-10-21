@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T22:13:15Z",
+  "updatedAt": "2026-10-21T07:27:13Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,13 +87,53 @@
   ],
   "research": [
     {
+      "title": "Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619)",
+      "source": "Huntress",
+      "sourceUrl": "https://www.huntress.com/blog",
+      "url": "https://www.huntress.com/blog/php2shell-leaked-critical-php-vulnerabilities",
+      "summary": "Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619)",
+      "publishedAt": "2026-10-21T04:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
+      "tags": [
+        "Web",
+        "Webstack"
+      ]
+    },
+    {
+      "title": "PHP Announces Critical Security Release for Two Vulnerabilities",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/10/20/php-announces-critical-security-release-for-two-vulnerabilities",
+      "summary": "On October 20, 2026, the PHP security team announced an upcoming security release addressing two critical vulnerabilities, each rated CVSS v4.0 9.2. The release is scheduled for October 21, 2026, at 14:00 UTC . PHP has indicated that the updates may be.",
+      "publishedAt": "2026-10-21T02:59:03Z",
+      "dayOffset": 1,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
+      "tags": [
+        "Web",
+        "Webstack"
+      ]
+    },
+    {
       "title": "CVE-2026-101767 | Oracle E-Business Suite TCF SQL Injection and Remote Code Execution",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
       "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-101767/",
       "summary": "CVE-2026-101767 is an unauthenticated SQL injection vulnerability in Oracle E-Business Suite (EBS) that can be chained to achieve remote code execution. Discovered by Horizon3.ai\u2019s attack research team, the vulnerability allows an attacker with network.",
       "publishedAt": "2026-10-20T21:23:28Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -113,7 +153,7 @@
       "url": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/",
       "summary": "Ransomware operators including Spikey Scorpius (aka Qilin) and Tarnished Scorpius (aka Inc) are exploiting PAN-OS vulnerability CVE-2026-0257. The post Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 (Updated October 20) appeared first on Unit 42 .",
       "publishedAt": "2026-10-20T20:30:42Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "cloud",
       "category": "vpn-edge",
       "topic": "research",
@@ -132,7 +172,7 @@
       "url": "https://blog.qualys.com/qualys-insights/2026/10/20/remediation-paradox-cybersecurity-awareness-month",
       "summary": "Key Takeaways Teams are remediating more than ever, but exposure from the vulnerabilities that matter is still rising faster than they can keep up with. Mean time to exploitation is about \u22127 days. Mean time to remediate sits around +30 days. Qualys research:.",
       "publishedAt": "2026-10-20T19:08:51Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "cloud",
       "category": "research",
       "topic": "research",
@@ -148,7 +188,7 @@
       "url": "https://blog.talosintelligence.com/theres-only-so-much-code-the-rise-in-vulnerability-numbers/",
       "summary": "Frontier AI models (like Mythos) are rapidly mining decades of technical debt across ubiquitous legacy libraries, driving monthly Microsoft Patch Tuesday vulnerability advisories up more than tenfold (reaching 1,415 this month). This volume is overwhelming.",
       "publishedAt": "2026-10-20T15:31:22Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "research",
       "topic": "research",
@@ -166,7 +206,7 @@
       "url": "https://www.sonarsource.com/blog/google-gemini-4-argon-evaluation/",
       "summary": "Gemini 4 Argon passes 85.66% of the tasks it is tested on. In our evaluation, it also produces more blocker vulnerabilities than blocker bugs. Passing tests and being safe to ship are different questions, and this model shows the gap clearly. Most of its.",
       "publishedAt": "2026-10-20T13:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "web",
       "category": "adcs",
       "topic": "research",
@@ -184,7 +224,7 @@
       "url": "https://horizon3.ai/attack-research/cve-2026-106173-deep-dive-fortisiem-grpc-path-traversal-file-write-rce/",
       "summary": "On 13 October 2026, Fortinet published a security advisory for a critical vulnerability affecting their FortiSIEM product. The vulnerability, CVE-2026-106173, allows for an arbitrary file write by abusing an issue in a gRPC service. Horizon3 is no stranger.",
       "publishedAt": "2026-10-20T12:34:42Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "web",
       "category": "vpn-edge",
       "topic": "research",
@@ -204,7 +244,7 @@
       "url": "https://cofense.com/blog/beyond-passwords-how-attackers-abuse-device-code-authentication",
       "summary": "By: Adriane Andaya, Cofense Phishing Defense Center The Cofense Phishing Defense Center (PDC) has analyzed several emails that may look like ordinary spam to the untrained eye. Threat actors attempt to mimic routine corporate emails and blend into everyday.",
       "publishedAt": "2026-10-20T05:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -221,7 +261,7 @@
       "url": "https://horizon3.ai/downloads/joint-solutions-briefs/ecb-cybersecurity-recommendations-nodezero/",
       "summary": "As AI accelerates vulnerability discovery and exploitation, financial institutions need evidence that their defenses can withstand the attack paths an adversary could actually use. This solution brief explains how NodeZero\u00ae autonomous penetration testing.",
       "publishedAt": "2026-10-16T13:22:00Z",
-      "dayOffset": 4,
+      "dayOffset": 5,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -235,7 +275,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-785/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of FreeBSD Kernel. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
       "publishedAt": "2026-10-16T05:00:00Z",
-      "dayOffset": 4,
+      "dayOffset": 5,
       "ecosystem": "linux",
       "category": "kernel",
       "topic": "research",
@@ -255,7 +295,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-784/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of FreeBSD Kernel. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
       "publishedAt": "2026-10-16T05:00:00Z",
-      "dayOffset": 4,
+      "dayOffset": 5,
       "ecosystem": "linux",
       "category": "kernel",
       "topic": "research",
@@ -266,42 +306,6 @@
         "Linux",
         "Kernel",
         "Local Lpe"
-      ]
-    },
-    {
-      "title": "ZDI-26-783: LibreOffice PDF File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-783/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of LibreOffice. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-10-16T05:00:00Z",
-      "dayOffset": 4,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-63273"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-782: LibreOffice PDF File Parsing Heap-based Buffer Overflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-782/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of LibreOffice. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-10-16T05:00:00Z",
-      "dayOffset": 4,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-63274"
-      ],
-      "tags": [
-        "RCE"
       ]
     }
   ],
@@ -335,8 +339,8 @@
       "researcherUrl": "https://github.com/horizon3ai",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:44 AM CDT",
-      "firstSeenAt": "2026-10-14T13:44:45Z",
+      "added": "2:27 AM CDT",
+      "firstSeenAt": "2026-10-21T07:27:13Z",
       "language": "Python",
       "summary": "A proof of concept exploit for CVE-2026-105133 and affecting AhsayCBS",
       "technicalSummary": "A proof of concept exploit for CVE-2026-105133 and affecting AhsayCBS",
@@ -360,7 +364,7 @@
       ],
       "confidence": 98,
       "weaponization": 76,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -401,8 +405,8 @@
       "researcherUrl": "https://github.com/horizon3ai",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:44 AM CDT",
-      "firstSeenAt": "2026-10-14T13:44:45Z",
+      "added": "2:27 AM CDT",
+      "firstSeenAt": "2026-10-21T07:27:13Z",
       "language": "Python",
       "summary": "A proof of concept exploit for and CVE-2026-105134 affecting AhsayCBS",
       "technicalSummary": "A proof of concept exploit for and CVE-2026-105134 affecting AhsayCBS",
@@ -424,7 +428,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
@@ -488,7 +492,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -501,6 +505,71 @@
         [
           "Vendor Advisory",
           "https://fortiguard.fortinet.com/psirt/FG-IR-26-180"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-33825",
+      "title": "Microsoft Defender Insufficient Granularity of Access Control Vulnerability",
+      "ecosystem": "windows",
+      "category": "framework",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/dntaskmehow/NEO-DEFENDER",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "(CVE-2026-33825)- ZERO-DAY PRIVILEGE ESCALATION FRAMEWORK/neo_defender_bypass.js",
+          "(CVE-2026-33825)- ZERO-DAY PRIVILEGE ESCALATION FRAMEWORK/neo_defender_lpe.ps1"
+        ],
+        "attackFiles": [
+          "(CVE-2026-33825)- ZERO-DAY PRIVILEGE ESCALATION FRAMEWORK/neo_defender_bypass.js",
+          "(CVE-2026-33825)- ZERO-DAY PRIVILEGE ESCALATION FRAMEWORK/neo_defender_lpe.ps1"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-33825"
+        ],
+        "language": "JavaScript"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "dntaskmehow",
+      "researcherUrl": "https://github.com/dntaskmehow",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:50 PM CDT",
+      "firstSeenAt": "2026-10-20T23:50:08Z",
+      "language": "JavaScript",
+      "summary": "This framework has been **RE-WEAPONIZED** & exploits a local privilege escalation (LPE) vulnerability in Microsoft Defender caused by insufficient access control granularity. The exploit:",
+      "technicalSummary": "This framework has been **RE-WEAPONIZED** & exploits a local privilege escalation (LPE) vulnerability in Microsoft Defender caused by insufficient access control granularity. The exploit:",
+      "breakdown": "This framework has been **RE-WEAPONIZED** & exploits a local privilege escalation (LPE) vulnerability in Microsoft Defender caused by insufficient access control granularity. The exploit:",
+      "whatBroke": "This framework has been **RE-WEAPONIZED** & exploits a local privilege escalation (LPE) vulnerability in Microsoft Defender caused by insufficient access control granularity. The exploit:",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dntaskmehow/NEO-DEFENDER.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dntaskmehow/NEO-DEFENDER\ncd NEO-DEFENDER\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Defender",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Framework",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 83,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/dntaskmehow/NEO-DEFENDER"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825"
         ]
       ]
     },
@@ -555,7 +624,7 @@
       ],
       "confidence": 98,
       "weaponization": 75,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -620,7 +689,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -686,7 +755,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -695,193 +764,6 @@
         [
           "Vendor Advisory",
           "https://mikrotik.com/supportsec/september-2026-vulnerability/?utm_source=chatgpt.com"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-104745",
-      "title": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/rxsklife/CVE-2026-104745",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-104745"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "rxsklife",
-      "researcherUrl": "https://github.com/rxsklife",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:22 AM CDT",
-      "firstSeenAt": "2026-10-16T06:22:45Z",
-      "language": "Python",
-      "summary": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for WooCommerce plugin for WordPress is vulnerable to Privilege Escalation via the `alg_wc_ev_verify_email` parameter in versions.",
-      "technicalSummary": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for WooCommerce plugin for WordPress is vulnerable to Privilege Escalation via the `alg_wc_ev_verify_email` parameter in versions.",
-      "breakdown": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for WooCommerce plugin for WordPress is vulnerable to Privilege Escalation via the `alg_wc_ev_verify_email` parameter in versions.",
-      "whatBroke": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for WooCommerce plugin for WordPress is vulnerable to Privilege Escalation via the `alg_wc_ev_verify_email` parameter in versions.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rxsklife/CVE-2026-104745.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rxsklife/CVE-2026-104745\ncd CVE-2026-104745\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/rxsklife/CVE-2026-104745"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/emails-verification-for-woocommerce/tags/3.3.0/includes/alg-wc-ev-functions.php#L331"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-104748",
-      "title": "\u2014 Unauthenticated Privilege Escalation in SimpleForm WordPress Plugin",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/MrjHaxcore/CVE-2026-104748",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-104748.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-104748.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-104748"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "MrjHaxcore",
-      "researcherUrl": "https://github.com/MrjHaxcore",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:33 AM CDT",
-      "firstSeenAt": "2026-10-14T16:33:30Z",
-      "language": "Python",
-      "summary": "The SimpleForm \u2013 Form Maker to Chat Apps with Quiz, Poll and Multi Lead Notifications plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.10.0 This is due to the.",
-      "technicalSummary": "The SimpleForm \u2013 Form Maker to Chat Apps with Quiz, Poll and Multi Lead Notifications plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.10.0 This is due to the.",
-      "breakdown": "The SimpleForm \u2013 Form Maker to Chat Apps with Quiz, Poll and Multi Lead Notifications plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.10.0 This is due to the.",
-      "whatBroke": "The SimpleForm \u2013 Form Maker to Chat Apps with Quiz, Poll and Multi Lead Notifications plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.10.0 This is due to the.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MrjHaxcore/CVE-2026-104748.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MrjHaxcore/CVE-2026-104748\ncd CVE-2026-104748\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/MrjHaxcore/CVE-2026-104748"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.svn.wordpress.org/simple-form/trunk/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-89079",
-      "title": "\u2014 WordPress Theme My Login multisite unauth password overwrite PoC (check, verify, exploit). Not.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/murrez/CVE-2026-89079",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py",
-          "tml_core.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-89079"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "murrez",
-      "researcherUrl": "https://github.com/murrez",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:44 AM CDT",
-      "firstSeenAt": "2026-10-16T11:44:49Z",
-      "language": "Python",
-      "summary": "\u2014 WordPress Theme My Login multisite unauth password overwrite PoC (check, verify, exploit). Not version-only: requires MS + tml_user_passwords.",
-      "technicalSummary": "\u2014 WordPress Theme My Login multisite unauth password overwrite PoC (check, verify, exploit). Not version-only: requires MS + tml_user_passwords.",
-      "breakdown": "\u2014 WordPress Theme My Login multisite unauth password overwrite PoC (check, verify, exploit). Not version-only: requires MS + tml_user_passwords.",
-      "whatBroke": "\u2014 WordPress Theme My Login multisite unauth password overwrite PoC (check, verify, exploit). Not version-only: requires MS + tml_user_passwords.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murrez/CVE-2026-89079.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murrez/CVE-2026-89079\ncd CVE-2026-89079\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/murrez/CVE-2026-89079"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/changeset/3696081/theme-my-login"
         ]
       ]
     },
@@ -937,7 +819,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 0,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
@@ -999,7 +881,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -1070,7 +952,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -1078,7 +960,7 @@
         ],
         [
           "Vendor Advisory",
-          "https://access.redhat.com/security/cve/CVE-2026-96889"
+          "https://access.redhat.com/errata/RHSA-2026:86331"
         ]
       ]
     },
@@ -1143,31 +1025,26 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
           "https://github.com/OppositDeer/Gitlab-RCE-CVE-2026-97229"
-        ],
-        [
-          "Vendor Advisory",
-          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-59970",
-      "title": "PoC for CVE-2026-59970 Blind SSRF in Tandoor Recipes, CWE-918",
+      "cve": "CVE-2026-104745",
+      "title": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for.",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/asvorg/CVE-2026-59970-poc",
+      "pocUrl": "https://github.com/rxsklife/CVE-2026-104745",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "callback.py",
           "poc.py"
         ],
         "attackFiles": [
@@ -1175,24 +1052,24 @@
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-59970"
+          "CVE-2026-104745"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "asvorg",
-      "researcherUrl": "https://github.com/asvorg",
+      "researcher": "rxsklife",
+      "researcherUrl": "https://github.com/rxsklife",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:49 PM CDT",
-      "firstSeenAt": "2026-10-16T22:49:24Z",
+      "added": "1:22 AM CDT",
+      "firstSeenAt": "2026-10-16T06:22:45Z",
       "language": "Python",
-      "summary": "PoC for Blind SSRF in Tandoor Recipes, CWE-918",
-      "technicalSummary": "PoC for Blind SSRF in Tandoor Recipes, CWE-918",
-      "breakdown": "PoC for Blind SSRF in Tandoor Recipes, CWE-918",
-      "whatBroke": "PoC for Blind SSRF in Tandoor Recipes, CWE-918",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at asvorg/CVE-2026-59970-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/asvorg/CVE-2026-59970-poc\ncd CVE-2026-59970-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for WooCommerce plugin for WordPress is vulnerable to Privilege Escalation via the `alg_wc_ev_verify_email` parameter in versions.",
+      "technicalSummary": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for WooCommerce plugin for WordPress is vulnerable to Privilege Escalation via the `alg_wc_ev_verify_email` parameter in versions.",
+      "breakdown": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for WooCommerce plugin for WordPress is vulnerable to Privilege Escalation via the `alg_wc_ev_verify_email` parameter in versions.",
+      "whatBroke": "is a high-severity vulnerability rated 8.1/10 on the CVSS scale. The Customer Email Verification for WooCommerce plugin for WordPress is vulnerable to Privilege Escalation via the `alg_wc_ev_verify_email` parameter in versions.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rxsklife/CVE-2026-104745.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rxsklife/CVE-2026-104745\ncd CVE-2026-104745\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -1202,61 +1079,59 @@
       "tags": [
         "Web",
         "Webstack",
-        "Exploit"
+        "Local LPE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/asvorg/CVE-2026-59970-poc"
+          "https://github.com/rxsklife/CVE-2026-104745"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/TandoorRecipes/recipes/commit/79e783578a5b198a988eb9b486ba19f93df4cfa4"
+          "https://plugins.trac.wordpress.org/browser/emails-verification-for-woocommerce/tags/3.3.0/includes/alg-wc-ev-functions.php#L331"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-99999",
-      "title": "KVM checksum metadata non-destructive PoC",
+      "cve": "CVE-2026-23111",
+      "title": "nf_tables UAF exploit for Ubuntu 6.8.0-101-generic: unprivileged user \u2192 host root, plus container escape to.",
       "ecosystem": "linux",
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/shizuku198411/CVE-2026-99999-KVM-checksum-metadata-non-destructive-PoC",
+      "pocUrl": "https://github.com/kinokopio/CVE-2026-23111",
       "pocValidation": {
         "valid": true,
-        "score": 10,
+        "score": 11,
         "codeFiles": [
-          "probe.go",
-          "scripts/cleanup.sh",
-          "scripts/common.sh",
-          "scripts/run.sh",
-          "scripts/setup.sh"
+          "exploit_escape2.c"
         ],
-        "attackFiles": [],
-        "hasUsage": true,
+        "attackFiles": [
+          "exploit_escape2.c"
+        ],
+        "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-99999"
+          "CVE-2026-23111"
         ],
-        "language": "Shell"
+        "language": "C"
       },
       "reliability": "reliable exploit",
-      "researcher": "shizuku198411",
-      "researcherUrl": "https://github.com/shizuku198411",
+      "researcher": "kinokopio",
+      "researcherUrl": "https://github.com/kinokopio",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:44 AM CDT",
-      "firstSeenAt": "2026-10-19T09:44:26Z",
-      "language": "Shell",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: ipv4: validate checksum_start before completing checksum If a packet with bad checksum metadata gets into the ipv4 stack, skb_checksum_help can corrupt the.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: ipv4: validate checksum_start before completing checksum If a packet with bad checksum metadata gets into the ipv4 stack, skb_checksum_help can corrupt the.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: ipv4: validate checksum_start before completing checksum If a packet with bad checksum metadata gets into the ipv4 stack, skb_checksum_help can corrupt the.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: ipv4: validate checksum_start before completing checksum If a packet with bad checksum metadata gets into the ipv4 stack, skb_checksum_help can corrupt the.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at shizuku198411/CVE-2026-99999-KVM-checksum-metadata-non-destructive-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/shizuku198411/CVE-2026-99999-KVM-checksum-metadata-non-destructive-PoC\ncd CVE-2026-99999-KVM-checksum-metadata-non-destructive-PoC\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "3:41 AM CDT",
+      "firstSeenAt": "2026-10-19T08:41:50Z",
+      "language": "C",
+      "summary": "nf_tables UAF exploit for Ubuntu 6.8.0-101-generic: unprivileged user \u2192 host root, plus container escape to the host.",
+      "technicalSummary": "nf_tables UAF exploit for Ubuntu 6.8.0-101-generic: unprivileged user \u2192 host root, plus container escape to the host.",
+      "breakdown": "nf_tables UAF exploit for Ubuntu 6.8.0-101-generic: unprivileged user \u2192 host root, plus container escape to the host.",
+      "whatBroke": "nf_tables UAF exploit for Ubuntu 6.8.0-101-generic: unprivileged user \u2192 host root, plus container escape to the host.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at kinokopio/CVE-2026-23111.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/kinokopio/CVE-2026-23111\ncd CVE-2026-23111\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "local privilege escalation after a foothold",
@@ -1266,76 +1141,15 @@
       "tags": [
         "Linux",
         "Kernel",
-        "Exploit"
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/shizuku198411/CVE-2026-99999-KVM-checksum-metadata-non-destructive-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/0fab003ef4698e0628060a45a48f14b43ba2a40a"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-78163",
-      "title": "Reproducer for CVE-2026-78163 (Apache Camel camel-docling): unvalidated String body input source enables.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-78163",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-78163"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:55 AM CDT",
-      "firstSeenAt": "2026-10-16T09:55:19Z",
-      "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-docling): unvalidated String body input source enables SSRF and local file disclosure in DoclingProducer \u2014 Camel Spring Boot + Camel Quarkus",
-      "technicalSummary": "Reproducer for (Apache Camel camel-docling): unvalidated String body input source enables SSRF and local file disclosure in DoclingProducer \u2014 Camel Spring Boot + Camel Quarkus",
-      "breakdown": "Reproducer for (Apache Camel camel-docling): unvalidated String body input source enables SSRF and local file disclosure in DoclingProducer \u2014 Camel Spring Boot + Camel Quarkus",
-      "whatBroke": "Reproducer for (Apache Camel camel-docling): unvalidated String body input source enables SSRF and local file disclosure in DoclingProducer \u2014 Camel Spring Boot + Camel Quarkus",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-78163.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-78163\ncd CVE-2026-78163\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-78163"
+          "https://github.com/kinokopio/CVE-2026-23111"
         ]
       ]
     },
@@ -1388,7 +1202,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1447,11 +1261,195 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
           "https://github.com/oscerd/CVE-2026-84181"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-85251",
+      "title": "Reproducer for CVE-2026-85251 \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-85251",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-85251"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:28 AM CDT",
+      "firstSeenAt": "2026-10-19T16:28:02Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring Boot, affected vs fixed",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring Boot, affected vs fixed",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring Boot, affected vs fixed",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring Boot, affected vs fixed",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85251.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85251\ncd CVE-2026-85251\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-85251"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-64560",
+      "title": "temporary-root exploit for realme RMX6699 (Snapdragon 8 Elite, kernel 6.6.118, Android 17/COOS17)",
+      "ecosystem": "android",
+      "category": "mobile",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/totsiaw/cve-2026-64560-rmx6699",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          ".github/workflows/android.yml",
+          "android-app/app/src/main/java/dev/illusionary/rmx6699/Backends.java",
+          "android-app/app/src/main/java/dev/illusionary/rmx6699/BootReceiver.java",
+          "android-app/app/src/main/java/dev/illusionary/rmx6699/CampaignService.java",
+          "android-app/app/src/main/java/dev/illusionary/rmx6699/Engine.java",
+          "android-app/app/src/main/java/dev/illusionary/rmx6699/Io.java",
+          "android-app/app/src/main/java/dev/illusionary/rmx6699/MainActivity.java",
+          "android/app/src/main/java/dev/illusionary/cve64560/Backends.java"
+        ],
+        "attackFiles": [
+          "build/rmx6699-a17/exploit-fanout-rmx6699.c",
+          "build/rmx6699-a17/exploit-rmx6699-a17.c",
+          "src/exploit-fanout-op13.c",
+          "src/exploit-fanout-rmx5010.c",
+          "src/exploit-fanout-rmx6699.c",
+          "src/exploit-fanout.c",
+          "src/exploit-rotate-op13.c",
+          "src/exploit-rotate.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-64560"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "totsiaw",
+      "researcherUrl": "https://github.com/totsiaw",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:51 AM CDT",
+      "firstSeenAt": "2026-10-17T12:51:07Z",
+      "language": "C",
+      "summary": "temporary-root exploit for realme RMX6699 (Snapdragon 8 Elite, kernel 6.6.118, Android 17/COOS17)",
+      "technicalSummary": "temporary-root exploit for realme RMX6699 (Snapdragon 8 Elite, kernel 6.6.118, Android 17/COOS17)",
+      "breakdown": "temporary-root exploit for realme RMX6699 (Snapdragon 8 Elite, kernel 6.6.118, Android 17/COOS17)",
+      "whatBroke": "temporary-root exploit for realme RMX6699 (Snapdragon 8 Elite, kernel 6.6.118, Android 17/COOS17)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at totsiaw/cve-2026-64560-rmx6699.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/totsiaw/cve-2026-64560-rmx6699\ncd cve-2026-64560-rmx6699\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Android",
+        "Mobile",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/totsiaw/cve-2026-64560-rmx6699"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-85245",
+      "title": "Reproducer for CVE-2026-85245 \u2014 Apache Camel camel-thrift cross-exchange data disclosure (CWE-488); Spring.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-85245",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-spring-boot/docker-compose.yml",
+          "camel-spring-boot/src/main/java/org/apache/camel/dataformat/thrift/generated/Operation.java",
+          "camel-spring-boot/src/main/java/org/apache/camel/dataformat/thrift/generated/Work.java"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-85245"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:08 AM CDT",
+      "firstSeenAt": "2026-10-19T10:08:22Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-thrift cross-exchange data disclosure (CWE-488); Spring Boot, affected vs fixed",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-thrift cross-exchange data disclosure (CWE-488); Spring Boot, affected vs fixed",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-thrift cross-exchange data disclosure (CWE-488); Spring Boot, affected vs fixed",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-thrift cross-exchange data disclosure (CWE-488); Spring Boot, affected vs fixed",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85245.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85245\ncd CVE-2026-85245\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-85245"
         ]
       ]
     }
