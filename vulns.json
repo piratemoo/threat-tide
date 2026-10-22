@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T07:27:37Z",
+  "updatedAt": "2026-10-22T17:55:23Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,11 +87,82 @@
   ],
   "research": [
     {
+      "title": "How bug bounty sharpens one researcher\u2019s security skills",
+      "source": "GitHub Security",
+      "sourceUrl": "https://github.blog/security/",
+      "url": "https://github.blog/security/how-bug-bounty-sharpens-one-researchers-security-skills/",
+      "summary": "As Cybersecurity Awareness Month continues, the GitHub Bug Bounty team is excited to spotlight another top-performing security researcher from the GitHub Security Bug Bounty Program: @r31n ! As home to the world\u2019s developers, GitHub is dedicated to the.",
+      "publishedAt": "2026-10-22T17:21:30Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "Unboxing Phishing Kits: Huntress Examines 3 Real Kits",
+      "source": "Huntress",
+      "sourceUrl": "https://www.huntress.com/blog",
+      "url": "https://www.huntress.com/blog/unboxing-phishing-kits",
+      "summary": "Unboxing Phishing Kits: Huntress Examines 3 Real Kits",
+      "publishedAt": "2026-10-22T15:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing"
+      ]
+    },
+    {
+      "title": "SonarQube container scanning is now in open beta",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/container-scanning-open-beta/",
+      "summary": "The layer your code scans don\u2019t see You already verify the code you write and the dependencies you import in SonarQube. The images you ship add another layer: operating system packages, language runtimes and libraries that never appear in your repository..",
+      "publishedAt": "2026-10-22T13:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "adcs",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
+      "tags": [
+        "Windows",
+        "ADCS",
+        "Session Theft"
+      ]
+    },
+    {
+      "title": "How do you verify AI coding agent output from any tool, not just one?",
+      "source": "SonarSource",
+      "sourceUrl": "https://x.com/SonarSource",
+      "url": "https://www.sonarsource.com/blog/how-do-you-verify-ai-coding-agent-output/",
+      "summary": "Your developers are not committed to a single AI coding agent. Sonar's State of Code Developer Survey found that development teams juggle four different AI tools on average, and the state of the art shifts every few months. Teams move between agents, from.",
+      "publishedAt": "2026-10-22T13:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "devops",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "DevOps"
+      ]
+    },
+    {
       "title": "Compromised eMudhra intermediate certificates",
       "source": "Cisco Talos",
       "sourceUrl": "https://blog.talosintelligence.com/",
       "url": "https://blog.talosintelligence.com/compromised-intermediate-certificates/",
-      "summary": "Cisco Talos is aware of eight intermediate certificates belonging to the intermediate certificate authority, eMudhra . Rather than possessing the mandatory 384 bits of pseudo-random security, several private keys evaluated single-digit and double-digit.",
+      "summary": "Cisco Talos is aware of eight compromised intermediate certificates belonging to the intermediate certificate authority, eMudhra . Rather than possessing the mandatory 384 bits of pseudo-random security, several private keys evaluated single-digit and.",
       "publishedAt": "2026-10-21T20:43:29Z",
       "dayOffset": 1,
       "ecosystem": "windows",
@@ -241,79 +312,6 @@
         "Phishing",
         "RCE"
       ]
-    },
-    {
-      "title": "Parasitizing trust: How legitimate infrastructure becomes a delivery pipeline for attackers",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/parasitizing-trust-how-legitimate-infrastructure-becomes-a-delivery-pipeline-for-attackers/",
-      "summary": "Legitimate infrastructure has become a powerful delivery mechanism for attackers, carrying the inherent trust they once had to build. As Cisco Talos explored in our previous research on weaponizing software-as-a-service (SaaS) notification pipelines , these.",
-      "publishedAt": "2026-10-21T10:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing"
-      ]
-    },
-    {
-      "title": "Threats Hidden in Replies: Threat Actors Deliver Malware and Credential Phishing in Email Threads",
-      "source": "Cofense",
-      "sourceUrl": "https://cofense.com/",
-      "url": "https://cofense.com/blog/cofense-intelligence-strategic-analysis",
-      "summary": "By: Intelligence Team, Kahng An Recently, threat actors have been increasingly delivering malware or credential phishing attacks at the end of long email threads designed to exploit a potential victim\u2019s trust in an email contact. In this tactic, threat.",
-      "publishedAt": "2026-10-21T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing"
-      ]
-    },
-    {
-      "title": "Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619)",
-      "source": "Huntress",
-      "sourceUrl": "https://www.huntress.com/blog",
-      "url": "https://www.huntress.com/blog/php2shell-leaked-critical-php-vulnerabilities",
-      "summary": "Rapid Response: php2shell, Leaked Critical PHP Vulnerabilities (CVE-2026-109618 & CVE-2026-109619)",
-      "publishedAt": "2026-10-21T04:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
-      ],
-      "tags": [
-        "Web",
-        "Webstack"
-      ]
-    },
-    {
-      "title": "PHP2Shell: PHP Patches Two Critical RCE Vulnerabilities, Urges Immediate Updates",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/10/20/php-announces-critical-security-release-for-two-vulnerabilities",
-      "summary": "Updated: October 21, 2026 PHP has released security updates for two critical vulnerabilities that can allow unauthenticated remote code execution. Apache mod_php deployments warrant immediate attention: PHP reports a demonstrated exploit that can trigger.",
-      "publishedAt": "2026-10-21T02:59:03Z",
-      "dayOffset": 2,
-      "ecosystem": "windows",
-      "category": "kernel",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-109618",
-        "CVE-2026-109619"
-      ],
-      "tags": [
-        "Windows",
-        "Kernel",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
@@ -387,136 +385,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-60137",
-      "title": "WordPress Core SQL Injection Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/gichirimaku/wp2shell-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "exp.py",
-          "wp2shell.py"
-        ],
-        "attackFiles": [
-          "exp.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-60137",
-          "CVE-2026-63030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "gichirimaku",
-      "researcherUrl": "https://github.com/gichirimaku",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:27 AM CDT",
-      "firstSeenAt": "2026-10-22T07:27:37Z",
-      "language": "Python",
-      "summary": "+ exploit RCE chain.",
-      "technicalSummary": "+ exploit RCE chain.",
-      "breakdown": "+ exploit RCE chain.",
-      "whatBroke": "+ exploit RCE chain.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at gichirimaku/wp2shell-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/gichirimaku/wp2shell-PoC\ncd wp2shell-PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Core",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 77,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/gichirimaku/wp2shell-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-63030",
-      "title": "WordPress Core Interpretation Conflict Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Githu836/PoC-for-CVE-2026-63030",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "wp2shell.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-63030"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Githu836",
-      "researcherUrl": "https://github.com/Githu836",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "6:32 AM CDT",
-      "firstSeenAt": "2026-10-21T11:32:08Z",
-      "language": "Python",
-      "summary": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
-      "technicalSummary": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
-      "breakdown": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
-      "whatBroke": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Githu836/PoC-for-CVE-2026-63030.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Githu836/PoC-for-CVE-2026-63030\ncd PoC-for-CVE-2026-63030\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Core",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 81,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Githu836/PoC-for-CVE-2026-63030"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-31431",
       "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
       "ecosystem": "linux",
@@ -576,158 +444,6 @@
         [
           "Vendor Advisory",
           "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-111057",
-      "title": "Mercury unauth RCE combo: CVE-2026-111058 (kernels) + CVE-2026-111057 (terminals). By 0xNuts (@ExDev994)..",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ExDev994/CVE-2026-111058-CVE-2026-111057-mercury-rce",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "lab/docker-compose.yml",
-          "mercury_combo/__init__.py",
-          "mercury_combo/exfil.py",
-          "mercury_combo/kernels_rce.py",
-          "mercury_combo/mass_scan.py",
-          "mercury_combo/persistence.py",
-          "mercury_combo/recon.py"
-        ],
-        "attackFiles": [
-          "exploit.py",
-          "mercury_combo/kernels_rce.py",
-          "mercury_combo/terminals_rce.py",
-          "poc/__init__.py",
-          "poc/payloads.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-111057",
-          "CVE-2026-111058"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ExDev994",
-      "researcherUrl": "https://github.com/ExDev994",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:38 PM CDT",
-      "firstSeenAt": "2026-10-20T04:38:18Z",
-      "language": "Python",
-      "summary": "Mercury unauth RCE combo: CVE-2026-111058 (kernels) + (terminals). By 0xNuts (@ExDev994). Authorized testing only.",
-      "technicalSummary": "Mercury unauth RCE combo: CVE-2026-111058 (kernels) + (terminals). By 0xNuts (@ExDev994). Authorized testing only.",
-      "breakdown": "Mercury unauth RCE combo: CVE-2026-111058 (kernels) + (terminals). By 0xNuts (@ExDev994). Authorized testing only.",
-      "whatBroke": "Mercury unauth RCE combo: CVE-2026-111058 (kernels) + (terminals). By 0xNuts (@ExDev994). Authorized testing only.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ExDev994/CVE-2026-111058-CVE-2026-111057-mercury-rce.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ExDev994/CVE-2026-111058-CVE-2026-111057-mercury-rce\ncd CVE-2026-111058-CVE-2026-111057-mercury-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ExDev994/CVE-2026-111058-CVE-2026-111057-mercury-rce"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/mljar/mercury/commit/8c467129037ee9df269d543ac217ffd33b97bf3f"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-111058",
-      "title": "Mercury unauth RCE combo: CVE-2026-111058 (kernels) + CVE-2026-111057 (terminals). By 0xNuts (@ExDev994)..",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/ExDev994/CVE-2026-111058-CVE-2026-111057-mercury-rce",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "lab/docker-compose.yml",
-          "mercury_combo/__init__.py",
-          "mercury_combo/exfil.py",
-          "mercury_combo/kernels_rce.py",
-          "mercury_combo/mass_scan.py",
-          "mercury_combo/persistence.py",
-          "mercury_combo/recon.py"
-        ],
-        "attackFiles": [
-          "exploit.py",
-          "mercury_combo/kernels_rce.py",
-          "mercury_combo/terminals_rce.py",
-          "poc/__init__.py",
-          "poc/payloads.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-111057",
-          "CVE-2026-111058"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "ExDev994",
-      "researcherUrl": "https://github.com/ExDev994",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:38 PM CDT",
-      "firstSeenAt": "2026-10-20T04:38:18Z",
-      "language": "Python",
-      "summary": "Mercury unauth RCE combo: (kernels) + CVE-2026-111057 (terminals). By 0xNuts (@ExDev994). Authorized testing only.",
-      "technicalSummary": "Mercury unauth RCE combo: (kernels) + CVE-2026-111057 (terminals). By 0xNuts (@ExDev994). Authorized testing only.",
-      "breakdown": "Mercury unauth RCE combo: (kernels) + CVE-2026-111057 (terminals). By 0xNuts (@ExDev994). Authorized testing only.",
-      "whatBroke": "Mercury unauth RCE combo: (kernels) + CVE-2026-111057 (terminals). By 0xNuts (@ExDev994). Authorized testing only.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ExDev994/CVE-2026-111058-CVE-2026-111057-mercury-rce.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ExDev994/CVE-2026-111058-CVE-2026-111057-mercury-rce\ncd CVE-2026-111058-CVE-2026-111057-mercury-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/ExDev994/CVE-2026-111058-CVE-2026-111057-mercury-rce"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/mljar/mercury/commit/73a40ceb0becf057f495a5738ad7f5a5222a53e1"
         ]
       ]
     },
@@ -1219,26 +935,21 @@
       ]
     },
     {
-      "cve": "CVE-2026-109618",
+      "cve": "CVE-2026-109619",
       "title": "/ CVE-2026-109619 | PHP Core Remote Code Execution Vulnerabilities (PHP2Shell)",
       "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
+      "category": "kernel",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/pattingbabies/php2shell-CVE-2026-109618-109619",
+      "pocUrl": "https://github.com/aduli198/CVE-2026-109618_CVE-2026-109619",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "demo.sh",
-          "docker-compose.yml",
-          "exploit_aarch64.py",
-          "verify.py",
-          "web/index.php"
+          "exploit.py"
         ],
         "attackFiles": [
-          "exploit_aarch64.py",
-          "verify.py"
+          "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -1252,109 +963,35 @@
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:20 AM CDT",
-      "firstSeenAt": "2026-10-22T05:20:36Z",
+      "added": "12:38 AM CDT",
+      "firstSeenAt": "2026-10-22T05:38:42Z",
       "language": "Python",
-      "summary": "Full 1:1 reproduction of php2shell (/ CVE-2026-109619): pre-auth PHP RCE via session.upload_progress OOM corruption and stale cross-request state. Pinned mod_php 8.4.26 / Apache 2.4.69 aarch64 lab, pure HTTP, heap-layout ASLR.",
+      "summary": "PoC for PHP2Shell (CVE-2026-109618 / ) zero-depndency, pre-auth RCE via a use-after-free in PHP's session.upload_progress handler. Affects PHP 5.48.5.11 fixed in 8.2.35+",
       "technicalSummary": "CVE-2026-109618 and CVE-2026-109619, publicly referred to as PHP2Shell, are critical vulnerabilities in PHP that can allow unauthenticated remote code execution. PHP released security updates on October 21, 2026. The project identifies PHP installations.",
       "breakdown": "CVE-2026-109618 and CVE-2026-109619, publicly referred to as PHP2Shell, are critical vulnerabilities in PHP that can allow unauthenticated remote code execution. PHP released security updates on October 21, 2026. The project identifies PHP installations.",
-      "whatBroke": "Full 1:1 reproduction of php2shell (/ CVE-2026-109619): pre-auth PHP RCE via session.upload_progress OOM corruption and stale cross-request state. Pinned mod_php 8.4.26 / Apache 2.4.69 aarch64 lab, pure HTTP, heap-layout ASLR.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pattingbabies/php2shell-CVE-2026-109618-109619.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pattingbabies/php2shell-CVE-2026-109618-109619\ncd php2shell-CVE-2026-109618-109619\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "PoC for PHP2Shell (CVE-2026-109618 / ) zero-depndency, pre-auth RCE via a use-after-free in PHP's session.upload_progress handler. Affects PHP 5.48.5.11 fixed in 8.2.35+",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at aduli198/CVE-2026-109618_CVE-2026-109619.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/aduli198/CVE-2026-109618_CVE-2026-109619\ncd CVE-2026-109618_CVE-2026-109619\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
+        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Web",
-        "Webstack",
+        "Kernel",
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 77,
       "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/pattingbabies/php2shell-CVE-2026-109618-109619"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-109619",
-      "title": "/ CVE-2026-109619 | PHP Core Remote Code Execution Vulnerabilities (PHP2Shell)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/pattingbabies/php2shell-CVE-2026-109618-109619",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "demo.sh",
-          "docker-compose.yml",
-          "exploit_aarch64.py",
-          "verify.py",
-          "web/index.php"
-        ],
-        "attackFiles": [
-          "exploit_aarch64.py",
-          "verify.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-109618",
-          "CVE-2026-109619"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:20 AM CDT",
-      "firstSeenAt": "2026-10-22T05:20:36Z",
-      "language": "Python",
-      "summary": "Full 1:1 reproduction of php2shell (CVE-2026-109618 / ): pre-auth PHP RCE via session.upload_progress OOM corruption and stale cross-request state. Pinned mod_php 8.4.26 / Apache 2.4.69 aarch64 lab, pure HTTP, heap-layout ASLR.",
-      "technicalSummary": "CVE-2026-109618 and CVE-2026-109619, publicly referred to as PHP2Shell, are critical vulnerabilities in PHP that can allow unauthenticated remote code execution. PHP released security updates on October 21, 2026. The project identifies PHP installations.",
-      "breakdown": "CVE-2026-109618 and CVE-2026-109619, publicly referred to as PHP2Shell, are critical vulnerabilities in PHP that can allow unauthenticated remote code execution. PHP released security updates on October 21, 2026. The project identifies PHP installations.",
-      "whatBroke": "Full 1:1 reproduction of php2shell (CVE-2026-109618 / ): pre-auth PHP RCE via session.upload_progress OOM corruption and stale cross-request state. Pinned mod_php 8.4.26 / Apache 2.4.69 aarch64 lab, pure HTTP, heap-layout ASLR.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at pattingbabies/php2shell-CVE-2026-109618-109619.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/pattingbabies/php2shell-CVE-2026-109618-109619\ncd php2shell-CVE-2026-109618-109619\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/pattingbabies/php2shell-CVE-2026-109618-109619"
+          "https://github.com/aduli198/CVE-2026-109618_CVE-2026-109619"
         ],
         [
           "Technical Paper",
@@ -1367,43 +1004,54 @@
       ]
     },
     {
-      "cve": "CVE-2026-85301",
-      "title": "Reproducer for CVE-2026-85301 \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring.",
+      "cve": "CVE-2026-109618",
+      "title": "/ CVE-2026-109619 | PHP Core Remote Code Execution Vulnerabilities (PHP2Shell)",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-85301",
+      "pocUrl": "https://github.com/LeminEly/CVE-2026-109618-109619",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
+          "detection/falco/php2shell.yaml",
+          "detection/sigma/php-worker-suspicious-child.yml",
+          "detection/sigma/php2shell-request-indicators.yml",
+          "hardening/verify.sh",
+          "lab/docker-compose.yml",
+          "lab/www/index.php",
+          "tools/php2shell-check.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "hardening/verify.sh",
+          "tools/php2shell-check.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-85301"
+          "CVE-2026-109618",
+          "CVE-2026-109619"
         ],
-        "language": "Java"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:30 AM CDT",
-      "firstSeenAt": "2026-10-20T11:30:26Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85301.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85301\ncd CVE-2026-85301\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "3:19 AM CDT",
+      "firstSeenAt": "2026-10-22T08:19:22Z",
+      "language": "Python",
+      "summary": "PoC demonstrations for PHP vulnerabilities & CVE-2026-109619",
+      "technicalSummary": "CVE-2026-109618 and CVE-2026-109619, publicly referred to as PHP2Shell, are critical vulnerabilities in PHP that can allow unauthenticated remote code execution. PHP released security updates on October 21, 2026. The project identifies PHP installations.",
+      "breakdown": "CVE-2026-109618 and CVE-2026-109619, publicly referred to as PHP2Shell, are critical vulnerabilities in PHP that can allow unauthenticated remote code execution. PHP released security updates on October 21, 2026. The project identifies PHP installations.",
+      "whatBroke": "PoC demonstrations for PHP vulnerabilities & CVE-2026-109619",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at LeminEly/CVE-2026-109618-109619.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/LeminEly/CVE-2026-109618-109619\ncd CVE-2026-109618-109619\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -1411,19 +1059,87 @@
       "tags": [
         "Web",
         "Webstack",
-        "Session Theft"
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
+      "weaponization": 77,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/oscerd/CVE-2026-85301"
+          "https://github.com/LeminEly/CVE-2026-109618-109619"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
         ],
         [
           "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85301.html"
+          "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "title": "Local detector for CVE-2026-110264 (GitLab Onigmo regex repeat-ID overflow, CVSS 10.0 unauth RCE). One-file.",
+      "ecosystem": "cloud",
+      "category": "devops",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/TahuCryptsi/gitlab-onigmo-check",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "onigmo-check.rb"
+        ],
+        "attackFiles": [
+          "onigmo-check.rb"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-110264"
+        ],
+        "language": "Ruby"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "TahuCryptsi",
+      "researcherUrl": "https://github.com/TahuCryptsi",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:10 AM CDT",
+      "firstSeenAt": "2026-10-22T16:10:51Z",
+      "language": "Ruby",
+      "summary": "Local detector for (GitLab Onigmo regex repeat-ID overflow, CVSS 10.0 unauth RCE). One-file Ruby check + real crash transcript.",
+      "technicalSummary": "Local detector for (GitLab Onigmo regex repeat-ID overflow, CVSS 10.0 unauth RCE). One-file Ruby check + real crash transcript.",
+      "breakdown": "Local detector for (GitLab Onigmo regex repeat-ID overflow, CVSS 10.0 unauth RCE). One-file Ruby check + real crash transcript.",
+      "whatBroke": "Local detector for (GitLab Onigmo regex repeat-ID overflow, CVSS 10.0 unauth RCE). One-file Ruby check + real crash transcript.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at TahuCryptsi/gitlab-onigmo-check.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/TahuCryptsi/gitlab-onigmo-check\ncd gitlab-onigmo-check\nruby <script>.rb --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "DevOps",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/TahuCryptsi/gitlab-onigmo-check"
+        ],
+        [
+          "Vendor Advisory",
+          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
         ]
       ]
     },
@@ -1484,6 +1200,245 @@
         [
           "Vendor Advisory",
           "https://atos.net/en/lp/cybershield/a-tale-of-several-hijacks-and-what-it-taught-me-about-runtime-driven-testing"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-84180",
+      "title": "Reproducer for CVE-2026-84180 \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209);.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-84180",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-quarkus/docker-compose.yml",
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-84180"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:18 AM CDT",
+      "firstSeenAt": "2026-10-19T09:18:34Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-84180.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-84180\ncd CVE-2026-84180\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-84180"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-84180.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-85246",
+      "title": "Reproducer for CVE-2026-85246 \u2014 Apache Camel camel-mina consumer information disclosure (CWE-209); Spring.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-85246",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-85246"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:41 AM CDT",
+      "firstSeenAt": "2026-10-19T10:41:21Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-mina consumer information disclosure (CWE-209); Spring Boot, affected vs fixed",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-mina consumer information disclosure (CWE-209); Spring Boot, affected vs fixed",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-mina consumer information disclosure (CWE-209); Spring Boot, affected vs fixed",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-mina consumer information disclosure (CWE-209); Spring Boot, affected vs fixed",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85246.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85246\ncd CVE-2026-85246\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-85246"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-85246.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-85248",
+      "title": "Reproducer for CVE-2026-85248 \u2014 Apache Camel camel-pqc concurrent Signature race / verification bypass.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-85248",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-quarkus/docker-compose.yml",
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-85248"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:05 AM CDT",
+      "firstSeenAt": "2026-10-19T12:05:38Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-pqc concurrent Signature race / verification bypass (CWE-362); Spring Boot + Quarkus, affected vs fixed",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-pqc concurrent Signature race / verification bypass (CWE-362); Spring Boot + Quarkus, affected vs fixed",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-pqc concurrent Signature race / verification bypass (CWE-362); Spring Boot + Quarkus, affected vs fixed",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-pqc concurrent Signature race / verification bypass (CWE-362); Spring Boot + Quarkus, affected vs fixed",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85248.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85248\ncd CVE-2026-85248\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-85248"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-85248.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-85249",
+      "title": "Reproducer for CVE-2026-85249 \u2014 Apache Camel camel-tika metadata header injection (CWE-20); Spring Boot +.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-85249",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-quarkus/docker-compose.yml",
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-85249"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:51 AM CDT",
+      "firstSeenAt": "2026-10-19T12:51:40Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-tika metadata header injection (CWE-20); Spring Boot + Quarkus, affected vs fixed",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-tika metadata header injection (CWE-20); Spring Boot + Quarkus, affected vs fixed",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-tika metadata header injection (CWE-20); Spring Boot + Quarkus, affected vs fixed",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-tika metadata header injection (CWE-20); Spring Boot + Quarkus, affected vs fixed",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85249.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85249\ncd CVE-2026-85249\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-85249"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-85249.html"
         ]
       ]
     }
