@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T07:10:19Z",
+  "updatedAt": "2026-10-24T16:31:37Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -398,7 +398,7 @@
       "category": "vpn-edge",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/completetech-security/netscaler-cve-2026-88772-check",
+      "pocUrl": "https://github.com/CompleTetech-Security/netscaler-cve-2026-88772-check",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -407,7 +407,8 @@
           "netscaler_check.py",
           "test_checker.py",
           "test_configuration.py",
-          "test_contract.py"
+          "test_contract.py",
+          "test_publication_boundaries.py"
         ],
         "attackFiles": [
           "netscaler_check.py"
@@ -419,8 +420,8 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "completetech-security",
-      "researcherUrl": "https://github.com/completetech-security",
+      "researcher": "CompleTetech-Security",
+      "researcherUrl": "https://github.com/CompleTetech-Security",
       "pocWorks": "Yes",
       "difficulty": "moderate",
       "added": "3:03 PM CDT",
@@ -430,8 +431,8 @@
       "technicalSummary": "Offline evidence checker for NetScaler DTLS. Per-vserver configuration and firmware assessment; standalone Python; no exploit payloads.",
       "breakdown": "Offline evidence checker for NetScaler DTLS. Per-vserver configuration and firmware assessment; standalone Python; no exploit payloads.",
       "whatBroke": "Offline evidence checker for NetScaler DTLS. Per-vserver configuration and firmware assessment; standalone Python; no exploit payloads.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at completetech-security/netscaler-cve-2026-88772-check.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/completetech-security/netscaler-cve-2026-88772-check\ncd netscaler-cve-2026-88772-check\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CompleTetech-Security/netscaler-cve-2026-88772-check.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CompleTetech-Security/netscaler-cve-2026-88772-check\ncd netscaler-cve-2026-88772-check\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed NetScaler",
         "credential access from service context",
@@ -452,7 +453,76 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/completetech-security/netscaler-cve-2026-88772-check"
+          "https://github.com/CompleTetech-Security/netscaler-cve-2026-88772-check"
+        ],
+        [
+          "Vendor Advisory",
+          "https://community.citrix.com/techzone-blogs/110_security-updates/netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve-2026-88771-through-cve-2026-88778"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-88771",
+      "title": "Citrix NetScaler Improper Input Validation Vulnerability",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/CompleTetech-Security/netscaler-cve-2026-88771-check",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          ".github/workflows/tests.yml",
+          "netscaler_check.py",
+          "test_checker.py",
+          "test_contract.py",
+          "test_publication_boundaries.py"
+        ],
+        "attackFiles": [
+          "netscaler_check.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-88771"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "CompleTetech-Security",
+      "researcherUrl": "https://github.com/CompleTetech-Security",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:02 PM CDT",
+      "firstSeenAt": "2026-10-23T20:02:16Z",
+      "language": "Python",
+      "summary": "Offline evidence checker for NetScaler. Edition-aware firmware assessment, separate threat metadata, standalone Python, no exploit payloads.",
+      "technicalSummary": "Offline evidence checker for NetScaler. Edition-aware firmware assessment, separate threat metadata, standalone Python, no exploit payloads.",
+      "breakdown": "Offline evidence checker for NetScaler. Edition-aware firmware assessment, separate threat metadata, standalone Python, no exploit payloads.",
+      "whatBroke": "Offline evidence checker for NetScaler. Edition-aware firmware assessment, separate threat metadata, standalone Python, no exploit payloads.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CompleTetech-Security/netscaler-cve-2026-88771-check.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CompleTetech-Security/netscaler-cve-2026-88771-check\ncd netscaler-cve-2026-88771-check\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed NetScaler",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 77,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/CompleTetech-Security/netscaler-cve-2026-88771-check"
         ],
         [
           "Vendor Advisory",
@@ -525,74 +595,6 @@
         [
           "Vendor Advisory",
           "https://fortiguard.fortinet.com/psirt/FG-IR-26-180"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-88771",
-      "title": "Citrix NetScaler Improper Input Validation Vulnerability",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/completetech-security/netscaler-cve-2026-88771-check",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          ".github/workflows/tests.yml",
-          "netscaler_check.py",
-          "test_checker.py",
-          "test_contract.py"
-        ],
-        "attackFiles": [
-          "netscaler_check.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-88771"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "completetech-security",
-      "researcherUrl": "https://github.com/completetech-security",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:02 PM CDT",
-      "firstSeenAt": "2026-10-23T20:02:16Z",
-      "language": "Python",
-      "summary": "Offline evidence checker for NetScaler. Edition-aware firmware assessment, separate threat metadata, standalone Python, no exploit payloads.",
-      "technicalSummary": "Offline evidence checker for NetScaler. Edition-aware firmware assessment, separate threat metadata, standalone Python, no exploit payloads.",
-      "breakdown": "Offline evidence checker for NetScaler. Edition-aware firmware assessment, separate threat metadata, standalone Python, no exploit payloads.",
-      "whatBroke": "Offline evidence checker for NetScaler. Edition-aware firmware assessment, separate threat metadata, standalone Python, no exploit payloads.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at completetech-security/netscaler-cve-2026-88771-check.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/completetech-security/netscaler-cve-2026-88771-check\ncd netscaler-cve-2026-88771-check\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed NetScaler",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 76,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/completetech-security/netscaler-cve-2026-88771-check"
-        ],
-        [
-          "Vendor Advisory",
-          "https://community.citrix.com/techzone-blogs/110_security-updates/netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve-2026-88771-through-cve-2026-88778"
         ]
       ]
     },
@@ -718,44 +720,47 @@
       ]
     },
     {
-      "cve": "CVE-2026-39987",
-      "title": "Marimo Remote Code Execution Vulnerability",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-109618",
+      "title": "/ CVE-2026-109619 | NodeZero Rapid Response Check Now Available",
+      "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/lunacysoft/CVE-2026-39987-POC-Marimo",
+      "pocUrl": "https://github.com/googlesky/GHSA-w8hw-w9fx-j79w",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "CVE-2026-39987-POC-Marimo.py"
+          "lab/docker-compose.yml",
+          "lab/src/index.php",
+          "lab/src/nosession.php",
+          "poc.py"
         ],
         "attackFiles": [
-          "CVE-2026-39987-POC-Marimo.py"
+          "poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-39987"
+          "CVE-2026-109618"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "lunacysoft",
-      "researcherUrl": "https://github.com/lunacysoft",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "1:04 AM CDT",
-      "firstSeenAt": "2026-10-24T06:04:58Z",
+      "added": "2:11 AM CDT",
+      "firstSeenAt": "2026-10-24T07:11:15Z",
       "language": "Python",
-      "summary": "POC Marimo",
-      "technicalSummary": "POC Marimo",
-      "breakdown": "POC Marimo",
-      "whatBroke": "POC Marimo",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at lunacysoft/CVE-2026-39987-POC-Marimo.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/lunacysoft/CVE-2026-39987-POC-Marimo\ncd CVE-2026-39987-POC-Marimo\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PHP2Shell PoC for GHSA-w8hw-w9fx-j79w / \u2014 PHP OOM longjmp memory corruption. Validated OOM producers and dangling session-state worker crash on PHP 8.4.26 mod_php, with instrumented lab and full report.",
+      "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
+      "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
+      "whatBroke": "PHP2Shell PoC for GHSA-w8hw-w9fx-j79w / \u2014 PHP OOM longjmp memory corruption. Validated OOM producers and dangling session-state worker crash on PHP 8.4.26 mod_php, with instrumented lab and full report.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at googlesky/GHSA-w8hw-w9fx-j79w.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/googlesky/GHSA-w8hw-w9fx-j79w\ncd GHSA-w8hw-w9fx-j79w\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Marimo",
+        "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
@@ -763,22 +768,25 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "RCE",
-        "KEV"
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 99,
+      "weaponization": 82,
       "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/lunacysoft/CVE-2026-39987-POC-Marimo"
+          "https://github.com/googlesky/GHSA-w8hw-w9fx-j79w"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc"
+          "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
         ]
       ]
     },
@@ -1087,146 +1095,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-109618",
-      "title": "/ CVE-2026-109619 | NodeZero Rapid Response Check Now Available",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/googlesky/GHSA-w8hw-w9fx-j79w",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "lab/docker-compose.yml",
-          "lab/src/index.php",
-          "lab/src/nosession.php",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-109618"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "2:11 AM CDT",
-      "firstSeenAt": "2026-10-24T07:11:15Z",
-      "language": "Python",
-      "summary": "PHP2Shell PoC for GHSA-w8hw-w9fx-j79w / \u2014 PHP OOM longjmp memory corruption. Validated OOM producers and dangling session-state worker crash on PHP 8.4.26 mod_php, with instrumented lab and full report.",
-      "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "whatBroke": "PHP2Shell PoC for GHSA-w8hw-w9fx-j79w / \u2014 PHP OOM longjmp memory corruption. Validated OOM producers and dangling session-state worker crash on PHP 8.4.26 mod_php, with instrumented lab and full report.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at googlesky/GHSA-w8hw-w9fx-j79w.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/googlesky/GHSA-w8hw-w9fx-j79w\ncd GHSA-w8hw-w9fx-j79w\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 82,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/googlesky/GHSA-w8hw-w9fx-j79w"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-109619",
-      "title": "/ CVE-2026-109619 | NodeZero Rapid Response Check Now Available",
-      "ecosystem": "web",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/santihabib/CVE-2026-109619",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "build.sh",
-          "poc/repro_uaf.py"
-        ],
-        "attackFiles": [
-          "poc/repro_uaf.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-109619"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:05 AM CDT",
-      "firstSeenAt": "2026-10-21T14:05:29Z",
-      "language": "Python",
-      "summary": "cross-request UAF in PHP session.upload_progress \u2014 reproduction, root-cause analysis and full chain to RCE",
-      "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "whatBroke": "cross-request UAF in PHP session.upload_progress \u2014 reproduction, root-cause analysis and full chain to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at santihabib/CVE-2026-109619.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/santihabib/CVE-2026-109619\ncd CVE-2026-109619\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Kernel",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 77,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/santihabib/CVE-2026-109619"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-83531",
       "title": "Reproducer for CVE-2026-83531 (Apache Camel camel-dynamic-router): the dynamic-router-control endpoint.",
       "ecosystem": "windows",
@@ -1286,47 +1154,43 @@
       ]
     },
     {
-      "cve": "CVE-2026-105482",
-      "title": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do",
+      "cve": "CVE-2026-84178",
+      "title": "Reproducer for CVE-2026-84178 (Apache Camel camel-oauth): the authorization-code callback redeems the code.",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/CaterMaoZi/CVE-2026-105482-POC",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-84178",
       "pocValidation": {
         "valid": true,
-        "score": 10,
+        "score": 9,
         "codeFiles": [
-          ".github/workflows/ci.yml",
-          "cve_2026_105482.py",
-          "run.sh"
+          "camel-quarkus/docker-compose.yml",
+          "camel-spring-boot/docker-compose.yml"
         ],
         "attackFiles": [],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-105482",
-          "CVE-2026-111497"
+          "CVE-2026-84178"
         ],
-        "language": "Python"
+        "language": "Java"
       },
       "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "10:41 AM CDT",
-      "firstSeenAt": "2026-10-21T15:41:53Z",
-      "language": "Python",
-      "summary": "A flaw in Node.js DNS resolution allows hostnames containing a NUL byte to be silently truncated by the dns.resolve*() functions and dns.reverse(). This is an incomplete fix of CVE-2026-48930, which only covered dns.lookup() and.",
-      "technicalSummary": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "breakdown": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "whatBroke": "A flaw in Node.js DNS resolution allows hostnames containing a NUL byte to be silently truncated by the dns.resolve*() functions and dns.reverse(). This is an incomplete fix of CVE-2026-48930, which only covered dns.lookup() and.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CaterMaoZi/CVE-2026-105482-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CaterMaoZi/CVE-2026-105482-POC\ncd CVE-2026-105482-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "3:56 AM CDT",
+      "firstSeenAt": "2026-10-19T08:56:40Z",
+      "language": "Java",
+      "summary": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
+      "technicalSummary": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
+      "breakdown": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
+      "whatBroke": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-84178.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-84178\ncd CVE-2026-84178\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -1334,7 +1198,128 @@
       "tags": [
         "Web",
         "Webstack",
-        "RCE"
+        "Session Theft"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-84178"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-84178.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-85301",
+      "title": "Reproducer for CVE-2026-85301 \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-85301",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-quarkus/docker-compose.yml",
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-85301"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:30 AM CDT",
+      "firstSeenAt": "2026-10-20T11:30:26Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85301.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85301\ncd CVE-2026-85301\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-85301"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-85301.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-85317",
+      "title": "Reproducer for CVE-2026-85317 \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-85317",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-85317"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:52 AM CDT",
+      "firstSeenAt": "2026-10-21T08:52:55Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85317.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85317\ncd CVE-2026-85317\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1342,15 +1327,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/CaterMaoZi/CVE-2026-105482-POC"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/product-tech/2026/10/23/node-js-patches-brotli-remote-code-execution-flaw-find-vulnerable-runtimes-before-attackers-do"
+          "https://github.com/oscerd/CVE-2026-85317"
         ],
         [
           "Vendor Advisory",
-          "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"
+          "https://camel.apache.org/security/CVE-2026-85317.html"
         ]
       ]
     },
@@ -1436,13 +1417,13 @@
       ]
     },
     {
-      "cve": "CVE-2026-84178",
-      "title": "Reproducer for CVE-2026-84178 (Apache Camel camel-oauth): the authorization-code callback redeems the code.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
+      "cve": "CVE-2026-84180",
+      "title": "Reproducer for CVE-2026-84180 \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209);.",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-84178",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-84180",
       "pocValidation": {
         "valid": true,
         "score": 9,
@@ -1453,7 +1434,7 @@
         "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-84178"
+          "CVE-2026-84180"
         ],
         "language": "Java"
       },
@@ -1462,25 +1443,24 @@
       "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:56 AM CDT",
-      "firstSeenAt": "2026-10-19T08:56:40Z",
+      "added": "4:18 AM CDT",
+      "firstSeenAt": "2026-10-19T09:18:34Z",
       "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
-      "technicalSummary": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
-      "breakdown": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
-      "whatBroke": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-84178.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-84178\ncd CVE-2026-84178\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-84180.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-84180\ncd CVE-2026-84180\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "Webstack",
-        "Session Theft"
+        "Windows",
+        "Exchange",
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1488,11 +1468,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/oscerd/CVE-2026-84178"
+          "https://github.com/oscerd/CVE-2026-84180"
         ],
         [
           "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-84178.html"
+          "https://camel.apache.org/security/CVE-2026-84180.html"
         ]
       ]
     }
