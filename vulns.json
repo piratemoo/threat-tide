@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T16:31:37Z",
+  "updatedAt": "2026-10-24T21:29:59Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -720,138 +720,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-109618",
-      "title": "/ CVE-2026-109619 | NodeZero Rapid Response Check Now Available",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/googlesky/GHSA-w8hw-w9fx-j79w",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "lab/docker-compose.yml",
-          "lab/src/index.php",
-          "lab/src/nosession.php",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-109618"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "2:11 AM CDT",
-      "firstSeenAt": "2026-10-24T07:11:15Z",
-      "language": "Python",
-      "summary": "PHP2Shell PoC for GHSA-w8hw-w9fx-j79w / \u2014 PHP OOM longjmp memory corruption. Validated OOM producers and dangling session-state worker crash on PHP 8.4.26 mod_php, with instrumented lab and full report.",
-      "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "whatBroke": "PHP2Shell PoC for GHSA-w8hw-w9fx-j79w / \u2014 PHP OOM longjmp memory corruption. Validated OOM producers and dangling session-state worker crash on PHP 8.4.26 mod_php, with instrumented lab and full report.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at googlesky/GHSA-w8hw-w9fx-j79w.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/googlesky/GHSA-w8hw-w9fx-j79w\ncd GHSA-w8hw-w9fx-j79w\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 82,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/googlesky/GHSA-w8hw-w9fx-j79w"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-80344",
-      "title": "Reproducer for CVE-2026-80344 (Apache Camel camel-as2): asynchronous MDN SSRF + credential disclosure \u2014 the.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-80344",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-80344"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:22 AM CDT",
-      "firstSeenAt": "2026-10-19T07:22:51Z",
-      "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-as2): asynchronous MDN SSRF + credential disclosure \u2014 the receiver delivers the MDN to the sender-chosen Receipt-Delivery-Option, presenting its credentials to an attacker-chosen host \u2014 Camel.",
-      "technicalSummary": "Reproducer for (Apache Camel camel-as2): asynchronous MDN SSRF + credential disclosure \u2014 the receiver delivers the MDN to the sender-chosen Receipt-Delivery-Option, presenting its credentials to an attacker-chosen host \u2014 Camel.",
-      "breakdown": "Reproducer for (Apache Camel camel-as2): asynchronous MDN SSRF + credential disclosure \u2014 the receiver delivers the MDN to the sender-chosen Receipt-Delivery-Option, presenting its credentials to an attacker-chosen host \u2014 Camel.",
-      "whatBroke": "Reproducer for (Apache Camel camel-as2): asynchronous MDN SSRF + credential disclosure \u2014 the receiver delivers the MDN to the sender-chosen Receipt-Delivery-Option, presenting its credentials to an attacker-chosen host \u2014 Camel.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-80344.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-80344\ncd CVE-2026-80344\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-80344"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-80344.html"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-84181",
       "title": "Reproducer for CVE-2026-84181 \u2014 Apache Camel camel-shiro thread-bound-subject authentication bypass.",
       "ecosystem": "windows",
@@ -975,42 +843,49 @@
       ]
     },
     {
-      "cve": "CVE-2026-85251",
-      "title": "Reproducer for CVE-2026-85251 \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring.",
+      "cve": "CVE-2026-109618",
+      "title": "/ CVE-2026-109619 | NodeZero Rapid Response Check Now Available",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-85251",
+      "pocUrl": "https://github.com/googlesky/GHSA-w8hw-w9fx-j79w",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "camel-spring-boot/docker-compose.yml"
+          "lab/docker-compose.yml",
+          "lab/src/index.php",
+          "lab/src/nosession.php",
+          "poc.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "poc.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-85251"
+          "CVE-2026-109618"
         ],
-        "language": "Java"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:28 AM CDT",
-      "firstSeenAt": "2026-10-19T16:28:02Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring Boot, affected vs fixed",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring Boot, affected vs fixed",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring Boot, affected vs fixed",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-http credential disclosure on redirect (CWE-200); Spring Boot, affected vs fixed",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85251.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85251\ncd CVE-2026-85251\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "difficulty": "easy",
+      "added": "2:11 AM CDT",
+      "firstSeenAt": "2026-10-24T07:11:15Z",
+      "language": "Python",
+      "summary": "PHP2Shell PoC for GHSA-w8hw-w9fx-j79w / \u2014 PHP OOM longjmp memory corruption. Validated OOM producers and dangling session-state worker crash on PHP 8.4.26 mod_php, with instrumented lab and full report.",
+      "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
+      "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
+      "whatBroke": "PHP2Shell PoC for GHSA-w8hw-w9fx-j79w / \u2014 PHP OOM longjmp memory corruption. Validated OOM producers and dangling session-state worker crash on PHP 8.4.26 mod_php, with instrumented lab and full report.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at googlesky/GHSA-w8hw-w9fx-j79w.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/googlesky/GHSA-w8hw-w9fx-j79w\ncd GHSA-w8hw-w9fx-j79w\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -1018,79 +893,23 @@
       "tags": [
         "Web",
         "Webstack",
-        "Session Theft"
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
+      "weaponization": 82,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/oscerd/CVE-2026-85251"
+          "https://github.com/googlesky/GHSA-w8hw-w9fx-j79w"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
         ],
         [
           "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85251.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-85296",
-      "title": "Reproducer for CVE-2026-85296 \u2014 Apache Camel camel-as2 cross-partner MDN signing key confusion (CWE-488);.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-85296",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-85296"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:12 AM CDT",
-      "firstSeenAt": "2026-10-20T09:12:06Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-as2 cross-partner MDN signing key confusion (CWE-488); Spring Boot + Quarkus, affected vs fixed",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-as2 cross-partner MDN signing key confusion (CWE-488); Spring Boot + Quarkus, affected vs fixed",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-as2 cross-partner MDN signing key confusion (CWE-488); Spring Boot + Quarkus, affected vs fixed",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-as2 cross-partner MDN signing key confusion (CWE-488); Spring Boot + Quarkus, affected vs fixed",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85296.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85296\ncd CVE-2026-85296\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-85296"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85296.html"
+          "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
         ]
       ]
     },
@@ -1154,43 +973,48 @@
       ]
     },
     {
-      "cve": "CVE-2026-84178",
-      "title": "Reproducer for CVE-2026-84178 (Apache Camel camel-oauth): the authorization-code callback redeems the code.",
+      "cve": "CVE-2026-109619",
+      "title": "/ CVE-2026-109619 | NodeZero Rapid Response Check Now Available",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-84178",
+      "pocUrl": "https://github.com/utkarsssh17/cve-2026-109619-php-uaf-poc",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
+          "build.sh",
+          "run.sh",
+          "triggers/bug76846.php",
+          "triggers/router.php"
         ],
         "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-84178"
+          "CVE-2026-109618",
+          "CVE-2026-109619"
         ],
-        "language": "Java"
+        "language": "PHP"
       },
       "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:56 AM CDT",
-      "firstSeenAt": "2026-10-19T08:56:40Z",
-      "language": "Java",
-      "summary": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
-      "technicalSummary": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
-      "breakdown": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
-      "whatBroke": "Reproducer for (Apache Camel camel-oauth): the authorization-code callback redeems the code without verifying a state parameter (login CSRF) \u2014 Camel Spring Boot + Camel Quarkus",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-84178.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-84178\ncd CVE-2026-84178\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "11:13 AM CDT",
+      "firstSeenAt": "2026-10-24T16:13:43Z",
+      "language": "PHP",
+      "summary": "PHP has various global state that temporarily points into request memory. In some scenarios, global state may not be correctly reset, or may be repopulated after being reset. The global state may then refer to request memory.",
+      "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
+      "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
+      "whatBroke": "PHP has various global state that temporarily points into request memory. In some scenarios, global state may not be correctly reset, or may be repopulated after being reset. The global state may then refer to request memory.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at utkarsssh17/cve-2026-109619-php-uaf-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/utkarsssh17/cve-2026-109619-php-uaf-poc\ncd cve-2026-109619-php-uaf-poc\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -1198,140 +1022,23 @@
       "tags": [
         "Web",
         "Webstack",
-        "Session Theft"
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
+      "weaponization": 77,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/oscerd/CVE-2026-84178"
+          "https://github.com/utkarsssh17/cve-2026-109619-php-uaf-poc"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
         ],
         [
           "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-84178.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-85301",
-      "title": "Reproducer for CVE-2026-85301 \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-85301",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-85301"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:30 AM CDT",
-      "firstSeenAt": "2026-10-20T11:30:26Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-keycloak issuer validation bypass (CWE-287). Camel Spring Boot + Camel Quarkus.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85301.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85301\ncd CVE-2026-85301\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-85301"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85301.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-85317",
-      "title": "Reproducer for CVE-2026-85317 \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-85317",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-85317"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:52 AM CDT",
-      "firstSeenAt": "2026-10-21T08:52:55Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85317.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85317\ncd CVE-2026-85317\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-85317"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85317.html"
+          "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
         ]
       ]
     },
@@ -1342,50 +1049,45 @@
       "category": "kubernetes",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/googlesky/CVE-2026-111497",
+      "pocUrl": "https://github.com/TheFool-TAROT/CVE-2026-111497-brotli-pwn",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "analysis/asan-driver-v2.c",
-          "analysis/asan-driver-v3.c",
-          "analysis/asan-driver.c",
-          "analysis/node-decode-vulnerable.c",
-          "analysis/node-zlib.js",
-          "analysis/node_zlib.cc",
-          "lab/docker-compose.dos.yml",
-          "lab/docker-compose.yml"
+          "docker/entrypoint.sh",
+          "lab/img_leak_probe.js",
+          "lab/img_server.js",
+          "poc/dos.js",
+          "poc/gen_dos.py",
+          "poc/gen_stream.py",
+          "poc/pwn_local.js"
         ],
         "attackFiles": [
-          "lab/run-poc.sh",
-          "lab/src/craft-payload.js",
-          "lab/src/exploit-dos.js",
-          "lab/src/exploit-express.js",
-          "lab/src/exploit-http.js",
-          "lab/src/exploit-overflow.js",
-          "lab/src/exploit-rce-v2.js",
-          "lab/src/exploit-rce.js"
+          "poc/dos.js",
+          "poc/gen_dos.py",
+          "poc/gen_stream.py",
+          "poc/pwn_local.js"
         ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-111497"
         ],
-        "language": "C"
+        "language": "JavaScript"
       },
       "reliability": "reliable exploit",
       "researcher": "Qualys Research",
       "researcherUrl": "https://blog.qualys.com/",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "2:11 AM CDT",
-      "firstSeenAt": "2026-10-24T07:11:16Z",
-      "language": "C",
-      "summary": "A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose.",
+      "added": "11:30 AM CDT",
+      "firstSeenAt": "2026-10-22T16:30:53Z",
+      "language": "JavaScript",
+      "summary": "Node.js Brotli decoder OOB write \u2014 analysis, PoC, Docker lab",
       "technicalSummary": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
       "breakdown": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "whatBroke": "A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at googlesky/CVE-2026-111497.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/googlesky/CVE-2026-111497\ncd CVE-2026-111497\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "Node.js Brotli decoder OOB write \u2014 analysis, PoC, Docker lab",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at TheFool-TAROT/CVE-2026-111497-brotli-pwn.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/TheFool-TAROT/CVE-2026-111497-brotli-pwn\ncd CVE-2026-111497-brotli-pwn\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -1400,11 +1102,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 0,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/googlesky/CVE-2026-111497"
+          "https://github.com/TheFool-TAROT/CVE-2026-111497-brotli-pwn"
         ],
         [
           "Technical Paper",
@@ -1417,62 +1119,395 @@
       ]
     },
     {
-      "cve": "CVE-2026-84180",
-      "title": "Reproducer for CVE-2026-84180 \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209);.",
-      "ecosystem": "windows",
-      "category": "exchange",
+      "cve": "CVE-2026-110152",
+      "title": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "ecosystem": "android",
+      "category": "mobile",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-84180",
+      "pocUrl": "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 7,
         "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
+          "build.sh",
+          "run.sh"
         ],
         "attackFiles": [],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
-          "CVE-2026-84180"
+          "CVE-2025-10502",
+          "CVE-2025-14174",
+          "CVE-2026-110152",
+          "CVE-2026-13775",
+          "CVE-2026-5868",
+          "CVE-2026-87654",
+          "CVE-2026-95325"
         ],
-        "language": "Java"
+        "language": "HTML"
       },
       "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
+      "researcher": "utkarsssh17",
+      "researcherUrl": "https://github.com/utkarsssh17",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:18 AM CDT",
-      "firstSeenAt": "2026-10-19T09:18:34Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-knative HTTP consumer information disclosure (CWE-209); Spring Boot + Quarkus, affected vs fixed",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-84180.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-84180\ncd CVE-2026-84180\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "12:21 PM CDT",
+      "firstSeenAt": "2026-10-24T17:21:47Z",
+      "language": "HTML",
+      "summary": "PoC: Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "technicalSummary": "PoC: Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "breakdown": "PoC: Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "whatBroke": "PoC: Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc\ncd cve-2026-110152-chrome-ngle-rce-poc\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
-        "Exchange",
-        "Exploit"
+        "Android",
+        "Mobile",
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/oscerd/CVE-2026-84180"
+          "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc"
         ],
         [
           "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-84180.html"
+          "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_01668083673.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "title": "regex2shell (CVE-2026-110264 + family) \u2014 GitLab/Onigmo unauth regex RCE research: safe differential.",
+      "ecosystem": "cloud",
+      "category": "devops",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/FranklinF25/regex2shell",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exploit/echo.py",
+          "lab/docker-compose.yml",
+          "lab/render.rb",
+          "lab/server.rb",
+          "poc/crash.py",
+          "poc/diagnose.py"
+        ],
+        "attackFiles": [
+          "exploit/echo.py",
+          "poc/crash.py",
+          "poc/diagnose.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-110264"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "FranklinF25",
+      "researcherUrl": "https://github.com/FranklinF25",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:24 AM CDT",
+      "firstSeenAt": "2026-10-23T16:24:57Z",
+      "language": "Python",
+      "summary": "regex2shell (+ family) \u2014 GitLab/Onigmo unauth regex RCE research: safe differential detector, deterministic interpreter kill, match-time write primitive",
+      "technicalSummary": "regex2shell (+ family) \u2014 GitLab/Onigmo unauth regex RCE research: safe differential detector, deterministic interpreter kill, match-time write primitive",
+      "breakdown": "regex2shell (+ family) \u2014 GitLab/Onigmo unauth regex RCE research: safe differential detector, deterministic interpreter kill, match-time write primitive",
+      "whatBroke": "regex2shell (+ family) \u2014 GitLab/Onigmo unauth regex RCE research: safe differential detector, deterministic interpreter kill, match-time write primitive",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at FranklinF25/regex2shell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/FranklinF25/regex2shell\ncd regex2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "DevOps",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/FranklinF25/regex2shell"
+        ],
+        [
+          "Vendor Advisory",
+          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-13775",
+      "title": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "ecosystem": "cloud",
+      "category": "kernel",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 5,
+        "codeFiles": [
+          "build.sh",
+          "run.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2025-10502",
+          "CVE-2025-14174",
+          "CVE-2026-110152",
+          "CVE-2026-13775",
+          "CVE-2026-5868",
+          "CVE-2026-87654",
+          "CVE-2026-95325"
+        ],
+        "language": "HTML"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "utkarsssh17",
+      "researcherUrl": "https://github.com/utkarsssh17",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:21 PM CDT",
+      "firstSeenAt": "2026-10-24T17:21:47Z",
+      "language": "HTML",
+      "summary": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "technicalSummary": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "breakdown": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "whatBroke": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc\ncd cve-2026-110152-chrome-ngle-rce-poc\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0175352312.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-5868",
+      "title": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 5,
+        "codeFiles": [
+          "build.sh",
+          "run.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2025-10502",
+          "CVE-2025-14174",
+          "CVE-2026-110152",
+          "CVE-2026-13775",
+          "CVE-2026-5868",
+          "CVE-2026-87654",
+          "CVE-2026-95325"
+        ],
+        "language": "HTML"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "utkarsssh17",
+      "researcherUrl": "https://github.com/utkarsssh17",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:21 PM CDT",
+      "firstSeenAt": "2026-10-24T17:21:47Z",
+      "language": "HTML",
+      "summary": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "technicalSummary": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "breakdown": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "whatBroke": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc\ncd cve-2026-110152-chrome-ngle-rce-poc\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-87654",
+      "title": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 5,
+        "codeFiles": [
+          "build.sh",
+          "run.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2025-10502",
+          "CVE-2025-14174",
+          "CVE-2026-110152",
+          "CVE-2026-13775",
+          "CVE-2026-5868",
+          "CVE-2026-87654",
+          "CVE-2026-95325"
+        ],
+        "language": "HTML"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "utkarsssh17",
+      "researcherUrl": "https://github.com/utkarsssh17",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:21 PM CDT",
+      "firstSeenAt": "2026-10-24T17:21:47Z",
+      "language": "HTML",
+      "summary": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "technicalSummary": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "breakdown": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "whatBroke": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc\ncd cve-2026-110152-chrome-ngle-rce-poc\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-95325",
+      "title": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 5,
+        "codeFiles": [
+          "build.sh",
+          "run.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2025-10502",
+          "CVE-2025-14174",
+          "CVE-2026-110152",
+          "CVE-2026-13775",
+          "CVE-2026-5868",
+          "CVE-2026-87654",
+          "CVE-2026-95325"
+        ],
+        "language": "HTML"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "utkarsssh17",
+      "researcherUrl": "https://github.com/utkarsssh17",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:21 PM CDT",
+      "firstSeenAt": "2026-10-24T17:21:47Z",
+      "language": "HTML",
+      "summary": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "technicalSummary": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "breakdown": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "whatBroke": "PoC: CVE-2026-110152 Chrome ANGLE vertex-attribute translation heap buffer overflow (CVSS 9.6)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc\ncd cve-2026-110152-chrome-ngle-rce-poc\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/utkarsssh17/cve-2026-110152-chrome-ngle-rce-poc"
         ]
       ]
     }
