@@ -26,6 +26,16 @@ CHANNELS = {
 }
 
 
+class DiscordRequestError(RuntimeError):
+    def __init__(self, method: str, status: int, body: str):
+        self.status = status
+        try:
+            self.discord_code = json.loads(body).get("code")
+        except (ValueError, AttributeError):
+            self.discord_code = None
+        super().__init__(f"Discord {method} failed with HTTP {status}: {body[:300]}")
+
+
 def local_tz() -> dt.tzinfo:
     try:
         return ZoneInfo("America/Chicago")
@@ -75,7 +85,7 @@ def request_json(method: str, url: str, payload: dict) -> dict:
             return json.loads(text) if text else {}
     except urllib.error.HTTPError as exc:
         error_body = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"Discord {method} failed with HTTP {exc.code}: {error_body[:300]}") from exc
+        raise DiscordRequestError(method, exc.code, error_body) from exc
 
 
 def local_time(value: str) -> str:
@@ -89,6 +99,13 @@ def local_time(value: str) -> str:
 
 def truncate(value: str, limit: int) -> str:
     value = " ".join(str(value or "").split())
+    if len(value) <= limit:
+        return value
+    return value[: max(0, limit - 1)].rstrip() + "..."
+
+
+def truncate_message(value: str, limit: int) -> str:
+    value = str(value or "").replace("\r\n", "\n").replace("\r", "\n")
     if len(value) <= limit:
         return value
     return value[: max(0, limit - 1)].rstrip() + "..."
@@ -135,16 +152,6 @@ def vuln_lines(feed: dict) -> str:
     return "\n".join(lines) or "Nothing to see here today."
 
 
-def research_lines(feed: dict) -> str:
-    lines = []
-    for item in top_research(feed):
-        title = truncate(item.get("title", "Untitled research"), 105)
-        source = item.get("source", "research")
-        url = item.get("url") or item.get("sourceUrl") or SITE_URL
-        lines.append(f"{link(title, url)} - {source}")
-    return "\n".join(lines) or "Nothing to see here today."
-
-
 def first_link(item: dict, label: str) -> str:
     for entry in item.get("links") or []:
         if len(entry) >= 2 and str(entry[0]).lower() == label.lower():
@@ -152,40 +159,137 @@ def first_link(item: dict, label: str) -> str:
     return ""
 
 
+def display_date(item: dict, feed: dict) -> str:
+    raw = item.get("firstSeenAt") or feed.get("updatedAt") or ""
+    try:
+        parsed = dt.datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+    except ValueError:
+        parsed = dt.datetime.now(dt.timezone.utc)
+    return parsed.strftime("%B %-d, %Y") if os.name != "nt" else parsed.strftime("%B %#d, %Y")
+
+
+def tag_line(item: dict) -> str:
+    tags = item.get("tags") or []
+    return " ".join(truncate(tag, 22) for tag in tags[:5])
+
+
+def link_line(item: dict) -> str:
+    labels = {"github": "GitHub", "technical paper": "Technical Paper", "vendor advisory": "Advisory", "advisory": "Advisory"}
+    parts = []
+    seen = set()
+    for entry in item.get("links") or []:
+        if len(entry) < 2:
+            continue
+        label = labels.get(str(entry[0]).lower(), str(entry[0]))
+        if label.lower() in seen:
+            continue
+        seen.add(label.lower())
+        parts.append(link(label, entry[1]))
+    if not parts and item.get("pocUrl"):
+        parts.append(link("GitHub", item["pocUrl"]))
+    return " | ".join(parts)
+
+
+def similar_line(item: dict) -> str:
+    category = str(item.get("category", "")).lower()
+    ecosystem = str(item.get("ecosystem", "")).lower()
+    if "sql" in category or "sqli" in " ".join(item.get("tags") or []).lower():
+        return "\n".join([
+            "CVE-2023-34362 MOVEit SQL injection",
+            "CVE-2023-3519 Citrix ADC unauthenticated RCE",
+            "CVE-2022-22965 Spring4Shell web RCE",
+        ])
+    if ecosystem == "linux":
+        return "\n".join([
+            "CVE-2022-0847 File overwrite to root (Dirty Pipe)",
+            "CVE-2023-0386 OverlayFS privilege escalation",
+            "CVE-2021-3156 Heap overflow to root (sudo Baron Samedit)",
+        ])
+    if ecosystem == "windows":
+        return "\n".join([
+            "CVE-2021-34527 PrintNightmare remote code execution",
+            "CVE-2022-26923 AD CS domain escalation",
+            "CVE-2023-23397 Outlook credential leak",
+        ])
+    return "\n".join([
+        "CVE-2024-4577 PHP-CGI argument injection",
+        "CVE-2023-22518 Confluence improper authorization",
+        "CVE-2024-36401 GeoServer unauthenticated RCE",
+    ])
+
+
+def vuln_post(feed: dict) -> str:
+    item = top_vulns(feed, 1)[0] if top_vulns(feed, 1) else None
+    if not item:
+        return f"**Nothing to see here today.**\n\n{SITE_URL}"
+    cve = item.get("cve", "NO-CVE")
+    title = truncate(item.get("title", "Untitled vulnerability"), 120)
+    author = item.get("researcher", "unknown")
+    language = item.get("language", "Unknown") or "Unknown"
+    what = truncate(item.get("summary") or item.get("technicalSummary") or item.get("whatBroke") or title, 420)
+    links = link_line(item)
+    similar = similar_line(item)
+    tags = tag_line(item)
+    return "\n".join([
+        f"｡ﾟﾟ･｡･ﾟﾟ｡ 🐮 {title} 🐮 ｡ﾟﾟ･｡･ﾟﾟ｡",
+        "",
+        f"{display_date(item, feed)} {cve}",
+        tags,
+        f"Author: {author} | Language: {language}",
+        links,
+        "",
+        title,
+        "",
+        f"__What happened:__ {what}",
+        "",
+        "Similar:",
+        similar,
+        "⋆⋅☆⋅⋆⋅☆⋅⋆⋅☆⋅⋆⋅☆⋅⋆",
+        "⠀",
+    ])
+
+
 def build_payload(channel: str, feed: dict) -> dict:
-    updated = local_time(feed.get("updatedAt", ""))
-    today_count = sum(1 for item in feed.get("vulns") or [] if int(item.get("dayOffset", 99) or 99) == 0)
-    base = {
-        "username": "pirate.moo",
+    return {
+        "username": "VULNS",
         "avatar_url": "https://raw.githubusercontent.com/piratemoo/threat-tide/main/images/yespls.png",
         "allowed_mentions": {"parse": []},
+        "content": truncate_message(vuln_post(feed), 1900),
+        "embeds": [],
+        "flags": 4,
     }
-    description = f"Last Check: **{updated}**\nverified public pocs - **{today_count} posted today**\n\n{vuln_lines(feed)}"
-    embed = {
-        "title": "Threat Tide",
-        "url": SITE_URL,
-        "description": truncate(description, 3900),
-        "color": 0xB026FF,
-        "footer": {"text": "working public poc feed"},
-    }
-    return base | {"content": "", "embeds": [embed]}
 
 
 def upsert_message(channel: str, webhook: str, message_id: str, payload: dict) -> str:
     webhook = normalize_webhook(webhook)
     if message_id:
         patch_url = f"{webhook}/messages/{urllib.parse.quote(message_id)}"
-        request_json("PATCH", patch_url, payload)
-        readback = request_json("GET", patch_url, {})
-        if str(readback.get("id", "")) != str(message_id):
-            raise RuntimeError(f"Discord readback mismatch for {channel}")
-        return message_id
+        try:
+            request_json("PATCH", patch_url, payload)
+        except DiscordRequestError as error:
+            # Only a deleted message can be repaired by creating another one.
+            # A missing webhook or permission failure needs configuration repair.
+            if error.status != 404 or error.discord_code != 10008:
+                raise
+        else:
+            readback = request_json("GET", patch_url, {})
+            if str(readback.get("id", "")) != str(message_id):
+                raise RuntimeError(f"Discord readback mismatch for {channel}")
+            return message_id
 
     created = request_json("POST", f"{webhook}?wait=true", payload)
     created_id = str(created.get("id", ""))
     if not created_id:
         raise RuntimeError(f"Discord did not return a message id for {channel}")
     return created_id
+
+
+def select_message_id(config: dict, saved: dict, webhook_id: str) -> str:
+    # The secret is a first-run seed. Once a replacement has been saved, it
+    # must win over a stale secret on subsequent scheduled runs.
+    if saved.get("webhookId", webhook_id) == webhook_id and saved.get("messageId"):
+        return str(saved["messageId"])
+    return env_first(config["message_ids"])
 
 
 def main() -> int:
@@ -199,7 +303,7 @@ def main() -> int:
         if not env_first(config["secrets"])
     ]
     if missing:
-        print("Missing required Discord webhook secrets:")
+        print("::error title=Discord vulnerability feed::Missing required Discord webhook secrets")
         for item in missing:
             print(f"- {item}")
         return 1
@@ -207,12 +311,14 @@ def main() -> int:
     updated_channels = []
 
     for channel, config in CHANNELS.items():
-        webhook = env_first(config["secrets"])
-        message_id = env_first(config["message_ids"]) or state["messages"].get(channel, {}).get("messageId", "")
+        webhook = normalize_webhook(env_first(config["secrets"]))
+        webhook_id = WEBHOOK_RE.match(webhook).group(1)
+        message_id = select_message_id(config, state["messages"].get(channel, {}), webhook_id)
         payload = build_payload(channel, feed)
         new_id = upsert_message(channel, webhook, str(message_id), payload)
         state["messages"][channel] = {
             "messageId": new_id,
+            "webhookId": webhook_id,
             "updatedAt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         }
         updated_channels.append(channel)
@@ -227,4 +333,11 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except (DiscordRequestError, urllib.error.URLError, ValueError, RuntimeError) as error:
+        # Surface the actual cause in GitHub's annotations, rather than only
+        # the generic "Process completed with exit code 1" annotation.
+        detail = str(error).replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::error title=Discord vulnerability feed::{detail}", file=sys.stderr)
+        sys.exit(1)
