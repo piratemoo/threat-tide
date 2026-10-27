@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T07:40:34Z",
+  "updatedAt": "2026-10-27T18:38:27Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,108 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "CVE-2026-35273: SSRF to RCE in Oracle PeopleSoft",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "https://www.thezdi.com/blog/2026/10/20/cve-2026-35273-ssrf-to-rce-in-oracle-peoplesoft",
+      "summary": "CVE-2026-35273: SSRF to RCE in Oracle PeopleSoft",
+      "publishedAt": "2026-10-27T16:39:07Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-35273"
+      ],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "HTTP2Shell Vulnerability: How Should Security Teams Assess and Reduce Exposure?",
+      "source": "Aqua Nautilus",
+      "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "url": "https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/",
+      "summary": "TL;DR: The HTTP2Shell vulnerability (CVE-2026-111497) is a critical flaw in Google\u2019s Brotli decompression decoder that could allow attackers to corrupt memory and potentially execute malicious code. With a CVSS v4.0 score of 9.2, the vulnerability affects.",
+      "publishedAt": "2026-10-27T13:17:22Z",
+      "dayOffset": 0,
+      "ecosystem": "cloud",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2026-111497"
+      ],
+      "tags": [
+        "Cloud",
+        "RCE"
+      ]
+    },
+    {
+      "title": "Horizon3 Announces NodeZero Integration With Palo Alto Networks Cortex XSOAR",
+      "source": "Horizon3 Attack Team",
+      "sourceUrl": "https://x.com/Horizon3Attack",
+      "url": "https://horizon3.ai/news/press-release/nodezero-integration-palo-alto-networks-cortex-xsoar/",
+      "summary": "SAN FRANCISCO, October 27, 2026 \u2014 Horizon3, the AI-native proactive security leader, today announced the availability of its NodeZero\u00ae integration with Palo Alto Networks Cortex XSOAR on the Cortex Marketplace. The integration brings NodeZero\u2019s high and.",
+      "publishedAt": "2026-10-27T12:55:00Z",
+      "dayOffset": 0,
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Cloud",
+        "VPN Edge"
+      ]
+    },
+    {
+      "title": "An insecure neighbor: how a vulnerability chain led to an isolation bypass in cloud infrastructure",
+      "source": "Kaspersky GReAT",
+      "sourceUrl": "https://securelist.com/",
+      "url": "https://securelist.com/cloud-infrastructure-isolation-bypass/121609/",
+      "summary": "An insecure neighbor: how a vulnerability chain led to an isolation bypass in cloud infrastructure",
+      "publishedAt": "2026-10-27T12:00:19Z",
+      "dayOffset": 0,
+      "ecosystem": "cloud",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Cloud"
+      ]
+    },
+    {
+      "title": "Fuzzers vs. AI: Comparing Fuzzilli and BigSleep on JavaScript Engines",
+      "source": "Project Zero",
+      "sourceUrl": "https://projectzero.google/",
+      "url": "https://projectzero.google/2026/10/fuzzing-v-AI.html",
+      "summary": "Summary Project Zero compared two automated tools used by Google to find vulnerabilities in Chrome\u2019s JavaScript engine, V8, on a regular basis. Fuzzilli is a generative JavaScript engine fuzzer and BigSleep is an LLM-based bug finding system. In the past six.",
+      "publishedAt": "2026-10-27T07:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
+    },
+    {
+      "title": "Locked and Loaded: Phishing through Fake Bids and Protected Documents",
+      "source": "Cofense",
+      "sourceUrl": "https://cofense.com/",
+      "url": "https://cofense.com/blog/locked-and-loaded-phishing-through-fake-bids-and-protected-documents",
+      "summary": "By Don Santos, Cofense Phishing Defence Centre In the sales process, few emails carry as much weight as an invitation to bid. It opens the conversation that can eventually lead to revenue, and professionals are conditioned to treat it with urgency and care..",
+      "publishedAt": "2026-10-27T05:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "phishing",
+      "category": "phishing",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing"
+      ]
+    },
     {
       "title": "The SonarQube Remediation Agent now fixes Hunter Agent findings",
       "source": "SonarSource",
@@ -193,114 +295,6 @@
         "Webstack",
         "RCE"
       ]
-    },
-    {
-      "title": "ZDI-26-804: Meta FAIRChem Bulk Class Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-804/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-10-26T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-803: Meta FAIRChem AdsorbMLRunner Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-803/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-10-26T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-802: Meta FAIRChem process_mlrs Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-802/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-10-26T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-801: Meta FAIRChem Slab Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-801/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-10-26T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-800: Meta FAIRChem OMolRunner Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-800/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-10-26T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-799: Meta FAIRChem Solvent Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-799/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
-      "publishedAt": "2026-10-26T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
@@ -311,17 +305,28 @@
       "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/franckferman/CVE-2026-109618",
+      "pocUrl": "https://github.com/murat-levi/php2shell-poc",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          ".github/workflows/ci.yml",
-          "poc_cve_2026_109618.py",
-          "signatures/sigma.yml"
+          "exploit/auto_exp.py",
+          "exploit/handler_mismatch.py",
+          "exploit/php2shell.py",
+          "exploit/pure_off.py",
+          "exploit/remote_cve.py",
+          "exploit/tunnel_proxy.py",
+          "exploit/var_destroy_uaf_rce.php",
+          "lab/docker-compose.yml"
         ],
         "attackFiles": [
-          "poc_cve_2026_109618.py"
+          "exploit/auto_exp.py",
+          "exploit/handler_mismatch.py",
+          "exploit/php2shell.py",
+          "exploit/pure_off.py",
+          "exploit/remote_cve.py",
+          "exploit/tunnel_proxy.py",
+          "exploit/var_destroy_uaf_rce.php"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -334,15 +339,15 @@
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "8:46 PM CDT",
-      "firstSeenAt": "2026-10-26T01:46:40Z",
+      "added": "3:16 AM CDT",
+      "firstSeenAt": "2026-10-27T08:16:29Z",
       "language": "Python",
-      "summary": "PHP session.upload_progress Heap UAF Pre-Auth RCE (CVSS 9.2)",
+      "summary": "PHP2Shell \u2014 /109619 pre-auth RCE exploit. Production chain + 8M lab chain + local UAF + handler mismatch.",
       "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
       "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "whatBroke": "PHP session.upload_progress Heap UAF Pre-Auth RCE (CVSS 9.2)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at franckferman/CVE-2026-109618.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/franckferman/CVE-2026-109618\ncd CVE-2026-109618\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "PHP2Shell \u2014 /109619 pre-auth RCE exploit. Production chain + 8M lab chain + local UAF + handler mismatch.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murat-levi/php2shell-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murat-levi/php2shell-poc\ncd php2shell-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PHP",
         "credential access from service context",
@@ -359,11 +364,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/franckferman/CVE-2026-109618"
+          "https://github.com/murat-levi/php2shell-poc"
         ],
         [
           "Technical Paper",
@@ -448,154 +453,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-39808",
-      "title": "authentication bypass remote code execution exploit",
-      "ecosystem": "web",
-      "category": "vpn-edge",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656",
-      "pocValidation": {
-        "valid": true,
-        "score": 8,
-        "codeFiles": [
-          "CVE-2026-106173/exploit.py",
-          "CVE-2026-106173/poc.py",
-          "CVE-2026-107656/exploit.py",
-          "CVE-2026-107656/poc.py",
-          "CVE-2026-39808/exploit.py",
-          "CVE-2026-39808/poc.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-106173/exploit.py",
-          "CVE-2026-106173/poc.py",
-          "CVE-2026-107656/exploit.py",
-          "CVE-2026-107656/poc.py",
-          "CVE-2026-39808/exploit.py",
-          "CVE-2026-39808/poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-106173",
-          "CVE-2026-107656",
-          "CVE-2026-39808"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Ghost-Bx1",
-      "researcherUrl": "https://github.com/Ghost-Bx1",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "1:34 PM CDT",
-      "firstSeenAt": "2026-10-25T18:34:17Z",
-      "language": "Python",
-      "summary": "PoC e Exploits completos para (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "technicalSummary": "PoC e Exploits completos para (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "breakdown": "PoC e Exploits completos para (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "whatBroke": "PoC e Exploits completos para (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656\ncd Fortinet-Exploits-CVE-2026-39808-106173-107656\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed FortiSandbox",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "VPN Edge",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656"
-        ],
-        [
-          "Vendor Advisory",
-          "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-31431",
-      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/codesource/cve-check",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "checks/CVE-2026-109618/check.sh",
-          "checks/CVE-2026-31431/check.sh",
-          "checks/CVE-2026-96652/check.sh",
-          "cve-check.sh",
-          "lib/common.sh"
-        ],
-        "attackFiles": [
-          "checks/CVE-2026-109618/check.sh",
-          "checks/CVE-2026-31431/check.sh",
-          "checks/CVE-2026-96652/check.sh",
-          "cve-check.sh"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-109618",
-          "CVE-2026-31431"
-        ],
-        "language": "Shell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "codesource",
-      "researcherUrl": "https://github.com/codesource",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:30 PM CDT",
-      "firstSeenAt": "2026-10-21T21:30:06Z",
-      "language": "Shell",
-      "summary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "technicalSummary": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "breakdown": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "whatBroke": "Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at codesource/cve-check.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/codesource/cve-check\ncd cve-check\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Kernel",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/codesource/cve-check"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-33825",
       "title": "Microsoft Defender Insufficient Granularity of Access Control Vulnerability",
       "ecosystem": "windows",
@@ -665,295 +522,124 @@
       ]
     },
     {
-      "cve": "CVE-2026-106173",
-      "title": "authentication bypass remote code execution exploit",
-      "ecosystem": "web",
-      "category": "vpn-edge",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656",
-      "pocValidation": {
-        "valid": true,
-        "score": 6,
-        "codeFiles": [
-          "CVE-2026-106173/exploit.py",
-          "CVE-2026-106173/poc.py",
-          "CVE-2026-107656/exploit.py",
-          "CVE-2026-107656/poc.py",
-          "CVE-2026-39808/exploit.py",
-          "CVE-2026-39808/poc.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-106173/exploit.py",
-          "CVE-2026-106173/poc.py",
-          "CVE-2026-107656/exploit.py",
-          "CVE-2026-107656/poc.py",
-          "CVE-2026-39808/exploit.py",
-          "CVE-2026-39808/poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-106173",
-          "CVE-2026-107656",
-          "CVE-2026-39808"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:34 PM CDT",
-      "firstSeenAt": "2026-10-25T18:34:17Z",
-      "language": "Python",
-      "summary": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "technicalSummary": "On 13 October 2026, Fortinet published a security advisory for a critical vulnerability affecting their FortiSIEM product. The vulnerability, CVE-2026-106173, allows for an arbitrary file write by abusing an issue in a gRPC service. Horizon3 is no.",
-      "breakdown": "On 13 October 2026, Fortinet published a security advisory for a critical vulnerability affecting their FortiSIEM product. The vulnerability, CVE-2026-106173, allows for an arbitrary file write by abusing an issue in a gRPC service. Horizon3 is no.",
-      "whatBroke": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656\ncd Fortinet-Exploits-CVE-2026-39808-106173-107656\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "VPN Edge",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/cve-2026-106173-deep-dive-fortisiem-grpc-path-traversal-file-write-rce/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://fortiguard.fortinet.com/psirt/FG-IR-26-180"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-75650",
-      "title": "Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/basesixtythree/B63-POC-CVE-2026-75650",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "02_lab/lab/docker-compose.yml",
-          "02_lab/lab/setup-patched-magento.sh",
-          "02_lab/lab/setup-vuln-magento.sh",
-          "03_exploit/exploit_opt/exploit.py",
-          "03_exploit/exploit_readable/exploit.py"
-        ],
-        "attackFiles": [
-          "03_exploit/exploit_opt/exploit.py",
-          "03_exploit/exploit_readable/exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-75650"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "basesixtythree",
-      "researcherUrl": "https://github.com/basesixtythree",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:19 AM CDT",
-      "firstSeenAt": "2026-10-26T05:19:09Z",
-      "language": "Python",
-      "summary": "(StyleSmuggler): unauthenticated RCE via template injection in Magento Open Source / Adobe Commerce 2.4.4\u20132.4.9 \u2014 b63 showcase, lab-verified with patched-build negative test",
-      "technicalSummary": "(StyleSmuggler): unauthenticated RCE via template injection in Magento Open Source / Adobe Commerce 2.4.4\u20132.4.9 \u2014 b63 showcase, lab-verified with patched-build negative test",
-      "breakdown": "(StyleSmuggler): unauthenticated RCE via template injection in Magento Open Source / Adobe Commerce 2.4.4\u20132.4.9 \u2014 b63 showcase, lab-verified with patched-build negative test",
-      "whatBroke": "(StyleSmuggler): unauthenticated RCE via template injection in Magento Open Source / Adobe Commerce 2.4.4\u20132.4.9 \u2014 b63 showcase, lab-verified with patched-build negative test",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at basesixtythree/B63-POC-CVE-2026-75650.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/basesixtythree/B63-POC-CVE-2026-75650\ncd B63-POC-CVE-2026-75650\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Commerce and Magento",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 76,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/basesixtythree/B63-POC-CVE-2026-75650"
-        ],
-        [
-          "Vendor Advisory",
-          "https://helpx.adobe.com/security/products/magento/apsb26-146.html"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-111497",
-      "title": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do",
+      "title": "HTTP2Shell Vulnerability: How Should Security Teams Assess and Reduce Exposure?",
       "ecosystem": "cloud",
-      "category": "webstack",
+      "category": "kubernetes",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/syrex1013/CVE-2026-111497-node2shell",
+      "pocUrl": "https://github.com/TheFool-TAROT/CVE-2026-111497-brotli-pwn",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "exploit_ref.py",
-          "exploit_stock.py",
-          "exploit_v2.py",
-          "node2shell_rce.c",
-          "poc.py",
-          "poc_ref.py",
-          "server-crash.js",
-          "server-plain.js"
+          "docker/entrypoint.sh",
+          "lab/img_leak_probe.js",
+          "lab/img_server.js",
+          "poc/dos.js",
+          "poc/gen_dos.py",
+          "poc/gen_stream.py",
+          "poc/pwn_local.js"
         ],
         "attackFiles": [
-          "exploit_ref.py",
-          "exploit_stock.py",
-          "exploit_v2.py",
-          "node2shell_rce.c",
-          "poc.py",
-          "poc_ref.py"
+          "poc/dos.js",
+          "poc/gen_dos.py",
+          "poc/gen_stream.py",
+          "poc/pwn_local.js"
         ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-111497"
         ],
-        "language": "Python"
+        "language": "JavaScript"
       },
       "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
+      "researcher": "Aqua Nautilus",
+      "researcherUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "6:03 PM CDT",
-      "firstSeenAt": "2026-10-24T23:03:18Z",
-      "language": "Python",
-      "summary": "Node2Shell \u2014 Node.js Brotli OOB Write RCE PoC (CVSS 9.2)",
-      "technicalSummary": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "breakdown": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "whatBroke": "Node2Shell \u2014 Node.js Brotli OOB Write RCE PoC (CVSS 9.2)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at syrex1013/CVE-2026-111497-node2shell.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/syrex1013/CVE-2026-111497-node2shell\ncd CVE-2026-111497-node2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "difficulty": "moderate",
+      "added": "11:30 AM CDT",
+      "firstSeenAt": "2026-10-22T16:30:53Z",
+      "language": "JavaScript",
+      "summary": "Node.js Brotli decoder OOB write \u2014 analysis, PoC, Docker lab",
+      "technicalSummary": "<a href=\"https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/\" title=\"HTTP2Shell Vulnerability: How Should Security Teams Assess and Reduce Exposure?\".",
+      "breakdown": "<a href=\"https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/\" title=\"HTTP2Shell Vulnerability: How Should Security Teams Assess and Reduce Exposure?\".",
+      "whatBroke": "Node.js Brotli decoder OOB write \u2014 analysis, PoC, Docker lab",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at TheFool-TAROT/CVE-2026-111497-brotli-pwn.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/TheFool-TAROT/CVE-2026-111497-brotli-pwn\ncd CVE-2026-111497-brotli-pwn\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "Webstack",
-        "RCE"
+        "Kubernetes",
+        "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/syrex1013/CVE-2026-111497-node2shell"
+          "https://github.com/TheFool-TAROT/CVE-2026-111497-brotli-pwn"
         ],
         [
           "Technical Paper",
-          "https://blog.qualys.com/product-tech/2026/10/23/node-js-patches-brotli-remote-code-execution-flaw-find-vulnerable-runtimes-before-attackers-do"
+          "https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/"
         ],
         [
           "Vendor Advisory",
-          "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases#nodejs-brotli-decoder-out-of-bounds-write-permits-remote-code-execution-cve-2026-111497---high"
+          "https://github.com/andybalholm/brotli/releases/tag/v1.2.7"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-107656",
-      "title": "authentication bypass remote code execution exploit",
-      "ecosystem": "web",
-      "category": "vpn-edge",
+      "cve": "CVE-2026-0073",
+      "title": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type.",
+      "ecosystem": "android",
+      "category": "mobile",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656",
+      "pocUrl": "https://github.com/umarrehmansiddiqui/CVE-2026-0073",
       "pocValidation": {
         "valid": true,
-        "score": 6,
+        "score": 9,
         "codeFiles": [
-          "CVE-2026-106173/exploit.py",
-          "CVE-2026-106173/poc.py",
-          "CVE-2026-107656/exploit.py",
-          "CVE-2026-107656/poc.py",
-          "CVE-2026-39808/exploit.py",
-          "CVE-2026-39808/poc.py"
+          "adb_bypass.py"
         ],
-        "attackFiles": [
-          "CVE-2026-106173/exploit.py",
-          "CVE-2026-106173/poc.py",
-          "CVE-2026-107656/exploit.py",
-          "CVE-2026-107656/poc.py",
-          "CVE-2026-39808/exploit.py",
-          "CVE-2026-39808/poc.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-106173",
-          "CVE-2026-107656",
-          "CVE-2026-39808"
+          "CVE-2026-0073"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Ghost-Bx1",
-      "researcherUrl": "https://github.com/Ghost-Bx1",
+      "researcher": "umarrehmansiddiqui",
+      "researcherUrl": "https://github.com/umarrehmansiddiqui",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:34 PM CDT",
-      "firstSeenAt": "2026-10-25T18:34:17Z",
+      "added": "2:46 PM CDT",
+      "firstSeenAt": "2026-10-25T19:46:46Z",
       "language": "Python",
-      "summary": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "technicalSummary": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "breakdown": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "whatBroke": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656\ncd Fortinet-Exploits-CVE-2026-39808-106173-107656\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type mismatch (EC vs RSA), incorrectly evaluating to true and granting access. Includes functional Python and standalone C.",
+      "technicalSummary": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type mismatch (EC vs RSA), incorrectly evaluating to true and granting access. Includes functional Python and standalone C.",
+      "breakdown": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type mismatch (EC vs RSA), incorrectly evaluating to true and granting access. Includes functional Python and standalone C.",
+      "whatBroke": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type mismatch (EC vs RSA), incorrectly evaluating to true and granting access. Includes functional Python and standalone C.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at umarrehmansiddiqui/CVE-2026-0073.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/umarrehmansiddiqui/CVE-2026-0073\ncd CVE-2026-0073\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
-        "VPN Edge",
+        "Android",
+        "Mobile",
         "Auth Bypass"
       ],
       "confidence": 98,
@@ -962,72 +648,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656"
+          "https://github.com/umarrehmansiddiqui/CVE-2026-0073"
         ],
         [
           "Vendor Advisory",
-          "https://fortiguard.fortinet.com/psirt/FG-IR-26-185"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-110264",
-      "title": "GitLab CE/EE Integer Overflow Research PoC",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit_Exploit-CVE-2026-110264.py",
-          "exploit_cve.py",
-          "testing-2.py"
-        ],
-        "attackFiles": [
-          "exploit_Exploit-CVE-2026-110264.py",
-          "exploit_cve.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-110264"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Masriyan",
-      "researcherUrl": "https://github.com/Masriyan",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:23 AM CDT",
-      "firstSeenAt": "2026-10-24T14:23:32Z",
-      "language": "Python",
-      "summary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "technicalSummary": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "breakdown": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "whatBroke": "The affected component exposes a exploit path with recent public exploit tooling signal.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE\ncd Exploit-CVE-2026-110264-GitLab-CE-EE-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE"
+          "https://source.android.com/docs/security/bulletin/2026/2026-05-01"
         ]
       ]
     },
@@ -1035,7 +660,7 @@
       "cve": "CVE-2026-105483",
       "title": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do",
       "ecosystem": "cloud",
-      "category": "webstack",
+      "category": "adcs",
       "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/CompleTetech-Security/node-cve-2026-105483-check",
@@ -1076,13 +701,13 @@
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
+        "identity escalation or relay path",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "Webstack",
+        "ADCS",
         "RCE"
       ],
       "confidence": 98,
@@ -1096,210 +721,10 @@
         [
           "Technical Paper",
           "https://blog.qualys.com/product-tech/2026/10/23/node-js-patches-brotli-remote-code-execution-flaw-find-vulnerable-runtimes-before-attackers-do"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-106069",
-      "title": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/CompleTetech-Security/node-cve-2026-106069-check",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          ".github/workflows/tests.yml",
-          "node_cve_2026_106069_check.py",
-          "test_assessment.py",
-          "test_publication_boundaries.py",
-          "test_report_provenance.py"
-        ],
-        "attackFiles": [
-          "node_cve_2026_106069_check.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-106069"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:47 PM CDT",
-      "firstSeenAt": "2026-10-23T23:47:14Z",
-      "language": "Python",
-      "summary": "Offline Node.js evidence checker for TLS leading-zero IPv4 resolver mismatch. Single-file Python; JSON/CSV/HTML reports; no exploit payloads.",
-      "technicalSummary": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "breakdown": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "whatBroke": "Offline Node.js evidence checker for TLS leading-zero IPv4 resolver mismatch. Single-file Python; JSON/CSV/HTML reports; no exploit payloads.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CompleTetech-Security/node-cve-2026-106069-check.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CompleTetech-Security/node-cve-2026-106069-check\ncd node-cve-2026-106069-check\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/CompleTetech-Security/node-cve-2026-106069-check"
         ],
         [
-          "Technical Paper",
-          "https://blog.qualys.com/product-tech/2026/10/23/node-js-patches-brotli-remote-code-execution-flaw-find-vulnerable-runtimes-before-attackers-do"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-106070",
-      "title": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/CompleTetech-Security/node-cve-2026-106070-check",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          ".github/workflows/tests.yml",
-          "node_cve_2026_106070_check.py",
-          "test_assessment.py",
-          "test_publication_boundaries.py",
-          "test_report_provenance.py"
-        ],
-        "attackFiles": [
-          "node_cve_2026_106070_check.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-106070"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:48 PM CDT",
-      "firstSeenAt": "2026-10-23T23:48:22Z",
-      "language": "Python",
-      "summary": "Offline Node.js evidence checker for ZipFile invalid-header content substitution. Single-file Python; JSON/CSV/HTML reports; no exploit payloads.",
-      "technicalSummary": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "breakdown": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "whatBroke": "Offline Node.js evidence checker for ZipFile invalid-header content substitution. Single-file Python; JSON/CSV/HTML reports; no exploit payloads.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CompleTetech-Security/node-cve-2026-106070-check.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CompleTetech-Security/node-cve-2026-106070-check\ncd node-cve-2026-106070-check\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/CompleTetech-Security/node-cve-2026-106070-check"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/product-tech/2026/10/23/node-js-patches-brotli-remote-code-execution-flaw-find-vulnerable-runtimes-before-attackers-do"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-106071",
-      "title": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/CompleTetech-Security/node-cve-2026-106071-check",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          ".github/workflows/tests.yml",
-          "node_cve_2026_106071_check.py",
-          "test_assessment.py",
-          "test_publication_boundaries.py",
-          "test_report_provenance.py"
-        ],
-        "attackFiles": [
-          "node_cve_2026_106071_check.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-106071"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:48 PM CDT",
-      "firstSeenAt": "2026-10-23T23:48:35Z",
-      "language": "Python",
-      "summary": "Offline Node.js evidence checker for Permission Model wildcard path over-grant. Single-file Python; JSON/CSV/HTML reports; no exploit payloads.",
-      "technicalSummary": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "breakdown": "Executive Summary On October 21, 2026, Node.js released fixes for 10 vulnerabilities across its three supported release.",
-      "whatBroke": "Offline Node.js evidence checker for Permission Model wildcard path over-grant. Single-file Python; JSON/CSV/HTML reports; no exploit payloads.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CompleTetech-Security/node-cve-2026-106071-check.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CompleTetech-Security/node-cve-2026-106071-check\ncd node-cve-2026-106071-check\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/CompleTetech-Security/node-cve-2026-106071-check"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/product-tech/2026/10/23/node-js-patches-brotli-remote-code-execution-flaw-find-vulnerable-runtimes-before-attackers-do"
+          "Vendor Advisory",
+          "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"
         ]
       ]
     },
@@ -1307,7 +732,7 @@
       "cve": "CVE-2026-106072",
       "title": "Node.js Patches Brotli Remote Code Execution Flaw: Find Vulnerable Runtimes Before Attackers Do",
       "ecosystem": "cloud",
-      "category": "webstack",
+      "category": "adcs",
       "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/CompleTetech-Security/node-cve-2026-106072-check",
@@ -1348,13 +773,13 @@
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
+        "identity escalation or relay path",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Cloud",
-        "Webstack",
+        "ADCS",
         "RCE"
       ],
       "confidence": 98,
@@ -1368,44 +793,136 @@
         [
           "Technical Paper",
           "https://blog.qualys.com/product-tech/2026/10/23/node-js-patches-brotli-remote-code-execution-flaw-find-vulnerable-runtimes-before-attackers-do"
+        ],
+        [
+          "Vendor Advisory",
+          "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"
         ]
       ]
     },
     {
-      "cve": "CVE-2026-85317",
-      "title": "Reproducer for CVE-2026-85317 \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
+      "cve": "CVE-2026-14440",
+      "title": "PoC e exploits para CVE-2026-14440 (Universal SSL CAA Bypass), CVE-2026-3125 (OpenNext SSRF), CVE-2025-0651.",
+      "ecosystem": "windows",
+      "category": "adcs",
+      "severity": "medium",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-85317",
+      "pocUrl": "https://github.com/Ghost-Bx1/Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "camel-spring-boot/docker-compose.yml"
+          "CVE-2025-0651/exploit.py",
+          "CVE-2025-0651/poc.py",
+          "CVE-2026-14440/exploit.py",
+          "CVE-2026-14440/poc.py",
+          "CVE-2026-3125/exploit.py",
+          "CVE-2026-3125/poc.py"
         ],
-        "attackFiles": [],
-        "hasUsage": false,
+        "attackFiles": [
+          "CVE-2025-0651/exploit.py",
+          "CVE-2025-0651/poc.py",
+          "CVE-2026-14440/exploit.py",
+          "CVE-2026-14440/poc.py",
+          "CVE-2026-3125/exploit.py",
+          "CVE-2026-3125/poc.py"
+        ],
+        "hasUsage": true,
         "cveRefs": [
-          "CVE-2026-85317"
+          "CVE-2025-0651",
+          "CVE-2026-14440",
+          "CVE-2026-3125"
         ],
-        "language": "Java"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
+      "researcher": "Ghost-Bx1",
+      "researcherUrl": "https://github.com/Ghost-Bx1",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:52 AM CDT",
-      "firstSeenAt": "2026-10-21T08:52:55Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85317.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85317\ncd CVE-2026-85317\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "2:02 PM CDT",
+      "firstSeenAt": "2026-10-25T19:02:32Z",
+      "language": "Python",
+      "summary": "PoC e exploits para (Universal SSL CAA Bypass), CVE-2026-3125 (OpenNext SSRF), CVE-2025-0651 (WARP Windows Privesc) | By Gh0st-Bx1",
+      "technicalSummary": "PoC e exploits para (Universal SSL CAA Bypass), CVE-2026-3125 (OpenNext SSRF), CVE-2025-0651 (WARP Windows Privesc) | By Gh0st-Bx1",
+      "breakdown": "PoC e exploits para (Universal SSL CAA Bypass), CVE-2026-3125 (OpenNext SSRF), CVE-2025-0651 (WARP Windows Privesc) | By Gh0st-Bx1",
+      "whatBroke": "PoC e exploits para (Universal SSL CAA Bypass), CVE-2026-3125 (OpenNext SSRF), CVE-2025-0651 (WARP Windows Privesc) | By Gh0st-Bx1",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651\ncd Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "identity escalation or relay path",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "ADCS",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Ghost-Bx1/Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651"
+        ],
+        [
+          "Vendor Advisory",
+          "https://developers.cloudflare.com/ssl/edge-certificates/caa-records/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-3125",
+      "title": "PoC e exploits para CVE-2026-14440 (Universal SSL CAA Bypass), CVE-2026-3125 (OpenNext SSRF), CVE-2025-0651.",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "medium",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Ghost-Bx1/Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "CVE-2025-0651/exploit.py",
+          "CVE-2025-0651/poc.py",
+          "CVE-2026-14440/exploit.py",
+          "CVE-2026-14440/poc.py",
+          "CVE-2026-3125/exploit.py",
+          "CVE-2026-3125/poc.py"
+        ],
+        "attackFiles": [
+          "CVE-2025-0651/exploit.py",
+          "CVE-2025-0651/poc.py",
+          "CVE-2026-14440/exploit.py",
+          "CVE-2026-14440/poc.py",
+          "CVE-2026-3125/exploit.py",
+          "CVE-2026-3125/poc.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2025-0651",
+          "CVE-2026-14440",
+          "CVE-2026-3125"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Ghost-Bx1",
+      "researcherUrl": "https://github.com/Ghost-Bx1",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:02 PM CDT",
+      "firstSeenAt": "2026-10-25T19:02:32Z",
+      "language": "Python",
+      "summary": "PoC e exploits para CVE-2026-14440 (Universal SSL CAA Bypass), (OpenNext SSRF), CVE-2025-0651 (WARP Windows Privesc) | By Gh0st-Bx1",
+      "technicalSummary": "PoC e exploits para CVE-2026-14440 (Universal SSL CAA Bypass), (OpenNext SSRF), CVE-2025-0651 (WARP Windows Privesc) | By Gh0st-Bx1",
+      "breakdown": "PoC e exploits para CVE-2026-14440 (Universal SSL CAA Bypass), (OpenNext SSRF), CVE-2025-0651 (WARP Windows Privesc) | By Gh0st-Bx1",
+      "whatBroke": "PoC e exploits para CVE-2026-14440 (Universal SSL CAA Bypass), (OpenNext SSRF), CVE-2025-0651 (WARP Windows Privesc) | By Gh0st-Bx1",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651\ncd Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -1413,17 +930,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Windows",
         "Webstack",
-        "Session Theft"
+        "Exploit"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/oscerd/CVE-2026-85317"
+          "https://github.com/Ghost-Bx1/Cloudflare-Exploits-CVE-2026-14440-CVE-2026-3125-CVE-2025-0651"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/advisories/GHSA-rvpw-p7vw-wj3m"
         ]
       ]
     },
@@ -1432,7 +953,7 @@
       "title": "Unauthenticated RDP vulnerability in termsrv.dll (Windows Server 2022). Proof of Concept for heap spray, XFG.",
       "ecosystem": "windows",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
       "pocUrl": "https://github.com/danarhirany300-ctrl/CVE-2026-56190-Windows-Server-2022-RDP",
       "pocValidation": {
@@ -1466,6 +987,8 @@
       "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/danarhirany300-ctrl/CVE-2026-56190-Windows-Server-2022-RDP\ncd CVE-2026-56190-Windows-Server-2022-RDP\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -1473,7 +996,7 @@
       "tags": [
         "Windows",
         "Webstack",
-        "Exploit"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1482,6 +1005,76 @@
         [
           "GitHub",
           "https://github.com/danarhirany300-ctrl/CVE-2026-56190-Windows-Server-2022-RDP"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56190"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-86961",
+      "title": "iOS 27.0 sandbox escape research: original PoC development, CI-built IPA (authorized testing only)",
+      "ecosystem": "ios",
+      "category": "mobile",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/d3vin4/sandbox-escapd",
+      "pocValidation": {
+        "valid": true,
+        "score": 8,
+        "codeFiles": [
+          ".github/workflows/build-ipa.yml",
+          ".github/workflows/extract-components.yml",
+          ".github/workflows/ipsw-analysis.yml",
+          ".github/workflows/lab.yml",
+          ".github/workflows/lab2-macos27.yml",
+          ".github/workflows/rootfs-daemons.yml",
+          ".github/workflows/simulator-sweep.yml",
+          ".github/workflows/spotlight-diff.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-86961"
+        ],
+        "language": "Objective-C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "d3vin4",
+      "researcherUrl": "https://github.com/d3vin4",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:39 AM CDT",
+      "firstSeenAt": "2026-10-25T09:39:29Z",
+      "language": "Objective-C",
+      "summary": "iOS 27.0 sandbox escape research: original PoC development, CI-built IPA (authorized testing only)",
+      "technicalSummary": "iOS 27.0 sandbox escape research: original PoC development, CI-built IPA (authorized testing only)",
+      "breakdown": "iOS 27.0 sandbox escape research: original PoC development, CI-built IPA (authorized testing only)",
+      "whatBroke": "iOS 27.0 sandbox escape research: original PoC development, CI-built IPA (authorized testing only)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at d3vin4/sandbox-escapd.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/d3vin4/sandbox-escapd\ncd sandbox-escapd\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "iOS",
+        "Mobile",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/d3vin4/sandbox-escapd"
+        ],
+        [
+          "Vendor Advisory",
+          "https://support.apple.com/en-us/149034"
         ]
       ]
     }
