@@ -14,6 +14,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: threat-tide-feed
+  cancel-in-progress: false
+
 jobs:
   update-feed:
     runs-on: ubuntu-latest
@@ -21,6 +25,8 @@ jobs:
     steps:
       - name: Check out feed repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -57,5 +63,9 @@ jobs:
       - name: Commit Discord post state
         run: |
           git add discord-post-state.json
-          git commit -m "Update Discord post state" || echo "No Discord state changes"
-          git push || echo "Nothing to push"
+          if git diff --cached --quiet; then
+            echo "No Discord state changes"
+          else
+            git commit -m "Update Discord post state"
+            git push
+          fi

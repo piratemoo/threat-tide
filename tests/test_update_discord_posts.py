@@ -1,4 +1,5 @@
 import importlib.util
+import datetime as dt
 import json
 import os
 from pathlib import Path
@@ -44,22 +45,8 @@ class DiscordRecoveryTests(unittest.TestCase):
         self.assertEqual([call.args[0] for call in request.call_args_list], ["PATCH", "GET"])
 
     def test_saved_replacement_wins_over_stale_message_secret(self):
-        with tempfile.TemporaryDirectory(prefix="vulns-recovery-") as temporary:
-            feed_path = Path(temporary) / "feed.json"
-            state_path = Path(temporary) / "state.json"
-            feed_path.write_text("{}", encoding="utf-8")
-            state_path.write_text(json.dumps({"messages": {"vulns": {"messageId": "old"}}}), encoding="utf-8")
-            env = {"DISCORD_VULNS_WEBHOOK": WEBHOOK, "DISCORD_VULNS_MESSAGE_ID": "old"}
-            with patch.dict(os.environ, env, clear=True), patch.object(posts, "FEED_PATH", feed_path), \
-                    patch.object(posts, "STATE_PATH", state_path), \
-                    patch.object(posts, "upsert_message", return_value="replacement") as upsert:
-                self.assertEqual(posts.main(), 0)
-                self.assertEqual(upsert.call_args.args[2], "old")
-                self.assertEqual(posts.main(), 0)
-                self.assertEqual(upsert.call_args.args[2], "replacement")
-            saved = json.loads(state_path.read_text())["messages"]["vulns"]
-            self.assertEqual(saved["messageId"], "replacement")
-            self.assertEqual(saved["webhookId"], "123456789")
+        with patch.dict(os.environ, {"DISCORD_VULNS_MESSAGE_ID": "old"}, clear=True):
+            self.assertEqual(posts.select_message_id(posts.CHANNELS["vulns"], {"messageId": "replacement"}, "123456789"), "replacement")
 
     def test_changed_webhook_does_not_reuse_another_webhooks_state(self):
         config = posts.CHANNELS["vulns"]
@@ -68,12 +55,98 @@ class DiscordRecoveryTests(unittest.TestCase):
         self.assertEqual(message_id, "seed")
 
     def test_formatter_preserves_vulns_identity_and_line_breaks(self):
-        feed = {"vulns": [{"cve": "CVE-TEST", "title": "Example", "summary": "Details", "dayOffset": 1}]}
+        feed = {"vulns": [{"cve": "CVE-TEST", "title": "Example", "summary": "Details", "severity": "critical", "dayOffset": 1}]}
         payload = posts.build_payload("vulns", feed)
-        self.assertEqual(payload["username"], "VULNS")
+        self.assertEqual(payload["username"], "vulns")
         self.assertIn("\n\n", payload["content"])
-        self.assertIn("🐮", payload["content"])
+        self.assertIn("<:critcow:1538457179802312744>", payload["content"])
+        self.assertNotIn("avatar_url", payload)
         self.assertEqual(payload["embeds"], [])
+
+    def test_week_window_excludes_stale_and_future_entries_and_dedupes_cves(self):
+        now = dt.datetime.now(dt.timezone.utc)
+        def entry(cve, days):
+            return {"cve": cve, "firstSeenAt": (now - dt.timedelta(days=days)).isoformat()}
+        feed = {"vulns": [entry("CVE-2026-1", 1), entry("CVE-2026-2", 6), entry("CVE-2026-1", 1),
+                           entry("CVE-2026-3", 8), entry("CVE-2026-4", -1)]}
+        self.assertEqual([v["cve"] for v in posts.recent_vulns(feed, now, 7)], ["CVE-2026-2", "CVE-2026-1"])
+
+    def test_today_is_prioritized_over_yesterday(self):
+        feed = {"vulns": [{"cve": "today", "dayOffset": 0}, {"cve": "yesterday", "dayOffset": 1}]}
+        self.assertEqual(posts.top_vulns(feed, 1)[0]["cve"], "today")
+
+    def test_each_vulnerability_posts_once_and_survives_a_failed_readback(self):
+        with tempfile.TemporaryDirectory(prefix="vulns-ledger-") as temporary:
+            feed_path = Path(temporary) / "feed.json"
+            state_path = Path(temporary) / "state.json"
+            recent = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=1)).isoformat()
+            feed_path.write_text(json.dumps({"vulns": [{"cve": "CVE-2026-1", "title": "One", "firstSeenAt": recent, "severity": "high"},
+                                                        {"cve": "CVE-2026-2", "title": "Two", "firstSeenAt": recent, "severity": "critical"}]}), encoding="utf-8")
+            created = {}
+            fail_readback = [True]
+            def create(channel, webhook, message_id, payload):
+                self.assertEqual(message_id, "")
+                message_id = str(len(created) + 1)
+                created[message_id] = payload
+                return message_id
+            def request(method, url, payload):
+                self.assertEqual(method, "GET")
+                if url == WEBHOOK:
+                    return {"avatar": "original-avatar"}
+                if fail_readback[0]:
+                    fail_readback[0] = False
+                    raise RuntimeError("temporary readback failure")
+                message_id = url.rsplit("/", 1)[1]
+                return {"id": message_id, "content": created[message_id]["content"],
+                        "author": {"username": "vulns", "avatar": "original-avatar"}}
+            with patch.dict(os.environ, {"DISCORD_VULNS_WEBHOOK": WEBHOOK}, clear=True), \
+                    patch.object(posts, "FEED_PATH", feed_path), patch.object(posts, "STATE_PATH", state_path), \
+                    patch.object(posts, "upsert_message", side_effect=create), patch.object(posts, "request_json", side_effect=request), \
+                    patch.object(posts.time, "sleep"):
+                with self.assertRaisesRegex(RuntimeError, "temporary readback failure"):
+                    posts.main([])
+                self.assertEqual(len(created), 1)
+                self.assertEqual(posts.main([]), 0)
+                self.assertEqual(posts.main([]), 0)
+                self.assertEqual(len(created), 2)
+            ledger = json.loads(state_path.read_text())["postedVulns"]
+            self.assertEqual(set(ledger), {"CVE-2026-1", "CVE-2026-2"})
+            self.assertTrue(all(item["verified"] and item["identityVerified"] for item in ledger.values()))
+
+    def test_all_severity_icons_match_the_original_server_emoji(self):
+        for severity, icon in posts.SEVERITY_ICONS.items():
+            payload = posts.build_payload("vulns", {"vulns": [{"cve": "CVE-2026-1", "title": "Example", "severity": severity}]})
+            self.assertEqual(payload["content"].count(icon), 2)
+
+    def test_legacy_post_is_updated_without_reposting_or_deleting_it(self):
+        with tempfile.TemporaryDirectory(prefix="vulns-legacy-") as temporary:
+            feed_path = Path(temporary) / "feed.json"
+            state_path = Path(temporary) / "state.json"
+            recent = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=1)).isoformat()
+            item = {"cve": "CVE-2026-1", "title": "Existing", "firstSeenAt": recent, "severity": "critical"}
+            feed_path.write_text(json.dumps({"vulns": [item]}), encoding="utf-8")
+            state_path.write_text(json.dumps({"messages": {"vulns": {"messageId": "existing"}}}), encoding="utf-8")
+            content = ["Old style CVE-2026-1"]
+            methods = []
+            def request(method, url, payload):
+                methods.append(method)
+                if url == WEBHOOK:
+                    return {"avatar": "original-avatar"}
+                if method == "PATCH":
+                    content[0] = payload["content"]
+                return {"id": "existing", "content": content[0], "author": {"username": "old-name", "avatar": "old-avatar"}}
+            with patch.dict(os.environ, {"DISCORD_VULNS_WEBHOOK": WEBHOOK}, clear=True), \
+                    patch.object(posts, "FEED_PATH", feed_path), patch.object(posts, "STATE_PATH", state_path), \
+                    patch.object(posts, "upsert_message") as create, patch.object(posts, "request_json", side_effect=request):
+                self.assertEqual(posts.main([]), 0)
+                self.assertEqual(posts.main([]), 0)
+                create.assert_not_called()
+            self.assertIn("PATCH", methods)
+            self.assertNotIn("DELETE", methods)
+            record = json.loads(state_path.read_text())["postedVulns"]["CVE-2026-1"]
+            self.assertEqual(record["messageId"], "existing")
+            self.assertTrue(record["verified"])
+            self.assertFalse(record["identityVerified"])
 
 
 if __name__ == "__main__":
