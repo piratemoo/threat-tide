@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T00:00:41Z",
+  "updatedAt": "2026-10-27T00:21:44Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -380,22 +380,20 @@
       "cve": "CVE-2026-109619",
       "title": "PHP Stale Internal Request-State Vulnerability",
       "ecosystem": "web",
-      "category": "kernel",
-      "severity": "high",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/santihabib/CVE-2026-109619",
+      "pocUrl": "https://github.com/Nostraxiten/PHP2shell",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "build.sh",
-          "poc/repro_uaf.py"
+          "PHP2shell.py"
         ],
-        "attackFiles": [
-          "poc/repro_uaf.py"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
+          "CVE-2026-109618",
           "CVE-2026-109619"
         ],
         "language": "Python"
@@ -405,36 +403,36 @@
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "9:05 AM CDT",
-      "firstSeenAt": "2026-10-21T14:05:29Z",
+      "added": "12:20 AM CDT",
+      "firstSeenAt": "2026-10-26T05:20:40Z",
       "language": "Python",
-      "summary": "cross-request UAF in PHP session.upload_progress \u2014 reproduction, root-cause analysis and full chain to RCE",
+      "summary": "PHP2Shell \u2014 Unauthenticated RCE chain exploiting CVE-2026-109618 (OOM memory corruption) + (stale global state) in PHP.",
       "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
       "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "whatBroke": "cross-request UAF in PHP session.upload_progress \u2014 reproduction, root-cause analysis and full chain to RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at santihabib/CVE-2026-109619.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/santihabib/CVE-2026-109619\ncd CVE-2026-109619\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "PHP2Shell \u2014 Unauthenticated RCE chain exploiting CVE-2026-109618 (OOM memory corruption) + (stale global state) in PHP.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nostraxiten/PHP2shell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nostraxiten/PHP2shell\ncd PHP2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PHP",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "local privilege escalation after a foothold",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Web",
-        "Kernel",
+        "Webstack",
         "RCE",
         "KEV"
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 5,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/santihabib/CVE-2026-109619"
+          "https://github.com/Nostraxiten/PHP2shell"
         ],
         [
           "Technical Paper",
@@ -443,6 +441,83 @@
         [
           "Vendor Advisory",
           "https://www.php.net/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-39808",
+      "title": "authentication bypass remote code execution exploit",
+      "ecosystem": "web",
+      "category": "vpn-edge",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656",
+      "pocValidation": {
+        "valid": true,
+        "score": 8,
+        "codeFiles": [
+          "CVE-2026-106173/exploit.py",
+          "CVE-2026-106173/poc.py",
+          "CVE-2026-107656/exploit.py",
+          "CVE-2026-107656/poc.py",
+          "CVE-2026-39808/exploit.py",
+          "CVE-2026-39808/poc.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-106173/exploit.py",
+          "CVE-2026-106173/poc.py",
+          "CVE-2026-107656/exploit.py",
+          "CVE-2026-107656/poc.py",
+          "CVE-2026-39808/exploit.py",
+          "CVE-2026-39808/poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-106173",
+          "CVE-2026-107656",
+          "CVE-2026-39808"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Ghost-Bx1",
+      "researcherUrl": "https://github.com/Ghost-Bx1",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "1:34 PM CDT",
+      "firstSeenAt": "2026-10-25T18:34:17Z",
+      "language": "Python",
+      "summary": "PoC e Exploits completos para (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "technicalSummary": "PoC e Exploits completos para (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "breakdown": "PoC e Exploits completos para (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "whatBroke": "PoC e Exploits completos para (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656\ncd Fortinet-Exploits-CVE-2026-39808-106173-107656\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed FortiSandbox",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "VPN Edge",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656"
+        ],
+        [
+          "Vendor Advisory",
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
         ]
       ]
     },
@@ -583,6 +658,86 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-33825"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-106173",
+      "title": "authentication bypass remote code execution exploit",
+      "ecosystem": "web",
+      "category": "vpn-edge",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656",
+      "pocValidation": {
+        "valid": true,
+        "score": 6,
+        "codeFiles": [
+          "CVE-2026-106173/exploit.py",
+          "CVE-2026-106173/poc.py",
+          "CVE-2026-107656/exploit.py",
+          "CVE-2026-107656/poc.py",
+          "CVE-2026-39808/exploit.py",
+          "CVE-2026-39808/poc.py"
+        ],
+        "attackFiles": [
+          "CVE-2026-106173/exploit.py",
+          "CVE-2026-106173/poc.py",
+          "CVE-2026-107656/exploit.py",
+          "CVE-2026-107656/poc.py",
+          "CVE-2026-39808/exploit.py",
+          "CVE-2026-39808/poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-106173",
+          "CVE-2026-107656",
+          "CVE-2026-39808"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:34 PM CDT",
+      "firstSeenAt": "2026-10-25T18:34:17Z",
+      "language": "Python",
+      "summary": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "technicalSummary": "On 13 October 2026, Fortinet published a security advisory for a critical vulnerability affecting their FortiSIEM product. The vulnerability, CVE-2026-106173, allows for an arbitrary file write by abusing an issue in a gRPC service. Horizon3 is no.",
+      "breakdown": "On 13 October 2026, Fortinet published a security advisory for a critical vulnerability affecting their FortiSIEM product. The vulnerability, CVE-2026-106173, allows for an arbitrary file write by abusing an issue in a gRPC service. Horizon3 is no.",
+      "whatBroke": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), (FortiSIEM gRPC Path Traversal RCE) e CVE-2026-107656 (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656\ncd Fortinet-Exploits-CVE-2026-39808-106173-107656\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "VPN Edge",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/cve-2026-106173-deep-dive-fortisiem-grpc-path-traversal-file-write-rce/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-180"
         ]
       ]
     },
@@ -868,45 +1023,54 @@
       ]
     },
     {
-      "cve": "CVE-2026-110264",
-      "title": "GitLab CE/EE Integer Overflow Research PoC",
-      "ecosystem": "cloud",
-      "category": "devops",
-      "severity": "critical",
+      "cve": "CVE-2026-107656",
+      "title": "authentication bypass remote code execution exploit",
+      "ecosystem": "web",
+      "category": "vpn-edge",
+      "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE",
+      "pocUrl": "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 6,
         "codeFiles": [
-          "exploit_Exploit-CVE-2026-110264.py",
-          "exploit_cve.py",
-          "testing-2.py"
+          "CVE-2026-106173/exploit.py",
+          "CVE-2026-106173/poc.py",
+          "CVE-2026-107656/exploit.py",
+          "CVE-2026-107656/poc.py",
+          "CVE-2026-39808/exploit.py",
+          "CVE-2026-39808/poc.py"
         ],
         "attackFiles": [
-          "exploit_Exploit-CVE-2026-110264.py",
-          "exploit_cve.py"
+          "CVE-2026-106173/exploit.py",
+          "CVE-2026-106173/poc.py",
+          "CVE-2026-107656/exploit.py",
+          "CVE-2026-107656/poc.py",
+          "CVE-2026-39808/exploit.py",
+          "CVE-2026-39808/poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-110264"
+          "CVE-2026-106173",
+          "CVE-2026-107656",
+          "CVE-2026-39808"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Masriyan",
-      "researcherUrl": "https://github.com/Masriyan",
+      "researcher": "Ghost-Bx1",
+      "researcherUrl": "https://github.com/Ghost-Bx1",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "9:23 AM CDT",
-      "firstSeenAt": "2026-10-24T14:23:32Z",
+      "added": "1:34 PM CDT",
+      "firstSeenAt": "2026-10-25T18:34:17Z",
       "language": "Python",
-      "summary": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
-      "technicalSummary": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
-      "breakdown": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
-      "whatBroke": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE\ncd Exploit-CVE-2026-110264-GitLab-CE-EE-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "technicalSummary": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "breakdown": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "whatBroke": "PoC e Exploits completos para CVE-2026-39808 (FortiSandbox RCE), CVE-2026-106173 (FortiSIEM gRPC Path Traversal RCE) e (FortiSandbox Auth Bypass) - CVSS 9.6-9.8",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656\ncd Fortinet-Exploits-CVE-2026-39808-106173-107656\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -916,21 +1080,21 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "DevOps",
-        "RCE"
+        "Web",
+        "VPN Edge",
+        "Auth Bypass"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE"
+          "https://github.com/Ghost-Bx1/Fortinet-Exploits-CVE-2026-39808-106173-107656"
         ],
         [
           "Vendor Advisory",
-          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-185"
         ]
       ]
     },
@@ -1291,66 +1455,6 @@
         [
           "Vendor Advisory",
           "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-85317",
-      "title": "Reproducer for CVE-2026-85317 \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-85317",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-85317"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:52 AM CDT",
-      "firstSeenAt": "2026-10-21T08:52:55Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-http OAuth2 token cache confusion (CWE-524). Camel Spring Boot.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-85317.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-85317\ncd CVE-2026-85317\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-85317"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85317.html"
         ]
       ]
     },
