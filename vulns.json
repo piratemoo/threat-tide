@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T08:29:42Z",
+  "updatedAt": "2026-10-30T18:31:34Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,23 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Operationalizing CISA AA26-194A: Automating Cisco Router Security Assessments with Qualys Policy Audit",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/10/30/cisa-aa26-194a-cisco-router-policy-audit",
+      "summary": "Key Takeaways CISA AA26-194A provides actionable guidance to improve the security of Internet-facing Cisco routers against real-world attack techniques. The advisory focuses on configuration hardening and security hygiene, rather than a single vulnerability.",
+      "publishedAt": "2026-10-30T15:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [
+        "CVE-2008-4128",
+        "CVE-2018-0171"
+      ],
+      "tags": []
+    },
     {
       "title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
       "source": "Unit 42",
@@ -282,27 +299,92 @@
       "tags": [
         "Local Lpe"
       ]
-    },
-    {
-      "title": "ZDI-26-841: MLflow Tracking Server Missing Authorization Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-841/",
-      "summary": "This vulnerability allows remote attackers to escalate privileges on affected installations of MLflow. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 6.3. The following CVEs are assigned: CVE-2026-118625.",
-      "publishedAt": "2026-10-29T05:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-118625"
-      ],
-      "tags": [
-        "Local Lpe"
-      ]
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-109619",
+      "title": "reverse shell remote code execution exploit",
+      "ecosystem": "web",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/dev-maple/php2shell-CVE-2026-109619",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          ".github/workflows/ci.yml",
+          "lab/docker-compose.yml",
+          "lab/nginx-fpm/docker-compose.yml",
+          "lab/nginx-fpm/lab.sh",
+          "lab/nginx-fpm/test_behavior.py",
+          "lab/nginx-fpm/webroot/cve_109619_demo.php",
+          "lab/nginx-fpm/webroot/cve_109619_poc.php",
+          "lab/nginx-fpm/webroot/index.php"
+        ],
+        "attackFiles": [
+          "lab/nginx-fpm/webroot/cve_109619_poc.php",
+          "poc/discover.py",
+          "poc/poc.py",
+          "poc/poc_raw.py",
+          "poc/revshell.py",
+          "poc/scan.py",
+          "poc/ui.py",
+          "poc/universal.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-109619"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Bishop Fox",
+      "researcherUrl": "https://x.com/BishopFox",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "6:42 AM CDT",
+      "firstSeenAt": "2026-10-26T11:42:12Z",
+      "language": "Python",
+      "summary": "(PHP2Shell): Pre-Auth Remote Code Execution (RCE) via PHP-FPM Stale Global State Deserialization UAF. Reproducible Docker lab, interactive shell, reverse shell & WAF/IDS rules.",
+      "technicalSummary": "On October 21, 2026, the PHP project disclosed two critical memory-corruption vulnerabilities that can allow unauthenticated remote code execution. Both are fixed in PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Every PHP install serving web requests is in scope,",
+      "breakdown": "On October 21, 2026, the PHP project disclosed two critical memory-corruption vulnerabilities that can allow unauthenticated remote code execution. Both are fixed in PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Every PHP install serving web requests is in scope,",
+      "whatBroke": "(PHP2Shell): Pre-Auth Remote Code Execution (RCE) via PHP-FPM Stale Global State Deserialization UAF. Reproducible Docker lab, interactive shell, reverse shell & WAF/IDS rules.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dev-maple/php2shell-CVE-2026-109619.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dev-maple/php2shell-CVE-2026-109619\ncd php2shell-CVE-2026-109619\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed PHP",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Kernel",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/dev-maple/php2shell-CVE-2026-109619"
+        ],
+        [
+          "Technical Paper",
+          "https://bishopfox.com/blog/responder-guidance-for-php2shell"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.php.net/"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-109618",
       "title": "PHP Memory Corruption Vulnerability",
@@ -310,19 +392,12 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/ArchonXDeadLocksecurity/ArchonX-PHP2Shell",
+      "pocUrl": "https://github.com/liztrr01/php2shell",
       "pocValidation": {
         "valid": true,
         "score": 7,
         "codeFiles": [
-          "archonx/__init__.py",
-          "archonx/branding.py",
-          "archonx/calibrate.py",
-          "archonx/cli.py",
-          "archonx/forge.py",
-          "archonx/leak.py",
-          "archonx/offset_db.py",
-          "archonx/offsets.py"
+          "php2shell.py"
         ],
         "attackFiles": [],
         "hasUsage": false,
@@ -332,19 +407,19 @@
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
+      "researcher": "Bishop Fox",
+      "researcherUrl": "https://x.com/BishopFox",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "2:23 AM CDT",
-      "firstSeenAt": "2026-10-30T07:23:00Z",
+      "added": "10:42 AM CDT",
+      "firstSeenAt": "2026-10-30T15:42:42Z",
       "language": "Python",
-      "summary": "Pre-auth PHP RCE framework for /619 \u2014 ArchonX_DeadLock_Security",
-      "technicalSummary": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "breakdown": "Last updated: October 23, 2026 The NodeZero\u00ae Rapid Response check for PHP2Shell is now available to help identify indications of vulnerability in your environment. It combines available PHP version information with an active assessment of runtime behavior.",
-      "whatBroke": "Pre-auth PHP RCE framework for /619 \u2014 ArchonX_DeadLock_Security",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at ArchonXDeadLocksecurity/ArchonX-PHP2Shell.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/ArchonXDeadLocksecurity/ArchonX-PHP2Shell\ncd ArchonX-PHP2Shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PHP file-upload / code-exec toolkit \u2192 shell + PHP2Shell /109619 modules",
+      "technicalSummary": "On October 21, 2026, the PHP project disclosed two critical memory-corruption vulnerabilities that can allow unauthenticated remote code execution. Both are fixed in PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Every PHP install serving web requests is in scope,",
+      "breakdown": "On October 21, 2026, the PHP project disclosed two critical memory-corruption vulnerabilities that can allow unauthenticated remote code execution. Both are fixed in PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Every PHP install serving web requests is in scope,",
+      "whatBroke": "PHP file-upload / code-exec toolkit \u2192 shell + PHP2Shell /109619 modules",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at liztrr01/php2shell.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/liztrr01/php2shell\ncd php2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PHP",
         "credential access from service context",
@@ -365,11 +440,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/ArchonXDeadLocksecurity/ArchonX-PHP2Shell"
+          "https://github.com/liztrr01/php2shell"
         ],
         [
           "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-109618-cve-2026-109619/"
+          "https://bishopfox.com/blog/responder-guidance-for-php2shell"
         ],
         [
           "Vendor Advisory",
@@ -536,37 +611,49 @@
       "category": "devops",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/diogogoebel/cve-feed",
+      "pocUrl": "https://github.com/murat-levi/gitlab-rce-toolkit",
       "pocValidation": {
         "valid": true,
-        "score": 8,
+        "score": 9,
         "codeFiles": [
-          ".github/workflows/cve-feed.yml",
-          "config.yaml",
-          "cve_feed.py"
+          "exploit/__init__.py",
+          "exploit/common.py",
+          "exploit/cve110264.py",
+          "exploit/cve97229.py",
+          "exploit/layout.py",
+          "exploit/post/collect.sh",
+          "lab/run.sh",
+          "lab/stop.sh"
         ],
-        "attackFiles": [],
-        "hasUsage": true,
+        "attackFiles": [
+          "exploit/__init__.py",
+          "exploit/common.py",
+          "exploit/cve110264.py",
+          "exploit/cve97229.py",
+          "exploit/layout.py",
+          "exploit/post/collect.sh"
+        ],
+        "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-111497",
+          "CVE-2026-110264",
           "CVE-2026-97229"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "diogogoebel",
-      "researcherUrl": "https://github.com/diogogoebel",
+      "researcher": "murat-levi",
+      "researcherUrl": "https://github.com/murat-levi",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "2:42 PM CDT",
-      "firstSeenAt": "2026-10-28T19:42:18Z",
+      "added": "5:39 AM CDT",
+      "firstSeenAt": "2026-10-29T10:39:57Z",
       "language": "Python",
-      "summary": "Feed de CVEs, ranking por exploit ativo, RCE, categorias.",
-      "technicalSummary": "Feed de CVEs, ranking por exploit ativo, RCE, categorias.",
-      "breakdown": "Feed de CVEs, ranking por exploit ativo, RCE, categorias.",
-      "whatBroke": "Feed de CVEs, ranking por exploit ativo, RCE, categorias.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at diogogoebel/cve-feed.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/diogogoebel/cve-feed\ncd cve-feed\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "+ CVE-2026-110264 \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
+      "technicalSummary": "+ CVE-2026-110264 \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
+      "breakdown": "+ CVE-2026-110264 \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
+      "whatBroke": "+ CVE-2026-110264 \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murat-levi/gitlab-rce-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murat-levi/gitlab-rce-toolkit\ncd gitlab-rce-toolkit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed Community Edition and Enterprise Edition",
         "credential access from service context",
@@ -582,12 +669,12 @@
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 87,
-      "dayOffset": 2,
+      "weaponization": 94,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/diogogoebel/cve-feed"
+          "https://github.com/murat-levi/gitlab-rce-toolkit"
         ],
         [
           "Vendor Advisory",
@@ -655,6 +742,69 @@
         [
           "Vendor Advisory",
           "https://help.nextcloud.com/t/to-collabora-built-in-user-update-asap/250516"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-48907",
+      "title": "Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/CoNistical/CVE-2026-48907",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48907"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "CoNistical",
+      "researcherUrl": "https://github.com/CoNistical",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:00 AM CDT",
+      "firstSeenAt": "2026-10-29T16:00:04Z",
+      "language": "Python",
+      "summary": "Adapted PoC for Joomla! JCE extension < 2.9.99.5",
+      "technicalSummary": "Adapted PoC for Joomla! JCE extension < 2.9.99.5",
+      "breakdown": "Adapted PoC for Joomla! JCE extension < 2.9.99.5",
+      "whatBroke": "Adapted PoC for Joomla! JCE extension < 2.9.99.5",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at CoNistical/CVE-2026-48907.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/CoNistical/CVE-2026-48907\ncd CVE-2026-48907\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Joomla Content Editor",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/CoNistical/CVE-2026-48907"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites"
         ]
       ]
     },
@@ -735,47 +885,41 @@
       ]
     },
     {
-      "cve": "CVE-2026-115905",
-      "title": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + CVE-2026-115905 zip cloaking).",
-      "ecosystem": "cloud",
+      "cve": "CVE-2026-94386",
+      "title": "Reproducer for CVE-2026-94386 \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token.",
+      "ecosystem": "web",
       "category": "webstack",
-      "severity": "high",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/cosmonic-labs/demo-zip-rce-sandbox",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-94386",
       "pocValidation": {
         "valid": true,
-        "score": 7,
+        "score": 9,
         "codeFiles": [
-          "cosmonic-app/extractor/.wash/config.yaml",
-          "cosmonic-app/extractor/src/lib.rs",
-          "cosmonic-app/extractor/src/sandbox.rs",
-          "cosmonic-app/web/.wash/config.yaml",
-          "cosmonic-app/web/src/archives.rs",
-          "cosmonic-app/web/src/lib.rs",
-          "cosmonic-app/web/src/page.rs",
-          "deploy/zip-sandbox.workload.yaml"
+          "camel-quarkus/docker-compose.yml",
+          "camel-spring-boot/docker-compose.yml"
         ],
         "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-115905"
+          "CVE-2026-94386"
         ],
-        "language": "Rust"
+        "language": "Java"
       },
       "reliability": "reliable exploit",
-      "researcher": "cosmonic-labs",
-      "researcherUrl": "https://github.com/cosmonic-labs",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "4:31 PM CDT",
-      "firstSeenAt": "2026-10-28T21:31:02Z",
-      "language": "Rust",
-      "summary": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + zip cloaking) contained by a deny-by-default Cosmonic WebAssembly sandbox.",
-      "technicalSummary": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + zip cloaking) contained by a deny-by-default Cosmonic WebAssembly sandbox.",
-      "breakdown": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + zip cloaking) contained by a deny-by-default Cosmonic WebAssembly sandbox.",
-      "whatBroke": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + zip cloaking) contained by a deny-by-default Cosmonic WebAssembly sandbox.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cosmonic-labs/demo-zip-rce-sandbox.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cosmonic-labs/demo-zip-rce-sandbox\ncd demo-zip-rce-sandbox\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "5:29 AM CDT",
+      "firstSeenAt": "2026-10-29T10:29:26Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token cache keyed only on endpoint+clientId (CWE-524). Camel Spring Boot + Camel Quarkus.",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token cache keyed only on endpoint+clientId (CWE-524). Camel Spring Boot + Camel Quarkus.",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token cache keyed only on endpoint+clientId (CWE-524). Camel Spring Boot + Camel Quarkus.",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token cache keyed only on endpoint+clientId (CWE-524). Camel Spring Boot + Camel Quarkus.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-94386.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-94386\ncd CVE-2026-94386\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "internal pivot from an internet-facing control point",
@@ -783,21 +927,148 @@
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
+        "Web",
         "Webstack",
-        "Exploit"
+        "Session Theft"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/cosmonic-labs/demo-zip-rce-sandbox"
+          "https://github.com/oscerd/CVE-2026-94386"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/zip-rs/zip2/commit/8068ab480ccf8daa7411424e365fcdbe6d09443e"
+          "https://camel.apache.org/security/CVE-2026-85317.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-95628",
+      "title": "Reproducer for CVE-2026-95628 \u2014 Apache Camel camel-docling custom-argument path validation did not reject.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-95628",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-quarkus/docker-compose.yml",
+          "camel-quarkus/docling-stub.sh",
+          "camel-spring-boot/docker-compose.yml",
+          "camel-spring-boot/docling-stub.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-40047",
+          "CVE-2026-95628"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:07 AM CDT",
+      "firstSeenAt": "2026-10-29T10:07:48Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-docling custom-argument path validation did not reject absolute paths, an incomplete fix of CVE-2026-40047 (CWE-22). Camel Spring Boot + Camel Quarkus.",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-docling custom-argument path validation did not reject absolute paths, an incomplete fix of CVE-2026-40047 (CWE-22). Camel Spring Boot + Camel Quarkus.",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-docling custom-argument path validation did not reject absolute paths, an incomplete fix of CVE-2026-40047 (CWE-22). Camel Spring Boot + Camel Quarkus.",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-docling custom-argument path validation did not reject absolute paths, an incomplete fix of CVE-2026-40047 (CWE-22). Camel Spring Boot + Camel Quarkus.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-95628.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-95628\ncd CVE-2026-95628\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-95628"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-40047.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-95629",
+      "title": "Reproducer for CVE-2026-95629 \u2014 Apache Camel camel-docling passed the CamelDoclingOutputFilePath header to.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-95629",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-quarkus/docker-compose.yml",
+          "camel-quarkus/docling-stub.sh",
+          "camel-spring-boot/docker-compose.yml",
+          "camel-spring-boot/docling-stub.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-95629"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:23 AM CDT",
+      "firstSeenAt": "2026-10-29T10:23:19Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-docling passed the CamelDoclingOutputFilePath header to docling's --output verbatim (CWE-22). Camel Spring Boot + Camel Quarkus.",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-docling passed the CamelDoclingOutputFilePath header to docling's --output verbatim (CWE-22). Camel Spring Boot + Camel Quarkus.",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-docling passed the CamelDoclingOutputFilePath header to docling's --output verbatim (CWE-22). Camel Spring Boot + Camel Quarkus.",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-docling passed the CamelDoclingOutputFilePath header to docling's --output verbatim (CWE-22). Camel Spring Boot + Camel Quarkus.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-95629.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-95629\ncd CVE-2026-95629\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-95629"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-40047.html"
         ]
       ]
     },
@@ -863,79 +1134,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-112507",
-      "title": "Cinder27 \u2014 selected CVE PoC Runner",
-      "ecosystem": "ios",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/794pn2s6fh-hub/kernel-cve-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 6,
-        "codeFiles": [
-          ".github/workflows/build-ipa.yml",
-          "CVE-2026-112415/CVE-2026-112415.c",
-          "CVE-2026-112416/CVE-2026-112416.c",
-          "CVE-2026-112485/CVE-2026-112485.c",
-          "CVE-2026-112485/CVE-2026-112485.py",
-          "CVE-2026-112488/CVE-2026-112488.c",
-          "CVE-2026-112507/CVE-2026-112507.c",
-          "CVE-2026-112515/CVE-2026-112515.c"
-        ],
-        "attackFiles": [
-          "CVE-2026-112507/CVE-2026-112507.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-112476",
-          "CVE-2026-112507",
-          "CVE-2026-112554",
-          "CVE-2026-112696",
-          "CVE-2026-113910",
-          "CVE-2026-65385"
-        ],
-        "language": "Swift"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "794pn2s6fh-hub",
-      "researcherUrl": "https://github.com/794pn2s6fh-hub",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:02 PM CDT",
-      "firstSeenAt": "2026-10-29T21:02:27Z",
-      "language": "Swift",
-      "summary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2. An app may be able to cause unexpected system termination or write kernel memory.",
-      "technicalSummary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2. An app may be able to cause unexpected system termination or write kernel memory.",
-      "breakdown": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2. An app may be able to cause unexpected system termination or write kernel memory.",
-      "whatBroke": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2. An app may be able to cause unexpected system termination or write kernel memory.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 794pn2s6fh-hub/kernel-cve-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/794pn2s6fh-hub/kernel-cve-PoC\ncd kernel-cve-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "iOS",
-        "Mobile",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/794pn2s6fh-hub/kernel-cve-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/149230"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-112611",
       "title": "/112610: CoreGraphics PDF out-of-bounds writes (fixed in iOS 27.2) \u2014 fix-diff analysis, on-device proof,.",
       "ecosystem": "ios",
@@ -992,152 +1190,6 @@
         [
           "GitHub",
           "https://github.com/Ping-2o/CVE-2026-112611-cg-shading"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/149227"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-112696",
-      "title": "Cinder27 \u2014 selected CVE PoC Runner",
-      "ecosystem": "ios",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/794pn2s6fh-hub/kernel-cve-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 6,
-        "codeFiles": [
-          ".github/workflows/build-ipa.yml",
-          "CVE-2026-112415/CVE-2026-112415.c",
-          "CVE-2026-112416/CVE-2026-112416.c",
-          "CVE-2026-112485/CVE-2026-112485.c",
-          "CVE-2026-112485/CVE-2026-112485.py",
-          "CVE-2026-112488/CVE-2026-112488.c",
-          "CVE-2026-112507/CVE-2026-112507.c",
-          "CVE-2026-112515/CVE-2026-112515.c"
-        ],
-        "attackFiles": [
-          "CVE-2026-112696/CVE-2026-112696.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-112476",
-          "CVE-2026-112507",
-          "CVE-2026-112554",
-          "CVE-2026-112696",
-          "CVE-2026-113910",
-          "CVE-2026-65385"
-        ],
-        "language": "Swift"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "794pn2s6fh-hub",
-      "researcherUrl": "https://github.com/794pn2s6fh-hub",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:02 PM CDT",
-      "firstSeenAt": "2026-10-29T21:02:27Z",
-      "language": "Swift",
-      "summary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. An app may be able to.",
-      "technicalSummary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. An app may be able to.",
-      "breakdown": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. An app may be able to.",
-      "whatBroke": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 27.2 and iPadOS 27.2, macOS Golden Gate 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2, visionOS 27.2. An app may be able to.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 794pn2s6fh-hub/kernel-cve-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/794pn2s6fh-hub/kernel-cve-PoC\ncd kernel-cve-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "iOS",
-        "Mobile",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/794pn2s6fh-hub/kernel-cve-PoC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/149230"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-65385",
-      "title": "Cinder27 \u2014 selected CVE PoC Runner",
-      "ecosystem": "ios",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/794pn2s6fh-hub/kernel-cve-PoC",
-      "pocValidation": {
-        "valid": true,
-        "score": 6,
-        "codeFiles": [
-          ".github/workflows/build-ipa.yml",
-          "CVE-2026-112415/CVE-2026-112415.c",
-          "CVE-2026-112416/CVE-2026-112416.c",
-          "CVE-2026-112485/CVE-2026-112485.c",
-          "CVE-2026-112485/CVE-2026-112485.py",
-          "CVE-2026-112488/CVE-2026-112488.c",
-          "CVE-2026-112507/CVE-2026-112507.c",
-          "CVE-2026-112515/CVE-2026-112515.c"
-        ],
-        "attackFiles": [
-          "CVE-2026-65385/CVE-2026-65385.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-112476",
-          "CVE-2026-112507",
-          "CVE-2026-112554",
-          "CVE-2026-112696",
-          "CVE-2026-113910",
-          "CVE-2026-65385"
-        ],
-        "language": "Swift"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "794pn2s6fh-hub",
-      "researcherUrl": "https://github.com/794pn2s6fh-hub",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:02 PM CDT",
-      "firstSeenAt": "2026-10-29T21:02:27Z",
-      "language": "Swift",
-      "summary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, visionOS 27.2, watchOS 27.2. A buffer overflow may result in memory.",
-      "technicalSummary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, visionOS 27.2, watchOS 27.2. A buffer overflow may result in memory.",
-      "breakdown": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, visionOS 27.2, watchOS 27.2. A buffer overflow may result in memory.",
-      "whatBroke": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, visionOS 27.2, watchOS 27.2. A buffer overflow may result in memory.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at 794pn2s6fh-hub/kernel-cve-PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/794pn2s6fh-hub/kernel-cve-PoC\ncd kernel-cve-PoC\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "iOS",
-        "Mobile",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/794pn2s6fh-hub/kernel-cve-PoC"
         ],
         [
           "Vendor Advisory",
@@ -1283,6 +1335,73 @@
       ]
     },
     {
+      "cve": "CVE-2026-110264",
+      "title": "GitLab CE/EE Integer Overflow Research PoC",
+      "ecosystem": "cloud",
+      "category": "devops",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit_Exploit-CVE-2026-110264.py",
+          "exploit_cve.py",
+          "testing-2.py"
+        ],
+        "attackFiles": [
+          "exploit_Exploit-CVE-2026-110264.py",
+          "exploit_cve.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-110264"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Masriyan",
+      "researcherUrl": "https://github.com/Masriyan",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:23 AM CDT",
+      "firstSeenAt": "2026-10-24T14:23:32Z",
+      "language": "Python",
+      "summary": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
+      "technicalSummary": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
+      "breakdown": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
+      "whatBroke": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE\ncd Exploit-CVE-2026-110264-GitLab-CE-EE-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "DevOps",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-80097",
       "title": "Microsoft Authenticator Android Token Theft PoC & Exploit",
       "ecosystem": "android",
@@ -1346,196 +1465,63 @@
       ]
     },
     {
-      "cve": "CVE-2026-90885",
-      "title": "Reproducer for CVE-2026-90885 \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
+      "cve": "CVE-2026-98260",
+      "title": "CVE 2026 98260 vivo s60 poc",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-90885",
+      "pocUrl": "https://github.com/molanp/CVE-2026-98260-vivo-s60-poc",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
+          "run-kernel15.ps1",
+          "timer-t28-kernel15-cleanup.c",
+          "timer-t28-kernel15.c"
         ],
         "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-90885"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:44 AM CDT",
-      "firstSeenAt": "2026-10-29T09:44:03Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-90885.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-90885\ncd CVE-2026-90885\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-90885"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85250.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-97555",
-      "title": "heap overflow in the Linux SMB client DACL rewrite (cifs.ko) \u2014 analysis, POC, and an arm64 exploit chain.",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/woshigenm/CVE-2026-97555",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "scripts/derive_offsets.sh",
-          "scripts/launch_exp.sh",
-          "scripts/mount_cifs.sh",
-          "scripts/trace_acl02.sh",
-          "scripts/unmount_cifs.sh",
-          "src/acl_key_preload.c",
-          "src/cifs_keyring_dump.c",
-          "src/exp.c"
-        ],
-        "attackFiles": [
-          "scripts/launch_exp.sh",
-          "src/exp.c",
-          "src/poc.c",
-          "src/poc_smb2_acl.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-97555"
+          "CVE-2026-98260"
         ],
         "language": "C"
       },
       "reliability": "reliable exploit",
-      "researcher": "woshigenm",
-      "researcherUrl": "https://github.com/woshigenm",
+      "researcher": "molanp",
+      "researcherUrl": "https://github.com/molanp",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:09 AM CDT",
-      "firstSeenAt": "2026-10-29T13:09:14Z",
+      "added": "2:52 AM CDT",
+      "firstSeenAt": "2026-10-30T07:52:25Z",
       "language": "C",
-      "summary": "heap overflow in the Linux SMB client DACL rewrite (cifs.ko) \u2014 analysis, POC, and an arm64 exploit chain ending in a uid-0 credential overwrite on the reference build",
-      "technicalSummary": "heap overflow in the Linux SMB client DACL rewrite (cifs.ko) \u2014 analysis, POC, and an arm64 exploit chain ending in a uid-0 credential overwrite on the reference build",
-      "breakdown": "heap overflow in the Linux SMB client DACL rewrite (cifs.ko) \u2014 analysis, POC, and an arm64 exploit chain ending in a uid-0 credential overwrite on the reference build",
-      "whatBroke": "heap overflow in the Linux SMB client DACL rewrite (cifs.ko) \u2014 analysis, POC, and an arm64 exploit chain ending in a uid-0 credential overwrite on the reference build",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at woshigenm/CVE-2026-97555.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/woshigenm/CVE-2026-97555\ncd CVE-2026-97555\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "CVE 2026 98260 vivo s60 poc",
+      "technicalSummary": "CVE 2026 98260 vivo s60 poc",
+      "breakdown": "CVE 2026 98260 vivo s60 poc",
+      "whatBroke": "CVE 2026 98260 vivo s60 poc",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at molanp/CVE-2026-98260-vivo-s60-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/molanp/CVE-2026-98260-vivo-s60-poc\ncd CVE-2026-98260-vivo-s60-poc\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kernel",
+        "Windows",
+        "Exchange",
         "Memory Corruption"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/woshigenm/CVE-2026-97555"
+          "https://github.com/molanp/CVE-2026-98260-vivo-s60-poc"
         ],
         [
           "Vendor Advisory",
-          "https://git.kernel.org/stable/c/0ee150794c75bcd0be0e24ff3394f433cbae18cc"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-95664",
-      "title": "Reproducer for CVE-2026-95664 \u2014 Apache Camel camel-aws2-s3 evaluated a header-supplied object key as a.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "medium",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-95664",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-95664"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:51 AM CDT",
-      "firstSeenAt": "2026-10-29T09:51:33Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-aws2-s3 evaluated a header-supplied object key as a Simple expression (CWE-917). Camel Spring Boot + Camel Quarkus.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-aws2-s3 evaluated a header-supplied object key as a Simple expression (CWE-917). Camel Spring Boot + Camel Quarkus.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-aws2-s3 evaluated a header-supplied object key as a Simple expression (CWE-917). Camel Spring Boot + Camel Quarkus.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-aws2-s3 evaluated a header-supplied object key as a Simple expression (CWE-917). Camel Spring Boot + Camel Quarkus.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-95664.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-95664\ncd CVE-2026-95664\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-95664"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2025-27636.html"
+          "https://git.kernel.org/stable/c/6f1977cea3e85cd8ab55fb337d3e1725fe61d1ce"
         ]
       ]
     }
