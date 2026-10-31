@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T08:19:47Z",
+  "updatedAt": "2026-10-31T17:37:49Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,25 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "Appraisal by AI: Model-driven victim prioritization in the VOLTA infostealer",
+      "source": "Cisco Talos",
+      "sourceUrl": "https://blog.talosintelligence.com/",
+      "url": "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
+      "summary": "VOLTA is a mature stealer implant with an optional AI-integration layer. After stealing credentials, sessions, and cryptocurrency wallets, VOLTA sends a structured evidence bundle to an LLM to rank the victim\u2019s assets by monetization value. If a model.",
+      "publishedAt": "2026-10-31T12:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "ios",
+      "category": "mobile",
+      "topic": "phishing",
+      "cves": [],
+      "tags": [
+        "Phishing",
+        "iOS",
+        "Mobile",
+        "Session Theft"
+      ]
+    },
     {
       "title": "Operationalizing CISA AA26-194A: Automating Cisco Router Security Assessments with Qualys Policy Audit",
       "source": "Qualys Research",
@@ -280,24 +299,6 @@
         "Web",
         "Webstack",
         "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-842: MLflow Tracking Server Issues Missing Authorization Privilege Escalation Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-842/",
-      "summary": "This vulnerability allows remote attackers to escalate privileges on affected installations of MLflow. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 5.4. The following CVEs are assigned: CVE-2026-118626.",
-      "publishedAt": "2026-10-29T05:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-118626"
-      ],
-      "tags": [
-        "Local Lpe"
       ]
     }
   ],
@@ -602,6 +603,69 @@
       ]
     },
     {
+      "cve": "CVE-2026-31431",
+      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cf_min.py",
+          "copyfail_uos.py",
+          "restore.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-31431"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Venshell",
+      "researcherUrl": "https://github.com/Venshell",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:49 AM CDT",
+      "firstSeenAt": "2026-10-28T16:49:52Z",
+      "language": "Python",
+      "summary": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
+      "technicalSummary": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
+      "breakdown": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
+      "whatBroke": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Venshell/copy-fail-CVE-2026-31431-aarch64.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64\ncd copy-fail-CVE-2026-31431-aarch64\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-97229",
       "title": "GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
       "ecosystem": "cloud",
@@ -878,6 +942,73 @@
         [
           "Vendor Advisory",
           "https://fortiguard.fortinet.com/psirt/FG-IR-26-185"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-115905",
+      "title": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + CVE-2026-115905 zip cloaking).",
+      "ecosystem": "cloud",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/cosmonic-labs/demo-zip-rce-sandbox",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "cosmonic-app/extractor/.wash/config.yaml",
+          "cosmonic-app/extractor/src/lib.rs",
+          "cosmonic-app/extractor/src/sandbox.rs",
+          "cosmonic-app/web/.wash/config.yaml",
+          "cosmonic-app/web/src/archives.rs",
+          "cosmonic-app/web/src/lib.rs",
+          "cosmonic-app/web/src/page.rs",
+          "cosmonic-app/web/src/site.js"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-115905"
+        ],
+        "language": "Rust"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "cosmonic-labs",
+      "researcherUrl": "https://github.com/cosmonic-labs",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:31 PM CDT",
+      "firstSeenAt": "2026-10-28T21:31:02Z",
+      "language": "Rust",
+      "summary": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + zip cloaking) contained by a deny-by-default Cosmonic WebAssembly sandbox.",
+      "technicalSummary": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + zip cloaking) contained by a deny-by-default Cosmonic WebAssembly sandbox.",
+      "breakdown": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + zip cloaking) contained by a deny-by-default Cosmonic WebAssembly sandbox.",
+      "whatBroke": "Live demo: the same vulnerable Rust zip crate (RUSTSEC-2026-0367 setuid + zip cloaking) contained by a deny-by-default Cosmonic WebAssembly sandbox.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cosmonic-labs/demo-zip-rce-sandbox.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cosmonic-labs/demo-zip-rce-sandbox\ncd demo-zip-rce-sandbox\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/cosmonic-labs/demo-zip-rce-sandbox"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/zip-rs/zip2/commit/8068ab480ccf8daa7411424e365fcdbe6d09443e"
         ]
       ]
     },
@@ -1333,44 +1464,54 @@
     },
     {
       "cve": "CVE-2026-110264",
-      "title": "GitLab CE/EE Integer Overflow Research PoC",
+      "title": "+ CVE-2026-110264 \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
       "ecosystem": "cloud",
       "category": "devops",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE",
+      "pocUrl": "https://github.com/murat-levi/gitlab-rce-toolkit",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "exploit_Exploit-CVE-2026-110264.py",
-          "exploit_cve.py",
-          "testing-2.py"
+          "exploit/__init__.py",
+          "exploit/common.py",
+          "exploit/cve110264.py",
+          "exploit/cve97229.py",
+          "exploit/layout.py",
+          "exploit/post/collect.sh",
+          "lab/run.sh",
+          "lab/stop.sh"
         ],
         "attackFiles": [
-          "exploit_Exploit-CVE-2026-110264.py",
-          "exploit_cve.py"
+          "exploit/__init__.py",
+          "exploit/common.py",
+          "exploit/cve110264.py",
+          "exploit/cve97229.py",
+          "exploit/layout.py",
+          "exploit/post/collect.sh"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-110264"
+          "CVE-2026-110264",
+          "CVE-2026-97229"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Masriyan",
-      "researcherUrl": "https://github.com/Masriyan",
+      "researcher": "murat-levi",
+      "researcherUrl": "https://github.com/murat-levi",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "3:19 AM CDT",
-      "firstSeenAt": "2026-10-31T08:19:47Z",
+      "added": "5:39 AM CDT",
+      "firstSeenAt": "2026-10-29T10:39:57Z",
       "language": "Python",
-      "summary": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
-      "technicalSummary": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
-      "breakdown": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
-      "whatBroke": "An issue has been discovered in GitLab CE/EE affecting all versions from 7.0 before 18.11.13, 19.0 before 19.0.10, 19.1 before 19.1.9, 19.2 before 19.2.9, 19.3 before 19.3.6, 19.4 before 19.4.3, and 19.5 before 19.5.1 that,.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE\ncd Exploit-CVE-2026-110264-GitLab-CE-EE-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "+ \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
+      "technicalSummary": "+ \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
+      "breakdown": "+ \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
+      "whatBroke": "+ \u2014 GitLab Onigmo RCE Exploit Toolkit (CVSS 10.0)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at murat-levi/gitlab-rce-toolkit.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/murat-levi/gitlab-rce-toolkit\ncd gitlab-rce-toolkit\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -1386,141 +1527,15 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Masriyan/Exploit-CVE-2026-110264-GitLab-CE-EE-RCE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-80097",
-      "title": "Microsoft Authenticator Android Token Theft PoC & Exploit",
-      "ecosystem": "android",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Ghost-Bx1/AuthenticatorFlaw-CVE-2026-80097",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "exploit.py",
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-80097"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Ghost-Bx1",
-      "researcherUrl": "https://github.com/Ghost-Bx1",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:28 AM CDT",
-      "firstSeenAt": "2026-10-27T14:28:35Z",
-      "language": "Python",
-      "summary": "Microsoft Authenticator Android Token Theft PoC & Exploit",
-      "technicalSummary": "Microsoft Authenticator Android Token Theft PoC & Exploit",
-      "breakdown": "Microsoft Authenticator Android Token Theft PoC & Exploit",
-      "whatBroke": "Microsoft Authenticator Android Token Theft PoC & Exploit",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ghost-Bx1/AuthenticatorFlaw-CVE-2026-80097.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ghost-Bx1/AuthenticatorFlaw-CVE-2026-80097\ncd AuthenticatorFlaw-CVE-2026-80097\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Android",
-        "Mobile",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Ghost-Bx1/AuthenticatorFlaw-CVE-2026-80097"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-80097"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-97798",
-      "title": "PoC \u2014 WER Time Travel Debugging argument injection to SYSTEM (Windows 11 LPE), with an adaptive faultrep.dll.",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/j0wii/CVE-2026-97798_LPE_Windows",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "build.ps1",
-          "src/CVE-2026-97798.cpp"
-        ],
-        "attackFiles": [
-          "src/CVE-2026-97798.cpp"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-97798"
-        ],
-        "language": "C++"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "j0wii",
-      "researcherUrl": "https://github.com/j0wii",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:54 AM CDT",
-      "firstSeenAt": "2026-10-29T09:54:06Z",
-      "language": "C++",
-      "summary": "PoC \u2014 WER Time Travel Debugging argument injection to SYSTEM (Windows 11 LPE), with an adaptive faultrep.dll resolver.",
-      "technicalSummary": "PoC \u2014 WER Time Travel Debugging argument injection to SYSTEM (Windows 11 LPE), with an adaptive faultrep.dll resolver.",
-      "breakdown": "PoC \u2014 WER Time Travel Debugging argument injection to SYSTEM (Windows 11 LPE), with an adaptive faultrep.dll resolver.",
-      "whatBroke": "PoC \u2014 WER Time Travel Debugging argument injection to SYSTEM (Windows 11 LPE), with an adaptive faultrep.dll resolver.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at j0wii/CVE-2026-97798_LPE_Windows.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/j0wii/CVE-2026-97798_LPE_Windows\ncd CVE-2026-97798_LPE_Windows\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
       "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/j0wii/CVE-2026-97798_LPE_Windows"
+          "https://github.com/murat-levi/gitlab-rce-toolkit"
         ],
         [
           "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-97798"
+          "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
         ]
       ]
     }
