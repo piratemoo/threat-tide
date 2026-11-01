@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T09:03:41Z",
+  "updatedAt": "2026-11-01T18:22:21Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -303,89 +303,6 @@
     }
   ],
   "vulns": [
-    {
-      "cve": "CVE-2026-109619",
-      "title": "reverse shell remote code execution exploit",
-      "ecosystem": "web",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/dev-maple/php2shell-CVE-2026-109619",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          ".github/workflows/ci.yml",
-          "lab/docker-compose.yml",
-          "lab/nginx-fpm/docker-compose.yml",
-          "lab/nginx-fpm/lab.sh",
-          "lab/nginx-fpm/test_behavior.py",
-          "lab/nginx-fpm/webroot/cve_109619_demo.php",
-          "lab/nginx-fpm/webroot/cve_109619_poc.php",
-          "lab/nginx-fpm/webroot/index.php"
-        ],
-        "attackFiles": [
-          "lab/nginx-fpm/webroot/cve_109619_poc.php",
-          "poc/discover.py",
-          "poc/poc.py",
-          "poc/poc_raw.py",
-          "poc/revshell.py",
-          "poc/scan.py",
-          "poc/ui.py",
-          "poc/universal.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-109619"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Bishop Fox",
-      "researcherUrl": "https://x.com/BishopFox",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "6:42 AM CDT",
-      "firstSeenAt": "2026-10-26T11:42:12Z",
-      "language": "Python",
-      "summary": "(PHP2Shell): Pre-Auth Remote Code Execution (RCE) via PHP-FPM Stale Global State Deserialization UAF. Reproducible Docker lab, interactive shell, reverse shell & WAF/IDS rules.",
-      "technicalSummary": "On October 21, 2026, the PHP project disclosed two critical memory-corruption vulnerabilities that can allow unauthenticated remote code execution. Both are fixed in PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Every PHP install serving web requests is in scope,",
-      "breakdown": "On October 21, 2026, the PHP project disclosed two critical memory-corruption vulnerabilities that can allow unauthenticated remote code execution. Both are fixed in PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Every PHP install serving web requests is in scope,",
-      "whatBroke": "(PHP2Shell): Pre-Auth Remote Code Execution (RCE) via PHP-FPM Stale Global State Deserialization UAF. Reproducible Docker lab, interactive shell, reverse shell & WAF/IDS rules.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at dev-maple/php2shell-CVE-2026-109619.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/dev-maple/php2shell-CVE-2026-109619\ncd php2shell-CVE-2026-109619\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed PHP",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Kernel",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/dev-maple/php2shell-CVE-2026-109619"
-        ],
-        [
-          "Technical Paper",
-          "https://bishopfox.com/blog/responder-guidance-for-php2shell"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.php.net/"
-        ]
-      ]
-    },
     {
       "cve": "CVE-2026-109618",
       "title": "PHP Memory Corruption Vulnerability",
@@ -1168,6 +1085,76 @@
       ]
     },
     {
+      "cve": "CVE-2026-98260",
+      "title": "(posix-cpu-timers exec UAF) exploit research: S9280 Android 14 GKI 6.1 \u2014 UAF trigger + zero-write primitive.",
+      "ecosystem": "android",
+      "category": "mobile",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/NanoTurtle1145/cve-2026-98260-uaf",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "kmem-check.sh",
+          "overnight.py",
+          "probe.c",
+          "slabprobe.c",
+          "src/build.sh",
+          "src/upstream_port.c",
+          "tools/aiospray.c",
+          "tools/analyze_page_fate.py"
+        ],
+        "attackFiles": [
+          "kmem-check.sh",
+          "tools/setup_verify.sh",
+          "trigger.c"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-98260"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "NanoTurtle1145",
+      "researcherUrl": "https://github.com/NanoTurtle1145",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:54 AM CDT",
+      "firstSeenAt": "2026-10-28T16:54:41Z",
+      "language": "C",
+      "summary": "(posix-cpu-timers exec UAF) exploit research: S9280 Android 14 GKI 6.1 \u2014 UAF trigger + zero-write primitive + SELinux Permissive. Handoff doc in HANDOFF.md",
+      "technicalSummary": "(posix-cpu-timers exec UAF) exploit research: S9280 Android 14 GKI 6.1 \u2014 UAF trigger + zero-write primitive + SELinux Permissive. Handoff doc in HANDOFF.md",
+      "breakdown": "(posix-cpu-timers exec UAF) exploit research: S9280 Android 14 GKI 6.1 \u2014 UAF trigger + zero-write primitive + SELinux Permissive. Handoff doc in HANDOFF.md",
+      "whatBroke": "(posix-cpu-timers exec UAF) exploit research: S9280 Android 14 GKI 6.1 \u2014 UAF trigger + zero-write primitive + SELinux Permissive. Handoff doc in HANDOFF.md",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at NanoTurtle1145/cve-2026-98260-uaf.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/NanoTurtle1145/cve-2026-98260-uaf\ncd cve-2026-98260-uaf\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Android",
+        "Mobile",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/NanoTurtle1145/cve-2026-98260-uaf"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/6f1977cea3e85cd8ab55fb337d3e1725fe61d1ce"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-101259",
       "title": "Reproducer for CVE-2026-101259 \u2014 Apache Camel camel-coap consumer sent the exception message to the CoAP.",
       "ecosystem": "windows",
@@ -1224,67 +1211,6 @@
         [
           "Vendor Advisory",
           "https://camel.apache.org/security/CVE-2026-101259.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-90885",
-      "title": "Reproducer for CVE-2026-90885 \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-90885",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-90885"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:44 AM CDT",
-      "firstSeenAt": "2026-10-29T09:44:03Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-90885.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-90885\ncd CVE-2026-90885\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-90885"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85250.html"
         ]
       ]
     },
@@ -1418,6 +1344,70 @@
         [
           "Vendor Advisory",
           "https://git.kernel.org/stable/c/0ee150794c75bcd0be0e24ff3394f433cbae18cc"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-98432",
+      "title": "Proof-only PoC for CVE-2026-98432 (Linux IPv4/TCP ireq_opt use-after-free): race trigger, heap-reuse oracle,.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Alucard0x1/cve-2026-98432",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc_cve_2026_98432.py"
+        ],
+        "attackFiles": [
+          "poc_cve_2026_98432.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-98432"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Alucard0x1",
+      "researcherUrl": "https://github.com/Alucard0x1",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:36 AM CDT",
+      "firstSeenAt": "2026-10-30T16:36:43Z",
+      "language": "Python",
+      "summary": "Proof-only PoC for (Linux IPv4/TCP ireq_opt use-after-free): race trigger, heap-reuse oracle, no code execution",
+      "technicalSummary": "Proof-only PoC for (Linux IPv4/TCP ireq_opt use-after-free): race trigger, heap-reuse oracle, no code execution",
+      "breakdown": "Proof-only PoC for (Linux IPv4/TCP ireq_opt use-after-free): race trigger, heap-reuse oracle, no code execution",
+      "whatBroke": "Proof-only PoC for (Linux IPv4/TCP ireq_opt use-after-free): race trigger, heap-reuse oracle, no code execution",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Alucard0x1/cve-2026-98432.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Alucard0x1/cve-2026-98432\ncd cve-2026-98432\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Alucard0x1/cve-2026-98432"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/11a03ce3c4a62d84c10ccdfe47f8075006498568"
         ]
       ]
     },
