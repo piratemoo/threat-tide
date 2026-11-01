@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:22:21Z",
+  "updatedAt": "2026-11-01T22:42:12Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -378,6 +378,69 @@
       ]
     },
     {
+      "cve": "CVE-2026-31431",
+      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cf_min.py",
+          "copyfail_uos.py",
+          "restore.sh"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-31431"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Venshell",
+      "researcherUrl": "https://github.com/Venshell",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:49 AM CDT",
+      "firstSeenAt": "2026-10-28T16:49:52Z",
+      "language": "Python",
+      "summary": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
+      "technicalSummary": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
+      "breakdown": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
+      "whatBroke": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Venshell/copy-fail-CVE-2026-31431-aarch64.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64\ncd copy-fail-CVE-2026-31431-aarch64\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Kernel",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-111497",
       "title": "Google Brotli Unchecked Return Value Vulnerability",
       "ecosystem": "web",
@@ -446,135 +509,6 @@
         [
           "Vendor Advisory",
           "https://github.com/google/brotli/releases/tag/v1.2.1"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-31431",
-      "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cf_min.py",
-          "copyfail_uos.py",
-          "restore.sh"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-31431"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Venshell",
-      "researcherUrl": "https://github.com/Venshell",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:49 AM CDT",
-      "firstSeenAt": "2026-10-28T16:49:52Z",
-      "language": "Python",
-      "summary": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
-      "technicalSummary": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
-      "breakdown": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
-      "whatBroke": "Linux 4.19 aarch64 PoC for (Copy Fail) - AF_ALG/authencesn page-cache write",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Venshell/copy-fail-CVE-2026-31431-aarch64.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64\ncd copy-fail-CVE-2026-31431-aarch64\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Kernel",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Local LPE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Venshell/copy-fail-CVE-2026-31431-aarch64"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-97229",
-      "title": "GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
-      "ecosystem": "cloud",
-      "category": "devops",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/diogogoebel/cve-feed",
-      "pocValidation": {
-        "valid": true,
-        "score": 8,
-        "codeFiles": [
-          ".github/workflows/cve-feed.yml",
-          "config.yaml",
-          "cve_feed.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-111497",
-          "CVE-2026-97229"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "diogogoebel",
-      "researcherUrl": "https://github.com/diogogoebel",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "2:42 PM CDT",
-      "firstSeenAt": "2026-10-28T19:42:18Z",
-      "language": "Python",
-      "summary": "Feed de CVEs, ranking por exploit ativo, RCE, categorias.",
-      "technicalSummary": "Feed de CVEs, ranking por exploit ativo, RCE, categorias.",
-      "breakdown": "Feed de CVEs, ranking por exploit ativo, RCE, categorias.",
-      "whatBroke": "Feed de CVEs, ranking por exploit ativo, RCE, categorias.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at diogogoebel/cve-feed.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/diogogoebel/cve-feed\ncd cve-feed\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Community Edition and Enterprise Edition",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "DevOps",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 94,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/diogogoebel/cve-feed"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves"
         ]
       ]
     },
@@ -959,67 +893,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-0073",
-      "title": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type.",
-      "ecosystem": "android",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/umarrehmansiddiqui/CVE-2026-0073",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "adb_bypass.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-0073"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "umarrehmansiddiqui",
-      "researcherUrl": "https://github.com/umarrehmansiddiqui",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:03 AM CST",
-      "firstSeenAt": "2026-11-01T09:03:41Z",
-      "language": "Python",
-      "summary": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type mismatch (EC vs RSA), incorrectly evaluating to true and granting access. Includes functional Python and standalone C.",
-      "technicalSummary": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type mismatch (EC vs RSA), incorrectly evaluating to true and granting access. Includes functional Python and standalone C.",
-      "breakdown": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type mismatch (EC vs RSA), incorrectly evaluating to true and granting access. Includes functional Python and standalone C.",
-      "whatBroke": "Android adbd TLS auth bypass PoC. Exploits a logic bug where OpenSSL's EVP_PKEY_cmp() returns -1 on key type mismatch (EC vs RSA), incorrectly evaluating to true and granting access. Includes functional Python and standalone C.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at umarrehmansiddiqui/CVE-2026-0073.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/umarrehmansiddiqui/CVE-2026-0073\ncd CVE-2026-0073\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Android",
-        "Mobile",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/umarrehmansiddiqui/CVE-2026-0073"
-        ],
-        [
-          "Vendor Advisory",
-          "https://source.android.com/docs/security/bulletin/2026/2026-05-01"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-97798",
       "title": "Windows Error Reporting - Command Injection TO SYSTEM",
       "ecosystem": "windows",
@@ -1215,6 +1088,67 @@
       ]
     },
     {
+      "cve": "CVE-2026-90885",
+      "title": "Reproducer for CVE-2026-90885 \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/oscerd/CVE-2026-90885",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "camel-quarkus/docker-compose.yml",
+          "camel-spring-boot/docker-compose.yml"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-90885"
+        ],
+        "language": "Java"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "oscerd",
+      "researcherUrl": "https://github.com/oscerd",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "4:44 AM CDT",
+      "firstSeenAt": "2026-10-29T09:44:03Z",
+      "language": "Java",
+      "summary": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
+      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
+      "breakdown": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
+      "whatBroke": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-90885.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-90885\ncd CVE-2026-90885\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/oscerd/CVE-2026-90885"
+        ],
+        [
+          "Vendor Advisory",
+          "https://camel.apache.org/security/CVE-2026-85250.html"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-106378",
       "title": "is a privilege escalation in the Google Chrome sandbox on macOS. An attacker who has already compromised the.",
       "ecosystem": "cloud",
@@ -1272,6 +1206,70 @@
         [
           "Vendor Advisory",
           "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_086471744.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-9151",
+      "title": "Authenticated OS command injection in the Archer AX17 v1 VPN client import.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/hcbt/CVE-2026-9151",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.js"
+        ],
+        "attackFiles": [
+          "poc.js"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-9151"
+        ],
+        "language": "JavaScript"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "hcbt",
+      "researcherUrl": "https://github.com/hcbt",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:33 PM CST",
+      "firstSeenAt": "2026-11-01T21:33:11Z",
+      "language": "JavaScript",
+      "summary": "Authenticated OS command injection in the Archer AX17 v1 VPN client import.",
+      "technicalSummary": "Authenticated OS command injection in the Archer AX17 v1 VPN client import.",
+      "breakdown": "Authenticated OS command injection in the Archer AX17 v1 VPN client import.",
+      "whatBroke": "Authenticated OS command injection in the Archer AX17 v1 VPN client import.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at hcbt/CVE-2026-9151.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/hcbt/CVE-2026-9151\ncd CVE-2026-9151\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/hcbt/CVE-2026-9151"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.tp-link.com/en/support/download/archer-ax12/#Firmware"
         ]
       ]
     },
