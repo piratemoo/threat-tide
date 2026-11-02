@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T09:18:40Z",
+  "updatedAt": "2026-11-02T22:16:03Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,60 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "ZDI-26-850: Microsoft Qlib MLflowRecorder Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-850/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Microsoft Qlib. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-02T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-849: Microsoft Qlib RestrictedUnpickler Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-849/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Microsoft Qlib. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-02T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-848: Microsoft Qlib StaticDataLoader Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-848/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Microsoft Qlib. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-02T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "windows",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "Webstack",
+        "RCE"
+      ]
+    },
     {
       "title": "Appraisal by AI: Model-driven victim prioritization in the VOLTA infostealer",
       "source": "Cisco Talos",
@@ -244,65 +298,81 @@
         "CVE-2026-64849"
       ],
       "tags": []
-    },
-    {
-      "title": "ZDI-26-845: MLflow Statsmodels _load_model Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-845/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of MLflow. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has assigned.",
-      "publishedAt": "2026-10-29T05:00:00Z",
-      "dayOffset": 4,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2024-37052"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-844: MLflow get-artifacts Server-Side Request Forgery Information Disclosure Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-844/",
-      "summary": "This vulnerability allows remote attackers to disclose sensitive information on affected installations of MLflow. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 8.2. The following CVEs are assigned:.",
-      "publishedAt": "2026-10-29T05:00:00Z",
-      "dayOffset": 4,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-118628"
-      ],
-      "tags": []
-    },
-    {
-      "title": "ZDI-26-843: MLflow SHAP load_explainer Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-843/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of MLflow. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has assigned.",
-      "publishedAt": "2026-10-29T05:00:00Z",
-      "dayOffset": 4,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-118627"
-      ],
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ]
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-111497",
+      "title": "Google Brotli Unchecked Return Value Vulnerability",
+      "ecosystem": "web",
+      "category": "kubernetes",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/caveeroo/cve-2026-111497-wordpress-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "client.py",
+          "generate_payloads.py",
+          "origin.php",
+          "run.sh",
+          "verify.sh"
+        ],
+        "attackFiles": [
+          "verify.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-111497"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Aqua Nautilus",
+      "researcherUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "5:42 PM CDT",
+      "firstSeenAt": "2026-10-28T22:42:33Z",
+      "language": "Python",
+      "summary": "RCE PoC for one pinned Docker Official Image for WordPress",
+      "technicalSummary": "<a href=\"https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/\" title=\"HTTP2Shell Vulnerability: How Should Security Teams Assess and Reduce Exposure?\".",
+      "breakdown": "<a href=\"https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/\" title=\"HTTP2Shell Vulnerability: How Should Security Teams Assess and Reduce Exposure?\".",
+      "whatBroke": "RCE PoC for one pinned Docker Official Image for WordPress",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at caveeroo/cve-2026-111497-wordpress-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/caveeroo/cve-2026-111497-wordpress-poc\ncd cve-2026-111497-wordpress-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Brotli",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Kubernetes",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/caveeroo/cve-2026-111497-wordpress-poc"
+        ],
+        [
+          "Technical Paper",
+          "https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/google/brotli/releases/tag/v1.2.1"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-109618",
       "title": "PHP Memory Corruption Vulnerability",
@@ -445,74 +515,64 @@
       ]
     },
     {
-      "cve": "CVE-2026-111497",
-      "title": "Google Brotli Unchecked Return Value Vulnerability",
+      "cve": "CVE-2026-103688",
+      "title": "Checkout Files Upload for WooCommerce < 2.4.0 unauthenticated arbitrary file upload to RCE. PoC by NOXCRYPT.",
       "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "high",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/caveeroo/cve-2026-111497-wordpress-poc",
+      "pocUrl": "https://github.com/noxcrypt-x/CVE-2026-103688",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "client.py",
-          "generate_payloads.py",
-          "origin.php",
-          "run.sh",
-          "verify.sh"
+          "checkout_cve_2026_103688.py"
         ],
-        "attackFiles": [
-          "verify.sh"
-        ],
+        "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-111497"
+          "CVE-2026-103688"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Aqua Nautilus",
-      "researcherUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "researcher": "noxcrypt-x",
+      "researcherUrl": "https://github.com/noxcrypt-x",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "5:42 PM CDT",
-      "firstSeenAt": "2026-10-28T22:42:33Z",
+      "difficulty": "moderate",
+      "added": "4:26 PM CDT",
+      "firstSeenAt": "2026-10-30T21:26:05Z",
       "language": "Python",
-      "summary": "RCE PoC for one pinned Docker Official Image for WordPress",
-      "technicalSummary": "<a href=\"https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/\" title=\"HTTP2Shell Vulnerability: How Should Security Teams Assess and Reduce Exposure?\".",
-      "breakdown": "<a href=\"https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/\" title=\"HTTP2Shell Vulnerability: How Should Security Teams Assess and Reduce Exposure?\".",
-      "whatBroke": "RCE PoC for one pinned Docker Official Image for WordPress",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at caveeroo/cve-2026-111497-wordpress-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/caveeroo/cve-2026-111497-wordpress-poc\ncd cve-2026-111497-wordpress-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Checkout Files Upload for WooCommerce < 2.4.0 unauthenticated arbitrary file upload to RCE. PoC by NOXCRYPT (noxcrypt-x).",
+      "technicalSummary": "Checkout Files Upload for WooCommerce < 2.4.0 unauthenticated arbitrary file upload to RCE. PoC by NOXCRYPT (noxcrypt-x).",
+      "breakdown": "Checkout Files Upload for WooCommerce < 2.4.0 unauthenticated arbitrary file upload to RCE. PoC by NOXCRYPT (noxcrypt-x).",
+      "whatBroke": "Checkout Files Upload for WooCommerce < 2.4.0 unauthenticated arbitrary file upload to RCE. PoC by NOXCRYPT (noxcrypt-x).",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at noxcrypt-x/CVE-2026-103688.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/noxcrypt-x/CVE-2026-103688\ncd CVE-2026-103688\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Brotli",
+        "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Web",
-        "Kubernetes",
-        "RCE",
-        "KEV"
+        "Webstack",
+        "RCE"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 5,
+      "weaponization": 73,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/caveeroo/cve-2026-111497-wordpress-poc"
-        ],
-        [
-          "Technical Paper",
-          "https://www.aquasec.com/blog/http2shell-vulnerability-how-should-security-teams-assess-and-reduce-exposure/"
+          "https://github.com/noxcrypt-x/CVE-2026-103688"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/google/brotli/releases/tag/v1.2.1"
+          "https://wpscan.com/vulnerability/08777aa1-6308-4e99-b2d0-5e43209aa6a6/"
         ]
       ]
     },
@@ -579,127 +639,66 @@
       ]
     },
     {
-      "cve": "CVE-2026-94386",
-      "title": "Reproducer for CVE-2026-94386 \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token.",
-      "ecosystem": "web",
+      "cve": "CVE-2026-115904",
+      "title": "OS Command Injection PoC & Write-up - CVE-2026-115904",
+      "ecosystem": "linux",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-94386",
+      "pocUrl": "https://github.com/VulnSVNC/CVE-2026-115904",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
+          "poc.js"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "poc.js"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-94386"
+          "CVE-2026-115904"
         ],
-        "language": "Java"
+        "language": "JavaScript"
       },
       "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
+      "researcher": "VulnSVNC",
+      "researcherUrl": "https://github.com/VulnSVNC",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "5:29 AM CDT",
-      "firstSeenAt": "2026-10-29T10:29:26Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token cache keyed only on endpoint+clientId (CWE-524). Camel Spring Boot + Camel Quarkus.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token cache keyed only on endpoint+clientId (CWE-524). Camel Spring Boot + Camel Quarkus.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token cache keyed only on endpoint+clientId (CWE-524). Camel Spring Boot + Camel Quarkus.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-oauth cross-scope token reuse via a JVM-global token cache keyed only on endpoint+clientId (CWE-524). Camel Spring Boot + Camel Quarkus.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-94386.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-94386\ncd CVE-2026-94386\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "5:51 AM CST",
+      "firstSeenAt": "2026-11-02T11:51:12Z",
+      "language": "JavaScript",
+      "summary": "OS Command Injection PoC & Write-up -",
+      "technicalSummary": "OS Command Injection PoC & Write-up -",
+      "breakdown": "OS Command Injection PoC & Write-up -",
+      "whatBroke": "OS Command Injection PoC & Write-up -",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at VulnSVNC/CVE-2026-115904.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/VulnSVNC/CVE-2026-115904\ncd CVE-2026-115904\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Web",
+        "Linux",
         "Webstack",
-        "Session Theft"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/oscerd/CVE-2026-94386"
+          "https://github.com/VulnSVNC/CVE-2026-115904"
         ],
         [
           "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85317.html"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-112611",
-      "title": "/112610: CoreGraphics PDF out-of-bounds writes (fixed in iOS 27.2) \u2014 fix-diff analysis, on-device proof,.",
-      "ecosystem": "ios",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Ping-2o/CVE-2026-112611-cg-shading",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc/make_poc_cmap.py",
-          "poc/make_poc_shading.py",
-          "tools/ips_parse.py"
-        ],
-        "attackFiles": [
-          "poc/make_poc_cmap.py",
-          "poc/make_poc_shading.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-112611"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Ping-2o",
-      "researcherUrl": "https://github.com/Ping-2o",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:46 AM CDT",
-      "firstSeenAt": "2026-10-27T09:46:42Z",
-      "language": "Python",
-      "summary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. Processing a maliciously crafted.",
-      "technicalSummary": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. Processing a maliciously crafted.",
-      "breakdown": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. Processing a maliciously crafted.",
-      "whatBroke": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.2 and iPadOS 26.7.2, iOS 27.2 and iPadOS 27.2, macOS Sequoia 15.8.2, macOS Tahoe 26.7.2. Processing a maliciously crafted.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Ping-2o/CVE-2026-112611-cg-shading.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Ping-2o/CVE-2026-112611-cg-shading\ncd CVE-2026-112611-cg-shading\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "iOS",
-        "Mobile",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Ping-2o/CVE-2026-112611-cg-shading"
-        ],
-        [
-          "Vendor Advisory",
-          "https://support.apple.com/en-us/149227"
+          "https://github.com/topluyo/App/security/advisories/GHSA-vrrv-3f46-c3x7"
         ]
       ]
     },
@@ -828,67 +827,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-97798"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-90885",
-      "title": "Reproducer for CVE-2026-90885 \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/oscerd/CVE-2026-90885",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "camel-quarkus/docker-compose.yml",
-          "camel-spring-boot/docker-compose.yml"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-90885"
-        ],
-        "language": "Java"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "oscerd",
-      "researcherUrl": "https://github.com/oscerd",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:44 AM CDT",
-      "firstSeenAt": "2026-10-29T09:44:03Z",
-      "language": "Java",
-      "summary": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "technicalSummary": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "breakdown": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "whatBroke": "Reproducer for \u2014 Apache Camel camel-saxon XQuery XML External Entity via an already-built javax.xml.transform.Source (CWE-611, HIGH). Camel Spring Boot + Camel Quarkus.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at oscerd/CVE-2026-90885.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/oscerd/CVE-2026-90885\ncd CVE-2026-90885\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/oscerd/CVE-2026-90885"
-        ],
-        [
-          "Vendor Advisory",
-          "https://camel.apache.org/security/CVE-2026-85250.html"
         ]
       ]
     },
