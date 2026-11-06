@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T20:34:52Z",
+  "updatedAt": "2026-11-06T09:14:32Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,13 +87,35 @@
   ],
   "research": [
     {
+      "title": "Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 / CVE-2026-111560)",
+      "source": "watchTowr Labs",
+      "sourceUrl": "https://x.com/watchtowrcyber",
+      "url": "https://labs.watchtowr.com/barracuda-networks-is-your-new-best-friend-barracuda-email-security-gateway-pre-auth-remote-root-rce-cve-2026-116606-cve-2026-111560/",
+      "summary": "Yes, that's right! Today we're at the aquarium. Welcome back to yet another watchTowr Labs blog post. You can begin preparing your comments now. What Is A Barracuda, And Why? Must We? Barracuda\u2019s Email Security Gateway solution (ESG) is no stranger to love ,.",
+      "publishedAt": "2026-11-05T21:19:58Z",
+      "dayOffset": 1,
+      "ecosystem": "linux",
+      "category": "vpn-edge",
+      "topic": "research",
+      "cves": [
+        "CVE-2023-2868",
+        "CVE-2026-111560",
+        "CVE-2026-116606"
+      ],
+      "tags": [
+        "Linux",
+        "VPN Edge",
+        "Auth Bypass"
+      ]
+    },
+    {
       "title": "Bring a tent, I've got the coffee: Lessons from it-sa",
       "source": "Cisco Talos",
       "sourceUrl": "https://blog.talosintelligence.com/",
       "url": "https://blog.talosintelligence.com/bring-a-tent-ive-got-the-coffee-lessons-from-it-sa/",
       "summary": "Welcome to this week's edition of the Threat Source newsletter. I'm just back from an interesting and demanding week of booth duty at it-sa Expo&Congress in Nuremberg, where Talos had a Point of Demonstration at the Cisco booth. I personally see it-sa as the.",
       "publishedAt": "2026-11-05T19:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "phishing",
       "category": "phishing",
       "topic": "phishing",
@@ -110,7 +132,7 @@
       "url": "https://blog.qualys.com/product-tech/2026/11/04/cloud-agent-now-in-a-container-host-security-for-nodes-you-cant-touch",
       "summary": "A single container image that brings Vulnerability Management and Policy Audit to every Kubernetes node, on immutable and mutable Linux alike, deployed the way your container workloads already are. Key Takeaways The Qualys Cloud Agent is now available as a.",
       "publishedAt": "2026-11-04T16:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "windows",
       "category": "devops",
       "topic": "research",
@@ -127,7 +149,7 @@
       "url": "https://portswigger.net/research/making-http-header-injection-critical-with-one-prompt",
       "summary": "You can now escalate HTTP header injection to a CRLF-Powered Desync and exploit it to serve random users a redirect to your collaborator, in a single prompt. We\u2019ve just introduced a new scan check for",
       "publishedAt": "2026-11-04T15:12:29Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -141,7 +163,7 @@
       "url": "https://www.elastic.co/security-labs/blog/ai-agent-session-monitoring-embedding-models",
       "summary": "We use query rules find behavior we can define. This is behavior you can only find through describing. How can we find behaviors we can only describe? In this article, we review using vector search to hunt risky AI sessions. I stored six months of my own.",
       "publishedAt": "2026-11-04T12:45:02Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "adcs",
       "topic": "research",
@@ -159,7 +181,7 @@
       "url": "https://blog.qualys.com/product-tech/2026/11/04/php2shell-windows-macos-car-upgrade-scripts",
       "summary": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on exposed PHP servers. PHP has released fixed versions. On Linux, distribution packages carry the fix. On Windows and macOS, they don\u2019t: Microsoft.",
       "publishedAt": "2026-11-04T09:20:32Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "windows",
       "category": "ssh",
       "topic": "research",
@@ -180,7 +202,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-874/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Ashlar-Vellum Cobalt. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
       "publishedAt": "2026-11-04T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "kernel",
       "topic": "research",
@@ -199,7 +221,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-873/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Ashlar-Vellum Cobalt. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
       "publishedAt": "2026-11-04T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -217,7 +239,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-872/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Ashlar-Vellum Cobalt. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
       "publishedAt": "2026-11-04T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "kernel",
       "topic": "research",
@@ -236,7 +258,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-871/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Ashlar-Vellum Cobalt. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
       "publishedAt": "2026-11-04T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -254,7 +276,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-870/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Ashlar-Vellum Cobalt. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The.",
       "publishedAt": "2026-11-04T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -272,7 +294,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-869/",
       "summary": "This vulnerability allows remote attackers to create arbitrary files on affected installations of MailEnable. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.4. The following CVEs are assigned:.",
       "publishedAt": "2026-11-04T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -282,25 +304,222 @@
       "tags": [
         "File Read"
       ]
-    },
-    {
-      "title": "When trust becomes the payload: Inside the threats, etc quarterly report",
-      "source": "Elastic Security Labs",
-      "sourceUrl": "https://www.elastic.co/security-labs",
-      "url": "https://www.elastic.co/security-labs/reports/threats-etc-report-november-2026-trouble-with-trust",
-      "summary": "In the cybersecurity community, we build our defenses on a foundation of trust. We trust an AI coding assistant because it\u2019s on our approved software list or can accomplish a task when prompted. We trust a remote monitoring and management (RMM) tool because.",
-      "publishedAt": "2026-11-04T00:00:00Z",
-      "dayOffset": 2,
-      "ecosystem": "phishing",
-      "category": "phishing",
-      "topic": "phishing",
-      "cves": [],
-      "tags": [
-        "Phishing"
-      ]
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-109618",
+      "title": "PHP Memory Corruption Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/piVentures/php2shell-agentic-offsec",
+      "pocValidation": {
+        "valid": true,
+        "score": 7,
+        "codeFiles": [
+          "contributors/kirubel/lab/docker-compose.yml",
+          "contributors/kirubel/lab/index.php"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-109618",
+          "CVE-2026-109619"
+        ],
+        "language": "PHP"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "10:51 AM CDT",
+      "firstSeenAt": "2026-10-31T15:51:17Z",
+      "language": "PHP",
+      "summary": "Authorized offensive-security lab using an agentic AI workflow to research, reproduce, and validate PHP2Shell (/ CVE-2026-109619) PoCs against vulnerable and patched PHP runtimes.",
+      "technicalSummary": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
+      "breakdown": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
+      "whatBroke": "Authorized offensive-security lab using an agentic AI workflow to research, reproduce, and validate PHP2Shell (/ CVE-2026-109619) PoCs against vulnerable and patched PHP runtimes.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at piVentures/php2shell-agentic-offsec.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/piVentures/php2shell-agentic-offsec\ncd php2shell-agentic-offsec\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed PHP",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/piVentures/php2shell-agentic-offsec"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/product-tech/2026/11/04/php2shell-windows-macos-car-upgrade-scripts"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.php.net/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-109619",
+      "title": "PHP Stale Internal Request-State Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/LuckyFishOno/php2shell-619-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "php2shell.py",
+          "test_default_http.py",
+          "test_gdb.py",
+          "test_http.py",
+          "test_oom.py",
+          "uaf_rce.py"
+        ],
+        "attackFiles": [
+          "uaf_rce.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-109619"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "12:30 AM CST",
+      "firstSeenAt": "2026-11-06T06:30:13Z",
+      "language": "Python",
+      "summary": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
+      "technicalSummary": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
+      "breakdown": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
+      "whatBroke": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at LuckyFishOno/php2shell-619-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/LuckyFishOno/php2shell-619-poc\ncd php2shell-619-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed PHP",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/LuckyFishOno/php2shell-619-poc"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/product-tech/2026/11/04/php2shell-windows-macos-car-upgrade-scripts"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.php.net/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-111497",
+      "title": "Google Brotli Unchecked Return Value Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/fortbridge/cve-2026-111497-wordpress-pingback-brotli",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py",
+          "generate_payloads.py",
+          "lab.py",
+          "origin.php",
+          "setup-lab.py",
+          "test_offline.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-111497"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "fortbridge",
+      "researcherUrl": "https://github.com/fortbridge",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "2:55 AM CST",
+      "firstSeenAt": "2026-11-02T08:55:32Z",
+      "language": "Python",
+      "summary": "Local WordPress pingback/Brotli RCE reproduction with a one-use Podman lab",
+      "technicalSummary": "Local WordPress pingback/Brotli RCE reproduction with a one-use Podman lab",
+      "breakdown": "Local WordPress pingback/Brotli RCE reproduction with a one-use Podman lab",
+      "whatBroke": "Local WordPress pingback/Brotli RCE reproduction with a one-use Podman lab",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fortbridge/cve-2026-111497-wordpress-pingback-brotli.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fortbridge/cve-2026-111497-wordpress-pingback-brotli\ncd cve-2026-111497-wordpress-pingback-brotli\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Brotli",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 4,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/fortbridge/cve-2026-111497-wordpress-pingback-brotli"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/google/brotli/releases/tag/v1.2.1"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-31431",
       "title": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
@@ -311,14 +530,14 @@
       "pocUrl": "https://github.com/abiyeenzo/CVE-2026-31431",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 11,
         "codeFiles": [
           "exploit.py"
         ],
         "attackFiles": [
           "exploit.py"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-31431"
         ],
@@ -352,7 +571,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -361,6 +580,140 @@
         [
           "Vendor Advisory",
           "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-111560",
+      "title": "Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "watchTowr-vs-Barracuda.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-111560",
+          "CVE-2026-116606"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:20 PM CST",
+      "firstSeenAt": "2026-11-03T19:20:25Z",
+      "language": "Python",
+      "summary": "Improper neutralization of shell metacharacters in the timezone configuration field in certain Barracuda appliance products using common Barracuda code allows an authenticated administrator to inject OS commands that execute.",
+      "technicalSummary": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/11/Group-8730--8-.png\" alt=\"Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 /.",
+      "breakdown": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/11/Group-8730--8-.png\" alt=\"Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 /.",
+      "whatBroke": "Improper neutralization of shell metacharacters in the timezone configuration field in certain Barracuda appliance products using common Barracuda code allows an authenticated administrator to inject OS commands that execute.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560\ncd watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/barracuda-networks-is-your-new-best-friend-barracuda-email-security-gateway-pre-auth-remote-root-rce-cve-2026-116606-cve-2026-111560/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0041.md"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-116606",
+      "title": "Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE.",
+      "ecosystem": "cloud",
+      "category": "vpn-edge",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "watchTowr-vs-Barracuda.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-111560",
+          "CVE-2026-116606"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "watchTowr Labs",
+      "researcherUrl": "https://x.com/watchtowrcyber",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:20 PM CST",
+      "firstSeenAt": "2026-11-03T19:20:25Z",
+      "language": "Python",
+      "summary": "An authentication bypass in Barracuda Email Security Gateway versions earlier than 9.4.0.030 allows an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive,.",
+      "technicalSummary": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/11/Group-8730--8-.png\" alt=\"Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 /.",
+      "breakdown": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/11/Group-8730--8-.png\" alt=\"Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 /.",
+      "whatBroke": "An authentication bypass in Barracuda Email Security Gateway versions earlier than 9.4.0.030 allows an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive,.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560\ncd watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "VPN Edge",
+        "Auth Bypass"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560"
+        ],
+        [
+          "Technical Paper",
+          "https://labs.watchtowr.com/barracuda-networks-is-your-new-best-friend-barracuda-email-security-gateway-pre-auth-remote-root-rce-cve-2026-116606-cve-2026-111560/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0042.md"
         ]
       ]
     },
@@ -416,7 +769,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -480,7 +833,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -544,7 +897,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -618,7 +971,7 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -627,6 +980,196 @@
         [
           "Vendor Advisory",
           "https://my.f5.com/manage/s/article/K000161019"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-98432",
+      "title": "Python-based PoC for CVE-2026-98432, probing anomalous IPv4 TCP option behavior associated with a Linux.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/downitch/CVE-2026-98432_poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-98432"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "downitch",
+      "researcherUrl": "https://github.com/downitch",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:51 AM CST",
+      "firstSeenAt": "2026-11-04T11:51:54Z",
+      "language": "Python",
+      "summary": "Python-based PoC for probing anomalous IPv4 TCP option behavior associated with a Linux kernel use-after-free race condition.",
+      "technicalSummary": "Python-based PoC for probing anomalous IPv4 TCP option behavior associated with a Linux kernel use-after-free race condition.",
+      "breakdown": "Python-based PoC for probing anomalous IPv4 TCP option behavior associated with a Linux kernel use-after-free race condition.",
+      "whatBroke": "Python-based PoC for probing anomalous IPv4 TCP option behavior associated with a Linux kernel use-after-free race condition.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at downitch/CVE-2026-98432_poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/downitch/CVE-2026-98432_poc\ncd CVE-2026-98432_poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/downitch/CVE-2026-98432_poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/11a03ce3c4a62d84c10ccdfe47f8075006498568"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-121720",
+      "title": "PoC for an OpenVPN Windows Interactive Service privilege-boundary bypass that lets a user-selected OpenSSL.",
+      "ecosystem": "windows",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/refiaa/CVE-2026-121720",
+      "pocValidation": {
+        "valid": true,
+        "score": 10,
+        "codeFiles": [
+          "DirectRouteProbe.c",
+          "Invoke-OpenVpnInteractiveServiceRoutePoC.ps1",
+          "OpenVpnRouteProvider.c",
+          "optional-wfp-outbound-block/DirectWfpBlockProbe.c",
+          "optional-wfp-outbound-block/Invoke-OpenVpnWfpBlockPoC.ps1",
+          "optional-wfp-outbound-block/OpenVpnWfpBlockProvider.c"
+        ],
+        "attackFiles": [],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-121720"
+        ],
+        "language": "PowerShell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "refiaa",
+      "researcherUrl": "https://github.com/refiaa",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:31 AM CDT",
+      "firstSeenAt": "2026-10-31T14:31:10Z",
+      "language": "PowerShell",
+      "summary": "PoC for an OpenVPN Windows Interactive Service privilege-boundary bypass that lets a user-selected OpenSSL provider perform privileged route operations through an inherited service channel.",
+      "technicalSummary": "PoC for an OpenVPN Windows Interactive Service privilege-boundary bypass that lets a user-selected OpenSSL provider perform privileged route operations through an inherited service channel.",
+      "breakdown": "PoC for an OpenVPN Windows Interactive Service privilege-boundary bypass that lets a user-selected OpenSSL provider perform privileged route operations through an inherited service channel.",
+      "whatBroke": "PoC for an OpenVPN Windows Interactive Service privilege-boundary bypass that lets a user-selected OpenSSL provider perform privileged route operations through an inherited service channel.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at refiaa/CVE-2026-121720.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/refiaa/CVE-2026-121720\ncd CVE-2026-121720\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/refiaa/CVE-2026-121720"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-98260",
+      "title": "CVE 2026 98260 vivo x fold6 poc",
+      "ecosystem": "windows",
+      "category": "exchange",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/super2tt/CVE-2026-98260-vivo-x-fold6-poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "go.sh",
+          "kp_arm.sh",
+          "poc_prim.c",
+          "poc_tmp_root.c",
+          "root_agent.sh",
+          "tmp_root.sh"
+        ],
+        "attackFiles": [
+          "poc_prim.c",
+          "poc_tmp_root.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-98260"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "super2tt",
+      "researcherUrl": "https://github.com/super2tt",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:06 PM CDT",
+      "firstSeenAt": "2026-10-31T19:06:26Z",
+      "language": "Shell",
+      "summary": "CVE 2026 98260 vivo x fold6 poc",
+      "technicalSummary": "CVE 2026 98260 vivo x fold6 poc",
+      "breakdown": "CVE 2026 98260 vivo x fold6 poc",
+      "whatBroke": "CVE 2026 98260 vivo x fold6 poc",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at super2tt/CVE-2026-98260-vivo-x-fold6-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/super2tt/CVE-2026-98260-vivo-x-fold6-poc\ncd CVE-2026-98260-vivo-x-fold6-poc\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Exchange",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/super2tt/CVE-2026-98260-vivo-x-fold6-poc"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/6f1977cea3e85cd8ab55fb337d3e1725fe61d1ce"
         ]
       ]
     },
@@ -684,7 +1227,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
@@ -693,70 +1236,6 @@
         [
           "Vendor Advisory",
           "https://github.com/typemill/typemill/"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-33439",
-      "title": "Proof of Concept for CVE-2026-33439 RCE in OpenAM",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/stapat1245/CVE-2026-33439_poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "openam_check.py"
-        ],
-        "attackFiles": [
-          "openam_check.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-33439"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "stapat1245",
-      "researcherUrl": "https://github.com/stapat1245",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "4:32 PM CST",
-      "firstSeenAt": "2026-11-02T22:32:24Z",
-      "language": "Python",
-      "summary": "Proof of Concept for RCE in OpenAM",
-      "technicalSummary": "Proof of Concept for RCE in OpenAM",
-      "breakdown": "Proof of Concept for RCE in OpenAM",
-      "whatBroke": "Proof of Concept for RCE in OpenAM",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at stapat1245/CVE-2026-33439_poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/stapat1245/CVE-2026-33439_poc\ncd CVE-2026-33439_poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 80,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/stapat1245/CVE-2026-33439_poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/OpenIdentityPlatform/OpenAM/security/advisories/GHSA-2cqq-rpvq-g5qj"
         ]
       ]
     }
