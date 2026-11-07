@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T17:59:15Z",
+  "updatedAt": "2026-11-07T22:38:51Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -601,36 +601,36 @@
       "category": "ssh",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/crash00xd/CVE-2026-123158_SSHRole_PoC",
+      "pocUrl": "https://github.com/MikeCase/check-sshole",
       "pocValidation": {
         "valid": true,
-        "score": 12,
+        "score": 9,
         "codeFiles": [
-          "sshrole_poc.py"
+          "check-sshole.sh"
         ],
         "attackFiles": [
-          "sshrole_poc.py"
+          "check-sshole.sh"
         ],
-        "hasUsage": true,
+        "hasUsage": false,
         "cveRefs": [
           "CVE-2026-123158"
         ],
-        "language": "Python"
+        "language": "Shell"
       },
       "reliability": "reliable exploit",
       "researcher": "Horizon3 Attack Team",
       "researcherUrl": "https://x.com/Horizon3Attack",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "11:32 AM CST",
-      "firstSeenAt": "2026-11-06T17:32:09Z",
-      "language": "Python",
-      "summary": "sshd in OpenSSH before 10.6p2 on Linux, when musl libc is used without PAM, lacks a workaround for a password authentication bypass (related to misinterpretation of whether a string is intended to be a password hash). For some.",
+      "added": "2:20 PM CST",
+      "firstSeenAt": "2026-11-07T20:20:15Z",
+      "language": "Shell",
+      "summary": "Read-only exposure and compromise check for the musl-only OpenSSH password-auth bypass",
       "technicalSummary": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
       "breakdown": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
-      "whatBroke": "sshd in OpenSSH before 10.6p2 on Linux, when musl libc is used without PAM, lacks a workaround for a password authentication bypass (related to misinterpretation of whether a string is intended to be a password hash). For some.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at crash00xd/CVE-2026-123158_SSHRole_PoC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/crash00xd/CVE-2026-123158_SSHRole_PoC\ncd CVE-2026-123158_SSHRole_PoC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "Read-only exposure and compromise check for the musl-only OpenSSH password-auth bypass",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MikeCase/check-sshole.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MikeCase/check-sshole\ncd check-sshole\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -645,11 +645,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/crash00xd/CVE-2026-123158_SSHRole_PoC"
+          "https://github.com/MikeCase/check-sshole"
         ],
         [
           "Technical Paper",
@@ -658,6 +658,70 @@
         [
           "Vendor Advisory",
           "https://github.com/leonjza/sshhole-lab"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-86596",
+      "title": "s2Member <= 260927 Weaponized RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Aureels/CVE-2026-86596",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-86596"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Aureels",
+      "researcherUrl": "https://github.com/Aureels",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:19 AM CST",
+      "firstSeenAt": "2026-11-04T12:19:20Z",
+      "language": "Python",
+      "summary": "s2Member <= 260927 Weaponized RCE",
+      "technicalSummary": "s2Member <= 260927 Weaponized RCE",
+      "breakdown": "s2Member <= 260927 Weaponized RCE",
+      "whatBroke": "s2Member <= 260927 Weaponized RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Aureels/CVE-2026-86596.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Aureels/CVE-2026-86596\ncd CVE-2026-86596\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Aureels/CVE-2026-86596"
+        ],
+        [
+          "Vendor Advisory",
+          "https://plugins.trac.wordpress.org/browser/s2member/tags/260829/src/includes/classes/paypal-notify-in-subscr-or-wa-w-level.inc.php#L514"
         ]
       ]
     },
@@ -1217,6 +1281,130 @@
       ]
     },
     {
+      "cve": "CVE-2026-53157",
+      "title": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/santoshkalluri/CVE-2026-53157",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc/pn_uaf_repro.c"
+        ],
+        "attackFiles": [
+          "poc/pn_uaf_repro.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-53157"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "santoshkalluri",
+      "researcherUrl": "https://github.com/santoshkalluri",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "11:39 PM CST",
+      "firstSeenAt": "2026-11-02T05:39:45Z",
+      "language": "C",
+      "summary": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
+      "technicalSummary": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
+      "breakdown": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
+      "whatBroke": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at santoshkalluri/CVE-2026-53157.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/santoshkalluri/CVE-2026-53157\ncd CVE-2026-53157\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/santoshkalluri/CVE-2026-53157"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/09c9b92c2010481160245244ea8fa1d06d5d4ae0"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-74583",
+      "title": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/santoshkalluri/CVE-2026-74583",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "compat.py",
+          "route4_kasan_repro.c",
+          "run_kasan_ab.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-74583"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "santoshkalluri",
+      "researcherUrl": "https://github.com/santoshkalluri",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:26 AM CST",
+      "firstSeenAt": "2026-11-02T06:26:09Z",
+      "language": "C",
+      "summary": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
+      "technicalSummary": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
+      "breakdown": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
+      "whatBroke": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at santoshkalluri/CVE-2026-74583.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/santoshkalluri/CVE-2026-74583\ncd CVE-2026-74583\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/santoshkalluri/CVE-2026-74583"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/0e7a8cf8895b06d07c7311f028eba16ad742b9bc"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-98432",
       "title": "Python-based PoC for CVE-2026-98432, probing anomalous IPv4 TCP option behavior associated with a Linux.",
       "ecosystem": "linux",
@@ -1347,214 +1535,6 @@
         [
           "Vendor Advisory",
           "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-83538",
-      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
-      "pocValidation": {
-        "valid": true,
-        "score": 4,
-        "codeFiles": [
-          "cve_2026_73577.py",
-          "cve_2026_73578.py",
-          "cve_2026_82894.py",
-          "cve_2026_83538.py",
-          "cve_2026_83542.py",
-          "cve_2026_84183.py",
-          "cve_2026_84728.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48728",
-          "CVE-2026-73577",
-          "CVE-2026-73578",
-          "CVE-2026-82894",
-          "CVE-2026-83538",
-          "CVE-2026-83542",
-          "CVE-2026-84183"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Crypto-Cat",
-      "researcherUrl": "https://github.com/Crypto-Cat",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:39 PM CST",
-      "firstSeenAt": "2026-11-05T19:39:39Z",
-      "language": "Python",
-      "summary": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to disclose internal business records \u2014 including organization, employee, product catalog, and product-store.",
-      "technicalSummary": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to disclose internal business records \u2014 including organization, employee, product catalog, and product-store.",
-      "breakdown": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to disclose internal business records \u2014 including organization, employee, product catalog, and product-store.",
-      "whatBroke": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to disclose internal business records \u2014 including organization, employee, product catalog, and product-store.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-120209",
-      "title": "privilege escalation remote code execution exploit",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Nxploited/CVE-2026-120209",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "CVE-2026-120209.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-120209.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-120209"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Nxploited",
-      "researcherUrl": "https://github.com/Nxploited",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:23 AM CST",
-      "firstSeenAt": "2026-11-06T11:23:17Z",
-      "language": "Python",
-      "summary": "Doctreat Core <= 1.6.8 - Unauthenticated Privilege Escalation | RCE",
-      "technicalSummary": "Doctreat Core <= 1.6.8 - Unauthenticated Privilege Escalation | RCE",
-      "breakdown": "Doctreat Core <= 1.6.8 - Unauthenticated Privilege Escalation | RCE",
-      "whatBroke": "Doctreat Core <= 1.6.8 - Unauthenticated Privilege Escalation | RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Nxploited/CVE-2026-120209.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Nxploited/CVE-2026-120209\ncd CVE-2026-120209\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Nxploited/CVE-2026-120209"
-        ],
-        [
-          "Vendor Advisory",
-          "https://gitee.com/belief-team/report"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-98260",
-      "title": "(posix-cpu-timers UAF) to KernelSU on a bootloader-locked OPPO PKT110: exploit core, on-device app, and the.",
-      "ecosystem": "windows",
-      "category": "exchange",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/nemoiwkryang/CVE-2026-98260-pkt110-kernelsu",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "app/assets/clean.sh",
-          "app/assets/diag_stage.sh",
-          "app/assets/ksu/lib.sh",
-          "app/assets/ksu/root_stage.sh",
-          "app/assets/ksu/run.sh",
-          "app/assets/ksu/stage_combined.sh",
-          "app/assets/probe_stage.sh",
-          "app/build_apk.sh"
-        ],
-        "attackFiles": [
-          "ksu-tools/check_sepolicy.py",
-          "src/exp.c",
-          "src/poc.c",
-          "verify.py",
-          "verify_ksu.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-98260"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "nemoiwkryang",
-      "researcherUrl": "https://github.com/nemoiwkryang",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:04 AM CST",
-      "firstSeenAt": "2026-11-06T12:04:15Z",
-      "language": "C",
-      "summary": "(posix-cpu-timers UAF) to KernelSU on a bootloader-locked OPPO PKT110: exploit core, on-device app, and the research write-up.",
-      "technicalSummary": "(posix-cpu-timers UAF) to KernelSU on a bootloader-locked OPPO PKT110: exploit core, on-device app, and the research write-up.",
-      "breakdown": "(posix-cpu-timers UAF) to KernelSU on a bootloader-locked OPPO PKT110: exploit core, on-device app, and the research write-up.",
-      "whatBroke": "(posix-cpu-timers UAF) to KernelSU on a bootloader-locked OPPO PKT110: exploit core, on-device app, and the research write-up.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at nemoiwkryang/CVE-2026-98260-pkt110-kernelsu.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/nemoiwkryang/CVE-2026-98260-pkt110-kernelsu\ncd CVE-2026-98260-pkt110-kernelsu\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Exchange",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/nemoiwkryang/CVE-2026-98260-pkt110-kernelsu"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/6f1977cea3e85cd8ab55fb337d3e1725fe61d1ce"
         ]
       ]
     }
