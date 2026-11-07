@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T08:39:09Z",
+  "updatedAt": "2026-11-07T17:59:15Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -312,43 +312,45 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/SquidSec/php2shell",
+      "pocUrl": "https://github.com/sahmsec/CVE-2026-109618-PHP2SHELL",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 12,
         "codeFiles": [
-          "app/index.php",
-          "docker-compose.yml",
-          "poc/probe.py",
-          "poc/rce.py",
-          "poc/run.sh"
+          "compose.yaml",
+          "proof-template.php",
+          "run-linux.sh",
+          "run-poc.ps1",
+          "sahmsec_poc.py",
+          "site/about.php",
+          "site/guide.php",
+          "site/index.php"
         ],
         "attackFiles": [
-          "poc/probe.py",
-          "poc/rce.py",
-          "poc/run.sh"
+          "proof-template.php",
+          "run-poc.ps1",
+          "sahmsec_poc.py"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
-          "CVE-2026-109618",
-          "CVE-2026-109619"
+          "CVE-2026-109618"
         ],
-        "language": "Python"
+        "language": "PHP"
       },
       "reliability": "reliable exploit",
       "researcher": "Qualys Research",
       "researcherUrl": "https://blog.qualys.com/",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "6:47 PM CST",
-      "firstSeenAt": "2026-11-04T00:47:43Z",
-      "language": "Python",
-      "summary": "php2shell (/ CVE-2026-109619) \u2014 deliberately vulnerable PHP 8.4.26 lab with a patched 8.4.27 control and a working proof-of-concept that lands a shell as www-data.",
+      "added": "10:22 AM CST",
+      "firstSeenAt": "2026-11-01T16:22:24Z",
+      "language": "PHP",
+      "summary": "POC of (PHP2SHELL)",
       "technicalSummary": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
       "breakdown": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
-      "whatBroke": "php2shell (/ CVE-2026-109619) \u2014 deliberately vulnerable PHP 8.4.26 lab with a patched 8.4.27 control and a working proof-of-concept that lands a shell as www-data.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SquidSec/php2shell.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SquidSec/php2shell\ncd php2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "POC of (PHP2SHELL)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sahmsec/CVE-2026-109618-PHP2SHELL.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sahmsec/CVE-2026-109618-PHP2SHELL\ncd CVE-2026-109618-PHP2SHELL\n# use the repo README invocation against https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PHP",
         "credential access from service context",
@@ -365,11 +367,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 6,
       "links": [
         [
           "GitHub",
-          "https://github.com/SquidSec/php2shell"
+          "https://github.com/sahmsec/CVE-2026-109618-PHP2SHELL"
         ],
         [
           "Technical Paper",
@@ -388,21 +390,16 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/SquidSec/php2shell",
+      "pocUrl": "https://github.com/MuhammadUwais/php2shell-php-fpm-rce",
       "pocValidation": {
         "valid": true,
         "score": 9,
         "codeFiles": [
-          "app/index.php",
-          "docker-compose.yml",
-          "poc/probe.py",
-          "poc/rce.py",
-          "poc/run.sh"
+          "exploit_code.py",
+          "lab_start.sh"
         ],
         "attackFiles": [
-          "poc/probe.py",
-          "poc/rce.py",
-          "poc/run.sh"
+          "exploit_code.py"
         ],
         "hasUsage": false,
         "cveRefs": [
@@ -416,15 +413,15 @@
       "researcherUrl": "https://blog.qualys.com/",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "6:47 PM CST",
-      "firstSeenAt": "2026-11-04T00:47:43Z",
+      "added": "7:22 AM CST",
+      "firstSeenAt": "2026-11-04T13:22:06Z",
       "language": "Python",
-      "summary": "php2shell (CVE-2026-109618 / ) \u2014 deliberately vulnerable PHP 8.4.26 lab with a patched 8.4.27 control and a working proof-of-concept that lands a shell as www-data.",
+      "summary": "Unauthenticated RCE exploit for PHP-FPM 8.4.26 via php2shell (CVE-2026-109618 / ) - phpMyAdmin 5.2.3, pure-HTTP PoC, defeats ASLR in-band.",
       "technicalSummary": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
       "breakdown": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
-      "whatBroke": "php2shell (CVE-2026-109618 / ) \u2014 deliberately vulnerable PHP 8.4.26 lab with a patched 8.4.27 control and a working proof-of-concept that lands a shell as www-data.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at SquidSec/php2shell.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/SquidSec/php2shell\ncd php2shell\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "whatBroke": "Unauthenticated RCE exploit for PHP-FPM 8.4.26 via php2shell (CVE-2026-109618 / ) - phpMyAdmin 5.2.3, pure-HTTP PoC, defeats ASLR in-band.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MuhammadUwais/php2shell-php-fpm-rce.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MuhammadUwais/php2shell-php-fpm-rce\ncd php2shell-php-fpm-rce\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PHP",
         "credential access from service context",
@@ -441,11 +438,11 @@
       ],
       "confidence": 98,
       "weaponization": 99,
-      "dayOffset": 4,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/SquidSec/php2shell"
+          "https://github.com/MuhammadUwais/php2shell-php-fpm-rce"
         ],
         [
           "Technical Paper",
@@ -665,204 +662,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-111560",
-      "title": "Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE.",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "watchTowr-vs-Barracuda.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-111560",
-          "CVE-2026-116606"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "watchTowr Labs",
-      "researcherUrl": "https://x.com/watchtowrcyber",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:20 PM CST",
-      "firstSeenAt": "2026-11-03T19:20:25Z",
-      "language": "Python",
-      "summary": "Improper neutralization of shell metacharacters in the timezone configuration field in certain Barracuda appliance products using common Barracuda code allows an authenticated administrator to inject OS commands that execute.",
-      "technicalSummary": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/11/Group-8730--8-.png\" alt=\"Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 /.",
-      "breakdown": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/11/Group-8730--8-.png\" alt=\"Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 /.",
-      "whatBroke": "Improper neutralization of shell metacharacters in the timezone configuration field in certain Barracuda appliance products using common Barracuda code allows an authenticated administrator to inject OS commands that execute.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560\ncd watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560"
-        ],
-        [
-          "Technical Paper",
-          "https://labs.watchtowr.com/barracuda-networks-is-your-new-best-friend-barracuda-email-security-gateway-pre-auth-remote-root-rce-cve-2026-116606-cve-2026-111560/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0041.md"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-116606",
-      "title": "Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE.",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "watchTowr-vs-Barracuda.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-111560",
-          "CVE-2026-116606"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "watchTowr Labs",
-      "researcherUrl": "https://x.com/watchtowrcyber",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:20 PM CST",
-      "firstSeenAt": "2026-11-03T19:20:25Z",
-      "language": "Python",
-      "summary": "An authentication bypass in Barracuda Email Security Gateway versions earlier than 9.4.0.030 allows an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive,.",
-      "technicalSummary": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/11/Group-8730--8-.png\" alt=\"Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 /.",
-      "breakdown": "<img src=\"https://storage.ghost.io/c/a0/dc/a0dcbbe4-0ae7-4d7e-90f7-ebbc3a0f5a84/content/images/2026/11/Group-8730--8-.png\" alt=\"Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 /.",
-      "whatBroke": "An authentication bypass in Barracuda Email Security Gateway versions earlier than 9.4.0.030 allows an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive,.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560\ncd watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 4,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/watchtowrlabs/watchTowr-vs-Barracuda-RCE-CVE-2026-116606-CVE-2026-111560"
-        ],
-        [
-          "Technical Paper",
-          "https://labs.watchtowr.com/barracuda-networks-is-your-new-best-friend-barracuda-email-security-gateway-pre-auth-remote-root-rce-cve-2026-116606-cve-2026-111560/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0042.md"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-86596",
-      "title": "s2Member <= 260927 Weaponized RCE",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Aureels/CVE-2026-86596",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-86596"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Aureels",
-      "researcherUrl": "https://github.com/Aureels",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:19 AM CST",
-      "firstSeenAt": "2026-11-04T12:19:20Z",
-      "language": "Python",
-      "summary": "s2Member <= 260927 Weaponized RCE",
-      "technicalSummary": "s2Member <= 260927 Weaponized RCE",
-      "breakdown": "s2Member <= 260927 Weaponized RCE",
-      "whatBroke": "s2Member <= 260927 Weaponized RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Aureels/CVE-2026-86596.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Aureels/CVE-2026-86596\ncd CVE-2026-86596\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Aureels/CVE-2026-86596"
-        ],
-        [
-          "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/s2member/tags/260829/src/includes/classes/paypal-notify-in-subscr-or-wa-w-level.inc.php#L514"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-123025",
       "title": "OS command injection as root via Google Cloud DNS challenge key",
       "ecosystem": "web",
@@ -923,6 +722,219 @@
         [
           "Vendor Advisory",
           "https://github.com/opnsense/plugins/pull/5873"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-73578",
+      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
+      "pocValidation": {
+        "valid": true,
+        "score": 4,
+        "codeFiles": [
+          "cve_2026_73577.py",
+          "cve_2026_73578.py",
+          "cve_2026_82894.py",
+          "cve_2026_83538.py",
+          "cve_2026_83542.py",
+          "cve_2026_84183.py",
+          "cve_2026_84728.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48728",
+          "CVE-2026-73577",
+          "CVE-2026-73578",
+          "CVE-2026-82894",
+          "CVE-2026-83538",
+          "CVE-2026-83542",
+          "CVE-2026-84183"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Crypto-Cat",
+      "researcherUrl": "https://github.com/Crypto-Cat",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:39 PM CST",
+      "firstSeenAt": "2026-11-05T19:39:39Z",
+      "language": "Python",
+      "summary": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views.",
+      "technicalSummary": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views.",
+      "breakdown": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views.",
+      "whatBroke": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Session Theft"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-82894",
+      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
+      "pocValidation": {
+        "valid": true,
+        "score": 4,
+        "codeFiles": [
+          "cve_2026_73577.py",
+          "cve_2026_73578.py",
+          "cve_2026_82894.py",
+          "cve_2026_83538.py",
+          "cve_2026_83542.py",
+          "cve_2026_84183.py",
+          "cve_2026_84728.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48728",
+          "CVE-2026-73577",
+          "CVE-2026-73578",
+          "CVE-2026-82894",
+          "CVE-2026-83538",
+          "CVE-2026-83542",
+          "CVE-2026-84183"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Crypto-Cat",
+      "researcherUrl": "https://github.com/Crypto-Cat",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:39 PM CST",
+      "firstSeenAt": "2026-11-05T19:39:39Z",
+      "language": "Python",
+      "summary": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to trigger arbitrary OFBiz service invocation with attacker-controlled parameters, resulting.",
+      "technicalSummary": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to trigger arbitrary OFBiz service invocation with attacker-controlled parameters, resulting.",
+      "breakdown": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to trigger arbitrary OFBiz service invocation with attacker-controlled parameters, resulting.",
+      "whatBroke": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to trigger arbitrary OFBiz service invocation with attacker-controlled parameters, resulting.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "File Read"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-43499",
+      "title": "GhostLock (CVE-2026-43499) port for Xiaomi MiTV-MFTP0 (alita / L65R8-X), MediaTek MT9652, Android 9, kernel.",
+      "ecosystem": "android",
+      "category": "mobile",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/kipcloud120/MiTV-MFTP0-GhostLock",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "cve2215/binder49.c",
+          "cve2215/cve-2019-2215.c",
+          "cve2215/futex49.c",
+          "cve2215/rtmutex49.c",
+          "cve2215/socket49.c",
+          "ghost/agent.sh",
+          "ghost/avbparse.py",
+          "ghost/dumpraw.sh"
+        ],
+        "attackFiles": [
+          "ghost/verify_dump.py",
+          "tools/verify_sigframe.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43499"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "kipcloud120",
+      "researcherUrl": "https://github.com/kipcloud120",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:11 AM CST",
+      "firstSeenAt": "2026-11-07T08:11:40Z",
+      "language": "C",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at kipcloud120/MiTV-MFTP0-GhostLock.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/kipcloud120/MiTV-MFTP0-GhostLock\ncd MiTV-MFTP0-GhostLock\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Android",
+        "Mobile",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 77,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/kipcloud120/MiTV-MFTP0-GhostLock"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
         ]
       ]
     },
@@ -992,75 +1004,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-43499",
-      "title": "GhostLock (CVE-2026-43499) port for Xiaomi MiTV-MFTP0 (alita / L65R8-X), MediaTek MT9652, Android 9, kernel.",
-      "ecosystem": "android",
-      "category": "mobile",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/kipcloud120/MiTV-MFTP0-GhostLock",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "cve2215/binder49.c",
-          "cve2215/cve-2019-2215.c",
-          "cve2215/futex49.c",
-          "cve2215/rtmutex49.c",
-          "cve2215/socket49.c",
-          "ghost/agent.sh",
-          "ghost/avbparse.py",
-          "ghost/dumpraw.sh"
-        ],
-        "attackFiles": [
-          "ghost/verify_dump.py",
-          "tools/verify_sigframe.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-43499"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "kipcloud120",
-      "researcherUrl": "https://github.com/kipcloud120",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:11 AM CST",
-      "firstSeenAt": "2026-11-07T08:11:40Z",
-      "language": "C",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
-      "technicalSummary": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
-      "breakdown": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
-      "whatBroke": "In the Linux kernel, the following vulnerability has been resolved: rtmutex: Use waiter::task instead of current in remove_waiter() remove_waiter() is used by the slowlock paths, but it is also used for proxy-lock rollback in.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at kipcloud120/MiTV-MFTP0-GhostLock.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/kipcloud120/MiTV-MFTP0-GhostLock\ncd MiTV-MFTP0-GhostLock\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Android",
-        "Mobile",
-        "Local LPE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/kipcloud120/MiTV-MFTP0-GhostLock"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-56190",
       "title": "Full unauthenticated RCE chain for Windows Server 2022 by chaining CVE-2026-56190 (RCE) and CVE-2026-42908.",
       "ecosystem": "windows",
@@ -1126,126 +1069,150 @@
       ]
     },
     {
-      "cve": "CVE-2026-53157",
-      "title": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
+      "cve": "CVE-2026-83542",
+      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/santoshkalluri/CVE-2026-53157",
+      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 4,
         "codeFiles": [
-          "poc/pn_uaf_repro.c"
-        ],
-        "attackFiles": [
-          "poc/pn_uaf_repro.c"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-53157"
-        ],
-        "language": "C"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "santoshkalluri",
-      "researcherUrl": "https://github.com/santoshkalluri",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "11:39 PM CST",
-      "firstSeenAt": "2026-11-02T05:39:45Z",
-      "language": "C",
-      "summary": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
-      "technicalSummary": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
-      "breakdown": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
-      "whatBroke": "use-after-free in Linux Phonet phonet_device_destroy() - write-up, reproducer, KASAN evidence",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at santoshkalluri/CVE-2026-53157.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/santoshkalluri/CVE-2026-53157\ncd CVE-2026-53157\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "Kernel",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/santoshkalluri/CVE-2026-53157"
-        ],
-        [
-          "Vendor Advisory",
-          "https://git.kernel.org/stable/c/09c9b92c2010481160245244ea8fa1d06d5d4ae0"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-74583",
-      "title": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
-      "ecosystem": "linux",
-      "category": "kernel",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/santoshkalluri/CVE-2026-74583",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "compat.py",
-          "route4_kasan_repro.c",
-          "run_kasan_ab.py"
+          "cve_2026_73577.py",
+          "cve_2026_73578.py",
+          "cve_2026_82894.py",
+          "cve_2026_83538.py",
+          "cve_2026_83542.py",
+          "cve_2026_84183.py",
+          "cve_2026_84728.py"
         ],
         "attackFiles": [],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-74583"
+          "CVE-2026-48728",
+          "CVE-2026-73577",
+          "CVE-2026-73578",
+          "CVE-2026-82894",
+          "CVE-2026-83538",
+          "CVE-2026-83542",
+          "CVE-2026-84183"
         ],
-        "language": "C"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "santoshkalluri",
-      "researcherUrl": "https://github.com/santoshkalluri",
+      "researcher": "Crypto-Cat",
+      "researcherUrl": "https://github.com/Crypto-Cat",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "12:26 AM CST",
-      "firstSeenAt": "2026-11-02T06:26:09Z",
-      "language": "C",
-      "summary": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
-      "technicalSummary": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
-      "breakdown": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
-      "whatBroke": "use-after-free in Linux net/sched cls_route (route4) - write-up, KASAN reproducer, A/B evidence",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at santoshkalluri/CVE-2026-74583.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/santoshkalluri/CVE-2026-74583\ncd CVE-2026-74583\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "1:39 PM CST",
+      "firstSeenAt": "2026-11-05T19:39:39Z",
+      "language": "Python",
+      "summary": "Improper Control of Generation of Code ('Code Injection') in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to execute arbitrary code on the server by staging crafted widget XML in a.",
+      "technicalSummary": "Improper Control of Generation of Code ('Code Injection') in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to execute arbitrary code on the server by staging crafted widget XML in a.",
+      "breakdown": "Improper Control of Generation of Code ('Code Injection') in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to execute arbitrary code on the server by staging crafted widget XML in a.",
+      "whatBroke": "Improper Control of Generation of Code ('Code Injection') in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to execute arbitrary code on the server by staging crafted widget XML in a.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "local privilege escalation after a foothold",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kernel",
-        "Memory Corruption"
+        "Web",
+        "Webstack",
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 5,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/santoshkalluri/CVE-2026-74583"
+          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
         ],
         [
           "Vendor Advisory",
-          "https://git.kernel.org/stable/c/0e7a8cf8895b06d07c7311f028eba16ad742b9bc"
+          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-84183",
+      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
+      "pocValidation": {
+        "valid": true,
+        "score": 4,
+        "codeFiles": [
+          "cve_2026_73577.py",
+          "cve_2026_73578.py",
+          "cve_2026_82894.py",
+          "cve_2026_83538.py",
+          "cve_2026_83542.py",
+          "cve_2026_84183.py",
+          "cve_2026_84728.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48728",
+          "CVE-2026-73577",
+          "CVE-2026-73578",
+          "CVE-2026-82894",
+          "CVE-2026-83538",
+          "CVE-2026-83542",
+          "CVE-2026-84183"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Crypto-Cat",
+      "researcherUrl": "https://github.com/Crypto-Cat",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:39 PM CST",
+      "firstSeenAt": "2026-11-05T19:39:39Z",
+      "language": "Python",
+      "summary": "Incorrect Authorization in the updateLayout simple-method in applications/content/minilang/layout/LayoutEvents.xml in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote authenticated attacker holding only.",
+      "technicalSummary": "Incorrect Authorization in the updateLayout simple-method in applications/content/minilang/layout/LayoutEvents.xml in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote authenticated attacker holding only.",
+      "breakdown": "Incorrect Authorization in the updateLayout simple-method in applications/content/minilang/layout/LayoutEvents.xml in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote authenticated attacker holding only.",
+      "whatBroke": "Incorrect Authorization in the updateLayout simple-method in applications/content/minilang/layout/LayoutEvents.xml in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote authenticated attacker holding only.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
         ]
       ]
     },
@@ -1312,6 +1279,150 @@
       ]
     },
     {
+      "cve": "CVE-2026-73577",
+      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
+      "pocValidation": {
+        "valid": true,
+        "score": 4,
+        "codeFiles": [
+          "cve_2026_73577.py",
+          "cve_2026_73578.py",
+          "cve_2026_82894.py",
+          "cve_2026_83538.py",
+          "cve_2026_83542.py",
+          "cve_2026_84183.py",
+          "cve_2026_84728.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48728",
+          "CVE-2026-73577",
+          "CVE-2026-73578",
+          "CVE-2026-82894",
+          "CVE-2026-83538",
+          "CVE-2026-83542",
+          "CVE-2026-84183"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Crypto-Cat",
+      "researcherUrl": "https://github.com/Crypto-Cat",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:39 PM CST",
+      "firstSeenAt": "2026-11-05T19:39:39Z",
+      "language": "Python",
+      "summary": "Incorrect authorization in RequestHandler in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the authentication requirement of a protected view by appending it as a path.",
+      "technicalSummary": "Incorrect authorization in RequestHandler in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the authentication requirement of a protected view by appending it as a path.",
+      "breakdown": "Incorrect authorization in RequestHandler in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the authentication requirement of a protected view by appending it as a path.",
+      "whatBroke": "Incorrect authorization in RequestHandler in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the authentication requirement of a protected view by appending it as a path.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-83538",
+      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
+      "pocValidation": {
+        "valid": true,
+        "score": 4,
+        "codeFiles": [
+          "cve_2026_73577.py",
+          "cve_2026_73578.py",
+          "cve_2026_82894.py",
+          "cve_2026_83538.py",
+          "cve_2026_83542.py",
+          "cve_2026_84183.py",
+          "cve_2026_84728.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-48728",
+          "CVE-2026-73577",
+          "CVE-2026-73578",
+          "CVE-2026-82894",
+          "CVE-2026-83538",
+          "CVE-2026-83542",
+          "CVE-2026-84183"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Crypto-Cat",
+      "researcherUrl": "https://github.com/Crypto-Cat",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "1:39 PM CST",
+      "firstSeenAt": "2026-11-05T19:39:39Z",
+      "language": "Python",
+      "summary": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to disclose internal business records \u2014 including organization, employee, product catalog, and product-store.",
+      "technicalSummary": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to disclose internal business records \u2014 including organization, employee, product catalog, and product-store.",
+      "breakdown": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to disclose internal business records \u2014 including organization, employee, product catalog, and product-store.",
+      "whatBroke": "Missing Authorization in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to disclose internal business records \u2014 including organization, employee, product catalog, and product-store.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-120209",
       "title": "privilege escalation remote code execution exploit",
       "ecosystem": "cloud",
@@ -1372,67 +1483,6 @@
         [
           "Vendor Advisory",
           "https://gitee.com/belief-team/report"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-121720",
-      "title": "PoC for an OpenVPN Windows Interactive Service privilege bypass via a user-selected OpenSSL provider.",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/refiaa/CVE-2026-121720",
-      "pocValidation": {
-        "valid": true,
-        "score": 10,
-        "codeFiles": [
-          "DirectRouteProbe.c",
-          "Invoke-OpenVpnInteractiveServiceRoutePoC.ps1",
-          "OpenVpnRouteProvider.c",
-          "optional-wfp-outbound-block/DirectWfpBlockProbe.c",
-          "optional-wfp-outbound-block/Invoke-OpenVpnWfpBlockPoC.ps1",
-          "optional-wfp-outbound-block/OpenVpnWfpBlockProvider.c"
-        ],
-        "attackFiles": [],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-121720"
-        ],
-        "language": "PowerShell"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "refiaa",
-      "researcherUrl": "https://github.com/refiaa",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:39 AM CST",
-      "firstSeenAt": "2026-11-07T08:39:09Z",
-      "language": "PowerShell",
-      "summary": "PoC for an OpenVPN Windows Interactive Service privilege bypass via a user-selected OpenSSL provider.",
-      "technicalSummary": "PoC for an OpenVPN Windows Interactive Service privilege bypass via a user-selected OpenSSL provider.",
-      "breakdown": "PoC for an OpenVPN Windows Interactive Service privilege bypass via a user-selected OpenSSL provider.",
-      "whatBroke": "PoC for an OpenVPN Windows Interactive Service privilege bypass via a user-selected OpenSSL provider.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at refiaa/CVE-2026-121720.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/refiaa/CVE-2026-121720\ncd CVE-2026-121720\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/refiaa/CVE-2026-121720"
         ]
       ]
     },
