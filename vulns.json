@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T09:37:10Z",
+  "updatedAt": "2026-11-09T22:56:52Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -86,6 +86,39 @@
     "Huntress"
   ],
   "research": [
+    {
+      "title": "N-able Disables Cloud Services Following Disclosure of \"Able2Shell\" Exploit Chains",
+      "source": "Huntress",
+      "sourceUrl": "https://www.huntress.com/blog",
+      "url": "https://www.huntress.com/blog/n-able-disables-cloud-services-following-disclosure-of-able2shell-exploit-chains",
+      "summary": "N-able Disables Cloud Services Following Disclosure of \"Able2Shell\" Exploit Chains",
+      "publishedAt": "2026-11-09T21:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "cloud",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Cloud"
+      ]
+    },
+    {
+      "title": "The Expanding Attack Surface Demands a New Operating Model",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/qualys-insights/2026/11/09/the-expanding-attack-surface-demands-a-new-operating-model",
+      "summary": "Why the Risk Operations Center Is Becoming the System of Record for Proactive Enterprise Risk Reduction The cybersecurity industry has spent years improving how we discover vulnerabilities. The challenge now is no longer finding risk. It is reducing risk.",
+      "publishedAt": "2026-11-09T13:45:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack"
+      ]
+    },
     {
       "title": "Metrics That Matter: Are We Becoming Harder to Attack?",
       "source": "Horizon3 Attack Team",
@@ -265,41 +298,6 @@
         "Webstack",
         "RCE"
       ]
-    },
-    {
-      "title": "ZDI-26-890: Philips Hue Bridge Pro Argument Injection Restricted File Write Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-890/",
-      "summary": "This vulnerability allows local attackers to modify files on affected installations of Philips Hue Bridge Pro. An attacker must first obtain the ability to execute low-privileged code within a container on the target system, in order to exploit this.",
-      "publishedAt": "2026-11-06T06:00:00Z",
-      "dayOffset": 3,
-      "ecosystem": "research",
-      "category": "kubernetes",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-118631"
-      ],
-      "tags": [
-        "Kubernetes",
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-889: Quest NetVault Backup nvpmgr Integer Underflow Denial-of-Service Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-889/",
-      "summary": "This vulnerability allows remote attackers to create a denial-of-service condition on affected installations of Quest NetVault Backup. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 7.5. The following CVEs.",
-      "publishedAt": "2026-11-06T06:00:00Z",
-      "dayOffset": 3,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-13270"
-      ],
-      "tags": []
     }
   ],
   "vulns": [
@@ -462,6 +460,74 @@
       ]
     },
     {
+      "cve": "CVE-2026-123158",
+      "title": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+      "ecosystem": "linux",
+      "category": "ssh",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Maalfer/CVE-2026-123158",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-123158"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "2:01 AM CST",
+      "firstSeenAt": "2026-11-06T08:01:34Z",
+      "language": "Python",
+      "summary": "Exploit para explotar la vulnerabilidad (conocida como sshole).",
+      "technicalSummary": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
+      "breakdown": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
+      "whatBroke": "Exploit para explotar la vulnerabilidad (conocida como sshole).",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Maalfer/CVE-2026-123158.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Maalfer/CVE-2026-123158\ncd CVE-2026-123158\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed OpenSSH",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "SSH",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Maalfer/CVE-2026-123158"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-123158/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.openssh.org/releasenotes.html"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-97229",
       "title": "GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
       "ecosystem": "cloud",
@@ -588,73 +654,6 @@
         [
           "Vendor Advisory",
           "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/;"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-123158",
-      "title": "OpenSSH musl Password Authentication Bypass & Remote Code Execution Vulnerability (*sshole)",
-      "ecosystem": "linux",
-      "category": "ssh",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Maalfer/CVE-2026-123158",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit.py"
-        ],
-        "attackFiles": [
-          "exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-123158"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "2:01 AM CST",
-      "firstSeenAt": "2026-11-06T08:01:34Z",
-      "language": "Python",
-      "summary": "Exploit para explotar la vulnerabilidad (conocida como sshole).",
-      "technicalSummary": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
-      "breakdown": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
-      "whatBroke": "Exploit para explotar la vulnerabilidad (conocida como sshole).",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Maalfer/CVE-2026-123158.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Maalfer/CVE-2026-123158\ncd CVE-2026-123158\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Linux",
-        "SSH",
-        "Auth Bypass"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Maalfer/CVE-2026-123158"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-123158/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/leonjza/sshhole-lab"
         ]
       ]
     },
@@ -803,42 +802,49 @@
       ]
     },
     {
-      "cve": "CVE-2026-86596",
-      "title": "s2Member <= 260927 Weaponized RCE",
+      "cve": "CVE-2026-118423",
+      "title": "\u2014 WP Libre Form <= 1.5.0.1 unauthenticated file upload to RCE (PoC, lab-verified)",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Aureels/CVE-2026-86596",
+      "pocUrl": "https://github.com/im0xfay/CVE-2026-118423",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "poc.py"
+          ".github/ISSUE_TEMPLATE/bug_report.yml",
+          ".github/ISSUE_TEMPLATE/config.yml",
+          ".github/ISSUE_TEMPLATE/environment.yml",
+          ".github/ISSUE_TEMPLATE/false_negative.yml",
+          ".github/dependabot.yml",
+          ".github/labeler.yml",
+          ".github/workflows/lab-e2e.yml",
+          ".github/workflows/labeler.yml"
         ],
         "attackFiles": [
           "poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-86596"
+          "CVE-2026-118423"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Aureels",
-      "researcherUrl": "https://github.com/Aureels",
+      "researcher": "im0xfay",
+      "researcherUrl": "https://github.com/im0xfay",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:19 AM CST",
-      "firstSeenAt": "2026-11-04T12:19:20Z",
+      "added": "9:36 AM CST",
+      "firstSeenAt": "2026-11-06T15:36:39Z",
       "language": "Python",
-      "summary": "s2Member <= 260927 Weaponized RCE",
-      "technicalSummary": "s2Member <= 260927 Weaponized RCE",
-      "breakdown": "s2Member <= 260927 Weaponized RCE",
-      "whatBroke": "s2Member <= 260927 Weaponized RCE",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Aureels/CVE-2026-86596.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Aureels/CVE-2026-86596\ncd CVE-2026-86596\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "\u2014 WP Libre Form <= 1.5.0.1 unauthenticated file upload to RCE (PoC, lab-verified)",
+      "technicalSummary": "\u2014 WP Libre Form <= 1.5.0.1 unauthenticated file upload to RCE (PoC, lab-verified)",
+      "breakdown": "\u2014 WP Libre Form <= 1.5.0.1 unauthenticated file upload to RCE (PoC, lab-verified)",
+      "whatBroke": "\u2014 WP Libre Form <= 1.5.0.1 unauthenticated file upload to RCE (PoC, lab-verified)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at im0xfay/CVE-2026-118423.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/im0xfay/CVE-2026-118423\ncd CVE-2026-118423\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -853,16 +859,16 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 5,
+      "weaponization": 73,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
-          "https://github.com/Aureels/CVE-2026-86596"
+          "https://github.com/im0xfay/CVE-2026-118423"
         ],
         [
           "Vendor Advisory",
-          "https://plugins.trac.wordpress.org/browser/s2member/tags/260829/src/includes/classes/paypal-notify-in-subscr-or-wa-w-level.inc.php#L514"
+          "https://wpscan.com/vulnerability/35149a79-aee1-4f13-ba29-583c2224c5da/"
         ]
       ]
     },
@@ -995,46 +1001,44 @@
       ]
     },
     {
-      "cve": "CVE-2026-123025",
-      "title": "OS command injection as root via Google Cloud DNS challenge key",
+      "cve": "CVE-2026-113615",
+      "title": "GS JWT <= 1.0.0 unauthenticated SQLi to administrator JWT (PoC + exploit by thiscitze)",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/cppghoul/CVE-2026-123025",
+      "pocUrl": "https://github.com/thiscitze/cve-2026-113615-poc",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "PoC.py"
+          "poc.py"
         ],
         "attackFiles": [
-          "PoC.py"
+          "poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-123025"
+          "CVE-2026-113615"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "cppghoul",
-      "researcherUrl": "https://github.com/cppghoul",
+      "researcher": "thiscitze",
+      "researcherUrl": "https://github.com/thiscitze",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:09 AM CST",
-      "firstSeenAt": "2026-11-06T12:09:29Z",
+      "added": "10:11 AM CST",
+      "firstSeenAt": "2026-11-06T16:11:32Z",
       "language": "Python",
-      "summary": "OS command injection as root via Google Cloud DNS challenge key",
-      "technicalSummary": "OS command injection as root via Google Cloud DNS challenge key",
-      "breakdown": "OS command injection as root via Google Cloud DNS challenge key",
-      "whatBroke": "OS command injection as root via Google Cloud DNS challenge key",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cppghoul/CVE-2026-123025.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cppghoul/CVE-2026-123025\ncd CVE-2026-123025\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "GS JWT <= 1.0.0 unauthenticated SQLi to administrator JWT (PoC + exploit by thiscitze)",
+      "technicalSummary": "GS JWT <= 1.0.0 unauthenticated SQLi to administrator JWT (PoC + exploit by thiscitze)",
+      "breakdown": "GS JWT <= 1.0.0 unauthenticated SQLi to administrator JWT (PoC + exploit by thiscitze)",
+      "whatBroke": "GS JWT <= 1.0.0 unauthenticated SQLi to administrator JWT (PoC + exploit by thiscitze)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at thiscitze/cve-2026-113615-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/thiscitze/cve-2026-113615-poc\ncd cve-2026-113615-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -1042,7 +1046,7 @@
       "tags": [
         "Web",
         "Webstack",
-        "RCE"
+        "Session Theft"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1050,11 +1054,11 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/cppghoul/CVE-2026-123025"
+          "https://github.com/thiscitze/cve-2026-113615-poc"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/opnsense/plugins/pull/5873"
+          "https://wpscan.com/vulnerability/40e0b8d1-8e13-4c4c-a09a-9ec07c578662/"
         ]
       ]
     },
@@ -1203,132 +1207,63 @@
       ]
     },
     {
-      "cve": "CVE-2026-42908",
-      "title": "Full unauthenticated RCE chain for Windows Server 2022 by chaining CVE-2026-56190 (RCE) and CVE-2026-42908.",
-      "ecosystem": "windows",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/danarhirany300-ctrl/CVE-2026-56190-Full-RCE-Chainn",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "exploit/chain_exploit.py"
-        ],
-        "attackFiles": [
-          "exploit/chain_exploit.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-42908",
-          "CVE-2026-56190"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "danarhirany300-ctrl",
-      "researcherUrl": "https://github.com/danarhirany300-ctrl",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "8:10 PM CST",
-      "firstSeenAt": "2026-11-04T02:10:30Z",
-      "language": "Python",
-      "summary": "Full unauthenticated RCE chain for Windows Server 2022 by chaining CVE-2026-56190 (RCE) and (Info Leak). Bypasses ASLR, CFG, XFG, and DEP.",
-      "technicalSummary": "Full unauthenticated RCE chain for Windows Server 2022 by chaining CVE-2026-56190 (RCE) and (Info Leak). Bypasses ASLR, CFG, XFG, and DEP.",
-      "breakdown": "Full unauthenticated RCE chain for Windows Server 2022 by chaining CVE-2026-56190 (RCE) and (Info Leak). Bypasses ASLR, CFG, XFG, and DEP.",
-      "whatBroke": "Full unauthenticated RCE chain for Windows Server 2022 by chaining CVE-2026-56190 (RCE) and (Info Leak). Bypasses ASLR, CFG, XFG, and DEP.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at danarhirany300-ctrl/CVE-2026-56190-Full-RCE-Chainn.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/danarhirany300-ctrl/CVE-2026-56190-Full-RCE-Chainn\ncd CVE-2026-56190-Full-RCE-Chainn\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Windows",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/danarhirany300-ctrl/CVE-2026-56190-Full-RCE-Chainn"
-        ],
-        [
-          "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42908"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-56190",
-      "title": "Full unauthenticated RCE chain for Windows Server 2022 by chaining CVE-2026-56190 (RCE) and CVE-2026-42908.",
-      "ecosystem": "windows",
-      "category": "webstack",
+      "cve": "CVE-2026-73802",
+      "title": "PoC for CVE-2026-73802 - Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9.",
+      "ecosystem": "cloud",
+      "category": "kubernetes",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/danarhirany300-ctrl/CVE-2026-56190-Full-RCE-Chainn",
+      "pocUrl": "https://github.com/sn0x-sharma/Gitea2shell-Sandbox-Escape-to-Host-RCE",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 8,
         "codeFiles": [
-          "exploit/chain_exploit.py"
+          "gitea_act_runner_escape.py"
         ],
-        "attackFiles": [
-          "exploit/chain_exploit.py"
-        ],
-        "hasUsage": false,
+        "attackFiles": [],
+        "hasUsage": true,
         "cveRefs": [
-          "CVE-2026-42908",
-          "CVE-2026-56190"
+          "CVE-2026-73802"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "danarhirany300-ctrl",
-      "researcherUrl": "https://github.com/danarhirany300-ctrl",
+      "researcher": "sn0x-sharma",
+      "researcherUrl": "https://github.com/sn0x-sharma",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "8:10 PM CST",
-      "firstSeenAt": "2026-11-04T02:10:30Z",
+      "added": "4:35 AM CST",
+      "firstSeenAt": "2026-11-09T10:35:17Z",
       "language": "Python",
-      "summary": "Full unauthenticated RCE chain for Windows Server 2022 by chaining (RCE) and CVE-2026-42908 (Info Leak). Bypasses ASLR, CFG, XFG, and DEP.",
-      "technicalSummary": "Full unauthenticated RCE chain for Windows Server 2022 by chaining (RCE) and CVE-2026-42908 (Info Leak). Bypasses ASLR, CFG, XFG, and DEP.",
-      "breakdown": "Full unauthenticated RCE chain for Windows Server 2022 by chaining (RCE) and CVE-2026-42908 (Info Leak). Bypasses ASLR, CFG, XFG, and DEP.",
-      "whatBroke": "Full unauthenticated RCE chain for Windows Server 2022 by chaining (RCE) and CVE-2026-42908 (Info Leak). Bypasses ASLR, CFG, XFG, and DEP.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at danarhirany300-ctrl/CVE-2026-56190-Full-RCE-Chainn.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/danarhirany300-ctrl/CVE-2026-56190-Full-RCE-Chainn\ncd CVE-2026-56190-Full-RCE-Chainn\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PoC for Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9 Critical. Affects runner < 3.0.0.",
+      "technicalSummary": "PoC for Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9 Critical. Affects runner < 3.0.0.",
+      "breakdown": "PoC for Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9 Critical. Affects runner < 3.0.0.",
+      "whatBroke": "PoC for Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9 Critical. Affects runner < 3.0.0.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sn0x-sharma/Gitea2shell-Sandbox-Escape-to-Host-RCE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sn0x-sharma/Gitea2shell-Sandbox-Escape-to-Host-RCE\ncd Gitea2shell-Sandbox-Escape-to-Host-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Windows",
-        "Webstack",
+        "Cloud",
+        "Kubernetes",
         "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/danarhirany300-ctrl/CVE-2026-56190-Full-RCE-Chainn"
+          "https://github.com/sn0x-sharma/Gitea2shell-Sandbox-Escape-to-Host-RCE"
         ],
         [
           "Vendor Advisory",
-          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56190"
+          "https://blog.gitea.com/release-of-runner-3.0.0/"
         ]
       ]
     },
@@ -1481,53 +1416,104 @@
       ]
     },
     {
-      "cve": "CVE-2026-98432",
-      "title": "Reproduction artifacts for the ASI Lab study of CVE-2026-98432 (Linux IPv4/TCP use-after-free): trigger.",
-      "ecosystem": "linux",
-      "category": "kernel",
+      "cve": "CVE-2026-61989",
+      "title": "Unauthenticated Cross Site Scripting (XSS) in Easy Property Listings WordPress Plugin. PoC by Mor Golan.",
+      "ecosystem": "web",
+      "category": "webstack",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/jackykeung/CVE-2026-98432-Verified-Attack",
+      "pocUrl": "https://github.com/Mor-Golan/CVE-2026-61989",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "harness/trigger.c",
-          "harness/trigger_pinned.c",
-          "scripts/verify-free-sites-offline.sh",
-          "verifier/cases/build-cases.sh",
-          "verifier/cases/fixture.c",
-          "verifier/cases/stubs.c",
-          "verifier/verify-free-sites-bounded.py",
-          "verifier/verify-free-sites.py"
+          "poc-epl-unauth-reflected-xss.sh"
         ],
         "attackFiles": [
-          "harness/trigger.c",
-          "harness/trigger_pinned.c",
-          "scripts/verify-free-sites-offline.sh",
-          "verifier/verify-free-sites-bounded.py",
-          "verifier/verify-free-sites.py"
+          "poc-epl-unauth-reflected-xss.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-61989"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Mor-Golan",
+      "researcherUrl": "https://github.com/Mor-Golan",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:30 AM CST",
+      "firstSeenAt": "2026-11-07T12:30:44Z",
+      "language": "Shell",
+      "summary": "Unauthenticated Cross Site Scripting (XSS) in Easy Property Listings WordPress Plugin. PoC by Mor Golan.",
+      "technicalSummary": "Unauthenticated Cross Site Scripting (XSS) in Easy Property Listings WordPress Plugin. PoC by Mor Golan.",
+      "breakdown": "Unauthenticated Cross Site Scripting (XSS) in Easy Property Listings WordPress Plugin. PoC by Mor Golan.",
+      "whatBroke": "Unauthenticated Cross Site Scripting (XSS) in Easy Property Listings WordPress Plugin. PoC by Mor Golan.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Mor-Golan/CVE-2026-61989.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Mor-Golan/CVE-2026-61989\ncd CVE-2026-61989\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "XSS"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 2,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Mor-Golan/CVE-2026-61989"
+        ],
+        [
+          "Vendor Advisory",
+          "https://patchstack.com/database/wordpress/plugin/easy-property-listings/vulnerability/wordpress-easy-property-listings-plugin-3-5-25-cross-site-scripting-xss-vulnerability?_s_id=cve"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-98432",
+      "title": "Python-based PoC for CVE-2026-98432, probing anomalous IPv4 TCP option behavior associated with a Linux.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/nnssh/CVE-2026-98432_poc",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
           "CVE-2026-98432"
         ],
-        "language": "C"
+        "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "jackykeung",
-      "researcherUrl": "https://github.com/jackykeung",
+      "researcher": "nnssh",
+      "researcherUrl": "https://github.com/nnssh",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "10:59 PM CST",
-      "firstSeenAt": "2026-11-09T04:59:02Z",
-      "language": "C",
-      "summary": "Reproduction artifacts for the ASI Lab study of (Linux IPv4/TCP use-after-free): trigger harness, disassembly verifier, raw evidence, results. WARNING: contains a working kernel-race trigger for unpatched kernels. Handle with.",
-      "technicalSummary": "Reproduction artifacts for the ASI Lab study of (Linux IPv4/TCP use-after-free): trigger harness, disassembly verifier, raw evidence, results. WARNING: contains a working kernel-race trigger for unpatched kernels. Handle with.",
-      "breakdown": "Reproduction artifacts for the ASI Lab study of (Linux IPv4/TCP use-after-free): trigger harness, disassembly verifier, raw evidence, results. WARNING: contains a working kernel-race trigger for unpatched kernels. Handle with.",
-      "whatBroke": "Reproduction artifacts for the ASI Lab study of (Linux IPv4/TCP use-after-free): trigger harness, disassembly verifier, raw evidence, results. WARNING: contains a working kernel-race trigger for unpatched kernels. Handle with.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at jackykeung/CVE-2026-98432-Verified-Attack.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/jackykeung/CVE-2026-98432-Verified-Attack\ncd CVE-2026-98432-Verified-Attack\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "5:51 AM CST",
+      "firstSeenAt": "2026-11-04T11:51:54Z",
+      "language": "Python",
+      "summary": "Python-based PoC for probing anomalous IPv4 TCP option behavior associated with a Linux kernel use-after-free race condition.",
+      "technicalSummary": "Python-based PoC for probing anomalous IPv4 TCP option behavior associated with a Linux kernel use-after-free race condition.",
+      "breakdown": "Python-based PoC for probing anomalous IPv4 TCP option behavior associated with a Linux kernel use-after-free race condition.",
+      "whatBroke": "Python-based PoC for probing anomalous IPv4 TCP option behavior associated with a Linux kernel use-after-free race condition.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at nnssh/CVE-2026-98432_poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/nnssh/CVE-2026-98432_poc\ncd CVE-2026-98432_poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "local privilege escalation after a foothold",
@@ -1541,11 +1527,11 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
-          "https://github.com/jackykeung/CVE-2026-98432-Verified-Attack"
+          "https://github.com/nnssh/CVE-2026-98432_poc"
         ],
         [
           "Vendor Advisory",
