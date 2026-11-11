@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T09:13:16Z",
+  "updatedAt": "2026-11-11T20:07:24Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,71 +87,17 @@
   ],
   "research": [
     {
-      "title": "Microsoft Patch Tuesday for November 2026 \u2014 Snort rules and prominent vulnerabilities",
-      "source": "Cisco Talos",
-      "sourceUrl": "https://blog.talosintelligence.com/",
-      "url": "https://blog.talosintelligence.com/microsoft-patch-tuesday-for-november-2026/",
-      "summary": "Microsoft has released its monthly security update for November 2026, which includes 1095 vulnerabilities affecting a range of products, including 64 that Microsoft marked as \"critical.\" Microsoft notes that 1 of the vulnerabilities disclosed this month have.",
-      "publishedAt": "2026-11-11T01:41:17Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "exchange",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-105501",
-        "CVE-2026-105524",
-        "CVE-2026-109459",
-        "CVE-2026-109469",
-        "CVE-2026-109473"
-      ],
-      "tags": [
-        "Windows",
-        "Exchange",
-        "Auth Bypass"
-      ]
-    },
-    {
-      "title": "Microsoft and Adobe Patch Tuesday, November 2026 Security Update Review",
-      "source": "Qualys Research",
-      "sourceUrl": "https://blog.qualys.com/",
-      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/11/10/microsoft-patch-tuesday-november-2026-security-update-review",
-      "summary": "As the year approaches its final stretch, Microsoft\u2019s November 2026 Patch Tuesday highlights the continued importance of proactive vulnerability management. This month\u2019s security updates address vulnerabilities across the Microsoft ecosystem, reinforcing the.",
-      "publishedAt": "2026-11-10T20:39:54Z",
-      "dayOffset": 1,
-      "ecosystem": "windows",
-      "category": "exchange",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-105501",
-        "CVE-2026-105524",
-        "CVE-2026-109459",
-        "CVE-2026-109473",
-        "CVE-2026-110043"
-      ],
-      "tags": [
-        "Windows",
-        "Exchange",
-        "RCE"
-      ]
-    },
-    {
-      "title": "Git security vulnerabilities announced",
-      "source": "GitHub Security",
-      "sourceUrl": "https://github.blog/security/",
-      "url": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/",
-      "summary": "Today, the Git project is releasing new versions to address six security vulnerabilities. These include arbitrary code execution when recursively cloning a malicious repository, writes to unintended files, and memory corruption when processing merges or.",
-      "publishedAt": "2026-11-10T18:00:00Z",
-      "dayOffset": 1,
+      "title": "ZDI-26-953: (0Day) Meta FAIRChem utils load_inference_model Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-953/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
-      "cves": [
-        "CVE-2026-105437",
-        "CVE-2026-111760",
-        "CVE-2026-113408",
-        "CVE-2026-114466",
-        "CVE-2026-114467"
-      ],
+      "cves": [],
       "tags": [
         "Web",
         "Webstack",
@@ -159,100 +105,17 @@
       ]
     },
     {
-      "title": "Why Does AI Agent Security in Banking Require More Than Alerts?",
-      "source": "Aqua Nautilus",
-      "sourceUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
-      "url": "https://www.aquasec.com/blog/ai-agent-security-banking-runtime/",
-      "summary": "TL;DR: AI agent security in banking requires controls that can deny prohibited workload actions before they complete, because an alert does not revoke an agent\u2019s authority. An agent can use legitimate credentials to create financial exposure without.",
-      "publishedAt": "2026-11-10T14:56:52Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "AI Security Assessment: A Six-Step Full-Stack Evaluation Standard",
-      "source": "Bishop Fox",
-      "sourceUrl": "https://x.com/BishopFox",
-      "url": "https://bishopfox.com/blog/ai-security-assessment-six-step-full-stack-evaluation-standard",
-      "summary": "Many AI security assessments are automated scans or checklist audits that miss where serious risk lives: where model outputs become database queries, API calls, and agent actions. This post lays out a six-step full-stack standard that proves exploit chains.",
-      "publishedAt": "2026-11-10T14:00:00Z",
-      "dayOffset": 1,
+      "title": "ZDI-26-952: (0Day) Meta FAIRChem _cli YAML File Parsing Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-952/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
       "cves": [],
-      "tags": [
-        "Web",
-        "Webstack"
-      ]
-    },
-    {
-      "title": "Stop Patching Blindly: What CISA\u2019s New Prioritization Approach Means for Federal Agencies",
-      "source": "Horizon3 Attack Team",
-      "sourceUrl": "https://x.com/Horizon3Attack",
-      "url": "https://horizon3.ai/intelligence/blogs/cisa-bod-26-04-stop-patching-blindly/",
-      "summary": "For more than two decades, the Cybersecurity and Infrastructure Security Agency (CISA) published a weekly bulletin listing newly disclosed vulnerabilities, their CVE identifiers, severity scores, and brief descriptions. On September 28, 2026, those bulletins.",
-      "publishedAt": "2026-11-10T13:15:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [],
-      "tags": []
-    },
-    {
-      "title": "ZDI-26-906: X.Org Server libX11 XkbGetMap Reply Heap-based Buffer Overflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-906/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of X.Org Server. User interaction is required to exploit this vulnerability in that the target must connect to a malicious X11 server. The ZDI has assigned a CVSS.",
-      "publishedAt": "2026-11-10T06:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-88806"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-905: X.Org Server libXrender RenderQueryPictFormats Reply Heap-based Buffer Overflow Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-905/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of X.Org Server. User interaction is required to exploit this vulnerability in that the target must connect to a malicious X11 server. The ZDI has assigned a CVSS.",
-      "publishedAt": "2026-11-10T06:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-88807"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-904: NVIDIA Megatron-LM Checkpoint Deserialization of Untrusted Data Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-904/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of NVIDIA Megatron-LM. User interaction is required to exploit this vulnerability in that the target must open a malicious file. The ZDI has assigned a CVSS rating.",
-      "publishedAt": "2026-11-10T06:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "web",
-      "category": "webstack",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-65110"
-      ],
       "tags": [
         "Web",
         "Webstack",
@@ -260,61 +123,253 @@
       ]
     },
     {
-      "title": "ZDI-26-903: X.Org Server Font Alias Resolution Heap-based Buffer Overflow Privilege Escalation Vulnerability",
+      "title": "ZDI-26-951: (0Day) Meta FAIRChem utils load_tasks Deserialization of Untrusted Data Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-903/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-11-10T06:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-951/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
       "topic": "research",
-      "cves": [
-        "CVE-2026-50256"
-      ],
+      "cves": [],
       "tags": [
-        "Local Lpe"
+        "Web",
+        "Webstack",
+        "RCE"
       ]
     },
     {
-      "title": "ZDI-26-902: X.Org Server XkbResizeKeySyms Integer Overflow Privilege Escalation Vulnerability",
+      "title": "ZDI-26-950: (0Day) Meta FAIRChem migrate_checkpoint Deserialization of Untrusted Data Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-902/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-11-10T06:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-950/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
       "topic": "research",
-      "cves": [
-        "CVE-2026-50258"
-      ],
+      "cves": [],
       "tags": [
-        "Local Lpe"
+        "Web",
+        "Webstack",
+        "RCE"
       ]
     },
     {
-      "title": "ZDI-26-901: X.Org Server ProcDRI2GetBuffers Heap-based Buffer Overflow Privilege Escalation Vulnerability",
+      "title": "ZDI-26-949: (0Day) Meta FAIRChem utils load_model_and_weights_from_checkpoint Deserialization of Untrusted Data Remote Code Execution Vulnerability",
       "source": "ZDI",
       "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-901/",
-      "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
-      "publishedAt": "2026-11-10T06:00:00Z",
-      "dayOffset": 1,
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-949/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-948: (0Day) Meta FAIRChem MLIPPredictUnit Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-948/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-947: (0Day) Meta FAIRChem make_submission_file NPZ File Parsing Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-947/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-946: (0Day) Meta FAIRChem make_challenge_submission_file NPZ File Parsing Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-946/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-945: (0Day) Meta FAIRChem convert_fine_tune_checkpoint Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-945/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta FAIRChem. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-944: (0Day) Meta fairseq load_ema_from_checkpoint Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-944/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta fairseq. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-943: (0Day) Meta fairseq load_checkpoint_to_cpu Deserialization of Untrusted Data Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-943/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta fairseq. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
+      "ecosystem": "web",
+      "category": "webstack",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ]
+    },
+    {
+      "title": "ZDI-26-942: (0Day) Meta fairseq rerank Code Injection Remote Code Execution Vulnerability",
+      "source": "ZDI",
+      "sourceUrl": "https://x.com/thezdi",
+      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-942/",
+      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Meta fairseq. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The ZDI has.",
+      "publishedAt": "2026-11-11T06:00:00Z",
+      "dayOffset": 0,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
-      "cves": [
-        "CVE-2026-50264"
-      ],
+      "cves": [],
       "tags": [
-        "Local Lpe"
+        "RCE"
       ]
     }
   ],
   "vulns": [
+    {
+      "cve": "CVE-2026-123158",
+      "title": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+      "ecosystem": "linux",
+      "category": "ssh",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Doseuser/CVE-2026-123158",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "exploit.py"
+        ],
+        "attackFiles": [
+          "exploit.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-123158"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Horizon3 Attack Team",
+      "researcherUrl": "https://x.com/Horizon3Attack",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "1:02 PM CST",
+      "firstSeenAt": "2026-11-11T19:02:55Z",
+      "language": "Python",
+      "summary": "PoC educativo para (sshole) - bypass de autenticaci\u00f3n en OpenSSH sobre musl sin PAM",
+      "technicalSummary": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
+      "breakdown": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
+      "whatBroke": "PoC educativo para (sshole) - bypass de autenticaci\u00f3n en OpenSSH sobre musl sin PAM",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Doseuser/CVE-2026-123158.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Doseuser/CVE-2026-123158\ncd CVE-2026-123158\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed OpenSSH",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "SSH",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 86,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Doseuser/CVE-2026-123158"
+        ],
+        [
+          "Technical Paper",
+          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-123158/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.openssh.org/releasenotes.html"
+        ]
+      ]
+    },
     {
       "cve": "CVE-2026-109618",
       "title": "PHP Memory Corruption Vulnerability",
@@ -322,46 +377,42 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/sam00/CVE-2026-109618-CVE-2026-109619-POC",
+      "pocUrl": "https://github.com/MammaniNelsonD/PHP2P4IM0NSHELL",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "exploit.py",
-          "listener.py",
-          "mem_disclosure.py",
-          "payload_gen.py",
-          "php2shell.sh",
-          "rce_exploit.py",
-          "scanner.py"
+          "background.js",
+          "content.js",
+          "lab/index.php",
+          "popup.js",
+          "tools/poc_109618.py"
         ],
         "attackFiles": [
-          "exploit.py",
-          "payload_gen.py",
-          "rce_exploit.py",
-          "scanner.py"
+          "tools/poc_109618.py"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
+          "CVE-2026-10961",
           "CVE-2026-109618",
           "CVE-2026-109619"
         ],
-        "language": "Python"
+        "language": "JavaScript"
       },
       "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
+      "researcher": "MammaniNelsonD",
+      "researcherUrl": "https://github.com/MammaniNelsonD",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:13 AM CST",
-      "firstSeenAt": "2026-11-11T09:13:16Z",
-      "language": "Python",
-      "summary": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
-      "technicalSummary": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
-      "breakdown": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
-      "whatBroke": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sam00/CVE-2026-109618-CVE-2026-109619-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sam00/CVE-2026-109618-CVE-2026-109619-POC\ncd CVE-2026-109618-CVE-2026-109619-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "9:07 AM CST",
+      "firstSeenAt": "2026-11-11T15:07:56Z",
+      "language": "JavaScript",
+      "summary": "\ud83d\udca5\ud83d\udc18 Extensi\u00f3n de navegador para auditar eticamente Lab propio con la clase **php2shell** (``, `CVE-2026-109619`, `CVE-2026-10961x`) desde Chrome/Edge. Con CMD_CENTER + RECON, terminal Alpine v86 embebida y generador de reverse.",
+      "technicalSummary": "\ud83d\udca5\ud83d\udc18 Extensi\u00f3n de navegador para auditar eticamente Lab propio con la clase **php2shell** (``, `CVE-2026-109619`, `CVE-2026-10961x`) desde Chrome/Edge. Con CMD_CENTER + RECON, terminal Alpine v86 embebida y generador de reverse.",
+      "breakdown": "\ud83d\udca5\ud83d\udc18 Extensi\u00f3n de navegador para auditar eticamente Lab propio con la clase **php2shell** (``, `CVE-2026-109619`, `CVE-2026-10961x`) desde Chrome/Edge. Con CMD_CENTER + RECON, terminal Alpine v86 embebida y generador de reverse.",
+      "whatBroke": "\ud83d\udca5\ud83d\udc18 Extensi\u00f3n de navegador para auditar eticamente Lab propio con la clase **php2shell** (``, `CVE-2026-109619`, `CVE-2026-10961x`) desde Chrome/Edge. Con CMD_CENTER + RECON, terminal Alpine v86 embebida y generador de reverse.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MammaniNelsonD/PHP2P4IM0NSHELL.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MammaniNelsonD/PHP2P4IM0NSHELL\ncd PHP2P4IM0NSHELL\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PHP",
         "credential access from service context",
@@ -382,11 +433,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/sam00/CVE-2026-109618-CVE-2026-109619-POC"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/product-tech/2026/11/04/php2shell-windows-macos-car-upgrade-scripts"
+          "https://github.com/MammaniNelsonD/PHP2P4IM0NSHELL"
         ],
         [
           "Vendor Advisory",
@@ -401,46 +448,42 @@
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/sam00/CVE-2026-109618-CVE-2026-109619-POC",
+      "pocUrl": "https://github.com/MammaniNelsonD/PHP2P4IM0NSHELL",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 7,
         "codeFiles": [
-          "exploit.py",
-          "listener.py",
-          "mem_disclosure.py",
-          "payload_gen.py",
-          "php2shell.sh",
-          "rce_exploit.py",
-          "scanner.py"
+          "background.js",
+          "content.js",
+          "lab/index.php",
+          "popup.js",
+          "tools/poc_109618.py"
         ],
         "attackFiles": [
-          "exploit.py",
-          "payload_gen.py",
-          "rce_exploit.py",
-          "scanner.py"
+          "tools/poc_109618.py"
         ],
-        "hasUsage": false,
+        "hasUsage": true,
         "cveRefs": [
+          "CVE-2026-10961",
           "CVE-2026-109618",
           "CVE-2026-109619"
         ],
-        "language": "Python"
+        "language": "JavaScript"
       },
       "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
+      "researcher": "MammaniNelsonD",
+      "researcherUrl": "https://github.com/MammaniNelsonD",
       "pocWorks": "Yes",
       "difficulty": "easy",
-      "added": "3:13 AM CST",
-      "firstSeenAt": "2026-11-11T09:13:16Z",
-      "language": "Python",
-      "summary": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
-      "technicalSummary": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
-      "breakdown": "Executive Summary PHP2Shell (CVE-2026-109618 and CVE-2026-109619) allows unauthenticated remote code execution on.",
-      "whatBroke": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sam00/CVE-2026-109618-CVE-2026-109619-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sam00/CVE-2026-109618-CVE-2026-109619-POC\ncd CVE-2026-109618-CVE-2026-109619-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "added": "9:07 AM CST",
+      "firstSeenAt": "2026-11-11T15:07:56Z",
+      "language": "JavaScript",
+      "summary": "\ud83d\udca5\ud83d\udc18 Extensi\u00f3n de navegador para auditar eticamente Lab propio con la clase **php2shell** (`CVE-2026-109618`, ``, `CVE-2026-10961x`) desde Chrome/Edge. Con CMD_CENTER + RECON, terminal Alpine v86 embebida y generador de reverse.",
+      "technicalSummary": "\ud83d\udca5\ud83d\udc18 Extensi\u00f3n de navegador para auditar eticamente Lab propio con la clase **php2shell** (`CVE-2026-109618`, ``, `CVE-2026-10961x`) desde Chrome/Edge. Con CMD_CENTER + RECON, terminal Alpine v86 embebida y generador de reverse.",
+      "breakdown": "\ud83d\udca5\ud83d\udc18 Extensi\u00f3n de navegador para auditar eticamente Lab propio con la clase **php2shell** (`CVE-2026-109618`, ``, `CVE-2026-10961x`) desde Chrome/Edge. Con CMD_CENTER + RECON, terminal Alpine v86 embebida y generador de reverse.",
+      "whatBroke": "\ud83d\udca5\ud83d\udc18 Extensi\u00f3n de navegador para auditar eticamente Lab propio con la clase **php2shell** (`CVE-2026-109618`, ``, `CVE-2026-10961x`) desde Chrome/Edge. Con CMD_CENTER + RECON, terminal Alpine v86 embebida y generador de reverse.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at MammaniNelsonD/PHP2P4IM0NSHELL.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/MammaniNelsonD/PHP2P4IM0NSHELL\ncd PHP2P4IM0NSHELL\njava -jar <poc>.jar https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed PHP",
         "credential access from service context",
@@ -461,11 +504,7 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/sam00/CVE-2026-109618-CVE-2026-109619-POC"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/product-tech/2026/11/04/php2shell-windows-macos-car-upgrade-scripts"
+          "https://github.com/MammaniNelsonD/PHP2P4IM0NSHELL"
         ],
         [
           "Vendor Advisory",
@@ -474,75 +513,137 @@
       ]
     },
     {
-      "cve": "CVE-2026-123158",
-      "title": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
-      "ecosystem": "linux",
-      "category": "kubernetes",
-      "severity": "high",
+      "cve": "CVE-2026-124194",
+      "title": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+      "ecosystem": "windows",
+      "category": "ntlm",
+      "severity": "medium",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/D1se0/CVE-2026-123158",
+      "pocUrl": "https://github.com/AmesianX/CVE-2026-124194-poc",
       "pocValidation": {
         "valid": true,
         "score": 11,
         "codeFiles": [
-          "docker-compose.yml",
-          "exploit.py",
-          "ips.sh",
-          "patched/entrypoint.sh",
-          "setup.sh",
-          "vulnerable/entrypoint.sh"
+          "cfb.py",
+          "collect_ntlm.py",
+          "gen_poc.py",
+          "make_msg.py"
+        ],
+        "attackFiles": [
+          "gen_poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-124194"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:37 PM CST",
+      "firstSeenAt": "2026-11-11T01:37:03Z",
+      "language": "Python",
+      "summary": "PoC - Outlook spoofing/forced-authentication NTLM leak (patched 2026-11). Concept proof only, untested against vulnerable Outlook.",
+      "technicalSummary": "As the year approaches its final stretch, Microsoft\u2019s November 2026 Patch Tuesday highlights the continued importance of proactive vulnerability management. This month\u2019s security updates address vulnerabilities across the.",
+      "breakdown": "As the year approaches its final stretch, Microsoft\u2019s November 2026 Patch Tuesday highlights the continued importance of proactive vulnerability management. This month\u2019s security updates address vulnerabilities across the.",
+      "whatBroke": "PoC - Outlook spoofing/forced-authentication NTLM leak (patched 2026-11). Concept proof only, untested against vulnerable Outlook.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at AmesianX/CVE-2026-124194-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/AmesianX/CVE-2026-124194-poc\ncd CVE-2026-124194-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed Office",
+        "identity escalation or relay path",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Windows",
+        "Ntlm",
+        "Exploit",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/AmesianX/CVE-2026-124194-poc"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/vulnerabilities-threat-research/2026/11/10/microsoft-patch-tuesday-november-2026-security-update-review"
+        ],
+        [
+          "Vendor Advisory",
+          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-119977",
+      "title": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/BlackHatExploitation/CVE-2026-119977",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit.py"
         ],
         "attackFiles": [
           "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-123158"
+          "CVE-2026-119977"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Horizon3 Attack Team",
-      "researcherUrl": "https://x.com/Horizon3Attack",
+      "researcher": "BlackHatExploitation",
+      "researcherUrl": "https://github.com/BlackHatExploitation",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "2:24 AM CST",
-      "firstSeenAt": "2026-11-09T08:24:59Z",
+      "difficulty": "moderate",
+      "added": "4:17 AM CST",
+      "firstSeenAt": "2026-11-10T10:17:48Z",
       "language": "Python",
-      "summary": "Entorno A/B en Docker y PoC del bypass de autenticaci\u00f3n por contrase\u00f1a de OpenSSH 10.6p1 sobre musl sin PAM (), con documentaci\u00f3n de reproducci\u00f3n y parcheo.",
-      "technicalSummary": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
-      "breakdown": "CVE-2026-123158, known as *sshole, is an authentication bypass in OpenSSH sshd before 10.6p2 on Linux systems that use musl libc without PAM. It affects products that run OpenSSH on musl, such as Alpine Linux (in its default configuration), OpenWrt, and.",
-      "whatBroke": "Entorno A/B en Docker y PoC del bypass de autenticaci\u00f3n por contrase\u00f1a de OpenSSH 10.6p1 sobre musl sin PAM (), con documentaci\u00f3n de reproducci\u00f3n y parcheo.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at D1se0/CVE-2026-123158.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/D1se0/CVE-2026-123158\ncd CVE-2026-123158\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "WordPress Core RCE via Predictable Staging Path (CVSS 8.1)",
+      "technicalSummary": "WordPress Core RCE via Predictable Staging Path (CVSS 8.1)",
+      "breakdown": "WordPress Core RCE via Predictable Staging Path (CVSS 8.1)",
+      "whatBroke": "WordPress Core RCE via Predictable Staging Path (CVSS 8.1)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at BlackHatExploitation/CVE-2026-119977.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/BlackHatExploitation/CVE-2026-119977\ncd CVE-2026-119977\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed OpenSSH",
+        "initial access through exposed WordPress Core",
         "credential access from service context",
         "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "Kubernetes",
-        "Auth Bypass",
+        "Web",
+        "Webstack",
+        "RCE",
         "KEV"
       ],
       "confidence": 98,
-      "weaponization": 86,
-      "dayOffset": 2,
+      "weaponization": 73,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/D1se0/CVE-2026-123158"
-        ],
-        [
-          "Technical Paper",
-          "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-123158/"
+          "https://github.com/BlackHatExploitation/CVE-2026-119977"
         ],
         [
           "Vendor Advisory",
-          "https://www.openssh.org/releasenotes.html"
+          "https://wordpress.org/news/2026/10/wordpress-7-1-4"
         ]
       ]
     },
@@ -675,83 +776,6 @@
       ]
     },
     {
-      "cve": "CVE-2026-111497",
-      "title": "Google Brotli Unchecked Return Value Vulnerability",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/sam00/Node2Shell-CVE-2026-111497-POC",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "brotli_gen.py",
-          "brotli_payload.py",
-          "compromise.py",
-          "exploit.py",
-          "lab/asan/build.sh",
-          "lab/asan/harness.c",
-          "lab/node_probe.js",
-          "lab/payload/gen_payload.py"
-        ],
-        "attackFiles": [
-          "brotli_payload.py",
-          "exploit.py",
-          "lab/payload/gen_payload.py",
-          "lab_verify.py",
-          "live_exploit.py",
-          "scanner.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-111497"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "sam00",
-      "researcherUrl": "https://github.com/sam00",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "3:13 AM CST",
-      "firstSeenAt": "2026-11-11T09:13:16Z",
-      "language": "Python",
-      "summary": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially.",
-      "technicalSummary": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially.",
-      "breakdown": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially.",
-      "whatBroke": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sam00/Node2Shell-CVE-2026-111497-POC.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sam00/Node2Shell-CVE-2026-111497-POC\ncd Node2Shell-CVE-2026-111497-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Brotli",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 0,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/sam00/Node2Shell-CVE-2026-111497-POC"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/google/brotli/releases/tag/v1.2.1"
-        ]
-      ]
-    },
-    {
       "cve": "CVE-2026-118423",
       "title": "\u2014 WP Libre Form <= 1.5.0.1 unauthenticated file upload to RCE (PoC, lab-verified)",
       "ecosystem": "web",
@@ -819,6 +843,72 @@
         [
           "Vendor Advisory",
           "https://wpscan.com/vulnerability/35149a79-aee1-4f13-ba29-583c2224c5da/"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-68524",
+      "title": "POC exploit for CVE-2026-68524 - preauth RCE in Apache OFBiz via request body shadowing the decorator.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/fixedbyreboot/CVE-2026-68524-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "build-lab.sh",
+          "docker-compose.yml",
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-68524"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "fixedbyreboot",
+      "researcherUrl": "https://github.com/fixedbyreboot",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:45 AM CST",
+      "firstSeenAt": "2026-11-10T06:45:22Z",
+      "language": "Python",
+      "summary": "POC exploit for preauth RCE in Apache OFBiz via request body shadowing the decorator location and file URI screen loading. Verified on 24.09.07, control on 24.09.08.",
+      "technicalSummary": "POC exploit for preauth RCE in Apache OFBiz via request body shadowing the decorator location and file URI screen loading. Verified on 24.09.07, control on 24.09.08.",
+      "breakdown": "POC exploit for preauth RCE in Apache OFBiz via request body shadowing the decorator location and file URI screen loading. Verified on 24.09.07, control on 24.09.08.",
+      "whatBroke": "POC exploit for preauth RCE in Apache OFBiz via request body shadowing the decorator location and file URI screen loading. Verified on 24.09.07, control on 24.09.08.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fixedbyreboot/CVE-2026-68524-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fixedbyreboot/CVE-2026-68524-POC\ncd CVE-2026-68524-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/fixedbyreboot/CVE-2026-68524-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
         ]
       ]
     },
@@ -1077,54 +1167,50 @@
       ]
     },
     {
-      "cve": "CVE-2026-73578",
-      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
+      "cve": "CVE-2026-90436",
+      "title": "POC for CVE-2026-90436 - unauthenticated remote class instantiation in Apache Axis 1.x via SOAP fault.",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
+      "pocUrl": "https://github.com/fixedbyreboot/CVE-2026-90436-POC",
       "pocValidation": {
         "valid": true,
-        "score": 4,
+        "score": 11,
         "codeFiles": [
-          "cve_2026_73577.py",
-          "cve_2026_73578.py",
-          "cve_2026_82894.py",
-          "cve_2026_83538.py",
-          "cve_2026_83542.py",
-          "cve_2026_84183.py",
-          "cve_2026_84728.py"
+          "docker-compose.yml",
+          "lab-files/AuthHandler.java",
+          "lab-files/SecureService.java",
+          "lab-files/StaticInitGadget.java",
+          "poc.py"
         ],
-        "attackFiles": [],
+        "attackFiles": [
+          "poc.py"
+        ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-48728",
-          "CVE-2026-73577",
-          "CVE-2026-73578",
-          "CVE-2026-82894",
-          "CVE-2026-83538",
-          "CVE-2026-83542",
-          "CVE-2026-84183"
+          "CVE-2026-90436"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Crypto-Cat",
-      "researcherUrl": "https://github.com/Crypto-Cat",
+      "researcher": "fixedbyreboot",
+      "researcherUrl": "https://github.com/fixedbyreboot",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "1:39 PM CST",
-      "firstSeenAt": "2026-11-05T19:39:39Z",
+      "added": "12:45 AM CST",
+      "firstSeenAt": "2026-11-10T06:45:30Z",
       "language": "Python",
-      "summary": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views.",
-      "technicalSummary": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views.",
-      "breakdown": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views.",
-      "whatBroke": "Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "POC for unauthenticated remote class instantiation in Apache Axis 1.x via SOAP fault exceptionName, bypassing configured auth handlers. EOL software, no fix exists.",
+      "technicalSummary": "POC for unauthenticated remote class instantiation in Apache Axis 1.x via SOAP fault exceptionName, bypassing configured auth handlers. EOL software, no fix exists.",
+      "breakdown": "POC for unauthenticated remote class instantiation in Apache Axis 1.x via SOAP fault exceptionName, bypassing configured auth handlers. EOL software, no fix exists.",
+      "whatBroke": "POC for unauthenticated remote class instantiation in Apache Axis 1.x via SOAP fault exceptionName, bypassing configured auth handlers. EOL software, no fix exists.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fixedbyreboot/CVE-2026-90436-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fixedbyreboot/CVE-2026-90436-POC\ncd CVE-2026-90436-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
         "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
@@ -1132,91 +1218,19 @@
       "tags": [
         "Web",
         "Webstack",
-        "Session Theft"
+        "RCE"
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 6,
+      "dayOffset": 1,
       "links": [
         [
           "GitHub",
-          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
+          "https://github.com/fixedbyreboot/CVE-2026-90436-POC"
         ],
         [
           "Vendor Advisory",
-          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-82894",
-      "title": "Proof-of-concept exploits for seven Apache OFBiz vulnerabilities reported in 2026, all fixed in Apache OFBiz.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs",
-      "pocValidation": {
-        "valid": true,
-        "score": 4,
-        "codeFiles": [
-          "cve_2026_73577.py",
-          "cve_2026_73578.py",
-          "cve_2026_82894.py",
-          "cve_2026_83538.py",
-          "cve_2026_83542.py",
-          "cve_2026_84183.py",
-          "cve_2026_84728.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-48728",
-          "CVE-2026-73577",
-          "CVE-2026-73578",
-          "CVE-2026-82894",
-          "CVE-2026-83538",
-          "CVE-2026-83542",
-          "CVE-2026-84183"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Crypto-Cat",
-      "researcherUrl": "https://github.com/Crypto-Cat",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:39 PM CST",
-      "firstSeenAt": "2026-11-05T19:39:39Z",
-      "language": "Python",
-      "summary": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to trigger arbitrary OFBiz service invocation with attacker-controlled parameters, resulting.",
-      "technicalSummary": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to trigger arbitrary OFBiz service invocation with attacker-controlled parameters, resulting.",
-      "breakdown": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to trigger arbitrary OFBiz service invocation with attacker-controlled parameters, resulting.",
-      "whatBroke": "Improper Authorization in ContentWorker in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to trigger arbitrary OFBiz service invocation with attacker-controlled parameters, resulting.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Crypto-Cat/apache-ofbiz-2026-pocs.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs\ncd apache-ofbiz-2026-pocs\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "File Read"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Crypto-Cat/apache-ofbiz-2026-pocs"
-        ],
-        [
-          "Vendor Advisory",
-          "https://lists.apache.org/thread.html/7b2syzksp7klt9fvhdg0olldvs2g83lz"
+          "https://github.com/apache/axis-axis1-java/commit/41f3b4e8d04e310ca81f86b92630ab2c11d608bd"
         ]
       ]
     },
@@ -1285,6 +1299,143 @@
       ]
     },
     {
+      "cve": "CVE-2026-43499",
+      "title": "One-tap temporary root for the Amazon Fire TV Stick 3rd gen (sheldonp), tested only on model AFTSSS / Fire.",
+      "ecosystem": "linux",
+      "category": "kernel",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/DarkDevil-937/make-it-root",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "app/src/com/jhajj/autoroot/BootReceiver.java",
+          "app/src/com/jhajj/autoroot/MainActivity.java",
+          "app/src/com/jhajj/autoroot/RootService.java",
+          "app/src/com/jhajj/autoroot/RootUtil.java",
+          "exploit/aligned_shim.c",
+          "exploit/gl_profile.c",
+          "exploit/gl_root.c",
+          "scripts/build-apk.sh"
+        ],
+        "attackFiles": [
+          "exploit/aligned_shim.c",
+          "exploit/gl_profile.c",
+          "exploit/gl_root.c",
+          "scripts/build-exploit.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-43499"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "DarkDevil-937",
+      "researcherUrl": "https://github.com/DarkDevil-937",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:31 PM CST",
+      "firstSeenAt": "2026-11-11T03:31:57Z",
+      "language": "C",
+      "summary": "One-tap temporary root for the Amazon Fire TV Stick 3rd gen (sheldonp), tested only on model AFTSSS / Fire OS 7.7.1.7. Wraps the GhostLock exploit ().",
+      "technicalSummary": "One-tap temporary root for the Amazon Fire TV Stick 3rd gen (sheldonp), tested only on model AFTSSS / Fire OS 7.7.1.7. Wraps the GhostLock exploit ().",
+      "breakdown": "One-tap temporary root for the Amazon Fire TV Stick 3rd gen (sheldonp), tested only on model AFTSSS / Fire OS 7.7.1.7. Wraps the GhostLock exploit ().",
+      "whatBroke": "One-tap temporary root for the Amazon Fire TV Stick 3rd gen (sheldonp), tested only on model AFTSSS / Fire OS 7.7.1.7. Wraps the GhostLock exploit ().",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at DarkDevil-937/make-it-root.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/DarkDevil-937/make-it-root\ncd make-it-root\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 77,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/DarkDevil-937/make-it-root"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-104711",
+      "title": "POC exploit for CVE-2026-104711 - OGNL injection RCE in Apache Struts legacy REST action mapper (S2-075)..",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/fixedbyreboot/CVE-2026-104711-POC",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "docker-compose.yml",
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-104711"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "fixedbyreboot",
+      "researcherUrl": "https://github.com/fixedbyreboot",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:45 AM CST",
+      "firstSeenAt": "2026-11-10T06:45:07Z",
+      "language": "Python",
+      "summary": "POC exploit for OGNL injection RCE in Apache Struts legacy REST action mapper (S2-075). Vulnerable vs fixed verification included.",
+      "technicalSummary": "POC exploit for OGNL injection RCE in Apache Struts legacy REST action mapper (S2-075). Vulnerable vs fixed verification included.",
+      "breakdown": "POC exploit for OGNL injection RCE in Apache Struts legacy REST action mapper (S2-075). Vulnerable vs fixed verification included.",
+      "whatBroke": "POC exploit for OGNL injection RCE in Apache Struts legacy REST action mapper (S2-075). Vulnerable vs fixed verification included.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at fixedbyreboot/CVE-2026-104711-POC.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/fixedbyreboot/CVE-2026-104711-POC\ncd CVE-2026-104711-POC\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/fixedbyreboot/CVE-2026-104711-POC"
+        ],
+        [
+          "Vendor Advisory",
+          "https://cwiki.apache.org/confluence/display/WW/S2-075"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-125399",
       "title": "Zero-Click, Unauthenticated OS Command Injection via eval() on Attacker-Controlled ESSID in Fluxion",
       "ecosystem": "cloud",
@@ -1341,192 +1492,6 @@
         [
           "GitHub",
           "https://github.com/VulnSVNC/CVE-2026-125399"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/FluxionNetwork/fluxion"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-125757",
-      "title": "Exploit \u2014 mailcow domain-wide footer SSTI via rspamd's jinja/lupa engine, enabling cross-tenant RCE in the.",
-      "ecosystem": "web",
-      "category": "kubernetes",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Faceless0x7/CVE-2026-125757",
-      "pocValidation": {
-        "valid": true,
-        "score": 12,
-        "codeFiles": [
-          "CVE-2026-125757.py"
-        ],
-        "attackFiles": [
-          "CVE-2026-125757.py"
-        ],
-        "hasUsage": true,
-        "cveRefs": [
-          "CVE-2026-125757"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Faceless0x7",
-      "researcherUrl": "https://github.com/Faceless0x7",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:38 AM CST",
-      "firstSeenAt": "2026-11-10T16:38:30Z",
-      "language": "Python",
-      "summary": "Exploit \u2014 mailcow domain-wide footer SSTI via rspamd's jinja/lupa engine, enabling cross-tenant RCE in the shared rspamd container.",
-      "technicalSummary": "Exploit \u2014 mailcow domain-wide footer SSTI via rspamd's jinja/lupa engine, enabling cross-tenant RCE in the shared rspamd container.",
-      "breakdown": "Exploit \u2014 mailcow domain-wide footer SSTI via rspamd's jinja/lupa engine, enabling cross-tenant RCE in the shared rspamd container.",
-      "whatBroke": "Exploit \u2014 mailcow domain-wide footer SSTI via rspamd's jinja/lupa engine, enabling cross-tenant RCE in the shared rspamd container.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Faceless0x7/CVE-2026-125757.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Faceless0x7/CVE-2026-125757\ncd CVE-2026-125757\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Kubernetes",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Faceless0x7/CVE-2026-125757"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/mailcow/mailcow-dockerized/blob/55982ac74bfd35581cc44b122ab5fc659e3ae90a/data/conf/rspamd/lua/rspamd.local.lua#L847-L850"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-73802",
-      "title": "PoC for CVE-2026-73802 - Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9.",
-      "ecosystem": "cloud",
-      "category": "kubernetes",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/sn0x-sharma/Gitea2shell-Sandbox-Escape-to-Host-RCE",
-      "pocValidation": {
-        "valid": true,
-        "score": 7,
-        "codeFiles": [
-          "gitea_act_runner_escape.py"
-        ],
-        "attackFiles": [],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-73802"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "sn0x-sharma",
-      "researcherUrl": "https://github.com/sn0x-sharma",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "4:35 AM CST",
-      "firstSeenAt": "2026-11-09T10:35:17Z",
-      "language": "Python",
-      "summary": "PoC for Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9 Critical. Affects runner < 3.0.0.",
-      "technicalSummary": "PoC for Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9 Critical. Affects runner < 3.0.0.",
-      "breakdown": "PoC for Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9 Critical. Affects runner < 3.0.0.",
-      "whatBroke": "PoC for Gitea act_runner container.options host namespace escape to root RCE. CVSS 9.9 Critical. Affects runner < 3.0.0.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sn0x-sharma/Gitea2shell-Sandbox-Escape-to-Host-RCE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sn0x-sharma/Gitea2shell-Sandbox-Escape-to-Host-RCE\ncd Gitea2shell-Sandbox-Escape-to-Host-RCE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Kubernetes",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/sn0x-sharma/Gitea2shell-Sandbox-Escape-to-Host-RCE"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-100109",
-      "title": "Security For WooCommerce 1.0.10-1.0.16 unauthenticated admin creation (PoC + exploit by thiscitze)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/thiscitze/cve-2026-100109-poc",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-100109"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "thiscitze",
-      "researcherUrl": "https://github.com/thiscitze",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "7:30 AM CST",
-      "firstSeenAt": "2026-11-06T13:30:49Z",
-      "language": "Python",
-      "summary": "Security For WooCommerce 1.0.10-1.0.16 unauthenticated admin creation (PoC + exploit by thiscitze)",
-      "technicalSummary": "Security For WooCommerce 1.0.10-1.0.16 unauthenticated admin creation (PoC + exploit by thiscitze)",
-      "breakdown": "Security For WooCommerce 1.0.10-1.0.16 unauthenticated admin creation (PoC + exploit by thiscitze)",
-      "whatBroke": "Security For WooCommerce 1.0.10-1.0.16 unauthenticated admin creation (PoC + exploit by thiscitze)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at thiscitze/cve-2026-100109-poc.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/thiscitze/cve-2026-100109-poc\ncd cve-2026-100109-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/thiscitze/cve-2026-100109-poc"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wpscan.com/vulnerability/b4d26eb3-ab32-456e-9f69-9ab300fdf44c/"
         ]
       ]
     }
