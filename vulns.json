@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T09:36:26Z",
+  "updatedAt": "2026-11-21T20:00:49Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -321,6 +321,70 @@
   ],
   "vulns": [
     {
+      "cve": "CVE-2026-123158",
+      "title": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+      "ecosystem": "linux",
+      "category": "ssh",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Pauloxc6/CVE-2026-123158",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "CVE-2026-123158.sh"
+        ],
+        "attackFiles": [
+          "CVE-2026-123158.sh"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-123158"
+        ],
+        "language": "Shell"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Pauloxc6",
+      "researcherUrl": "https://github.com/Pauloxc6",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "9:13 AM CST",
+      "firstSeenAt": "2026-11-20T15:13:35Z",
+      "language": "Shell",
+      "summary": "OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass.",
+      "technicalSummary": "OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass.",
+      "breakdown": "OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass.",
+      "whatBroke": "OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Pauloxc6/CVE-2026-123158.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Pauloxc6/CVE-2026-123158\ncd CVE-2026-123158\nbash <script>.sh https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed OpenSSH",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "SSH",
+        "Auth Bypass",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
+      "dayOffset": 1,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Pauloxc6/CVE-2026-123158"
+        ],
+        [
+          "Vendor Advisory",
+          "https://www.openssh.org/releasenotes.html"
+        ]
+      ]
+    },
+    {
       "cve": "CVE-2026-109618",
       "title": "PHP Memory Corruption Vulnerability",
       "ecosystem": "web",
@@ -403,6 +467,7 @@
         "valid": true,
         "score": 9,
         "codeFiles": [
+          ".github/workflows/census.yml",
           ".github/workflows/cpu-detail.yml",
           ".github/workflows/java4shell-check.yml",
           ".github/workflows/pool-sample.yml",
@@ -445,7 +510,7 @@
         "Exploit"
       ],
       "confidence": 98,
-      "weaponization": 73,
+      "weaponization": 99,
       "dayOffset": 0,
       "links": [
         [
@@ -522,86 +587,6 @@
         [
           "Vendor Advisory",
           "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-123007",
-      "title": "NGINX HTTP/2 Vulnerabilities: How to Identify Affected Images and Apply Security Updates",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/sfewer-r7/CVE-2026-123007",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit/exploit.py",
-          "exploit/nginx_rce/__init__.py",
-          "exploit/nginx_rce/bootstrap.py",
-          "exploit/nginx_rce/bulk.py",
-          "exploit/nginx_rce/cli.py",
-          "exploit/nginx_rce/constants.py",
-          "exploit/nginx_rce/memory.py",
-          "exploit/nginx_rce/profiles.py"
-        ],
-        "attackFiles": [
-          "exploit/exploit.py",
-          "exploit/nginx_rce/__init__.py",
-          "exploit/nginx_rce/bootstrap.py",
-          "exploit/nginx_rce/bulk.py",
-          "exploit/nginx_rce/cli.py",
-          "exploit/nginx_rce/constants.py",
-          "exploit/nginx_rce/memory.py",
-          "exploit/nginx_rce/profiles.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-123007"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Aqua Nautilus",
-      "researcherUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "5:16 AM CST",
-      "firstSeenAt": "2026-11-18T11:16:51Z",
-      "language": "Python",
-      "summary": "Proof-of-concept (PoC) scripts for an integer underflow in NGINX HTTP/2.",
-      "technicalSummary": "<img.",
-      "breakdown": "<img.",
-      "whatBroke": "Proof-of-concept (PoC) scripts for an integer underflow in NGINX HTTP/2.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sfewer-r7/CVE-2026-123007.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sfewer-r7/CVE-2026-123007\ncd CVE-2026-123007\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Memory Corruption"
-      ],
-      "confidence": 98,
-      "weaponization": 77,
-      "dayOffset": 3,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/sfewer-r7/CVE-2026-123007"
-        ],
-        [
-          "Technical Paper",
-          "https://www.aquasec.com/blog/nginx-http2-vulnerabilities-affected-images/"
-        ],
-        [
-          "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000163926"
         ]
       ]
     },
@@ -739,79 +724,131 @@
       ]
     },
     {
-      "cve": "CVE-2026-123633",
-      "title": "NGINX HTTP/2 Vulnerabilities: How to Identify Affected Images and Apply Security Updates",
+      "cve": "CVE-2026-119618",
+      "title": "RCE in apache - PYTHON",
       "ecosystem": "web",
-      "category": "kernel",
-      "severity": "high",
+      "category": "webstack",
+      "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/im0xfay/CVE-2026-123007",
+      "pocUrl": "https://github.com/Doseuser/CVE-2026-119618---RCE-in-APACHE",
       "pocValidation": {
         "valid": true,
-        "score": 9,
+        "score": 11,
         "codeFiles": [
-          "lab/build-nginx.sh",
-          "lab/make-lab.sh",
-          "lab/make-vendor.sh",
-          "payloads/agent.sh",
-          "poc.py",
-          "tools/analyze-disclosure.py",
-          "tools/diff-disclosures.py",
-          "tools/memmove-wrap-test.c"
+          "h2.py",
+          "poc.py"
         ],
         "attackFiles": [
-          "poc.py",
-          "tools/trigger-ng.py"
+          "poc.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-123007",
-          "CVE-2026-123633"
+          "CVE-2026-119618"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "Aqua Nautilus",
-      "researcherUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "researcher": "Doseuser",
+      "researcherUrl": "https://github.com/Doseuser",
       "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "9:59 AM CST",
-      "firstSeenAt": "2026-11-19T15:59:21Z",
+      "difficulty": "easy",
+      "added": "1:55 PM CST",
+      "firstSeenAt": "2026-11-16T19:55:59Z",
       "language": "Python",
-      "summary": "nginx2shell (CVE-2026-123007 / ) \u2014 analisa root cause + kenapa ini TIDAK layak secara operasional: 119 GiB/percobaan, CDN memutus h2, terikat glibc target, bukan file PHP di webroot",
-      "technicalSummary": "<img.",
-      "breakdown": "<img.",
-      "whatBroke": "nginx2shell (CVE-2026-123007 / ) \u2014 analisa root cause + kenapa ini TIDAK layak secara operasional: 119 GiB/percobaan, CDN memutus h2, terikat glibc target, bukan file PHP di webroot",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at im0xfay/CVE-2026-123007.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/im0xfay/CVE-2026-123007\ncd CVE-2026-123007\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "RCE in apache - PYTHON",
+      "technicalSummary": "RCE in apache - PYTHON",
+      "breakdown": "RCE in apache - PYTHON",
+      "whatBroke": "RCE in apache - PYTHON",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Doseuser/CVE-2026-119618---RCE-in-APACHE.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Doseuser/CVE-2026-119618---RCE-in-APACHE\ncd CVE-2026-119618---RCE-in-APACHE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
         "webshell or command execution follow-up",
-        "local privilege escalation after a foothold",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
         "Web",
-        "Kernel",
+        "Webstack",
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 77,
+      "weaponization": 85,
+      "dayOffset": 5,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Doseuser/CVE-2026-119618---RCE-in-APACHE"
+        ],
+        [
+          "Vendor Advisory",
+          "https://httpd.apache.org/security/vulnerabilities_24.html"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-115560",
+      "title": "PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8.",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/LLCForge/CVE-2026-115560",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-115560"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "LLCForge",
+      "researcherUrl": "https://github.com/LLCForge",
+      "pocWorks": "Yes",
+      "difficulty": "easy",
+      "added": "4:03 PM CST",
+      "firstSeenAt": "2026-11-19T22:03:44Z",
+      "language": "Python",
+      "summary": "- PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8 Critical.",
+      "technicalSummary": "- PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8 Critical.",
+      "breakdown": "- PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8 Critical.",
+      "whatBroke": "- PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8 Critical.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at LLCForge/CVE-2026-115560.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/LLCForge/CVE-2026-115560\ncd CVE-2026-115560\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 99,
       "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/im0xfay/CVE-2026-123007"
-        ],
-        [
-          "Technical Paper",
-          "https://www.aquasec.com/blog/nginx-http2-vulnerabilities-affected-images/"
+          "https://github.com/LLCForge/CVE-2026-115560"
         ],
         [
           "Vendor Advisory",
-          "https://my.f5.com/manage/s/article/K000163928"
+          "https://github.com/php/php-src/security/advisories/GHSA-658j-r8rw-q6mx"
         ]
       ]
     },
@@ -866,7 +903,7 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 74,
+      "weaponization": 75,
       "dayOffset": 3,
       "links": [
         [
@@ -876,71 +913,6 @@
         [
           "Vendor Advisory",
           "https://www.dell.com/support/kbdoc/en-us/000527640/dsa-2026-479-dell-powerstore-t-security-update-for-multiple-vulnerabilities"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-119618",
-      "title": "RCE in apache - PYTHON",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/Doseuser/CVE-2026-119618---RCE-in-APACHE",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "h2.py",
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-119618"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Doseuser",
-      "researcherUrl": "https://github.com/Doseuser",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "1:55 PM CST",
-      "firstSeenAt": "2026-11-16T19:55:59Z",
-      "language": "Python",
-      "summary": "RCE in apache - PYTHON",
-      "technicalSummary": "RCE in apache - PYTHON",
-      "breakdown": "RCE in apache - PYTHON",
-      "whatBroke": "RCE in apache - PYTHON",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Doseuser/CVE-2026-119618---RCE-in-APACHE.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Doseuser/CVE-2026-119618---RCE-in-APACHE\ncd CVE-2026-119618---RCE-in-APACHE\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 5,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/Doseuser/CVE-2026-119618---RCE-in-APACHE"
-        ],
-        [
-          "Vendor Advisory",
-          "https://httpd.apache.org/security/vulnerabilities_24.html"
         ]
       ]
     },
@@ -1009,13 +981,93 @@
       ]
     },
     {
-      "cve": "CVE-2026-115560",
-      "title": "PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8.",
+      "cve": "CVE-2026-123007",
+      "title": "NGINX HTTP/2 Vulnerabilities: How to Identify Affected Images and Apply Security Updates",
       "ecosystem": "web",
       "category": "webstack",
       "severity": "critical",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/LLCForge/CVE-2026-115560",
+      "pocUrl": "https://github.com/sfewer-r7/CVE-2026-123007",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "exploit/exploit.py",
+          "exploit/nginx_rce/__init__.py",
+          "exploit/nginx_rce/bootstrap.py",
+          "exploit/nginx_rce/bulk.py",
+          "exploit/nginx_rce/cli.py",
+          "exploit/nginx_rce/constants.py",
+          "exploit/nginx_rce/memory.py",
+          "exploit/nginx_rce/profiles.py"
+        ],
+        "attackFiles": [
+          "exploit/exploit.py",
+          "exploit/nginx_rce/__init__.py",
+          "exploit/nginx_rce/bootstrap.py",
+          "exploit/nginx_rce/bulk.py",
+          "exploit/nginx_rce/cli.py",
+          "exploit/nginx_rce/constants.py",
+          "exploit/nginx_rce/memory.py",
+          "exploit/nginx_rce/profiles.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-123007"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Aqua Nautilus",
+      "researcherUrl": "https://www.aquasec.com/cloud-native-academy/aqua-research/",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "5:16 AM CST",
+      "firstSeenAt": "2026-11-18T11:16:51Z",
+      "language": "Python",
+      "summary": "Proof-of-concept (PoC) scripts for an integer underflow in NGINX HTTP/2.",
+      "technicalSummary": "<img.",
+      "breakdown": "<img.",
+      "whatBroke": "Proof-of-concept (PoC) scripts for an integer underflow in NGINX HTTP/2.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at sfewer-r7/CVE-2026-123007.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/sfewer-r7/CVE-2026-123007\ncd CVE-2026-123007\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Memory Corruption"
+      ],
+      "confidence": 98,
+      "weaponization": 96,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/sfewer-r7/CVE-2026-123007"
+        ],
+        [
+          "Technical Paper",
+          "https://www.aquasec.com/blog/nginx-http2-vulnerabilities-affected-images/"
+        ],
+        [
+          "Vendor Advisory",
+          "https://my.f5.com/manage/s/article/K000163926"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-129039",
+      "title": "Tribulant Newsletters WordPress Deserialization RCE",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/LLCForge/CVE-2026-129039",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -1027,7 +1079,7 @@
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-115560"
+          "CVE-2026-129039"
         ],
         "language": "Python"
       },
@@ -1035,16 +1087,16 @@
       "researcher": "LLCForge",
       "researcherUrl": "https://github.com/LLCForge",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "4:03 PM CST",
-      "firstSeenAt": "2026-11-19T22:03:44Z",
+      "difficulty": "moderate",
+      "added": "12:43 AM CST",
+      "firstSeenAt": "2026-11-21T06:43:32Z",
       "language": "Python",
-      "summary": "- PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8 Critical.",
-      "technicalSummary": "- PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8 Critical.",
-      "breakdown": "- PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8 Critical.",
-      "whatBroke": "- PHP Session Upload Progress Serialize-Handler Mismatch -> Unauthenticated Object Injection / RCE. CVSS 9.8 Critical.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at LLCForge/CVE-2026-115560.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/LLCForge/CVE-2026-115560\ncd CVE-2026-115560\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "Tribulant Newsletters WordPress Deserialization RCE",
+      "technicalSummary": "Tribulant Newsletters WordPress Deserialization RCE",
+      "breakdown": "Tribulant Newsletters WordPress Deserialization RCE",
+      "whatBroke": "Tribulant Newsletters WordPress Deserialization RCE",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at LLCForge/CVE-2026-129039.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/LLCForge/CVE-2026-129039\ncd CVE-2026-129039\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
         "initial access through exposed the affected product",
         "credential access from service context",
@@ -1059,16 +1111,82 @@
         "RCE"
       ],
       "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 2,
+      "weaponization": 73,
+      "dayOffset": 0,
       "links": [
         [
           "GitHub",
-          "https://github.com/LLCForge/CVE-2026-115560"
+          "https://github.com/LLCForge/CVE-2026-129039"
         ],
         [
           "Vendor Advisory",
-          "https://github.com/php/php-src/security/advisories/GHSA-658j-r8rw-q6mx"
+          "https://patchstack.com/database/wordpress/plugin/newsletters-lite/vulnerability/wordpress-newsletters-plugin-4-18-2-php-object-injection-vulnerability-2?_s_id=cve"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-130847",
+      "title": "Dolibarr Users API improper authorization \u2014 write-up + PoC",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Zer0Breach/CVE-2026-130847",
+      "pocValidation": {
+        "valid": true,
+        "score": 12,
+        "codeFiles": [
+          "poc/CVE-2026-130847-poc.py",
+          "poc/cve-2026-130847_users_api_reset_admin_password.py",
+          "poc/poc_lib.py"
+        ],
+        "attackFiles": [
+          "poc/CVE-2026-130847-poc.py",
+          "poc/cve-2026-130847_users_api_reset_admin_password.py",
+          "poc/poc_lib.py"
+        ],
+        "hasUsage": true,
+        "cveRefs": [
+          "CVE-2026-130847"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Zer0Breach",
+      "researcherUrl": "https://github.com/Zer0Breach",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "7:03 AM CST",
+      "firstSeenAt": "2026-11-21T13:03:32Z",
+      "language": "Python",
+      "summary": "Dolibarr Users API improper authorization \u2014 write-up + PoC",
+      "technicalSummary": "Dolibarr Users API improper authorization \u2014 write-up + PoC",
+      "breakdown": "Dolibarr Users API improper authorization \u2014 write-up + PoC",
+      "whatBroke": "Dolibarr Users API improper authorization \u2014 write-up + PoC",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Zer0Breach/CVE-2026-130847.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Zer0Breach/CVE-2026-130847\ncd CVE-2026-130847\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "Exploit"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Zer0Breach/CVE-2026-130847"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/Dolibarr/dolibarr/blob/24.0.1/htdocs/user/class/api_users.class.php#L482-L489"
         ]
       ]
     },
@@ -1202,74 +1320,6 @@
         [
           "Vendor Advisory",
           "https://github.com/baserproject/basercms/commit/2d7f74d3d5d584b9478c210016b81a1b7c30e9fb"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-110486",
-      "title": "Mosquitto 2.1-2.1.2: net__read_ws returns 4 for a zero-length WebSocket data frame without writing payload,.",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/googlesky/CVE-2026-110486",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit/exploit.py",
-          "lab/supervisor.py",
-          "poc/poc.py",
-          "run-lab.sh"
-        ],
-        "attackFiles": [
-          "exploit/exploit.py",
-          "poc/poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-110486"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "googlesky",
-      "researcherUrl": "https://github.com/googlesky",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "12:18 AM CST",
-      "firstSeenAt": "2026-11-19T06:18:50Z",
-      "language": "Python",
-      "summary": "Mosquitto 2.1-2.1.2: net__read_ws returns 4 for a zero-length WebSocket data frame without writing payload, so the MQTT parser reads uninitialised heap bytes in CONNECT before auth. ASan differential of real broker 2.1.2 vs.",
-      "technicalSummary": "Mosquitto 2.1-2.1.2: net__read_ws returns 4 for a zero-length WebSocket data frame without writing payload, so the MQTT parser reads uninitialised heap bytes in CONNECT before auth. ASan differential of real broker 2.1.2 vs.",
-      "breakdown": "Mosquitto 2.1-2.1.2: net__read_ws returns 4 for a zero-length WebSocket data frame without writing payload, so the MQTT parser reads uninitialised heap bytes in CONNECT before auth. ASan differential of real broker 2.1.2 vs.",
-      "whatBroke": "Mosquitto 2.1-2.1.2: net__read_ws returns 4 for a zero-length WebSocket data frame without writing payload, so the MQTT parser reads uninitialised heap bytes in CONNECT before auth. ASan differential of real broker 2.1.2 vs.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at googlesky/CVE-2026-110486.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/googlesky/CVE-2026-110486\ncd CVE-2026-110486\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/googlesky/CVE-2026-110486"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/eclipse-mosquitto/mosquitto/security/advisories/GHSA-6j8m-r32v-4h38"
         ]
       ]
     }
