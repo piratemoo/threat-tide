@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T22:23:20Z",
+  "updatedAt": "2026-11-26T10:43:24Z",
   "cadence": "3x daily",
   "proofPolicy": "verified working public pocs",
   "sources": [
@@ -87,13 +87,30 @@
   ],
   "research": [
     {
+      "title": "What Two Million Canary Prompts Reveal About AI Supply Chain Security",
+      "source": "Qualys Research",
+      "sourceUrl": "https://blog.qualys.com/",
+      "url": "https://blog.qualys.com/product-tech/2026/11/25/ai-prompt-leaks-dragos-canary-study-ai-supply-chain",
+      "summary": "Executive Summary To evaluate the security of the AI supply chain, Dragos seeded approximately two million AI prompts with canary URLs and credentials. The investigation revealed that prompt data was stolen from at least three AI hosting providers and from.",
+      "publishedAt": "2026-11-26T05:33:42Z",
+      "dayOffset": 1,
+      "ecosystem": "windows",
+      "category": "vpn-edge",
+      "topic": "research",
+      "cves": [],
+      "tags": [
+        "Windows",
+        "VPN Edge"
+      ]
+    },
+    {
       "title": "CVE-2026-123890 | VMware vCenter Directory Service Authentication Bypass Vulnerability",
       "source": "Horizon3 Attack Team",
       "sourceUrl": "https://x.com/Horizon3Attack",
       "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-123890/",
       "summary": "CVE-2026-123890 is a critical authentication bypass in the VMware Directory Service component of VMware vCenter. An attacker with network access to vCenter, and no credentials, can obtain an authenticated session as the built-in administrator@vsphere.local.",
       "publishedAt": "2026-11-25T22:09:46Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -113,7 +130,7 @@
       "url": "https://blog.talosintelligence.com/oh-is-it-thanksgiving-i-hadnt-noticed/",
       "summary": "I tried hard not to write another typical \u201cThanksgiving article.\u201d Obviously, I failed. But you know what? It is Thanksgiving week here in the U.S., and coming up with fun, interesting, short form topics is hard , especially when you\u2019re fighting the weight of.",
       "publishedAt": "2026-11-25T19:00:00Z",
-      "dayOffset": 0,
+      "dayOffset": 1,
       "ecosystem": "windows",
       "category": "webstack",
       "topic": "ios",
@@ -126,13 +143,27 @@
       ]
     },
     {
+      "title": "icsScanner: Safe Active Vulnerability Scanning for ICS and OT Networks",
+      "source": "Bishop Fox",
+      "sourceUrl": "https://x.com/BishopFox",
+      "url": "https://bishopfox.com/blog/icsscanner-safe-vulnerability-scanning-ics-ot",
+      "summary": "Most scanners avoid ICS and OT networks because one bad probe can crash a PLC. Bishop Fox built icsScanner to fingerprint before every probe, cap confidence at what the evidence supports, and isolate physical-actuation findings in a separate tier. Learn how.",
+      "publishedAt": "2026-11-25T14:00:00Z",
+      "dayOffset": 1,
+      "ecosystem": "research",
+      "category": "research",
+      "topic": "research",
+      "cves": [],
+      "tags": []
+    },
+    {
       "title": "NGINX HTTP/2 Use-After-Free: CVE-2026-123633",
       "source": "Unit 42",
       "sourceUrl": "https://unit42.paloaltonetworks.com/",
       "url": "https://unit42.paloaltonetworks.com/cve-2026-123633-nginx-http2-vulnerability/",
       "summary": "Technical analysis of CVE-2026-123633, an NGINX HTTP/2 use-after-free flaw, with details on affected versions, sanitizer tests, and patch guidance. The post NGINX HTTP/2 Use-After-Free: CVE-2026-123633 appeared first on Unit 42 .",
       "publishedAt": "2026-11-24T23:00:14Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "kernel",
       "topic": "research",
@@ -152,7 +183,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1159/",
       "summary": "This vulnerability allows local attackers to disclose sensitive information on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The.",
       "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -170,7 +201,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1158/",
       "summary": "This vulnerability allows local attackers to escalate privileges on affected installations of X.Org Server. An attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability. The ZDI has.",
       "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -188,7 +219,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1157/",
       "summary": "This vulnerability allows remote attackers to escalate privileges on affected installations of ASUS Control Center Express. Authentication is required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 9.9. The following CVEs are assigned:.",
       "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -208,7 +239,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1156/",
       "summary": "This vulnerability allows remote attackers to bypass authentication of affected installations of ASUS Control Center Express. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 9.0. The following CVEs are.",
       "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -228,7 +259,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1155/",
       "summary": "This vulnerability allows remote attackers to bypass authentication on affected installations of ASUS Control Center Express. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 10.0. The following CVEs are.",
       "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "web",
       "category": "webstack",
       "topic": "research",
@@ -248,7 +279,7 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1154/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Oracle Outside In Technology. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious.",
       "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
@@ -266,48 +297,12 @@
       "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1153/",
       "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Oracle Outside In Technology. Interaction with this library is required to exploit this vulnerability but attack vectors may vary depending on the.",
       "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
+      "dayOffset": 2,
       "ecosystem": "research",
       "category": "research",
       "topic": "research",
       "cves": [
         "CVE-2026-91459"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-1152: Oracle Outside In Technology TIFF File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1152/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Oracle Outside In Technology. Interaction with this library is required to exploit this vulnerability but attack vectors may vary depending on the.",
-      "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-91460"
-      ],
-      "tags": [
-        "RCE"
-      ]
-    },
-    {
-      "title": "ZDI-26-1151: Oracle Outside In Technology BMP File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability",
-      "source": "ZDI",
-      "sourceUrl": "https://x.com/thezdi",
-      "url": "http://www.zerodayinitiative.com/advisories/ZDI-26-1151/",
-      "summary": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Oracle Outside In Technology. Interaction with this library is required to exploit this vulnerability but attack vectors may vary depending on the.",
-      "publishedAt": "2026-11-24T06:00:00Z",
-      "dayOffset": 1,
-      "ecosystem": "research",
-      "category": "research",
-      "topic": "research",
-      "cves": [
-        "CVE-2026-91457"
       ],
       "tags": [
         "RCE"
@@ -368,7 +363,7 @@
       ],
       "confidence": 98,
       "weaponization": 77,
-      "dayOffset": 3,
+      "dayOffset": 4,
       "links": [
         [
           "GitHub",
@@ -381,77 +376,6 @@
         [
           "Vendor Advisory",
           "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-133968",
-      "title": "Project MONAI MONAI Label Path Traversal Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/googlesky/CVE-2026-133968",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "exploit/exploit.py",
-          "lab/harness-fixed.py",
-          "lab/harness-vuln.py",
-          "lab/service.py",
-          "poc/poc.py",
-          "run-lab.sh"
-        ],
-        "attackFiles": [
-          "exploit/exploit.py",
-          "poc/poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-133968"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "googlesky",
-      "researcherUrl": "https://github.com/googlesky",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "4:09 AM CST",
-      "firstSeenAt": "2026-11-24T10:09:56Z",
-      "language": "Python",
-      "summary": "MONAI Label <=0.8.5: image IDs/label tags concatenated into datastore write paths with no confinement \u2014../ traversal gives arbitrary file write/RCE (CISA KEV). Verbatim _confine_path from 113527b^ vs fix: /etc/cron.d/pwn write.",
-      "technicalSummary": "MONAI Label <=0.8.5: image IDs/label tags concatenated into datastore write paths with no confinement \u2014../ traversal gives arbitrary file write/RCE (CISA KEV). Verbatim _confine_path from 113527b^ vs fix: /etc/cron.d/pwn write.",
-      "breakdown": "MONAI Label <=0.8.5: image IDs/label tags concatenated into datastore write paths with no confinement \u2014../ traversal gives arbitrary file write/RCE (CISA KEV). Verbatim _confine_path from 113527b^ vs fix: /etc/cron.d/pwn write.",
-      "whatBroke": "MONAI Label <=0.8.5: image IDs/label tags concatenated into datastore write paths with no confinement \u2014../ traversal gives arbitrary file write/RCE (CISA KEV). Verbatim _confine_path from 113527b^ vs fix: /etc/cron.d/pwn write.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at googlesky/CVE-2026-133968.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/googlesky/CVE-2026-133968\ncd CVE-2026-133968\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed MONAI Label",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 94,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/googlesky/CVE-2026-133968"
-        ],
-        [
-          "Vendor Advisory",
-          "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
         ]
       ]
     },
@@ -513,7 +437,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 4,
+      "dayOffset": 5,
       "links": [
         [
           "GitHub",
@@ -526,66 +450,68 @@
       ]
     },
     {
-      "cve": "CVE-2026-123158",
-      "title": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
-      "ecosystem": "linux",
-      "category": "ssh",
+      "cve": "CVE-2026-114938",
+      "title": "A Technical Guide to Mitigate Java4Shell with TruRisk Eliminate",
+      "ecosystem": "cloud",
+      "category": "devops",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/cveForge/CVE-2026-123158",
+      "pocUrl": "https://github.com/jburgess-r7/java4shell-teamcity-poc",
       "pocValidation": {
         "valid": true,
-        "score": 11,
+        "score": 9,
         "codeFiles": [
-          "poc.py"
+          "exploit.py"
         ],
         "attackFiles": [
-          "poc.py"
+          "exploit.py"
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-123158"
+          "CVE-2026-114938"
         ],
         "language": "Python"
       },
       "reliability": "reliable exploit",
-      "researcher": "cveForge",
-      "researcherUrl": "https://github.com/cveForge",
+      "researcher": "Qualys Research",
+      "researcherUrl": "https://blog.qualys.com/",
       "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "6:44 PM CST",
-      "firstSeenAt": "2026-11-24T00:44:53Z",
+      "difficulty": "moderate",
+      "added": "4:53 AM CST",
+      "firstSeenAt": "2026-11-24T10:53:00Z",
       "language": "Python",
-      "summary": "PoC for \u2014 OpenSSH Authentication Bypass",
-      "technicalSummary": "PoC for \u2014 OpenSSH Authentication Bypass",
-      "breakdown": "PoC for \u2014 OpenSSH Authentication Bypass",
-      "whatBroke": "PoC for \u2014 OpenSSH Authentication Bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cveForge/CVE-2026-123158.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cveForge/CVE-2026-123158\ncd CVE-2026-123158\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PoC for command execution through TeamCity 2026.1.5 and 2026.2.1\u2019s server-side Kotlin DSL sandbox. Requires write access to the configured Git settings repository.",
+      "technicalSummary": "Executive Summary Java4Shell (CVE-2026-114938) is a heap out-of-bounds write in HotSpot\u2019s AVX-512 Base64 decoder on.",
+      "breakdown": "Executive Summary Java4Shell (CVE-2026-114938) is a heap out-of-bounds write in HotSpot\u2019s AVX-512 Base64 decoder on.",
+      "whatBroke": "PoC for command execution through TeamCity 2026.1.5 and 2026.2.1\u2019s server-side Kotlin DSL sandbox. Requires write access to the configured Git settings repository.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at jburgess-r7/java4shell-teamcity-poc.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/jburgess-r7/java4shell-teamcity-poc\ncd java4shell-teamcity-poc\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed OpenSSH",
-        "credential access from service context",
-        "webshell or command execution follow-up",
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Linux",
-        "SSH",
-        "Auth Bypass",
-        "KEV"
+        "Cloud",
+        "DevOps",
+        "Exploit"
       ],
       "confidence": 98,
-      "weaponization": 84,
+      "weaponization": 99,
       "dayOffset": 2,
       "links": [
         [
           "GitHub",
-          "https://github.com/cveForge/CVE-2026-123158"
+          "https://github.com/jburgess-r7/java4shell-teamcity-poc"
+        ],
+        [
+          "Technical Paper",
+          "https://blog.qualys.com/qualys-insights/2026/11/20/a-technical-guide-to-mitigate-java4shell-with-trurisk-eliminate"
         ],
         [
           "Vendor Advisory",
-          "https://www.openssh.org/releasenotes.html"
+          "https://www.oracle.com/security-alerts/cspunov2026.html"
         ]
       ]
     },
@@ -642,7 +568,7 @@
       ],
       "confidence": 98,
       "weaponization": 74,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -651,6 +577,71 @@
         [
           "Vendor Advisory",
           "https://me.n-able.com/s/security-advisory/aArVy0000002mrlKAA"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-119977",
+      "title": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+      "ecosystem": "web",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/cveForge/CVE-2026-119977",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "poc.py"
+        ],
+        "attackFiles": [
+          "poc.py"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-119977"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "cveForge",
+      "researcherUrl": "https://github.com/cveForge",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "6:40 PM CST",
+      "firstSeenAt": "2026-11-24T00:40:53Z",
+      "language": "Python",
+      "summary": "PoC for \u2014 WordPress Core TOCTOU Race Condition",
+      "technicalSummary": "PoC for \u2014 WordPress Core TOCTOU Race Condition",
+      "breakdown": "PoC for \u2014 WordPress Core TOCTOU Race Condition",
+      "whatBroke": "PoC for \u2014 WordPress Core TOCTOU Race Condition",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cveForge/CVE-2026-119977.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cveForge/CVE-2026-119977\ncd CVE-2026-119977\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed WordPress Core",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Web",
+        "Webstack",
+        "RCE",
+        "KEV"
+      ],
+      "confidence": 98,
+      "weaponization": 74,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/cveForge/CVE-2026-119977"
+        ],
+        [
+          "Vendor Advisory",
+          "https://wordpress.org/news/2026/10/wordpress-7-1-4"
         ]
       ]
     },
@@ -710,7 +701,7 @@
       ],
       "confidence": 98,
       "weaponization": 76,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -719,206 +710,6 @@
         [
           "Vendor Advisory",
           "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0048.md"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-119977",
-      "title": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/cveForge/CVE-2026-119977",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-119977"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "cveForge",
-      "researcherUrl": "https://github.com/cveForge",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "6:40 PM CST",
-      "firstSeenAt": "2026-11-24T00:40:53Z",
-      "language": "Python",
-      "summary": "PoC for \u2014 WordPress Core TOCTOU Race Condition",
-      "technicalSummary": "PoC for \u2014 WordPress Core TOCTOU Race Condition",
-      "breakdown": "PoC for \u2014 WordPress Core TOCTOU Race Condition",
-      "whatBroke": "PoC for \u2014 WordPress Core TOCTOU Race Condition",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cveForge/CVE-2026-119977.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cveForge/CVE-2026-119977\ncd CVE-2026-119977\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed WordPress Core",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "RCE",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 74,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/cveForge/CVE-2026-119977"
-        ],
-        [
-          "Vendor Advisory",
-          "https://wordpress.org/news/2026/10/wordpress-7-1-4"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-116606",
-      "title": "Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel.",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/cveForge/CVE-2026-116606",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-116606"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "cveForge",
-      "researcherUrl": "https://github.com/cveForge",
-      "pocWorks": "Yes",
-      "difficulty": "easy",
-      "added": "6:39 PM CST",
-      "firstSeenAt": "2026-11-24T00:39:19Z",
-      "language": "Python",
-      "summary": "PoC for \u2014 Barracuda ESG Authentication Bypass",
-      "technicalSummary": "PoC for \u2014 Barracuda ESG Authentication Bypass",
-      "breakdown": "PoC for \u2014 Barracuda ESG Authentication Bypass",
-      "whatBroke": "PoC for \u2014 Barracuda ESG Authentication Bypass",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cveForge/CVE-2026-116606.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cveForge/CVE-2026-116606\ncd CVE-2026-116606\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed Barracuda Email Security Gateway (ESG)",
-        "credential access from service context",
-        "webshell or command execution follow-up",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Auth Bypass",
-        "KEV"
-      ],
-      "confidence": 98,
-      "weaponization": 84,
-      "dayOffset": 2,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/cveForge/CVE-2026-116606"
-        ],
-        [
-          "Vendor Advisory",
-          "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-114938",
-      "title": "A Technical Guide to Mitigate Java4Shell with TruRisk Eliminate",
-      "ecosystem": "cloud",
-      "category": "webstack",
-      "severity": "high",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/rzkyp/java4shell-lab",
-      "pocValidation": {
-        "valid": true,
-        "score": 9,
-        "codeFiles": [
-          "VulnApp.java",
-          "create_lab.py",
-          "detect.py",
-          "exploit_poc.py",
-          "menu.py"
-        ],
-        "attackFiles": [
-          "exploit_poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-114938"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "Qualys Research",
-      "researcherUrl": "https://blog.qualys.com/",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "3:43 AM CST",
-      "firstSeenAt": "2026-11-19T09:43:35Z",
-      "language": "Python",
-      "summary": "Java4Shell () lab \u2014 vulnerable OpenJDK Base64 decoder web target, detector, exploit PoC, CLI menu. Dev colab with Hermes.",
-      "technicalSummary": "Executive Summary Java4Shell (CVE-2026-114938) is a heap out-of-bounds write in HotSpot\u2019s AVX-512 Base64 decoder on.",
-      "breakdown": "Executive Summary Java4Shell (CVE-2026-114938) is a heap out-of-bounds write in HotSpot\u2019s AVX-512 Base64 decoder on.",
-      "whatBroke": "Java4Shell () lab \u2014 vulnerable OpenJDK Base64 decoder web target, detector, exploit PoC, CLI menu. Dev colab with Hermes.",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at rzkyp/java4shell-lab.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/rzkyp/java4shell-lab\ncd java4shell-lab\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Cloud",
-        "Webstack",
-        "Exploit"
-      ],
-      "confidence": 98,
-      "weaponization": 99,
-      "dayOffset": 6,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/rzkyp/java4shell-lab"
-        ],
-        [
-          "Technical Paper",
-          "https://blog.qualys.com/qualys-insights/2026/11/20/a-technical-guide-to-mitigate-java4shell-with-trurisk-eliminate"
-        ],
-        [
-          "Vendor Advisory",
-          "https://www.oracle.com/security-alerts/cspunov2026.html"
         ]
       ]
     },
@@ -974,7 +765,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -1038,7 +829,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1101,7 +892,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 2,
+      "dayOffset": 3,
       "links": [
         [
           "GitHub",
@@ -1110,68 +901,6 @@
         [
           "Vendor Advisory",
           "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US"
-        ]
-      ]
-    },
-    {
-      "cve": "CVE-2026-107654",
-      "title": "PoC for CVE-2026-107654 \u2014 WPGuppy WordPress AJAX SQL Injection (CVSS 7.5)",
-      "ecosystem": "web",
-      "category": "webstack",
-      "severity": "critical",
-      "proof": "working public poc",
-      "pocUrl": "https://github.com/cveForge/CVE-2026-107654",
-      "pocValidation": {
-        "valid": true,
-        "score": 11,
-        "codeFiles": [
-          "poc.py"
-        ],
-        "attackFiles": [
-          "poc.py"
-        ],
-        "hasUsage": false,
-        "cveRefs": [
-          "CVE-2026-107654"
-        ],
-        "language": "Python"
-      },
-      "reliability": "reliable exploit",
-      "researcher": "cveForge",
-      "researcherUrl": "https://github.com/cveForge",
-      "pocWorks": "Yes",
-      "difficulty": "moderate",
-      "added": "10:10 AM CST",
-      "firstSeenAt": "2026-11-24T16:10:57Z",
-      "language": "Python",
-      "summary": "PoC for \u2014 WPGuppy WordPress AJAX SQL Injection (CVSS 7.5)",
-      "technicalSummary": "PoC for \u2014 WPGuppy WordPress AJAX SQL Injection (CVSS 7.5)",
-      "breakdown": "PoC for \u2014 WPGuppy WordPress AJAX SQL Injection (CVSS 7.5)",
-      "whatBroke": "PoC for \u2014 WPGuppy WordPress AJAX SQL Injection (CVSS 7.5)",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cveForge/CVE-2026-107654.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cveForge/CVE-2026-107654\ncd CVE-2026-107654\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
-      "chains": [
-        "initial access through exposed the affected product",
-        "internal pivot from an internet-facing control point",
-        "lateral movement if secrets or management access are recovered"
-      ],
-      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
-      "tags": [
-        "Web",
-        "Webstack",
-        "Session Theft"
-      ],
-      "confidence": 98,
-      "weaponization": 73,
-      "dayOffset": 1,
-      "links": [
-        [
-          "GitHub",
-          "https://github.com/cveForge/CVE-2026-107654"
-        ],
-        [
-          "Vendor Advisory",
-          "https://downloads.wordpress.org/plugin/wpguppy-lite.1.1.7.zip"
         ]
       ]
     },
@@ -1227,7 +956,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1288,7 +1017,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1350,7 +1079,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1412,7 +1141,7 @@
       ],
       "confidence": 98,
       "weaponization": 73,
-      "dayOffset": 1,
+      "dayOffset": 2,
       "links": [
         [
           "GitHub",
@@ -1425,13 +1154,82 @@
       ]
     },
     {
-      "cve": "CVE-2026-123039",
-      "title": "Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
-      "ecosystem": "cloud",
-      "category": "vpn-edge",
+      "cve": "CVE-2026-99491",
+      "title": "\u2014 wacom HID sibling UAF LPE (uhid \u2192 KernelSU temp root), 5.15 EXP.",
+      "ecosystem": "linux",
+      "category": "kernel",
       "severity": "high",
       "proof": "working public poc",
-      "pocUrl": "https://github.com/cveForge/CVE-2026-123039",
+      "pocUrl": "https://github.com/woshigenm/CVE-2026-99491",
+      "pocValidation": {
+        "valid": true,
+        "score": 11,
+        "codeFiles": [
+          "scripts/leak/gen_rdesc.py",
+          "scripts/leak/leakgen.c",
+          "scripts/leak/run-leak.sh",
+          "src/exp.c",
+          "src/ko_patch.c",
+          "src/ksu_boot.c",
+          "src/poc.c"
+        ],
+        "attackFiles": [
+          "src/exp.c",
+          "src/poc.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-99491"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "woshigenm",
+      "researcherUrl": "https://github.com/woshigenm",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "3:00 PM CST",
+      "firstSeenAt": "2026-11-20T21:00:57Z",
+      "language": "C",
+      "summary": "\u2014 wacom HID sibling UAF LPE (uhid \u2192 KernelSU temp root), 5.15 EXP.",
+      "technicalSummary": "\u2014 wacom HID sibling UAF LPE (uhid \u2192 KernelSU temp root), 5.15 EXP.",
+      "breakdown": "\u2014 wacom HID sibling UAF LPE (uhid \u2192 KernelSU temp root), 5.15 EXP.",
+      "whatBroke": "\u2014 wacom HID sibling UAF LPE (uhid \u2192 KernelSU temp root), 5.15 EXP.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at woshigenm/CVE-2026-99491.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/woshigenm/CVE-2026-99491\ncd CVE-2026-99491\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "local privilege escalation after a foothold",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Kernel",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 6,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/woshigenm/CVE-2026-99491"
+        ],
+        [
+          "Vendor Advisory",
+          "https://git.kernel.org/stable/c/1178927ffa54a1f9e52fa4e5974862023237fce6"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-135208",
+      "title": "PoC for CVE-2026-135208 \u2014 Kerberos Agent Auth Bypass Forged Admin JWT (CVSS 9.8)",
+      "ecosystem": "windows",
+      "category": "kerberos",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/cveForge/CVE-2026-135208",
       "pocValidation": {
         "valid": true,
         "score": 11,
@@ -1443,7 +1241,7 @@
         ],
         "hasUsage": false,
         "cveRefs": [
-          "CVE-2026-123039"
+          "CVE-2026-135208"
         ],
         "language": "Python"
       },
@@ -1452,26 +1250,27 @@
       "researcherUrl": "https://github.com/cveForge",
       "pocWorks": "Yes",
       "difficulty": "moderate",
-      "added": "6:40 PM CST",
-      "firstSeenAt": "2026-11-24T00:40:33Z",
+      "added": "9:07 AM CST",
+      "firstSeenAt": "2026-11-24T15:07:30Z",
       "language": "Python",
-      "summary": "PoC for \u2014 Check Point Quantum Permission Assignment",
-      "technicalSummary": "PoC for \u2014 Check Point Quantum Permission Assignment",
-      "breakdown": "PoC for \u2014 Check Point Quantum Permission Assignment",
-      "whatBroke": "PoC for \u2014 Check Point Quantum Permission Assignment",
-      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cveForge/CVE-2026-123039.",
-      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cveForge/CVE-2026-123039\ncd CVE-2026-123039\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "summary": "PoC for \u2014 Kerberos Agent Auth Bypass Forged Admin JWT (CVSS 9.8)",
+      "technicalSummary": "PoC for \u2014 Kerberos Agent Auth Bypass Forged Admin JWT (CVSS 9.8)",
+      "breakdown": "PoC for \u2014 Kerberos Agent Auth Bypass Forged Admin JWT (CVSS 9.8)",
+      "whatBroke": "PoC for \u2014 Kerberos Agent Auth Bypass Forged Admin JWT (CVSS 9.8)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at cveForge/CVE-2026-135208.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/cveForge/CVE-2026-135208\ncd CVE-2026-135208\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
       "chains": [
-        "initial access through exposed Multiple Products",
-        "internal pivot from an internet-facing control point",
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "identity escalation or relay path",
         "lateral movement if secrets or management access are recovered"
       ],
       "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
       "tags": [
-        "Cloud",
-        "VPN Edge",
-        "Exploit",
-        "KEV"
+        "Windows",
+        "Kerberos",
+        "Auth Bypass"
       ],
       "confidence": 98,
       "weaponization": 73,
@@ -1479,11 +1278,198 @@
       "links": [
         [
           "GitHub",
-          "https://github.com/cveForge/CVE-2026-123039"
+          "https://github.com/cveForge/CVE-2026-135208"
         ],
         [
           "Vendor Advisory",
-          "https://support.checkpoint.com/results/sk/sk1000362"
+          "https://github.com/kerberos-io/agent/blob/v3.14.1/machinery/src/routers/http/jwt_middleware.go#L17-L28"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-61512",
+      "title": "command injection privilege escalation exploit",
+      "ecosystem": "linux",
+      "category": "webstack",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Haitam-lazaar/veracrypt-checkfs-lpe",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exploit/poc_checkfs_inject.c"
+        ],
+        "attackFiles": [
+          "exploit/poc_checkfs_inject.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-61512"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Haitam-lazaar",
+      "researcherUrl": "https://github.com/Haitam-lazaar",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:47 AM CST",
+      "firstSeenAt": "2026-11-23T15:47:04Z",
+      "language": "C",
+      "summary": "VeraCrypt Linux CoreService CheckFilesystem command injection local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "technicalSummary": "VeraCrypt Linux CoreService CheckFilesystem command injection local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "breakdown": "VeraCrypt Linux CoreService CheckFilesystem command injection local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "whatBroke": "VeraCrypt Linux CoreService CheckFilesystem command injection local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Haitam-lazaar/veracrypt-checkfs-lpe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Haitam-lazaar/veracrypt-checkfs-lpe\ncd veracrypt-checkfs-lpe\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Webstack",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Haitam-lazaar/veracrypt-checkfs-lpe"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/Haitam-lazaar/veracrypt-checkfs-lpe"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-61513",
+      "title": "VeraCrypt Linux CoreService arbitrary chown local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "ecosystem": "linux",
+      "category": "webstack",
+      "severity": "high",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Haitam-lazaar/veracrypt-setfileowner-lpe",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "exploit/poc_pipe_inject.c"
+        ],
+        "attackFiles": [
+          "exploit/poc_pipe_inject.c"
+        ],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-61513"
+        ],
+        "language": "C"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Haitam-lazaar",
+      "researcherUrl": "https://github.com/Haitam-lazaar",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "9:42 AM CST",
+      "firstSeenAt": "2026-11-23T15:42:42Z",
+      "language": "C",
+      "summary": "VeraCrypt Linux CoreService arbitrary chown local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "technicalSummary": "VeraCrypt Linux CoreService arbitrary chown local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "breakdown": "VeraCrypt Linux CoreService arbitrary chown local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "whatBroke": "VeraCrypt Linux CoreService arbitrary chown local privilege escalation (LPE) via unauthenticated pipe IPC.",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Haitam-lazaar/veracrypt-setfileowner-lpe.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Haitam-lazaar/veracrypt-setfileowner-lpe\ncd veracrypt-setfileowner-lpe\nmake\n./<compiled-poc> <authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "internal pivot from an internet-facing control point",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Linux",
+        "Webstack",
+        "Local LPE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 3,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Haitam-lazaar/veracrypt-setfileowner-lpe"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/Haitam-lazaar/veracrypt-setfileowner-lpe"
+        ]
+      ]
+    },
+    {
+      "cve": "CVE-2026-6224",
+      "title": "NocoBase 2.0.23 workflow-javascript VM sandbox escape -> container root RCE (reproduction)",
+      "ecosystem": "cloud",
+      "category": "kubernetes",
+      "severity": "critical",
+      "proof": "working public poc",
+      "pocUrl": "https://github.com/Yxuan18/nocobase-cve-2026-6224",
+      "pocValidation": {
+        "valid": true,
+        "score": 9,
+        "codeFiles": [
+          "repro.py"
+        ],
+        "attackFiles": [],
+        "hasUsage": false,
+        "cveRefs": [
+          "CVE-2026-6224"
+        ],
+        "language": "Python"
+      },
+      "reliability": "reliable exploit",
+      "researcher": "Yxuan18",
+      "researcherUrl": "https://github.com/Yxuan18",
+      "pocWorks": "Yes",
+      "difficulty": "moderate",
+      "added": "12:33 AM CST",
+      "firstSeenAt": "2026-11-26T06:33:30Z",
+      "language": "Python",
+      "summary": "NocoBase 2.0.23 workflow-javascript VM sandbox escape -> container root RCE (reproduction)",
+      "technicalSummary": "NocoBase 2.0.23 workflow-javascript VM sandbox escape -> container root RCE (reproduction)",
+      "breakdown": "NocoBase 2.0.23 workflow-javascript VM sandbox escape -> container root RCE (reproduction)",
+      "whatBroke": "NocoBase 2.0.23 workflow-javascript VM sandbox escape -> container root RCE (reproduction)",
+      "reality": "Realistic when the affected product is exposed and unpatched. The updater only includes this because public tooling signal was found at Yxuan18/nocobase-cve-2026-6224.",
+      "exploitSyntax": "# authorized lab / owned targets only\ngit clone https://github.com/Yxuan18/nocobase-cve-2026-6224\ncd nocobase-cve-2026-6224\npython3 <script>.py --target https://<authorized-target>\n# confirm exact flags in the linked GitHub README before validation",
+      "chains": [
+        "initial access through exposed the affected product",
+        "credential access from service context",
+        "webshell or command execution follow-up",
+        "lateral movement if secrets or management access are recovered"
+      ],
+      "weaponized": "Likely worth tracking because public tooling exists and recent source activity was observed.",
+      "tags": [
+        "Cloud",
+        "Kubernetes",
+        "RCE"
+      ],
+      "confidence": 98,
+      "weaponization": 73,
+      "dayOffset": 0,
+      "links": [
+        [
+          "GitHub",
+          "https://github.com/Yxuan18/nocobase-cve-2026-6224"
+        ],
+        [
+          "Vendor Advisory",
+          "https://github.com/Pai-777/ai-cve/blob/main/docs/cve-drafts/nocobase-workflow-javascript-sandbox-escape.en.md"
         ]
       ]
     }
